@@ -20,10 +20,14 @@ def crear_ruta_img(nombre_imagen):
 play_img = pygame.image.load(crear_ruta_img("play.png")).convert_alpha()
 options_img = pygame.image.load(crear_ruta_img("options.png")).convert_alpha()
 exit_img = pygame.image.load(crear_ruta_img("exit.png")).convert_alpha()
+video_img = pygame.image.load(crear_ruta_img("video.png")).convert_alpha()
+audio_img = pygame.image.load(crear_ruta_img("audio.png")).convert_alpha()
+keys_img = pygame.image.load(crear_ruta_img("keys.png")).convert_alpha()
+back_img = pygame.image.load(crear_ruta_img("back.png")).convert_alpha()
 
-play_button = Button(200,125,play_img,10)
-options_button = Button(700, 125, options_img,10)
-exit_button = Button(478, 375, exit_img,10)
+play_button = Button(180,125,play_img,10)
+options_button = Button(720, 125, options_img,10)
+exit_button = Button(455, 375, exit_img,10)
 
 def draw_text(text, font, text_col, x, y):
     img = font.render(text, True, text_col)
@@ -41,7 +45,7 @@ while run:
         if options_button.draw(screen):
             game_paused = False
         if exit_button.draw(screen):
-            game_paused
+            run = False
     else:
         draw_text("Presiona ESC para pausar", font, TEXT_COL, 160, 250)
 
