@@ -1,6 +1,7 @@
 import pygame
 import sys
 import random
+import math
 from dataclasses import dataclass
 
 # ---------------------------
@@ -26,11 +27,11 @@ RESOLUCIONES = {
     "3": (1024, 768)
 }
 
-# Dificultades CPU (factor de seguimiento más bajo para suavizar)
+# Dificultades CPU mejoradas (más realistas)
 DIFICULTADES = {
-    "1": ("Fácil",   0.55),
-    "2": ("Media",   0.75),
-    "3": ("Difícil", 1.0)
+    "1": ("Fácil",   {"speed_factor": 0.4, "reaction_time": 0.5, "error_chance": 0.3, "prediction_error": 60}),
+    "2": ("Media",   {"speed_factor": 0.6, "reaction_time": 0.25, "error_chance": 0.15, "prediction_error": 30}),
+    "3": ("Difícil", {"speed_factor": 0.8, "reaction_time": 0.1, "error_chance": 0.05, "prediction_error": 15})
 }
 
 # ---------------------------
@@ -65,6 +66,14 @@ class Ball:
 
     def rect(self) -> pygame.Rect:
         return pygame.Rect(int(self.x - self.r), int(self.y - self.r), self.r*2, self.r*2)
+
+@dataclass
+class AIState:
+    target_y: float = 0
+    last_ball_x: float = 0
+    reaction_timer: float = 0
+    error_offset: float = 0
+    next_error_time: float = 0
 
 # ---------------------------
 # Menús seguros
@@ -119,9 +128,9 @@ def menu_dificultad(screen):
         screen.fill(BLACK)
         lines = [
             "Elige dificultad CPU:",
-            "1) Fácil",
-            "2) Media",
-            "3) Difícil",
+            "1) Fácil (IA comete muchos errores)",
+            "2) Media (IA balanceada)",
+            "3) Difícil (IA casi perfecta)",
             "Presiona 1, 2 o 3"
         ]
         for i, line in enumerate(lines):
@@ -190,6 +199,79 @@ def draw_score(screen, score_left, score_right, W):
     screen.blit(txtL, (W*0.25 - txtL.get_width()/2, 20))
     screen.blit(txtR, (W*0.75 - txtR.get_width()/2, 20))
 
+def predict_ball_y(ball: Ball, paddle_x: float, H: int) -> float:
+    """Predice dónde estará la pelota cuando llegue al paddle"""
+    if ball.vx == 0:
+        return ball.y
+    
+    time_to_paddle = (paddle_x - ball.x) / ball.vx
+    if time_to_paddle <= 0:
+        return ball.y
+    
+    # Calcular posición Y considerando rebotes en bordes
+    future_y = ball.y + ball.vy * time_to_paddle
+    
+    # Simular rebotes simples
+    while future_y < 0 or future_y > H:
+        if future_y < 0:
+            future_y = -future_y
+        elif future_y > H:
+            future_y = 2*H - future_y
+    
+    return future_y
+
+def update_ai(ai_state: AIState, ball: Ball, right: Paddle, difficulty: dict, dt: float, H: int):
+    """Actualiza el comportamiento de la IA de manera más realista"""
+    
+    # Detectar si la pelota se acerca (cambio de dirección hacia la IA)
+    ball_approaching = ball.vx > 0
+    ball_direction_changed = (ball.x - ai_state.last_ball_x) * ball.vx < 0
+    
+    # Tiempo de reacción: solo actualizar target cuando sea necesario
+    ai_state.reaction_timer -= dt
+    
+    if ball_approaching and (ball_direction_changed or ai_state.reaction_timer <= 0):
+        ai_state.reaction_timer = difficulty["reaction_time"]
+        
+        # Predecir dónde estará la pelota
+        predicted_y = predict_ball_y(ball, right.x, H)
+        
+        # Añadir error de predicción
+        if random.random() < difficulty["error_chance"]:
+            error_range = difficulty["prediction_error"]
+            ai_state.error_offset = random.uniform(-error_range, error_range)
+        else:
+            ai_state.error_offset *= 0.9  # Reducir error gradualmente
+        
+        ai_state.target_y = predicted_y + ai_state.error_offset
+    
+    # Si la pelota se aleja, moverse hacia el centro gradualmente
+    elif not ball_approaching:
+        center_y = H / 2
+        ai_state.target_y = center_y + (ai_state.target_y - center_y) * 0.98
+    
+    ai_state.last_ball_x = ball.x
+    
+    # Calcular movimiento hacia el target
+    paddle_center = right.y + right.h / 2
+    distance_to_target = ai_state.target_y - paddle_center
+    
+    # Zona muerta: no moverse si está muy cerca del target
+    if abs(distance_to_target) < 10:
+        return 0
+    
+    # Movimiento limitado por velocidad y factor de dificultad
+    max_speed = right.speed * difficulty["speed_factor"]
+    desired_speed = distance_to_target * 3  # Factor de seguimiento
+    
+    # Limitar la velocidad
+    if desired_speed > max_speed:
+        desired_speed = max_speed
+    elif desired_speed < -max_speed:
+        desired_speed = -max_speed
+    
+    return desired_speed * dt
+
 def victory_screen(screen, W, H, winner_name):
     font_big = pygame.font.SysFont(None, 72)
     font_small = pygame.font.SysFont(None, 36)
@@ -213,13 +295,13 @@ def victory_screen(screen, W, H, winner_name):
 # ---------------------------
 # Juego principal
 # ---------------------------
-def run_game(screen, W, H, modo, dificultad_cpu=("Media",1.0), win_score=7):
+def run_game(screen, W, H, modo, dificultad_cpu=("Media", {}), win_score=7):
     clock = pygame.time.Clock()
     pad_w = max(10, W // 80)
     pad_h = max(80, H // 5)
-    pad_speed = H * 1.5
+    pad_speed = H * 1.0  # Reducida la velocidad base
     ball_r = max(6, W // 160)
-    ball_speed = W * 0.45
+    ball_speed = W * 0.4  # Reducida un poco la velocidad de la pelota
 
     left = Paddle(x=30, y=H/2 - pad_h/2, w=pad_w, h=pad_h, speed=pad_speed)
     right = Paddle(x=W-30-pad_w, y=H/2 - pad_h/2, w=pad_w, h=pad_h, speed=pad_speed)
@@ -229,7 +311,8 @@ def run_game(screen, W, H, modo, dificultad_cpu=("Media",1.0), win_score=7):
     score_right = 0
     running = True
     paused = False
-    cpu_name, cpu_follow = dificultad_cpu
+    cpu_name, cpu_difficulty = dificultad_cpu
+    ai_state = AIState()
     center_offset = 0
     colors = [WHITE, RED, BLUE, YELLOW, GREEN]
 
@@ -267,12 +350,9 @@ def run_game(screen, W, H, modo, dificultad_cpu=("Media",1.0), win_score=7):
             if keys[pygame.K_UP]: dy_right -= right.speed*dt
             if keys[pygame.K_DOWN]: dy_right += right.speed*dt
         else:
-            target = ball.y - right.h/2
-            dy = (target - right.y) * cpu_follow
-            max_step = right.speed*dt
-            if dy>max_step: dy=max_step
-            if dy<-max_step: dy=-max_step
-            dy_right=dy
+            # IA mejorada
+            dy_right = update_ai(ai_state, ball, right, cpu_difficulty, dt, H)
+        
         right.move(dy_right, 0, H)
 
         ball.x += ball.vx*dt
@@ -302,6 +382,9 @@ def run_game(screen, W, H, modo, dificultad_cpu=("Media",1.0), win_score=7):
             punto = 1
         if punto!=0:
             reset_ball(ball,W,H,-punto,ball_speed)
+            # Resetear estado de IA al anotar
+            ai_state.target_y = H / 2
+            ai_state.error_offset = 0
 
         winner = None
         if score_left>=win_score:
@@ -338,7 +421,7 @@ def main():
 
     while True:
         modo = menu_modo(screen)
-        dificultad = ("Media",1.0)
+        dificultad = ("Media", DIFICULTADES["2"][1])
         if modo==1:
             dificultad = menu_dificultad(screen)
         win_score = menu_puntaje(screen)
