@@ -4,10 +4,10 @@ import random
 import math
 from dataclasses import dataclass
 
-# ---------------------------
-# Configuración general
-# ---------------------------
-pygame.init()
+if __name__ == "__main__":
+    pygame.init()
+    pygame.display.set_mode((800,600))
+    
 pygame.display.set_caption("Pong - Pygame")
 
 WHITE = (255, 255, 255)

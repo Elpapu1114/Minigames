@@ -4,7 +4,9 @@ import random
 import time
 import math
 
-pygame.init()
+if __name__ == "__main__":
+    pygame.init()
+    pygame.display.set_mode((800,600))
 
 pygame.display.set_caption("Memotest - Pygame")
 

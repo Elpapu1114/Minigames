@@ -2,7 +2,11 @@ import pygame
 import sys
 import random
 import os
-pygame.init()
+
+if __name__ == "__main__":
+    pygame.init()
+    pygame.display.set_mode((800,600))
+    
 pygame.display.set_caption("Flappy Bird - Pygame")
 
 WHITE = (255, 255, 255)
