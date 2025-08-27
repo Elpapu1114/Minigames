@@ -7,6 +7,7 @@ SCREEN_WIDTH = 1200
 SCREEN_HEIGHT = 650
 
 game_paused = False
+menu_state = "main"
 
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("Main Menu")
@@ -28,6 +29,10 @@ back_img = pygame.image.load(crear_ruta_img("back.png")).convert_alpha()
 play_button = Button(180,125,play_img,10)
 options_button = Button(720, 125, options_img,10)
 exit_button = Button(455, 375, exit_img,10)
+video__button = Button(200, 60, video_img,10)
+audio_button = Button(650, 60, audio_img,10)
+keys_button = Button(200, 350, keys_img,10)
+back_button = Button(650, 350, back_img,10)
 
 def draw_text(text, font, text_col, x, y):
     img = font.render(text, True, text_col)
@@ -40,12 +45,22 @@ while run:
     
 
     if game_paused == True:
-        if play_button.draw(screen):
-            game_paused = False
-        if options_button.draw(screen):
-            game_paused = False
-        if exit_button.draw(screen):
-            run = False
+        if menu_state == "main":
+            if play_button.draw(screen):
+                game_paused = False
+            if options_button.draw(screen):
+                menu_state = "options"
+            if exit_button.draw(screen):
+                run = False
+        if menu_state == "options":
+            if video__button.draw(screen):
+                print("video Settings")
+            if audio_button.draw(screen):
+                print("Audio Settings")
+            if keys_button.draw(screen):
+                print("Change key bindings")
+            if back_button.draw(screen):
+                menu_state = "main"
     else:
         draw_text("Presiona ESC para pausar", font, TEXT_COL, 160, 250)
 
