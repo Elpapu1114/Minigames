@@ -1058,22 +1058,4 @@ sneijder = {
     "club actual": "RETIRADO",
     "posicion": "Mediocampista Ofensivo, Mediocampista Central, Mediocampista Defensivo",
     "clubes totales": "Ajax, Real Madrid, Inter de Milán, Galatasaray, OGC Nice, Al-Gharafa" 
-}}
-
-andrew_robertson = {
-    "nombre": "Andrew Henry Robertson",
-    "nacionalidad": "Escocia",    
-    "Fecha de nacimiento": "11/03/1994",
-    "club actual": "Liverpool",
-    "posicion": "Lateral Izquierdo, Lateral Derecho, Mediocampista Defensivo",
-    "clubes totales": "Queen's Park, Dundee United, Hull City, Liverpool" 
-}
-
-sneijder = {
-    "nombre": "Wesley Sneijder",
-    "nacionalidad": "Países Bajos",    
-    "Fecha de nacimiento": "09/06/1984",
-    "club actual": "RETIRADO",
-    "posicion": "Mediocampista Ofensivo, Mediocampista Central, Mediocampista Defensivo",
-    "clubes totales": "Ajax, Real Madrid, Inter de Milán, Galatasaray, OGC Nice, Al-Gharafa" 
 }
