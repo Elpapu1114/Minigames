@@ -1,1061 +1,1556 @@
-import json
-
-messi = {
-    "nombre": "Lionel Andrés Messi Cuccittini",
-    "nacionalidad": "Argentina",    
-    "Fecha de nacimiento": "24/06/1987",
-    "club actual": "Inter Miami",
-    "posicion": "Delantero Centro, Extremo Derecho, Mediocampista Ofensivo",
-    "clubes totales": "Barcelona, Paris Saint-Germain, Inter Miami", 
-}
-
-cristiano_ronaldo = {
-    "nombre": "Cristiano Ronaldo dos Santos Aveiro",
-    "nacionalidad": "Portugal",    
-    "Fecha de nacimiento": "05/02/1985",
-    "club actual": "Al Nassr",
-    "posicion": "Delantero Centro, Extremo Izquierdo",
-    "clubes totales": "Sporting de Lisboa, Manchester United, Real Madrid, Juventus, Al Nassr", 
-}
-
-neymar = {
-    "nombre": "Neymar da Silva Santos Júnior",
-    "nacionalidad": "Brasil",    
-    "Fecha de nacimiento": "05/02/1992",
-    "club actual": "Santos",
-    "posicion": "Delantero Centro, Extremo Izquierdo, Mediocampista Ofensivo",
-    "clubes totales": "Santos, Barcelona, Paris Saint-Germain, Al-Hilal", 
-}
-
-suarez = {
-    "nombre": "Luis Alberto Suárez Díaz",
-    "nacionalidad": "Uruguay",    
-    "Fecha de nacimiento": "24/01/1987",
-    "club actual": "Inter Miami",
-    "posicion": "Delantero Centro, Extremo Derecho, Mediocampista Ofensivo",
-    "clubes totales": "Nacional, Groningen, Ajax, Liverpool, Barcelona, Atlético de Madrid, Gremio, Inter Miami", 
-}
-
-benzema = {
-    "nombre": "Karim Mostafa Benzema",
-    "nacionalidad": "Francia",    
-    "Fecha de nacimiento": "19/12/1987",
-    "club actual": "Al-Ittihad",
-    "posicion": "Delantero Centro, Mediocampista Ofensivo",
-    "clubes totales": "Olympique Lyon, Real Madrid, Al-Ittihad", 
-}
-di_maria = {
-    "nombre": "Ángel Fabián Di María Hernández",
-    "nacionalidad": "Argentina",    
-    "Fecha de nacimiento": "14/02/1988",
-    "club actual": "Rosario Central",
-    "posicion": "Extremo Derecho, Extremo Izquierdo, Mediocampista Ofensivo",
-    "clubes totales": "Rosario Central, Benfica, Real Madrid, Manchester United, Paris Saint-Germain, Juventus, Benfica", 
-}
-
-bale = {
-    "nombre": "Gareth Frank Bale",
-    "nacionalidad": "Gales",    
-    "Fecha de nacimiento": "16/07/1989",
-    "club actual": "RETIRADO",
-    "posicion": "Extremo Izquierdo, Extremo Derecho, Delantero Centro",
-    "clubes totales": "Southampton, Tottenham Hotspur, Real Madrid, Los Angeles FC", 
-}
-
-modric = {
-    "nombre": "Luka Modrić",
-    "nacionalidad": "Croacia",    
-    "Fecha de nacimiento": "09/09/1985",
-    "club actual": "AC Milan",
-    "posicion": "Mediocampista Central, Mediocampista Ofensivo, Mediocampista Defensivo",
-    "clubes totales": "Dinamo Zagreb, Tottenham Hotspur, Real Madrid, AC Milan", 
-}
-kroos = {
-    "nombre": "Toni Kroos",
-    "nacionalidad": "Alemania",    
-    "Fecha de nacimiento": "04/01/1990",
-    "club actual": "RETIRADO",
-    "posicion": "Mediocampista Central, Mediocampista Ofensivo, Mediocampista Defensivo",
-    "clubes totales": "Bayer Leverkusen, Bayern Múnich, Real Madrid", 
-}
-
-iniesta = {
-    "nombre": "Andrés Iniesta Luján",
-    "nacionalidad": "España",    
-    "Fecha de nacimiento": "11/05/1984",
-    "club actual": "RETIRADO",
-    "posicion": "Mediocampista Central, Mediocampista Ofensivo, Mediocampista Defensivo",
-    "clubes totales": "Barcelona, Vissel Kobe, Emirates Club", 
-}
-
-xavi = {
-    "nombre": "Xavier Hernández Creus",
-    "nacionalidad": "España",    
-    "Fecha de nacimiento": "25/01/1980",
-    "club actual": "RETIRADO",
-    "posicion": "Mediocampista Central, Mediocampista Ofensivo, Mediocampista Defensivo",
-    "clubes totales": "Barcelona, Al-Sadd", 
-}
-
-busquets = {
-    "nombre": "Sergio Busquets Burgos",
-    "nacionalidad": "España",    
-    "Fecha de nacimiento": "16/07/1988",
-    "club actual": "Inter Miami",
-    "posicion": "Mediocampista Defensivo, Mediocampista Central",
-    "clubes totales": "Barcelona, Inter Miami", 
-}
-
-vinicius = {
-    "nombre": "Vinícius José Paixão de Oliveira Júnior",
-    "nacionalidad": "Brasil",    
-    "Fecha de nacimiento": "12/07/2000",
-    "club actual": "Real Madrid",
-    "posicion": "Extremo Izquierdo, Extremo Derecho, Delantero Centro",
-    "clubes totales": "Flamengo, Real Madrid", 
-}
-
-mbappe = {
-    "nombre": "Kylian Mbappé Lottin",
-    "nacionalidad": "Francia",    
-    "Fecha de nacimiento": "20/12/1998",
-    "club actual": "Real Madrid",
-    "posicion": "Delantero Centro, Extremo Derecho, Extremo Izquierdo",
-    "clubes totales": "Monaco, Paris Saint-Germain, Real Madrid", 
-}
-
-neuer = {
-    "nombre": "Manuel Neuer",
-    "nacionalidad": "Alemania",    
-    "Fecha de nacimiento": "27/03/1986",
-    "club actual": "Bayern Múnich",
-    "posicion": "Portero",
-    "clubes totales": "Schalke 04, Bayern Múnich", 
-}
-
-pique = {
-    "nombre": "Gerard Piqué Bernabéu",
-    "nacionalidad": "España",    
-    "Fecha de nacimiento": "02/02/1987",
-    "club actual": "RETIRADO",
-    "posicion": "Defensa Central, Lateral Derecho, Lateral Izquierdo",
-    "clubes totales": "Manchester United, Real Zaragoza, Barcelona" 
-}
-
-alejandro_gomez = {
-    "nombre": "Alejandro Gómez",
-    "nacionalidad": "Argentina",    
-    "Fecha de nacimiento": "15/02/1988",
-    "club actual": "Calcio Padova",
-    "posicion": "Mediocampista Ofensivo, Extremo Derecho, Extremo Izquierdo",
-    "clubes totales": "Arsenal de Sarandí, San Lorenzo, Catania, Metalist Járkov, Atalanta, Sevilla, Monza, Calcio Padova" 
-}
-
-aguero = {
-    "nombre": "Sergio Leonel Agüero del Castillo",
-    "nacionalidad": "Argentina",    
-    "Fecha de nacimiento": "02/06/1988",
-    "club actual": "RETIRADO",
-    "posicion": "Delantero Centro, Extremo Derecho, Extremo Izquierdo",
-    "clubes totales": "Independiente, Atlético de Madrid, Manchester City, FC Barcelona" 
-}
-
-haaland = {
-    "nombre": "Erling Braut Haaland",
-    "nacionalidad": "Noruega",    
-    "Fecha de nacimiento": "21/07/2000",
-    "club actual": "Manchester City",
-    "posicion": "Delantero Centro",
-    "clubes totales": "Bryne FK, Molde FK, Red Bull Salzburgo, Borussia Dortmund, Manchester City" 
-}
-
-lewandowski = {
-    "nombre": "Robert Lewandowski",
-    "nacionalidad": "Polonia",    
-    "Fecha de nacimiento": "21/08/1988",
-    "club actual": "FC Barcelona",
-    "posicion": "Delantero Centro",
-    "clubes totales": "Legia Varsovia, Znicz Pruszków, Lech Poznań, Borussia Dortmund, Bayern Múnich, FC Barcelona" 
-}
-
-ronaldinho = {
-    "nombre": "Ronaldo de Assis Moreira",
-    "nacionalidad": "Brasil",    
-    "Fecha de nacimiento": "21/03/1980",
-    "club actual": "RETIRADO",
-    "posicion": "Mediocampista Ofensivo, Delantero Centro, Extremo Derecho, Extremo Izquierdo",
-    "clubes totales": "Grêmio, Paris Saint-Germain, Barcelona, AC Milan, Flamengo, Atlético Mineiro, Querétaro, Fluminense" 
-}
-
-henry = {
-    "nombre": "Thierry Daniel Henry",
-    "nacionalidad": "Francia",    
-    "Fecha de nacimiento": "17/08/1977",
-    "club actual": "RETIRADO",
-    "posicion": "Delantero Centro, Extremo Izquierdo, Mediocampista Ofensivo",
-    "clubes totales": "Monaco, Juventus, Arsenal, Barcelona, New York Red Bulls" 
-}
-
-ribery = {
-    "nombre": "Franck Ribéry",
-    "nacionalidad": "Francia",    
-    "Fecha de nacimiento": "07/04/1983",
-    "club actual": "RETIRADO",
-    "posicion": "Extremo Izquierdo, Extremo Derecho, Mediocampista Ofensivo",
-    "clubes totales": "Boulogne, Alès, Brest, Metz, Galatasaray, Olympique Marseille, Bayern Múnich, Fiorentina, Salernitana" 
-}
-
-robben = {
-    "nombre": "Arjen Robben",
-    "nacionalidad": "Países Bajos",    
-    "Fecha de nacimiento": "23/01/1984",
-    "club actual": "RETIRADO",
-    "posicion": "Extremo Derecho, Extremo Izquierdo, Delantero Centro",
-    "clubes totales": "Groningen, PSV Eindhoven, Chelsea, Real Madrid, Bayern Múnich, FC Groningen" 
-}
-
-pirlo = {
-    "nombre": "Andrea Pirlo",
-    "nacionalidad": "Italia",    
-    "Fecha de nacimiento": "19/05/1979",
-    "club actual": "RETIRADO",
-    "posicion": "Mediocampista Ofensivo, Mediocampista Central, Mediocampista Defensivo",
-    "clubes totales": "Brescia, Inter de Milán, Reggina, AC Milan, Juventus, New York City FC" 
-}
-
-salah = {
-    "nombre": "Mohamed Salah",
-    "nacionalidad": "Egipto",    
-    "Fecha de nacimiento": "15/06/1992",
-    "club actual": "Liverpool",
-    "posicion": "Extremo Derecho, Extremo Izquierdo, Delantero Centro",
-    "clubes totales": "El Mokawloon, Basel, Chelsea, Fiorentina, Roma, Liverpool" 
-}
-
-ronaldo = {
-    "nombre": "Ronaldo Luís Nazário de Lima",
-    "nacionalidad": "Brasil",    
-    "Fecha de nacimiento": "22/09/1976",
-    "club actual": "RETIRADO",
-    "posicion": "Delantero Centro, Extremo Derecho, Extremo Izquierdo",
-    "clubes totales": "Cruzeiro, PSV Eindhoven, Barcelona, Inter de Milán, Real Madrid, AC Milan, Corinthians" 
-}
-
-maradona = {
-    "nombre": "Diego Armando Maradona",
-    "nacionalidad": "Argentina",    
-    "Fecha de nacimiento": "30/10/1960",
-    "club actual": "FALLECIDO",
-    "posicion": "Mediocampista Ofensivo, Delantero Centro, Extremo Derecho, Extremo Izquierdo",
-    "clubes totales": "Argentinos Juniors, Boca Juniors, Barcelona, Napoli, Sevilla, Newells"
-}
-
-carlos_tevez = {
-    "nombre": "Carlos Alberto Tevez",
-    "nacionalidad": "Argentina",    
-    "Fecha de nacimiento": "05/02/1984",
-    "club actual": "RETIRADO",
-    "posicion": "Delantero Centro, Extremo Derecho, Extremo Izquierdo",
-    "clubes totales": "Boca Juniors, Corinthians, West Ham United, Manchester United, Manchester City, Juventus, Shanghai Shenhua" 
-}
-
-lavezzi = {
-    "nombre": "Ezequiel Lavezzi",
-    "nacionalidad": "Argentina",    
-    "Fecha de nacimiento": "03/05/1985",
-    "club actual": "RETIRADO",
-    "posicion": "Extremo Derecho, Extremo Izquierdo, Delantero Centro",
-    "clubes totales": "Estudiantes de Caseros, San Lorenzo, Napoli, Paris Saint-Germain, Hebei China Fortune" 
-}
-
-falcao = {
-    "nombre": "Radamel Falcao García Zárate",
-    "nacionalidad": "Colombia",    
-    "Fecha de nacimiento": "10/02/1986",
-    "club actual": "Millonarios",
-    "posicion": "Delantero Centro",
-    "clubes totales": "Lanceros Boyacá, River Plate, Porto, Atlético de Madrid, Mónaco, Manchester United, Chelsea, Galatasaray, Rayo Vallecano, Millonarios" 
-}
-
-milito = {
-    "nombre": "Diego Alberto Milito",
-    "nacionalidad": "Argentina",    
-    "Fecha de nacimiento": "12/06/1979",
-    "club actual": "RETIRADO",
-    "posicion": "Delantero Centro",
-    "clubes totales": "Racing Club, Genoa, Real Zaragoza, Inter de Milán" 
-}
-
-zanetti = {
-    "nombre": "Javier Adelmar Zanetti",
-    "nacionalidad": "Argentina",    
-    "Fecha de nacimiento": "10/08/1973",
-    "club actual": "RETIRADO",
-    "posicion": "Lateral Derecho, Mediocampista Defensivo, Defensa Central",
-    "clubes totales": "Talleres de Remedios de Escalada, Banfield, Inter de Milán" 
-}
-
-materazzi = {
-    "nombre": "Marco Materazzi",
-    "nacionalidad": "Italia",    
-    "Fecha de nacimiento": "19/08/1973",
-    "club actual": "RETIRADO",
-    "posicion": "Defensa Central, Lateral Derecho",
-    "clubes totales": "Messina, Tor di Quinto, Marsala, Trapani, Perugia, Carpi, Everton, Inter de Milán, Chennaiyin FC" 
-}
-
-buffon = {
-    "nombre": "Gianluigi Buffon",
-    "nacionalidad": "Italia",    
-    "Fecha de nacimiento": "28/01/1978",
-    "club actual": "RETIRADO",
-    "posicion": "Portero",
-    "clubes totales": "Parma, Juventus, Paris Saint-Germain" 
-}
-
-gerrard = {
-    "nombre": "Steven George Gerrard",
-    "nacionalidad": "Inglaterra",    
-    "Fecha de nacimiento": "30/05/1980",
-    "club actual": "RETIRADO",
-    "posicion": "Mediocampista Central, Mediocampista Ofensivo, Mediocampista Defensivo",
-    "clubes totales": "Liverpool, LA Galaxy" 
-}
-
-rooney = {
-    "nombre": "Wayne Mark Rooney",
-    "nacionalidad": "Inglaterra",    
-    "Fecha de nacimiento": "24/10/1985",
-    "club actual": "RETIRADO",
-    "posicion": "Delantero Centro, Mediocampista Ofensivo, Extremo Derecho, Extremo Izquierdo",
-    "clubes totales": "Everton, Manchester United, D.C. United, Derby County" 
-}
-
-berbatov = {
-    "nombre": "Dimitar Ivanov Berbatov",
-    "nacionalidad": "Bulgaria",    
-    "Fecha de nacimiento": "30/01/1981",
-    "club actual": "RETIRADO",
-    "posicion": "Delantero Centro, Mediocampista Ofensivo",
-    "clubes totales": "CSKA Sofia, Bayer Leverkusen, Tottenham Hotspur, Manchester United, Fulham, AS Monaco, PAOK" 
-}
-
-scholes = {
-    "nombre": "Paul Scholes",
-    "nacionalidad": "Inglaterra",    
-    "Fecha de nacimiento": "16/11/1974",
-    "club actual": "RETIRADO",
-    "posicion": "Mediocampista Central, Mediocampista Ofensivo, Mediocampista Defensivo",
-    "clubes totales": "Manchester United" 
-}
-
-cole = {
-    "nombre": "Ashley Cole",
-    "nacionalidad": "Inglaterra",    
-    "Fecha de nacimiento": "20/12/1980",
-    "club actual": "RETIRADO",
-    "posicion": "Lateral Izquierdo, Lateral Derecho, Defensa Central",
-    "clubes totales": "Arsenal, Chelsea, AS Roma, LA Galaxy, Derby County" 
-}
-
-yaya_toure = {
-    "nombre": "Gnégnéri Yaya Touré",
-    "nacionalidad": "Costa de Marfil",    
-    "Fecha de nacimiento": "13/05/1983",
-    "club actual": "RETIRADO",
-    "posicion": "Mediocampista Defensivo, Mediocampista Central, Mediocampista Ofensivo",
-    "clubes totales": "Beveren, Metalurh Donetsk, Olympiacos, AS Monaco, Barcelona, Manchester City, Qingdao Huanghai" 
-}
-
-kolo_toure = {
-    "nombre": "Kolo Abib Touré",
-    "nacionalidad": "Costa de Marfil",    
-    "Fecha de nacimiento": "19/03/1981",
-    "club actual": "RETIRADO",
-    "posicion": "Defensa Central, Lateral Derecho, Lateral Izquierdo",
-    "clubes totales": "ASEC Mimosas, Arsenal, Manchester City, Liverpool, Celtic" 
-}
-
-rakitic = {
-    "nombre": "Ivan Rakitić",
-    "nacionalidad": "Croacia",    
-    "Fecha de nacimiento": "10/03/1988",
-    "club actual": "RETIRADO",
-    "posicion": "Mediocampista Central, Mediocampista Ofensivo, Mediocampista Defensivo",
-    "clubes totales": "Basel, Schalke 04, Sevilla, Barcelona" 
-}
-
-puyol = {
-    "nombre": "Carles Puyol Saforcada",
-    "nacionalidad": "España",    
-    "Fecha de nacimiento": "13/04/1978",
-    "club actual": "RETIRADO",
-    "posicion": "Defensa Central, Lateral Derecho, Lateral Izquierdo",
-    "clubes totales": "Barcelona" 
-}
-
-cesc_fabregas = {
-    "nombre": "Francesc Fàbregas Soler",
-    "nacionalidad": "España",    
-    "Fecha de nacimiento": "04/05/1987",
-    "club actual": "RETIRADO",
-    "posicion": "Mediocampista Ofensivo, Mediocampista Central, Mediocampista Defensivo",
-    "clubes totales": "Arsenal, Barcelona, Chelsea, AS Monaco, Como 1907" 
-}
-
-zidane = {
-    "nombre": "Zinedine Yazid Zidane",
-    "nacionalidad": "Francia",    
-    "Fecha de nacimiento": "23/06/1972",
-    "club actual": "RETIRADO",
-    "posicion": "Mediocampista Ofensivo, Mediocampista Central",
-    "clubes totales": "Cannes, Bordeaux, Juventus, Real Madrid" 
-}
-
-maldini = {
-    "nombre": "Paolo Maldini",
-    "nacionalidad": "Italia",    
-    "Fecha de nacimiento": "26/06/1968",
-    "club actual": "RETIRADO",
-    "posicion": "Defensa Central, Lateral Izquierdo",
-    "clubes totales": "AC Milan" 
-}
-
-baggio = {
-    "nombre": "Roberto Baggio",
-    "nacionalidad": "Italia",    
-    "Fecha de nacimiento": "18/02/1967",
-    "club actual": "RETIRADO",
-    "posicion": "Mediocampista Ofensivo, Delantero Centro",
-    "clubes totales": "Vicenza, Fiorentina, Juventus, AC Milan, Bologna, Inter de Milán, Brescia" 
-}
-
-pele = {
-    "nombre": "Edson Arantes do Nascimento",
-    "nacionalidad": "Brasil",    
-    "Fecha de nacimiento": "23/10/1940",
-    "club actual": "FALLECIDO",
-    "posicion": "Delantero Centro, Extremo Derecho, Extremo Izquierdo",
-    "clubes totales": "Santos, New York Cosmos" 
-}
-
-marcelo = {
-    "nombre": "Marcelo Vieira da Silva Júnior",
-    "nacionalidad": "Brasil",    
-    "Fecha de nacimiento": "12/05/1988",
-    "club actual": "Olympiacos",
-    "posicion": "Lateral Izquierdo, Lateral Derecho, Defensa Central",
-    "clubes totales": "Flamengo, Real Madrid, Olympiacos" 
-}
-
-cruyff = {
-    "nombre": "Johan Cruyff",
-    "nacionalidad": "Países Bajos",    
-    "Fecha de nacimiento": "25/04/1947",
-    "club actual": "FALLECIDO",
-    "posicion": "Mediocampista Ofensivo, Delantero Centro, Extremo Derecho, Extremo Izquierdo",
-    "clubes totales": "Ajax, Barcelona, Los Angeles Aztecs, Washington Diplomats, Levante, Feyenoord" 
-}
-
-nedved = {
-    "nombre": "Pavel Nedvěd",
-    "nacionalidad": "República Checa",    
-    "Fecha de nacimiento": "30/08/1972",
-    "club actual": "RETIRADO",
-    "posicion": "Mediocampista Central, Mediocampista Ofensivo, Mediocampista Defensivo",
-    "clubes totales": "Dukla Praga, Sparta Praga, Lazio, Juventus" 
-}
-
-jankulovski = {
-    "nombre": "Miroslav Jankulovski",
-    "nacionalidad": "República Checa",    
-    "Fecha de nacimiento": "22/09/1977",
-    "club actual": "RETIRADO",
-    "posicion": "Lateral Izquierdo, Lateral Derecho, Mediocampista Defensivo",
-    "clubes totales": "Baník Ostrava, Napoli, Udinese, AC Milan" 
-}
-
-koller = {
-    "nombre": "Jan Koller",
-    "nacionalidad": "República Checa",    
-    "Fecha de nacimiento": "30/03/1973",
-    "club actual": "RETIRADO",
-    "posicion": "Delantero Centro",
-    "clubes totales": "Sparta Praga, Lokeren, Anderlecht, Borussia Dortmund, Monaco, Nürnberg, Krylia Sovetov, Cannes" 
-}
-
-rosicky = {
-    "nombre": "Tomáš Rosický",
-    "nacionalidad": "República Checa",    
-    "Fecha de nacimiento": "04/10/1980",
-    "club actual": "RETIRADO",
-    "posicion": "Mediocampista Ofensivo, Mediocampista Central",
-    "clubes totales": "Sparta Praga, Borussia Dortmund, Arsenal, VfB Stuttgart" 
-}
-
-cech = {
-    "nombre": "Petr Čech",
-    "nacionalidad": "República Checa",    
-    "Fecha de nacimiento": "20/05/1982",
-    "club actual": "RETIRADO",
-    "posicion": "Portero",
-    "clubes totales": "Chmel Blšany, Sparta Praga, Rennes, Chelsea, Arsenal" 
-}
-
-ujfalusi = {
-    "nombre": "Zoltán Gábor Újfalusi",
-    "nacionalidad": "Hungría",    
-    "Fecha de nacimiento": "16/02/1974",
-    "club actual": "RETIRADO",
-    "posicion": "Lateral Derecho, Lateral Izquierdo, Defensa Central",
-    "clubes totales": "Debreceni VSC, FC Sopron, Feyenoord, Galatasaray, AS Roma, Internazionale, Austria Viena" 
-}
-
-mutu = {
-    "nombre": "Adrian Mutu",
-    "nacionalidad": "Rumania",    
-    "Fecha de nacimiento": "08/01/1979",
-    "club actual": "RETIRADO",
-    "posicion": "Delantero Centro, Mediocampista Ofensivo",
-    "clubes totales": "Argeș Pitești, Dinamo Bucarest, Inter de Milán, Hellas Verona, Parma, Chelsea, Juventus, Fiorentina, Cesena, Ajaccio, Petrolul Ploiești, ASA Târgu Mureș" 
-}
-
-lorik_cana = {
-    "nombre": "Lorik Cana",
-    "nacionalidad": "Albania",    
-    "Fecha de nacimiento": "27/07/1983",
-    "club actual": "RETIRADO",
-    "posicion": "Mediocampista Defensivo, Defensa Central",
-    "clubes totales": "Paris Saint-Germain, Marseille, Sunderland, Galatasaray, Lazio, Nantes" 
-}
-
-gudjohnsen = {
-    "nombre": "Eiður Smári Guðjohnsen",
-    "nacionalidad": "Islandia",    
-    "Fecha de nacimiento": "15/09/1978",
-    "club actual": "RETIRADO",
-    "posicion": "Delantero Centro, Mediocampista Ofensivo, Extremo Derecho, Extremo Izquierdo",
-    "clubes totales": "Valur, PSV Eindhoven, Bolton Wanderers, FC Barcelona, Chelsea, Monaco, Tottenham Hotspur, Stoke City, Fulham, AEK Atenas, Cercle Brugge, Club Brugge, Molde FK" 
-}
-
-anelka = {
-    "nombre": "Nicolas Sébastien Anelka",
-    "nacionalidad": "Francia",    
-    "Fecha de nacimiento": "14/03/1979",
-    "club actual": "RETIRADO",
-    "posicion": "Delantero Centro, Extremo Derecho, Extremo Izquierdo",
-    "clubes totales": "Paris Saint-Germain, Arsenal, Real Madrid, Liverpool, Manchester City, Fenerbahçe, Bolton Wanderers, Chelsea, Shanghai Shenhua, Juventus, West Bromwich Albion, Mumbai City" 
-}
-
-klose = {
-    "nombre": "Miroslav Klose",
-    "nacionalidad": "Alemania",    
-    "Fecha de nacimiento": "09/06/1978",
-    "club actual": "RETIRADO",
-    "posicion": "Delantero Centro",
-    "clubes totales": "Kaiserslautern, Werder Bremen, Bayern Múnich, Lazio" 
-}
-
-ozil = {
-    "nombre": "Mesut Özil",
-    "nacionalidad": "Alemania",    
-    "Fecha de nacimiento": "15/10/1988",
-    "club actual": "RETIRADO",
-    "posicion": "Mediocampista Ofensivo, Mediocampista Central",
-    "clubes totales": "Schalke 04, Werder Bremen, Real Madrid, Arsenal, Fenerbahçe, İstanbul Başakşehir" 
-}
-
-gnabry = {
-    "nombre": "Serge David Gnabry",
-    "nacionalidad": "Alemania",    
-    "Fecha de nacimiento": "14/07/1995",
-    "club actual": "Bayern Múnich",
-    "posicion": "Extremo Derecho, Extremo Izquierdo, Delantero Centro",
-    "clubes totales": "Arsenal, West Bromwich Albion, Werder Bremen, Hoffenheim, Bayern Múnich" 
-}
-
-mane = {
-    "nombre": "Sadio Mané",
-    "nacionalidad": "Senegal",    
-    "Fecha de nacimiento": "10/04/1992",
-    "club actual": "Al Nassr",
-    "posicion": "Extremo Izquierdo, Extremo Derecho, Delantero Centro",
-    "clubes totales": "Metz, Red Bull Salzburgo, Southampton, Liverpool, Bayern Múnich, Al Nassr" 
-}
-
-firmino = {
-    "nombre": "Roberto Firmino Barbosa de Oliveira",
-    "nacionalidad": "Brasil",    
-    "Fecha de nacimiento": "02/10/1991",
-    "club actual": "Al-Sadd",
-    "posicion": "Delantero Centro, Mediocampista Ofensivo, Extremo Derecho, Extremo Izquierdo",
-    "clubes totales": "Figueirense, TSG Hoffenheim, Liverpool, Al-Ahli, Al-Sadd" 
-}
-
-kane = {
-    "nombre": "Harry Edward Kane",
-    "nacionalidad": "Inglaterra",    
-    "Fecha de nacimiento": "28/07/1993",
-    "club actual": "Bayern Múnich",
-    "posicion": "Delantero Centro",
-    "clubes totales": "Tottenham Hotspur, Leyton Orient, Millwall, Norwich City, Leicester City, Bayern Múnich" 
-}
-
-vitinha = {
-    "nombre": "Vítor Machado Ferreira",
-    "nacionalidad": "Portugal",    
-    "Fecha de nacimiento": "13/02/2000",
-    "club actual": "Paris Saint-Germain",
-    "posicion": "Mediocampista Central, Mediocampista Ofensivo, Mediocampista Defensivo",
-    "clubes totales": "Porto, Paris Saint-Germain" 
-}
-
-lamine_yamal = {
-    "nombre": "Lamine Yamal",
-    "nacionalidad": "España",    
-    "Fecha de nacimiento": "13/07/2007",
-    "club actual": "Barcelona",
-    "posicion": "Extremo Derecho, Extremo Izquierdo, Delantero Centro",
-    "clubes totales": "Barcelona" 
-}
-
-enzo_fernandez = {
-    "nombre": "Enzo Jeremías Fernández",
-    "nacionalidad": "Argentina",    
-    "Fecha de nacimiento": "17/01/2001",
-    "club actual": "Benfica",
-    "posicion": "Mediocampista Central, Mediocampista Defensivo, Mediocampista Ofensivo",
-    "clubes totales": "River Plate, Defensa y Justicia, Benfica" 
-}
-
-higuain = {
-    "nombre": "Gonzalo Gerardo Higuaín",
-    "nacionalidad": "Argentina",    
-    "Fecha de nacimiento": "10/12/1987",
-    "club actual": "RETIRADO",
-    "posicion": "Delantero Centro",
-    "clubes totales": "River Plate, Real Madrid, Napoli, Juventus, AC Milan, Chelsea, Inter Miami" 
-}
-
-kaka = {
-    "nombre": "Ricardo Izecson dos Santos Leite",
-    "nacionalidad": "Brasil",    
-    "Fecha de nacimiento": "22/04/1982",
-    "club actual": "RETIRADO",
-    "posicion": "Mediocampista Ofensivo, Extremo Derecho, Extremo Izquierdo",
-    "clubes totales": "São Paulo, AC Milan, Real Madrid, Orlando City" 
-}
-
-rivaldo = {
-    "nombre": "Vítor Borba Ferreira",
-    "nacionalidad": "Brasil",    
-    "Fecha de nacimiento": "19/04/1972",
-    "club actual": "RETIRADO",
-    "posicion": "Mediocampista Ofensivo, Delantero Centro, Extremo Derecho, Extremo Izquierdo",
-    "clubes totales": "Santa Cruz, Mogi Mirim, Corinthians, Palmeiras, Deportivo La Coruña, Barcelona, Milan, Cruzeiro, Olympiacos, AEK Atenas, Bunyodkor, Kabuscorp, São Caetano" 
-}
-
-platini = {
-    "nombre": "Michel François Platini",
-    "nacionalidad": "Francia",    
-    "Fecha de nacimiento": "21/06/1955",
-    "club actual": "RETIRADO",
-    "posicion": "Mediocampista Ofensivo, Mediocampista Central",
-    "clubes totales": "Nancy, Saint-Étienne, Juventus" 
-}
-
-beckenbauer = {
-    "nombre": "Franz Anton Beckenbauer",
-    "nacionalidad": "Alemania",    
-    "Fecha de nacimiento": "11/09/1945",
-    "club actual": "FALLECIDO",
-    "posicion": "Defensa Central, Mediocampista Defensivo, Lateral Derecho, Lateral Izquierdo",
-    "clubes totales": "Bayern Múnich, New York Cosmos, Hamburger SV" 
-}
-
-iker_casillas = {
-    "nombre": "Iker Casillas Fernández",
-    "nacionalidad": "España",    
-    "Fecha de nacimiento": "20/05/1981",
-    "club actual": "RETIRADO",
-    "posicion": "Portero",
-    "clubes totales": "Real Madrid, Porto" 
-}
-
-totti = {
-    "nombre": "Francesco Totti",
-    "nacionalidad": "Italia",    
-    "Fecha de nacimiento": "27/09/1976",
-    "club actual": "RETIRADO",
-    "posicion": "Mediocampista Ofensivo, Delantero Centro",
-    "clubes totales": "Roma" 
-}
-
-roberto_carlos = {
-    "nombre": "Roberto Carlos da Silva Rocha",
-    "nacionalidad": "Brasil",    
-    "Fecha de nacimiento": "10/04/1973",
-    "club actual": "RETIRADO",
-    "posicion": "Lateral Izquierdo, Lateral Derecho, Defensa Central",
-    "clubes totales": "União São João, Palmeiras, Inter de Milán, Real Madrid, Fenerbahçe, Anzhi Makhachkala, Delhi Dynamos" 
-}
-
-del_piero = {
-    "nombre": "Alessandro Del Piero",
-    "nacionalidad": "Italia",    
-    "Fecha de nacimiento": "09/11/1974",
-    "club actual": "RETIRADO",
-    "posicion": "Delantero Centro, Mediocampista Ofensivo",
-    "clubes totales": "Calcio Padova, Juventus, Sydney FC, Delhi Dynamos" 
-}
-
-kvaratskhelia = {
-    "nombre": "Khvicha Kvaratskhelia",
-    "nacionalidad": "Georgia",    
-    "Fecha de nacimiento": "12/02/2001",
-    "club actual": "Paris Saint-Germain",
-    "posicion": "Extremo Izquierdo, Extremo Derecho, Delantero Centro",
-    "clubes totales": "Dinamo Tiflis, Lokomotiv Moscú, Rubin Kazán, Napoli, Paris Saint-Germain" 
-}
-
-dembele = {
-    "nombre": "Ousmane Dembélé",
-    "nacionalidad": "Francia",    
-    "Fecha de nacimiento": "15/05/1997",
-    "club actual": "Paris Saint-Germain",
-    "posicion": "Extremo Derecho, Extremo Izquierdo, Delantero Centro",
-    "clubes totales": "Rennes, Borussia Dortmund, Barcelona, Paris Saint-Germain" 
-}
-
-raphinha = {
-    "nombre": "Raphael Dias Belloli",
-    "nacionalidad": "Brasil",    
-    "Fecha de nacimiento": "14/12/1996",
-    "club actual": "Barcelona",
-    "posicion": "Extremo Derecho, Extremo Izquierdo, Delantero Centro",
-    "clubes totales": "Vasco da Gama, Vitória, Sporting Braga, Rennes, Leeds United, Barcelona" 
-}
-
-lautaro_martinez = {
-    "nombre": "Lautaro Javier Martínez",
-    "nacionalidad": "Argentina",    
-    "Fecha de nacimiento": "22/08/1997",
-    "club actual": "Inter de Milán",
-    "posicion": "Delantero Centro, Extremo Derecho, Extremo Izquierdo",
-    "clubes totales": "Racing Club, Inter de Milán" 
-}
-
-mac_allister = {
-    "nombre": "Alexis Mac Allister",
-    "nacionalidad": "Argentina",    
-    "Fecha de nacimiento": "24/12/1998",
-    "club actual": "Liverpool",
-    "posicion": "Mediocampista Central, Mediocampista Ofensivo, Mediocampista Defensivo",
-    "clubes totales": "Argentinos Juniors, Boca Juniors, Brighton & Hove Albion, Liverpool" 
-}
-
-frenkie_de_jong = {
-    "nombre": "Frenkie de Jong",
-    "nacionalidad": "Países Bajos",    
-    "Fecha de nacimiento": "12/05/1997",
-    "club actual": "Barcelona",
-    "posicion": "Mediocampista Central, Mediocampista Ofensivo, Mediocampista Defensivo",
-    "clubes totales": "Willem II, Ajax, Barcelona" 
-}
-
-nigel_de_jong = {
-    "nombre": "Nigel de Jong",
-    "nacionalidad": "Países Bajos",    
-    "Fecha de nacimiento": "30/11/1984",
-    "club actual": "RETIRADO",
-    "posicion": "Mediocampista Defensivo, Mediocampista Central",
-    "clubes totales": "Ajax, Hamburger SV, Manchester City, Milan, LA Galaxy, Galatasaray, Mainz 05, Al Ahli" 
-}
-
-dalglish = {
-    "nombre": "Kenny Dalglish",
-    "nacionalidad": "Escocia",    
-    "Fecha de nacimiento": "04/03/1951",
-    "club actual": "RETIRADO",
-    "posicion": "Delantero Centro, Mediocampista Ofensivo",
-    "clubes totales": "Celtic, Liverpool, Blackburn Rovers, Newcastle United" 
-}
-
-robbie_fowler = {
-    "nombre": "Robert Bernard Fowler",
-    "nacionalidad": "Inglaterra",    
-    "Fecha de nacimiento": "09/04/1975",
-    "club actual": "RETIRADO",
-    "posicion": "Delantero Centro",
-    "clubes totales": "Liverpool, Leeds United, Manchester City, Cardiff City, Blackburn Rovers, North Queensland Fury, Perth Glory, Muangthong United" 
-}
-
-diogo_jota = {
-    "nombre": "Diogo José Teixeira da Silva",
-    "nacionalidad": "Portugal",    
-    "Fecha de nacimiento": "04/12/1996",
-    "club actual": "FALLECIDO",
-    "posicion": "Extremo Derecho, Extremo Izquierdo, Delantero Centro",
-    "clubes totales": "Paços de Ferreira, Atlético de Madrid, Porto, Wolverhampton Wanderers, Liverpool" 
-}
-
-palmer = {
-    "nombre": "Cole Palmer",
-    "nacionalidad": "Inglaterra",    
-    "Fecha de nacimiento": "06/03/2002",
-    "club actual": "Chelsea",
-    "posicion": "Mediocampista Central, Mediocampista Ofensivo, Mediocampista Defensivo",
-    "clubes totales": "Manchester City, Chelsea"
-}
-
-morata = {
-    "nombre": "Álvaro Borja Morata Martín",
-    "nacionalidad": "España",    
-    "Fecha de nacimiento": "23/10/1992",
-    "club actual": "Como 1907",
-    "posicion": "Delantero Centro, Extremo Derecho, Extremo Izquierdo",
-    "clubes totales": "Real Madrid, Juventus, Chelsea, Atlético de Madrid, AC Milan, Galatasaray, Como 1907" 
-}
-
-kounde = {
-    "nombre": "Jules Olivier Koundé",
-    "nacionalidad": "Francia",    
-    "Fecha de nacimiento": "12/11/1998",
-    "club actual": "Barcelona",
-    "posicion": "Defensa Central, Lateral Derecho, Lateral Izquierdo",
-    "clubes totales": "Bordeaux, Sevilla, Barcelona" 
-}
-
-kante = {
-    "nombre": "N'Golo Kanté",
-    "nacionalidad": "Francia",    
-    "Fecha de nacimiento": "29/03/1991",
-    "club actual": "Al-Ittihad",
-    "posicion": "Mediocampista Defensivo, Mediocampista Central",
-    "clubes totales": "Boulogne, Caen, Leicester City, Chelsea, Al-Ittihad" 
-}
-
-vardy = {
-    "nombre": "Jamie Richard Vardy",
-    "nacionalidad": "Inglaterra",    
-    "Fecha de nacimiento": "11/01/1987",
-    "club actual": "Cremonese",
-    "posicion": "Delantero Centro",
-    "clubes totales": "Stocksbridge Park Steels, Halifax Town, Fleetwood Town, Leicester City, Cremonese" 
-}
-
-son = {
-    "nombre": "Heung-min Son",
-    "nacionalidad": "Corea del Sur",    
-    "Fecha de nacimiento": "08/07/1992",
-    "club actual": "Los Angeles FC",
-    "posicion": "Extremo Izquierdo, Extremo Derecho, Delantero Centro",
-    "clubes totales": "Hamburgo, Bayer Leverkusen, Tottenham Hotspur, Los Angeles FC" 
-}
-
-giroud = {
-    "nombre": "Olivier Jonathan Giroud",
-    "nacionalidad": "Francia",    
-    "Fecha de nacimiento": "30/09/1986",
-    "club actual": "LOSC Lille",
-    "posicion": "Delantero Centro",
-    "clubes totales": "Grenoble, Tours, Montpellier, Arsenal, Chelsea, AC Milan, Los Angeles FC, LOSC Lille" 
-}
-
-leao = {
-    "nombre": "Rafael Alexandre da Conceição Leão",
-    "nacionalidad": "Portugal",    
-    "Fecha de nacimiento": "10/06/1999",
-    "club actual": "AC Milan",
-    "posicion": "Extremo Izquierdo, Extremo Derecho, Delantero Centro",
-    "clubes totales": "Sporting Braga, Sporting CP, Lille, AC Milan" 
-}
-
-coloccini = {
-    "nombre": "Cristian Daniel Coloccini",
-    "nacionalidad": "Argentina",    
-    "Fecha de nacimiento": "05/01/1982",
-    "club actual": "RETIRADO",
-    "posicion": "Defensa Central, Lateral Izquierdo, Lateral Derecho",
-    "clubes totales": "Boca Juniors, AC Milan, San Lorenzo, Alavés, Atlético de Madrid, Villarreal, Deportivo La Coruña, Newcastle United, Aldosivi" 
-}
-
-davids = {
-    "nombre": "Edgar Davids",
-    "nacionalidad": "Países Bajos",    
-    "Fecha de nacimiento": "13/03/1973",
-    "club actual": "RETIRADO",
-    "posicion": "Mediocampista Defensivo, Mediocampista Central, Mediocampista Ofensivo",
-    "clubes totales": "Ajax, AC Milan, Juventus, Barcelona, Inter de Milán, Tottenham Hotspur, Crystal Palace, Barnet" 
-}
-
-seedorf = {
-    "nombre": "Clarence Clyde Seedorf",
-    "nacionalidad": "Países Bajos",    
-    "Fecha de nacimiento": "01/04/1976",
-    "club actual": "RETIRADO",
-    "posicion": "Mediocampista Central, Mediocampista Ofensivo, Mediocampista Defensivo",
-    "clubes totales": "Ajax, Sampdoria, Real Madrid, Inter de Milán, AC Milan, Botafogo" 
-}
-
-batistuta = {
-    "nombre": "Gabriel Omar Batistuta",
-    "nacionalidad": "Argentina",    
-    "Fecha de nacimiento": "01/02/1969",
-    "club actual": "RETIRADO",
-    "posicion": "Delantero Centro",
-    "clubes totales": "Newells, River Plate, Boca Juniors, Fiorentina, Roma, Inter de Milán, Al-Arabi"
-}
-
-ayala = {
-    "nombre": "Roberto Fabián Ayala",
-    "nacionalidad": "Argentina",    
-    "Fecha de nacimiento": "14/04/1973",
-    "club actual": "RETIRADO",
-    "posicion": "Defensa Central, Lateral Derecho, Lateral Izquierdo",
-    "clubes totales": "Ferro, River Plate, Napoli, Milan, Valencia, Real Zaragoza, Villarreal, Racing Club" 
-}
-
-coutinho = {
-    "nombre": "Philippe Coutinho Correia",
-    "nacionalidad": "Brasil",    
-    "Fecha de nacimiento": "12/06/1992",
-    "club actual": "Vasco da Gama",
-    "posicion": "Mediocampista Ofensivo, Extremo Derecho, Extremo Izquierdo",
-    "clubes totales": "Vasco da Gama, Inter de Milán, Espanyol, Liverpool, Barcelona, Bayern Múnich, Aston Villa" 
-}
-
-aquilani = {
-    "nombre": "Alberto Aquilani",
-    "nacionalidad": "Italia",    
-    "Fecha de nacimiento": "07/07/1984",
-    "club actual": "RETIRADO",
-    "posicion": "Mediocampista Central, Mediocampista Ofensivo, Mediocampista Defensivo",
-    "clubes totales": "Roma, Triestina, Liverpool, Juventus, Milan, Fiorentina, Sporting Braga, Pescara, Las Palmas" 
-}
-
-cambiasso = {
-    "nombre": "Esteban Cambiasso",
-    "nacionalidad": "Argentina",    
-    "Fecha de nacimiento": "18/08/1980",
-    "club actual": "RETIRADO",
-    "posicion": "Mediocampista Defensivo, Mediocampista Central, Mediocampista Ofensivo",
-    "clubes totales": "Independiente, River Plate, Real Madrid, Leicester City, Inter de Milán, Olympiacos, FC Lugano"
-}
-
-khedira = {
-    "nombre": "Sami Khedira",
-    "nacionalidad": "Alemania",    
-    "Fecha de nacimiento": "04/04/1987",
-    "club actual": "RETIRADO",
-    "posicion": "Mediocampista Defensivo, Mediocampista Central, Mediocampista Ofensivo",
-    "clubes totales": "Stuttgart, Real Madrid, Juventus, Hertha BSC" 
-}
-
-cazorla = {
-    "nombre": "Santi Cazorla",
-    "nacionalidad": "España",    
-    "Fecha de nacimiento": "13/12/1984",
-    "club actual": "Real Oviedo",
-    "posicion": "Mediocampista Ofensivo, Mediocampista Central, Mediocampista Defensivo",
-    "clubes totales": "Villarreal, Recreativo de Huelva, Málaga, Arsenal, Al Sadd, Almería, Real Oviedo" 
-}
-
-sorin = {
-    "nombre": "Juan Pablo Sorín",
-    "nacionalidad": "Argentina",    
-    "Fecha de nacimiento": "05/05/1976",
-    "club actual": "RETIRADO",
-    "posicion": "Defensa Central, Lateral Izquierdo, Mediocampista Defensivo",
-    "clubes totales": "Argentinos Juniors, River Plate, Juventus, Lazio, Barcelona, Paris Saint-Germain, Hamburg, Cruzeiro, Villarreal, Hamburger SV" 
-}
-
-saviola = {
-    "nombre": "Javier Pedro Saviola Fernández",
-    "nacionalidad": "Argentina",    
-    "Fecha de nacimiento": "11/12/1981",
-    "club actual": "RETIRADO",
-    "posicion": "Delantero Centro, Extremo Derecho, Extremo Izquierdo",
-    "clubes totales": "River Plate, Barcelona, Mónaco, Sevilla, Real Madrid, Benfica, Málaga, Olympiacos, Verona, Torino" 
-}
-
-van_nistelrooy = {
-    "nombre": "Ruud van Nistelrooy",
-    "nacionalidad": "Países Bajos",    
-    "Fecha de nacimiento": "01/07/1976",
-    "club actual": "RETIRADO",
-    "posicion": "Delantero Centro",
-    "clubes totales": "Den Bosch, Heerenveen, PSV Eindhoven, Manchester United, Real Madrid, Hamburg, Málaga" 
-}
-
-robert_pires = {
-    "nombre": "Robert Emmanuel Pires",
-    "nacionalidad": "Francia",    
-    "Fecha de nacimiento": "29/10/1973",
-    "club actual": "RETIRADO",
-    "posicion": "Mediocampista Ofensivo, Extremo Derecho, Extremo Izquierdo",
-    "clubes totales": "Metz, Olympique de Marseille, Arsenal, Villarreal, Aston Villa, FC Goa" 
-}
-
-sterling = {
-    "nombre": "Raheem Shaquille Sterling",
-    "nacionalidad": "Inglaterra",    
-    "Fecha de nacimiento": "08/12/1994",
-    "club actual": "Chelsea",
-    "posicion": "Extremo Derecho, Extremo Izquierdo, Delantero Centro",
-    "clubes totales": "Liverpool, Manchester City, Chelsea, Arsenal" 
-}
-
-rashford = {
-    "nombre": "Marcus Rashford",
-    "nacionalidad": "Inglaterra",    
-    "Fecha de nacimiento": "31/10/1997",
-    "club actual": "FC Barcelona",
-    "posicion": "Delantero Centro, Extremo Derecho, Extremo Izquierdo",
-    "clubes totales": "Manchester United, Aston Villa, FC Barcelona" 
-}
-
-coman = {
-    "nombre": "Kingsley Junior Coman",
-    "nacionalidad": "Francia",    
-    "Fecha de nacimiento": "13/06/1996",
-    "club actual": "Bayern Múnich",
-    "posicion": "Extremo Izquierdo, Extremo Derecho, Mediocampista Ofensivo",
-    "clubes totales": "Paris Saint-Germain, Juventus, Bayern Múnich" 
-}
-
-alexander_arnold = {
-    "nombre": "Trent Alexander-Arnold",
-    "nacionalidad": "Inglaterra",    
-    "Fecha de nacimiento": "07/10/1998",
-    "club actual": "Real Madrid",
-    "posicion": "Lateral Derecho, Mediocampista Defensivo, Mediocampista Central",
-    "clubes totales": "Liverpool, Real Madrid" 
-}
-
-wijnaldum = {
-    "nombre": "Georginio Gregion Emile Wijnaldum",
-    "nacionalidad": "Países Bajos",    
-    "Fecha de nacimiento": "11/11/1990",
-    "club actual": "Al-Ettifaq",
-    "posicion": "Mediocampista Central, Mediocampista Ofensivo, Mediocampista Defensivo",
-    "clubes totales": "Feyenoord, PSV Eindhoven, Newcastle United, Liverpool, Paris Saint-Germain, Al-Ettifaq" 
-}
-
-andrew_robertson = {
-    "nombre": "Andrew Henry Robertson",
-    "nacionalidad": "Escocia",    
-    "Fecha de nacimiento": "11/03/1994",
-    "club actual": "Liverpool",
-    "posicion": "Lateral Izquierdo, Lateral Derecho, Mediocampista Defensivo",
-    "clubes totales": "Queen's Park, Dundee United, Hull City, Liverpool" 
-}
-
-sneijder = {
-    "nombre": "Wesley Sneijder",
-    "nacionalidad": "Países Bajos",    
-    "Fecha de nacimiento": "09/06/1984",
-    "club actual": "RETIRADO",
-    "posicion": "Mediocampista Ofensivo, Mediocampista Central, Mediocampista Defensivo",
-    "clubes totales": "Ajax, Real Madrid, Inter de Milán, Galatasaray, OGC Nice, Al-Gharafa" 
-}
+{
+  "jugadores": [
+    {
+      "id": 1,
+      "nombre": "Lamine Yamal",
+      "nombre_completo": "Lamine Yamal Nasraoui",
+      "nacionalidad": "España",
+      "fecha_nacimiento": "13/07/2007",
+      "edad": 18,
+      "club_actual": "FC Barcelona",
+      "posicion": "Extremo Derecho",
+      "posiciones": ["Extremo Derecho", "Extremo Izquierdo"],
+      "valor_mercado": "200M€",
+      "clubes_totales": ["FC Barcelona"],
+      "estado": "Activo"
+    },
+    {
+      "id": 2,
+      "nombre": "Kylian Mbappé",
+      "nombre_completo": "Kylian Mbappé Lottin",
+      "nacionalidad": "Francia",
+      "fecha_nacimiento": "20/12/1998",
+      "edad": 26,
+      "club_actual": "Real Madrid",
+      "posicion": "Delantero Centro",
+      "posiciones": ["Delantero Centro", "Extremo Izquierdo"],
+      "valor_mercado": "180M€",
+      "clubes_totales": ["AS Monaco", "Paris Saint-Germain", "Real Madrid"],
+      "estado": "Activo"
+    },
+    {
+      "id": 3,
+      "nombre": "Vinícius Jr.",
+      "nombre_completo": "Vinícius José Paixão de Oliveira Júnior",
+      "nacionalidad": "Brasil",
+      "fecha_nacimiento": "12/07/2000",
+      "edad": 25,
+      "club_actual": "Real Madrid",
+      "posicion": "Extremo Izquierdo",
+      "posiciones": ["Extremo Izquierdo", "Extremo Derecho"],
+      "valor_mercado": "180M€",
+      "clubes_totales": ["Flamengo", "Real Madrid"],
+      "estado": "Activo"
+    },
+    {
+      "id": 4,
+      "nombre": "Jude Bellingham",
+      "nombre_completo": "Jude Victor William Bellingham",
+      "nacionalidad": "Inglaterra",
+      "fecha_nacimiento": "29/06/2003",
+      "edad": 22,
+      "club_actual": "Real Madrid",
+      "posicion": "Mediocampista Central",
+      "posiciones": ["Mediocampista Central", "Mediocampista Ofensivo"],
+      "valor_mercado": "180M€",
+      "clubes_totales": ["Birmingham City", "Borussia Dortmund", "Real Madrid"],
+      "estado": "Activo"
+    },
+    {
+      "id": 5,
+      "nombre": "Erling Haaland",
+      "nombre_completo": "Erling Braut Haaland",
+      "nacionalidad": "Noruega",
+      "fecha_nacimiento": "21/07/2000",
+      "edad": 25,
+      "club_actual": "Manchester City",
+      "posicion": "Delantero Centro",
+      "posiciones": ["Delantero Centro"],
+      "valor_mercado": "170M€",
+      "clubes_totales": ["Bryne FK", "Molde FK", "Red Bull Salzburg", "Borussia Dortmund", "Manchester City"],
+      "estado": "Activo"
+    },
+    {
+      "id": 6,
+      "nombre": "Rodri",
+      "nombre_completo": "Rodrigo Hernández Cascante",
+      "nacionalidad": "España",
+      "fecha_nacimiento": "22/06/1996",
+      "edad": 29,
+      "club_actual": "Manchester City",
+      "posicion": "Mediocampista Defensivo",
+      "posiciones": ["Mediocampista Defensivo", "Mediocampista Central"],
+      "valor_mercado": "140M€",
+      "clubes_totales": ["Villarreal", "Atlético de Madrid", "Manchester City"],
+      "estado": "Lesionado"
+    },
+    {
+      "id": 7,
+      "nombre": "Florian Wirtz",
+      "nombre_completo": "Florian Richard Wirtz",
+      "nacionalidad": "Alemania",
+      "fecha_nacimiento": "03/05/2003",
+      "edad": 22,
+      "club_actual": "Bayer Leverkusen",
+      "posicion": "Mediocampista Ofensivo",
+      "posiciones": ["Mediocampista Ofensivo", "Mediocampista Central"],
+      "valor_mercado": "130M€",
+      "clubes_totales": ["1. FC Köln", "Bayer Leverkusen"],
+      "estado": "Activo"
+    },
+    {
+      "id": 8,
+      "nombre": "Bukayo Saka",
+      "nombre_completo": "Bukayo Ayoyinka T. M. Saka",
+      "nacionalidad": "Inglaterra",
+      "fecha_nacimiento": "05/09/2001",
+      "edad": 24,
+      "club_actual": "Arsenal",
+      "posicion": "Extremo Derecho",
+      "posiciones": ["Extremo Derecho", "Extremo Izquierdo"],
+      "valor_mercado": "130M€",
+      "clubes_totales": ["Arsenal"],
+      "estado": "Activo"
+    },
+    {
+      "id": 9,
+      "nombre": "Federico Valverde",
+      "nombre_completo": "Federico Santiago Valverde Dipetta",
+      "nacionalidad": "Uruguay",
+      "fecha_nacimiento": "22/07/1998",
+      "edad": 27,
+      "club_actual": "Real Madrid",
+      "posicion": "Mediocampista Central",
+      "posiciones": ["Mediocampista Central", "Mediocampista Ofensivo"],
+      "valor_mercado": "120M€",
+      "clubes_totales": ["CA Peñarol", "Deportivo La Coruña", "Real Madrid"],
+      "estado": "Activo"
+    },
+    {
+      "id": 10,
+      "nombre": "Phil Foden",
+      "nombre_completo": "Philip Walter Foden",
+      "nacionalidad": "Inglaterra",
+      "fecha_nacimiento": "28/05/2000",
+      "edad": 25,
+      "club_actual": "Manchester City",
+      "posicion": "Mediocampista Ofensivo",
+      "posiciones": ["Mediocampista Ofensivo", "Extremo Derecho", "Extremo Izquierdo"],
+      "valor_mercado": "120M€",
+      "clubes_totales": ["Manchester City"],
+      "estado": "Activo"
+    },
+    {
+      "id": 11,
+      "nombre": "Martin Ødegaard",
+      "nombre_completo": "Martin Ødegaard",
+      "nacionalidad": "Noruega",
+      "fecha_nacimiento": "17/12/1998",
+      "edad": 26,
+      "club_actual": "Arsenal",
+      "posicion": "Mediocampista Ofensivo",
+      "posiciones": ["Mediocampista Ofensivo", "Mediocampista Central"],
+      "valor_mercado": "110M€",
+      "clubes_totales": ["Strømsgodset", "Real Madrid", "SC Heerenveen", "Vitesse", "Real Sociedad", "Arsenal"],
+      "estado": "Activo"
+    },
+    {
+      "id": 12,
+      "nombre": "Jamal Musiala",
+      "nombre_completo": "Jamal Musiala",
+      "nacionalidad": "Alemania",
+      "fecha_nacimiento": "26/02/2003",
+      "edad": 22,
+      "club_actual": "Bayern München",
+      "posicion": "Mediocampista Ofensivo",
+      "posiciones": ["Mediocampista Ofensivo", "Extremo Izquierdo"],
+      "valor_mercado": "110M€",
+      "clubes_totales": ["Chelsea", "Bayern München"],
+      "estado": "Activo"
+    },
+    {
+      "id": 13,
+      "nombre": "Pedri",
+      "nombre_completo": "Pedro González López",
+      "nacionalidad": "España",
+      "fecha_nacimiento": "25/11/2002",
+      "edad": 22,
+      "club_actual": "FC Barcelona",
+      "posicion": "Mediocampista Central",
+      "posiciones": ["Mediocampista Central", "Mediocampista Ofensivo"],
+      "valor_mercado": "100M€",
+      "clubes_totales": ["Las Palmas", "FC Barcelona"],
+      "estado": "Activo"
+    },
+    {
+      "id": 14,
+      "nombre": "Aurélien Tchouaméni",
+      "nombre_completo": "Aurélien Djani Tchouaméni",
+      "nacionalidad": "Francia",
+      "fecha_nacimiento": "27/01/2000",
+      "edad": 25,
+      "club_actual": "Real Madrid",
+      "posicion": "Mediocampista Defensivo",
+      "posiciones": ["Mediocampista Defensivo", "Mediocampista Central"],
+      "valor_mercado": "100M€",
+      "clubes_totales": ["Bordeaux", "AS Monaco", "Real Madrid"],
+      "estado": "Activo"
+    },
+    {
+      "id": 15,
+      "nombre": "Harry Kane",
+      "nombre_completo": "Harry Edward Kane",
+      "nacionalidad": "Inglaterra",
+      "fecha_nacimiento": "28/07/1993",
+      "edad": 31,
+      "club_actual": "Bayern München",
+      "posicion": "Delantero Centro",
+      "posiciones": ["Delantero Centro"],
+      "valor_mercado": "100M€",
+      "clubes_totales": ["Tottenham Hotspur", "Bayern München"],
+      "estado": "Activo"
+    },
+    {
+      "id": 16,
+      "nombre": "Gavi",
+      "nombre_completo": "Pablo Martín Páez Gavira",
+      "nacionalidad": "España",
+      "fecha_nacimiento": "05/08/2004",
+      "edad": 21,
+      "club_actual": "FC Barcelona",
+      "posicion": "Mediocampista Central",
+      "posiciones": ["Mediocampista Central", "Mediocampista Defensivo"],
+      "valor_mercado": "90M€",
+      "clubes_totales": ["FC Barcelona"],
+      "estado": "Lesionado"
+    },
+    {
+      "id": 17,
+      "nombre": "Declan Rice",
+      "nombre_completo": "Declan Rice",
+      "nacionalidad": "Inglaterra",
+      "fecha_nacimiento": "14/01/1999",
+      "edad": 26,
+      "club_actual": "Arsenal",
+      "posicion": "Mediocampista Defensivo",
+      "posiciones": ["Mediocampista Defensivo", "Mediocampista Central"],
+      "valor_mercado": "90M€",
+      "clubes_totales": ["West Ham United", "Arsenal"],
+      "estado": "Activo"
+    },
+    {
+      "id": 18,
+      "nombre": "Rafael Leão",
+      "nombre_completo": "Rafael Alexandre da Conceição Leão",
+      "nacionalidad": "Portugal",
+      "fecha_nacimiento": "10/06/1999",
+      "edad": 26,
+      "club_actual": "AC Milan",
+      "posicion": "Extremo Izquierdo",
+      "posiciones": ["Extremo Izquierdo", "Delantero Centro"],
+      "valor_mercado": "90M€",
+      "clubes_totales": ["Sporting CP", "Lille", "AC Milan"],
+      "estado": "Activo"
+    },
+    {
+      "id": 19,
+      "nombre": "Khvicha Kvaratskhelia",
+      "nombre_completo": "Khvicha Kvaratskhelia",
+      "nacionalidad": "Georgia",
+      "fecha_nacimiento": "12/02/2001",
+      "edad": 24,
+      "club_actual": "Paris Saint-Germain",
+      "posicion": "Extremo Izquierdo",
+      "posiciones": ["Extremo Izquierdo", "Extremo Derecho"],
+      "valor_mercado": "85M€",
+      "clubes_totales": ["Dinamo Tiflis", "Lokomotiv Moscú", "Rubin Kazán", "Napoli", "Paris Saint-Germain"],
+      "estado": "Activo"
+    },
+    {
+      "id": 20,
+      "nombre": "Victor Osimhen",
+      "nombre_completo": "Victor James Osimhen",
+      "nacionalidad": "Nigeria",
+      "fecha_nacimiento": "29/12/1998",
+      "edad": 26,
+      "club_actual": "Galatasaray",
+      "posicion": "Delantero Centro",
+      "posiciones": ["Delantero Centro"],
+      "valor_mercado": "75M€",
+      "clubes_totales": ["VfL Wolfsburg", "Charleroi", "Lille", "Napoli", "Galatasaray"],
+      "estado": "Activo"
+    },
+    {
+      "id": 21,
+      "nombre": "William Saliba",
+      "nombre_completo": "William Alain André Gabriel Saliba",
+      "nacionalidad": "Francia",
+      "fecha_nacimiento": "24/03/2001",
+      "edad": 24,
+      "club_actual": "Arsenal",
+      "posicion": "Defensa Central",
+      "posiciones": ["Defensa Central"],
+      "valor_mercado": "80M€",
+      "clubes_totales": ["Saint-Étienne", "Arsenal", "OGC Nice", "Olympique Marseille"],
+      "estado": "Activo"
+    },
+    {
+      "id": 22,
+      "nombre": "Bruno Guimarães",
+      "nombre_completo": "Bruno Guimarães Rodriguez Moura",
+      "nacionalidad": "Brasil",
+      "fecha_nacimiento": "16/11/1997",
+      "edad": 27,
+      "club_actual": "Newcastle United",
+      "posicion": "Mediocampista Central",
+      "posiciones": ["Mediocampista Central", "Mediocampista Defensivo"],
+      "valor_mercado": "85M€",
+      "clubes_totales": ["Athletico Paranaense", "Olympique Lyon", "Newcastle United"],
+      "estado": "Activo"
+    },
+    {
+      "id": 23,
+      "nombre": "João Neves",
+      "nombre_completo": "João Pedro Gonçalves Neves",
+      "nacionalidad": "Portugal",
+      "fecha_nacimiento": "27/09/2004",
+      "edad": 20,
+      "club_actual": "Paris Saint-Germain",
+      "posicion": "Mediocampista Central",
+      "posiciones": ["Mediocampista Central", "Mediocampista Defensivo"],
+      "valor_mercado": "70M€",
+      "clubes_totales": ["SL Benfica", "Paris Saint-Germain"],
+      "estado": "Activo"
+    },
+    {
+      "id": 24,
+      "nombre": "Cole Palmer",
+      "nombre_completo": "Cole Jermaine Palmer",
+      "nacionalidad": "Inglaterra",
+      "fecha_nacimiento": "06/05/2002",
+      "edad": 23,
+      "club_actual": "Chelsea",
+      "posicion": "Mediocampista Ofensivo",
+      "posiciones": ["Mediocampista Ofensivo", "Extremo Derecho"],
+      "valor_mercado": "90M€",
+      "clubes_totales": ["Manchester City", "Chelsea"],
+      "estado": "Activo"
+    },
+    {
+      "id": 25,
+      "nombre": "Alejandro Garnacho",
+      "nombre_completo": "Alejandro Garnacho Ferreyra",
+      "nacionalidad": "Argentina",
+      "fecha_nacimiento": "01/07/2004",
+      "edad": 21,
+      "club_actual": "Manchester United",
+      "posicion": "Extremo Izquierdo",
+      "posiciones": ["Extremo Izquierdo", "Extremo Derecho"],
+      "valor_mercado": "70M€",
+      "clubes_totales": ["Manchester United"],
+      "estado": "Activo"
+    },
+    {
+      "id": 26,
+      "nombre": "Enzo Fernández",
+      "nombre_completo": "Enzo Jeremías Fernández",
+      "nacionalidad": "Argentina",
+      "fecha_nacimiento": "17/01/2001",
+      "edad": 24,
+      "club_actual": "Chelsea",
+      "posicion": "Mediocampista Central",
+      "posiciones": ["Mediocampista Central", "Mediocampista Ofensivo"],
+      "valor_mercado": "75M€",
+      "clubes_totales": ["River Plate", "SL Benfica", "Chelsea"],
+      "estado": "Activo"
+    },
+    {
+      "id": 27,
+      "nombre": "Xavi Simons",
+      "nombre_completo": "Xavi Quentin Shay Simons",
+      "nacionalidad": "Países Bajos",
+      "fecha_nacimiento": "21/04/2003",
+      "edad": 22,
+      "club_actual": "RB Leipzig",
+      "posicion": "Mediocampista Ofensivo",
+      "posiciones": ["Mediocampista Ofensivo", "Extremo Derecho"],
+      "valor_mercado": "80M€",
+      "clubes_totales": ["FC Barcelona", "Paris Saint-Germain", "PSV Eindhoven", "RB Leipzig"],
+      "estado": "Activo"
+    },
+    {
+      "id": 28,
+      "nombre": "Ryan Gravenberch",
+      "nombre_completo": "Ryan Jiro Gravenberch",
+      "nacionalidad": "Países Bajos",
+      "fecha_nacimiento": "16/05/2002",
+      "edad": 23,
+      "club_actual": "Liverpool",
+      "posicion": "Mediocampista Central",
+      "posiciones": ["Mediocampista Central", "Mediocampista Defensivo"],
+      "valor_mercado": "70M€",
+      "clubes_totales": ["Ajax", "Bayern München", "Liverpool"],
+      "estado": "Activo"
+    },
+    {
+      "id": 29,
+      "nombre": "Goncalo Inacio",
+      "nombre_completo": "Gonçalo Bernardo Inácio",
+      "nacionalidad": "Portugal",
+      "fecha_nacimiento": "25/08/2001",
+      "edad": 24,
+      "club_actual": "Sporting CP",
+      "posicion": "Defensa Central",
+      "posiciones": ["Defensa Central", "Lateral Izquierdo"],
+      "valor_mercado": "60M€",
+      "clubes_totales": ["Sporting CP"],
+      "estado": "Activo"
+    },
+    {
+      "id": 30,
+      "nombre": "Alessandro Bastoni",
+      "nombre_completo": "Alessandro Bastoni",
+      "nacionalidad": "Italia",
+      "fecha_nacimiento": "13/04/1999",
+      "edad": 26,
+      "club_actual": "Inter Milan",
+      "posicion": "Defensa Central",
+      "posiciones": ["Defensa Central", "Lateral Izquierdo"],
+      "valor_mercado": "70M€",
+      "clubes_totales": ["Atalanta", "Parma", "Inter Milan"],
+      "estado": "Activo"
+    },
+    {
+      "id": 31,
+      "nombre": "Alphonso Davies",
+      "nombre_completo": "Alphonso Boyle Davies",
+      "nacionalidad": "Canadá",
+      "fecha_nacimiento": "02/11/2000",
+      "edad": 24,
+      "club_actual": "Bayern München",
+      "posicion": "Lateral Izquierdo",
+      "posiciones": ["Lateral Izquierdo", "Extremo Izquierdo"],
+      "valor_mercado": "50M€",
+      "clubes_totales": ["Vancouver Whitecaps", "Bayern München"],
+      "estado": "Activo"
+    },
+    {
+      "id": 32,
+      "nombre": "Achraf Hakimi",
+      "nombre_completo": "Achraf Hakimi Mouh",
+      "nacionalidad": "Marruecos",
+      "fecha_nacimiento": "04/11/1998",
+      "edad": 26,
+      "club_actual": "Paris Saint-Germain",
+      "posicion": "Lateral Derecho",
+      "posiciones": ["Lateral Derecho", "Extremo Derecho"],
+      "valor_mercado": "65M€",
+      "clubes_totales": ["Real Madrid", "Borussia Dortmund", "Inter Milan", "Paris Saint-Germain"],
+      "estado": "Activo"
+    },
+    {
+      "id": 33,
+      "nombre": "Theo Hernández",
+      "nombre_completo": "Théo Bernard François Hernández",
+      "nacionalidad": "Francia",
+      "fecha_nacimiento": "06/10/1997",
+      "edad": 27,
+      "club_actual": "AC Milan",
+      "posicion": "Lateral Izquierdo",
+      "posiciones": ["Lateral Izquierdo"],
+      "valor_mercado": "60M€",
+      "clubes_totales": ["Atlético de Madrid", "Alavés", "Real Sociedad", "Real Madrid", "AC Milan"],
+      "estado": "Activo"
+    },
+    {
+      "id": 34,
+      "nombre": "Reece James",
+      "nombre_completo": "Reece Lewis James",
+      "nacionalidad": "Inglaterra",
+      "fecha_nacimiento": "08/12/1999",
+      "edad": 25,
+      "club_actual": "Chelsea",
+      "posicion": "Lateral Derecho",
+      "posiciones": ["Lateral Derecho", "Mediocampista Defensivo"],
+      "valor_mercado": "70M€",
+      "clubes_totales": ["Wigan Athletic", "Chelsea"],
+      "estado": "Lesionado"
+    },
+    {
+      "id": 35,
+      "nombre": "Trent Alexander-Arnold",
+      "nombre_completo": "Trent John Alexander-Arnold",
+      "nacionalidad": "Inglaterra",
+      "fecha_nacimiento": "07/10/1998",
+      "edad": 26,
+      "club_actual": "Liverpool",
+      "posicion": "Lateral Derecho",
+      "posiciones": ["Lateral Derecho", "Mediocampista Central"],
+      "valor_mercado": "70M€",
+      "clubes_totales": ["Liverpool"],
+      "estado": "Activo"
+    },
+    {
+      "id": 36,
+      "nombre": "Rúben Dias",
+      "nombre_completo": "Rúben Santos Gato Alves Dias",
+      "nacionalidad": "Portugal",
+      "fecha_nacimiento": "14/05/1997",
+      "edad": 28,
+      "club_actual": "Manchester City",
+      "posicion": "Defensa Central",
+      "posiciones": ["Defensa Central"],
+      "valor_mercado": "80M€",
+      "clubes_totales": ["SL Benfica", "Manchester City"],
+      "estado": "Activo"
+    },
+    {
+      "id": 37,
+      "nombre": "António Silva",
+      "nombre_completo": "António João Pereira Albuquerque Tavares Silva",
+      "nacionalidad": "Portugal",
+      "fecha_nacimiento": "31/10/2003",
+      "edad": 21,
+      "club_actual": "SL Benfica",
+      "posicion": "Defensa Central",
+      "posiciones": ["Defensa Central"],
+      "valor_mercado": "50M€",
+      "clubes_totales": ["SL Benfica"],
+      "estado": "Activo"
+    },
+    {
+      "id": 38,
+      "nombre": "Josko Gvardiol",
+      "nombre_completo": "Joško Gvardiol",
+      "nacionalidad": "Croacia",
+      "fecha_nacimiento": "23/01/2002",
+      "edad": 23,
+      "club_actual": "Manchester City",
+      "posicion": "Defensa Central",
+      "posiciones": ["Defensa Central", "Lateral Izquierdo"],
+      "valor_mercado": "75M€",
+      "clubes_totales": ["Dinamo Zagreb", "RB Leipzig", "Manchester City"],
+      "estado": "Activo"
+    },
+    {
+      "id": 39,
+      "nombre": "Mike Maignan",
+      "nombre_completo": "Mike Morgan Maignan",
+      "nacionalidad": "Francia",
+      "fecha_nacimiento": "03/07/1995",
+      "edad": 30,
+      "club_actual": "AC Milan",
+      "posicion": "Portero",
+      "posiciones": ["Portero"],
+      "valor_mercado": "55M€",
+      "clubes_totales": ["Lille", "AC Milan"],
+      "estado": "Activo"
+    },
+    {
+      "id": 40,
+      "nombre": "Alisson Becker",
+      "nombre_completo": "Alisson Ramses Becker",
+      "nacionalidad": "Brasil",
+      "fecha_nacimiento": "02/10/1992",
+      "edad": 32,
+      "club_actual": "Liverpool",
+      "posicion": "Portero",
+      "posiciones": ["Portero"],
+      "valor_mercado": "40M€",
+      "clubes_totales": ["Internacional", "AS Roma", "Liverpool"],
+      "estado": "Activo"
+    },
+    {
+      "id": 41,
+      "nombre": "Ederson",
+      "nombre_completo": "Ederson Santana de Moraes",
+      "nacionalidad": "Brasil",
+      "fecha_nacimiento": "17/08/1993",
+      "edad": 31,
+      "club_actual": "Manchester City",
+      "posicion": "Portero",
+      "posiciones": ["Portero"],
+      "valor_mercado": "40M€",
+      "clubes_totales": ["São Paulo", "Rio Ave", "Benfica", "Manchester City"],
+      "estado": "Activo"
+    },
+    {
+      "id": 42,
+      "nombre": "Thibaut Courtois",
+      "nombre_completo": "Thibaut Nicolas Marc Courtois",
+      "nacionalidad": "Bélgica",
+      "fecha_nacimiento": "11/05/1992",
+      "edad": 32,
+      "club_actual": "Real Madrid",
+      "posicion": "Portero",
+      "posiciones": ["Portero"],
+      "valor_mercado": "35M€",
+      "clubes_totales": ["Genk", "Chelsea", "Atlético de Madrid", "Real Madrid"],
+      "estado": "Activo"
+    },
+    {
+      "id": 43,
+      "nombre": "Gianluigi Donnarumma",
+      "nombre_completo": "Gianluigi Donnarumma",
+      "nacionalidad": "Italia",
+      "fecha_nacimiento": "25/02/1999",
+      "edad": 26,
+      "club_actual": "Paris Saint-Germain",
+      "posicion": "Portero",
+      "posiciones": ["Portero"],
+      "valor_mercado": "45M€",
+      "clubes_totales": ["AC Milan", "Paris Saint-Germain"],
+      "estado": "Activo"
+    },
+    {
+      "id": 44,
+      "nombre": "Joshua Kimmich",
+      "nombre_completo": "Joshua Walter Kimmich",
+      "nacionalidad": "Alemania",
+      "fecha_nacimiento": "08/02/1995",
+      "edad": 30,
+      "club_actual": "Bayern München",
+      "posicion": "Mediocampista Defensivo",
+      "posiciones": ["Mediocampista Defensivo", "Lateral Derecho"],
+      "valor_mercado": "50M€",
+      "clubes_totales": ["RB Leipzig", "Bayern München"],
+      "estado": "Activo"
+    },
+    {
+      "id": 45,
+      "nombre": "Kevin De Bruyne",
+      "nombre_completo": "Kevin De Bruyne",
+      "nacionalidad": "Bélgica",
+      "fecha_nacimiento": "28/06/1991",
+      "edad": 34,
+      "club_actual": "Manchester City",
+      "posicion": "Mediocampista Central",
+      "posiciones": ["Mediocampista Central", "Mediocampista Ofensivo"],
+      "valor_mercado": "45M€",
+      "clubes_totales": ["Genk", "Chelsea", "Werder Bremen", "VfL Wolfsburg", "Manchester City"],
+      "estado": "Activo"
+    },
+    {
+      "id": 46,
+      "nombre": "Mohamed Salah",
+      "nombre_completo": "Mohamed Salah Hamed Mahrous Ghaly",
+      "nacionalidad": "Egipto",
+      "fecha_nacimiento": "15/06/1992",
+      "edad": 33,
+      "club_actual": "Liverpool",
+      "posicion": "Extremo Derecho",
+      "posiciones": ["Extremo Derecho", "Delantero Centro"],
+      "valor_mercado": "55M€",
+      "clubes_totales": ["El Mokawloon", "Basel", "Chelsea", "Fiorentina", "AS Roma", "Liverpool"],
+      "estado": "Activo"
+    },
+    {
+      "id": 47,
+      "nombre": "Virgil van Dijk",
+      "nombre_completo": "Virgil van Dijk",
+      "nacionalidad": "Países Bajos",
+      "fecha_nacimiento": "08/07/1991",
+      "edad": 34,
+      "club_actual": "Liverpool",
+      "posicion": "Defensa Central",
+      "posiciones": ["Defensa Central"],
+      "valor_mercado": "25M€",
+      "clubes_totales": ["Groningen", "Celtic", "Southampton", "Liverpool"],
+      "estado": "Activo"
+    },
+    {
+      "id": 48,
+      "nombre": "Luka Modrić",
+      "nombre_completo": "Luka Modrić",
+      "nacionalidad": "Croacia",
+      "fecha_nacimiento": "09/09/1985",
+      "edad": 39,
+      "club_actual": "Real Madrid",
+      "posicion": "Mediocampista Central",
+      "posiciones": ["Mediocampista Central", "Mediocampista Defensivo"],
+      "valor_mercado": "10M€",
+      "clubes_totales": ["Dinamo Zagreb", "Tottenham Hotspur", "Real Madrid"],
+      "estado": "Activo"
+    },
+    {
+      "id": 49,
+      "nombre": "Robert Lewandowski",
+      "nombre_completo": "Robert Lewandowski",
+      "nacionalidad": "Polonia",
+      "fecha_nacimiento": "21/08/1988",
+      "edad": 36,
+      "club_actual": "FC Barcelona",
+      "posicion": "Delantero Centro",
+      "posiciones": ["Delantero Centro"],
+      "valor_mercado": "15M€",
+      "clubes_totales": ["Znicz Pruszków", "Lech Poznań", "Borussia Dortmund", "Bayern München", "FC Barcelona"],
+      "estado": "Activo"
+    },
+    {
+      "id": 50,
+      "nombre": "Lionel Messi",
+      "nombre_completo": "Lionel Andrés Messi Cuccittini",
+      "nacionalidad": "Argentina",
+      "fecha_nacimiento": "24/06/1987",
+      "edad": 38,
+      "club_actual": "Inter Miami",
+      "posicion": "Extremo Derecho",
+      "posiciones": ["Extremo Derecho", "Mediocampista Ofensivo", "Delantero Centro"],
+      "valor_mercado": "25M€",
+      "clubes_totales": ["FC Barcelona", "Paris Saint-Germain", "Inter Miami"],
+      "estado": "Activo"
+    },
+    {
+      "id": 51,
+      "nombre": "Cristiano Ronaldo",
+      "nombre_completo": "Cristiano Ronaldo dos Santos Aveiro",
+      "nacionalidad": "Portugal",
+      "fecha_nacimiento": "05/02/1985",
+      "edad": 40,
+      "club_actual": "Al Nassr",
+      "posicion": "Delantero Centro",
+      "posiciones": ["Delantero Centro", "Extremo Izquierdo"],
+      "valor_mercado": "15M€",
+      "clubes_totales": ["Sporting CP", "Manchester United", "Real Madrid", "Juventus", "Al Nassr"],
+      "estado": "Activo"
+    },
+    {
+      "id": 52,
+      "nombre": "Neymar Jr.",
+      "nombre_completo": "Neymar da Silva Santos Júnior",
+      "nacionalidad": "Brasil",
+      "fecha_nacimiento": "05/02/1992",
+      "edad": 33,
+      "club_actual": "Al-Hilal",
+      "posicion": "Extremo Izquierdo",
+      "posiciones": ["Extremo Izquierdo", "Mediocampista Ofensivo"],
+      "valor_mercado": "40M€",
+      "clubes_totales": ["Santos", "FC Barcelona", "Paris Saint-Germain", "Al-Hilal"],
+      "estado": "Lesionado"
+    },
+    {
+      "id": 53,
+      "nombre": "Dayot Upamecano",
+      "nombre_completo": "Dayot Upamecano",
+      "nacionalidad": "Francia",
+      "fecha_nacimiento": "27/10/1998",
+      "edad": 26,
+      "club_actual": "Bayern München",
+      "posicion": "Defensa Central",
+      "posiciones": ["Defensa Central"],
+      "valor_mercado": "60M€",
+      "clubes_totales": ["Valenciennes", "Red Bull Salzburg", "RB Leipzig", "Bayern München"],
+      "estado": "Activo"
+    },
+    {
+      "id": 54,
+      "nombre": "Niclas Füllkrug",
+      "nombre_completo": "Niclas Füllkrug",
+      "nacionalidad": "Alemania",
+      "fecha_nacimiento": "09/02/1993",
+      "edad": 32,
+      "club_actual": "West Ham United",
+      "posicion": "Delantero Centro",
+      "posiciones": ["Delantero Centro"],
+      "valor_mercado": "12M€",
+      "clubes_totales": ["Werder Bremen", "1. FC Nürnberg", "Hannover 96", "Borussia Dortmund", "West Ham United"],
+      "estado": "Activo"
+    },
+    {
+      "id": 55,
+      "nombre": "Lautaro Martínez",
+      "nombre_completo": "Lautaro Javier Martínez",
+      "nacionalidad": "Argentina",
+      "fecha_nacimiento": "22/08/1997",
+      "edad": 27,
+      "club_actual": "Inter Milan",
+      "posicion": "Delantero Centro",
+      "posiciones": ["Delantero Centro"],
+      "valor_mercado": "110M€",
+      "clubes_totales": ["Racing Club", "Inter Milan"],
+      "estado": "Activo"
+    },
+    {
+      "id": 56,
+      "nombre": "Darwin Núñez",
+      "nombre_completo": "Darwin Gabriel Núñez Ribeiro",
+      "nacionalidad": "Uruguay",
+      "fecha_nacimiento": "24/06/1999",
+      "edad": 26,
+      "club_actual": "Liverpool",
+      "posicion": "Delantero Centro",
+      "posiciones": ["Delantero Centro", "Extremo Izquierdo"],
+      "valor_mercado": "70M€",
+      "clubes_totales": ["CA Peñarol", "UD Almería", "SL Benfica", "Liverpool"],
+      "estado": "Activo"
+    },
+    {
+      "id": 57,
+      "nombre": "Dusan Vlahovic",
+      "nombre_completo": "Dušan Vlahović",
+      "nacionalidad": "Serbia",
+      "fecha_nacimiento": "28/01/2000",
+      "edad": 25,
+      "club_actual": "Juventus",
+      "posicion": "Delantero Centro",
+      "posiciones": ["Delantero Centro"],
+      "valor_mercado": "70M€",
+      "clubes_totales": ["Partizan", "Fiorentina", "Juventus"],
+      "estado": "Activo"
+    },
+    {
+      "id": 58,
+      "nombre": "Serge Gnabry",
+      "nombre_completo": "Serge David Gnabry",
+      "nacionalidad": "Alemania",
+      "fecha_nacimiento": "14/07/1995",
+      "edad": 30,
+      "club_actual": "Bayern München",
+      "posicion": "Extremo Derecho",
+      "posiciones": ["Extremo Derecho", "Extremo Izquierdo"],
+      "valor_mercado": "35M€",
+      "clubes_totales": ["Arsenal", "West Bromwich Albion", "VfB Stuttgart", "Werder Bremen", "TSG Hoffenheim", "Bayern München"],
+      "estado": "Activo"
+    },
+    {
+      "id": 59,
+      "nombre": "Leroy Sané",
+      "nombre_completo": "Leroy Aziz Sané",
+      "nacionalidad": "Alemania",
+      "fecha_nacimiento": "11/01/1996",
+      "edad": 29,
+      "club_actual": "Bayern München",
+      "posicion": "Extremo Izquierdo",
+      "posiciones": ["Extremo Izquierdo", "Extremo Derecho"],
+      "valor_mercado": "50M€",
+      "clubes_totales": ["Schalke 04", "Manchester City", "Bayern München"],
+      "estado": "Activo"
+    },
+    {
+      "id": 60,
+      "nombre": "Marcus Rashford",
+      "nombre_completo": "Marcus Rashford",
+      "nacionalidad": "Inglaterra",
+      "fecha_nacimiento": "31/10/1997",
+      "edad": 27,
+      "club_actual": "Manchester United",
+      "posicion": "Extremo Izquierdo",
+      "posiciones": ["Extremo Izquierdo", "Delantero Centro"],
+      "valor_mercado": "60M€",
+      "clubes_totales": ["Manchester United"],
+      "estado": "Activo"
+    },
+    {
+      "id": 61,
+      "nombre": "Jeremy Doku",
+      "nombre_completo": "Jeremy Baffour Doku",
+      "nacionalidad": "Bélgica",
+      "fecha_nacimiento": "27/05/2002",
+      "edad": 23,
+      "club_actual": "Manchester City",
+      "posicion": "Extremo Derecho",
+      "posiciones": ["Extremo Derecho", "Extremo Izquierdo"],
+      "valor_mercado": "60M€",
+      "clubes_totales": ["Anderlecht", "Stade Rennais", "Manchester City"],
+      "estado": "Activo"
+    },
+    {
+      "id": 62,
+      "nombre": "Julián Álvarez",
+      "nombre_completo": "Julián Álvarez",
+      "nacionalidad": "Argentina",
+      "fecha_nacimiento": "31/01/2000",
+      "edad": 25,
+      "club_actual": "Atlético de Madrid",
+      "posicion": "Delantero Centro",
+      "posiciones": ["Delantero Centro", "Mediocampista Ofensivo"],
+      "valor_mercado": "90M€",
+      "clubes_totales": ["River Plate", "Manchester City", "Atlético de Madrid"],
+      "estado": "Activo"
+    },
+    {
+      "id": 63,
+      "nombre": "Ansu Fati",
+      "nombre_completo": "Anssumane Fati Vieira",
+      "nacionalidad": "España",
+      "fecha_nacimiento": "31/10/2002",
+      "edad": 22,
+      "club_actual": "FC Barcelona",
+      "posicion": "Extremo Izquierdo",
+      "posiciones": ["Extremo Izquierdo", "Extremo Derecho"],
+      "valor_mercado": "25M€",
+      "clubes_totales": ["FC Barcelona", "Brighton & Hove Albion"],
+      "estado": "Lesionado"
+    },
+    {
+      "id": 64,
+      "nombre": "Kai Havertz",
+      "nombre_completo": "Kai Lukas Havertz",
+      "nacionalidad": "Alemania",
+      "fecha_nacimiento": "11/06/1999",
+      "edad": 26,
+      "club_actual": "Arsenal",
+      "posicion": "Delantero Centro",
+      "posiciones": ["Delantero Centro", "Mediocampista Ofensivo"],
+      "valor_mercado": "75M€",
+      "clubes_totales": ["Bayer Leverkusen", "Chelsea", "Arsenal"],
+      "estado": "Activo"
+    },
+    {
+      "id": 65,
+      "nombre": "Gabriel Jesus",
+      "nombre_completo": "Gabriel Fernando de Jesus",
+      "nacionalidad": "Brasil",
+      "fecha_nacimiento": "03/04/1997",
+      "edad": 28,
+      "club_actual": "Arsenal",
+      "posicion": "Delantero Centro",
+      "posiciones": ["Delantero Centro", "Extremo Derecho"],
+      "valor_mercado": "50M€",
+      "clubes_totales": ["Palmeiras", "Manchester City", "Arsenal"],
+      "estado": "Activo"
+    },
+    {
+      "id": 66,
+      "nombre": "Antony",
+      "nombre_completo": "Antony Matheus dos Santos",
+      "nacionalidad": "Brasil",
+      "fecha_nacimiento": "24/02/2000",
+      "edad": 25,
+      "club_actual": "Manchester United",
+      "posicion": "Extremo Derecho",
+      "posiciones": ["Extremo Derecho", "Extremo Izquierdo"],
+      "valor_mercado": "20M€",
+      "clubes_totales": ["São Paulo", "Ajax", "Manchester United"],
+      "estado": "Activo"
+    },
+    {
+      "id": 67,
+      "nombre": "Lisandro Martínez",
+      "nombre_completo": "Lisandro Martínez",
+      "nacionalidad": "Argentina",
+      "fecha_nacimiento": "18/01/1998",
+      "edad": 27,
+      "club_actual": "Manchester United",
+      "posicion": "Defensa Central",
+      "posiciones": ["Defensa Central", "Lateral Izquierdo"],
+      "valor_mercado": "50M€",
+      "clubes_totales": ["Newell's Old Boys", "Defensa y Justicia", "Ajax", "Manchester United"],
+      "estado": "Activo"
+    },
+    {
+      "id": 68,
+      "nombre": "Mason Mount",
+      "nombre_completo": "Mason Tony Mount",
+      "nacionalidad": "Inglaterra",
+      "fecha_nacimiento": "10/01/1999",
+      "edad": 26,
+      "club_actual": "Manchester United",
+      "posicion": "Mediocampista Ofensivo",
+      "posiciones": ["Mediocampista Ofensivo", "Mediocampista Central"],
+      "valor_mercado": "35M€",
+      "clubes_totales": ["Vitesse", "Derby County", "Chelsea", "Manchester United"],
+      "estado": "Lesionado"
+    },
+    {
+      "id": 69,
+      "nombre": "Casemiro",
+      "nombre_completo": "Carlos Henrique Casimiro",
+      "nacionalidad": "Brasil",
+      "fecha_nacimiento": "23/02/1992",
+      "edad": 33,
+      "club_actual": "Manchester United",
+      "posicion": "Mediocampista Defensivo",
+      "posiciones": ["Mediocampista Defensivo", "Mediocampista Central"],
+      "valor_mercado": "20M€",
+      "clubes_totales": ["São Paulo", "Real Madrid", "Manchester United"],
+      "estado": "Activo"
+    },
+    {
+      "id": 70,
+      "nombre": "Son Heung-min",
+      "nombre_completo": "Son Heung-min",
+      "nacionalidad": "Corea del Sur",
+      "fecha_nacimiento": "08/07/1992",
+      "edad": 33,
+      "club_actual": "Tottenham Hotspur",
+      "posicion": "Extremo Izquierdo",
+      "posiciones": ["Extremo Izquierdo", "Delantero Centro"],
+      "valor_mercado": "15M€",
+      "clubes_totales": ["FC Seoul", "Hamburger SV", "Bayer Leverkusen", "Tottenham Hotspur"],
+      "estado": "Activo"
+    },
+    {
+      "id": 71,
+      "nombre": "James Maddison",
+      "nombre_completo": "James Daniel Maddison",
+      "nacionalidad": "Inglaterra",
+      "fecha_nacimiento": "23/11/1996",
+      "edad": 28,
+      "club_actual": "Tottenham Hotspur",
+      "posicion": "Mediocampista Ofensivo",
+      "posiciones": ["Mediocampista Ofensivo", "Mediocampista Central"],
+      "valor_mercado": "45M€",
+      "clubes_totales": ["Coventry City", "Aberdeen", "Norwich City", "Leicester City", "Tottenham Hotspur"],
+      "estado": "Activo"
+    },
+    {
+      "id": 72,
+      "nombre": "Dejan Kulusevski",
+      "nombre_completo": "Dejan Kulusevski",
+      "nacionalidad": "Suecia",
+      "fecha_nacimiento": "25/04/2000",
+      "edad": 25,
+      "club_actual": "Tottenham Hotspur",
+      "posicion": "Extremo Derecho",
+      "posiciones": ["Extremo Derecho", "Mediocampista Ofensivo"],
+      "valor_mercado": "65M€",
+      "clubes_totales": ["Atalanta", "Parma", "Juventus", "Tottenham Hotspur"],
+      "estado": "Activo"
+    },
+    {
+      "id": 73,
+      "nombre": "Nicolas Jackson",
+      "nombre_completo": "Nicolas Jackson",
+      "nacionalidad": "Senegal",
+      "fecha_nacimiento": "20/06/2001",
+      "edad": 24,
+      "club_actual": "Chelsea",
+      "posicion": "Delantero Centro",
+      "posiciones": ["Delantero Centro"],
+      "valor_mercado": "38M€",
+      "clubes_totales": ["Casa Sports", "Villarreal", "Mirandes", "Chelsea"],
+      "estado": "Activo"
+    },
+    {
+      "id": 74,
+      "nombre": "Moisés Caicedo",
+      "nombre_completo": "Moisés Isaac Caicedo Corozo",
+      "nacionalidad": "Ecuador",
+      "fecha_nacimiento": "02/11/2001",
+      "edad": 23,
+      "club_actual": "Chelsea",
+      "posicion": "Mediocampista Defensivo",
+      "posiciones": ["Mediocampista Defensivo", "Mediocampista Central"],
+      "valor_mercado": "75M€",
+      "clubes_totales": ["Independiente del Valle", "Brighton & Hove Albion", "Chelsea"],
+      "estado": "Activo"
+    },
+    {
+      "id": 75,
+      "nombre": "Christopher Nkunku",
+      "nombre_completo": "Christopher Alan Nkunku",
+      "nacionalidad": "Francia",
+      "fecha_nacimiento": "14/11/1997",
+      "edad": 27,
+      "club_actual": "Chelsea",
+      "posicion": "Mediocampista Ofensivo",
+      "posiciones": ["Mediocampista Ofensivo", "Delantero Centro"],
+      "valor_mercado": "65M€",
+      "clubes_totales": ["Paris Saint-Germain", "RB Leipzig", "Chelsea"],
+      "estado": "Activo"
+    },
+    {
+      "id": 76,
+      "nombre": "Mykhaylo Mudryk",
+      "nombre_completo": "Mykhaylo Petrovych Mudryk",
+      "nacionalidad": "Ucrania",
+      "fecha_nacimiento": "05/01/2001",
+      "edad": 24,
+      "club_actual": "Chelsea",
+      "posicion": "Extremo Izquierdo",
+      "posiciones": ["Extremo Izquierdo", "Extremo Derecho"],
+      "valor_mercado": "40M€",
+      "clubes_totales": ["Shakhtar Donetsk", "Chelsea"],
+      "estado": "Activo"
+    },
+    {
+      "id": 77,
+      "nombre": "Cody Gakpo",
+      "nombre_completo": "Cody Mathès Gakpo",
+      "nacionalidad": "Países Bajos",
+      "fecha_nacimiento": "07/05/1999",
+      "edad": 26,
+      "club_actual": "Liverpool",
+      "posicion": "Extremo Izquierdo",
+      "posiciones": ["Extremo Izquierdo", "Delantero Centro"],
+      "valor_mercado": "50M€",
+      "clubes_totales": ["PSV Eindhoven", "Liverpool"],
+      "estado": "Activo"
+    },
+    {
+      "id": 78,
+      "nombre": "Luis Díaz",
+      "nombre_completo": "Luis Fernando Díaz Marulanda",
+      "nacionalidad": "Colombia",
+      "fecha_nacimiento": "13/01/1997",
+      "edad": 28,
+      "club_actual": "Liverpool",
+      "posicion": "Extremo Izquierdo",
+      "posiciones": ["Extremo Izquierdo", "Extremo Derecho"],
+      "valor_mercado": "75M€",
+      "clubes_totales": ["Atlético Junior", "FC Porto", "Liverpool"],
+      "estado": "Activo"
+    },
+    {
+      "id": 79,
+      "nombre": "Diogo Jota",
+      "nombre_completo": "Diogo José Teixeira da Silva",
+      "nacionalidad": "Portugal",
+      "fecha_nacimiento": "04/12/1996",
+      "edad": 28,
+      "club_actual": "Liverpool",
+      "posicion": "Delantero Centro",
+      "posiciones": ["Delantero Centro", "Extremo Izquierdo"],
+      "valor_mercado": "60M€",
+      "clubes_totales": ["FC Porto", "Paços de Ferreira", "Atlético Madrid", "Wolverhampton", "Liverpool"],
+      "estado": "Activo"
+    },
+    {
+      "id": 80,
+      "nombre": "Dominik Szoboszlai",
+      "nombre_completo": "Dominik Szoboszlai",
+      "nacionalidad": "Hungría",
+      "fecha_nacimiento": "25/10/2000",
+      "edad": 24,
+      "club_actual": "Liverpool",
+      "posicion": "Mediocampista Central",
+      "posiciones": ["Mediocampista Central", "Mediocampista Ofensivo"],
+      "valor_mercado": "70M€",
+      "clubes_totales": ["FC Liefering", "Red Bull Salzburg", "RB Leipzig", "Liverpool"],
+      "estado": "Activo"
+    },
+    {
+      "id": 81,
+      "nombre": "Gabriel Martinelli",
+      "nombre_completo": "Gabriel Teodoro Martinelli Silva",
+      "nacionalidad": "Brasil",
+      "fecha_nacimiento": "18/06/2001",
+      "edad": 24,
+      "club_actual": "Arsenal",
+      "posicion": "Extremo Izquierdo",
+      "posiciones": ["Extremo Izquierdo", "Extremo Derecho"],
+      "valor_mercado": "70M€",
+      "clubes_totales": ["Ituano", "Arsenal"],
+      "estado": "Activo"
+    },
+    {
+      "id": 82,
+      "nombre": "Folarin Balogun",
+      "nombre_completo": "Folarin Jerry Balogun",
+      "nacionalidad": "Estados Unidos",
+      "fecha_nacimiento": "03/07/2001",
+      "edad": 24,
+      "club_actual": "AS Monaco",
+      "posicion": "Delantero Centro",
+      "posiciones": ["Delantero Centro"],
+      "valor_mercado": "40M€",
+      "clubes_totales": ["Arsenal", "Stade Reims", "AS Monaco"],
+      "estado": "Activo"
+    },
+    {
+      "id": 83,
+      "nombre": "Takehiro Tomiyasu",
+      "nombre_completo": "Takehiro Tomiyasu",
+      "nacionalidad": "Japón",
+      "fecha_nacimiento": "05/11/1998",
+      "edad": 26,
+      "club_actual": "Arsenal",
+      "posicion": "Lateral Derecho",
+      "posiciones": ["Lateral Derecho", "Defensa Central"],
+      "valor_mercado": "25M€",
+      "clubes_totales": ["Avispa Fukuoka", "Sint-Truiden", "Bologna", "Arsenal"],
+      "estado": "Activo"
+    },
+    {
+      "id": 84,
+      "nombre": "Ben White",
+      "nombre_completo": "Benjamin William White",
+      "nacionalidad": "Inglaterra",
+      "fecha_nacimiento": "08/10/1997",
+      "edad": 27,
+      "club_actual": "Arsenal",
+      "posicion": "Lateral Derecho",
+      "posiciones": ["Lateral Derecho", "Defensa Central"],
+      "valor_mercado": "50M€",
+      "clubes_totales": ["Southampton", "Newport County", "Peterborough United", "Leeds United", "Brighton & Hove Albion", "Arsenal"],
+      "estado": "Activo"
+    },
+    {
+      "id": 85,
+      "nombre": "Mateo Kovačić",
+      "nombre_completo": "Mateo Kovačić",
+      "nacionalidad": "Croacia",
+      "fecha_nacimiento": "06/05/1994",
+      "edad": 31,
+      "club_actual": "Manchester City",
+      "posicion": "Mediocampista Central",
+      "posiciones": ["Mediocampista Central", "Mediocampista Defensivo"],
+      "valor_mercado": "25M€",
+      "clubes_totales": ["Dinamo Zagreb", "Inter Milan", "Real Madrid", "Chelsea", "Manchester City"],
+      "estado": "Activo"
+    },
+    {
+      "id": 86,
+      "nombre": "Bernardo Silva",
+      "nombre_completo": "Bernardo Mota Veiga de Carvalho e Silva",
+      "nacionalidad": "Portugal",
+      "fecha_nacimiento": "10/08/1994",
+      "edad": 31,
+      "club_actual": "Manchester City",
+      "posicion": "Extremo Derecho",
+      "posiciones": ["Extremo Derecho", "Mediocampista Ofensivo"],
+      "valor_mercado": "70M€",
+      "clubes_totales": ["SL Benfica", "AS Monaco", "Manchester City"],
+      "estado": "Activo"
+    },
+    {
+      "id": 87,
+      "nombre": "Jack Grealish",
+      "nombre_completo": "Jack Peter Grealish",
+      "nacionalidad": "Inglaterra",
+      "fecha_nacimiento": "10/09/1995",
+      "edad": 30,
+      "club_actual": "Manchester City",
+      "posicion": "Extremo Izquierdo",
+      "posiciones": ["Extremo Izquierdo", "Mediocampista Ofensivo"],
+      "valor_mercado": "40M€",
+      "clubes_totales": ["Aston Villa", "Notts County", "Manchester City"],
+      "estado": "Activo"
+    },
+    {
+      "id": 88,
+      "nombre": "Youri Tielemans",
+      "nombre_completo": "Youri Marion Tielemans",
+      "nacionalidad": "Bélgica",
+      "fecha_nacimiento": "07/05/1997",
+      "edad": 28,
+      "club_actual": "Aston Villa",
+      "posicion": "Mediocampista Central",
+      "posiciones": ["Mediocampista Central", "Mediocampista Ofensivo"],
+      "valor_mercado": "25M€",
+      "clubes_totales": ["Anderlecht", "AS Monaco", "Leicester City", "Aston Villa"],
+      "estado": "Activo"
+    },
+    {
+      "id": 89,
+      "nombre": "Ollie Watkins",
+      "nombre_completo": "Oliver George Arthur Watkins",
+      "nacionalidad": "Inglaterra",
+      "fecha_nacimiento": "30/12/1995",
+      "edad": 29,
+      "club_actual": "Aston Villa",
+      "posicion": "Delantero Centro",
+      "posiciones": ["Delantero Centro"],
+      "valor_mercado": "60M€",
+      "clubes_totales": ["Exeter City", "Brentford", "Aston Villa"],
+      "estado": "Activo"
+    },
+    {
+      "id": 90,
+      "nombre": "Leon Bailey",
+      "nombre_completo": "Leon Patrick Bailey",
+      "nacionalidad": "Jamaica",
+      "fecha_nacimiento": "09/08/1997",
+      "edad": 28,
+      "club_actual": "Aston Villa",
+      "posicion": "Extremo Derecho",
+      "posiciones": ["Extremo Derecho", "Extremo Izquierdo"],
+      "valor_mercado": "35M€",
+      "clubes_totales": ["Trencin", "Genk", "Bayer Leverkusen", "Aston Villa"],
+      "estado": "Activo"
+    },
+    {
+      "id": 91,
+      "nombre": "Lucas Paquetá",
+      "nombre_completo": "Lucas Tolentino Coelho de Lima",
+      "nacionalidad": "Brasil",
+      "fecha_nacimiento": "27/08/1997",
+      "edad": 27,
+      "club_actual": "West Ham United",
+      "posicion": "Mediocampista Ofensivo",
+      "posiciones": ["Mediocampista Ofensivo", "Mediocampista Central"],
+      "valor_mercado": "40M€",
+      "clubes_totales": ["Flamengo", "AC Milan", "Olympique Lyon", "West Ham United"],
+      "estado": "Activo"
+    },
+    {
+      "id": 92,
+      "nombre": "Jarrod Bowen",
+      "nombre_completo": "Jarrod Bowen",
+      "nacionalidad": "Inglaterra",
+      "fecha_nacimiento": "20/12/1996",
+      "edad": 28,
+      "club_actual": "West Ham United",
+      "posicion": "Extremo Derecho",
+      "posiciones": ["Extremo Derecho", "Extremo Izquierdo"],
+      "valor_mercado": "40M€",
+      "clubes_totales": ["Hereford United", "Hull City", "West Ham United"],
+      "estado": "Activo"
+    },
+    {
+      "id": 93,
+      "nombre": "Richarlison",
+      "nombre_completo": "Richarlison de Andrade",
+      "nacionalidad": "Brasil",
+      "fecha_nacimiento": "10/05/1997",
+      "edad": 28,
+      "club_actual": "Tottenham Hotspur",
+      "posicion": "Delantero Centro",
+      "posiciones": ["Delantero Centro", "Extremo Izquierdo"],
+      "valor_mercado": "35M€",
+      "clubes_totales": ["América Mineiro", "Fluminense", "Watford", "Everton", "Tottenham Hotspur"],
+      "estado": "Activo"
+    },
+    {
+      "id": 94,
+      "nombre": "Brennan Johnson",
+      "nombre_completo": "Brennan Price Johnson",
+      "nacionalidad": "Gales",
+      "fecha_nacimiento": "23/05/2001",
+      "edad": 24,
+      "club_actual": "Tottenham Hotspur",
+      "posicion": "Extremo Derecho",
+      "posiciones": ["Extremo Derecho", "Extremo Izquierdo"],
+      "valor_mercado": "40M€",
+      "clubes_totales": ["Nottingham Forest", "Lincoln City", "Tottenham Hotspur"],
+      "estado": "Activo"
+    },
+    {
+      "id": 95,
+      "nombre": "Pedro Neto",
+      "nombre_completo": "Pedro Lomba Neto",
+      "nacionalidad": "Portugal",
+      "fecha_nacimiento": "09/03/2000",
+      "edad": 25,
+      "club_actual": "Chelsea",
+      "posicion": "Extremo Derecho",
+      "posiciones": ["Extremo Derecho", "Extremo Izquierdo"],
+      "valor_mercado": "70M€",
+      "clubes_totales": ["SC Braga", "Lazio", "Wolverhampton", "Chelsea"],
+      "estado": "Activo"
+    },
+    {
+      "id": 96,
+      "nombre": "Ivan Toney",
+      "nombre_completo": "Ivan Benjamin Elijah Toney",
+      "nacionalidad": "Inglaterra",
+      "fecha_nacimiento": "16/03/1996",
+      "edad": 29,
+      "club_actual": "Al-Ahli",
+      "posicion": "Delantero Centro",
+      "posiciones": ["Delantero Centro"],
+      "valor_mercado": "40M€",
+      "clubes_totales": ["Northampton Town", "Barnsley", "Shrewsbury Town", "Scunthorpe United", "Wigan Athletic", "Peterborough United", "Brentford", "Al-Ahli"],
+      "estado": "Activo"
+    },
+    {
+      "id": 97,
+      "nombre": "Eberechi Eze",
+      "nombre_completo": "Eberechi Eze",
+      "nacionalidad": "Inglaterra",
+      "fecha_nacimiento": "29/06/1998",
+      "edad": 27,
+      "club_actual": "Crystal Palace",
+      "posicion": "Mediocampista Ofensivo",
+      "posiciones": ["Mediocampista Ofensivo", "Extremo Izquierdo"],
+      "valor_mercado": "60M€",
+      "clubes_totales": ["Millwall", "Queens Park Rangers", "Crystal Palace"],
+      "estado": "Activo"
+    },
+    {
+      "id": 98,
+      "nombre": "Michael Olise",
+      "nombre_completo": "Michael Olise",
+      "nacionalidad": "Francia",
+      "fecha_nacimiento": "12/12/2001",
+      "edad": 23,
+      "club_actual": "Bayern München",
+      "posicion": "Extremo Derecho",
+      "posiciones": ["Extremo Derecho", "Mediocampista Ofensivo"],
+      "valor_mercado": "60M€",
+      "clubes_totales": ["Chelsea", "Manchester City", "Reading", "Crystal Palace", "Bayern München"],
+      "estado": "Activo"
+    },
+    {
+      "id": 99,
+      "nombre": "Morgan Gibbs-White",
+      "nombre_completo": "Morgan Anthony Gibbs-White",
+      "nacionalidad": "Inglaterra",
+      "fecha_nacimiento": "27/01/2000",
+      "edad": 25,
+      "club_actual": "Nottingham Forest",
+      "posicion": "Mediocampista Ofensivo",
+      "posiciones": ["Mediocampista Ofensivo", "Extremo Derecho"],
+      "valor_mercado": "35M€",
+      "clubes_totales": ["Wolverhampton", "Swansea City", "Sheffield United", "Nottingham Forest"],
+      "estado": "Activo"
+    },
+    {
+      "id": 100,
+      "nombre": "Anthony Gordon",
+      "nombre_completo": "Anthony Michael Gordon",
+      "nacionalidad": "Inglaterra",
+      "fecha_nacimiento": "24/02/2001",
+      "edad": 24,
+      "club_actual": "Newcastle United",
+      "posicion": "Extremo Derecho",
+      "posiciones": ["Extremo Derecho", "Extremo Izquierdo"],
+      "valor_mercado": "45M€",
+      "clubes_totales": ["Preston North End", "Everton", "Newcastle United"],
+      "estado": "Activo"
+    },
+    {
+      "id": 101,
+      "nombre": "Alexander Isak",
+      "nombre_completo": "Alexander Isak",
+      "nacionalidad": "Suecia",
+      "fecha_nacimiento": "21/09/1999",
+      "edad": 25,
+      "club_actual": "Newcastle United",
+      "posicion": "Delantero Centro",
+      "posiciones": ["Delantero Centro"],
+      "valor_mercado": "70M€",
+      "clubes_totales": ["AIK", "Borussia Dortmund", "Willem II", "Real Sociedad", "Newcastle United"],
+      "estado": "Activo"
+    },
+    {
+      "id": 102,
+      "nombre": "Sandro Tonali",
+      "nombre_completo": "Sandro Tonali",
+      "nacionalidad": "Italia",
+      "fecha_nacimiento": "08/05/2000",
+      "edad": 25,
+      "club_actual": "Newcastle United",
+      "posicion": "Mediocampista Central",
+      "posiciones": ["Mediocampista Central", "Mediocampista Defensivo"],
+      "valor_mercado": "55M€",
+      "clubes_totales": ["Brescia", "AC Milan", "Newcastle United"],
+      "estado": "Activo"
+    },
+    {
+      "id": 103,
+      "nombre": "Harvey Elliott",
+      "nombre_completo": "Harvey Daniel James Elliott",
+      "nacionalidad": "Inglaterra",
+      "fecha_nacimiento": "04/04/2003",
+      "edad": 22,
+      "club_actual": "Liverpool",
+      "posicion": "Mediocampista Ofensivo",
+      "posiciones": ["Mediocampista Ofensivo", "Extremo Derecho"],
+      "valor_mercado": "30M€",
+      "clubes_totales": ["Fulham", "Blackburn Rovers", "Liverpool"],
+      "estado": "Activo"
+    },
+    {
+      "id": 104,
+      "nombre": "Conor Gallagher",
+      "nombre_completo": "Conor John Gallagher",
+      "nacionalidad": "Inglaterra",
+      "fecha_nacimiento": "06/02/2000",
+      "edad": 25,
+      "club_actual": "Atlético de Madrid",
+      "posicion": "Mediocampista Central",
+      "posiciones": ["Mediocampista Central", "Mediocampista Defensivo"],
+      "valor_mercado": "50M€",
+      "clubes_totales": ["Charlton Athletic", "Swansea City", "West Bromwich Albion", "Crystal Palace", "Chelsea", "Atlético de Madrid"],
+      "estado": "Activo"
+    },
+    {
+      "id": 105,
+      "nombre": "Amadou Onana",
+      "nombre_completo": "Amadou Onana",
+      "nacionalidad": "Bélgica",
+      "fecha_nacimiento": "16/08/2001",
+      "edad": 24,
+      "club_actual": "Aston Villa",
+      "posicion": "Mediocampista Defensivo",
+      "posiciones": ["Mediocampista Defensivo", "Mediocampista Central"],
+      "valor_mercado": "40M€",
+      "clubes_totales": ["LOSC Lille", "Hamburger SV","Everton", "Aston Villa"],
+      "estado": "Activo"
+    },
+    {
+        "id": 106,
+        "nombre": "Yunus Musah",
+        "nombre_completo": "Yunus Musah",
+        "nacionalidad": "Estados Unidos",
+        "fecha_nacimiento": "29/11/2002",
+        "edad": 24,
+        "club_actual": "Atalanta",
+        "posicion": "Mediocampista Central",
+        "posiciones": ["Mediocampista Central", "Extremo Derecho"],
+        "valor_mercado": "30M€",
+        "clubes_totales": ["Valencia CF","AC Milan","Atalanta"],
+        "estado": "Activo"
+    },
+    {
+        "id": 107,
+        "nombre": "Rasmus Højlund",
+        "nombre_completo": "Rasmus Højlund",
+        "nacionalidad": "Dinamarca",
+        "fecha_nacimiento": "04/02/2003",
+        "edad": 21,
+        "club_actual": "Atalanta",
+        "posicion": "Delantero Centro",
+        "posiciones": ["Delantero Centro"],
+        "valor_mercado": "40M€",
+        "clubes_totales": ["FC Copenhagen","Atalanta"],
+        "estado": "Activo"
+    },
+    {
+        "id": 108,
+        "nombre": "Gonçalo Ramos",
+        "nombre_completo": "Gonçalo Matias Ramos",
+        "nacionalidad": "Portugal",
+        "fecha_nacimiento": "20/06/2001",
+        "edad": 23,
+        "club_actual": "PSV Eindhoven",
+        "posicion": "Delantero Centro",
+        "posiciones": ["Delantero Centro"],
+        "valor_mercado": "35M€",
+        "clubes_totales": ["SL Benfica","PSV Eindhoven"],
+        "estado": "Activo"
+    },
+    {
+        "id": 109,
+        "nombre": "Noni Madueke",
+        "nombre_completo": "Chukwunonso Tristan Madueke",
+        "nacionalidad": "Inglaterra",
+        "fecha_nacimiento": "10/03/2002",
+        "edad": 22,
+        "club_actual": "Arsenal",
+        "posicion": "Extremo Derecho",
+        "posiciones": ["Extremo Derecho", "Extremo Izquierdo"],
+        "valor_mercado": "30M€",
+        "clubes_totales": ["Chelsea", "Arsenal", "PSV Eindhoven"],
+        "estado": "Activo"
+    },
+    {
+        "id": 110,
+        "nombre": "Matheus Nunes",
+        "nombre_completo": "Matheus Luiz Nunes Gonçalves de Oliveira",
+        "nacionalidad": "Portugal",
+        "fecha_nacimiento": "27/08/1998",
+        "edad": 25,
+        "club_actual": "Manchester City",
+        "posicion": "Mediocampista Central",
+        "posiciones": ["Mediocampista Central", "Mediocampista Ofensivo"],
+        "valor_mercado": "40M€",
+        "clubes_totales": ["Estoril Praia","Sporting CP","Wolverhampton Wanderers","Manchester City"],
+        "estado": "Activo"
+    },
+    {
+        "id": 111,
+        "nombre": "Pablo Torre",
+        "nombre_completo": "Pablo Torre",
+        "nacionalidad": "España",
+        "fecha_nacimiento": "18/04/2004",
+        "edad": 19,
+        "club_actual": "Mallorca",
+        "posicion": "Mediocampista Ofensivo",
+        "posiciones": ["Mediocampista Ofensivo", "Extremo Izquierdo"],
+        "valor_mercado": "20M€",
+        "clubes_totales": ["Racing de Santander", "FC Barcelona","Mallorca"],
+        "estado": "Activo"
+    },
