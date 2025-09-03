@@ -3,13 +3,13 @@
     {
       "id": 1,
       "nombre": "Lamine Yamal",
-      "nombre_completo": "Lamine Yamal Nasraoui",
+      "nombre_completo": "Lamine Yamal Nasraoui Ebana",
       "nacionalidad": "España",
       "fecha_nacimiento": "13/07/2007",
       "edad": 18,
       "club_actual": "FC Barcelona",
       "posicion": "Extremo Derecho",
-      "posiciones": ["Extremo Derecho", "Extremo Izquierdo"],
+      "posiciones": ["Extremo Derecho"],
       "valor_mercado": "200M€",
       "clubes_totales": ["FC Barcelona"],
       "estado": "Activo"
@@ -37,7 +37,7 @@
       "edad": 25,
       "club_actual": "Real Madrid",
       "posicion": "Extremo Izquierdo",
-      "posiciones": ["Extremo Izquierdo", "Extremo Derecho"],
+      "posiciones": ["Extremo Izquierdo"],
       "valor_mercado": "180M€",
       "clubes_totales": ["Flamengo", "Real Madrid"],
       "estado": "Activo"
@@ -82,7 +82,7 @@
       "posiciones": ["Mediocampista Defensivo", "Mediocampista Central"],
       "valor_mercado": "140M€",
       "clubes_totales": ["Villarreal", "Atlético de Madrid", "Manchester City"],
-      "estado": "Lesionado"
+      "estado": "Activo"
     },
     {
       "id": 7,
@@ -91,11 +91,11 @@
       "nacionalidad": "Alemania",
       "fecha_nacimiento": "03/05/2003",
       "edad": 22,
-      "club_actual": "Bayer Leverkusen",
+      "club_actual": "Liverpool",
       "posicion": "Mediocampista Ofensivo",
-      "posiciones": ["Mediocampista Ofensivo", "Mediocampista Central"],
+      "posiciones": ["Mediocampista Ofensivo", "Extremo Izquierdo"],
       "valor_mercado": "130M€",
-      "clubes_totales": ["1. FC Köln", "Bayer Leverkusen"],
+      "clubes_totales": ["1. FC Köln", "Bayer Leverkusen", "Liverpool"],
       "estado": "Activo"
     },
     {
@@ -107,7 +107,7 @@
       "edad": 24,
       "club_actual": "Arsenal",
       "posicion": "Extremo Derecho",
-      "posiciones": ["Extremo Derecho", "Extremo Izquierdo"],
+      "posiciones": ["Extremo Derecho"],
       "valor_mercado": "130M€",
       "clubes_totales": ["Arsenal"],
       "estado": "Activo"
@@ -121,7 +121,7 @@
       "edad": 27,
       "club_actual": "Real Madrid",
       "posicion": "Mediocampista Central",
-      "posiciones": ["Mediocampista Central", "Mediocampista Ofensivo"],
+      "posiciones": ["Mediocampista Central", "Lateral Derecho", "Extremo Derecho"],
       "valor_mercado": "120M€",
       "clubes_totales": ["CA Peñarol", "Deportivo La Coruña", "Real Madrid"],
       "estado": "Activo"
@@ -135,7 +135,7 @@
       "edad": 25,
       "club_actual": "Manchester City",
       "posicion": "Mediocampista Ofensivo",
-      "posiciones": ["Mediocampista Ofensivo", "Extremo Derecho", "Extremo Izquierdo"],
+      "posiciones": ["Mediocampista Ofensivo","Extremo Izquierdo"],
       "valor_mercado": "120M€",
       "clubes_totales": ["Manchester City"],
       "estado": "Activo"
@@ -165,7 +165,7 @@
       "posicion": "Mediocampista Ofensivo",
       "posiciones": ["Mediocampista Ofensivo", "Extremo Izquierdo"],
       "valor_mercado": "110M€",
-      "clubes_totales": ["Chelsea", "Bayern München"],
+      "clubes_totales": ["Bayern München"],
       "estado": "Activo"
     },
     {
@@ -191,7 +191,7 @@
       "edad": 25,
       "club_actual": "Real Madrid",
       "posicion": "Mediocampista Defensivo",
-      "posiciones": ["Mediocampista Defensivo", "Mediocampista Central"],
+      "posiciones": ["Mediocampista Defensivo", "Mediocampista Central", "Defensa Central"],
       "valor_mercado": "100M€",
       "clubes_totales": ["Bordeaux", "AS Monaco", "Real Madrid"],
       "estado": "Activo"
@@ -202,12 +202,12 @@
       "nombre_completo": "Harry Edward Kane",
       "nacionalidad": "Inglaterra",
       "fecha_nacimiento": "28/07/1993",
-      "edad": 31,
+      "edad": 32,
       "club_actual": "Bayern München",
       "posicion": "Delantero Centro",
       "posiciones": ["Delantero Centro"],
       "valor_mercado": "100M€",
-      "clubes_totales": ["Tottenham Hotspur", "Bayern München"],
+      "clubes_totales": ["Tottenham Hotspur", "Bayern München", "Leicester City", "Norwich City", "Millwall"],
       "estado": "Activo"
     },
     {
@@ -222,7 +222,7 @@
       "posiciones": ["Mediocampista Central", "Mediocampista Defensivo"],
       "valor_mercado": "90M€",
       "clubes_totales": ["FC Barcelona"],
-      "estado": "Lesionado"
+      "estado": "Activo"
     },
     {
       "id": 17,
@@ -1553,4 +1553,7 @@
         "valor_mercado": "20M€",
         "clubes_totales": ["Racing de Santander", "FC Barcelona","Mallorca"],
         "estado": "Activo"
-    },
+    
+      }
+    ]
+  }    
