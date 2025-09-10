@@ -248,8 +248,57 @@ def reiniciar_juego():
     nivel = 1
     vidas = 3
 
+def mostrar_menu(pantalla, fuente):
+    """Muestra el menú de inicio"""
+    pantalla.fill(NEGRO)
+    
+    # Título
+    titulo = pygame.font.Font(None, 72).render("Juego de Carreras", True, BLANCO)
+    rect_titulo = titulo.get_rect(center=(ANCHO_PANTALLA // 2, ALTO_PANTALLA // 2 - 100))
+    pantalla.blit(titulo, rect_titulo)
+    
+    # Opción "Jugar"
+    opcion_jugar = fuente.render("Presiona ESPACIO para Jugar", True, AMARILLO)
+    rect_jugar = opcion_jugar.get_rect(center=(ANCHO_PANTALLA // 2, ALTO_PANTALLA // 2))
+    pantalla.blit(opcion_jugar, rect_jugar)
+    
+    # Opción "Salir"
+    opcion_salir = fuente.render("Presiona ESC para Salir", True, AMARILLO)
+    rect_salir = opcion_salir.get_rect(center=(ANCHO_PANTALLA // 2, ALTO_PANTALLA // 2 + 50))
+    pantalla.blit(opcion_salir, rect_salir)
+    
+    pygame.display.flip()
+
 def juego_principal():
     """Función principal del juego"""
+    global puntuacion, vidas
+    
+    pantalla = crear_pantalla()
+    reloj = pygame.time.Clock()
+    fuente = pygame.font.Font(None, 36)
+    
+    # Mostrar menú
+    mostrar_menu(pantalla, fuente)
+    
+    # Esperar a que el jugador seleccione una opción
+    ejecutando = True
+    while ejecutando:
+        for evento in pygame.event.get():
+            if evento.type == pygame.QUIT:
+                ejecutando = False
+            elif evento.type == pygame.KEYDOWN:
+                if evento.key == pygame.K_SPACE:
+                    # Iniciar el juego
+                    juego_activo()
+                    ejecutando = False
+                elif evento.key == pygame.K_ESCAPE:
+                    # Salir del juego
+                    ejecutando = False
+
+    pygame.quit()
+
+def juego_activo():
+    """Juego en funcionamiento"""
     global puntuacion, vidas
     
     pantalla = crear_pantalla()
