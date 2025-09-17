@@ -3,10 +3,8 @@ import sys
 import random
 import math
 
-if __name__ == "__main__":
-    pygame.init()
-    pygame.display.set_mode((800,600))
-pygame.display.set_caption("Evita Obstáculos - Pygame")
+pygame.init()
+pygame.display.set_caption("Evita Obstáculos - Mejorado")
 
 BLANCO = (255, 255, 255)
 NEGRO = (0, 0, 0)

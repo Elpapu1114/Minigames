@@ -1,12 +1,8 @@
 import pygame
 import sys
 import random
-import os
 
-if __name__ == "__main__":
-    pygame.init()
-    pygame.display.set_mode((800,600))
-    
+pygame.init()
 pygame.display.set_caption("Flappy Bird - Pygame")
 
 WHITE = (255, 255, 255)
@@ -18,11 +14,9 @@ PIPE_SPEED = 3
 PIPE_GAP = 200
 BIRD_SIZE = 40
 
-def crear_ruta_img(nombre_imagen):
-    return os.path.join(os.path.dirname(__file__), 'img', nombre_imagen)
-fondo_img = pygame.image.load(crear_ruta_img("fondo.png")).convert_alpha()
-bird_img = pygame.image.load(crear_ruta_img("flappy.png")).convert_alpha()
-pipe_img = pygame.image.load(crear_ruta_img("tuberiapro.png")).convert_alpha()
+fondo_img = pygame.image.load("fondo.png")
+bird_img = pygame.image.load("pajaro.png")
+pipe_img = pygame.image.load("tuberiapro.png")
 
 bird_img = pygame.transform.scale(bird_img, (BIRD_SIZE, BIRD_SIZE))
 PIPE_WIDTH = 60  # Ancho fijo para las tuberías
