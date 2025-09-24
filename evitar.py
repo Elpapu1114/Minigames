@@ -1,7 +1,7 @@
 import pygame
 import sys
 import random
-import math
+import math                                                     
 
 if __name__ == "__main__":
     pygame.init()
