@@ -2,6 +2,7 @@ import pygame
 import sys
 import random
 
+
 pygame.init()
 pygame.display.set_caption("Flappy Bird - Pygame")
 

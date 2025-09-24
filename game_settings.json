@@ -1,0 +1,16 @@
+{
+    "resolution": "1200x650",
+    "fullscreen": false,
+    "vsync": true,
+    "master_volume": 93,
+    "sfx_volume": 91,
+    "music_volume": 100,
+    "move_keys": [
+        "W",
+        "A",
+        "S",
+        "D"
+    ],
+    "jump_key": "SPACE",
+    "pause_key": "ESCAPE"
+}
