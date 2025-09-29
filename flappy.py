@@ -15,9 +15,9 @@ PIPE_SPEED = 3
 PIPE_GAP = 200
 BIRD_SIZE = 40
 
-fondo_img = pygame.image.load("fondo.png")
-bird_img = pygame.image.load("pajaro.png")
-pipe_img = pygame.image.load("tuberiapro.png")
+fondo_img = pygame.image.load("image/fondo.png")
+bird_img = pygame.image.load("image/pajaro.png")
+pipe_img = pygame.image.load("image/tuberiapro.png")
 
 bird_img = pygame.transform.scale(bird_img, (BIRD_SIZE, BIRD_SIZE))
 PIPE_WIDTH = 60  # Ancho fijo para las tuberías
