@@ -107,13 +107,18 @@ keys_img = load_image("keys.png", (120, 50))
 back_img = load_image("back.png", (120, 50))
 
 # Crear botones principales
-play_button = Button(180, 125, play_img, 1)
-options_button = Button(720, 125, options_img, 1)
-exit_button = Button(455, 375, exit_img, 1)
-video_button = Button(200, 150, video_img, 1)
-audio_button = Button(650, 150, audio_img, 1)
-keys_button = Button(200, 350, keys_img, 1)
-back_button = Button(650, 350, back_img, 1)
+play_button = Button(180, 125, play_img, 10)
+options_button = Button(720, 125, options_img, 10)
+exit_button = Button(455, 375, exit_img, 10)
+
+# Botones del menú de opciones
+video_button = Button(200, 150, video_img, 10)
+audio_button = Button(650, 150, audio_img, 10)
+keys_button = Button(200, 350, keys_img, 10)
+options_back_button = Button(650, 350, back_img, 10)
+
+# Botones para los submenús (posición fija en la parte inferior)
+settings_back_button = Button(50, SCREEN_HEIGHT - 80, back_img, 10)
 
 def can_click():
     """Previene clics múltiples"""
@@ -739,6 +744,5 @@ def main():
     pygame.quit()
     sys.exit()
 
-if __name__ == "__main__":
-    main()
 
+main()
