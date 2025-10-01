@@ -2029,6 +2029,141 @@
         "club actual": "RETIRADO",
         "posicion": ["Mediocampista Defensivo", "Mediocampista Central", "Mediocampista Ofensivo", "Mediocampista Derecho", "Mediocampista Izquierdo"],
         "clubes totales": ["Bastia", "Lyon", "Chelsea", "Real Madrid", "AC Milan", "Panathinaikos", "Persib Bandung", "Sabah FC"]
+    },
+    {
+        "id": 213,
+        "nombre": "Claude Makélélé",
+        "nacionalidad": "Francia",
+        "Fecha de nacimiento": "18/02/1973",
+        "club actual": "RETIRADO",
+        "posicion": ["Mediocampista Defensivo", "Mediocampista Central"],
+        "clubes totales": ["Nantes","Olympique Marseille", "Celta de Vigo", "Real Madrid", "Chelsea", "Paris Saint-Germain"]
+    },
+    {
+        "id": 214,
+        "nombre": "Lassana Diarra",
+        "nacionalidad": "Francia",
+        "Fecha de nacimiento": "10/03/1985",
+        "club actual": "RETIRADO",
+        "posicion": ["Mediocampista Defensivo", "Mediocampista Central", "Mediocampista Derecho", "Mediocampista Izquierdo"],
+        "clubes totales": ["Le Havre", "Chelsea", "Arsenal", "Portsmouth", "Real Madrid", "Anzhi Makhachkala", "Lokomotiv Moscú", "Olympique Marseille", "Al Jazira", "Paris Saint-Germain"]
+    },
+    {
+        "id": 215,
+        "nombre": "Nwankwo Kanu",
+        "nacionalidad": "Nigeria",
+        "Fecha de nacimiento": "01/08/1976",
+        "club actual": "RETIRADO",
+        "posicion": ["Delantero Centro", "Extremo Derecho", "Extremo Izquierdo", "Mediocampista Ofensivo"],
+        "clubes totales": ["Iwuanyanwu Nationale", "Ajax", "Inter de Milán", "Arsenal", "West Bromwich Albion", "Portsmouth"]
+    },
+    {
+        "id": 216,
+        "nombre": "Sami Hyypiä",
+        "nacionalidad": "Finlandia",
+        "Fecha de nacimiento": "07/10/1973",
+        "club actual": "RETIRADO",
+        "posicion": ["Defensa Central", "Lateral Izquierdo"],
+        "clubes totales": ["MyPa", "Voikkaan PaPe", "Willem II", "Liverpool", "Bayer Leverkusen", "Kumu"]
+    },
+    {
+        "id": 217,
+        "nombre": "Leonardo Bonucci",
+        "nacionalidad": "Italia",
+        "Fecha de nacimiento": "01/05/1987",
+        "club actual": "RETIRADO",
+        "posicion": ["Defensa Central", "Lateral Derecho", "Lateral Izquierdo"],
+        "clubes totales": ["Inter de Milán", "Treviso", "Bari", "Juventus", "AC Milan", "Genoa", "Pisa", "Union Berlín", "Fenerbahçe"]
+    },
+    {
+        "id": 218,
+        "nombre": "Giorgio Chiellini",
+        "nacionalidad": "Italia",
+        "Fecha de nacimiento": "14/08/1984",
+        "club actual": "RETIRADO",
+        "posicion": ["Defensa Central", "Lateral Izquierdo"],
+        "clubes totales": ["Livorno", "Fiorentina", "Juventus", "Los Angeles FC"]
+    },
+    {
+        "id": 219,
+        "nombre": "Andrea Barzagli",
+        "nacionalidad": "Italia",
+        "Fecha de nacimiento": "08/05/1981",
+        "club actual": "RETIRADO",
+        "posicion": ["Defensa Central", "Lateral Derecho"],
+        "clubes totales": ["Pistoiese", "Ascoli", "Chievo Verona", "Palermo", "VfL Wolfsburgo", "Juventus"]
+    },
+    {
+        "id": 220,
+        "nombre": "Ciro Immobile",
+        "nacionalidad": "Italia",
+        "Fecha de nacimiento": "20/02/1990",
+        "club actual": "Bologna",
+        "posicion": ["Delantero Centro", "Extremo Derecho", "Extremo Izquierdo"],
+        "clubes totales": ["Juventus", "Siena", "Grosseto", "Pescara", "Genoa", "Torino", "Borussia Dortmund", "Sevilla", "Lazio", "Besiktas", "Bologna"]
+    },
+    {
+        "id": 221,
+        "nombre": "Cesc Fàbregas",
+        "nacionalidad": "España",
+        "Fecha de nacimiento": "04/05/1987",
+        "club actual": "RETIRADO",
+        "posicion": ["Mediocampista Ofensivo", "Mediocampista Central", "Mediocampista Defensivo", "Extremo Derecho", "Extremo Izquierdo"],
+        "clubes totales": ["Arsenal", "Barcelona", "Chelsea", "Monaco", "Como 1907"]
+    },
+    {
+        "id": 222,
+        "nombre": "Claudio Marchisio",
+        "nacionalidad": "Italia",
+        "Fecha de nacimiento": "19/01/1986",
+        "club actual": "RETIRADO",
+        "posicion": ["Mediocampista Central", "Mediocampista Defensivo", "Mediocampista Ofensivo", "Mediocampista Derecho", "Mediocampista Izquierdo"],
+        "clubes totales": ["Juventus", "Empoli", "Zenit"]
+    },
+    {
+        "id": 223,
+        "nombre": "Antonio Cassano",
+        "nacionalidad": "Italia",
+        "Fecha de nacimiento": "12/07/1982",
+        "club actual": "RETIRADO",
+        "posicion": ["Mediocampista Ofensivo", "Delantero Centro", "Extremo Derecho", "Extremo Izquierdo"],
+        "clubes totales": ["Bari", "Roma", "Real Madrid", "Milan", "Inter de Milán", "Parma", "Sampdoria", "Verona"]
+    },
+    {
+        "id": 224,
+        "nombre": "Daniele De Rossi",
+        "nacionalidad": "Italia",
+        "Fecha de nacimiento": "24/07/1983",
+        "club actual": "RETIRADO",
+        "posicion": ["Mediocampista Defensivo", "Mediocampista Central", "Mediocampista Ofensivo"],
+        "clubes totales": ["Roma", "Boca Juniors"]
+    },
+    {
+        "id": 225,
+        "nombre": "David Villa Sánchez",
+        "nacionalidad": "España",
+        "Fecha de nacimiento": "03/12/1981",
+        "club actual": "RETIRADO",
+        "posicion": ["Delantero Centro", "Extremo Derecho", "Extremo Izquierdo"],
+        "clubes totales": ["Sporting Gijón", "Real Zaragoza", "Valencia", "Barcelona", "Atlético de Madrid", "Vissel Kobe", "Melbourne City", "New York City FC"]
+    },
+    {
+        "id": 226,
+        "nombre": "Rio Ferdinand",
+        "nacionalidad": "Inglaterra",
+        "Fecha de nacimiento": "07/11/1978",
+        "club actual": "RETIRADO",
+        "posicion": ["Defensa Central", "Lateral Derecho"],
+        "clubes totales": ["West Ham United", "AFC Bournemouth", "Leeds United", "Manchester United", "Queens Park Rangers"]
+    },
+    {
+        "id": 227,
+        "nombre": "Nemanja Vidić",
+        "nacionalidad": "Serbia",
+        "Fecha de nacimiento": "21/10/1981",
+        "club actual": "RETIRADO",
+        "posicion": ["Defensa Central", "Lateral Derecho"],
+        "clubes totales": ["Crvena Zvesda", "Spartak Moscow", "Manchester United", "Inter de Milán"]
     }
 ]
 }
