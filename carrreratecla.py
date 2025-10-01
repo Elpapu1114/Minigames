@@ -1,6 +1,7 @@
 import pygame
 import sys
 import time
+import os
 
 # Inicializar Pygame
 pygame.init()
@@ -29,11 +30,25 @@ fuente_grande = pygame.font.Font(None, 48)
 fuente_mediana = pygame.font.Font(None, 32)
 fuente_pequeña = pygame.font.Font(None, 24)
 
+# Cargar imágenes de autos
+try:
+    auto_rojo = pygame.image.load(os.path.join("image", "carreraautorojo.png"))
+    auto_azul = pygame.image.load(os.path.join("image", "carreraautoazul.png"))
+    # Escalar autos a tamaño apropiado
+    auto_rojo = pygame.transform.scale(auto_rojo, (50, 50))
+    auto_azul = pygame.transform.scale(auto_azul, (50, 50))
+except:
+    # Si no se encuentran las imágenes, usar None
+    auto_rojo = None
+    auto_azul = None
+    print("Advertencia: No se pudieron cargar las imágenes de los autos")
+
 # Estado del juego
-estado_juego = "menu"  # "menu", "juego", "ganador"
+estado_juego = "menu"  # "menu", "juego", "ganador", "cuenta_regresiva"
 posicion_j1 = 50
 posicion_j2 = 50
 ganador = None
+tiempo_inicio_cuenta = 0
 
 def dibujar_menu():
     """Dibuja el menú principal"""
@@ -106,13 +121,19 @@ def dibujar_pista():
 
 def dibujar_corredores():
     """Dibuja los corredores en sus posiciones actuales"""
-    # Corredor 1 (círculo rojo)
-    pygame.draw.circle(pantalla, ROJO, (int(posicion_j1), 190), 25)
-    pygame.draw.circle(pantalla, NEGRO, (int(posicion_j1), 190), 25, 3)
+    # Corredor 1 (auto rojo o círculo rojo)
+    if auto_rojo:
+        pantalla.blit(auto_rojo, (int(posicion_j1) - 25, 165))
+    else:
+        pygame.draw.circle(pantalla, ROJO, (int(posicion_j1), 190), 25)
+        pygame.draw.circle(pantalla, NEGRO, (int(posicion_j1), 190), 25, 3)
     
-    # Corredor 2 (círculo azul)
-    pygame.draw.circle(pantalla, AZUL, (int(posicion_j2), 390), 25)
-    pygame.draw.circle(pantalla, NEGRO, (int(posicion_j2), 390), 25, 3)
+    # Corredor 2 (auto azul o círculo azul)
+    if auto_azul:
+        pantalla.blit(auto_azul, (int(posicion_j2) - 25, 365))
+    else:
+        pygame.draw.circle(pantalla, AZUL, (int(posicion_j2), 390), 25)
+        pygame.draw.circle(pantalla, NEGRO, (int(posicion_j2), 390), 25, 3)
 
 def dibujar_progreso():
     """Dibuja las barras de progreso"""
@@ -147,6 +168,33 @@ def dibujar_juego():
     texto_inst = fuente_pequeña.render("¡Presiona tu tecla repetidamente! ESC para volver al menú", True, NEGRO)
     rect_inst = texto_inst.get_rect(center=(ANCHO//2, ALTO - 30))
     pantalla.blit(texto_inst, rect_inst)
+
+def dibujar_cuenta_regresiva():
+    """Dibuja la pantalla de cuenta regresiva"""
+    dibujar_pista()
+    dibujar_corredores()
+    dibujar_progreso()
+    
+    # Calcular tiempo restante
+    tiempo_transcurrido = time.time() - tiempo_inicio_cuenta
+    tiempo_restante = 3 - int(tiempo_transcurrido)
+    
+    if tiempo_restante > 0:
+        # Fondo semi-transparente
+        overlay = pygame.Surface((ANCHO, ALTO))
+        overlay.set_alpha(180)
+        overlay.fill(NEGRO)
+        pantalla.blit(overlay, (0, 0))
+        
+        # Número de cuenta regresiva
+        texto_cuenta = pygame.font.Font(None, 150).render(str(tiempo_restante), True, AMARILLO)
+        rect_cuenta = texto_cuenta.get_rect(center=(ANCHO//2, ALTO//2))
+        pantalla.blit(texto_cuenta, rect_cuenta)
+        
+        # Mensaje
+        texto_preparate = fuente_mediana.render("¡PREPÁRATE!", True, BLANCO)
+        rect_preparate = texto_preparate.get_rect(center=(ANCHO//2, ALTO//2 + 80))
+        pantalla.blit(texto_preparate, rect_preparate)
 
 def dibujar_pantalla_ganador():
     """Dibuja la pantalla del ganador"""
@@ -194,12 +242,12 @@ def manejar_eventos():
             # En el menú
             if estado_juego == "menu":
                 if evento.key == pygame.K_SPACE:
-                    iniciar_juego()
+                    iniciar_cuenta_regresiva()
             
             # En la pantalla de ganador
             elif estado_juego == "ganador":
                 if evento.key == pygame.K_SPACE:
-                    iniciar_juego()
+                    iniciar_cuenta_regresiva()
                 elif evento.key == pygame.K_ESCAPE:
                     estado_juego = "menu"
             
@@ -214,13 +262,19 @@ def manejar_eventos():
                 elif evento.key == pygame.K_l:
                     mover_jugador(2)
 
-def iniciar_juego():
-    """Inicia una nueva partida"""
-    global estado_juego, posicion_j1, posicion_j2, ganador
-    estado_juego = "juego"
+def iniciar_cuenta_regresiva():
+    """Inicia la cuenta regresiva antes del juego"""
+    global estado_juego, posicion_j1, posicion_j2, ganador, tiempo_inicio_cuenta
+    estado_juego = "cuenta_regresiva"
     posicion_j1 = 75
     posicion_j2 = 75
     ganador = None
+    tiempo_inicio_cuenta = time.time()
+
+def iniciar_juego():
+    """Inicia una nueva partida"""
+    global estado_juego
+    estado_juego = "juego"
 
 def mover_jugador(jugador):
     """Mueve el jugador especificado hacia adelante"""
@@ -242,7 +296,13 @@ def mover_jugador(jugador):
 
 def actualizar_juego():
     """Actualiza la lógica del juego"""
-    pass
+    global estado_juego
+    
+    # Si está en cuenta regresiva, verificar si ya pasaron 3 segundos
+    if estado_juego == "cuenta_regresiva":
+        tiempo_transcurrido = time.time() - tiempo_inicio_cuenta
+        if tiempo_transcurrido >= 3:
+            iniciar_juego()
 
 def ejecutar_juego():
     """Bucle principal del juego"""
@@ -258,6 +318,8 @@ def ejecutar_juego():
         # Dibujar según el estado actual
         if estado_juego == "menu":
             dibujar_menu()
+        elif estado_juego == "cuenta_regresiva":
+            dibujar_cuenta_regresiva()
         elif estado_juego == "juego":
             dibujar_juego()
         elif estado_juego == "ganador":
