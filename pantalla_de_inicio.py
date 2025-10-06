@@ -391,7 +391,7 @@ def main():
         
         pygame.display.flip()
     
-    print("👋 Cerrando Game Launcher...")
+    print(" Cerrando Game Launcher...")
     pygame.quit()
     sys.exit()
 
