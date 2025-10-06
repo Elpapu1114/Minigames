@@ -46,6 +46,7 @@ bombas = []
 cortes = []
 particulas = []
 trail_mouse = []
+tiempo_juego = 0  # Contador de tiempo para dificultad progresiva
 
 class Fruta:
     def __init__(self, x, y, velocidad_x, velocidad_y, color, tamaño):
@@ -118,15 +119,15 @@ class Bomba:
     
     def dibujar(self, pantalla):
         if not self.explotada:
-            # Dibujar bomba más grande
-            pygame.draw.circle(pantalla, NEGRO, (int(self.x), int(self.y)), 35)  # Más grande
-            pygame.draw.circle(pantalla, GRIS_OSCURO, (int(self.x), int(self.y)), 30)  # Más grande
+            # Dibujar bomba
+            pygame.draw.circle(pantalla, NEGRO, (int(self.x), int(self.y)), 25)
+            pygame.draw.circle(pantalla, GRIS_OSCURO, (int(self.x), int(self.y)), 20)
             # Mecha
-            pygame.draw.line(pantalla, MARRON, (int(self.x), int(self.y - 35)), 
-                           (int(self.x - 15), int(self.y - 50)), 4)  # Mecha más larga
+            pygame.draw.line(pantalla, MARRON, (int(self.x), int(self.y - 25)), 
+                           (int(self.x - 10), int(self.y - 35)), 3)
             # Chispa en la mecha
             if random.randint(0, 10) > 7:
-                pygame.draw.circle(pantalla, AMARILLO, (int(self.x - 15), int(self.y - 50)), 4)
+                pygame.draw.circle(pantalla, AMARILLO, (int(self.x - 10), int(self.y - 35)), 3)
         else:
             # Dibujar explosión
             if self.tiempo_explosion < 30:
@@ -188,52 +189,73 @@ def crear_particulas_explosion(x, y):
         particulas.append(particula)
 
 def generar_fruta():
-    """Genera una nueva fruta"""
-    # Elegir lado aleatoriamente: 0=izquierda, 1=derecha, 2=abajo
-    lado = random.randint(0, 2)
+    """Genera una nueva fruta desde abajo"""
+    # Generar desde los lados con trayectoria hacia el centro
+    lado = random.choice(['izquierda', 'derecha'])
     
-    if lado == 0:  # Izquierda
-        x = random.randint(-50, -20)
-        y = random.randint(ALTO//2, ALTO - 100)
-        velocidad_x = random.uniform(4, 8)
-        velocidad_y = random.uniform(-12, -8)
-    elif lado == 1:  # Derecha
-        x = random.randint(ANCHO + 20, ANCHO + 50)
-        y = random.randint(ALTO//2, ALTO - 100)
-        velocidad_x = random.uniform(-8, -4)  # Velocidad negativa hacia la izquierda
-        velocidad_y = random.uniform(-12, -8)
-    else:  # Abajo
-        x = random.randint(100, ANCHO - 100)
-        y = random.randint(ALTO + 20, ALTO + 50)
-        velocidad_x = random.uniform(-3, 3)  # Velocidad horizontal aleatoria
-        velocidad_y = random.uniform(-15, -10)  # Velocidad más fuerte hacia arriba
+    if lado == 'izquierda':
+        x = random.randint(0, 100)
+        # Ángulo hacia arriba y derecha (hacia el centro)
+        angulo = random.uniform(-60, -120)
+    else:
+        x = random.randint(ANCHO - 100, ANCHO)
+        # Ángulo hacia arriba y izquierda (hacia el centro)
+        angulo = random.uniform(-60, -120)
+    
+    y = ALTO + 20  # Desde abajo de la pantalla
+    
+    velocidad = random.uniform(15, 22)
+    velocidad_x = velocidad * math.cos(math.radians(angulo))
+    velocidad_y = velocidad * math.sin(math.radians(angulo))
+    
+    # Ajustar velocidad_x según el lado para ir hacia el centro
+    if lado == 'izquierda':
+        velocidad_x = abs(velocidad_x)  # Asegurar que va hacia la derecha
+    else:
+        velocidad_x = -abs(velocidad_x)  # Asegurar que va hacia la izquierda
     
     color = random.choice(COLORES_FRUTAS)
     tamaño = random.randint(20, 35)
     return Fruta(x, y, velocidad_x, velocidad_y, color, tamaño)
 
 def generar_bomba():
-    """Genera una nueva bomba"""
-    # Elegir lado aleatoriamente: 0=izquierda, 1=derecha, 2=abajo
-    lado = random.randint(0, 2)
+    """Genera una nueva bomba desde abajo"""
+    # Generar desde los lados con trayectoria hacia el centro
+    lado = random.choice(['izquierda', 'derecha'])
     
-    if lado == 0:  # Izquierda
-        x = random.randint(-50, -20)
-        y = random.randint(ALTO//2, ALTO - 100)
-        velocidad_x = random.uniform(4, 8)
-        velocidad_y = random.uniform(-12, -8)
-    elif lado == 1:  # Derecha
-        x = random.randint(ANCHO + 20, ANCHO + 50)
-        y = random.randint(ALTO//2, ALTO - 100)
-        velocidad_x = random.uniform(-8, -4)  # Velocidad negativa hacia la izquierda
-        velocidad_y = random.uniform(-12, -8)
-    else:  # Abajo
-        x = random.randint(100, ANCHO - 100)
-        y = random.randint(ALTO + 20, ALTO + 50)
-        velocidad_x = random.uniform(-3, 3)  # Velocidad horizontal aleatoria
-        velocidad_y = random.uniform(-15, -10)  # Velocidad más fuerte hacia arriba
+    if lado == 'izquierda':
+        x = random.randint(0, 100)
+        angulo = random.uniform(-60, -120)
+    else:
+        x = random.randint(ANCHO - 100, ANCHO)
+        angulo = random.uniform(-60, -120)
+    
+    y = ALTO + 20  # Desde abajo de la pantalla
+    
+    velocidad = random.uniform(15, 22)
+    velocidad_x = velocidad * math.cos(math.radians(angulo))
+    velocidad_y = velocidad * math.sin(math.radians(angulo))
+    
+    # Ajustar velocidad_x según el lado para ir hacia el centro
+    if lado == 'izquierda':
+        velocidad_x = abs(velocidad_x)  # Asegurar que va hacia la derecha
+    else:
+        velocidad_x = -abs(velocidad_x)  # Asegurar que va hacia la izquierda
     
     return Bomba(x, y, velocidad_x, velocidad_y)
+
+def calcular_intervalo_spawn():
+    """Calcula el intervalo de spawn basado en el tiempo de juego"""
+    # Empieza en 60 frames (1 segundo) y disminuye hasta 20 frames (0.33 segundos)
+    tiempo_segundos = tiempo_juego / FPS
+    intervalo_base = 60
+    intervalo_minimo = 20
+    
+    # Reduce el intervalo 2 frames cada 5 segundos
+    reduccion = (tiempo_segundos // 5) * 2
+    intervalo = max(intervalo_minimo, intervalo_base - reduccion)
+    
+    return int(intervalo)
 
 def detectar_corte_fruta(pos_mouse, fruta):
     """Detecta si el mouse está cerca de una fruta para cortarla"""
@@ -243,7 +265,7 @@ def detectar_corte_fruta(pos_mouse, fruta):
 def detectar_corte_bomba(pos_mouse, bomba):
     """Detecta si el mouse está cerca de una bomba"""
     distancia = math.sqrt((pos_mouse[0] - bomba.x)**2 + (pos_mouse[1] - bomba.y)**2)
-    return distancia < 45  # Área de detección más grande para bombas más grandes
+    return distancia < 35
 
 def dibujar_menu():
     """Dibuja el menú principal"""
@@ -265,8 +287,9 @@ def dibujar_menu():
     # Instrucciones
     instrucciones = [
         "Arrastra el mouse para cortar frutas",
-        "¡Evita las bombas negras!",
-        "Tienes 3 vidas",
+        "¡Evita las bombas! Una bomba = Game Over",
+        "Tienes 3 vidas (perdes 1 si dejas caer frutas)",
+        "La dificultad aumenta con el tiempo",
         "",
         "Presiona ESPACIO para comenzar"
     ]
@@ -274,7 +297,7 @@ def dibujar_menu():
     y_inicio = 280
     for i, linea in enumerate(instrucciones):
         if linea:
-            color = VERDE if "frutas" in linea else ROJO if "bombas" in linea else BLANCO
+            color = VERDE if "frutas" in linea else ROJO if "bombas" in linea else NARANJA if "dificultad" in linea else BLANCO
             texto = fuente_pequeña.render(linea, True, color)
             rect_texto = texto.get_rect(center=(ANCHO//2, y_inicio + i*30))
             pantalla.blit(texto, rect_texto)
@@ -294,6 +317,11 @@ def dibujar_hud():
     # Vidas
     texto_vidas = fuente_mediana.render(f"Vidas: {vidas}", True, ROJO)
     pantalla.blit(texto_vidas, (ANCHO - 150, 20))
+    
+    # Tiempo de juego
+    tiempo_seg = tiempo_juego // FPS
+    texto_tiempo = fuente_pequeña.render(f"Tiempo: {tiempo_seg}s", True, BLANCO)
+    pantalla.blit(texto_tiempo, (ANCHO//2 - 50, 20))
     
     # Dibujar corazones para las vidas
     for i in range(vidas):
@@ -351,6 +379,12 @@ def dibujar_game_over():
     rect_puntos = puntos_finales.get_rect(center=(ANCHO//2, 280))
     pantalla.blit(puntos_finales, rect_puntos)
     
+    # Tiempo sobrevivido
+    tiempo_final = tiempo_juego // FPS
+    tiempo_texto = fuente_mediana.render(f"Tiempo: {tiempo_final} segundos", True, VERDE)
+    rect_tiempo = tiempo_texto.get_rect(center=(ANCHO//2, 320))
+    pantalla.blit(tiempo_texto, rect_tiempo)
+    
     # Opciones
     opciones = [
         "Presiona ESPACIO para jugar de nuevo",
@@ -359,15 +393,16 @@ def dibujar_game_over():
     
     for i, opcion in enumerate(opciones):
         texto_opcion = fuente_pequeña.render(opcion, True, BLANCO)
-        rect_opcion = texto_opcion.get_rect(center=(ANCHO//2, 350 + i*30))
+        rect_opcion = texto_opcion.get_rect(center=(ANCHO//2, 380 + i*30))
         pantalla.blit(texto_opcion, rect_opcion)
 
 def reiniciar_juego():
     """Reinicia el juego"""
-    global puntuacion, vidas, tiempo_spawn, frutas, bombas, particulas, trail_mouse
+    global puntuacion, vidas, tiempo_spawn, frutas, bombas, particulas, trail_mouse, tiempo_juego
     puntuacion = 0
     vidas = 3
     tiempo_spawn = 0
+    tiempo_juego = 0
     frutas.clear()
     bombas.clear()
     particulas.clear()
@@ -410,35 +445,35 @@ def manejar_eventos():
 
 def actualizar_juego():
     """Actualiza la lógica del juego"""
-    global tiempo_spawn, puntuacion, vidas, estado_juego
+    global tiempo_spawn, puntuacion, vidas, estado_juego, tiempo_juego
     
     if estado_juego != "juego":
         return
     
+    # Incrementar contador de tiempo
+    tiempo_juego += 1
+    
+    # Calcular intervalo de spawn dinámico
+    intervalo_spawn = calcular_intervalo_spawn()
+    
     # Generar nuevas frutas y bombas
     tiempo_spawn += 1
-    if tiempo_spawn > 40:  # Más frecuente - cada 0.67 segundos
+    if tiempo_spawn > intervalo_spawn:
         tiempo_spawn = 0
-        
-        # Generar múltiples frutas a la vez (2-4 frutas)
-        num_frutas = random.randint(2, 4)
-        for i in range(num_frutas):
-            fruta = generar_fruta()
-            frutas.append(fruta)
-        
-        # Generar bombas más frecuentemente (50% de probabilidad)
-        if random.randint(0, 100) < 50:
-            # A veces generar 1-2 bombas
-            num_bombas = random.randint(1, 2)
-            for i in range(num_bombas):
-                bomba = generar_bomba()
-                bombas.append(bomba)
+        if random.randint(0, 100) < 80:  # 80% probabilidad de fruta
+            frutas.append(generar_fruta())
+        else:  # 20% probabilidad de bomba
+            bombas.append(generar_bomba())
     
     # Actualizar frutas
     for fruta in frutas[:]:
         fruta.actualizar()
         if not fruta.en_pantalla() and (fruta.cortada or fruta.y > ALTO):
-            # Solo remover la fruta, sin restar vidas por dejarla caer
+            if not fruta.cortada and fruta.y > ALTO:
+                # Fruta cayó sin ser cortada
+                vidas -= 1
+                if vidas <= 0:
+                    estado_juego = "game_over"
             frutas.remove(fruta)
     
     # Actualizar bombas
@@ -467,9 +502,9 @@ def actualizar_juego():
         for bomba in bombas:
             if not bomba.explotada and detectar_corte_bomba(pos_mouse, bomba):
                 if bomba.explotar():
-                    vidas -= 1
-                    if vidas <= 0:
-                        estado_juego = "game_over"
+                    # Tocar una bomba termina el juego inmediatamente
+                    vidas = 0
+                    estado_juego = "game_over"
 
 def ejecutar_juego():
     """Bucle principal del juego"""
