@@ -35,7 +35,7 @@
         "id": 3,
         "nombre": "Neymar da Silva Santos Júnior",
         "apodo": "Neymar Jr.",
-        "nacionalidad": "Brasil",    
+        "nacionalidad": "Brasil",
         "Fecha de nacimiento": "05/02/1992",
         "club actual": "Santos",
         "posicion": ["Delantero Centro", "Extremo Izquierdo", "Mediocampista Ofensivo"],
@@ -417,6 +417,7 @@
     {
         "id": 45,
         "nombre": "Francesc Fàbregas Soler",
+        "apodo": "Cesc Fàbregas",
         "nacionalidad": "España",    
         "Fecha de nacimiento": "04/05/1987",
         "club actual": "RETIRADO",
@@ -1451,7 +1452,7 @@
         "Fecha de nacimiento": "23/06/1976",
         "club actual": "RETIRADO",
         "posicion": ["Mediocampista Defensivo", "Mediocampista Central", "Mediocampista Ofensivo"],
-        "clubes totales": ["Cannes", "Milan", "Arsenal", "Juventus", "Inter de Milán", "Manchester City"]
+        "clubes totales": ["Cannes", "AC Milan", "Arsenal", "Juventus", "Inter de Milán", "Manchester City"]
     },
 
     {
@@ -2127,7 +2128,7 @@
         "Fecha de nacimiento": "12/07/1982",
         "club actual": "RETIRADO",
         "posicion": ["Mediocampista Ofensivo", "Delantero Centro", "Extremo Derecho", "Extremo Izquierdo"],
-        "clubes totales": ["Bari", "Roma", "Real Madrid", "Milan", "Inter de Milán", "Parma", "Sampdoria", "Verona"]
+        "clubes totales": ["Bari", "Roma", "Real Madrid", "AC Milan", "Inter de Milán", "Parma", "Sampdoria", "Verona"]
     },
     {
         "id": 224,
@@ -2164,6 +2165,60 @@
         "club actual": "RETIRADO",
         "posicion": ["Defensa Central", "Lateral Derecho"],
         "clubes totales": ["Crvena Zvesda", "Spartak Moscow", "Manchester United", "Inter de Milán"]
+    },
+    {
+        "id": 228,
+        "nombre": "Bratislav Ivanović",
+        "nacionalidad": "Serbia",
+        "Fecha de nacimiento": "22/02/1984",
+        "club actual": "RETIRADO",
+        "posicion": ["Lateral Derecho", "Defensa Central", "Mediocampista Derecho"],
+        "clubes totales": ["OFK Beograd", "Lokomotiv Moscú", "Chelsea", "Zenit", "West Bromwich Albion"]
+    },
+    {
+        "id": 229,
+        "nombre": "Marco Reus",
+        "nacionalidad": "Alemania",
+        "Fecha de nacimiento": "31/05/1989",
+        "club actual": "LA Galaxy",
+        "posicion": ["Extremo Derecho", "Extremo Izquierdo", "Mediocampista Ofensivo", "Mediocampista Central"],
+        "clubes totales": ["Rot Weiss Ahlen", "Borussia Mönchengladbach", "Borussia Dortmund", "LA Galaxy"]
+    },
+    {
+        "id": 230,
+        "nombre": "Roman Weidenfeller",
+        "nacionalidad": "Alemania",
+        "Fecha de nacimiento": "06/08/1980",
+        "club actual": "RETIRADO",
+        "posicion": ["Portero"],
+        "clubes totales": ["1. FC Kaiserslautern", "Borussia Dortmund"]
+    },
+    {
+        "id": 231,
+        "nombre": "Lothar Matthäus",
+        "nacionalidad": "Alemania",
+        "Fecha de nacimiento": "21/03/1961",
+        "club actual": "RETIRADO",
+        "posicion": ["Mediocampista Defensivo", "Mediocampista Central", "Mediocampista Ofensivo", "Defensa Central"],
+        "clubes totales": ["Borussia Mönchengladbach", "Bayern Múnich", "Inter de Milán", "MetroStars", "Newark Ironbound Express"]
+    },
+    {
+        "id": 232,
+        "nombre": "Toby Alderweireld",
+        "nacionalidad": "Bélgica",
+        "Fecha de nacimiento": "02/03/1989",
+        "club actual": "RETIRADO",
+        "posicion": ["Defensa Central", "Lateral Derecho", "Lateral Izquierdo"],
+        "clubes totales": ["Ajax", "Atlético de Madrid", "Southampton", "Tottenham Hotspur", "Al-Duhail", "Royal Antwerp"]
+    },
+    {
+        "id": 233,
+        "nombre": "Jan Vertonghen",
+        "nacionalidad": "Bélgica",
+        "Fecha de nacimiento": "24/04/1987",
+        "club actual": "Royal Antwerp",
+        "posicion": ["Defensa Central", "Lateral Izquierdo", "Lateral Derecho"],
+        "clubes totales": ["Ajax", "Tottenham Hotspur", "Benfica", "Anderlecht"]
     }
 ]
 }
