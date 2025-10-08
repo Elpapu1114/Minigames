@@ -318,6 +318,7 @@ def handle_video_settings():
     # Botón volver
     if back_button.draw(screen) and can_click():
         menu_state = "options"
+    
 
 def handle_audio_settings():
     """Maneja las configuraciones de audio mejoradas"""
