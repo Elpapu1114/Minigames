@@ -27,7 +27,7 @@ GRIS_OSCURO = (64, 64, 64)
 
 # Variables globales
 pantalla = pygame.display.set_mode((ANCHO, ALTO))
-pygame.display.set_caption("Corta Frutas - Fruit Ninja Style")
+pygame.display.set_caption("Fruit ninja - Corta Frutas")
 reloj = pygame.time.Clock()
 fuente_grande = pygame.font.Font(None, 48)
 fuente_mediana = pygame.font.Font(None, 32)
