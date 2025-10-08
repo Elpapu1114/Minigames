@@ -27,7 +27,7 @@ GRIS_OSCURO = (64, 64, 64)
 
 # Variables globales
 pantalla = pygame.display.set_mode((ANCHO, ALTO))
-pygame.display.set_caption("Fruit ninja - Corta Frutas")
+pygame.display.set_caption("Corta Frutas - Fruit Ninja Style")
 reloj = pygame.time.Clock()
 fuente_grande = pygame.font.Font(None, 48)
 fuente_mediana = pygame.font.Font(None, 32)
@@ -437,30 +437,30 @@ def dibujar_game_over():
         pantalla.blit(bg_gameover, (0, 0))
     else:
         pantalla.fill((20, 20, 20))
-    
-    titulo = fuente_grande.render("GAME OVER", True, ROJO)
-    rect_titulo = titulo.get_rect(center=(ANCHO//2, 200))
-    pantalla.blit(titulo, rect_titulo)
-    
-    puntos_finales = fuente_mediana.render(f"Puntuación Final: {puntuacion}", True, AMARILLO)
-    rect_puntos = puntos_finales.get_rect(center=(ANCHO//2, 280))
-    pantalla.blit(puntos_finales, rect_puntos)
-    
-    tiempo_final = tiempo_juego // FPS
-    tiempo_texto = fuente_mediana.render(f"Tiempo: {tiempo_final} segundos", True, VERDE)
-    rect_tiempo = tiempo_texto.get_rect(center=(ANCHO//2, 320))
-    pantalla.blit(tiempo_texto, rect_tiempo)
-    
-    opciones = [
-        "Presiona ESPACIO para jugar de nuevo",
-        "Presiona M para volver al menú",
-        "Presiona ESC para salir"
-    ]
-    
-    for i, opcion in enumerate(opciones):
-        texto_opcion = fuente_pequeña.render(opcion, True, BLANCO)
-        rect_opcion = texto_opcion.get_rect(center=(ANCHO//2, 380 + i*30))
-        pantalla.blit(texto_opcion, rect_opcion)
+        # Solo mostrar texto si no hay imagen de fondo
+        titulo = fuente_grande.render("GAME OVER", True, ROJO)
+        rect_titulo = titulo.get_rect(center=(ANCHO//2, 200))
+        pantalla.blit(titulo, rect_titulo)
+        
+        puntos_finales = fuente_mediana.render(f"Puntuación Final: {puntuacion}", True, AMARILLO)
+        rect_puntos = puntos_finales.get_rect(center=(ANCHO//2, 280))
+        pantalla.blit(puntos_finales, rect_puntos)
+        
+        tiempo_final = tiempo_juego // FPS
+        tiempo_texto = fuente_mediana.render(f"Tiempo: {tiempo_final} segundos", True, VERDE)
+        rect_tiempo = tiempo_texto.get_rect(center=(ANCHO//2, 320))
+        pantalla.blit(tiempo_texto, rect_tiempo)
+        
+        opciones = [
+            "Presiona ESPACIO para jugar de nuevo",
+            "Presiona M para volver al menú",
+            "Presiona ESC para salir"
+        ]
+        
+        for i, opcion in enumerate(opciones):
+            texto_opcion = fuente_pequeña.render(opcion, True, BLANCO)
+            rect_opcion = texto_opcion.get_rect(center=(ANCHO//2, 380 + i*30))
+            pantalla.blit(texto_opcion, rect_opcion)
 
 def reiniciar_juego():
     global puntuacion, vidas, tiempo_spawn, frutas, bombas, particulas, trail_mouse, tiempo_juego
