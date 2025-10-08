@@ -28,9 +28,21 @@ AMARILLO = (255, 255, 200)
 def cargar_datos():
     try:
         with open('basededatos.json', 'r', encoding='utf-8') as f:
-            jugadores = json.load(f)
+            datos = json.load(f)
         with open('config.json', 'r', encoding='utf-8') as f:
             config = json.load(f)
+        
+        # Si el JSON tiene una clave "jugadores", extraerla
+        if isinstance(datos, dict) and "jugadores" in datos:
+            jugadores = datos["jugadores"]
+        else:
+            jugadores = datos
+            
+        print(f"Cargados {len(jugadores)} jugadores")
+        # Debug: mostrar el primer jugador para verificar estructura
+        if jugadores:
+            print(f"Ejemplo de jugador: {jugadores[0]}")
+        
         return jugadores, config
     except FileNotFoundError as e:
         print(f"Error: No se encontró el archivo {e.filename}")
@@ -41,7 +53,6 @@ def cargar_datos():
 
 # Generar grid aleatorio
 def generar_grid(config):
-    # Decidir si las selecciones van en filas o columnas (no mezcladas)
     selecciones_en_filas = random.choice([True, False])
     
     categorias_filas = []
@@ -53,7 +64,6 @@ def generar_grid(config):
     random.shuffle(selecciones_disponibles)
     
     if selecciones_en_filas:
-        # Filas: mezcla de equipos y selecciones (al menos 1 selección)
         num_selecciones = random.randint(1, 3)
         for i in range(3):
             if i < num_selecciones:
@@ -61,16 +71,13 @@ def generar_grid(config):
             else:
                 categorias_filas.append(("equipo", equipos_disponibles[i]))
         
-        # Columnas: solo equipos
         for i in range(3):
             idx = num_selecciones + (3 - num_selecciones) + i
             categorias_cols.append(("equipo", equipos_disponibles[idx % len(equipos_disponibles)]))
     else:
-        # Filas: solo equipos
         for i in range(3):
             categorias_filas.append(("equipo", equipos_disponibles[i]))
         
-        # Columnas: mezcla de equipos y selecciones (al menos 1 selección)
         num_selecciones = random.randint(1, 3)
         for i in range(3):
             if i < num_selecciones:
@@ -121,15 +128,23 @@ class FutbolGrid:
         self.jugador_seleccionado = None
         self.mostrando_menu_celdas = False
         self.celdas_validas = []
-        self.input_activo = True  # El input siempre está activo
+        self.input_activo = True
         
     def buscar_jugador(self, nombre):
         nombre_lower = nombre.lower().strip()
         for jugador in self.jugadores:
-            nombre_jugador = jugador[1].lower().strip()
-            # Buscar por nombre completo o por apellido
-            if nombre_jugador == nombre_lower or nombre_jugador.split()[-1] == nombre_lower:
+            nombre_jugador = jugador["nombre"].lower().strip()
+            # Buscar por nombre completo
+            if nombre_jugador == nombre_lower:
                 return jugador
+            # Buscar por apellido
+            if nombre_jugador.split()[-1] == nombre_lower:
+                return jugador
+            # Buscar por apodo si existe
+            if "apodo" in jugador:
+                apodo_lower = jugador["apodo"].lower().strip()
+                if apodo_lower == nombre_lower:
+                    return jugador
         return None
     
     def obtener_sugerencias(self, texto):
@@ -138,11 +153,15 @@ class FutbolGrid:
         sugerencias = []
         texto_lower = texto.lower().strip()
         for jugador in self.jugadores:
-            nombre_completo = jugador[1]
+            nombre_completo = jugador["nombre"]
             nombre_lower = nombre_completo.lower()
-            # Buscar por nombre completo o por cualquier parte del nombre
+            # Buscar en nombre completo
             if texto_lower in nombre_lower:
                 sugerencias.append(nombre_completo)
+            # Buscar en apodo si existe
+            elif "apodo" in jugador and texto_lower in jugador["apodo"].lower():
+                sugerencias.append(nombre_completo)
+            
             if len(sugerencias) >= 5:
                 break
         return sugerencias
@@ -195,28 +214,29 @@ class FutbolGrid:
                 
                 # Dibujar nombre del jugador si existe
                 if self.grid[i][j]:
-                    nombre = self.grid[i][j]["nombre"].split()[-1]  # Apellido
+                    # Usar apodo si existe, si no usar apellido
+                    if "apodo" in self.grid[i][j]:
+                        nombre = self.grid[i][j]["apodo"]
+                    else:
+                        nombre = self.grid[i][j]["nombre"].split()[-1]  # Apellido
+                    
                     texto = self.fuente_pequena.render(nombre, True, NEGRO)
                     rect_texto = texto.get_rect(center=(x + TAMANO_CELDA // 2, y + TAMANO_CELDA // 2))
                     self.pantalla.blit(texto, rect_texto)
     
     def dibujar_input(self):
         y = 600
-        # Fondo del input con color que indica que está activo
         color_fondo = AMARILLO if self.input_activo else BLANCO
         pygame.draw.rect(self.pantalla, color_fondo, (50, y, 900, 40))
         pygame.draw.rect(self.pantalla, NEGRO, (50, y, 900, 40), 3)
         
-        # Texto del input
         texto = self.fuente.render(self.input_texto, True, NEGRO)
         self.pantalla.blit(texto, (60, y + 8))
         
-        # Cursor parpadeante
         if self.input_activo and pygame.time.get_ticks() % 1000 < 500:
             cursor_x = 60 + texto.get_width() + 2
             pygame.draw.line(self.pantalla, NEGRO, (cursor_x, y + 8), (cursor_x, y + 32), 2)
         
-        # Dibujar sugerencias
         if self.sugerencias:
             y_sug = y + 45
             for i, sugerencia in enumerate(self.sugerencias):
@@ -265,10 +285,11 @@ class FutbolGrid:
                 self.jugador_seleccionado = None
                 self.celdas_validas = []
                 self.input_texto = ""
+                self.sugerencias = []
                 return
     
-    def procesar_jugador(self, jugador):
-        jugador = self.buscar_jugador(jugador[1])
+    def procesar_jugador(self, nombre_jugador):
+        jugador = self.buscar_jugador(nombre_jugador)
         if jugador:
             celdas = self.encontrar_celdas_validas(jugador)
             if celdas:
@@ -276,14 +297,19 @@ class FutbolGrid:
                     i, j = celdas[0]
                     self.grid[i][j] = jugador
                     self.input_texto = ""
+                    self.sugerencias = []
                 else:
                     self.jugador_seleccionado = jugador
                     self.celdas_validas = celdas
                     self.mostrando_menu_celdas = True
             else:
-                print(f"El jugador {jugador[1]} no encaja en ninguna celda disponible")
+                print(f"El jugador {jugador['nombre']} no encaja en ninguna celda disponible")
+                self.input_texto = ""
+                self.sugerencias = []
         else:
-            print(f"No se encontró el jugador: {jugador[1]}")
+            print(f"No se encontró el jugador: {nombre_jugador}")
+            self.input_texto = ""
+            self.sugerencias = []
     
     def ejecutar(self):
         ejecutando = True
@@ -299,7 +325,6 @@ class FutbolGrid:
                     if self.mostrando_menu_celdas:
                         self.manejar_clic_menu(evento.pos)
                     else:
-                        # Clic en sugerencias
                         if self.sugerencias:
                             y_sug = 645
                             for i, sugerencia in enumerate(self.sugerencias):
@@ -310,7 +335,6 @@ class FutbolGrid:
                                     self.procesar_jugador(sugerencia)
                                     break
                         
-                        # Clic en el input para activarlo (siempre está activo)
                         rect_input = pygame.Rect(50, 600, 900, 40)
                         if rect_input.collidepoint(evento.pos):
                             self.input_activo = True
@@ -322,11 +346,9 @@ class FutbolGrid:
                     elif evento.key == pygame.K_RETURN:
                         if self.input_texto:
                             self.procesar_jugador(self.input_texto)
-                            self.sugerencias = []
                     elif evento.key == pygame.K_ESCAPE:
                         ejecutando = False
                     else:
-                        # Agregar caracteres normales
                         if len(evento.unicode) > 0 and evento.unicode.isprintable():
                             self.input_texto += evento.unicode
                             self.sugerencias = self.obtener_sugerencias(self.input_texto)
@@ -334,7 +356,6 @@ class FutbolGrid:
             # Dibujar
             self.pantalla.fill(BLANCO)
             
-            # Título
             titulo = self.fuente_grande.render("FÚTBOL GRID", True, NEGRO)
             self.pantalla.blit(titulo, (ANCHO // 2 - 100, 30))
             
@@ -342,8 +363,6 @@ class FutbolGrid:
             
             if not self.mostrando_menu_celdas:
                 self.dibujar_input()
-                
-                # Instrucciones
                 inst = self.fuente_pequena.render("Escribe el nombre de un jugador (presiona ESC para salir)", True, GRIS_OSCURO)
                 self.pantalla.blit(inst, (50, 570))
             else:
