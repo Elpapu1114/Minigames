@@ -61,7 +61,7 @@
     },
     {
         "id": 6,
-        "nombre": "Ángel Fabián Di María Hernández",
+        "nombre": "Ángel Fabián Di María",
         "nacionalidad": "Argentina",    
         "Fecha de nacimiento": "14/02/1988",
         "club actual": "Rosario Central",
@@ -580,7 +580,7 @@
     },
     {
         "id": 63,
-        "nombre": "Mesut Özil",
+        "nombre": "Mesut Ozil",
         "nacionalidad": "Alemania",    
         "Fecha de nacimiento": "15/10/1988",
         "club actual": "RETIRADO",
@@ -1049,7 +1049,7 @@
         "Fecha de nacimiento": "13/06/1996",
         "club actual": "Bayern Múnich",
         "posicion": ["Extremo Izquierdo", "Extremo Derecho", "Mediocampista Ofensivo", "Mediocampista Izquierdo", "Mediocampista Derecho"],
-        "clubes totales": ["Paris Saint-Germain", "Juventus", "Bayern Múnich"]
+        "clubes totales": ["Paris Saint-Germain", "Juventus", "Bayern de Múnich"]
     },
     {
         "id": 115,
@@ -2219,6 +2219,540 @@
         "club actual": "Royal Antwerp",
         "posicion": ["Defensa Central", "Lateral Izquierdo", "Lateral Derecho"],
         "clubes totales": ["Ajax", "Tottenham Hotspur", "Benfica", "Anderlecht"]
+    },
+    {
+        "id": 234,
+        "nombre": "William Gallas",
+        "nacionalidad": "Francia",
+        "Fecha de nacimiento": "17/08/1977",
+        "club actual": "RETIRADO",
+        "posicion": ["Defensa Central", "Lateral Derecho", "Lateral Izquierdo"],
+        "clubes totales": ["Caen", "Marseille", "Chelsea", "Arsenal", "Tottenham Hotspur", "Perth Glory"]
+    },
+    {
+        "id": 235,
+        "nombre": "Laurent Blanc",
+        "nacionalidad": "Francia",
+        "Fecha de nacimiento": "19/11/1965",
+        "club actual": "RETIRADO",
+        "posicion": ["Defensa Central", "Mediocampista Defensivo"],
+        "clubes totales": ["Montpellier", "Napoli", "Nîmes", "Saint-Étienne", "Auxerre", "Barcelona", "Olympique Marseille", "Inter de Milán", "Manchester United"]
+    },
+    {
+        "id": 236,
+        "nombre": "Marcel Desailly",
+        "nacionalidad": "Francia",
+        "Fecha de nacimiento": "07/09/1968",
+        "club actual": "RETIRADO",
+        "posicion": ["Defensa Central", "Mediocampista Defensivo"],
+        "clubes totales": ["Nantes", "Olympique Marseille", "AC Milan", "Chelsea", "Al-Gharafa", "Qatar SC"]
+    },
+    {
+        "id": 237,
+        "nombre": "Eric Cantona",
+        "nacionalidad": "Francia",
+        "Fecha de nacimiento": "24/05/1966",
+        "club actual": "RETIRADO",
+        "posicion": ["Delantero Centro", "Mediocampista Ofensivo", "Extremo Derecho", "Extremo Izquierdo"],
+        "clubes totales": ["Auxerre", "Martigues", "Nîmes", "Olympique Marseille", "Bordeaux", "Montpellier", "Leeds United", "Manchester United"]
+    },
+    {
+        "id": 238,
+        "nombre": "Achraf Hakimi",
+        "nacionalidad": "Marruecos",
+        "Fecha de nacimiento": "04/11/1998",
+        "club actual": "Paris Saint-Germain",
+        "posicion": ["Lateral Derecho", "Extremo Derecho"],
+        "clubes totales": ["Real Madrid", "Borussia Dortmund", "Inter de Milán", "Paris Saint-Germain"]
+    },
+    {
+        "id": 239,
+        "nombre": "Ferland Mendy",
+        "nacionalidad": "Francia",
+        "Fecha de nacimiento": "08/06/1995",
+        "club actual": "Real Madrid",
+        "posicion": ["Lateral Izquierdo", "Defensa Central"],
+        "clubes totales": ["Le Havre", "Olympique Lyon", "Real Madrid"]
+    },
+    {
+        "id": 240,
+        "nombre": "Theo Hernández",
+        "nacionalidad": "Francia",
+        "Fecha de nacimiento": "06/10/1997",
+        "club actual": "AC Milan",
+        "posicion": ["Lateral Izquierdo", "Mediocampista Izquierdo"],
+        "clubes totales": ["Real Madrid", "Alavés", "Real Sociedad", "AC Milan"]
+    },
+    {
+        "id": 241,
+        "nombre": "Emmanuel Adebayor",
+        "nacionalidad": "Togo",
+        "Fecha de nacimiento": "26/02/1984",
+        "club actual": "RETIRADO",
+        "posicion": ["Delantero Centro", "Extremo Derecho", "Extremo Izquierdo"],
+        "clubes totales": ["Metz", "Monaco", "Arsenal", "Manchester City", "Real Madrid", "Tottenham Hotspur", "Crystal Palace", "Istanbul Başakşehir", "Kayserispor", "Olimpia", "Semassi"]
+    },
+    {
+        "id": 242,
+        "nombre": "Brahim Díaz",
+        "nacionalidad": "España",
+        "Fecha de nacimiento": "03/08/1999",
+        "club actual": "AC Milan",
+        "posicion": ["Mediocampista Ofensivo", "Mediocampista Central", "Extremo Derecho", "Extremo Izquierdo"],
+        "clubes totales": ["Manchester City", "Real Madrid", "AC Milan"]
+    },
+    {
+        "id": 243,
+        "nombre": "Rodrigo Hernández Cascante",
+        "apodo": "Rodri",
+        "nacionalidad": "España",
+        "Fecha de nacimiento": "22/06/1996",
+        "club actual": "Manchester City",
+        "posicion": ["Mediocampista Defensivo", "Mediocampista Central", "Mediocampista Ofensivo"],
+        "clubes totales": ["Villarreal", "Atlético de Madrid", "Manchester City"]
+    },
+    {
+        "id": 244,
+        "nombre": "Aymeric Laporte",
+        "nacionalidad": "España",
+        "Fecha de nacimiento": "27/05/1994",
+        "club actual": "Manchester City",
+        "posicion": ["Defensa Central", "Lateral Izquierdo"],
+        "clubes totales": ["Athletic Club", "Manchester City", "Al Nassr"]
+    },
+    {
+        "id": 245,
+        "nombre": "Riyad Mahrez",
+        "nacionalidad": "Argelia",
+        "Fecha de nacimiento": "21/02/1991",
+        "club actual": "Al-Ahli",
+        "posicion": ["Extremo Derecho", "Extremo Izquierdo", "Mediocampista Ofensivo"],
+        "clubes totales": ["Le Havre", "Leicester City", "Manchester City", "Al-Ahli"]
+    },
+    {
+        "id": 246,
+        "nombre": "Bernardo Silva",
+        "nacionalidad": "Portugal",
+        "Fecha de nacimiento": "10/08/1994",
+        "club actual": "Manchester City",
+        "posicion": ["Mediocampista Ofensivo", "Mediocampista Central", "Extremo Derecho", "Extremo Izquierdo"],
+        "clubes totales": ["Benfica", "Monaco", "Manchester City"]
+    },
+    {
+        "id": 247,
+        "nombre": "Jack Grealish",
+        "nacionalidad": "Inglaterra",
+        "Fecha de nacimiento": "10/09/1995",
+        "club actual": "Everton",
+        "posicion": ["Mediocampista Ofensivo", "Mediocampista Central", "Extremo Derecho", "Extremo Izquierdo"],
+        "clubes totales": ["Aston Villa", "Notts County", "Manchester City", "Everton"]
+    },
+    {
+        "id": 248,
+        "nombre": "Ashley Young",
+        "nacionalidad": "Inglaterra",
+        "Fecha de nacimiento": "09/07/1985",
+        "club actual": "Aston Villa",
+        "posicion": ["Extremo Izquierdo", "Mediocampista Ofensivo"],
+        "clubes totales": ["Watford", "Aston Villa", "Manchester United", "Inter de Milán", "Everton", "Ipswich Town"]
+    },
+    {
+        "id": 249,
+        "nombre": "Guglielmo Vicario",
+        "nacionalidad": "Italia",
+        "Fecha de nacimiento": "07/07/1996",
+        "club actual": "Tottenham Hotspur",
+        "posicion": ["Portero"],
+        "clubes totales": ["Venezia", "Perugia", "Cagliari", "Empoli", "Tottenham Hotspur"]
+    },
+    {
+        "id": 250,
+        "nombre": "Michael Ballack",
+        "nacionalidad": "Alemania",
+        "Fecha de nacimiento": "26/09/1976",
+        "club actual": "RETIRADO",
+        "posicion": ["Mediocampista Central", "Mediocampista Defensivo", "Mediocampista Ofensivo"],
+        "clubes totales": ["Chemnitzer FC", "1. FC Kaiserslautern", "Bayer Leverkusen", "Bayern Múnich", "Chelsea"]
+    },
+    {
+        "id": 251,
+        "nombre": "Ilkay Gündoğan",
+        "nacionalidad": "Alemania",
+        "Fecha de nacimiento": "24/10/1990",
+        "club actual": "Galatasaray",
+        "posicion": ["Mediocampista Central", "Mediocampista Defensivo", "Mediocampista Ofensivo"],
+        "clubes totales": ["FC Nurnberg", "Borussia Dortmund", "Manchester City", "Barcelona", "Galatasaray"]
+    },
+    {
+        "id": 252,
+        "nombre": "Luis Suárez Miramontes",
+        "nacionalidad": "España",
+        "Fecha de nacimiento": "02/05/1935",
+        "club actual": "RETIRADO",
+        "posicion": ["Mediocampista Ofensivo", "Mediocampista Central", "Delantero Centro"],
+        "clubes totales": ["Deportivo La Coruña", "España Industrial", "Barcelona", "Inter de Milán", "Sampdoria"]
+    },
+    {
+        "id": 253,
+        "nombre": "Paul Pogba",
+        "nacionalidad": "Francia",
+        "Fecha de nacimiento": "15/03/1993",
+        "club actual": "Monaco",
+        "posicion": ["Mediocampista Central", "Mediocampista Ofensivo"],
+        "clubes totales": ["Manchester United", "Juventus", "Monaco"]
+    },
+    {
+        "id": 254,
+        "nombre": "Martín Demichelis",
+        "nacionalidad": "Argentina",
+        "Fecha de nacimiento": "20/12/1980",
+        "club actual": "RETIRADO",
+        "posicion": ["Defensa Central", "Lateral Izquierdo", "Mediocampista Defensivo"],
+        "clubes totales": ["River Plate", "Bayern Múnich", "Málaga", "Manchester City", "Espanyol"]
+    },
+    {
+        "id": 255,
+        "nombre": "Thiago Alcántara",
+        "nacionalidad": "España",
+        "Fecha de nacimiento": "11/04/1991",
+        "club actual": "RETIRADO",
+        "posicion": ["Mediocampista Central", "Mediocampista Ofensivo"],
+        "clubes totales": ["Bayern Múnich", "Barcelona", "Liverpool"]
+    },
+    {
+        "id": 256,
+        "nombre": "Steve McManaman",
+        "nacionalidad": "Inglaterra",
+        "Fecha de nacimiento": "11/02/1972",
+        "club actual": "RETIRADO",
+        "posicion": ["Mediocampista Derecho", "Mediocampista Izquierdo", "Mediocampista Ofensivo"],
+        "clubes totales": ["Liverpool", "Real Madrid", "Manchester City"]
+    },
+    {
+        "id": 257,
+        "nombre": "Jamie Bynoe-Gittens",
+        "nacionalidad": "Inglaterra",
+        "Fecha de nacimiento": "08/08/2004",
+        "club actual": "Chelsea",
+        "posicion": ["Extremo Derecho", "Extremo Izquierdo", "Mediocampista Ofensivo"],
+        "clubes totales": ["Chelsea", "Borussia Dortmund"]
+    },
+    {
+        "id": 258,
+        "nombre": "Jadon Sancho",
+        "nacionalidad": "Inglaterra",
+        "Fecha de nacimiento": "25/03/2000",
+        "club actual": "Manchester United",
+        "posicion": ["Extremo Derecho", "Extremo Izquierdo", "Mediocampista Ofensivo"],
+        "clubes totales": ["Aston Villa", "Chelsea", "Borussia Dortmund", "Manchester United"]
+    },
+    {
+        "id": 259,
+        "nombre": "Bukayo Saka",
+        "nacionalidad": "Inglaterra",
+        "Fecha de nacimiento": "05/09/2001",
+        "club actual": "Arsenal",
+        "posicion": ["Extremo Derecho", "Mediocampista Ofensivo"],
+        "clubes totales": ["Arsenal"]
+    },
+    {
+        "id": 260,
+        "nombre": "Ferran Torres",
+        "nacionalidad": "España",
+        "Fecha de nacimiento": "29/02/2000",
+        "club actual": "Barcelona",
+        "posicion": ["Extremo Derecho", "Extremo Izquierdo", "Mediocampista Ofensivo"],
+        "clubes totales": ["Valencia", "Manchester City", "Barcelona"]
+    },
+    {
+        "id": 261,
+        "nombre": "Rodrigo De Paul",
+        "nacionalidad": "Argentina",
+        "Fecha de nacimiento": "24/05/1994",
+        "club actual": "Inter Miami",
+        "posicion": ["Mediocampista Central", "Mediocampista Ofensivo", "Mediocampista Derecho", "Mediocampista Izquierdo"],
+        "clubes totales": ["Racing Club", "Valencia", "Udinese", "Atlético de Madrid", "Inter Miami"]
+    },
+    {
+        "id": 262,
+        "nombre": "Fernando Torres",
+        "nacionalidad": "España",
+        "Fecha de nacimiento": "20/03/1984",
+        "club actual": "RETIRADO",
+        "posicion": ["Delantero Centro", "Extremo Derecho", "Extremo Izquierdo"],
+        "clubes totales": ["Atlético de Madrid", "Liverpool", "Chelsea", "AC Milan", "Sagan Tosu"]
+    },
+    {
+        "id": 263,
+        "nombre": "César Azpilicueta",
+        "nacionalidad": "España",
+        "Fecha de nacimiento": "28/08/1989",
+        "club actual": "Sevilla",
+        "posicion": ["Lateral Derecho", "Defensa Central", "Lateral Izquierdo", "Mediocampista Derecho"],
+        "clubes totales": ["Osasuna", "Olympique Marseille", "Chelsea", "Atlético de Madrid", "Sevilla"]
+    },
+    {
+        "id": 264,
+        "nombre": "Fernando Hierro",
+        "nacionalidad": "España",
+        "Fecha de nacimiento": "23/03/1968",
+        "club actual": "RETIRADO",
+        "posicion": ["Defensa Central", "Mediocampista Defensivo"],
+        "clubes totales": ["Real Valladolid", "Real Madrid", "Bolton Wanderers", "Al-Rayyan"]
+    },
+    {
+        "id": 265,
+        "nombre": "Sergio Ramos",
+        "nacionalidad": "España",
+        "Fecha de nacimiento": "30/03/1986",
+        "club actual": "Monterrey",
+        "posicion": ["Defensa Central", "Lateral Derecho"],
+        "clubes totales": ["Sevilla", "Real Madrid", "Paris Saint-Germain", "Monterrey"]
+    },
+    {
+        "id": 266,
+        "nombre": "Thiago Motta",
+        "nacionalidad": "Italia",
+        "Fecha de nacimiento": "28/08/1982",
+        "club actual": "RETIRADO",
+        "posicion": ["Mediocampista Defensivo", "Mediocampista Central", "Mediocampista Ofensivo"],
+        "clubes totales": ["Barcelona", "Atlético de Madrid", "Genoa", "Inter de Milán", "Paris Saint-Germain"]
+    },
+    {
+        "id": 267,
+        "nombre": "Mario Mandžukić",
+        "nacionalidad": "Croacia",
+        "Fecha de nacimiento": "21/05/1986",
+        "club actual": "RETIRADO",
+        "posicion": ["Delantero Centro", "Extremo Derecho", "Extremo Izquierdo"],
+        "clubes totales": ["Zagreb", "Dinamo Zagreb", "Wolfsburgo", "Bayern Múnich", "Atlético de Madrid", "Juventus", "Al-Duhail", "AC Milan"]
+    },
+    {
+        "id": 268,
+        "nombre": "Mario Götze",
+        "nacionalidad": "Alemania",
+        "Fecha de nacimiento": "03/06/1992",
+        "club actual": "Eintracht Frankfurt",
+        "posicion": ["Mediocampista Ofensivo", "Mediocampista Central"],
+        "clubes totales": ["Borussia Dortmund", "Bayern Múnich", "PSV Eindhoven", "Eintracht Frankfurt"]
+    },
+    {
+        "id": 269,
+        "nombre": "Julian Draxler",
+        "nacionalidad": "Alemania",
+        "Fecha de nacimiento": "20/09/1993",
+        "club actual": "Al Ahli",
+        "posicion": ["Extremo Izquierdo", "Mediocampista Ofensivo", "Mediocampista Central"],
+        "clubes totales": ["Schalke 04", "Wolfsburgo", "Paris Saint-Germain", "Benfica", "Al Ahli"]
+    },
+    {
+        "id": 270,
+        "nombre": "Fabio Cannavaro",
+        "nacionalidad": "Italia",
+        "Fecha de nacimiento": "13/09/1973",
+        "club actual": "RETIRADO",
+        "posicion": ["Defensa Central"],
+        "clubes totales": ["Napoli", "Parma", "Juventus", "Inter de Milán", "Real Madrid", "Al-Ahli"]
+    },
+    {
+        "id": 271,
+        "nombre": "Lucas Moura",
+        "nacionalidad": "Brasil",
+        "Fecha de nacimiento": "13/08/1992",
+        "club actual": "São Paulo",
+        "posicion": ["Extremo Derecho", "Extremo Izquierdo", "Mediocampista Ofensivo"],
+        "clubes totales": ["São Paulo", "Paris Saint-Germain", "Tottenham Hotspur"]
+    },
+    {
+        "id": 272,
+        "nombre": "Nicolás Otamendi",
+        "nacionalidad": "Argentina",
+        "Fecha de nacimiento": "12/02/1988",
+        "club actual": "Benfica",
+        "posicion": ["Defensa Central", "Lateral Derecho"],
+        "clubes totales": ["Vélez Sarsfield", "Porto", "Valencia", "Manchester City", "Benfica"]
+    },
+    {
+        "id": 273,
+        "nombre": "Leroy Sané",
+        "nacionalidad": "Alemania",
+        "Fecha de nacimiento": "11/01/1996",
+        "club actual": "Galatasaray",
+        "posicion": ["Extremo Izquierdo", "Extremo Derecho", "Mediocampista Ofensivo"],
+        "clubes totales": ["Schalke 04", "Manchester City", "Bayern de Múnich", "Galatasaray"]
+    },
+    {
+        "id": 274,
+        "nombre": "Timo Werner",
+        "nacionalidad": "Alemania",
+        "Fecha de nacimiento": "06/03/1996",
+        "club actual": "RB Leipzig",
+        "posicion": ["Delantero Centro", "Extremo Derecho", "Extremo Izquierdo"],
+        "clubes totales": ["VfB Stuttgart", "RB Leipzig", "Chelsea", "Tottenham Hotspur"]
+    },
+    {
+        "id": 275,
+        "nombre": "Kai Havertz",
+        "nacionalidad": "Alemania",
+        "Fecha de nacimiento": "11/06/1999",
+        "club actual": "Arsenal",
+        "posicion": ["Mediocampista Ofensivo", "Mediocampista Central", "Delantero Centro"],
+        "clubes totales": ["Bayer Leverkusen", "Chelsea", "Arsenal"]
+    },
+    {
+        "id": 276,
+        "nombre": "Jérôme Boateng",
+        "nacionalidad": "Alemania",
+        "Fecha de nacimiento": "03/09/1988",
+        "club actual": "Lyon",
+        "posicion": ["Defensa Central", "Lateral Derecho"],
+        "clubes totales": ["Hertha BSC", "Hamburgo", "Manchester City", "Bayern de Múnich", "Olympique Lyon", "Salernitana", "LASK"]
+    },
+    {
+        "id": 277,
+        "nombre": "Mats Hummels",
+        "nacionalidad": "Alemania",
+        "Fecha de nacimiento": "16/12/1988",
+        "club actual": "RETIRADO",
+        "posicion": ["Defensa Central", "Lateral Derecho"],
+        "clubes totales": ["Bayern de Múnich", "Borussia Dortmund", "AS Roma"]
+    },
+    {
+        "id": 278,
+        "nombre": "Mikel Merino",
+        "nacionalidad": "España",
+        "Fecha de nacimiento": "22/06/1996",
+        "club actual": "Arsenal",
+        "posicion": ["Mediocampista Central", "Mediocampista Defensivo", "Mediocampista Ofensivo"],
+        "clubes totales": ["Osasuna", "Borussia Dortmund", "Newcastle United", "Real Sociedad", "Arsenal"]
+    },
+    {
+        "id": 279,
+        "nombre": "Rodrigo Bentancur",
+        "nacionalidad": "Uruguay",
+        "Fecha de nacimiento": "25/06/1997",
+        "club actual": "Tottenham Hotspur",
+        "posicion": ["Mediocampista Central", "Mediocampista Defensivo", "Mediocampista Ofensivo"],
+        "clubes totales": ["Boca Juniors", "Juventus", "Tottenham Hotspur"]
+    },
+    {
+        "id": 280,
+        "nombre": "Dejan Kulusevski",
+        "nacionalidad": "Suecia",
+        "Fecha de nacimiento": "25/04/2000",
+        "club actual": "Tottenham Hotspur",
+        "posicion": ["Extremo Derecho", "Extremo Izquierdo", "Mediocampista Ofensivo"],
+        "clubes totales": ["Atalanta", "Parma", "Juventus", "Tottenham Hotspur"]
+    },
+    {
+        "id": 281,
+        "nombre": "Cristian Romero",
+        "nacionalidad": "Argentina",
+        "Fecha de nacimiento": "27/04/1998",
+        "club actual": "Tottenham Hotspur",
+        "posicion": ["Defensa Central", "Lateral Izquierdo"],
+        "clubes totales": ["Belgrano", "Juventus", "Genoa", "Atalanta", "Tottenham Hotspur"]
+    },
+    {
+        "id": 282,
+        "nombre": "Martín Zubimendi",
+        "nacionalidad": "España",
+        "Fecha de nacimiento": "02/02/1999",
+        "club actual": "Arsenal",
+        "posicion": ["Mediocampista Defensivo", "Mediocampista Central"],
+        "clubes totales": ["Real Sociedad", "Arsenal"]
+    },
+    {
+        "id": 283,
+        "nombre": "Gabriel Jesus",
+        "nacionalidad": "Brasil",
+        "Fecha de nacimiento": "03/04/1997",
+        "club actual": "Arsenal",
+        "posicion": ["Delantero Centro", "Extremo Derecho", "Extremo Izquierdo"],
+        "clubes totales": ["Palmeiras", "Manchester City", "Arsenal"]
+    },
+    {
+        "id": 284,
+        "nombre": "Pedro Porro",
+        "nacionalidad": "España",
+        "Fecha de nacimiento": "13/09/1999",
+        "club actual": "Tottenham Hotspur",
+        "posicion": ["Lateral Derecho", "Mediocampista Derecho", "Extremo Derecho"],
+        "clubes totales": ["Girona", "Manchester City", "Sporting de Lisboa", "Tottenham Hotspur"]
+    },
+    {
+        "id": 285,
+        "nombre": "Héctor Bellerín",
+        "nacionalidad": "España",
+        "Fecha de nacimiento": "19/03/1995",
+        "club actual": "Real Betis",
+        "posicion": ["Lateral Derecho", "Mediocampista Derecho", "Extremo Derecho"],
+        "clubes totales": ["Barcelona", "Arsenal", "Real Betis"]
+    },
+    {
+        "id": 286,
+        "nombre": "Kieran Trippier",
+        "nacionalidad": "Inglaterra",
+        "Fecha de nacimiento": "19/09/1990",
+        "club actual": "Newcastle United",
+        "posicion": ["Lateral Derecho", "Mediocampista Derecho"],
+        "clubes totales": ["Manchester City", "Barnsley", "Burnley", "Tottenham Hotspur", "Atlético de Madrid", "Newcastle United"]
+    },
+    {
+        "id": 287,
+        "nombre": "Yann Bisseck",
+        "nacionalidad": "Alemania",
+        "Fecha de nacimiento": "29/11/2000",
+        "club actual": "Inter de Milán",
+        "posicion": ["Defensa Central", "Lateral Derecho"],
+        "clubes totales": ["1. FC Köln", "Vitória", "Holstein Kiel", "Inter de Milán"]
+    },
+    {
+        "id": 288,
+        "nombre": "Yan Couto",
+        "nacionalidad": "Brasil",
+        "Fecha de nacimiento": "05/11/2002",
+        "club actual": "Borussia Dortmund",
+        "posicion": ["Lateral Derecho", "Mediocampista Derecho", "Extremo Derecho"],
+        "clubes totales": ["Coritiba", "Manchester City", "Girona", "Borussia Dortmund"]
+    },
+    {
+        "id": 289,
+        "nombre": "Carlos Enrique Venancio Casimiro",
+        "apodo": "Casemiro",
+        "nacionalidad": "Brasil",
+        "Fecha de nacimiento": "23/02/1992",
+        "club actual": "Manchester United",
+        "posicion": ["Mediocampista Defensivo", "Mediocampista Central"],
+        "clubes totales": ["São Paulo", "Real Madrid", "Porto", "Manchester United"]
+    },
+    {
+        "id": 290,
+        "nombre": "Éder Militão",
+        "nacionalidad": "Brasil",
+        "Fecha de nacimiento": "18/01/1998",
+        "club actual": "Real Madrid",
+        "posicion": ["Defensa Central", "Lateral Derecho"],
+        "clubes totales": ["São Paulo", "Porto", "Real Madrid"]
+    },
+    {
+        "id": 291,
+        "nombre": "Anderson Luís de Abreu Oliveira",
+        "apodo": "Anderson",
+        "nacionalidad": "Brasil",
+        "Fecha de nacimiento": "13/04/1988",
+        "club actual": "RETIRADO",
+        "posicion": ["Mediocampista Central", "Mediocampista Ofensivo"],
+        "clubes totales": ["Gremio", "Porto", "Manchester United", "Fiorentina", "Internacional", "Adana Demirspor"]
+    },
+    {
+        "id": 292,
+        "nombre": "Bastian Schweinsteiger",
+        "nacionalidad": "Alemania",
+        "Fecha de nacimiento": "01/08/1984",
+        "club actual": "RETIRADO",
+        "posicion": ["Mediocampista Central", "Mediocampista Defensivo", "Mediocampista Ofensivo"],
+        "clubes totales": ["Bayern de Múnich", "Manchester United", "Chicago Fire"]
     }
 ]
 }
