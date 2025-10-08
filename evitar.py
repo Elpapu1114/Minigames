@@ -1,7 +1,7 @@
 import pygame
 import sys
 import random
-import math
+import math                                                     
 
 pygame.init()
 pygame.display.set_caption("Evita Obstáculos - Mejorado")
