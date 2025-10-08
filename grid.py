@@ -118,6 +118,7 @@ class FutbolGrid:
         self.fuente = pygame.font.Font(None, 28)
         self.fuente_pequena = pygame.font.Font(None, 20)
         self.fuente_grande = pygame.font.Font(None, 36)
+        self.fuente_titulo = pygame.font.Font(None, 48)
         
         self.jugadores, self.config = cargar_datos()
         self.categorias_filas, self.categorias_cols = generar_grid(self.config)
@@ -129,7 +130,16 @@ class FutbolGrid:
         self.mostrando_menu_celdas = False
         self.celdas_validas = []
         self.input_activo = True
+        self.juego_terminado = False
         
+    def verificar_juego_terminado(self):
+        """Verifica si todas las celdas están llenas"""
+        for i in range(3):
+            for j in range(3):
+                if self.grid[i][j] is None:
+                    return False
+        return True
+    
     def buscar_jugador(self, nombre):
         nombre_lower = nombre.lower().strip()
         for jugador in self.jugadores:
@@ -246,6 +256,43 @@ class FutbolGrid:
                 texto = self.fuente_pequena.render(sugerencia, True, NEGRO)
                 self.pantalla.blit(texto, (60, y_sug + i * 35 + 8))
     
+    def dibujar_pantalla_final(self):
+        """Dibuja la pantalla de finalización del juego"""
+        # Fondo semi-transparente
+        superficie_overlay = pygame.Surface((ANCHO, ALTO))
+        superficie_overlay.set_alpha(200)
+        superficie_overlay.fill(BLANCO)
+        self.pantalla.blit(superficie_overlay, (0, 0))
+        
+        # Cuadro de finalización
+        ancho_cuadro = 600
+        alto_cuadro = 300
+        x = (ANCHO - ancho_cuadro) // 2
+        y = (ALTO - alto_cuadro) // 2
+        
+        pygame.draw.rect(self.pantalla, VERDE, (x, y, ancho_cuadro, alto_cuadro))
+        pygame.draw.rect(self.pantalla, NEGRO, (x, y, ancho_cuadro, alto_cuadro), 5)
+        
+        # Título
+        texto_titulo = self.fuente_titulo.render("¡JUEGO COMPLETADO!", True, BLANCO)
+        rect_titulo = texto_titulo.get_rect(center=(ANCHO // 2, y + 80))
+        self.pantalla.blit(texto_titulo, rect_titulo)
+        
+        # Mensaje de felicitación
+        texto_felicitacion = self.fuente_grande.render("¡Felicitaciones!", True, BLANCO)
+        rect_felicitacion = texto_felicitacion.get_rect(center=(ANCHO // 2, y + 140))
+        self.pantalla.blit(texto_felicitacion, rect_felicitacion)
+        
+        # Instrucción
+        texto_instruccion = self.fuente.render("Has completado todas las celdas del grid", True, BLANCO)
+        rect_instruccion = texto_instruccion.get_rect(center=(ANCHO // 2, y + 190))
+        self.pantalla.blit(texto_instruccion, rect_instruccion)
+        
+        # Cerrar
+        texto_salir = self.fuente_pequena.render("Presiona ESC para salir", True, BLANCO)
+        rect_salir = texto_salir.get_rect(center=(ANCHO // 2, y + 240))
+        self.pantalla.blit(texto_salir, rect_salir)
+    
     def dibujar_menu_celdas(self):
         ancho_menu = 400
         alto_menu = min(300, 70 + len(self.celdas_validas) * 50)
@@ -286,6 +333,10 @@ class FutbolGrid:
                 self.celdas_validas = []
                 self.input_texto = ""
                 self.sugerencias = []
+                
+                # Verificar si el juego terminó
+                if self.verificar_juego_terminado():
+                    self.juego_terminado = True
                 return
     
     def procesar_jugador(self, nombre_jugador):
@@ -298,6 +349,10 @@ class FutbolGrid:
                     self.grid[i][j] = jugador
                     self.input_texto = ""
                     self.sugerencias = []
+                    
+                    # Verificar si el juego terminó
+                    if self.verificar_juego_terminado():
+                        self.juego_terminado = True
                 else:
                     self.jugador_seleccionado = jugador
                     self.celdas_validas = celdas
@@ -321,10 +376,27 @@ class FutbolGrid:
                 if evento.type == pygame.QUIT:
                     ejecutando = False
                 
+                elif evento.type == pygame.KEYDOWN:
+                    if evento.key == pygame.K_ESCAPE:
+                        ejecutando = False
+                    
+                    # Solo procesar eventos de teclado si el juego no ha terminado
+                    if not self.juego_terminado and not self.mostrando_menu_celdas:
+                        if evento.key == pygame.K_BACKSPACE:
+                            self.input_texto = self.input_texto[:-1]
+                            self.sugerencias = self.obtener_sugerencias(self.input_texto)
+                        elif evento.key == pygame.K_RETURN:
+                            if self.input_texto:
+                                self.procesar_jugador(self.input_texto)
+                        else:
+                            if len(evento.unicode) > 0 and evento.unicode.isprintable():
+                                self.input_texto += evento.unicode
+                                self.sugerencias = self.obtener_sugerencias(self.input_texto)
+                
                 elif evento.type == pygame.MOUSEBUTTONDOWN:
                     if self.mostrando_menu_celdas:
                         self.manejar_clic_menu(evento.pos)
-                    else:
+                    elif not self.juego_terminado:
                         if self.sugerencias:
                             y_sug = 645
                             for i, sugerencia in enumerate(self.sugerencias):
@@ -338,20 +410,6 @@ class FutbolGrid:
                         rect_input = pygame.Rect(50, 600, 900, 40)
                         if rect_input.collidepoint(evento.pos):
                             self.input_activo = True
-                
-                elif evento.type == pygame.KEYDOWN and not self.mostrando_menu_celdas:
-                    if evento.key == pygame.K_BACKSPACE:
-                        self.input_texto = self.input_texto[:-1]
-                        self.sugerencias = self.obtener_sugerencias(self.input_texto)
-                    elif evento.key == pygame.K_RETURN:
-                        if self.input_texto:
-                            self.procesar_jugador(self.input_texto)
-                    elif evento.key == pygame.K_ESCAPE:
-                        ejecutando = False
-                    else:
-                        if len(evento.unicode) > 0 and evento.unicode.isprintable():
-                            self.input_texto += evento.unicode
-                            self.sugerencias = self.obtener_sugerencias(self.input_texto)
             
             # Dibujar
             self.pantalla.fill(BLANCO)
@@ -361,7 +419,10 @@ class FutbolGrid:
             
             self.dibujar_grid()
             
-            if not self.mostrando_menu_celdas:
+            if self.juego_terminado:
+                # Mostrar pantalla de finalización
+                self.dibujar_pantalla_final()
+            elif not self.mostrando_menu_celdas:
                 self.dibujar_input()
                 inst = self.fuente_pequena.render("Escribe el nombre de un jugador (presiona ESC para salir)", True, GRIS_OSCURO)
                 self.pantalla.blit(inst, (50, 570))
