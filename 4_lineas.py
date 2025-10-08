@@ -2,6 +2,7 @@ import pygame
 import sys
 import random
 
+pygame.init()
 if __name__ == "__main__":
     pygame.init()
     

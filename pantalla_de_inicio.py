@@ -45,7 +45,7 @@ games = [
         "title": "pong",
         "description": "Un clásico juego de Ping Pong",
         "file": "pong.py",
-        "category": "arcade+",
+        "category": "arcade",
         "color": (200, 100, 100),
         "status": "Disponible"
     },
@@ -87,6 +87,41 @@ games = [
         "category": "conocimiento",
         "color": (100, 200, 200),
         "status": "Próximamente"
+    },{
+        "title": "auto",
+        "description": "esquiva los autos y llega lo más lejos posible",
+        "file": "auto.py",
+        "category": "arcade",
+        "color": (100, 200, 200),
+        "status": "Disponible"
+    },{
+        "title": "fruit ninja",
+        "description": "corta la fruta pero evita las bombas",
+        "file": "cortafruta.py",
+        "category": "arcade",
+        "color": (100, 200, 200),
+        "status": "Disponible"
+    },{
+        "title": "simon dice",
+        "description": "sigue la secuencia de colores",
+        "file": "simondice.py",
+        "category": "arcade",
+        "color": (100, 200, 200),
+        "status": "Disponible"
+    },{
+        "title": "salta por las plataformas",
+        "description": "salta de plataforma en plataforma sin caer",
+        "file": "saltar.py",
+        "category": "arcade",
+        "color": (100, 200, 200),
+        "status": "Disponible"
+    },{
+        "title": "carrera de dedos",
+        "description": "corre lo más rápido que puedas tocando las teclas",
+        "file": "carrreratecla.py",
+        "category": "arcade",
+        "color": (100, 200, 200),
+        "status": "Disponible"
     },
 ]
 
@@ -356,7 +391,7 @@ def main():
         
         pygame.display.flip()
     
-    print("👋 Cerrando Game Launcher...")
+    print(" Cerrando Game Launcher...")
     pygame.quit()
     sys.exit()
 

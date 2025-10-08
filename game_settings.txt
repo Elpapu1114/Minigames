@@ -1,9 +1,0 @@
-resolution=800x600
-fullscreen=True
-vsync=True
-master_volume=100
-sfx_volume=80
-music_volume=60
-move_keys=['I', 'J', 'K', 'L']
-jump_key=SHIFT
-pause_key=TAB

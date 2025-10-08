@@ -6,12 +6,11 @@ import json
 
 pygame.init()
 
-# Constantes
 SCREEN_WIDTH = 1200
 SCREEN_HEIGHT = 650
 FPS = 60
 
-# Variables globales
+# Variables globales del estado del juego
 game_paused = False
 menu_state = "main"
 game_running = False
@@ -24,8 +23,8 @@ default_settings = {
     "resolution": "1200x650",
     "fullscreen": False,
     "vsync": True,
-    "master_volume": 100,
-    "sfx_volume": 80,
+    "master_volume": 60,
+    "sfx_volume": 60,
     "music_volume": 60,
     "move_keys": ["W", "A", "S", "D"],
     "jump_key": "SPACE",
@@ -68,6 +67,13 @@ SELECTED_COL = (255, 255, 0)
 ERROR_COL = (255, 100, 100)
 SUCCESS_COL = (100, 255, 100)
 
+# Variables para mensajes y clicks
+last_click_time = 0
+click_delay = 200
+message_timer = 0
+current_message = ""
+message_color = TEXT_COL
+
 def crear_ruta_img(nombre_imagen):
     """Crea la ruta completa para una imagen"""
     return os.path.join(os.path.dirname(__file__), 'img', nombre_imagen)
@@ -104,17 +110,15 @@ back_img = load_image("back.png", (120, 50))
 play_button = Button(180, 125, play_img, 10)
 options_button = Button(720, 125, options_img, 10)
 exit_button = Button(455, 375, exit_img, 10)
+
+# Botones del menú de opciones
 video_button = Button(200, 150, video_img, 10)
 audio_button = Button(650, 150, audio_img, 10)
 keys_button = Button(200, 350, keys_img, 10)
-back_button = Button(650, 350, back_img, 10)
+options_back_button = Button(650, 350, back_img, 10)
 
-# Variables para prevenir clics múltiples
-last_click_time = 0
-click_delay = 200
-message_timer = 0
-current_message = ""
-message_color = TEXT_COL
+# Botones para los submenús (posición fija en la parte inferior)
+settings_back_button = Button(50, SCREEN_HEIGHT - 80, back_img, 10)
 
 def can_click():
     """Previene clics múltiples"""
@@ -232,7 +236,7 @@ def handle_main_menu():
     return True
 
 def handle_options_menu():
-    """Maneja la lógica del menú de opciones"""
+    """Maneja el menú de opciones"""
     global menu_state
     
     if video_button.draw(screen) and can_click():
@@ -260,7 +264,7 @@ def handle_video_settings():
     spacing = 80
     
     # Resolución
-    draw_text("Resolución:", medium_font, TEXT_COL, 100, y_start)
+    draw_text("Resolución:", medium_font, TEXT_COL, 200, y_start)
     current_res = game_settings["resolution"]
     
     for i, (res_str, width, height) in enumerate(RESOLUTIONS):
@@ -311,6 +315,7 @@ def handle_video_settings():
         status = "activado" if game_settings["vsync"] else "desactivado"
         show_message(f"V-Sync {status}", SUCCESS_COL)
     
+    # Botón volver
     if back_button.draw(screen) and can_click():
         menu_state = "options"
 
@@ -387,6 +392,7 @@ def handle_audio_settings():
     if test_music_rect.collidepoint(mouse_pos) and mouse_pressed and can_click():
         show_message("Reproduciendo música", SUCCESS_COL)
     
+    # Botón volver
     if back_button.draw(screen) and can_click():
         menu_state = "options"
 
@@ -585,9 +591,9 @@ def save_settings():
     try:
         with open('game_settings.json', 'w', encoding='utf-8') as f:
             json.dump(game_settings, f, indent=4, ensure_ascii=False)
-        print(" Configuraciones guardadas exitosamente")
+        print("✅ Configuraciones guardadas exitosamente")
     except Exception as e:
-        print(f" Error al guardar configuraciones: {e}")
+        print(f"❌ Error al guardar configuraciones: {e}")
 
 def load_settings():
     """Carga las configuraciones desde JSON con validación robusta"""
@@ -607,46 +613,14 @@ def load_settings():
                         if all(isinstance(k, str) for k in value):
                             game_settings[key] = value
                         else:
-                            print(f" move_keys contiene elementos no-string, usando por defecto")
-                            game_settings[key] = default_settings[key].copy()
-                    else:
-                        print(f" move_keys no es una lista válida, usando por defecto")
-                        game_settings[key] = default_settings[key].copy()
-                
-                elif key in ["jump_key", "pause_key"]:
-                    # Validar que sean strings
-                    if isinstance(value, str) and len(value) > 0:
-                        game_settings[key] = value
-                    else:
-                        print(f" {key} no es string válido, usando por defecto")
-                        game_settings[key] = default_settings[key]
-                
-                elif key == "resolution":
-                    # Validar formato de resolución
-                    if isinstance(value, str) and 'x' in value:
-                        try:
-                            parts = value.split('x')
-                            if len(parts) == 2:
-                                width, height = int(parts[0]), int(parts[1])
-                                if 640 <= width <= 3840 and 480 <= height <= 2160:
-                                    game_settings[key] = value
-                                else:
-                                    print(f" Resolución fuera de rango válido")
-                                    game_settings[key] = default_settings[key]
-                            else:
-                                raise ValueError("Formato incorrecto")
-                        except ValueError:
-                            print(f" Formato de resolución inválido")
                             game_settings[key] = default_settings[key]
-                    else:
-                        game_settings[key] = default_settings[key]
                 
                 elif key in ["master_volume", "sfx_volume", "music_volume"]:
                     # Validar volúmenes (0-100)
                     if isinstance(value, (int, float)) and 0 <= value <= 100:
                         game_settings[key] = int(value)
                     else:
-                        print(f" {key} fuera de rango 0-100, usando por defecto")
+                        print(f"⚠️ {key} fuera de rango 0-100, usando por defecto")
                         game_settings[key] = default_settings[key]
                 
                 elif key in ["fullscreen", "vsync"]:
@@ -654,7 +628,7 @@ def load_settings():
                     if isinstance(value, bool):
                         game_settings[key] = value
                     else:
-                        print(f" {key} no es booleano válido, usando por defecto")
+                        print(f"⚠️ {key} no es booleano válido, usando por defecto")
                         game_settings[key] = default_settings[key]
                 
                 else:
@@ -662,34 +636,34 @@ def load_settings():
                     if type(value) == type(default_settings[key]):
                         game_settings[key] = value
                     else:
-                        print(f" Tipo incorrecto para {key}, usando valor por defecto")
+                        print(f"⚠️ Tipo incorrecto para {key}, usando valor por defecto")
                         game_settings[key] = default_settings[key]
         
         # Verificar que todas las configuraciones necesarias estén presentes
         for key in default_settings:
             if key not in game_settings:
-                print(f"⚠️  Falta configuración {key}, agregando por defecto")
+                print(f"⚠️ Falta configuración {key}, agregando por defecto")
                 game_settings[key] = default_settings[key]
         
-        print(" Configuraciones cargadas exitosamente")
+        print("✅ Configuraciones cargadas exitosamente")
         
     except FileNotFoundError:
-        print(" No se encontró archivo de configuraciones, creando uno nuevo...")
+        print("ℹ️ No se encontró archivo de configuraciones, creando uno nuevo...")
         game_settings = default_settings.copy()
         save_settings()
     except json.JSONDecodeError as e:
-        print(f" Error al leer configuraciones (JSON inválido): {e}")
-        print(" Usando configuraciones por defecto")
+        print(f"❌ Error al leer configuraciones (JSON inválido): {e}")
+        print("ℹ️ Usando configuraciones por defecto")
         game_settings = default_settings.copy()
         save_settings()  # Crear archivo válido
     except Exception as e:
-        print(f" Error inesperado al cargar configuraciones: {e}")
+        print(f"❌ Error inesperado al cargar configuraciones: {e}")
         game_settings = default_settings.copy()
         save_settings()  # Crear archivo válido
 
 def main():
     """Función principal mejorada"""
-    global game_paused, menu_state, game_running, screen
+    global game_paused, menu_state, game_running
     
     # Cargar configuraciones
     load_settings()
@@ -698,14 +672,14 @@ def main():
     try:
         apply_resolution()
     except:
-        print("⚠️  Error aplicando resolución inicial, usando por defecto")
+        print("⚠️ Error aplicando resolución inicial, usando por defecto")
     
     run = True
     
     print("=" * 50)
-    print(" MENÚ DE JUEGO CON CONFIGURACIONES AVANZADAS")
+    print("🎮 MENÚ DE JUEGO CON CONFIGURACIONES AVANZADAS")
     print("=" * 50)
-    print(" CONTROLES:")
+    print("📋 CONTROLES:")
     print("   • ESC: Pausar juego / Salir")
     print("   • Q: Volver al menú (desde el juego)")
     print("   • Click: Interactuar con elementos")
@@ -715,7 +689,7 @@ def main():
     while run:
         clock.tick(FPS)
         
-        # Manejo de eventos
+        # Manejar eventos
         run = handle_events()
         if not run:
             break
@@ -754,23 +728,21 @@ def main():
             
             elif menu_state == "keys":
                 handle_keys_settings()
-        
-        # Dibujar mensajes temporales
+
         draw_message()
         
-        # Actualizar pantalla
         pygame.display.flip()
     
     # Guardar configuraciones al salir
     save_settings()
     
     print("=" * 50)
-    print(" CERRANDO APLICACIÓN")
-    print(" Configuraciones guardadas")
+    print("🔄 CERRANDO APLICACIÓN")
+    print("💾 Configuraciones guardadas")
     print("=" * 50)
     
     pygame.quit()
     sys.exit()
 
-if __name__ == "__main__":
-    main()
+
+main()
