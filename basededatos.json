@@ -93,7 +93,7 @@
         "Fecha de nacimiento": "04/01/1990",
         "club actual": "RETIRADO",
         "posicion": ["Mediocampista Central", "Mediocampista Ofensivo", "Mediocampista Defensivo"],
-        "clubes totales": ["Bayer Leverkusen", "Bayern Múnich", "Real Madrid"]
+        "clubes totales": ["Bayer Leverkusen", "Bayern de Múnich", "Real Madrid"]
     },
     {
         "id": 10,
@@ -146,9 +146,9 @@
         "nombre": "Manuel Neuer",
         "nacionalidad": "Alemania",    
         "Fecha de nacimiento": "27/03/1986",
-        "club actual": "Bayern Múnich",
+        "club actual": "Bayern de Múnich",
         "posicion": ["Portero"],
-        "clubes totales": ["Schalke 04", "Bayern Múnich"]
+        "clubes totales": ["Schalke 04", "Bayern de Múnich"]
     },
     {
         "id": 16,
@@ -194,7 +194,7 @@
         "Fecha de nacimiento": "21/08/1988",
         "club actual": "Barcelona",
         "posicion": ["Delantero Centro"],
-        "clubes totales": ["Legia Varsovia", "Znicz Pruszków", "Lech Poznań", "Borussia Dortmund", "Bayern Múnich", "Barcelona"]
+        "clubes totales": ["Legia Varsovia", "Znicz Pruszków", "Lech Poznań", "Borussia Dortmund", "Bayern de Múnich", "Barcelona"]
     },
     {
         "id": 21,
@@ -222,7 +222,7 @@
         "Fecha de nacimiento": "07/04/1983",
         "club actual": "RETIRADO",
         "posicion": ["Extremo Izquierdo", "Extremo Derecho", "Mediocampista Ofensivo", "Mediocampista Izquierdo"],
-        "clubes totales": ["Boulogne", "Alès", "Brest", "Metz", "Galatasaray", "Olympique Marseille", "Bayern Múnich", "Fiorentina", "Salernitana"]
+        "clubes totales": ["Boulogne", "Alès", "Brest", "Metz", "Galatasaray", "Olympique Marseille", "Bayern de Múnich", "Fiorentina", "Salernitana"]
     },
     {
         "id": 24,
@@ -231,7 +231,7 @@
         "Fecha de nacimiento": "23/01/1984",
         "club actual": "RETIRADO",
         "posicion": ["Extremo Derecho", "Extremo Izquierdo", "Delantero Centro", "Mediocampista Ofensivo", "Mediocampista Derecho"],
-        "clubes totales": ["Groningen", "PSV Eindhoven", "Chelsea", "Real Madrid", "Bayern Múnich"]
+        "clubes totales": ["Groningen", "PSV Eindhoven", "Chelsea", "Real Madrid", "Bayern de Múnich"]
     },
     {
         "id": 25,
@@ -576,7 +576,7 @@
         "Fecha de nacimiento": "09/06/1978",
         "club actual": "RETIRADO",
         "posicion": ["Delantero Centro"],
-        "clubes totales": ["Kaiserslautern", "Werder Bremen", "Bayern Múnich", "Lazio"]
+        "clubes totales": ["Kaiserslautern", "Werder Bremen", "Bayern de Múnich", "Lazio"]
     },
     {
         "id": 63,
@@ -592,9 +592,9 @@
         "nombre": "Serge David Gnabry",
         "nacionalidad": "Alemania",    
         "Fecha de nacimiento": "14/07/1995",
-        "club actual": "Bayern Múnich",
+        "club actual": "Bayern de Múnich",
         "posicion": ["Extremo Derecho", "Extremo Izquierdo", "Delantero Centro", "Mediocampista Derecho"],
-        "clubes totales": ["Arsenal", "West Bromwich Albion", "Werder Bremen", "Hoffenheim", "Bayern Múnich"]
+        "clubes totales": ["Arsenal", "West Bromwich Albion", "Werder Bremen", "Hoffenheim", "Bayern de Múnich"]
     },
     {
         "id": 65,
@@ -603,7 +603,7 @@
         "Fecha de nacimiento": "10/04/1992",
         "club actual": "Al Nassr",
         "posicion": ["Extremo Izquierdo", "Extremo Derecho", "Delantero Centro"],
-        "clubes totales": ["Metz", "Red Bull Salzburgo", "Southampton", "Liverpool", "Bayern Múnich", "Al Nassr"]
+        "clubes totales": ["Metz", "Red Bull Salzburgo", "Southampton", "Liverpool", "Bayern de Múnich", "Al Nassr"]
     },
     {
         "id": 66,
@@ -619,9 +619,9 @@
         "nombre": "Harry Edward Kane",
         "nacionalidad": "Inglaterra",    
         "Fecha de nacimiento": "28/07/1993",
-        "club actual": "Bayern Múnich",
+        "club actual": "Bayern de Múnich",
         "posicion": ["Delantero Centro"],
-        "clubes totales": ["Tottenham Hotspur", "Leyton Orient", "Millwall", "Norwich City", "Leicester City", "Bayern Múnich"]
+        "clubes totales": ["Tottenham Hotspur", "Leyton Orient", "Millwall", "Norwich City", "Leicester City", "Bayern de Múnich"]
     },
     {
         "id": 68,
@@ -696,7 +696,7 @@
         "Fecha de nacimiento": "11/09/1945",
         "club actual": "FALLECIDO",
         "posicion": ["Defensa Central", "Mediocampista Defensivo", "Lateral Derecho", "Lateral Izquierdo"],
-        "clubes totales": ["Bayern Múnich", "New York Cosmos", "Hamburger SV"]
+        "clubes totales": ["Bayern de Múnich", "New York Cosmos", "Hamburger SV"]
     },
     {
         "id": 76,
@@ -950,7 +950,7 @@
         "Fecha de nacimiento": "12/06/1992",
         "club actual": "Vasco da Gama",
         "posicion": ["Mediocampista Ofensivo", "Extremo Derecho", "Extremo Izquierdo"],
-        "clubes totales": ["Vasco da Gama", "Inter de Milán", "Espanyol", "Liverpool", "Barcelona", "Bayern Múnich", "Aston Villa"]
+        "clubes totales": ["Vasco da Gama", "Inter de Milán", "Espanyol", "Liverpool", "Barcelona", "Bayern de Múnich", "Aston Villa"]
     },
     {
         "id": 104,
@@ -1047,7 +1047,7 @@
         "nombre": "Kingsley Junior Coman",
         "nacionalidad": "Francia",    
         "Fecha de nacimiento": "13/06/1996",
-        "club actual": "Bayern Múnich",
+        "club actual": "Bayern de Múnich",
         "posicion": ["Extremo Izquierdo", "Extremo Derecho", "Mediocampista Ofensivo", "Mediocampista Izquierdo", "Mediocampista Derecho"],
         "clubes totales": ["Paris Saint-Germain", "Juventus", "Bayern de Múnich"]
     },
@@ -1379,7 +1379,7 @@
         "Fecha de nacimiento": "24/06/1992",
         "club actual": "Real Madrid",
         "posicion": ["Defensa Central", "Lateral Izquierdo", "Mediocampista Defensivo", "Mediocampista Central"],
-        "clubes totales": ["Austria Viena", "Bayern Múnich", "Hoffenheim", "Real Madrid"]
+        "clubes totales": ["Austria Viena", "Bayern de Múnich", "Hoffenheim", "Real Madrid"]
     },
 
     {
@@ -1401,7 +1401,7 @@
         "Fecha de nacimiento": "08/05/1978",
         "club actual": "RETIRADO",
         "posicion": ["Defensa Central", "Lateral Izquierdo"],
-        "clubes totales": ["Internacional", "Bayer Leverkusen", "Bayern Múnich", "Inter de Milán", "Juventus", "São Paulo", "Palmeiras", "Brasiliense"]
+        "clubes totales": ["Internacional", "Bayer Leverkusen", "Bayern de Múnich", "Inter de Milán", "Juventus", "São Paulo", "Palmeiras", "Brasiliense"]
     },
 
     {
@@ -1411,7 +1411,7 @@
         "Fecha de nacimiento": "27/08/1973",
         "club actual": "RETIRADO",
         "posicion": ["Mediocampista Defensivo", "Mediocampista Central"],
-        "clubes totales": ["Bayern Múnich", "Newcastle United", "Liverpool", "Manchester City", "Milton Keynes Dons"]
+        "clubes totales": ["Bayern de Múnich", "Newcastle United", "Liverpool", "Manchester City", "Milton Keynes Dons"]
     },
 
     {
@@ -1713,7 +1713,7 @@
         "Fecha de nacimiento": "15/06/1969",
         "club actual": "RETIRADO",
         "posicion": ["Portero"],
-        "clubes totales": ["Karlsruher SC", "Bayern Múnich"]
+        "clubes totales": ["Karlsruher SC", "Bayern de Múnich"]
     },
 
     {
@@ -1724,7 +1724,7 @@
         "Fecha de nacimiento": "31/08/1982",
         "club actual": "RETIRADO",
         "posicion": ["Portero"],
-        "clubes totales": ["Barcelona", "Villarreal", "Liverpool", "Napoli", "Bayern Múnich", "AC Milan", "Lazio", "Aston Villa", "Como 1907"]
+        "clubes totales": ["Barcelona", "Villarreal", "Liverpool", "Napoli", "Bayern de Múnich", "AC Milan", "Lazio", "Aston Villa", "Como 1907"]
     },
 
     {
@@ -1774,7 +1774,7 @@
         "Fecha de nacimiento": "25/11/1981",
         "club actual": "RETIRADO",
         "posicion": ["Mediocampista Defensivo", "Mediocampista Central", "Mediocampista Ofensivo"],
-        "clubes totales": ["Real Sociedad", "Liverpool", "Real Madrid", "Bayern Múnich"]
+        "clubes totales": ["Real Sociedad", "Liverpool", "Real Madrid", "Bayern de Múnich"]
     },
 
     {
@@ -1913,9 +1913,9 @@
         "nombre": "Joshua Kimmich",
         "nacionalidad": "Alemania",
         "Fecha de nacimiento": "08/02/1995",
-        "club actual": "Bayern Múnich",
+        "club actual": "Bayern de Múnich",
         "posicion": ["Mediocampista Defensivo", "Mediocampista Central", "Lateral Derecho", "Lateral Izquierdo"],
-        "clubes totales": ["RB Leipzig", "Bayern Múnich"]
+        "clubes totales": ["RB Leipzig", "Bayern de Múnich"]
     },
 
     {
@@ -1925,7 +1925,7 @@
         "Fecha de nacimiento": "13/09/1989",
         "club actual": "Vancouver Whitecaps",
         "posicion": ["Mediocampista Ofensivo", "Delantero Centro", "Extremo Derecho", "Extremo Izquierdo"],
-        "clubes totales": ["Bayern Múnich", "Vancouver Whitecaps"]
+        "clubes totales": ["Bayern de Múnich", "Vancouver Whitecaps"]
     },
 
     {
@@ -2200,7 +2200,7 @@
         "Fecha de nacimiento": "21/03/1961",
         "club actual": "RETIRADO",
         "posicion": ["Mediocampista Defensivo", "Mediocampista Central", "Mediocampista Ofensivo", "Defensa Central"],
-        "clubes totales": ["Borussia Mönchengladbach", "Bayern Múnich", "Inter de Milán", "MetroStars", "Newark Ironbound Express"]
+        "clubes totales": ["Borussia Mönchengladbach", "Bayern de Múnich", "Inter de Milán", "MetroStars", "Newark Ironbound Express"]
     },
     {
         "id": 232,
@@ -2372,7 +2372,7 @@
         "Fecha de nacimiento": "26/09/1976",
         "club actual": "RETIRADO",
         "posicion": ["Mediocampista Central", "Mediocampista Defensivo", "Mediocampista Ofensivo"],
-        "clubes totales": ["Chemnitzer FC", "1. FC Kaiserslautern", "Bayer Leverkusen", "Bayern Múnich", "Chelsea"]
+        "clubes totales": ["Chemnitzer FC", "1. FC Kaiserslautern", "Bayer Leverkusen", "Bayern de Múnich", "Chelsea"]
     },
     {
         "id": 251,
@@ -2408,7 +2408,7 @@
         "Fecha de nacimiento": "20/12/1980",
         "club actual": "RETIRADO",
         "posicion": ["Defensa Central", "Lateral Izquierdo", "Mediocampista Defensivo"],
-        "clubes totales": ["River Plate", "Bayern Múnich", "Málaga", "Manchester City", "Espanyol"]
+        "clubes totales": ["River Plate", "Bayern de Múnich", "Málaga", "Manchester City", "Espanyol"]
     },
     {
         "id": 255,
@@ -2417,7 +2417,7 @@
         "Fecha de nacimiento": "11/04/1991",
         "club actual": "RETIRADO",
         "posicion": ["Mediocampista Central", "Mediocampista Ofensivo"],
-        "clubes totales": ["Bayern Múnich", "Barcelona", "Liverpool"]
+        "clubes totales": ["Bayern de Múnich", "Barcelona", "Liverpool"]
     },
     {
         "id": 256,
@@ -2525,7 +2525,7 @@
         "Fecha de nacimiento": "21/05/1986",
         "club actual": "RETIRADO",
         "posicion": ["Delantero Centro", "Extremo Derecho", "Extremo Izquierdo"],
-        "clubes totales": ["Zagreb", "Dinamo Zagreb", "Wolfsburgo", "Bayern Múnich", "Atlético de Madrid", "Juventus", "Al-Duhail", "AC Milan"]
+        "clubes totales": ["Zagreb", "Dinamo Zagreb", "Wolfsburgo", "Bayern de Múnich", "Atlético de Madrid", "Juventus", "Al-Duhail", "AC Milan"]
     },
     {
         "id": 268,
@@ -2534,7 +2534,7 @@
         "Fecha de nacimiento": "03/06/1992",
         "club actual": "Eintracht Frankfurt",
         "posicion": ["Mediocampista Ofensivo", "Mediocampista Central"],
-        "clubes totales": ["Borussia Dortmund", "Bayern Múnich", "PSV Eindhoven", "Eintracht Frankfurt"]
+        "clubes totales": ["Borussia Dortmund", "Bayern de Múnich", "PSV Eindhoven", "Eintracht Frankfurt"]
     },
     {
         "id": 269,
@@ -2881,4 +2881,5 @@
         "clubes totales": ["Monaco", "Arsenal", "Barcelona", "Chelsea"]
     }
 ]
+
 }
