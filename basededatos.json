@@ -2879,7 +2879,33 @@
         "club actual": "RETIRADO",
         "posicion": ["Mediocampista Defensivo", "Mediocampista Central", "Mediocampista Ofensivo"],
         "clubes totales": ["Monaco", "Arsenal", "Barcelona", "Chelsea"]
+    },
+    {
+        "id": 307,
+        "nombre": "Mikel Arteta",
+        "nacionalidad": "España",
+        "Fecha de nacimiento": "26/03/1982",
+        "club actual": "RETIRADO",
+        "posicion": ["Mediocampista Defensivo", "Mediocampista Central", "Mediocampista Ofensivo"],
+        "clubes totales": ["Paris Saint-Germain", "Rangers", "Real Sociedad", "Everton", "Arsenal"]
+    },
+    {
+        "id": 308,
+        "nombre": "Julián Álvarez",
+        "nacionalidad": "Argentina",
+        "Fecha de nacimiento": "31/01/2000",
+        "club actual": "Atlético de Madrid",
+        "posicion": ["Delantero Centro", "Extremo Derecho", "Extremo Izquierdo"],
+        "clubes totales": ["River Plate", "Manchester City", "Atlético de Madrid"]
+    },
+    {
+        "id": 309,
+        "nombre": "Marco Asensio",
+        "nacionalidad": "España",
+        "Fecha de nacimiento": "21/01/1996",
+        "club actual": "Real Madrid",
+        "posicion": ["Extremo Derecho", "Extremo Izquierdo", "Mediocampista Ofensivo"],
+        "clubes totales": ["Mallorca", "Real Madrid", "Espanyol", "Paris Saint-Germain", "Aston Villa", "Fenerbahçe"]
     }
 ]
-
 }
