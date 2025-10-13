@@ -52,7 +52,7 @@ games = [
     {
         "title": "4 lineas",
         "description": "juego de dos jugadores, intenta alinear 4 fichas antes de tu oponente",
-        "file": "4_lineas.py",
+        "file": "4lineas.py",
         "category": "estrategia ",
         "color": (100, 100, 200),
         "status": "Disponible"
