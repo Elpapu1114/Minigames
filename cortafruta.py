@@ -3,16 +3,13 @@ import sys
 import random
 import math
 
-# Inicializar Pygame
 pygame.init()
 
-# Constantes
 ANCHO = 1000
 ALTO = 700
 FPS = 60
 GRAVEDAD = 0.5
 
-# Colores
 NEGRO = (0, 0, 0)
 BLANCO = (255, 255, 255)
 ROJO = (255, 50, 50)
@@ -25,7 +22,6 @@ MARRON = (139, 69, 19)
 GRIS = (128, 128, 128)
 GRIS_OSCURO = (64, 64, 64)
 
-# Variables globales
 pantalla = pygame.display.set_mode((ANCHO, ALTO))
 pygame.display.set_caption("Corta Frutas - Fruit Ninja Style")
 reloj = pygame.time.Clock()
@@ -33,8 +29,6 @@ fuente_grande = pygame.font.Font(None, 48)
 fuente_mediana = pygame.font.Font(None, 32)
 fuente_pequeña = pygame.font.Font(None, 24)
 
-# Cargar imágenes de fondos
-# Agregar imagen de fondo del menú: fondo_menu_ninja_fruit.png
 try:
     bg_menu = pygame.image.load("image/fondo_menu_ninja_fruit.png")
     bg_menu = pygame.transform.scale(bg_menu, (ANCHO, ALTO))
@@ -43,7 +37,6 @@ except Exception as e:
     print(f"Error al cargar fondo de menú: {e}")
     bg_menu = None
 
-# Agregar imagen de fondo del juego: fondo_ninja_fruit.png
 try:
     bg_game = pygame.image.load("image/fondo_ninja_fruit.png")
     bg_game = pygame.transform.scale(bg_game, (ANCHO, ALTO))
@@ -52,7 +45,6 @@ except Exception as e:
     print(f"Error al cargar fondo de juego: {e}")
     bg_game = None
 
-# Agregar imagen de fondo del game over: fondo_game_over_ninja_fruit.png
 try:
     bg_gameover = pygame.image.load("image/fondo_game_over_ninja_fruit.png")
     bg_gameover = pygame.transform.scale(bg_gameover, (ANCHO, ALTO))
@@ -61,22 +53,19 @@ except Exception as e:
     print(f"Error al cargar fondo de game over: {e}")
     bg_gameover = None
 
-# Cargar imágenes de frutas
 imagenes_frutas = {}
 frutas_nombres = ["banana", "manzanafinal", "sandia", "anana"]
 
 for fruta in frutas_nombres:
     try:
         img = pygame.image.load(f"image/{fruta}.png")
-        # Escalar la imagen a un tamaño razonable
         img = pygame.transform.scale(img, (80, 80))
         imagenes_frutas[fruta] = img
     except:
         print(f"No se pudo cargar la imagen: {fruta}.png")
         imagenes_frutas[fruta] = None
 
-# Estado del juego
-estado_juego = "menu"  # "menu", "juego", "game_over"
+estado_juego = "menu" 
 puntuacion = 0
 vidas = 3
 tiempo_spawn = 0
@@ -100,7 +89,6 @@ class Fruta:
         self.mitades = []
         self.angulo = 0
         self.velocidad_rotacion = random.uniform(-5, 5)
-        # Línea de corte
         self.linea_corte = None
     
     def actualizar(self):
@@ -110,7 +98,6 @@ class Fruta:
             self.velocidad_y += GRAVEDAD
             self.angulo += self.velocidad_rotacion
         else:
-            # Animar las mitades cortadas
             for mitad in self.mitades:
                 mitad['x'] += mitad['vx']
                 mitad['y'] += mitad['vy']
@@ -120,20 +107,16 @@ class Fruta:
     
     def dibujar(self, pantalla):
         if self.imagen is None:
-            # Fallback a círculo si no hay imagen
             pygame.draw.circle(pantalla, ROJO, (int(self.x), int(self.y)), 30)
             return
         
         if not self.cortada:
-            # Dibujar fruta completa rotada
             img_rotada = pygame.transform.rotate(self.imagen, self.angulo)
             rect = img_rotada.get_rect(center=(int(self.x), int(self.y)))
             pantalla.blit(img_rotada, rect)
         else:
-            # Dibujar mitades cortadas
             if self.linea_corte:
                 for mitad in self.mitades:
-                    # Crear superficie de la mitad con máscara
                     img_rotada = pygame.transform.rotate(mitad['surf'], mitad['angulo'])
                     rect = img_rotada.get_rect(center=(int(mitad['x']), int(mitad['y'])))
                     pantalla.blit(img_rotada, rect)
@@ -141,49 +124,37 @@ class Fruta:
     def cortar(self, pos_inicio, pos_fin):
         if not self.cortada and self.imagen:
             self.cortada = True
-            
-            # Calcular el ángulo de corte basado en la trayectoria del mouse
+
             dx = pos_fin[0] - pos_inicio[0]
             dy = pos_fin[1] - pos_inicio[1]
             angulo_corte = math.atan2(dy, dx)
-            
-            # Guardar línea de corte relativa al centro de la fruta
+
             self.linea_corte = {
                 'inicio': (pos_inicio[0] - self.x, pos_inicio[1] - self.y),
                 'fin': (pos_fin[0] - self.x, pos_fin[1] - self.y),
                 'angulo': angulo_corte
             }
-            
-            # Crear dos mitades cortadas
-            # Obtener la imagen original
+
             img_original = self.imagen.copy()
             ancho, alto = img_original.get_size()
-            
-            # Crear máscaras para cada mitad basadas en el ángulo de corte
+
             mitad1 = img_original.copy()
             mitad2 = img_original.copy()
-            
-            # Aplicar una máscara simple dividiendo la imagen
+
             for x in range(ancho):
                 for y in range(alto):
-                    # Calcular posición relativa al centro
                     rel_x = x - ancho/2
                     rel_y = y - alto/2
                     
-                    # Determinar de qué lado de la línea de corte está el píxel
-                    # Usando el producto cruzado
                     cross = rel_x * math.sin(angulo_corte) - rel_y * math.cos(angulo_corte)
                     
                     if cross < 0:
-                        # Está en un lado - hacer transparente en mitad2
                         color = mitad2.get_at((x, y))
                         mitad2.set_at((x, y), (color[0], color[1], color[2], 0))
                     else:
-                        # Está en el otro lado - hacer transparente en mitad1
                         color = mitad1.get_at((x, y))
                         mitad1.set_at((x, y), (color[0], color[1], color[2], 0))
-            
-            # Crear las dos mitades con velocidades opuestas
+
             velocidad_sep = 3
             vx1 = -velocidad_sep * math.sin(angulo_corte) + self.velocidad_x * 0.5
             vy1 = velocidad_sep * math.cos(angulo_corte) + random.uniform(-8, -5)
@@ -240,22 +211,18 @@ class Bomba:
     
     def dibujar(self, pantalla):
         if not self.explotada:
-            # Dibujar bomba con rotación
             pygame.draw.circle(pantalla, NEGRO, (int(self.x), int(self.y)), 25)
             pygame.draw.circle(pantalla, GRIS_OSCURO, (int(self.x), int(self.y)), 20)
-            
-            # Calcular posición de la mecha rotada
+
             mecha_x = self.x + 10 * math.cos(math.radians(self.angulo))
             mecha_y = self.y - 25 + 10 * math.sin(math.radians(self.angulo))
             
             pygame.draw.line(pantalla, MARRON, (int(self.x), int(self.y - 25)), 
                            (int(mecha_x), int(mecha_y)), 3)
-            
-            # Chispa en la mecha
+
             if random.randint(0, 10) > 7:
                 pygame.draw.circle(pantalla, AMARILLO, (int(mecha_x), int(mecha_y)), 3)
         else:
-            # Dibujar explosión
             if self.tiempo_explosion < 30:
                 radio = self.tiempo_explosion * 3
                 pygame.draw.circle(pantalla, AMARILLO, (int(self.x), int(self.y)), radio)
@@ -375,11 +342,9 @@ def detectar_corte_bomba(pos_mouse, bomba):
     return distancia < 35
 
 def dibujar_menu():
-    # Dibujar fondo del menú
     if bg_menu:
         pantalla.blit(bg_menu, (0, 0))
     else:
-        # Fondo gradiente de respaldo
         for y in range(ALTO):
             color = (20 + y//10, 30 + y//15, 50 + y//8)
             pygame.draw.line(pantalla, color, (0, y), (ANCHO, y))
@@ -409,11 +374,9 @@ def dibujar_trail_mouse():
             pygame.draw.line(pantalla, (255, 255, 255), trail_mouse[i], trail_mouse[i + 1], grosor)
 
 def dibujar_juego():
-    # Dibujar fondo del juego
     if bg_game:
         pantalla.blit(bg_game, (0, 0))
     else:
-        # Fondo gradiente de respaldo
         for y in range(ALTO):
             color = (10 + y//20, 20 + y//25, 40 + y//15)
             pygame.draw.line(pantalla, color, (0, y), (ANCHO, y))
@@ -432,12 +395,10 @@ def dibujar_juego():
     dibujar_hud()
 
 def dibujar_game_over():
-    # Dibujar fondo del game over
     if bg_gameover:
         pantalla.blit(bg_gameover, (0, 0))
     else:
         pantalla.fill((20, 20, 20))
-        # Solo mostrar texto si no hay imagen de fondo
         titulo = fuente_grande.render("GAME OVER", True, ROJO)
         rect_titulo = titulo.get_rect(center=(ANCHO//2, 200))
         pantalla.blit(titulo, rect_titulo)
@@ -482,7 +443,6 @@ def manejar_eventos():
             sys.exit()
         
         if evento.type == pygame.KEYDOWN:
-            # ESC siempre sale del juego completamente
             if evento.key == pygame.K_ESCAPE:
                 pygame.quit()
                 sys.exit()
