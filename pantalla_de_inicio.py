@@ -52,7 +52,7 @@ games = [
     {
         "title": "4 lineas",
         "description": "juego de dos jugadores, intenta alinear 4 fichas antes de tu oponente",
-        "file": "4lineas.py",
+        "file": "4_lineas.py",
         "category": "estrategia ",
         "color": (100, 100, 200),
         "status": "Disponible"
@@ -83,10 +83,10 @@ games = [
     },{
         "title": "grid futbol",
         "description": "Un emocionante juego de fútbol en una cuadrícula",
-        "file": "grid_futbol.py",
+        "file": "grid.py",
         "category": "conocimiento",
         "color": (100, 200, 200),
-        "status": "Próximamente"
+        "status": "Disponible"
     },{
         "title": "auto",
         "description": "esquiva los autos y llega lo más lejos posible",
