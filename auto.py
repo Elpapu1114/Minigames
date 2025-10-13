@@ -3,15 +3,12 @@ import random
 import math
 import os
 
-# Inicializar Pygame
 pygame.init()
 
-# Constantes del juego
 ANCHO_PANTALLA = 800
 ALTO_PANTALLA = 600
 FPS = 60
 
-# Colores
 NEGRO = (0, 0, 0)
 BLANCO = (255, 255, 255)
 ROJO = (255, 0, 0)
@@ -21,24 +18,22 @@ AMARILLO = (255, 255, 0)
 GRIS = (128, 128, 128)
 NARANJA = (255, 165, 0)
 
-# Variables globales del juego
 puntuacion = 0
 velocidad_base = 5
 nivel = 1
 vidas = 3
-estado_juego = "menu"  # "menu", "cuenta_regresiva", "jugando", "game_over"
+estado_juego = "menu" 
 tiempo_inicio_cuenta = 0
 
-# Cargar imágenes
 def cargar_imagenes():
     """Carga todas las imágenes del juego"""
     imagenes = {}
     try:
-        # Cargar auto del jugador (verde)
+        
         imagenes['jugador'] = pygame.image.load(os.path.join("image", "autoesquivaverde.png"))
         imagenes['jugador'] = pygame.transform.scale(imagenes['jugador'], (90, 120))
         
-        # Cargar autos obstáculos
+       
         imagenes['auto_naranja'] = pygame.image.load(os.path.join("image", "autoesquivanaranja.png"))
         imagenes['auto_naranja'] = pygame.transform.scale(imagenes['auto_naranja'], (90, 120))
         
@@ -48,7 +43,7 @@ def cargar_imagenes():
         imagenes['auto_azul'] = pygame.image.load(os.path.join("image", "autoesquivaazul.png"))
         imagenes['auto_azul'] = pygame.transform.scale(imagenes['auto_azul'], (90, 120))
 
-        # Cargar camión
+       
         imagenes['camion'] = pygame.image.load(os.path.join("image", "camionesquiva.png"))
         imagenes['camion'] = pygame.transform.scale(imagenes['camion'], (100, 150))
         
@@ -119,7 +114,6 @@ def mover_coche(coche, teclas):
     if teclas[pygame.K_DOWN] or teclas[pygame.K_s]:
         coche['y'] += coche['velocidad']
     
-    # Mantener el coche dentro de la pantalla
     coche['x'] = max(0, min(coche['x'], ANCHO_PANTALLA - coche['ancho']))
     coche['y'] = max(0, min(coche['y'], ALTO_PANTALLA - coche['alto']))
 
@@ -160,17 +154,14 @@ def aplicar_potenciador(potenciador, coche):
 
 def dibujar_carretera(pantalla, offset):
     """Dibuja la carretera con líneas centrales y carriles más realistas"""
-    pantalla.fill((60, 60, 60))  # Asfalto gris oscuro
+    pantalla.fill((60, 60, 60))  
     
-    # Líneas laterales (bordes de la carretera)
     pygame.draw.rect(pantalla, BLANCO, (30, 0, 8, ALTO_PANTALLA))
     pygame.draw.rect(pantalla, BLANCO, (ANCHO_PANTALLA - 38, 0, 8, ALTO_PANTALLA))
     
-    # Líneas de carriles (divisiones)
     carril_1 = ANCHO_PANTALLA // 3
     carril_2 = 2 * ANCHO_PANTALLA // 3
-    
-    # Líneas discontinuas de carriles
+
     for y in range(-50 + offset % 80, ALTO_PANTALLA, 80):
         pygame.draw.rect(pantalla, BLANCO, (carril_1 - 2, y, 4, 40))
         pygame.draw.rect(pantalla, BLANCO, (carril_2 - 2, y, 4, 40))
@@ -180,7 +171,6 @@ def dibujar_coche_con_imagen(pantalla, coche, imagenes):
     if imagenes and 'jugador' in imagenes:
         pantalla.blit(imagenes['jugador'], (coche['x'], coche['y']))
     else:
-        # Fallback si no hay imagen
         pygame.draw.rect(pantalla, coche['color'], 
                         (coche['x'], coche['y'], coche['ancho'], coche['alto']))
 
@@ -189,7 +179,7 @@ def dibujar_obstaculo_con_imagen(pantalla, obstaculo, imagenes):
     if imagenes and obstaculo['tipo'] in imagenes:
         pantalla.blit(imagenes[obstaculo['tipo']], (obstaculo['x'], obstaculo['y']))
     else:
-        # Fallback si no hay imagen
+        
         pygame.draw.rect(pantalla, ROJO, 
                         (obstaculo['x'], obstaculo['y'], obstaculo['ancho'], obstaculo['alto']))
 
@@ -200,38 +190,32 @@ def dibujar_potenciador_detallado(pantalla, potenciador):
                        potenciador['y'] + potenciador['alto'] // 2),
                       potenciador['ancho'] // 2)
     
-    # Símbolo según el tipo
     centro_x = potenciador['x'] + potenciador['ancho'] // 2
     centro_y = potenciador['y'] + potenciador['alto'] // 2
     
     if potenciador['tipo'] == 'velocidad':
-        # Flecha hacia arriba
         puntos = [(centro_x, centro_y - 8), (centro_x - 5, centro_y + 2), (centro_x + 5, centro_y + 2)]
         pygame.draw.polygon(pantalla, NEGRO, puntos)
+        
     elif potenciador['tipo'] == 'puntos':
-        # Signo +
         pygame.draw.line(pantalla, NEGRO, (centro_x - 5, centro_y), (centro_x + 5, centro_y), 3)
         pygame.draw.line(pantalla, NEGRO, (centro_x, centro_y - 5), (centro_x, centro_y + 5), 3)
+        
     elif potenciador['tipo'] == 'vida':
-        # Corazón simplificado
         pygame.draw.circle(pantalla, NEGRO, (centro_x - 3, centro_y - 2), 3)
         pygame.draw.circle(pantalla, NEGRO, (centro_x + 3, centro_y - 2), 3)
 
 def dibujar_interfaz(pantalla, fuente):
     """Dibuja la interfaz del usuario"""
-    # Puntuación
     texto_puntos = fuente.render(f"Puntos: {puntuacion}", True, BLANCO)
     pantalla.blit(texto_puntos, (10, 10))
     
-    # Nivel
     texto_nivel = fuente.render(f"Nivel: {nivel}", True, BLANCO)
     pantalla.blit(texto_nivel, (10, 40))
-    
-    # Vidas
+
     texto_vidas = fuente.render(f"Vidas: {vidas}", True, BLANCO)
     pantalla.blit(texto_vidas, (10, 70))
     
-    # Velocidad
     texto_velocidad = fuente.render(f"Velocidad: {velocidad_base}", True, BLANCO)
     pantalla.blit(texto_velocidad, (ANCHO_PANTALLA - 150, 10))
 
@@ -249,22 +233,18 @@ def pantalla_game_over(pantalla, fuente):
     """Muestra la pantalla de game over"""
     pantalla.fill(NEGRO)
     
-    # Título
     titulo = pygame.font.Font(None, 72).render("GAME OVER", True, ROJO)
     rect_titulo = titulo.get_rect(center=(ANCHO_PANTALLA // 2, ALTO_PANTALLA // 2 - 100))
     pantalla.blit(titulo, rect_titulo)
     
-    # Puntuación final
     texto_puntos = fuente.render(f"Puntuación Final: {puntuacion}", True, BLANCO)
     rect_puntos = texto_puntos.get_rect(center=(ANCHO_PANTALLA // 2, ALTO_PANTALLA // 2 - 20))
     pantalla.blit(texto_puntos, rect_puntos)
-    
-    # Nivel alcanzado
+
     texto_nivel = fuente.render(f"Nivel Alcanzado: {nivel}", True, BLANCO)
     rect_nivel = texto_nivel.get_rect(center=(ANCHO_PANTALLA // 2, ALTO_PANTALLA // 2 + 20))
     pantalla.blit(texto_nivel, rect_nivel)
-    
-    # Instrucciones
+
     texto_reiniciar = fuente.render("Presiona ESPACIO para jugar de nuevo o ESC para salir", True, AMARILLO)
     rect_reiniciar = texto_reiniciar.get_rect(center=(ANCHO_PANTALLA // 2, ALTO_PANTALLA // 2 + 80))
     pantalla.blit(texto_reiniciar, rect_reiniciar)
@@ -272,24 +252,20 @@ def pantalla_game_over(pantalla, fuente):
 def dibujar_cuenta_regresiva(pantalla, fuente):
     """Dibuja la pantalla de cuenta regresiva"""
     global tiempo_inicio_cuenta
-    
-    # Calcular tiempo restante
+
     tiempo_transcurrido = pygame.time.get_ticks() - tiempo_inicio_cuenta
     tiempo_restante = 3 - int(tiempo_transcurrido)
     
     if tiempo_restante > 0:
-        # Fondo semi-transparente
         overlay = pygame.Surface((ANCHO_PANTALLA, ALTO_PANTALLA))
         overlay.set_alpha(180)
         overlay.fill(NEGRO)
         pantalla.blit(overlay, (0, 0))
         
-        # Número de cuenta regresiva
         texto_cuenta = pygame.font.Font(None, 150).render(str(tiempo_restante), True, AMARILLO)
         rect_cuenta = texto_cuenta.get_rect(center=(ANCHO_PANTALLA // 2, ALTO_PANTALLA // 2))
         pantalla.blit(texto_cuenta, rect_cuenta)
         
-        # Mensaje
         texto_preparate = fuente.render("¡PREPÁRATE!", True, BLANCO)
         rect_preparate = texto_preparate.get_rect(center=(ANCHO_PANTALLA // 2, ALTO_PANTALLA // 2 + 80))
         pantalla.blit(texto_preparate, rect_preparate)
@@ -307,22 +283,18 @@ def mostrar_menu(pantalla, fuente):
     """Muestra el menú de inicio"""
     pantalla.fill(NEGRO)
     
-    # Título
     titulo = pygame.font.Font(None, 72).render("Esquiva Autos", True, VERDE)
     rect_titulo = titulo.get_rect(center=(ANCHO_PANTALLA // 2, ALTO_PANTALLA // 2 - 100))
     pantalla.blit(titulo, rect_titulo)
     
-    # Opción "Jugar"
     opcion_jugar = fuente.render("Presiona ESPACIO para Jugar", True, AMARILLO)
     rect_jugar = opcion_jugar.get_rect(center=(ANCHO_PANTALLA // 2, ALTO_PANTALLA // 2))
     pantalla.blit(opcion_jugar, rect_jugar)
     
-    # Opción "Salir"
     opcion_salir = fuente.render("Presiona ESC para Salir", True, AMARILLO)
     rect_salir = opcion_salir.get_rect(center=(ANCHO_PANTALLA // 2, ALTO_PANTALLA // 2 + 50))
     pantalla.blit(opcion_salir, rect_salir)
     
-    # Controles
     controles = fuente.render("Usa las flechas o WASD para moverte", True, BLANCO)
     rect_controles = controles.get_rect(center=(ANCHO_PANTALLA // 2, ALTO_PANTALLA // 2 + 120))
     pantalla.blit(controles, rect_controles)
@@ -336,14 +308,11 @@ def juego_principal():
     pantalla = crear_pantalla()
     reloj = pygame.time.Clock()
     fuente = pygame.font.Font(None, 36)
-    
-    # Cargar imágenes
+
     imagenes = cargar_imagenes()
-    
-    # Mostrar menú
+
     mostrar_menu(pantalla, fuente)
-    
-    # Esperar a que el jugador seleccione una opción
+
     ejecutando = True
     while ejecutando:
         for evento in pygame.event.get():
@@ -367,22 +336,18 @@ def juego_activo(imagenes):
     pantalla = crear_pantalla()
     reloj = pygame.time.Clock()
     fuente = pygame.font.Font(None, 36)
-    
-    # Crear el coche del jugador
+
     coche = crear_coche()
-    
-    # Listas para obstáculos y potenciadores
+
     obstaculos = []
     potenciadores = []
-    
-    # Variables de tiempo y efectos
+
     tiempo_obstaculo = 0
     tiempo_potenciador = 0
     offset_carretera = 0
     mensaje_potenciador = ""
     tiempo_mensaje = 0
-    
-    # Iniciar cuenta regresiva
+
     estado_juego = "cuenta_regresiva"
     tiempo_inicio_cuenta = pygame.time.get_ticks()
     
@@ -390,15 +355,13 @@ def juego_activo(imagenes):
     
     while ejecutando:
         dt = reloj.tick(FPS)
-        
-        # Manejar eventos
+
         for evento in pygame.event.get():
             if evento.type == pygame.QUIT:
                 ejecutando = False
             elif evento.type == pygame.KEYDOWN:
                 if estado_juego == "game_over":
                     if evento.key == pygame.K_SPACE:
-                        # Reiniciar juego
                         reiniciar_juego()
                         coche = crear_coche()
                         obstaculos.clear()
@@ -411,14 +374,11 @@ def juego_activo(imagenes):
                     elif evento.key == pygame.K_ESCAPE:
                         ejecutando = False
         
-        # Actualizar según el estado del juego
         if estado_juego == "cuenta_regresiva":
-            # Verificar si terminó la cuenta regresiva
             tiempo_transcurrido = pygame.time.get_ticks() - tiempo_inicio_cuenta
             if tiempo_transcurrido >= 3:
                 estado_juego = "jugando"
             
-            # Dibujar carretera y vehículos estáticos
             offset_carretera += velocidad_base
             dibujar_carretera(pantalla, offset_carretera)
             dibujar_coche_con_imagen(pantalla, coche, imagenes)
@@ -428,69 +388,54 @@ def juego_activo(imagenes):
         elif estado_juego == "jugando":
             offset_carretera += velocidad_base
             
-            # Obtener teclas presionadas
             teclas = pygame.key.get_pressed()
             
-            # Mover el coche
             mover_coche(coche, teclas)
             
-            # Crear obstáculos
             tiempo_obstaculo += dt
             if tiempo_obstaculo > max(800 - nivel * 50, 200):
                 obstaculos.append(crear_obstaculo())
                 tiempo_obstaculo = 0
-            
-            # Crear potenciadores
+
             tiempo_potenciador += dt
             if tiempo_potenciador > random.randint(3000, 5000):
                 potenciadores.append(crear_potenciador())
                 tiempo_potenciador = 0
-            
-            # Mover obstáculos y potenciadores
+
             mover_obstaculos(obstaculos)
             mover_potenciadores(potenciadores)
-            
-            # Detectar colisiones con obstáculos
+
             for obstaculo in obstaculos[:]:
                 if detectar_colision(coche, obstaculo):
                     obstaculos.remove(obstaculo)
                     vidas -= 1
                     if vidas <= 0:
                         estado_juego = "game_over"
-            
-            # Detectar colisiones con potenciadores
+
             for potenciador in potenciadores[:]:
                 if detectar_colision(coche, potenciador):
                     potenciadores.remove(potenciador)
                     mensaje_potenciador = aplicar_potenciador(potenciador, coche)
                     tiempo_mensaje = pygame.time.get_ticks()
-            
-            # Aumentar puntuación por tiempo
+
             puntuacion += 1
-            
-            # Actualizar nivel
+
             if actualizar_nivel():
                 mensaje_potenciador = f"¡Nivel {nivel}!"
                 tiempo_mensaje = pygame.time.get_ticks()
-            
-            # Dibujar todo
+
             dibujar_carretera(pantalla, offset_carretera)
-            
-            # Dibujar obstáculos con imágenes
+
             for obstaculo in obstaculos:
                 dibujar_obstaculo_con_imagen(pantalla, obstaculo, imagenes)
-            
-            # Dibujar potenciadores
+
             for potenciador in potenciadores:
                 dibujar_potenciador_detallado(pantalla, potenciador)
-            
-            # Dibujar el coche del jugador con imagen
+
             dibujar_coche_con_imagen(pantalla, coche, imagenes)
-            
-            # Dibujar interfaz
+
             dibujar_interfaz(pantalla, fuente)
-            
-            # Mostrar mensaje de potenciador
+
             if mensaje_potenciador and pygame.time.get_ticks() - tiempo_mensaje < 2000:
                 texto_mensaje = fuente.render(mensaje_potenciador, True, AMARILLO)
                 rect_mensaje = texto_mensaje.get_rect(center=(ANCHO_PANTALLA // 2, 150))
@@ -499,7 +444,7 @@ def juego_activo(imagenes):
                 mensaje_potenciador = ""
         
         elif estado_juego == "game_over":
-            # Pantalla de game over
+
             pantalla_game_over(pantalla, fuente)
         
         pygame.display.flip()
