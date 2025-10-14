@@ -7,19 +7,14 @@ if __name__ == "__main__":
     pygame.init()
     
 
-# -------------------
-# Configuración
-# -------------------
 ROWS, COLS = 6, 7
 SQUARE_SIZE = 100
 RADIUS = SQUARE_SIZE // 2 - 5
 
-# Resolución (igual que en Pong)
 WIDTH, HEIGHT = COLS * SQUARE_SIZE, (ROWS+1) * SQUARE_SIZE
 SCREEN = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("4 en Línea Animado")
 
-# Colores
 BLUE = (0, 0, 255)
 BLACK = (0, 0, 0)
 RED   = (255, 0, 0)
@@ -29,9 +24,6 @@ GRAY  = (180, 180, 180)
 FPS = 60
 clock = pygame.time.Clock()
 
-# -------------------
-# Funciones del tablero
-# -------------------
 def create_board():
     return [[0 for _ in range(COLS)] for _ in range(ROWS)]
 
@@ -67,36 +59,33 @@ def drop_piece_animated(board, col, piece):
         draw_board(board)
         pygame.draw.circle(SCREEN, color, (x, int(y)), RADIUS)
         pygame.display.update()
-        y += 20  # velocidad de caída
+        y += 20  
         clock.tick(FPS)
     board[target_row][col] = piece
 
 def winning_move(board, piece):
-    # Horizontal
+
     for r in range(ROWS):
         for c in range(COLS-3):
             if all(board[r][c+i] == piece for i in range(4)):
                 return True
-    # Vertical
+
     for c in range(COLS):
         for r in range(ROWS-3):
             if all(board[r+i][c] == piece for i in range(4)):
                 return True
-    # Diagonal /
+
     for r in range(3, ROWS):
         for c in range(COLS-3):
             if all(board[r-i][c+i] == piece for i in range(4)):
                 return True
-    # Diagonal \
+
     for r in range(ROWS-3):
         for c in range(COLS-3):
             if all(board[r+i][c+i] == piece for i in range(4)):
                 return True
     return False
 
-# -------------------
-# Menús tipo Pong
-# -------------------
 def menu_jugadores(screen):
     font = pygame.font.SysFont(None, 40)
     while True:
@@ -141,9 +130,6 @@ def menu_dificultad(screen):
                     factor = {"1":0.4,"2":0.7,"3":1.0}[event.unicode]
                     return factor
 
-# -------------------
-# Lógica del juego
-# -------------------
 def run_game(screen, players=2, cpu_factor=0.5):
     board = create_board()
     game_over = False
@@ -170,9 +156,8 @@ def run_game(screen, players=2, cpu_factor=0.5):
                             winner = "Jugador 1" if piece==1 else ("CPU" if players==1 else "Jugador 2")
                         turn = (turn+1)%2
 
-        # CPU movimiento si es 1 jugador
         if players==1 and turn==1 and not game_over:
-            pygame.time.delay(3000)  # espera 3 segundos antes de jugar
+            pygame.time.delay(3000)  
             valid_cols = [c for c in range(COLS) if is_valid_location(board,c)]
             col = random.choice(valid_cols)
             drop_piece_animated(board, col, 2)
@@ -181,10 +166,9 @@ def run_game(screen, players=2, cpu_factor=0.5):
                 winner = "CPU"
             turn = 0
 
-        # Fin de partida
         if game_over:
-            draw_board(board)  # mostrar tablero final
-            pygame.time.delay(3000)  # 3 segundos mostrando cómo quedó
+            draw_board(board)  
+            pygame.time.delay(3000) 
             SCREEN.fill(BLACK)
             msg_txt = font.render(f"{winner} gana!", True, RED if winner=="Jugador 1" else YELLOW)
             SCREEN.blit(msg_txt, (WIDTH//2 - msg_txt.get_width()//2, HEIGHT//2 - msg_txt.get_height()//2))
@@ -194,9 +178,7 @@ def run_game(screen, players=2, cpu_factor=0.5):
 
         pygame.display.update()
 
-# -------------------
-# Main
-# -------------------
+
 def main():
     while True:
         jugadores = menu_jugadores(SCREEN)

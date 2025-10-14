@@ -20,7 +20,7 @@ bird_img = pygame.image.load("image/pajaro.png")
 pipe_img = pygame.image.load("image/tuberiapro.png")
 
 bird_img = pygame.transform.scale(bird_img, (BIRD_SIZE, BIRD_SIZE))
-PIPE_WIDTH = 60  # Ancho fijo para las tuberías
+PIPE_WIDTH = 60  
 
 def draw_background(screen, W, H):
     fondo_escalado = pygame.transform.scale(fondo_img, (W, H))
@@ -31,13 +31,11 @@ def draw_bird(screen, x, y):
 
 def draw_pipes(screen, pipes):
     for pipe in pipes:
-        # Tubo superior - escalar a las dimensiones exactas del rect y voltear
         top_height = pipe["top"].height
         top_scaled = pygame.transform.scale(pipe_img, (PIPE_WIDTH, top_height))
         top_flipped = pygame.transform.flip(top_scaled, False, True)
         screen.blit(top_flipped, (pipe["top"].x, pipe["top"].y))
 
-        # Tubo inferior - escalar a las dimensiones exactas del rect
         bottom_height = pipe["bottom"].height
         bottom_scaled = pygame.transform.scale(pipe_img, (PIPE_WIDTH, bottom_height))
         screen.blit(bottom_scaled, (pipe["bottom"].x, pipe["bottom"].y))

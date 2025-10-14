@@ -88,7 +88,7 @@ games = [
         "color": (100, 200, 200),
         "status": "Disponible"
     },{
-        "title": "auto",
+        "title": "crash run",
         "description": "esquiva los autos y llega lo más lejos posible",
         "file": "auto.py",
         "category": "arcade",
