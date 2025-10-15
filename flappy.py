@@ -18,6 +18,8 @@ BIRD_SIZE = 40
 fondo_img = pygame.image.load("image/fondo.png")
 bird_img = pygame.image.load("image/pajaro.png")
 pipe_img = pygame.image.load("image/tuberiapro.png")
+menu_img = pygame.image.load("image/menu_flappy.png")
+game_over_img = pygame.image.load("image/game_over_flappy.png")
 
 bird_img = pygame.transform.scale(bird_img, (BIRD_SIZE, BIRD_SIZE))
 PIPE_WIDTH = 60  
@@ -73,7 +75,6 @@ def draw_score(screen, score):
     screen.blit(txt, (10,10))
 
 def wait_for_start(screen, W, H):
-    font = pygame.font.SysFont(None, 36)
     clock = pygame.time.Clock()
     
     while True:
@@ -88,11 +89,8 @@ def wait_for_start(screen, W, H):
                 if event.key == pygame.K_ESCAPE:
                     pygame.quit(); sys.exit()
         
-        draw_background(screen, W, H)
-        draw_bird(screen, W//4, H//2)
-        
-        msg = font.render("Presiona ESPACIO para comenzar", True, WHITE)
-        screen.blit(msg, (W//2 - msg.get_width()//2, H//2 + 100))
+        menu_escalado = pygame.transform.scale(menu_img, (W, H))
+        screen.blit(menu_escalado, (0, 0))
         
         pygame.display.flip()
 
@@ -144,11 +142,9 @@ def run_game(screen, W, H):
         pygame.display.flip()
 
 def game_over_screen(screen, W, H):
-    font = pygame.font.SysFont(None,36)
     while True:
-        screen.fill(BLACK)
-        msg = font.render("Partida finalizada. ENTER = jugar de nuevo, ESC = salir", True, WHITE)
-        screen.blit(msg,(W//2 - msg.get_width()//2,H//2 - 20))
+        game_over_escalado = pygame.transform.scale(game_over_img, (W, H))
+        screen.blit(game_over_escalado, (0, 0))
         pygame.display.flip()
         
         for event in pygame.event.get():
