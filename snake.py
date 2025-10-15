@@ -22,7 +22,7 @@ DARK_RED = (139, 0, 0)  # Rojo más oscuro para sombras
 
 # Pantalla y reloj
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Snake 🍎")
+pygame.display.set_caption("Snake")
 clock = pygame.time.Clock()
 font = pygame.font.SysFont(None, 35)
 
@@ -218,7 +218,7 @@ def main():
             screen.fill(BLACK)
             draw_text("GAME OVER!", RED, WIDTH//2 - 100, HEIGHT//2 - 60)
             draw_text("Puntaje Final: " + str(score), WHITE, WIDTH//2 - 120, HEIGHT//2 - 20)
-            draw_text("🍎 Manzanas comidas: " + str(score), WHITE, WIDTH//2 - 140, HEIGHT//2 + 20)
+            draw_text(" Manzanas comidas: " + str(score), WHITE, WIDTH//2 - 140, HEIGHT//2 + 20)
             draw_text("Presiona ESPACIO para jugar otra vez", GREEN, WIDTH//2 - 180, HEIGHT//2 + 60)
             pygame.display.update()
             
