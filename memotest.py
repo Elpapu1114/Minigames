@@ -492,14 +492,19 @@ def run_game(screen, modo):
         if matched_count == len(cards):
             try:
                 if modo == 1:
-                    victory_image = pygame.image.load("image/menu_memotest.png")
+                    if score1 > score2:
+                        victory_image = pygame.image.load("image/jugador_1_victoria_memotest.png")
+                    elif score2 > score1:
+                        victory_image = pygame.image.load("image/cpu_victoria_memotest.png")
+                    else:
+                        victory_image = pygame.image.load("image/empate_memotest.png")
                 else:
                     if score1 > score2:
                         victory_image = pygame.image.load("image/jugador_1_victoria_memotest.png")
                     elif score2 > score1:
                         victory_image = pygame.image.load("image/jugador_2_victoria_memotest.png")
                     else:
-                        victory_image = None
+                        victory_image = pygame.image.load("image/empate_memotest.png")
                 use_victory_image = True
             except:
                 victory_image = None
