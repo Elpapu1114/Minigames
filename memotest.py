@@ -25,7 +25,7 @@ LIME = (50, 205, 50)
 GOLD = (255, 215, 0)
 
 FPS = 60
-W, H = 800, 600 # Resolución fija
+W, H = 800, 600
 
 def create_particles(x, y, color):
     particles = []
@@ -137,7 +137,6 @@ def draw_card(screen, card):
                 pygame.draw.circle(screen, pattern_color, (dot_x, dot_y), 3)
 
 def menu_principal(screen):
-    # Intentar cargar la imagen del menú
     try:
         menu_image = pygame.image.load("image/menu_memotest.png")
         use_image = True
@@ -146,11 +145,9 @@ def menu_principal(screen):
     
     while True:
         if use_image:
-            # Escalar la imagen al tamaño de la pantalla
             scaled_image = pygame.transform.scale(menu_image, (W, H))
             screen.blit(scaled_image, (0, 0))
         else:
-            # Fondo degradado original
             for y in range(H):
                 color = (0, 0, min(100, y // 6))
                 pygame.draw.line(screen, color, (0, y), (W, y))
@@ -180,7 +177,7 @@ def menu_principal(screen):
                 pygame.quit(); sys.exit()
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
-                    return  # Continuar al menú de modo
+                    return
                 elif event.key == pygame.K_ESCAPE:
                     pygame.quit(); sys.exit()
 
@@ -267,15 +264,16 @@ def draw_hud(screen, modo, score1, score2, turn, moves, time_elapsed):
     font = pygame.font.Font(None, 32)
     
     if modo == 1:
-        score_text = f"Puntos: {score1}"
+        score_text = f"Jugador: {score1}"
+        cpu_text = f"CPU: {score2}"
         moves_text = f"Movimientos: {moves}"
-        time_text = f"Tiempo: {int(time_elapsed)}s"
         
-        texts = [score_text, moves_text, time_text]
+        texts = [score_text, cpu_text, moves_text]
         spacing = W // len(texts)
         
         for i, text in enumerate(texts):
-            rendered = font.render(text, True, WHITE)
+            color = YELLOW if (i == 0 and turn == 1) or (i == 1 and turn == 2) else WHITE
+            rendered = font.render(text, True, color)
             x = spacing * i + spacing // 2 - rendered.get_width() // 2
             screen.blit(rendered, (x, H - 50))
     else:
@@ -295,6 +293,36 @@ def draw_hud(screen, modo, score1, score2, turn, moves, time_elapsed):
         turn_x = W // 2 - turn_rendered.get_width() // 2
         screen.blit(turn_rendered, (turn_x, H - 50))
 
+class CPUPlayer:
+    def __init__(self, difficulty='medium'):
+        self.memory = {}
+        self.difficulty = difficulty
+        self.last_seen = {}
+    
+    def remember_card(self, card_index, color):
+        self.memory[card_index] = color
+        self.last_seen[card_index] = time.time()
+    
+    def choose_card(self, cards, first_card_idx=None):
+        available = [i for i, c in enumerate(cards) if not c['flipped'] and not c['matched']]
+        
+        if not available:
+            return None
+        
+        if first_card_idx is not None:
+            first_color = cards[first_card_idx]['color']
+            
+            for idx in available:
+                if idx in self.memory and self.memory[idx] == first_color:
+                    if random.random() < 0.8:
+                        return idx
+        
+        known_cards = [idx for idx in available if idx in self.memory]
+        if known_cards and random.random() < 0.6:
+            return random.choice(known_cards)
+        
+        return random.choice(available)
+
 def run_game(screen, modo):
     clock = pygame.time.Clock()
     
@@ -303,6 +331,8 @@ def run_game(screen, modo):
     
     first_card = None
     second_card = None
+    first_card_idx = None
+    second_card_idx = None
     checking = False
     check_time = 0
     matched_count = 0
@@ -311,6 +341,11 @@ def run_game(screen, modo):
     score1 = 0
     score2 = 0
     turn = 1
+    
+    cpu = CPUPlayer() if modo == 1 else None
+    cpu_thinking = False
+    cpu_think_start = 0
+    cpu_first_card = None
     
     all_particles = []
     start_time = time.time()
@@ -339,20 +374,61 @@ def run_game(screen, modo):
                 pygame.quit(); sys.exit()
             
             if event.type == pygame.MOUSEBUTTONDOWN and not checking and preview_time == 0:
-                for card in cards:
+                if modo == 1 and turn == 2:
+                    continue
+                
+                for i, card in enumerate(cards):
                     if card['rect'].collidepoint(mouse_pos) and not card['flipped'] and not card['matched']:
                         card['flipped'] = True
                         if first_card is None:
                             first_card = card
+                            first_card_idx = i
+                            if cpu:
+                                cpu.remember_card(i, card['color'])
                         elif second_card is None:
                             second_card = card
+                            second_card_idx = i
+                            if cpu:
+                                cpu.remember_card(i, card['color'])
                             checking = True
                             check_time = current_time
                             moves += 1
                         break
         
+        if modo == 1 and turn == 2 and not checking and preview_time == 0:
+            if not cpu_thinking:
+                cpu_thinking = True
+                cpu_think_start = current_time
+                cpu_first_card = None
+            
+            elif current_time - cpu_think_start > 1.0:
+                if first_card is None:
+                    idx = cpu.choose_card(cards)
+                    if idx is not None:
+                        cards[idx]['flipped'] = True
+                        first_card = cards[idx]
+                        first_card_idx = idx
+                        cpu.remember_card(idx, cards[idx]['color'])
+                        cpu_thinking = False
+                        cpu_think_start = current_time
+                
+                elif second_card is None and current_time - cpu_think_start > 1.0:
+                    idx = cpu.choose_card(cards, first_card_idx)
+                    if idx is not None:
+                        cards[idx]['flipped'] = True
+                        second_card = cards[idx]
+                        second_card_idx = idx
+                        cpu.remember_card(idx, cards[idx]['color'])
+                        checking = True
+                        check_time = current_time
+                        moves += 1
+                        cpu_thinking = False
+        
         for card in cards:
-            card['hover'] = card['rect'].collidepoint(mouse_pos) and not card['flipped'] and not card['matched'] and preview_time == 0
+            if modo == 1 and turn == 2:
+                card['hover'] = False
+            else:
+                card['hover'] = card['rect'].collidepoint(mouse_pos) and not card['flipped'] and not card['matched'] and preview_time == 0
         
         if checking and current_time - check_time > 1.0:
             if first_card['color'] == second_card['color']:
@@ -372,12 +448,14 @@ def run_game(screen, modo):
             else:
                 first_card['flipped'] = False
                 second_card['flipped'] = False
-                if modo == 2:
-                    turn = 2 if turn == 1 else 1
+                turn = 2 if turn == 1 else 1
             
             first_card = None
             second_card = None
+            first_card_idx = None
+            second_card_idx = None
             checking = False
+            cpu_thinking = False
         
         for card in cards:
             update_card(card, dt)
@@ -412,7 +490,6 @@ def run_game(screen, modo):
         pygame.display.flip()
         
         if matched_count == len(cards):
-            # Intentar cargar la imagen de victoria según el modo
             try:
                 if modo == 1:
                     victory_image = pygame.image.load("image/menu_memotest.png")
@@ -441,11 +518,9 @@ def run_game(screen, modo):
                 dt = clock.tick(FPS) / 1000.0
                 
                 if use_victory_image and victory_image:
-                    # Mostrar la imagen de victoria
                     scaled_image = pygame.transform.scale(victory_image, (W, H))
                     screen.blit(scaled_image, (0, 0))
                 else:
-                    # Fondo degradado animado original
                     for y in range(H):
                         intensity = int(30 + 20 * math.sin(time.time() * 2 + y * 0.02))
                         color = (intensity//3, intensity//2, intensity)
@@ -455,8 +530,13 @@ def run_game(screen, modo):
                     font_small = pygame.font.Font(None, 48)
                     
                     if modo == 1:
-                        win_text = "¡FELICITACIONES!"
-                        stats_text = f"Completado en {moves} movimientos y {int(time_elapsed)}s"
+                        if score1 > score2:
+                            win_text = "¡GANASTE!"
+                        elif score2 > score1:
+                            win_text = "¡GANÓ LA CPU!"
+                        else:
+                            win_text = "¡EMPATE!"
+                        stats_text = f"Tú: {score1} - CPU: {score2}"
                     else:
                         if score1 > score2:
                             win_text = "¡GANA JUGADOR 1!"
