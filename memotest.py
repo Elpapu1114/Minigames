@@ -519,8 +519,18 @@ def run_game(screen, modo):
                 color = random.choice([RED, GREEN, BLUE, YELLOW, PURPLE, ORANGE])
                 victory_particles.extend(create_particles(x, y, color))
             
-            for _ in range(60):
+            waiting_for_input = True
+            while waiting_for_input:
                 dt = clock.tick(FPS) / 1000.0
+                
+                for event in pygame.event.get():
+                    if event.type == pygame.QUIT:
+                        pygame.quit(); sys.exit()
+                    if event.type == pygame.KEYDOWN:
+                        if event.key == pygame.K_SPACE:
+                            return
+                        elif event.key == pygame.K_ESCAPE:
+                            pygame.quit(); sys.exit()
                 
                 if use_victory_image and victory_image:
                     scaled_image = pygame.transform.scale(victory_image, (W, H))
@@ -572,7 +582,6 @@ def run_game(screen, modo):
                 
                 pygame.display.flip()
             
-            pygame.time.wait(2000)
             return
 
 def main():
@@ -582,43 +591,6 @@ def main():
         menu_principal(screen)
         modo = menu_modo(screen)
         run_game(screen, modo)
-        
-        font = pygame.font.Font(None, 48)
-        font_small = pygame.font.Font(None, 36)
-        
-        waiting = True
-        while waiting:
-            for y in range(H):
-                intensity = int(40 + 20 * math.sin(time.time() + y * 0.01))
-                color = (intensity//4, intensity//3, intensity//2)
-                pygame.draw.line(screen, color, (0, y), (W, y))
-            
-            msg1 = font.render("¡Juego Terminado!", True, YELLOW)
-            msg1_rect = msg1.get_rect(center=(W//2, H//2 - 60))
-            
-            shadow1 = font.render("¡Juego Terminado!", True, BLACK)
-            shadow1_rect = shadow1.get_rect(center=(msg1_rect.centerx + 3, msg1_rect.centery + 3))
-            screen.blit(shadow1, shadow1_rect)
-            screen.blit(msg1, msg1_rect)
-            
-            msg2 = font_small.render("ENTER = Jugar de nuevo", True, LIME)
-            msg2_rect = msg2.get_rect(center=(W//2, H//2 + 20))
-            screen.blit(msg2, msg2_rect)
-            
-            msg3 = font_small.render("ESC = Salir", True, RED)
-            msg3_rect = msg3.get_rect(center=(W//2, H//2 + 60))
-            screen.blit(msg3, msg3_rect)
-            
-            pygame.display.flip()
-            
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    pygame.quit(); sys.exit()
-                if event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_RETURN:
-                        waiting = False
-                    elif event.key == pygame.K_ESCAPE:
-                        pygame.quit(); sys.exit()
 
 if __name__ == "__main__":
     try:
