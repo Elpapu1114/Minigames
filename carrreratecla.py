@@ -36,6 +36,18 @@ except:
     auto_azul = None
     print("Advertencia: No se pudieron cargar las imágenes de los autos")
 
+try:
+    menu_image = pygame.image.load(os.path.join("image", "menu_fast_fingers.png"))
+    victoria_j1_image = pygame.image.load(os.path.join("image", "jugador_1_victoria_fast_fingers.png"))
+    victoria_j2_image = pygame.image.load(os.path.join("image", "jugador_2_victoria_fast_fingers.png"))
+    usar_imagenes = True
+except:
+    menu_image = None
+    victoria_j1_image = None
+    victoria_j2_image = None
+    usar_imagenes = False
+    print("Advertencia: No se pudieron cargar las imágenes del menú/victoria")
+
 estado_juego = "menu" 
 posicion_j1 = 50
 posicion_j2 = 50
@@ -44,41 +56,45 @@ tiempo_inicio_cuenta = 0
 
 def dibujar_menu():
     """Dibuja el menú principal"""
-    pantalla.fill(AZUL)
+    if usar_imagenes and menu_image:
+        scaled_image = pygame.transform.scale(menu_image, (ANCHO, ALTO))
+        pantalla.blit(scaled_image, (0, 0))
+    else:
+        pantalla.fill(AZUL)
 
-    titulo = fuente_grande.render("CARRERA DE TECLAS", True, BLANCO)
-    rect_titulo = titulo.get_rect(center=(ANCHO//2, 150))
-    pantalla.blit(titulo, rect_titulo)
+        titulo = fuente_grande.render("CARRERA DE TECLAS", True, BLANCO)
+        rect_titulo = titulo.get_rect(center=(ANCHO//2, 150))
+        pantalla.blit(titulo, rect_titulo)
 
-    subtitulo = fuente_mediana.render("¡Presiona las teclas más rápido para ganar!", True, BLANCO)
-    rect_subtitulo = subtitulo.get_rect(center=(ANCHO//2, 200))
-    pantalla.blit(subtitulo, rect_subtitulo)
+        subtitulo = fuente_mediana.render("¡Presiona las teclas más rápido para ganar!", True, BLANCO)
+        rect_subtitulo = subtitulo.get_rect(center=(ANCHO//2, 200))
+        pantalla.blit(subtitulo, rect_subtitulo)
 
-    instrucciones = [
-        "Jugador 1: Tecla 'A'",
-        "Jugador 2: Tecla 'L'",
-        "",
-        "Presiona ESPACIO para comenzar"
-    ]
-    
-    y_inicio = 280
-    for i, linea in enumerate(instrucciones):
-        if linea:
-            if "Jugador 1" in linea:
-                color = ROJO
-            elif "Jugador 2" in linea:
-                color = AZUL
-            else:
-                color = BLANCO
-            
-            texto = fuente_pequeña.render(linea, True, color)
-            rect_texto = texto.get_rect(center=(ANCHO//2, y_inicio + i*30))
-            pantalla.blit(texto, rect_texto)
+        instrucciones = [
+            "Jugador 1: Tecla 'A'",
+            "Jugador 2: Tecla 'L'",
+            "",
+            "Presiona ESPACIO para comenzar"
+        ]
+        
+        y_inicio = 280
+        for i, linea in enumerate(instrucciones):
+            if linea:
+                if "Jugador 1" in linea:
+                    color = ROJO
+                elif "Jugador 2" in linea:
+                    color = AZUL
+                else:
+                    color = BLANCO
+                
+                texto = fuente_pequeña.render(linea, True, color)
+                rect_texto = texto.get_rect(center=(ANCHO//2, y_inicio + i*30))
+                pantalla.blit(texto, rect_texto)
 
-    pygame.draw.rect(pantalla, VERDE, (ANCHO//2 - 100, 450, 200, 50))
-    texto_boton = fuente_mediana.render("INICIAR", True, NEGRO)
-    rect_boton = texto_boton.get_rect(center=(ANCHO//2, 475))
-    pantalla.blit(texto_boton, rect_boton)
+        pygame.draw.rect(pantalla, VERDE, (ANCHO//2 - 100, 450, 200, 50))
+        texto_boton = fuente_mediana.render("INICIAR", True, NEGRO)
+        rect_boton = texto_boton.get_rect(center=(ANCHO//2, 475))
+        pantalla.blit(texto_boton, rect_boton)
 
 def dibujar_pista():
     """Dibuja la pista de carrera"""
@@ -170,6 +186,16 @@ def dibujar_cuenta_regresiva():
 
 def dibujar_pantalla_ganador():
     """Dibuja la pantalla del ganador"""
+    if usar_imagenes:
+        if ganador == 1 and victoria_j1_image:
+            scaled_image = pygame.transform.scale(victoria_j1_image, (ANCHO, ALTO))
+            pantalla.blit(scaled_image, (0, 0))
+            return
+        elif ganador == 2 and victoria_j2_image:
+            scaled_image = pygame.transform.scale(victoria_j2_image, (ANCHO, ALTO))
+            pantalla.blit(scaled_image, (0, 0))
+            return
+    
     pantalla.fill(VERDE)
 
     color_ganador = ROJO if ganador == 1 else AZUL
@@ -209,12 +235,16 @@ def manejar_eventos():
             if estado_juego == "menu":
                 if evento.key == pygame.K_SPACE:
                     iniciar_cuenta_regresiva()
+                elif evento.key == pygame.K_ESCAPE:
+                    pygame.quit()
+                    sys.exit()
 
             elif estado_juego == "ganador":
                 if evento.key == pygame.K_SPACE:
                     iniciar_cuenta_regresiva()
                 elif evento.key == pygame.K_ESCAPE:
-                    estado_juego = "menu"
+                    pygame.quit()
+                    sys.exit()
 
             elif estado_juego == "juego":
                 if evento.key == pygame.K_ESCAPE:
