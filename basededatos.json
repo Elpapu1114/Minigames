@@ -62,6 +62,7 @@
     {
         "id": 6,
         "nombre": "Ángel Di María",
+        "apodo": "Di María",
         "nacionalidad": "Argentina",    
         "Fecha de nacimiento": "14/02/1988",
         "club actual": "Rosario Central",
