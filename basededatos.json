@@ -1484,7 +1484,7 @@
         "Fecha de nacimiento": "03/07/1995",
         "club actual": "AC Milan",
         "posicion": ["Portero"],
-        "clubes totales": ["Paris Saint-Germain", "Lille", "AC Milan"]
+        "clubes totales": ["Paris Saint-Germain", "LOSC Lille", "AC Milan"]
     },
 
     {
@@ -1993,7 +1993,7 @@
         "Fecha de nacimiento": "01/07/1976",
         "club actual": "RETIRADO",
         "posicion": ["Delantero Centro", "Mediocampista Ofensivo"],
-        "clubes totales": ["Ajax", "AC Milan", "Barcelona", "Newcastle United", "Valencia", "PSV Eindhoven", "Lille"]
+        "clubes totales": ["Ajax", "AC Milan", "Barcelona", "Newcastle United", "Valencia", "PSV Eindhoven", "LOSC Lille"]
     },
     {
         "id": 207,
@@ -3010,6 +3010,243 @@
         "club actual": "Borussia Dortmund",
         "posicion": ["Defensa Central", "Lateral Izquierdo"],
         "clubes totales": ["Boca Juniors", "Borussia Dortmund", "Olympique Marseille"]
+    },
+    {
+        "id": 319,
+        "nombre": "Bernd Schuster",
+        "nacionalidad": "Alemania",
+        "Fecha de nacimiento": "22/12/1959",
+        "club actual": "RETIRADO",
+        "posicion": ["Mediocampista Ofensivo", "Mediocampista Central"],
+        "clubes totales": ["1. FC Köln", "Barcelona", "Real Madrid", "Atlético de Madrid", "Bayer Leverkusen"]
+    },
+    {
+        "id": 320,
+        "nombre": "Julian Brandt",
+        "nacionalidad": "Alemania",
+        "Fecha de nacimiento": "02/05/1996",
+        "club actual": "Borussia Dortmund",
+        "posicion": ["Mediocampista Ofensivo", "Mediocampista Central", "Extremo Izquierdo", "Extremo Derecho"],
+        "clubes totales": ["Bayer Leverkusen", "Borussia Dortmund"]
+    },
+    {
+        "id": 321,
+        "nombre": "Jean-Pierre Papin",
+        "nacionalidad": "Francia",
+        "Fecha de nacimiento": "05/11/1963",
+        "club actual": "RETIRADO",
+        "posicion": ["Delantero Centro"],
+        "clubes totales": ["Vichy", "Valenciennes", "Olympique Marseille", "AC Milan", "Bayern de Múnich", "Girondins de Bordeaux", "Nice"]
+    },
+    {
+        "id": 322,
+        "nombre": "Teddy Sheringham",
+        "nacionalidad": "Inglaterra",
+        "Fecha de nacimiento": "02/04/1966",
+        "club actual": "RETIRADO",
+        "posicion": ["Delantero Centro", "Mediocampista Ofensivo"],
+        "clubes totales": ["Millwall", "West Ham United", "Nottingham Forest", "Aldershot", "Manchester United", "Portsmouth", "Tottenham Hotspur", "Colchester United"]
+    },
+    {
+        "id": 323,
+        "nombre": "Lilian Thuram",
+        "nacionalidad": "Francia",
+        "Fecha de nacimiento": "01/01/1972",
+        "club actual": "RETIRADO",
+        "posicion": ["Defensa Central", "Lateral Derecho", "Lateral Izquierdo"],
+        "clubes totales": ["Monaco", "Parma", "Juventus", "Barcelona"]
+    },
+    {
+        "id": 324,
+        "nombre": "Diego Simeone",
+        "nacionalidad": "Argentina",
+        "Fecha de nacimiento": "28/04/1970",
+        "club actual": "RETIRADO",
+        "posicion": ["Mediocampista Defensivo", "Mediocampista Central", "Mediocampista Ofensivo"],
+        "clubes totales": ["Vélez Sarsfield", "Pisa", "Sevilla", "Atlético de Madrid", "Inter de Milán", "Lazio", "Racing Club"]
+    },
+    {
+        "id": 325,
+        "nombre": "Leandro Paredes",
+        "nacionalidad": "Argentina",
+        "Fecha de nacimiento": "29/06/1994",
+        "club actual": "Boca Juniors",
+        "posicion": ["Mediocampista Defensivo", "Mediocampista Central", "Mediocampista Ofensivo"],
+        "clubes totales": ["Boca Juniors", "Roma", "Empoli", "Zenit", "Paris Saint-Germain", "Juventus"]
+    },
+    {
+        "id": 326,
+        "nombre": "Antonio Rudiger",
+        "nacionalidad": "Alemania",
+        "Fecha de nacimiento": "03/03/1993",
+        "club actual": "Real Madrid",
+        "posicion": ["Defensa Central", "Lateral Derecho"],
+        "clubes totales": ["VFB Stuttgart", "AS Roma", "Chelsea", "Real Madrid"]
+    },
+    {
+        "id": 327,
+        "nombre": "Nicolás Tagliafico",
+        "nacionalidad": "Argentina",
+        "Fecha de nacimiento": "31/08/1992",
+        "club actual": "Olympique Lyon",
+        "posicion": ["Lateral Izquierdo", "Defensa Central", "Mediocampista Izquierdo"],
+        "clubes totales": ["Independiente", "Ajax", "Lyon"]
+    },
+    {
+        "id": 328,
+        "nombre": "Louis Saha",
+        "nacionalidad": "Francia",
+        "Fecha de nacimiento": "08/08/1978",
+        "club actual": "RETIRADO",
+        "posicion": ["Delantero Centro"],
+        "clubes totales": ["Metz", "Newcastle United", "Fulham", "Manchester United", "Everton", "Tottenham Hotspur", "Sunderland", "Lazio", "Sangju Sangmu"]
+    },
+    {
+        "id": 329,
+        "nombre": "Anthony Martial",
+        "nacionalidad": "Francia",
+        "Fecha de nacimiento": "05/12/1995",
+        "club actual": "Monterrey",
+        "posicion": ["Delantero Centro", "Extremo Izquierdo", "Extremo Derecho"],
+        "clubes totales": ["Lyon", "Monaco", "Manchester United", "Sevilla", "Monterrey"]
+    },
+    {
+        "id": 330,
+        "nombre": "Robin Van Persie",
+        "apodo": "Van Persie",
+        "nacionalidad": "Países Bajos",
+        "Fecha de nacimiento": "06/08/1983",
+        "club actual": "RETIRADO",
+        "posicion": ["Delantero Centro", "Extremo Derecho", "Extremo Izquierdo"],
+        "clubes totales": ["Feyenoord", "Arsenal", "Manchester United", "Fenerbahçe", "Antalyaspor"]
+    },
+    {
+        "id": 331,
+        "nombre": "Christian Pulisic",
+        "nacionalidad": "Estados Unidos",
+        "Fecha de nacimiento": "18/09/1998",
+        "club actual": "AC Milan",
+        "posicion": ["Extremo Izquierdo", "Extremo Derecho", "Mediocampista Ofensivo"],
+        "clubes totales": ["Borussia Dortmund", "Chelsea", "AC Milan"]
+    },
+    {
+        "id": 332,
+        "nombre": "Pierre-Emerick Aubameyang",
+        "nacionalidad": "Gabón",
+        "Fecha de nacimiento": "18/06/1989",
+        "club actual": "Olympique de Marsella",
+        "posicion": ["Delantero Centro", "Extremo Izquierdo", "Extremo Derecho"],
+        "clubes totales": ["Milan", "Dijon", "LOSC Lille", "Monaco", "Saint-Étienne", "Borussia Dortmund", "Arsenal", "Barcelona", "Chelsea", "Olympique de Marsella", "Al-Qadisiyah"]
+    },
+    {
+        "id": 333,
+        "nombre": "Fabián Ruiz",
+        "nacionalidad": "España",
+        "Fecha de nacimiento": "03/04/1996",
+        "club actual": "Paris Saint-Germain",
+        "posicion": ["Mediocampista Central", "Mediocampista Defensivo", "Mediocampista Ofensivo"],
+        "clubes totales": ["Real Betis", "Napoli", "Paris Saint-Germain"]
+    },
+    {
+        "id": 334,
+        "nombre": "Olivier Bierhoff",
+        "nacionalidad": "Alemania",
+        "Fecha de nacimiento": "01/05/1968",
+        "club actual": "RETIRADO",
+        "posicion": ["Delantero Centro"],
+        "clubes totales": ["Darmstadt 98", "Hamburgo", "Hannover 96", "Kaiserslautern", "Udinese", "AC Milan", "Monaco"]
+    },
+    {
+        "id": 335,
+        "nombre": "Jorge Resurección",
+        "apodo": "Koke",
+        "nacionalidad": "España",
+        "Fecha de nacimiento": "08/01/1992",
+        "club actual": "Atlético de Madrid",
+        "posicion": ["Mediocampista Central", "Mediocampista Derecho", "Mediocampista Ofensivo"],
+        "clubes totales": ["Atlético de Madrid"]
+    },
+    {
+        "id": 336,
+        "nombre": "Saúl Ñíguez",
+        "nacionalidad": "España",
+        "Fecha de nacimiento": "21/11/1994",
+        "club actual": "Flamengo",
+        "posicion": ["Mediocampista Central", "Mediocampista Defensivo", "Mediocampista Ofensivo"],
+        "clubes totales": ["Atlético de Madrid", "Rayo Vallecano", "Chelsea", "Sevilla", "Flamengo"]
+    },
+    {
+        "id": 337,
+        "nombre": "Ángel Correa",
+        "nacionalidad": "Argentina",
+        "Fecha de nacimiento": "09/03/1995",
+        "club actual": "Tigres UANL",
+        "posicion": ["Extremo Derecho", "Extremo Izquierdo", "Mediocampista Ofensivo"],
+        "clubes totales": ["San Lorenzo", "Atlético de Madrid", "Tigres UANL"]
+    },
+    {
+        "id": 338,
+        "nombre": "Gabriel Fernández Arenas",
+        "apodo": "Gabi",
+        "nacionalidad": "España",
+        "Fecha de nacimiento": "10/07/1983",
+        "club actual": "RETIRADO",
+        "posicion": ["Mediocampista Defensivo", "Mediocampista Central"],
+        "clubes totales": ["Real Madrid", "Getafe", "Atlético de Madrid", "Al Sadd"]
+    },
+    {
+        "id": 339,
+        "nombre": "Sergio Reguilón",
+        "nacionalidad": "España",
+        "Fecha de nacimiento": "16/12/1996",
+        "club actual": "Atlético de Madrid",
+        "posicion": ["Lateral Izquierdo", "Mediocampista Izquierdo"],
+        "clubes totales": ["Real Madrid", "Sevilla", "Tottenham Hotspur", "Atlético de Madrid", "Manchester United", "Brentford"]
+    },
+    {
+        "id": 340,
+        "nombre": "Joaquín Correa",
+        "nacionalidad": "Argentina",
+        "Fecha de nacimiento": "13/08/1994",
+        "club actual": "Botafogo",
+        "posicion": ["Mediocampista Ofensivo", "Extremo Derecho", "Extremo Izquierdo"],
+        "clubes totales": ["Estudiantes de La Plata", "Sampdoria", "Sevilla", "Lazio", "Inter de Milán", "Olympique de Marsella", "Botafogo"]
+    },
+    {
+        "id": 341,
+        "nombre": "Marcus Thuram",
+        "nacionalidad": "Francia",
+        "Fecha de nacimiento": "06/08/1997",
+        "club actual": "Inter de Milán",
+        "posicion": ["Delantero Centro", "Extremo Derecho", "Extremo Izquierdo"],
+        "clubes totales": ["Guingamp", "Sochaux", "Borussia Mönchengladbach", "Inter de Milán"]
+    },
+    {
+        "id": 342,
+        "nombre": "Khephren Thuram",
+        "nacionalidad": "Francia",
+        "Fecha de nacimiento": "26/05/2001",
+        "club actual": "Juventus",
+        "posicion": ["Mediocampista Defensivo", "Mediocampista Central"],
+        "clubes totales": ["Monaco", "Niza", "Juventus"]
+    },
+    {
+        "id": 343,
+        "nombre": "Jordi Alba",
+        "nacionalidad": "España",
+        "Fecha de nacimiento": "21/03/1989",
+        "club actual": "Inter de Milán",
+        "posicion": ["Lateral Izquierdo", "Mediocampista Izquierdo"],
+        "clubes totales": ["Valencia", "Gimnàstic de Tarragona", "Barcelona", "Inter de Milán"]
+    },
+    {
+        "id": 344,
+        "nombre": "Daniel Sturridge",
+        "nacionalidad": "Inglaterra",
+        "Fecha de nacimiento": "01/09/1989",
+        "club actual": "RETIRADO",
+        "posicion": ["Delantero Centro", "Extremo Derecho", "Extremo Izquierdo"],
+        "clubes totales": ["Manchester City", "Chelsea", "Bolton Wanderers", "Liverpool", "West Bromwich Albion", "Trabzonspor", "Perth Glory"]
     }
 ]
 }
