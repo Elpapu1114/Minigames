@@ -25,6 +25,7 @@ LIME = (50, 205, 50)
 GOLD = (255, 215, 0)
 
 FPS = 60
+W, H = 800, 600
 
 def create_particles(x, y, color):
     particles = []
@@ -135,39 +136,39 @@ def draw_card(screen, card):
                 dot_y = scaled_rect.y + (j + 1) * scaled_rect.height // 4
                 pygame.draw.circle(screen, pattern_color, (dot_x, dot_y), 3)
 
-def menu_resolucion(screen):
-    font_title = pygame.font.Font(None, 48)
-    font_options = pygame.font.Font(None, 36)
+def menu_principal(screen):
+    try:
+        menu_image = pygame.image.load("image/menu_memotest.png")
+        use_image = True
+    except:
+        use_image = False
     
     while True:
-        for y in range(screen.get_height()):
-            color = (0, 0, min(100, y // 6))
-            pygame.draw.line(screen, color, (0, y), (screen.get_width(), y))
-        
-        title = font_title.render("MEMOTEST PRO", True, GOLD)
-        title_rect = title.get_rect(center=(screen.get_width()//2, 100))
-        
-        shadow = font_title.render("MEMOTEST PRO", True, DARK_GRAY)
-        shadow_rect = shadow.get_rect(center=(title_rect.centerx + 3, title_rect.centery + 3))
-        screen.blit(shadow, shadow_rect)
-        screen.blit(title, title_rect)
-        
-        options = [
-            "Elige resolución:",
-            "",
-            "1) 800 x 600",
-            "2) 960 x 720", 
-            "3) 1024 x 768",
-            "",
-            "Presiona 1, 2 o 3"
-        ]
-        
-        for i, option in enumerate(options):
-            if option:
-                color = YELLOW if option.startswith(("1)", "2)", "3)")) else WHITE
-                text = font_options.render(option, True, color)
-                text_rect = text.get_rect(center=(screen.get_width()//2, 200 + i*40))
-                screen.blit(text, text_rect)
+        if use_image:
+            scaled_image = pygame.transform.scale(menu_image, (W, H))
+            screen.blit(scaled_image, (0, 0))
+        else:
+            for y in range(H):
+                color = (0, 0, min(100, y // 6))
+                pygame.draw.line(screen, color, (0, y), (W, y))
+            
+            font_title = pygame.font.Font(None, 72)
+            title = font_title.render("MEMOTEST PRO", True, GOLD)
+            title_rect = title.get_rect(center=(W//2, H//2 - 100))
+            
+            shadow = font_title.render("MEMOTEST PRO", True, DARK_GRAY)
+            shadow_rect = shadow.get_rect(center=(title_rect.centerx + 3, title_rect.centery + 3))
+            screen.blit(shadow, shadow_rect)
+            screen.blit(title, title_rect)
+            
+            font_options = pygame.font.Font(None, 48)
+            space_text = font_options.render("ESPACIO = Jugar", True, LIME)
+            space_rect = space_text.get_rect(center=(W//2, H//2 + 50))
+            screen.blit(space_text, space_rect)
+            
+            esc_text = font_options.render("ESC = Salir", True, RED)
+            esc_rect = esc_text.get_rect(center=(W//2, H//2 + 100))
+            screen.blit(esc_text, esc_rect)
         
         pygame.display.flip()
         
@@ -175,21 +176,22 @@ def menu_resolucion(screen):
             if event.type == pygame.QUIT:
                 pygame.quit(); sys.exit()
             if event.type == pygame.KEYDOWN:
-                if event.unicode == "1": return 800, 600
-                if event.unicode == "2": return 960, 720
-                if event.unicode == "3": return 1024, 768
+                if event.key == pygame.K_SPACE:
+                    return
+                elif event.key == pygame.K_ESCAPE:
+                    pygame.quit(); sys.exit()
 
 def menu_modo(screen):
     font_title = pygame.font.Font(None, 48)
     font_options = pygame.font.Font(None, 36)
     
     while True:
-        for y in range(screen.get_height()):
+        for y in range(H):
             color = (0, min(100, y // 6), 0)
-            pygame.draw.line(screen, color, (0, y), (screen.get_width(), y))
+            pygame.draw.line(screen, color, (0, y), (W, y))
         
         title = font_title.render("SELECCIONAR MODO", True, LIME)
-        title_rect = title.get_rect(center=(screen.get_width()//2, 100))
+        title_rect = title.get_rect(center=(W//2, 100))
         
         shadow = font_title.render("SELECCIONAR MODO", True, DARK_GRAY)
         shadow_rect = shadow.get_rect(center=(title_rect.centerx + 2, title_rect.centery + 2))
@@ -199,7 +201,7 @@ def menu_modo(screen):
         options = [
             "Elige modo de juego:",
             "",
-            "1) Un Jugador",
+            "1) Un Jugador (vs CPU)",
             "2) Dos Jugadores",
             "",
             "Presiona 1 o 2"
@@ -209,7 +211,7 @@ def menu_modo(screen):
             if option:
                 color = CYAN if option.startswith(("1)", "2)")) else WHITE
                 text = font_options.render(option, True, color)
-                text_rect = text.get_rect(center=(screen.get_width()//2, 180 + i*40))
+                text_rect = text.get_rect(center=(W//2, 180 + i*40))
                 screen.blit(text, text_rect)
         
         pygame.display.flip()
@@ -221,7 +223,7 @@ def menu_modo(screen):
                 if event.unicode in ("1", "2"):
                     return int(event.unicode)
 
-def create_board(W, H, rows=4, cols=5):
+def create_board(rows=4, cols=5):
     total_cards = rows * cols
     
     card_data = [
@@ -254,7 +256,7 @@ def create_board(W, H, rows=4, cols=5):
     
     return cards
 
-def draw_hud(screen, W, H, modo, score1, score2, turn, moves, time_elapsed):
+def draw_hud(screen, modo, score1, score2, turn, moves, time_elapsed):
     hud_rect = pygame.Rect(0, H - 80, W, 80)
     pygame.draw.rect(screen, (20, 20, 40), hud_rect)
     pygame.draw.line(screen, WHITE, (0, H - 80), (W, H - 80), 2)
@@ -262,15 +264,16 @@ def draw_hud(screen, W, H, modo, score1, score2, turn, moves, time_elapsed):
     font = pygame.font.Font(None, 32)
     
     if modo == 1:
-        score_text = f"Puntos: {score1}"
+        score_text = f"Jugador: {score1}"
+        cpu_text = f"CPU: {score2}"
         moves_text = f"Movimientos: {moves}"
-        time_text = f"Tiempo: {int(time_elapsed)}s"
         
-        texts = [score_text, moves_text, time_text]
+        texts = [score_text, cpu_text, moves_text]
         spacing = W // len(texts)
         
         for i, text in enumerate(texts):
-            rendered = font.render(text, True, WHITE)
+            color = YELLOW if (i == 0 and turn == 1) or (i == 1 and turn == 2) else WHITE
+            rendered = font.render(text, True, color)
             x = spacing * i + spacing // 2 - rendered.get_width() // 2
             screen.blit(rendered, (x, H - 50))
     else:
@@ -290,14 +293,46 @@ def draw_hud(screen, W, H, modo, score1, score2, turn, moves, time_elapsed):
         turn_x = W // 2 - turn_rendered.get_width() // 2
         screen.blit(turn_rendered, (turn_x, H - 50))
 
-def run_game(screen, W, H, modo):
+class CPUPlayer:
+    def __init__(self, difficulty='medium'):
+        self.memory = {}
+        self.difficulty = difficulty
+        self.last_seen = {}
+    
+    def remember_card(self, card_index, color):
+        self.memory[card_index] = color
+        self.last_seen[card_index] = time.time()
+    
+    def choose_card(self, cards, first_card_idx=None):
+        available = [i for i, c in enumerate(cards) if not c['flipped'] and not c['matched']]
+        
+        if not available:
+            return None
+        
+        if first_card_idx is not None:
+            first_color = cards[first_card_idx]['color']
+            
+            for idx in available:
+                if idx in self.memory and self.memory[idx] == first_color:
+                    if random.random() < 0.8:
+                        return idx
+        
+        known_cards = [idx for idx in available if idx in self.memory]
+        if known_cards and random.random() < 0.6:
+            return random.choice(known_cards)
+        
+        return random.choice(available)
+
+def run_game(screen, modo):
     clock = pygame.time.Clock()
     
     rows, cols = 4, 5
-    cards = create_board(W, H, rows, cols)
+    cards = create_board(rows, cols)
     
     first_card = None
     second_card = None
+    first_card_idx = None
+    second_card_idx = None
     checking = False
     check_time = 0
     matched_count = 0
@@ -306,6 +341,11 @@ def run_game(screen, W, H, modo):
     score1 = 0
     score2 = 0
     turn = 1
+    
+    cpu = CPUPlayer() if modo == 1 else None
+    cpu_thinking = False
+    cpu_think_start = 0
+    cpu_first_card = None
     
     all_particles = []
     start_time = time.time()
@@ -334,20 +374,61 @@ def run_game(screen, W, H, modo):
                 pygame.quit(); sys.exit()
             
             if event.type == pygame.MOUSEBUTTONDOWN and not checking and preview_time == 0:
-                for card in cards:
+                if modo == 1 and turn == 2:
+                    continue
+                
+                for i, card in enumerate(cards):
                     if card['rect'].collidepoint(mouse_pos) and not card['flipped'] and not card['matched']:
                         card['flipped'] = True
                         if first_card is None:
                             first_card = card
+                            first_card_idx = i
+                            if cpu:
+                                cpu.remember_card(i, card['color'])
                         elif second_card is None:
                             second_card = card
+                            second_card_idx = i
+                            if cpu:
+                                cpu.remember_card(i, card['color'])
                             checking = True
                             check_time = current_time
                             moves += 1
                         break
         
+        if modo == 1 and turn == 2 and not checking and preview_time == 0:
+            if not cpu_thinking:
+                cpu_thinking = True
+                cpu_think_start = current_time
+                cpu_first_card = None
+            
+            elif current_time - cpu_think_start > 1.0:
+                if first_card is None:
+                    idx = cpu.choose_card(cards)
+                    if idx is not None:
+                        cards[idx]['flipped'] = True
+                        first_card = cards[idx]
+                        first_card_idx = idx
+                        cpu.remember_card(idx, cards[idx]['color'])
+                        cpu_thinking = False
+                        cpu_think_start = current_time
+                
+                elif second_card is None and current_time - cpu_think_start > 1.0:
+                    idx = cpu.choose_card(cards, first_card_idx)
+                    if idx is not None:
+                        cards[idx]['flipped'] = True
+                        second_card = cards[idx]
+                        second_card_idx = idx
+                        cpu.remember_card(idx, cards[idx]['color'])
+                        checking = True
+                        check_time = current_time
+                        moves += 1
+                        cpu_thinking = False
+        
         for card in cards:
-            card['hover'] = card['rect'].collidepoint(mouse_pos) and not card['flipped'] and not card['matched'] and preview_time == 0
+            if modo == 1 and turn == 2:
+                card['hover'] = False
+            else:
+                card['hover'] = card['rect'].collidepoint(mouse_pos) and not card['flipped'] and not card['matched'] and preview_time == 0
         
         if checking and current_time - check_time > 1.0:
             if first_card['color'] == second_card['color']:
@@ -367,12 +448,14 @@ def run_game(screen, W, H, modo):
             else:
                 first_card['flipped'] = False
                 second_card['flipped'] = False
-                if modo == 2:
-                    turn = 2 if turn == 1 else 1
+                turn = 2 if turn == 1 else 1
             
             first_card = None
             second_card = None
+            first_card_idx = None
+            second_card_idx = None
             checking = False
+            cpu_thinking = False
         
         for card in cards:
             update_card(card, dt)
@@ -389,7 +472,7 @@ def run_game(screen, W, H, modo):
         
         draw_particles(screen, all_particles)
         
-        draw_hud(screen, W, H, modo, score1, score2, turn, moves, time_elapsed)
+        draw_hud(screen, modo, score1, score2, turn, moves, time_elapsed)
         
         if preview_time > 0:
             remaining = preview_time - (current_time - preview_start)
@@ -407,6 +490,26 @@ def run_game(screen, W, H, modo):
         pygame.display.flip()
         
         if matched_count == len(cards):
+            try:
+                if modo == 1:
+                    if score1 > score2:
+                        victory_image = pygame.image.load("image/jugador_1_victoria_memotest.png")
+                    elif score2 > score1:
+                        victory_image = pygame.image.load("image/cpu_victoria_memotest.png")
+                    else:
+                        victory_image = pygame.image.load("image/empate_memotest.png")
+                else:
+                    if score1 > score2:
+                        victory_image = pygame.image.load("image/jugador_1_victoria_memotest.png")
+                    elif score2 > score1:
+                        victory_image = pygame.image.load("image/jugador_2_victoria_memotest.png")
+                    else:
+                        victory_image = pygame.image.load("image/empate_memotest.png")
+                use_victory_image = True
+            except:
+                victory_image = None
+                use_victory_image = False
+            
             screen.fill(BLACK)
             
             victory_particles = []
@@ -416,98 +519,78 @@ def run_game(screen, W, H, modo):
                 color = random.choice([RED, GREEN, BLUE, YELLOW, PURPLE, ORANGE])
                 victory_particles.extend(create_particles(x, y, color))
             
-            for _ in range(60):
+            waiting_for_input = True
+            while waiting_for_input:
                 dt = clock.tick(FPS) / 1000.0
                 
-                for y in range(H):
-                    intensity = int(30 + 20 * math.sin(time.time() * 2 + y * 0.02))
-                    color = (intensity//3, intensity//2, intensity)
-                    pygame.draw.line(screen, color, (0, y), (W, y))
+                for event in pygame.event.get():
+                    if event.type == pygame.QUIT:
+                        pygame.quit(); sys.exit()
+                    if event.type == pygame.KEYDOWN:
+                        if event.key == pygame.K_SPACE:
+                            return
+                        elif event.key == pygame.K_ESCAPE:
+                            pygame.quit(); sys.exit()
+                
+                if use_victory_image and victory_image:
+                    scaled_image = pygame.transform.scale(victory_image, (W, H))
+                    screen.blit(scaled_image, (0, 0))
+                else:
+                    for y in range(H):
+                        intensity = int(30 + 20 * math.sin(time.time() * 2 + y * 0.02))
+                        color = (intensity//3, intensity//2, intensity)
+                        pygame.draw.line(screen, color, (0, y), (W, y))
+                    
+                    font_big = pygame.font.Font(None, 96)
+                    font_small = pygame.font.Font(None, 48)
+                    
+                    if modo == 1:
+                        if score1 > score2:
+                            win_text = "¡GANASTE!"
+                        elif score2 > score1:
+                            win_text = "¡GANÓ LA CPU!"
+                        else:
+                            win_text = "¡EMPATE!"
+                        stats_text = f"Tú: {score1} - CPU: {score2}"
+                    else:
+                        if score1 > score2:
+                            win_text = "¡GANA JUGADOR 1!"
+                        elif score2 > score1:
+                            win_text = "¡GANA JUGADOR 2!"
+                        else:
+                            win_text = "¡EMPATE!"
+                        stats_text = f"Jugador 1: {score1} - Jugador 2: {score2}"
+                    
+                    scale = 1.0 + 0.1 * math.sin(time.time() * 4)
+                    win_surface = font_big.render(win_text, True, GOLD)
+                    win_w = int(win_surface.get_width() * scale)
+                    win_h = int(win_surface.get_height() * scale)
+                    win_scaled = pygame.transform.scale(win_surface, (win_w, win_h))
+                    win_rect = win_scaled.get_rect(center=(W//2, H//2 - 50))
+                    
+                    shadow = font_big.render(win_text, True, BLACK)
+                    shadow_rect = shadow.get_rect(center=(win_rect.centerx + 4, win_rect.centery + 4))
+                    screen.blit(shadow, shadow_rect)
+                    screen.blit(win_scaled, win_rect)
+                    
+                    stats_surface = font_small.render(stats_text, True, WHITE)
+                    stats_rect = stats_surface.get_rect(center=(W//2, H//2 + 50))
+                    screen.blit(stats_surface, stats_rect)
                 
                 update_particles(victory_particles, dt)
                 draw_particles(screen, victory_particles)
                 
-                font_big = pygame.font.Font(None, 96)
-                font_small = pygame.font.Font(None, 48)
-                
-                if modo == 1:
-                    win_text = "¡FELICITACIONES!"
-                    stats_text = f"Completado en {moves} movimientos y {int(time_elapsed)}s"
-                else:
-                    if score1 > score2:
-                        win_text = "¡GANA JUGADOR 1!"
-                    elif score2 > score1:
-                        win_text = "¡GANA JUGADOR 2!"
-                    else:
-                        win_text = "¡EMPATE!"
-                    stats_text = f"Jugador 1: {score1} - Jugador 2: {score2}"
-                
-                scale = 1.0 + 0.1 * math.sin(time.time() * 4)
-                win_surface = font_big.render(win_text, True, GOLD)
-                win_w = int(win_surface.get_width() * scale)
-                win_h = int(win_surface.get_height() * scale)
-                win_scaled = pygame.transform.scale(win_surface, (win_w, win_h))
-                win_rect = win_scaled.get_rect(center=(W//2, H//2 - 50))
-                
-                shadow = font_big.render(win_text, True, BLACK)
-                shadow_rect = shadow.get_rect(center=(win_rect.centerx + 4, win_rect.centery + 4))
-                screen.blit(shadow, shadow_rect)
-                screen.blit(win_scaled, win_rect)
-                
-                stats_surface = font_small.render(stats_text, True, WHITE)
-                stats_rect = stats_surface.get_rect(center=(W//2, H//2 + 50))
-                screen.blit(stats_surface, stats_rect)
-                
                 pygame.display.flip()
             
-            pygame.time.wait(2000)
             return
 
 def main():
-    temp_screen = pygame.display.set_mode((800, 600))
-    W, H = menu_resolucion(temp_screen)
     screen = pygame.display.set_mode((W, H))
     
     while True:
+        menu_principal(screen)
         modo = menu_modo(screen)
-        run_game(screen, W, H, modo)
-        
-        font = pygame.font.Font(None, 48)
-        font_small = pygame.font.Font(None, 36)
-        
-        waiting = True
-        while waiting:
-            for y in range(H):
-                intensity = int(40 + 20 * math.sin(time.time() + y * 0.01))
-                color = (intensity//4, intensity//3, intensity//2)
-                pygame.draw.line(screen, color, (0, y), (W, y))
-            
-            msg1 = font.render("¡Juego Terminado!", True, YELLOW)
-            msg1_rect = msg1.get_rect(center=(W//2, H//2 - 60))
-            
-            shadow1 = font.render("¡Juego Terminado!", True, BLACK)
-            shadow1_rect = shadow1.get_rect(center=(msg1_rect.centerx + 3, msg1_rect.centery + 3))
-            screen.blit(shadow1, shadow1_rect)
-            screen.blit(msg1, msg1_rect)
-            
-            msg2 = font_small.render("ENTER = Jugar de nuevo", True, LIME)
-            msg2_rect = msg2.get_rect(center=(W//2, H//2 + 20))
-            screen.blit(msg2, msg2_rect)
-            
-            msg3 = font_small.render("ESC = Salir", True, RED)
-            msg3_rect = msg3.get_rect(center=(W//2, H//2 + 60))
-            screen.blit(msg3, msg3_rect)
-            
-            pygame.display.flip()
-            
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    pygame.quit(); sys.exit()
-                if event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_RETURN:
-                        waiting = False
-                    elif event.key == pygame.K_ESCAPE:
-                        pygame.quit(); sys.exit()
+        run_game(screen, modo)
 
 if __name__ == "__main__":
     try:

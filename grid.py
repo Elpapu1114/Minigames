@@ -1,16 +1,20 @@
+import os
 import pygame
 import json
 import random
 import sys
 
+# Inicializar Pygame
 pygame.init()
 
+# Constantes
 ANCHO = 1000
 ALTO = 800
 TAMANO_CELDA = 150
 MARGEN = 10
 FPS = 60
 
+# Colores
 BLANCO = (255, 255, 255)
 NEGRO = (0, 0, 0)
 GRIS = (200, 200, 200)
@@ -21,19 +25,22 @@ AZUL = (0, 100, 200)
 AZUL_CLARO = (100, 150, 255)
 AMARILLO = (255, 255, 200)
 
+# Cargar base de datos
 def cargar_datos():
     try:
         with open('basededatos.json', 'r', encoding='utf-8') as f:
             datos = json.load(f)
         with open('config.json', 'r', encoding='utf-8') as f:
             config = json.load(f)
-
+        
+        # Si el JSON tiene una clave "jugadores", extraerla
         if isinstance(datos, dict) and "jugadores" in datos:
             jugadores = datos["jugadores"]
         else:
             jugadores = datos
             
         print(f"Cargados {len(jugadores)} jugadores")
+        # Debug: mostrar el primer jugador para verificar estructura
         if jugadores:
             print(f"Ejemplo de jugador: {jugadores[0]}")
         
@@ -45,6 +52,62 @@ def cargar_datos():
         print(f"Error al leer JSON: {e}")
         sys.exit(1)
 
+def cargar_imagenes():
+    imagenes = {}
+    try:
+        
+        imagenes['AC Milan'] = pygame.image.load(os.path.join("image", "image_fut", "AC Milan.png"))
+        imagenes['AC Milan'] = pygame.transform.scale(imagenes['AC Milan'], (50,50))
+
+        imagenes['Inter de Milán'] = pygame.image.load(os.path.join("image", "image_fut", "Inter de Milán.png"))
+        imagenes['Inter de Milán'] = pygame.transform.scale(imagenes['Inter de Milán'], (50,50))
+
+        imagenes['Juventus'] = pygame.image.load(os.path.join("image", "image_fut", "Juventus.png"))
+        imagenes['Juventus'] = pygame.transform.scale(imagenes['Juventus'], (50,50))
+
+        imagenes['Real Madrid'] = pygame.image.load(os.path.join("image", "image_fut", "Real Madrid.png"))
+        imagenes['Real Madrid'] = pygame.transform.scale(imagenes['Real Madrid'], (50,50))
+
+        imagenes['Barcelona'] = pygame.image.load(os.path.join("image", "image_fut", "Barcelona.png"))
+        imagenes['Barcelona'] = pygame.transform.scale(imagenes['Barcelona'], (50,50))
+
+        imagenes['Atlético de Madrid'] = pygame.image.load(os.path.join("image", "image_fut", "Atlético de Madrid.png"))
+        imagenes['Atlético de Madrid'] = pygame.transform.scale(imagenes['Atlético de Madrid'], (50,50))
+
+        imagenes['Manchester United'] = pygame.image.load(os.path.join("image", "image_fut", "Manchester United.png"))
+        imagenes['Manchester United'] = pygame.transform.scale(imagenes['Manchester United'], (50,50))
+
+        imagenes['Liverpool'] = pygame.image.load(os.path.join("image", "image_fut", "Liverpool.png"))
+        imagenes['Liverpool'] = pygame.transform.scale(imagenes['Liverpool'], (50,50))
+
+        imagenes['Chelsea'] = pygame.image.load(os.path.join("image", "image_fut", "Chelsea.png"))
+        imagenes['Chelsea'] = pygame.transform.scale(imagenes['Chelsea'], (50,50))
+
+        imagenes['Manchester City'] = pygame.image.load(os.path.join("image", "image_fut", "Manchester City.png"))
+        imagenes['Manchester City'] = pygame.transform.scale(imagenes['Manchester City'], (50,50))
+
+        imagenes['Arsenal'] = pygame.image.load(os.path.join("image", "image_fut", "Arsenal.png"))
+        imagenes['Arsenal'] = pygame.transform.scale(imagenes['Arsenal'], (50,50))
+
+        imagenes['Tottenham Hotspur'] = pygame.image.load(os.path.join("image", "image_fut", "Tottenham Hotspur.png"))
+        imagenes['Tottenham Hotspur'] = pygame.transform.scale(imagenes['Tottenham Hotspur'], (50,50))
+
+        imagenes['Bayern de Múnich'] = pygame.image.load(os.path.join("image", "image_fut", "Bayern de Múnich.png"))
+        imagenes['Bayern de Múnich'] = pygame.transform.scale(imagenes["Bayern de Múnich"], (50,50))
+
+        imagenes['Borussia Dortmund'] = pygame.image.load(os.path.join("image", "image_fut", "Borussia Dortmund.png"))
+        imagenes['Borussia Dortmund'] = pygame.transform.scale(imagenes['Borussia Dortmund'], (50,50))
+
+        imagenes['Paris Saint-Germain'] = pygame.image.load(os.path.join("image", "image_fut", "Paris Saint-Germain.png"))
+        imagenes['Paris Saint-Germain'] = pygame.transform.scale(imagenes['Paris Saint-Germain'], (50,50))
+
+        print("Imágenes cargadas correctamente")
+    except Exception as e:
+        print(f"Error al cargar imágenes: {e}")
+        imagenes = None
+    
+    return imagenes
+# Generar grid aleatorio
 def generar_grid(config):
     selecciones_en_filas = random.choice([True, False])
     
@@ -80,25 +143,29 @@ def generar_grid(config):
     
     return categorias_filas, categorias_cols
 
+# Verificar si un jugador cumple con los criterios
 def jugador_cumple(jugador, cat_fila, cat_col):
     cumple_fila = False
     cumple_col = False
     
     tipo_fila, valor_fila = cat_fila
     tipo_col, valor_col = cat_col
-
+    
+    # Verificar fila
     if tipo_fila == "equipo":
         cumple_fila = valor_fila in jugador["clubes totales"]
-    else:  
+    else:  # seleccion
         cumple_fila = jugador["nacionalidad"] == valor_fila
-
+    
+    # Verificar columna
     if tipo_col == "equipo":
         cumple_col = valor_col in jugador["clubes totales"]
-    else:  
+    else:  # seleccion
         cumple_col = jugador["nacionalidad"] == valor_col
     
     return cumple_fila and cumple_col
 
+# Clase principal del juego
 class FutbolGrid:
     def __init__(self):
         self.pantalla = pygame.display.set_mode((ANCHO, ALTO))
@@ -111,6 +178,7 @@ class FutbolGrid:
         
         self.jugadores, self.config = cargar_datos()
         self.categorias_filas, self.categorias_cols = generar_grid(self.config)
+        self.imagenes = cargar_imagenes()
         
         self.grid = [[None for _ in range(3)] for _ in range(3)]
         self.input_texto = ""
@@ -133,10 +201,13 @@ class FutbolGrid:
         nombre_lower = nombre.lower().strip()
         for jugador in self.jugadores:
             nombre_jugador = jugador["nombre"].lower().strip()
+            # Buscar por nombre completo
             if nombre_jugador == nombre_lower:
                 return jugador
+            # Buscar por apellido
             if nombre_jugador.split()[-1] == nombre_lower:
                 return jugador
+            # Buscar por apodo si existe
             if "apodo" in jugador:
                 apodo_lower = jugador["apodo"].lower().strip()
                 if apodo_lower == nombre_lower:
@@ -151,8 +222,10 @@ class FutbolGrid:
         for jugador in self.jugadores:
             nombre_completo = jugador["nombre"]
             nombre_lower = nombre_completo.lower()
+            # Buscar en nombre completo
             if texto_lower in nombre_lower:
                 sugerencias.append(nombre_completo)
+            # Buscar en apodo si existe
             elif "apodo" in jugador and texto_lower in jugador["apodo"].lower():
                 sugerencias.append(nombre_completo)
             
@@ -173,24 +246,40 @@ class FutbolGrid:
         inicio_x = 200
         inicio_y = 150
 
+        # Encabezados de columnas
         for j in range(3):
             tipo, valor = self.categorias_cols[j]
             x = inicio_x + j * (TAMANO_CELDA + MARGEN)
             y = inicio_y - 50
             color = AZUL if tipo == "equipo" else VERDE
+
+            # Mostrar imagen si es equipo
+            if tipo == "equipo" and valor in self.imagenes:
+                imagen = self.imagenes[valor]
+                rect_img = imagen.get_rect(center=(x + TAMANO_CELDA // 2, y - 20))
+                self.pantalla.blit(imagen, rect_img)
+
             texto = self.fuente_pequena.render(valor, True, color)
-            rect_texto = texto.get_rect(center=(x + TAMANO_CELDA // 2, y))
+            rect_texto = texto.get_rect(center=(x + TAMANO_CELDA // 2, y + 10))
             self.pantalla.blit(texto, rect_texto)
 
+        # Encabezados de filas (similar)
         for i in range(3):
             tipo, valor = self.categorias_filas[i]
             x = inicio_x - 150
             y = inicio_y + i * (TAMANO_CELDA + MARGEN)
             color = AZUL if tipo == "equipo" else VERDE
+
+            if tipo == "equipo" and valor in self.imagenes:
+                imagen = self.imagenes[valor]
+                rect_img = imagen.get_rect(center=(x + 75, y - 20))
+                self.pantalla.blit(imagen, rect_img)
+
             texto = self.fuente_pequena.render(valor, True, color)
             rect_texto = texto.get_rect(center=(x + 75, y + TAMANO_CELDA // 2))
             self.pantalla.blit(texto, rect_texto)
 
+        # Dibujar celdas igual que antes
         for i in range(3):
             for j in range(3):
                 x = inicio_x + j * (TAMANO_CELDA + MARGEN)
@@ -202,16 +291,25 @@ class FutbolGrid:
                 
                 pygame.draw.rect(self.pantalla, color, (x, y, TAMANO_CELDA, TAMANO_CELDA))
                 pygame.draw.rect(self.pantalla, NEGRO, (x, y, TAMANO_CELDA, TAMANO_CELDA), 2)
-
+                
                 if self.grid[i][j]:
-                    if "apodo" in self.grid[i][j]:
-                        nombre = self.grid[i][j]["apodo"]
+                    jugador = self.grid[i][j]
+                    # Mostrar imagen del club principal del jugador (el primero de "clubes totales")
+                    club = jugador["clubes totales"][0] if jugador["clubes totales"] else None
+                    if club in self.imagenes:
+                        imagen = self.imagenes[club]
+                        rect_img = imagen.get_rect(center=(x + TAMANO_CELDA // 2, y + TAMANO_CELDA // 2))
+                        self.pantalla.blit(imagen, rect_img)
                     else:
-                        nombre = self.grid[i][j]["nombre"].split()[-1] 
-                    
-                    texto = self.fuente_pequena.render(nombre, True, NEGRO)
-                    rect_texto = texto.get_rect(center=(x + TAMANO_CELDA // 2, y + TAMANO_CELDA // 2))
-                    self.pantalla.blit(texto, rect_texto)
+                        # Mostrar nombre/apodo si no hay imagen
+                        if "apodo" in jugador:
+                            nombre = jugador["apodo"]
+                        else:
+                            nombre = jugador["nombre"].split()[-1]
+                        texto = self.fuente_pequena.render(nombre, True, NEGRO)
+                        rect_texto = texto.get_rect(center=(x + TAMANO_CELDA // 2, y + TAMANO_CELDA // 2))
+                        self.pantalla.blit(texto, rect_texto)
+
     
     def dibujar_input(self):
         y = 600
@@ -237,11 +335,13 @@ class FutbolGrid:
     
     def dibujar_pantalla_final(self):
         """Dibuja la pantalla de finalización del juego"""
+        # Fondo semi-transparente
         superficie_overlay = pygame.Surface((ANCHO, ALTO))
         superficie_overlay.set_alpha(200)
         superficie_overlay.fill(BLANCO)
         self.pantalla.blit(superficie_overlay, (0, 0))
-
+        
+        # Cuadro de finalización
         ancho_cuadro = 600
         alto_cuadro = 300
         x = (ANCHO - ancho_cuadro) // 2
@@ -249,19 +349,23 @@ class FutbolGrid:
         
         pygame.draw.rect(self.pantalla, VERDE, (x, y, ancho_cuadro, alto_cuadro))
         pygame.draw.rect(self.pantalla, NEGRO, (x, y, ancho_cuadro, alto_cuadro), 5)
-
+        
+        # Título
         texto_titulo = self.fuente_titulo.render("¡JUEGO COMPLETADO!", True, BLANCO)
         rect_titulo = texto_titulo.get_rect(center=(ANCHO // 2, y + 80))
         self.pantalla.blit(texto_titulo, rect_titulo)
-
+        
+        # Mensaje de felicitación
         texto_felicitacion = self.fuente_grande.render("¡Felicitaciones!", True, BLANCO)
         rect_felicitacion = texto_felicitacion.get_rect(center=(ANCHO // 2, y + 140))
         self.pantalla.blit(texto_felicitacion, rect_felicitacion)
-
+        
+        # Instrucción
         texto_instruccion = self.fuente.render("Has completado todas las celdas del grid", True, BLANCO)
         rect_instruccion = texto_instruccion.get_rect(center=(ANCHO // 2, y + 190))
         self.pantalla.blit(texto_instruccion, rect_instruccion)
-
+        
+        # Cerrar
         texto_salir = self.fuente_pequena.render("Presiona ESC para salir", True, BLANCO)
         rect_salir = texto_salir.get_rect(center=(ANCHO // 2, y + 240))
         self.pantalla.blit(texto_salir, rect_salir)
@@ -306,7 +410,8 @@ class FutbolGrid:
                 self.celdas_validas = []
                 self.input_texto = ""
                 self.sugerencias = []
-
+                
+                # Verificar si el juego terminó
                 if self.verificar_juego_terminado():
                     self.juego_terminado = True
                 return
@@ -321,7 +426,8 @@ class FutbolGrid:
                     self.grid[i][j] = jugador
                     self.input_texto = ""
                     self.sugerencias = []
-
+                    
+                    # Verificar si el juego terminó
                     if self.verificar_juego_terminado():
                         self.juego_terminado = True
                 else:
@@ -350,7 +456,8 @@ class FutbolGrid:
                 elif evento.type == pygame.KEYDOWN:
                     if evento.key == pygame.K_ESCAPE:
                         ejecutando = False
-
+                    
+                    # Solo procesar eventos de teclado si el juego no ha terminado
                     if not self.juego_terminado and not self.mostrando_menu_celdas:
                         if evento.key == pygame.K_BACKSPACE:
                             self.input_texto = self.input_texto[:-1]
@@ -380,7 +487,8 @@ class FutbolGrid:
                         rect_input = pygame.Rect(50, 600, 900, 40)
                         if rect_input.collidepoint(evento.pos):
                             self.input_activo = True
-
+            
+            # Dibujar
             self.pantalla.fill(BLANCO)
             
             titulo = self.fuente_grande.render("FÚTBOL GRID", True, NEGRO)
@@ -389,6 +497,7 @@ class FutbolGrid:
             self.dibujar_grid()
             
             if self.juego_terminado:
+                # Mostrar pantalla de finalización
                 self.dibujar_pantalla_final()
             elif not self.mostrando_menu_celdas:
                 self.dibujar_input()
@@ -404,5 +513,4 @@ class FutbolGrid:
 
 if __name__ == "__main__":
     juego = FutbolGrid()
-
     juego.ejecutar()

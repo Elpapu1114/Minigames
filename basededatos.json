@@ -3001,6 +3001,15 @@
         "club actual": "RETIRADO",
         "posicion": ["Delantero Centro"],
         "clubes totales": ["Modena", "Empoli", "Fiorentina", "Palermo", "Bayern de Múnich", "Roma", "Genoa", "Juventus", "Hellas Verona", "Al-Nassr"]
+    },
+    {
+        "id": 318,
+        "nombre": "Leonardo Balerdi",
+        "nacionalidad": "Argentina",
+        "Fecha de nacimiento": "26/01/1999",
+        "club actual": "Borussia Dortmund",
+        "posicion": ["Defensa Central", "Lateral Izquierdo"],
+        "clubes totales": ["Boca Juniors", "Borussia Dortmund", "Olympique Marseille"]
     }
 ]
 }

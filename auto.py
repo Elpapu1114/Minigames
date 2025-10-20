@@ -47,6 +47,13 @@ def cargar_imagenes():
         imagenes['camion'] = pygame.image.load(os.path.join("image", "camionesquiva.png"))
         imagenes['camion'] = pygame.transform.scale(imagenes['camion'], (100, 150))
         
+        # Cargar imágenes de menú y game over
+        imagenes['game_over'] = pygame.image.load(os.path.join("image", "game_over_crash_run.png"))
+        imagenes['game_over'] = pygame.transform.scale(imagenes['game_over'], (ANCHO_PANTALLA, ALTO_PANTALLA))
+        
+        imagenes['menu'] = pygame.image.load(os.path.join("image", "menu_crash_run.png"))
+        imagenes['menu'] = pygame.transform.scale(imagenes['menu'], (ANCHO_PANTALLA, ALTO_PANTALLA))
+        
         print("Imágenes cargadas correctamente")
     except Exception as e:
         print(f"Error al cargar imágenes: {e}")
@@ -229,32 +236,35 @@ def actualizar_nivel():
         return True
     return False
 
-def pantalla_game_over(pantalla, fuente):
+def pantalla_game_over(pantalla, fuente, imagenes):
     """Muestra la pantalla de game over"""
-    pantalla.fill(NEGRO)
-    
-    titulo = pygame.font.Font(None, 72).render("GAME OVER", True, ROJO)
-    rect_titulo = titulo.get_rect(center=(ANCHO_PANTALLA // 2, ALTO_PANTALLA // 2 - 100))
-    pantalla.blit(titulo, rect_titulo)
-    
-    texto_puntos = fuente.render(f"Puntuación Final: {puntuacion}", True, BLANCO)
-    rect_puntos = texto_puntos.get_rect(center=(ANCHO_PANTALLA // 2, ALTO_PANTALLA // 2 - 20))
-    pantalla.blit(texto_puntos, rect_puntos)
+    if imagenes and 'game_over' in imagenes:
+        pantalla.blit(imagenes['game_over'], (0, 0))
+    else:
+        pantalla.fill(NEGRO)
+        
+        titulo = pygame.font.Font(None, 72).render("GAME OVER", True, ROJO)
+        rect_titulo = titulo.get_rect(center=(ANCHO_PANTALLA // 2, ALTO_PANTALLA // 2 - 100))
+        pantalla.blit(titulo, rect_titulo)
+        
+        texto_puntos = fuente.render(f"Puntuación Final: {puntuacion}", True, BLANCO)
+        rect_puntos = texto_puntos.get_rect(center=(ANCHO_PANTALLA // 2, ALTO_PANTALLA // 2 - 20))
+        pantalla.blit(texto_puntos, rect_puntos)
 
-    texto_nivel = fuente.render(f"Nivel Alcanzado: {nivel}", True, BLANCO)
-    rect_nivel = texto_nivel.get_rect(center=(ANCHO_PANTALLA // 2, ALTO_PANTALLA // 2 + 20))
-    pantalla.blit(texto_nivel, rect_nivel)
+        texto_nivel = fuente.render(f"Nivel Alcanzado: {nivel}", True, BLANCO)
+        rect_nivel = texto_nivel.get_rect(center=(ANCHO_PANTALLA // 2, ALTO_PANTALLA // 2 + 20))
+        pantalla.blit(texto_nivel, rect_nivel)
 
-    texto_reiniciar = fuente.render("Presiona ESPACIO para jugar de nuevo o ESC para salir", True, AMARILLO)
-    rect_reiniciar = texto_reiniciar.get_rect(center=(ANCHO_PANTALLA // 2, ALTO_PANTALLA // 2 + 80))
-    pantalla.blit(texto_reiniciar, rect_reiniciar)
+        texto_reiniciar = fuente.render("Presiona ESPACIO para jugar de nuevo o ESC para salir", True, AMARILLO)
+        rect_reiniciar = texto_reiniciar.get_rect(center=(ANCHO_PANTALLA // 2, ALTO_PANTALLA // 2 + 80))
+        pantalla.blit(texto_reiniciar, rect_reiniciar)
 
 def dibujar_cuenta_regresiva(pantalla, fuente):
     """Dibuja la pantalla de cuenta regresiva"""
     global tiempo_inicio_cuenta
 
     tiempo_transcurrido = pygame.time.get_ticks() - tiempo_inicio_cuenta
-    tiempo_restante = 3 - int(tiempo_transcurrido)
+    tiempo_restante = 3 - int(tiempo_transcurrido / 1000)
     
     if tiempo_restante > 0:
         overlay = pygame.Surface((ANCHO_PANTALLA, ALTO_PANTALLA))
@@ -279,25 +289,28 @@ def reiniciar_juego():
     vidas = 3
     estado_juego = "cuenta_regresiva"
 
-def mostrar_menu(pantalla, fuente):
+def mostrar_menu(pantalla, fuente, imagenes):
     """Muestra el menú de inicio"""
-    pantalla.fill(NEGRO)
-    
-    titulo = pygame.font.Font(None, 72).render("Esquiva Autos", True, VERDE)
-    rect_titulo = titulo.get_rect(center=(ANCHO_PANTALLA // 2, ALTO_PANTALLA // 2 - 100))
-    pantalla.blit(titulo, rect_titulo)
-    
-    opcion_jugar = fuente.render("Presiona ESPACIO para Jugar", True, AMARILLO)
-    rect_jugar = opcion_jugar.get_rect(center=(ANCHO_PANTALLA // 2, ALTO_PANTALLA // 2))
-    pantalla.blit(opcion_jugar, rect_jugar)
-    
-    opcion_salir = fuente.render("Presiona ESC para Salir", True, AMARILLO)
-    rect_salir = opcion_salir.get_rect(center=(ANCHO_PANTALLA // 2, ALTO_PANTALLA // 2 + 50))
-    pantalla.blit(opcion_salir, rect_salir)
-    
-    controles = fuente.render("Usa las flechas o WASD para moverte", True, BLANCO)
-    rect_controles = controles.get_rect(center=(ANCHO_PANTALLA // 2, ALTO_PANTALLA // 2 + 120))
-    pantalla.blit(controles, rect_controles)
+    if imagenes and 'menu' in imagenes:
+        pantalla.blit(imagenes['menu'], (0, 0))
+    else:
+        pantalla.fill(NEGRO)
+        
+        titulo = pygame.font.Font(None, 72).render("Esquiva Autos", True, VERDE)
+        rect_titulo = titulo.get_rect(center=(ANCHO_PANTALLA // 2, ALTO_PANTALLA // 2 - 100))
+        pantalla.blit(titulo, rect_titulo)
+        
+        opcion_jugar = fuente.render("Presiona ESPACIO para Jugar", True, AMARILLO)
+        rect_jugar = opcion_jugar.get_rect(center=(ANCHO_PANTALLA // 2, ALTO_PANTALLA // 2))
+        pantalla.blit(opcion_jugar, rect_jugar)
+        
+        opcion_salir = fuente.render("Presiona ESC para Salir", True, AMARILLO)
+        rect_salir = opcion_salir.get_rect(center=(ANCHO_PANTALLA // 2, ALTO_PANTALLA // 2 + 50))
+        pantalla.blit(opcion_salir, rect_salir)
+        
+        controles = fuente.render("Usa las flechas o WASD para moverte", True, BLANCO)
+        rect_controles = controles.get_rect(center=(ANCHO_PANTALLA // 2, ALTO_PANTALLA // 2 + 120))
+        pantalla.blit(controles, rect_controles)
     
     pygame.display.flip()
 
@@ -311,7 +324,7 @@ def juego_principal():
 
     imagenes = cargar_imagenes()
 
-    mostrar_menu(pantalla, fuente)
+    mostrar_menu(pantalla, fuente, imagenes)
 
     ejecutando = True
     while ejecutando:
@@ -376,7 +389,7 @@ def juego_activo(imagenes):
         
         if estado_juego == "cuenta_regresiva":
             tiempo_transcurrido = pygame.time.get_ticks() - tiempo_inicio_cuenta
-            if tiempo_transcurrido >= 3:
+            if tiempo_transcurrido >= 3000:
                 estado_juego = "jugando"
             
             offset_carretera += velocidad_base
@@ -444,8 +457,7 @@ def juego_activo(imagenes):
                 mensaje_potenciador = ""
         
         elif estado_juego == "game_over":
-
-            pantalla_game_over(pantalla, fuente)
+            pantalla_game_over(pantalla, fuente, imagenes)
         
         pygame.display.flip()
     

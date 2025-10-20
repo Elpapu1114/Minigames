@@ -34,15 +34,15 @@ time_font = pygame.font.SysFont("Arial", 18)
 
 games = [
     {
-        "title": "flappy",
-        "description": "salta los obstaculos",
+        "title": "Flappy bird",
+        "description": "Controla a un pájaro que salta los obstáculos",
         "file": "flappy.py",
         "category": "arcade",
         "color": (100, 200, 100),
         "status": "Disponible"
     },
     {
-        "title": "pong",
+        "title": "Pong",
         "description": "Un clásico juego de Ping Pong",
         "file": "pong.py",
         "category": "arcade",
@@ -58,7 +58,7 @@ games = [
         "status": "Disponible"
     },
     {
-        "title": "evitar",
+        "title": "Evitar los obstáculos",
         "description": "Evita los bloques que caen del cielo",
         "file": "evitar.py",
         "category": "arcade",
@@ -66,58 +66,58 @@ games = [
         "status": "Disponible"
     },
     {
-        "title": "memotest",
-        "description": "intentar recordar la posición de las cartas",
+        "title": "Memotest",
+        "description": "Intentar recordar la posición de las cartas",
         "file": "memotest.py",
         "category": "puzzle",
         "color": (200, 100, 200),
         "status": "Disponible"
     },
     {
-        "title": "snake",
+        "title": "Snake",
         "description": "Controla la serpiente y come la comida",
         "file": "snake.py",
         "category": "arcade",
         "color": (100, 200, 200),
         "status": "Disponible"
     },{
-        "title": "grid futbol",
-        "description": "Un emocionante juego de fútbol en una cuadrícula",
+        "title": "Grid fútbol",
+        "description": "Un emocionante juego para probar tus conocimientos de fútbol en una cuadrícula",
         "file": "grid.py",
         "category": "conocimiento",
         "color": (100, 200, 200),
         "status": "Disponible"
     },{
-        "title": "auto",
-        "description": "esquiva los autos y llega lo más lejos posible",
+        "title": "Crash run",
+        "description": "Esquiva los autos y llega lo más lejos posible",
         "file": "auto.py",
         "category": "arcade",
         "color": (100, 200, 200),
         "status": "Disponible"
     },{
-        "title": "fruit ninja",
-        "description": "corta la fruta pero evita las bombas",
+        "title": "Fruit ninja",
+        "description": "Corta la fruta pero evita las bombas",
         "file": "cortafruta.py",
         "category": "arcade",
         "color": (100, 200, 200),
         "status": "Disponible"
     },{
-        "title": "simon dice",
-        "description": "sigue la secuencia de colores",
+        "title": "Simon dice",
+        "description": "Sigue la secuencia de colores",
         "file": "simondice.py",
         "category": "arcade",
         "color": (100, 200, 200),
         "status": "Disponible"
     },{
-        "title": "salta por las plataformas",
-        "description": "salta de plataforma en plataforma sin caer",
+        "title": "Salta por las plataformas",
+        "description": "Salta de plataforma en plataforma sin caer",
         "file": "saltar.py",
         "category": "arcade",
         "color": (100, 200, 200),
         "status": "Disponible"
     },{
-        "title": "carrera de dedos",
-        "description": "corre lo más rápido que puedas tocando las teclas",
+        "title": "Carrera de dedos",
+        "description": "Corre lo más rápido que puedas tocando las teclas",
         "file": "carrreratecla.py",
         "category": "arcade",
         "color": (100, 200, 200),
