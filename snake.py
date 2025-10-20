@@ -1,24 +1,39 @@
+def get_curve_image(dir_from_prev, dir_to_next):
+    """Retorna el nombre de la imagen de curva correcta según las direcciones"""
+    # Mapear las combinaciones de direcciones a las imágenes de curva
+    curve_map = {
+        ("RIGHT", "DOWN"): 'curva_derecha_abajo',
+        ("RIGHT", "UP"): 'curva_derecha_arriba',
+        ("LEFT", "DOWN"): 'curva_izquierda_abajo',
+        ("LEFT", "UP"): 'curva_izquierda_arriba',
+        ("DOWN", "RIGHT"): 'curva_abajo_derecha',
+        ("DOWN", "LEFT"): 'curva_abajo_izquierda',
+        ("UP", "RIGHT"): 'curva_arriba_derecha',
+        ("UP", "LEFT"): 'curva_arriba_izquierda',
+    }
+    return curve_map.get((dir_from_prev, dir_to_next), None)
 import pygame
 import random
 import sys
 import math
 import os
 
+
 pygame.init()
 
 # Tamaño de celda y pantalla
 CELL_SIZE = 20
-WIDTH, HEIGHT = 600, 400
+WIDTH, HEIGHT = 800, 600
 
 # Colores
 BLACK = (0, 0, 0)
 GREEN = (0, 255, 0)
 RED = (255, 0, 0)
 WHITE = (255, 255, 255)
-GRAY = (40, 40, 40)  # Color para la cuadrícula
-APPLE_RED = (220, 20, 20)  # Rojo más realista para la manzana
-APPLE_GREEN = (34, 139, 34)  # Verde para la hoja
-DARK_RED = (139, 0, 0)  # Rojo más oscuro para sombras
+GRAY = (40, 40, 40)
+APPLE_RED = (220, 20, 20)
+APPLE_GREEN = (34, 139, 34)
+DARK_RED = (139, 0, 0)
 
 # Pantalla y reloj
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -26,74 +41,170 @@ pygame.display.set_caption("Snake")
 clock = pygame.time.Clock()
 font = pygame.font.SysFont(None, 35)
 
-# Cargar imagen de la manzana
-def cargar_imagen_manzana():
-    """Carga la imagen de la manzana desde la carpeta img"""
-    try:
-        # Crear la ruta completa a la imagen
-        ruta_imagen = os.path.join(os.path.dirname(__file__), 'img', 'manzana.png')
-        
-        # Verificar si el archivo existe
-        if os.path.exists(ruta_imagen):
-            manzana_img = pygame.image.load(ruta_imagen).convert_alpha()
-            # Escalar la imagen al tamaño de la celda
-            manzana_img = pygame.transform.scale(manzana_img, (CELL_SIZE-2, CELL_SIZE-2))
-            print(f"Imagen cargada exitosamente desde: {ruta_imagen}")
-            return manzana_img
-        else:
-            print(f"No se encontró la imagen en: {ruta_imagen}")
-            return None
-    except Exception as e:
-        print(f"Error al cargar la imagen: {e}")
-        return None
+# Cargar imágenes
+def cargar_imagenes():
+    """Carga todas las imágenes del juego"""
+    imagenes = {}
+    carpeta_img = os.path.join(os.path.dirname(__file__), 'image')
+    
+    nombres = {
+        'manzana': 'manzana.png',
+        'menu': 'menu_snake.png',
+        'game_over': 'game_over_snake.png',
+        'cabeza': 'snake_head.png',
+        'cuerpo': 'snake_body.png',
+        'cola': 'snake_tail.png',
+        'curva_abajo_izquierda': 'snake_curve_abajo_izquierda.png',
+        'curva_abajo_derecha': 'snake_curve_abajo_derecha.png',
+        'curva_arriba_izquierda': 'snake_curve_arriba_izquierda.png',
+        'curva_arriba_derecha': 'snake_curve_arriba_derecha.png',
+        'curva_izquierda_abajo': 'snake_curve_izquierda_abajo.png',
+        'curva_izquierda_arriba': 'snake_curve_izquierda_arriba.png',
+        'curva_derecha_abajo': 'snake_curve_derecha_abajo.png',
+        'curva_derecha_arriba': 'snake_curve_derecha_arriba.png'
+    }
+    
+    for key, nombre in nombres.items():
+        try:
+            ruta = os.path.join(carpeta_img, nombre)
+            if os.path.exists(ruta):
+                img = pygame.image.load(ruta).convert_alpha()
+                
+                # Escalar según el tipo de imagen
+                if key in ['menu', 'game_over']:
+                    # Escalar fondos exactamente al tamaño de la pantalla
+                    imagenes[key] = pygame.transform.scale(img, (WIDTH, HEIGHT))
+                else:
+                    # Escalar partes de la serpiente y manzana al tamaño de la celda
+                    imagenes[key] = pygame.transform.scale(img, (CELL_SIZE, CELL_SIZE))
+                print(f"✓ {key} cargada")
+            else:
+                print(f"✗ No se encontró: {ruta}")
+                imagenes[key] = None
+        except Exception as e:
+            print(f"Error cargando {key}: {e}")
+            imagenes[key] = None
+    
+    return imagenes
 
-# Cargar la imagen al iniciar el programa
-manzana_img = cargar_imagen_manzana()
+# Cargar todas las imágenes
+imagenes = cargar_imagenes()
 
 def draw_text(text, color, x, y):
     img = font.render(text, True, color)
     screen.blit(img, (x, y))
 
-def draw_snake(snake_body):
-    for pos in snake_body:
-        pygame.draw.rect(screen, GREEN, (pos[0], pos[1], CELL_SIZE, CELL_SIZE))
+def get_direction_from_positions(pos1, pos2):
+    """Obtiene la dirección desde pos1 hacia pos2"""
+    x1, y1 = pos1
+    x2, y2 = pos2
+    
+    if x2 > x1:
+        return "RIGHT"
+    elif x2 < x1:
+        return "LEFT"
+    elif y2 > y1:
+        return "DOWN"
+    elif y2 < y1:
+        return "UP"
+    return "RIGHT"
+
+def get_direction_angle(direction):
+    """Retorna el ángulo de rotación para cada dirección (cabeza mira a la izquierda por defecto)"""
+    angles = {
+        "RIGHT": 180,
+        "DOWN": 270,
+        "LEFT": 0,
+        "UP": 90
+    }
+    return angles.get(direction, 0)
+
+def get_tail_angle(direction):
+    """Retorna el ángulo de rotación para la cola (mirando al lado contrario)"""
+    angles = {
+        "RIGHT": 0,
+        "DOWN": 90,
+        "LEFT": 180,
+        "UP": 270
+    }
+    return angles.get(direction, 0)
+
+def draw_snake(snake_body, current_direction):
+    """Dibuja la serpiente con imágenes de cabeza, cuerpo, cola y curvas"""
+    if not snake_body:
+        return
+    
+    for i, pos in enumerate(snake_body):
+        x, y = pos
+        
+        if i == 0:  # Cabeza - siempre mira a donde se está moviendo
+            if imagenes['cabeza']:
+                angle = get_direction_angle(current_direction)
+                rotated = pygame.transform.rotate(imagenes['cabeza'], -angle)
+                rect = rotated.get_rect(center=(x + CELL_SIZE//2, y + CELL_SIZE//2))
+                screen.blit(rotated, rect)
+            else:
+                pygame.draw.rect(screen, GREEN, (x, y, CELL_SIZE, CELL_SIZE))
+        
+        elif i == len(snake_body) - 1:  # Cola
+            if imagenes['cola'] and len(snake_body) > 1:
+                # Dirección desde el penúltimo segmento hacia la cola
+                prev_pos = snake_body[i-1]
+                tail_direction = get_direction_from_positions(prev_pos, pos)
+                angle = get_tail_angle(tail_direction)
+                rotated = pygame.transform.rotate(imagenes['cola'], -angle)
+                rect = rotated.get_rect(center=(x + CELL_SIZE//2, y + CELL_SIZE//2))
+                screen.blit(rotated, rect)
+            else:
+                pygame.draw.rect(screen, GREEN, (x, y, CELL_SIZE, CELL_SIZE))
+        
+        else:  # Cuerpo
+            if len(snake_body) > 2:
+                prev_pos = snake_body[i-1]
+                next_pos = snake_body[i+1]
+                
+                dir_from_prev = get_direction_from_positions(prev_pos, pos)
+                dir_to_next = get_direction_from_positions(pos, next_pos)
+                
+                # Verificar si es una curva
+                if dir_from_prev != dir_to_next:
+                    # Es una curva
+                    curve_key = get_curve_image(dir_from_prev, dir_to_next)
+                    if curve_key and imagenes.get(curve_key):
+                        screen.blit(imagenes[curve_key], (x, y))
+                    else:
+                        pygame.draw.rect(screen, GREEN, (x, y, CELL_SIZE, CELL_SIZE))
+                else:
+                    # Es un segmento recto
+                    if imagenes['cuerpo']:
+                        if dir_from_prev in ["RIGHT", "LEFT"]:
+                            angle = 0  # Horizontal
+                        else:
+                            angle = 90  # Vertical
+                        
+                        rotated = pygame.transform.rotate(imagenes['cuerpo'], -angle)
+                        rect = rotated.get_rect(center=(x + CELL_SIZE//2, y + CELL_SIZE//2))
+                        screen.blit(rotated, rect)
+                    else:
+                        pygame.draw.rect(screen, GREEN, (x, y, CELL_SIZE, CELL_SIZE))
+            else:
+                pygame.draw.rect(screen, GREEN, (x, y, CELL_SIZE, CELL_SIZE))
 
 def draw_apple(pos):
     """Dibuja la manzana usando la imagen cargada o un diseño de respaldo"""
     x, y = pos
     
-    if manzana_img:
-        # Usar la imagen si está disponible
-        screen.blit(manzana_img, (x+1, y+1))
+    if imagenes['manzana']:
+        screen.blit(imagenes['manzana'], (x, y))
     else:
-        # Dibujo de respaldo si no se puede cargar la imagen
+        # Dibujo de respaldo
         center_x = x + CELL_SIZE // 2
         center_y = y + CELL_SIZE // 2
         radius = CELL_SIZE // 2 - 2
-        
-        # Cuerpo principal de la manzana (círculo rojo)
         pygame.draw.circle(screen, APPLE_RED, (center_x, center_y), radius)
-        
-        # Sombra/highlight para darle volumen
         pygame.draw.circle(screen, DARK_RED, (center_x + 2, center_y + 2), radius - 3)
-        
-        # Brillo en la parte superior izquierda
         highlight_pos = (center_x - 3, center_y - 3)
         pygame.draw.circle(screen, (255, 100, 100), highlight_pos, radius // 3)
-        
-        # Tallo pequeño en la parte superior
-        stem_x = center_x
-        stem_y = y + 2
-        pygame.draw.rect(screen, (101, 67, 33), (stem_x - 1, stem_y, 2, 4))
-        
-        # Hoja pequeña
-        leaf_points = [
-            (stem_x + 2, stem_y + 1),
-            (stem_x + 6, stem_y - 1),
-            (stem_x + 4, stem_y + 3),
-            (stem_x + 2, stem_y + 2)
-        ]
-        pygame.draw.polygon(screen, APPLE_GREEN, leaf_points)
 
 def draw_grid():
     for x in range(0, WIDTH, CELL_SIZE):
@@ -117,7 +228,7 @@ def get_speed(score):
     return min(base_speed + (score // increase_every) * 2, max_speed)
 
 def wait_for_start():
-    """Pantalla de inicio - espera que el jugador presione ESPACIO"""
+    """Pantalla de inicio con imagen de menú"""
     waiting = True
     while waiting:
         for event in pygame.event.get():
@@ -127,52 +238,42 @@ def wait_for_start():
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
                     waiting = False
+                elif event.key == pygame.K_ESCAPE:
+                    pygame.quit()
+                    sys.exit()
         
-        # Dibujar pantalla de inicio
         screen.fill(BLACK)
-        draw_grid()
         
-        # Título grande
-        title_text = "SNAKE GAME 🍎"
-        title_surface = font.render(title_text, True, WHITE)
-        title_rect = title_surface.get_rect(center=(WIDTH//2, HEIGHT//2 - 60))
-        screen.blit(title_surface, title_rect)
-        
-        # Instrucciones
-        instruction_text = "Presiona ESPACIO para empezar"
-        instruction_surface = font.render(instruction_text, True, GREEN)
-        instruction_rect = instruction_surface.get_rect(center=(WIDTH//2, HEIGHT//2))
-        screen.blit(instruction_surface, instruction_rect)
-        
-        # Controles
-        controls_text = "Usa las flechas para moverte"
-        controls_surface = font.render(controls_text, True, WHITE)
-        controls_rect = controls_surface.get_rect(center=(WIDTH//2, HEIGHT//2 + 40))
-        screen.blit(controls_surface, controls_rect)
+        # Si existe la imagen de menú, mostrarla
+        if imagenes['menu']:
+            screen.blit(imagenes['menu'], (0, 0))
+        else:
+            # Menú de respaldo
+            draw_grid()
+            draw_text("SNAKE GAME", WHITE, WIDTH//2 - 100, HEIGHT//2 - 60)
+            draw_text("ESPACIO PARA JUGAR", GREEN, WIDTH//2 - 140, HEIGHT//2)
+            draw_text("ESC PARA SALIR", WHITE, WIDTH//2 - 100, HEIGHT//2 + 40)
         
         pygame.display.update()
         clock.tick(30)
 
 def main():
-    # Mostrar pantalla de inicio
     wait_for_start()
     
     snake_pos = (100, 100)
     snake_body = [snake_pos]
     direction = "RIGHT"
+    next_direction = "RIGHT"  # Dirección siguiente para cambios suave
     food_pos = generate_food(snake_body)
     score = 0
 
-    # --- DIBUJAR ESTADO INICIAL ---
+    # Dibujar estado inicial
     screen.fill(BLACK)
     draw_grid()
-    draw_snake(snake_body)
-    draw_apple(food_pos)  # Dibujar la manzana
+    draw_snake(snake_body, direction)
+    draw_apple(food_pos)
     draw_text("Puntaje: " + str(score), WHITE, 10, 10)
-    draw_text("🍎", WHITE, 10, 45)  # Emoji decorativo
     pygame.display.update()
-
-    # Pequeña pausa antes de empezar el movimiento
     pygame.time.wait(1000)
 
     while True:
@@ -182,13 +283,19 @@ def main():
                 sys.exit()
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_UP and direction != "DOWN":
-                    direction = "UP"
+                    next_direction = "UP"
                 elif event.key == pygame.K_DOWN and direction != "UP":
-                    direction = "DOWN"
+                    next_direction = "DOWN"
                 elif event.key == pygame.K_LEFT and direction != "RIGHT":
-                    direction = "LEFT"
+                    next_direction = "LEFT"
                 elif event.key == pygame.K_RIGHT and direction != "LEFT":
-                    direction = "RIGHT"
+                    next_direction = "RIGHT"
+                elif event.key == pygame.K_ESCAPE:
+                    pygame.quit()
+                    sys.exit()
+
+        # Actualizar dirección
+        direction = next_direction
 
         x, y = snake_pos
         if direction == "UP":
@@ -209,20 +316,22 @@ def main():
         else:
             snake_body.pop()
 
-        if (
-            x < 0 or x >= WIDTH or
-            y < 0 or y >= HEIGHT or
-            snake_pos in snake_body[1:]
-        ):
-            # Pantalla de Game Over
+        if (x < 0 or x >= WIDTH or y < 0 or y >= HEIGHT or snake_pos in snake_body[1:]):
+            # Pantalla de Game Over con imagen
             screen.fill(BLACK)
-            draw_text("GAME OVER!", RED, WIDTH//2 - 100, HEIGHT//2 - 60)
-            draw_text("Puntaje Final: " + str(score), WHITE, WIDTH//2 - 120, HEIGHT//2 - 20)
-            draw_text(" Manzanas comidas: " + str(score), WHITE, WIDTH//2 - 140, HEIGHT//2 + 20)
-            draw_text("Presiona ESPACIO para jugar otra vez", GREEN, WIDTH//2 - 180, HEIGHT//2 + 60)
+            
+            if imagenes['game_over']:
+                # Mostrar la imagen de game over
+                screen.blit(imagenes['game_over'], (0, 0))
+            else:
+                # Game Over de respaldo
+                draw_text("GAME OVER!", RED, WIDTH//2 - 100, HEIGHT//2 - 60)
+                draw_text("Puntaje Final: " + str(score), WHITE, WIDTH//2 - 120, HEIGHT//2 - 20)
+                draw_text("ESPACIO PARA JUGAR", GREEN, WIDTH//2 - 140, HEIGHT//2 + 60)
+                draw_text("ESC PARA SALIR", WHITE, WIDTH//2 - 100, HEIGHT//2 + 100)
+            
             pygame.display.update()
             
-            # Esperar a que presione ESPACIO para reiniciar
             waiting_restart = True
             while waiting_restart:
                 for event in pygame.event.get():
@@ -231,16 +340,17 @@ def main():
                         sys.exit()
                     elif event.type == pygame.KEYDOWN:
                         if event.key == pygame.K_SPACE:
-                            waiting_restart = False
-                            main()  # Reiniciar el juego
+                            main()
+                        elif event.key == pygame.K_ESCAPE:
+                            pygame.quit()
+                            sys.exit()
                 clock.tick(30)
 
         screen.fill(BLACK)
         draw_grid()
-        draw_snake(snake_body)
-        draw_apple(food_pos)  # Dibujar la manzana en su posición
+        draw_snake(snake_body, direction)
+        draw_apple(food_pos)
         draw_text("Puntaje: " + str(score), WHITE, 10, 10)
-        draw_text("🍎", WHITE, 10, 45)  # Emoji decorativo
         pygame.display.update()
 
         clock.tick(get_speed(score))
