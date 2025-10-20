@@ -4,7 +4,7 @@ import time
 
 # Inicializar pygame
 pygame.init()
-pygame.mixer.init()
+
 
 # Constantes
 ANCHO = 800
