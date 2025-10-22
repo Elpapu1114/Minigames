@@ -3247,6 +3247,34 @@
         "club actual": "RETIRADO",
         "posicion": ["Delantero Centro", "Extremo Derecho", "Extremo Izquierdo"],
         "clubes totales": ["Manchester City", "Chelsea", "Bolton Wanderers", "Liverpool", "West Bromwich Albion", "Trabzonspor", "Perth Glory"]
+    },
+    {
+        "id": 345,
+        "nombre": "Gianfranco Zola",
+        "nacionalidad": "Italia",   
+        "Fecha de nacimiento": "05/07/1966",
+        "club actual": "RETIRADO",
+        "posicion": ["Mediocampista Ofensivo", "Delantero Centro"],
+        "clubes totales": ["Nuorese", "Sassari", "Napoli", "Parma", "Chelsea", "Cagliari"]
+    },
+    {
+        "id": 346,
+        "nombre": "Jorge Luiz Frello Filho",
+        "apodo": "Jorginho",
+        "nacionalidad": "Italia",
+        "Fecha de nacimiento": "20/12/1991",
+        "club actual": "Flamengo",
+        "posicion": ["Mediocampista Defensivo", "Mediocampista Central"],
+        "clubes totales": ["Hellas Verona", "Napoli", "Chelsea", "Arsenal", "Flamengo"]
+    },
+    {
+        "id": 347,
+        "nombre": "Jurgen Klinsmann",
+        "nacionalidad": "Alemania",
+        "Fecha de nacimiento": "30/07/1964",
+        "club actual": "RETIRADO",
+        "posicion": ["Delantero Centro"],
+        "clubes totales": ["Stuttgarter Kickers", "VfB Stuttgart", "Inter de Milán", "Monaco", "Tottenham Hotspur", "Bayern de Múnich", "Orange County Blue Star"]
     }
 ]
 }
