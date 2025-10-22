@@ -69,16 +69,42 @@ reloj = None
 fuente = None
 dificultad_actual = 'FACIL'
 en_menu = True
+en_menu_eleccion = False
 velocidad_acumulada = 0
 tiempo_impulso = 0
+img_menu = None
+img_menu_eleccion = None
+img_game_over = None
 
 def inicializar_pygame():
     """Inicializa pygame y crea la ventana"""
-    global pantalla, reloj, fuente
+    global pantalla, reloj, fuente, img_menu, img_menu_eleccion, img_game_over
     pantalla = pygame.display.set_mode((ANCHO, ALTO))
-    pygame.display.set_caption("Saltador de Plataformas Infinitas - Estilo Pou")
+    pygame.display.set_caption("Sky Hopper - Estilo Pou")
     reloj = pygame.time.Clock()
     fuente = pygame.font.Font(None, 36)
+    
+    # Cargar imágenes
+    try:
+        img_menu = pygame.image.load('image/menu_sky_hopper.png')
+        img_menu = pygame.transform.scale(img_menu, (ANCHO, ALTO))
+    except:
+        img_menu = None
+        print("No se pudo cargar menu_sky_hopper.png")
+        
+    try:
+        img_menu_eleccion = pygame.image.load('image/menu_eleccion_sky_hopper.png')
+        img_menu_eleccion = pygame.transform.scale(img_menu_eleccion, (ANCHO, ALTO))
+    except:
+        img_menu_eleccion = None
+        print("No se pudo cargar menu_eleccion_sky_hopper.png")
+        
+    try:
+        img_game_over = pygame.image.load('image/game_over_sky_hopper.png')
+        img_game_over = pygame.transform.scale(img_game_over, (ANCHO, ALTO))
+    except:
+        img_game_over = None
+        print("No se pudo cargar game_over_sky_hopper.png")
 
 def crear_jugador(x, y):
     """Crea y retorna un diccionario con los datos del jugador"""
@@ -386,49 +412,44 @@ def dibujar_fondo():
         pygame.draw.line(pantalla, color, (0, y), (ANCHO, y))
 
 def dibujar_menu():
-    """Dibuja el menú de selección de dificultad"""
-    pantalla.fill((50, 50, 100))
-    
-    # Título
-    fuente_titulo = pygame.font.Font(None, 72)
-    titulo = fuente_titulo.render("SALTADOR INFINITO", True, BLANCO)
-    pantalla.blit(titulo, (ANCHO//2 - titulo.get_width()//2, 100))
-    
-    # Subtítulo
-    subtitulo = fuente.render("Estilo Pou", True, AMARILLO)
-    pantalla.blit(subtitulo, (ANCHO//2 - subtitulo.get_width()//2, 160))
-    
-    # Opciones de dificultad
-    y_inicio = 250
-    for i, (key, config) in enumerate(DIFICULTADES.items()):
-        color = config['color']
-        texto = f"{i+1}. {config['nombre']}"
+    """Dibuja el menú principal con imagen de fondo"""
+    if img_menu:
+        pantalla.blit(img_menu, (0, 0))
+    else:
+        # Fallback si no se carga la imagen
+        pantalla.fill((50, 50, 100))
         
-        # Resaltar opción seleccionada
-        if key == dificultad_actual:
-            pygame.draw.rect(pantalla, color, 
-                           (ANCHO//2 - 150, y_inicio + i*60 - 10, 300, 50))
+        fuente_titulo = pygame.font.Font(None, 72)
+        titulo = fuente_titulo.render("SKY HOPPER", True, AMARILLO)
+        pantalla.blit(titulo, (ANCHO//2 - titulo.get_width()//2, 200))
         
-        fuente_opcion = pygame.font.Font(None, 48)
-        texto_render = fuente_opcion.render(texto, True, BLANCO if key == dificultad_actual else color)
-        pantalla.blit(texto_render, (ANCHO//2 - texto_render.get_width()//2, y_inicio + i*60))
-    
-    # Instrucciones
-    instrucciones = [
-        "Presiona 1, 2 o 3 para seleccionar dificultad",
-        "Presiona ENTER para comenzar",
-        "",
-        "CONTROLES:",
-        "Flechas o WASD para moverte",
-        "Espacio para saltar",
-        "Recoge estrellas para impulso temporal"
-    ]
-    
-    fuente_inst = pygame.font.Font(None, 24)
-    for i, inst in enumerate(instrucciones):
-        color = AMARILLO if inst.startswith("CONTROLES") else BLANCO
-        texto = fuente_inst.render(inst, True, color)
-        pantalla.blit(texto, (50, 450 + i*25))
+        fuente_inst = pygame.font.Font(None, 48)
+        texto_space = fuente_inst.render("PRESS SPACE TO CONTINUE", True, BLANCO)
+        pantalla.blit(texto_space, (ANCHO//2 - texto_space.get_width()//2, 400))
+        
+        texto_esc = fuente_inst.render("ESC TO EXIT", True, BLANCO)
+        pantalla.blit(texto_esc, (ANCHO//2 - texto_esc.get_width()//2, 500))
+
+def dibujar_menu_eleccion():
+    """Dibuja el menú de selección de dificultad con imagen de fondo"""
+    if img_menu_eleccion:
+        pantalla.blit(img_menu_eleccion, (0, 0))
+    else:
+        # Fallback si no se carga la imagen
+        pantalla.fill((50, 50, 100))
+        
+        fuente_titulo = pygame.font.Font(None, 72)
+        titulo = fuente_titulo.render("CHOOSE DIFFICULTY", True, AMARILLO)
+        pantalla.blit(titulo, (ANCHO//2 - titulo.get_width()//2, 100))
+        
+        # Opciones de dificultad
+        y_inicio = 300
+        opciones = ["1. EASY", "2. MEDIUM", "3. HARD"]
+        
+        fuente_opcion = pygame.font.Font(None, 64)
+        for i, texto in enumerate(opciones):
+            texto_render = fuente_opcion.render(texto, True, BLANCO)
+            pantalla.blit(texto_render, (ANCHO//2 - texto_render.get_width()//2, y_inicio + i*100))
 
 def dibujar_ui():
     """Dibuja la interfaz de usuario"""
@@ -455,26 +476,26 @@ def dibujar_ui():
         pantalla.blit(texto_impulso, (ANCHO - texto_impulso.get_width() - 10, 10))
 
 def dibujar_game_over():
-    """Dibuja la pantalla de game over"""
-    global puntuacion
-    
-    overlay = pygame.Surface((ANCHO, ALTO))
-    overlay.set_alpha(128)
-    overlay.fill(NEGRO)
-    pantalla.blit(overlay, (0, 0))
-    
-    fuente_grande = pygame.font.Font(None, 72)
-    fuente_mediana = pygame.font.Font(None, 36)
-    
-    texto_go = fuente_grande.render("¡Game Over!", True, ROJO)
-    texto_puntuacion = fuente.render(f"Altura final: {puntuacion}m", True, BLANCO)
-    texto_reinicio = fuente_mediana.render("Presiona R para reiniciar", True, AMARILLO)
-    texto_menu = fuente_mediana.render("Presiona M para menú", True, CYAN)
-    
-    pantalla.blit(texto_go, (ANCHO//2 - texto_go.get_width()//2, ALTO//2 - 120))
-    pantalla.blit(texto_puntuacion, (ANCHO//2 - texto_puntuacion.get_width()//2, ALTO//2 - 50))
-    pantalla.blit(texto_reinicio, (ANCHO//2 - texto_reinicio.get_width()//2, ALTO//2 + 10))
-    pantalla.blit(texto_menu, (ANCHO//2 - texto_menu.get_width()//2, ALTO//2 + 50))
+    """Dibuja la pantalla de game over con imagen de fondo"""
+    if img_game_over:
+        pantalla.blit(img_game_over, (0, 0))
+    else:
+        # Fallback si no se carga la imagen
+        overlay = pygame.Surface((ANCHO, ALTO))
+        overlay.set_alpha(128)
+        overlay.fill(NEGRO)
+        pantalla.blit(overlay, (0, 0))
+        
+        fuente_grande = pygame.font.Font(None, 72)
+        fuente_mediana = pygame.font.Font(None, 36)
+        
+        texto_go = fuente_grande.render("GAME OVER", True, BLANCO)
+        texto_reinicio = fuente_mediana.render("PRESS SPACE TO PLAY AGAIN", True, AMARILLO)
+        texto_menu = fuente_mediana.render("ESC TO QUIT", True, CYAN)
+        
+        pantalla.blit(texto_go, (ANCHO//2 - texto_go.get_width()//2, ALTO//2 - 100))
+        pantalla.blit(texto_reinicio, (ANCHO//2 - texto_reinicio.get_width()//2, ALTO//2 + 50))
+        pantalla.blit(texto_menu, (ANCHO//2 - texto_menu.get_width()//2, ALTO//2 + 100))
 
 def reiniciar_juego():
     """Reinicia el juego al estado inicial"""
@@ -517,27 +538,46 @@ def dibujar_juego():
 
 def manejar_eventos():
     """Maneja todos los eventos de pygame"""
-    global game_over, en_menu, dificultad_actual
+    global game_over, en_menu, en_menu_eleccion, dificultad_actual
     
     for evento in pygame.event.get():
         if evento.type == pygame.QUIT:
             return False
         elif evento.type == pygame.KEYDOWN:
-            if en_menu:
+            if en_menu and not en_menu_eleccion:
+                # Menú principal
+                if evento.key == pygame.K_SPACE:
+                    en_menu_eleccion = True
+                elif evento.key == pygame.K_ESCAPE:
+                    return False
+                    
+            elif en_menu_eleccion:
+                # Menú de selección de dificultad
                 if evento.key == pygame.K_1:
                     dificultad_actual = 'FACIL'
+                    en_menu = False
+                    en_menu_eleccion = False
+                    reiniciar_juego()
                 elif evento.key == pygame.K_2:
                     dificultad_actual = 'MEDIO'
+                    en_menu = False
+                    en_menu_eleccion = False
+                    reiniciar_juego()
                 elif evento.key == pygame.K_3:
                     dificultad_actual = 'DIFICIL'
-                elif evento.key == pygame.K_RETURN:
                     en_menu = False
+                    en_menu_eleccion = False
                     reiniciar_juego()
-            else:
-                if evento.key == pygame.K_r and game_over:
+                elif evento.key == pygame.K_ESCAPE:
+                    en_menu_eleccion = False
+                    
+            elif game_over:
+                # Pantalla de game over
+                if evento.key == pygame.K_SPACE:
                     reiniciar_juego()
-                elif evento.key == pygame.K_m and game_over:
+                elif evento.key == pygame.K_ESCAPE:
                     en_menu = True
+                    en_menu_eleccion = False
                     game_over = False
     return True
 
@@ -552,8 +592,10 @@ def ejecutar_juego():
     while corriendo:
         corriendo = manejar_eventos()
         
-        if en_menu:
+        if en_menu and not en_menu_eleccion:
             dibujar_menu()
+        elif en_menu_eleccion:
+            dibujar_menu_eleccion()
         else:
             teclas = pygame.key.get_pressed()
             actualizar_juego(teclas)
