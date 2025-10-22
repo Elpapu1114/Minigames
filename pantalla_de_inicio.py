@@ -52,15 +52,15 @@ games = [
     {
         "title": "4 lineas",
         "description": "juego de dos jugadores, intenta alinear 4 fichas antes de tu oponente",
-        "file": "4lineas.py",
+        "file": "4_lineas.py",
         "category": "estrategia ",
         "color": (100, 100, 200),
         "status": "Disponible"
     },
     {
-        "title": "Evitar los obstáculos",
+        "title": "Fall_out",
         "description": "Evita los bloques que caen del cielo",
-        "file": "evitar.py",
+        "file": "Fall_out.py",
         "category": "arcade",
         "color": (200, 200, 100),
         "status": "Disponible"
@@ -90,14 +90,14 @@ games = [
     },{
         "title": "Crash run",
         "description": "Esquiva los autos y llega lo más lejos posible",
-        "file": "auto.py",
+        "file": "crash_run.py",
         "category": "arcade",
         "color": (100, 200, 200),
         "status": "Disponible"
     },{
         "title": "Fruit ninja",
         "description": "Corta la fruta pero evita las bombas",
-        "file": "cortafruta.py",
+        "file": "fruit_cutter.py",
         "category": "arcade",
         "color": (100, 200, 200),
         "status": "Disponible"
@@ -109,16 +109,16 @@ games = [
         "color": (100, 200, 200),
         "status": "Disponible"
     },{
-        "title": "Salta por las plataformas",
+        "title": "Sky hopper",
         "description": "Salta de plataforma en plataforma sin caer",
-        "file": "saltar.py",
+        "file": "sky_hopper.py",
         "category": "arcade",
         "color": (100, 200, 200),
         "status": "Disponible"
     },{
-        "title": "Carrera de dedos",
+        "title": "Fast fingers",
         "description": "Corre lo más rápido que puedas tocando las teclas",
-        "file": "carrreratecla.py",
+        "file": "fast_finger.py",
         "category": "arcade",
         "color": (100, 200, 200),
         "status": "Disponible"
