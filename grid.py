@@ -98,6 +98,27 @@ def cargar_imagenes():
         imagenes['Paris Saint-Germain'] = pygame.image.load(os.path.join("image", "image_fut", "Paris Saint-Germain.png"))
         imagenes['Paris Saint-Germain'] = pygame.transform.scale(imagenes['Paris Saint-Germain'], (50,50))
 
+        imagenes["Argentina"] = pygame.image.load(os.path.join("image", "image_fut", "Argentina.png"))
+        imagenes["Argentina"] = pygame.transform.scale(imagenes["Argentina"], (50,50))
+
+        imagenes["Brasil"] = pygame.image.load(os.path.join("image", "image_fut", "Brasil.png"))
+        imagenes["Brasil"] = pygame.transform.scale(imagenes["Brasil"], (50,50))
+
+        imagenes["Alemania"] = pygame.image.load(os.path.join("image", "image_fut", "Alemania.png"))
+        imagenes["Alemania"] = pygame.transform.scale(imagenes["Alemania"], (50,50))
+
+        imagenes["Francia"] = pygame.image.load(os.path.join("image", "image_fut", "Francia.png"))
+        imagenes["Francia"] = pygame.transform.scale(imagenes["Francia"], (50,50))
+
+        imagenes["España"] = pygame.image.load(os.path.join("image", "image_fut", "España.png"))
+        imagenes["España"] = pygame.transform.scale(imagenes["España"], (50,50))
+
+        imagenes["Italia"] = pygame.image.load(os.path.join("image", "image_fut", "Italia.png"))
+        imagenes["Italia"] = pygame.transform.scale(imagenes["Italia"], (50,50))
+
+        imagenes["Inglaterra"] = pygame.image.load(os.path.join("image", "image_fut", "Inglaterra.png"))
+        imagenes["Inglaterra"] = pygame.transform.scale(imagenes["Inglaterra"], (50,50))
+
         print("Imágenes cargadas correctamente")
     except Exception as e:
         print(f"Error al cargar imágenes: {e}")
@@ -178,9 +199,12 @@ class FutbolGrid:
         self.sugerencias = []
         self.jugador_seleccionado = None
         self.mostrando_menu_celdas = False
-        self.celdas_validas = []
+        self.celdas_validas = [] 
+        self.jugadores_usados = set()
         self.input_activo = True
         self.juego_terminado = False
+        self.mensaje_error = ""
+        self.tiempo_mensaje = 0
         
     def verificar_juego_terminado(self):
         for i in range(3):
@@ -189,6 +213,24 @@ class FutbolGrid:
                     return False
         return True
     
+    def mostrar_mensaje(self, mensaje, duracion=3000):
+        self.mensaje_error = mensaje
+        self.tiempo_mensaje = pygame.time.get_ticks() + duracion
+    
+    def dibujar_mensaje_error(self):
+        if self.mensaje_error and pygame.time.get_ticks() < self.tiempo_mensaje:
+            ancho_msg = 700
+            alto_msg = 60
+            x = (ANCHO - ancho_msg) // 2
+            y = 500
+            pygame.draw.rect(self.pantalla, ROJO, (x, y, ancho_msg, alto_msg))
+            pygame.draw.rect(self.pantalla, NEGRO, (x, y, ancho_msg, alto_msg), 3)
+            texto = self.fuente.render(self.mensaje_error, True, BLANCO)
+            rect_texto = texto.get_rect(center=(ANCHO // 2, y + 30))
+            self.pantalla.blit(texto, rect_texto)
+        elif pygame.time.get_ticks() >= self.tiempo_mensaje:
+            self.mensaje_error = ""
+
     def buscar_jugador(self, nombre):
         nombre_lower = nombre.lower().strip()
         for jugador in self.jugadores:
@@ -248,6 +290,11 @@ class FutbolGrid:
                 rect_img = imagen.get_rect(center=(x + TAMANO_CELDA // 2, y - 20))
                 self.pantalla.blit(imagen, rect_img)
 
+            if tipo == "seleccion" and valor in self.imagenes:
+                imagen = self.imagenes[valor]
+                rect_img = imagen.get_rect(center=(x + TAMANO_CELDA // 2, y - 20))
+                self.pantalla.blit(imagen, rect_img)
+
             texto = self.fuente_pequena.render(valor, True, color)
             rect_texto = texto.get_rect(center=(x + TAMANO_CELDA // 2, y + 10))
             self.pantalla.blit(texto, rect_texto)
@@ -263,6 +310,11 @@ class FutbolGrid:
                 color = AZUL
 
             if tipo == "equipo" and valor in self.imagenes:
+                imagen = self.imagenes[valor]
+                rect_img = imagen.get_rect(center=(x + 75, y - 20))
+                self.pantalla.blit(imagen, rect_img)
+            
+            if tipo == "seleccion" and valor in self.imagenes:
                 imagen = self.imagenes[valor]
                 rect_img = imagen.get_rect(center=(x + 75, y - 20))
                 self.pantalla.blit(imagen, rect_img)
@@ -353,6 +405,7 @@ class FutbolGrid:
             rect = pygame.Rect(x + 20, y_celda + idx * 50, 360, 45)
             if rect.collidepoint(pos):
                 self.grid[i][j] = self.jugador_seleccionado
+                self.jugadores_usados.add(self.jugador_seleccionado["nombre"])  # Agregar esta línea
                 self.mostrando_menu_celdas = False
                 self.jugador_seleccionado = None
                 self.celdas_validas = []
@@ -362,15 +415,23 @@ class FutbolGrid:
                 if self.verificar_juego_terminado():
                     self.juego_terminado = True
                 return
-    
+            
     def procesar_jugador(self, nombre_jugador):
         jugador = self.buscar_jugador(nombre_jugador)
         if jugador:
+            # Verificar si el jugador ya fue usado
+            if jugador["nombre"] in self.jugadores_usados:
+                self.mostrar_mensaje(f"{jugador['nombre']} ya fue seleccionado")
+                self.input_texto = ""
+                self.sugerencias = []
+                return
+            
             celdas = self.encontrar_celdas_validas(jugador)
             if celdas:
                 if len(celdas) == 1:
                     i, j = celdas[0]
                     self.grid[i][j] = jugador
+                    self.jugadores_usados.add(jugador["nombre"])
                     self.input_texto = ""
                     self.sugerencias = []
                     
@@ -381,14 +442,14 @@ class FutbolGrid:
                     self.celdas_validas = celdas
                     self.mostrando_menu_celdas = True
             else:
-                print(f"El jugador {jugador['nombre']} no encaja en ninguna celda disponible")
+                self.mostrar_mensaje(f"{jugador['nombre']} no encaja en ninguna celda disponible")
                 self.input_texto = ""
                 self.sugerencias = []
         else:
-            print(f"No se encontró el jugador: {nombre_jugador}")
+            self.mostrar_mensaje(f"No se encontró el jugador: {nombre_jugador}")
             self.input_texto = ""
             self.sugerencias = []
-    
+
     def ejecutar(self):
         ejecutando = True
         
@@ -461,6 +522,9 @@ class FutbolGrid:
                 self.pantalla.blit(inst, (50, 570))
             else:
                 self.dibujar_menu_celdas()
+            
+            # Mostrar mensajes de error si los hay
+            self.dibujar_mensaje_error()
             
             pygame.display.flip()
         
