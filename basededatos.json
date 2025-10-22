@@ -252,7 +252,7 @@
         "Fecha de nacimiento": "15/06/1992",
         "club actual": "Liverpool",
         "posicion": ["Extremo Derecho", "Extremo Izquierdo", "Delantero Centro"],
-        "clubes totales": ["El Mokawloon", "Basel", "Chelsea", "Fiorentina", "Roma", "Liverpool"]
+        "clubes totales": ["El Mokawloon", "Basel", "Chelsea", "Fiorentina", "AS Roma", "Liverpool"]
     },
     {
         "id": 27,
@@ -718,7 +718,7 @@
         "Fecha de nacimiento": "27/09/1976",
         "club actual": "RETIRADO",
         "posicion": ["Mediocampista Ofensivo", "Delantero Centro"],
-        "clubes totales": ["Roma"]
+        "clubes totales": ["AS Roma"]
     },
     {
         "id": 78,
@@ -941,7 +941,7 @@
         "Fecha de nacimiento": "01/02/1969",
         "club actual": "RETIRADO",
         "posicion": ["Delantero Centro"],
-        "clubes totales": ["Newells", "River Plate", "Boca Juniors", "Fiorentina", "Roma", "Inter de Milán", "Al-Arabi"]
+        "clubes totales": ["Newells", "River Plate", "Boca Juniors", "Fiorentina", "AS Roma", "Inter de Milán", "Al-Arabi"]
     },
     {
         "id": 102,
@@ -968,7 +968,7 @@
         "Fecha de nacimiento": "07/07/1984",
         "club actual": "RETIRADO",
         "posicion": ["Mediocampista Central", "Mediocampista Ofensivo", "Mediocampista Defensivo"],
-        "clubes totales": ["Roma", "Triestina", "Liverpool", "Juventus", "AC Milan", "Fiorentina", "Sporting Braga", "Pescara", "Las Palmas"]
+        "clubes totales": ["AS Roma", "Triestina", "Liverpool", "Juventus", "AC Milan", "Fiorentina", "Sporting Braga", "Pescara", "Las Palmas"]
     },
     {
         "id": 105,
@@ -1177,7 +1177,7 @@
         "Fecha de nacimiento": "23/03/1978",
         "club actual": "RETIRADO",
         "posicion": ["Defensa Central", "Mediocampista Defensivo"],
-        "clubes totales": ["Newells", "Boca Juniors", "Roma", "Real Madrid", "Inter de Milán", "Basel"]
+        "clubes totales": ["Newells", "Boca Juniors", "AS Roma", "Real Madrid", "Inter de Milán", "Basel"]
     },
     {
         "id": 127,
@@ -1186,7 +1186,7 @@
         "Fecha de nacimiento": "12/04/1981",
         "club actual": "RETIRADO",
         "posicion": ["Defensa Central", "Lateral Derecho"],
-        "clubes totales": ["Boca Juniors", "Inter de Milán", "Roma", "Genoa", "Torino"]
+        "clubes totales": ["Boca Juniors", "Inter de Milán", "AS Roma", "Genoa", "Torino"]
     },
 
     {
@@ -1196,7 +1196,7 @@
         "Fecha de nacimiento": "14/11/1985",
         "club actual": "RETIRADO",
         "posicion": ["Defensa Central", "Lateral Izquierdo"],
-        "clubes totales": ["Ajax", "Arsenal", "Barcelona", "Roma", "Vissel Kobe"]
+        "clubes totales": ["Ajax", "Arsenal", "Barcelona", "AS Roma", "Vissel Kobe"]
     },
 
     {
@@ -1206,7 +1206,7 @@
         "Fecha de nacimiento": "02/04/1990",
         "club actual": "CSKA Moscú",
         "posicion": ["Mediocampista Central"],
-        "clubes totales": ["Metz", "Olympique Lyon", "Roma", "Juventus", "Barcelona", "Besiktas", "Sharjah FC", "CSKA Moscú"]
+        "clubes totales": ["Metz", "Olympique Lyon", "AS Roma", "Juventus", "Barcelona", "Besiktas", "Sharjah FC", "CSKA Moscú"]
     },
 
     {
@@ -1214,9 +1214,9 @@
         "nombre": "Paulo Dybala",
         "nacionalidad": "Argentina",
         "Fecha de nacimiento": "15/11/1993",
-        "club actual": "Roma",
+        "club actual": "AS Roma",
         "posicion": ["Delantero Centro", "Mediocampista Ofensivo"],
-        "clubes totales": ["Instituto", "Palermo", "Juventus", "Roma"]
+        "clubes totales": ["Instituto", "Palermo", "Juventus", "AS Roma"]
     },
 
     {
@@ -1369,7 +1369,7 @@
         "Fecha de nacimiento": "07/06/1970",
         "club actual": "RETIRADO",
         "posicion": ["Lateral Derecho", "Lateral Izquierdo", "Defensa Central", "Mediocampista Derecho"],
-        "clubes totales": ["São Paulo", "Real Zaragoza", "Palmeiras", "AC Milan", "Roma"]
+        "clubes totales": ["São Paulo", "Real Zaragoza", "Palmeiras", "AC Milan", "AS Roma"]
     },
 
     {
@@ -1474,7 +1474,7 @@
         "Fecha de nacimiento": "20/06/1989",
         "club actual": "RETIRADO",
         "posicion": ["Mediocampista Ofensivo", "Mediocampista Central", "Extremo Izquierdo"],
-        "clubes totales": ["Huracán", "Palermo", "Paris Saint-Germain", "Roma", "Elche", "Qatar SC"]
+        "clubes totales": ["Huracán", "Palermo", "Paris Saint-Germain", "AS Roma", "Elche", "Qatar SC"]
     },
 
     {
@@ -1586,7 +1586,7 @@
         "Fecha de nacimiento": "08/05/1970",
         "club actual": "RETIRADO",
         "posicion": ["Mediocampista Ofensivo", "Mediocampista Central", "Extremo Derecho", "Extremo Izquierdo"],
-        "clubes totales": ["Sporting Gijón", "Real Madrid", "Barcelona", "Roma"]
+        "clubes totales": ["Sporting Gijón", "Real Madrid", "Barcelona", "AS Roma"]
     },
 
     {
@@ -1665,9 +1665,9 @@
         "nombre": "Wojciech Szczęsny",
         "nacionalidad": "Polonia",    
         "Fecha de nacimiento": "18/04/1990",
-        "club actual": "AS Roma",
+        "club actual": "Barcelona",
         "posicion": ["Portero"],
-        "clubes totales": ["Arsenal", "Brentford", "Roma", "Juventus", "Barcelona"]
+        "clubes totales": ["Arsenal", "Brentford", "AS Roma", "Juventus", "Barcelona"]
     },
 
     {
@@ -1779,7 +1779,7 @@
         "Fecha de nacimiento": "24/09/1980",
         "club actual": "RETIRADO",
         "posicion": ["Lateral Izquierdo", "Lateral Derecho", "Mediocampista Izquierdo"],
-        "clubes totales": ["Aalesunds", "Monaco", "Liverpool", "Roma", "Fulham", "APOEL Nicosia", "Delhi Dynamos", "Chennaiyin FC"]
+        "clubes totales": ["Aalesunds", "Monaco", "Liverpool", "AS Roma", "Fulham", "APOEL Nicosia", "Delhi Dynamos", "Chennaiyin FC"]
     },
 
     {
@@ -1840,7 +1840,7 @@
         "Fecha de nacimiento": "28/08/1975",
         "club actual": "RETIRADO",
         "posicion": ["Defensa Central", "Mediocampista Defensivo", "Lateral Izquierdo"],
-        "clubes totales": ["Albacete", "Espanyol", "Roma", "Real Madrid", "Valencia"]
+        "clubes totales": ["Albacete", "Espanyol", "AS Roma", "Real Madrid", "Valencia"]
     },
 
     {
@@ -1851,7 +1851,7 @@
         "Fecha de nacimiento": "02/10/1992",
         "club actual": "Liverpool",
         "posicion": ["Portero"],
-        "clubes totales": ["Internacional", "Roma", "Liverpool"]
+        "clubes totales": ["Internacional", "AS Roma", "Liverpool"]
     },
 
     {
@@ -1892,7 +1892,7 @@
         "Fecha de nacimiento": "18/01/1971",
         "club actual": "RETIRADO",
         "posicion": ["Mediocampista Defensivo", "Mediocampista Central", "Mediocampista Ofensivo"],
-        "clubes totales": ["Barcelona", "Brescia", "Roma", "Al-Ahli", "Dorados de Sinaloa"]
+        "clubes totales": ["Barcelona", "Brescia", "AS Roma", "Al-Ahli", "Dorados de Sinaloa"]
     },
 
     {
@@ -2147,7 +2147,7 @@
         "Fecha de nacimiento": "12/07/1982",
         "club actual": "RETIRADO",
         "posicion": ["Mediocampista Ofensivo", "Delantero Centro", "Extremo Derecho", "Extremo Izquierdo"],
-        "clubes totales": ["Bari", "Roma", "Real Madrid", "AC Milan", "Inter de Milán", "Parma", "Sampdoria", "Verona"]
+        "clubes totales": ["Bari", "AS Roma", "Real Madrid", "AC Milan", "Inter de Milán", "Parma", "Sampdoria", "Verona"]
     },
     {
         "id": 224,
@@ -2157,7 +2157,7 @@
         "Fecha de nacimiento": "24/07/1983",
         "club actual": "RETIRADO",
         "posicion": ["Mediocampista Defensivo", "Mediocampista Central", "Mediocampista Ofensivo"],
-        "clubes totales": ["Roma", "Boca Juniors"]
+        "clubes totales": ["AS Roma", "Boca Juniors"]
     },
     {
         "id": 225,
@@ -2828,7 +2828,7 @@
         "Fecha de nacimiento": "21/01/1989",
         "club actual": "Inter de Milán",
         "posicion": ["Mediocampista Ofensivo", "Mediocampista Central", "Extremo Derecho", "Extremo Izquierdo"],
-        "clubes totales": ["Pyunik", "Metalurh Donetsk", "Shakhtar Donetsk", "Borussia Dortmund", "Manchester United", "Arsenal", "Roma", "Inter de Milán"]
+        "clubes totales": ["Pyunik", "Metalurh Donetsk", "Shakhtar Donetsk", "Borussia Dortmund", "Manchester United", "Arsenal", "AS Roma", "Inter de Milán"]
     },
     {
         "id": 299,
@@ -2855,7 +2855,7 @@
         "Fecha de nacimiento": "19/05/2002",
         "club actual": "Arsenal",
         "posicion": ["Lateral Izquierdo", "Mediocampista Izquierdo"],
-        "clubes totales": ["Roma", "Basel", "Bologna", "Arsenal"]
+        "clubes totales": ["AS Roma", "Basel", "Bologna", "Arsenal"]
     },
     {
         "id": 302,
@@ -3000,7 +3000,7 @@
         "Fecha de nacimiento": "26/05/1977",
         "club actual": "RETIRADO",
         "posicion": ["Delantero Centro"],
-        "clubes totales": ["Modena", "Empoli", "Fiorentina", "Palermo", "Bayern de Múnich", "Roma", "Genoa", "Juventus", "Hellas Verona", "Al-Nassr"]
+        "clubes totales": ["Modena", "Empoli", "Fiorentina", "Palermo", "Bayern de Múnich", "AS Roma", "Genoa", "Juventus", "Hellas Verona", "Al-Nassr"]
     },
     {
         "id": 318,
@@ -3072,7 +3072,7 @@
         "Fecha de nacimiento": "29/06/1994",
         "club actual": "Boca Juniors",
         "posicion": ["Mediocampista Defensivo", "Mediocampista Central", "Mediocampista Ofensivo"],
-        "clubes totales": ["Boca Juniors", "Roma", "Empoli", "Zenit", "Paris Saint-Germain", "Juventus"]
+        "clubes totales": ["Boca Juniors", "AS Roma", "Empoli", "Zenit", "Paris Saint-Germain", "Juventus"]
     },
     {
         "id": 326,
@@ -3136,7 +3136,7 @@
         "Fecha de nacimiento": "18/06/1989",
         "club actual": "Olympique de Marsella",
         "posicion": ["Delantero Centro", "Extremo Izquierdo", "Extremo Derecho"],
-        "clubes totales": ["Milan", "Dijon", "LOSC Lille", "Monaco", "Saint-Étienne", "Borussia Dortmund", "Arsenal", "Barcelona", "Chelsea", "Olympique de Marsella", "Al-Qadisiyah"]
+        "clubes totales": ["AC Milan", "Dijon", "LOSC Lille", "Monaco", "Saint-Étienne", "Borussia Dortmund", "Arsenal", "Barcelona", "Chelsea", "Olympique de Marsella", "Al-Qadisiyah"]
     },
     {
         "id": 333,
@@ -3275,6 +3275,34 @@
         "club actual": "RETIRADO",
         "posicion": ["Delantero Centro"],
         "clubes totales": ["Stuttgarter Kickers", "VfB Stuttgart", "Inter de Milán", "Monaco", "Tottenham Hotspur", "Bayern de Múnich", "Orange County Blue Star"]
+    },
+    {
+        "id": 348,
+        "nombre": "David Luiz Moreira Marinho",
+        "apodo": "David Luiz",
+        "nacionalidad": "Brasil",
+        "Fecha de nacimiento": "22/04/1987",
+        "club actual": "Pafos",
+        "posicion": ["Defensa Central", "Lateral Izquierdo"],
+        "clubes totales": ["Vasco da Gama", "Benfica", "Chelsea", "PSG", "Arsenal", "Flamengo", "Fortaleza", "Pafos"]
+    },
+    {
+        "id": 349,
+        "nombre": "Dean Huijsen",
+        "nacionalidad": "España",
+        "Fecha de nacimiento": "13/02/2005",
+        "club actual": "Real Madrid",
+        "posicion": ["Defensa Central"],
+        "clubes totales": ["Juventus", "AS Roma", "AFC Bournemouth", "Real Madrid"]
+    },
+    {
+        "id": 350,
+        "nombre": "Fernando Llorente",
+        "nacionalidad": "España",
+        "Fecha de nacimiento": "26/02/1985",
+        "club actual": "RETIRADO",
+        "posicion": ["Delantero Centro"],
+        "clubes totales": ["Athletic de Bilbao", "Juventus", "Napoli", "Tottenham Hotspur", "Swansea City", "Eibar", "Udinese", "Sassuolo"]
     }
 ]
 }
