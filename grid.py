@@ -119,6 +119,9 @@ def cargar_imagenes():
         imagenes["Inglaterra"] = pygame.image.load(os.path.join("image", "image_fut", "Inglaterra.png"))
         imagenes["Inglaterra"] = pygame.transform.scale(imagenes["Inglaterra"], (50,50))
 
+        imagenes["Países Bajos"] = pygame.image.load(os.path.join("image", "image_fut", "Países Bajos.png"))
+        imagenes["Países Bajos"] = pygame.transform.scale(imagenes["Países Bajos"], (50,50))
+
         print("Imágenes cargadas correctamente")
     except Exception as e:
         print(f"Error al cargar imágenes: {e}")
