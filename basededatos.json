@@ -986,7 +986,7 @@
         "Fecha de nacimiento": "04/04/1987",
         "club actual": "RETIRADO",
         "posicion": ["Mediocampista Defensivo", "Mediocampista Central", "Mediocampista Ofensivo"],
-        "clubes totales": ["Stuttgart", "Real Madrid", "Juventus", "Hertha BSC"]
+        "clubes totales": ["VFB Stuttgart", "Real Madrid", "Juventus", "Hertha BSC"]
     },
     {
         "id": 107,
@@ -2628,7 +2628,7 @@
         "Fecha de nacimiento": "03/09/1988",
         "club actual": "Lyon",
         "posicion": ["Defensa Central", "Lateral Derecho"],
-        "clubes totales": ["Hertha BSC", "Hamburgo", "Manchester City", "Bayern de Múnich", "Olympique Lyon", "Salernitana", "LASK"]
+        "clubes totales": ["Hertha BSC", "Hamburger SV", "Manchester City", "Bayern de Múnich", "Olympique Lyon", "Salernitana", "LASK"]
     },
     {
         "id": 277,
@@ -3154,7 +3154,7 @@
         "Fecha de nacimiento": "01/05/1968",
         "club actual": "RETIRADO",
         "posicion": ["Delantero Centro"],
-        "clubes totales": ["Darmstadt 98", "Hamburgo", "Hannover 96", "Kaiserslautern", "Udinese", "AC Milan", "Monaco"]
+        "clubes totales": ["Darmstadt 98", "Hamburger SV", "Hannover 96", "Kaiserslautern", "Udinese", "AC Milan", "Monaco"]
     },
     {
         "id": 335,
@@ -3303,6 +3303,99 @@
         "club actual": "RETIRADO",
         "posicion": ["Delantero Centro"],
         "clubes totales": ["Athletic de Bilbao", "Juventus", "Napoli", "Tottenham Hotspur", "Swansea City", "Eibar", "Udinese", "Sassuolo"]
+    },
+    {
+        "id": 351,
+        "nombre": "Filipe Luís Kasmirski",
+        "apodo": "Filipe Luís",
+        "nacionalidad": "Brasil",
+        "Fecha de nacimiento": "09/08/1985",
+        "club actual": "RETIRADO",
+        "posicion": ["Lateral Izquierdo", "Mediocampista Izquierdo"],
+        "clubes totales": ["Figueirense", "Deportivo La Coruña", "Atlético de Madrid", "Chelsea", "Flamengo"]
+    },
+    {
+        "id": 352,
+        "nombre": "Denis Law",
+        "nacionalidad": "Escocia",
+        "Fecha de nacimiento": "24/02/1940",
+        "club actual": "RETIRADO",
+        "posicion": ["Delantero Centro"],
+        "clubes totales": ["Huddersfield Town", "Manchester City", "Torino", "Manchester United"]
+    },
+    {
+        "id": 353,
+        "nombre": "Joao Cancelo",
+        "nacionalidad": "Portugal",
+        "Fecha de nacimiento": "27/05/1994",
+        "club actual": "Al-Hilal",
+        "posicion": ["Lateral Derecho", "Lateral Izquierdo", "Mediocampista Derecho", "Mediocampista Izquierdo"],
+        "clubes totales": ["Benfica", "Valencia", "Inter de Milán", "Juventus", "Manchester City", "Bayern de Múnich", "Al-Hilal"]
+    },
+    {
+        "id": 354,
+        "nombre": "Mateo Kovacic",
+        "nacionalidad": "Croacia",
+        "Fecha de nacimiento": "06/05/1994",
+        "club actual": "Manchester City",
+        "posicion": ["Mediocampista Central", "Mediocampista Ofensivo", "Mediocampista Defensivo"],
+        "clubes totales": ["Dinamo Zagreb", "Inter de Milán", "Real Madrid", "Chelsea", "Manchester City"]
+    },
+    {
+        "id": 355,
+        "nombre": "Jaap Stam",
+        "nacionalidad": "Países Bajos",
+        "Fecha de nacimiento": "17/07/1972",
+        "club actual": "RETIRADO",
+        "posicion": ["Defensa Central"],
+        "clubes totales": ["FC Zwolle", "Cambuur", "Willem II", "PSV Eindhoven", "Manchester United", "Lazio", "AC Milan", "Ajax"]
+    },
+    {
+        "id": 356,
+        "nombre": "Matthijs de Ligt",
+        "apodo": "de Ligt",
+        "nacionalidad": "Países Bajos",
+        "Fecha de nacimiento": "12/08/1999",
+        "club actual": "Manchester United",
+        "posicion": ["Defensa Central"],
+        "clubes totales": ["Ajax", "Juventus", "Bayern de Múnich", "Manchester United"]
+    },
+    {
+        "id": 357,
+        "nombre": "Mark van Bommel",
+        "apodo": "van Bommel",
+        "nacionalidad": "Países Bajos",
+        "Fecha de nacimiento": "22/04/1977",
+        "club actual": "RETIRADO",
+        "posicion": ["Mediocampista Defensivo", "Mediocampista Central"],
+        "clubes totales": ["MVV Maastricht", "PSV Eindhoven", "Barcelona", "Bayern de Múnich", "AC Milan", "VfL Wolfsburgo"]
+    },
+    {
+        "id": 358,
+        "nombre": "Khalid Boulahrouz",
+        "nacionalidad": "Países Bajos",
+        "Fecha de nacimiento": "28/12/1981",
+        "club actual": "RETIRADO",
+        "posicion": ["Defensa Central", "Lateral Derecho"],
+        "clubes totales": ["Waalwijk", "Hamburger SV", "Chelsea", "Sevilla", "VFB Stuttgart", "Sporting de Lisboa", "Feyenoord", "VVV-Venlo"]
+    },
+    {
+        "id": 359,
+        "nombre": "Nathan Aké",
+        "nacionalidad": "Países Bajos",
+        "Fecha de nacimiento": "18/02/1995",
+        "club actual": "Manchester City",
+        "posicion": ["Defensa Central", "Lateral Izquierdo", "Lateral Derecho"],
+        "clubes totales": ["Chelsea", "Reading", "Watford", "Bournemouth", "Manchester City"]
+    },
+    {
+        "id": 360,
+        "nombre": "Virgil van Dijk",
+        "nacionalidad": "Países Bajos",
+        "Fecha de nacimiento": "08/07/1991",
+        "club actual": "Liverpool",
+        "posicion": ["Defensa Central"],
+        "clubes totales": ["Groningen", "Celtic", "Southampton", "Liverpool"]
     }
 ]
 }
