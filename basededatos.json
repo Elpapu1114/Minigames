@@ -2547,7 +2547,7 @@
         "Fecha de nacimiento": "21/05/1986",
         "club actual": "RETIRADO",
         "posicion": ["Delantero Centro", "Extremo Derecho", "Extremo Izquierdo"],
-        "clubes totales": ["Zagreb", "Dinamo Zagreb", "Wolfsburgo", "Bayern de Múnich", "Atlético de Madrid", "Juventus", "Al-Duhail", "AC Milan"]
+        "clubes totales": ["Zagreb", "Dinamo Zagreb", "VFL Wolfsburgo", "Bayern de Múnich", "Atlético de Madrid", "Juventus", "Al-Duhail", "AC Milan"]
     },
     {
         "id": 268,
@@ -2946,7 +2946,7 @@
         "Fecha de nacimiento": "02/02/1989",
         "club actual": "PSV Eindhoven",
         "posicion": ["Extremo Izquierdo", "Extremo Derecho", "Mediocampista Ofensivo"],
-        "clubes totales": ["Sochaux", "Club Brugge", "Borussia Dortmund", "Wolfsburgo", "Inter de Milán", "Bayern de Múnich", "Tottenham Hotspur", "PSV Eindhoven"]
+        "clubes totales": ["Sochaux", "Club Brugge", "Borussia Dortmund", "VFL Wolfsburgo", "Inter de Milán", "Bayern de Múnich", "Tottenham Hotspur", "PSV Eindhoven"]
     },
     {
         "id": 312,
@@ -3134,9 +3134,9 @@
         "nombre": "Pierre-Emerick Aubameyang",
         "nacionalidad": "Gabón",
         "Fecha de nacimiento": "18/06/1989",
-        "club actual": "Olympique de Marsella",
+        "club actual": "Olympique Marseille",
         "posicion": ["Delantero Centro", "Extremo Izquierdo", "Extremo Derecho"],
-        "clubes totales": ["AC Milan", "Dijon", "LOSC Lille", "Monaco", "Saint-Étienne", "Borussia Dortmund", "Arsenal", "Barcelona", "Chelsea", "Olympique de Marsella", "Al-Qadisiyah"]
+        "clubes totales": ["AC Milan", "Dijon", "LOSC Lille", "Monaco", "Saint-Étienne", "Borussia Dortmund", "Arsenal", "Barcelona", "Chelsea", "Olympique Marseille", "Al-Qadisiyah"]
     },
     {
         "id": 333,
@@ -3210,7 +3210,7 @@
         "Fecha de nacimiento": "13/08/1994",
         "club actual": "Botafogo",
         "posicion": ["Mediocampista Ofensivo", "Extremo Derecho", "Extremo Izquierdo"],
-        "clubes totales": ["Estudiantes de La Plata", "Sampdoria", "Sevilla", "Lazio", "Inter de Milán", "Olympique de Marsella", "Botafogo"]
+        "clubes totales": ["Estudiantes de La Plata", "Sampdoria", "Sevilla", "Lazio", "Inter de Milán", "Olympique Marseille", "Botafogo"]
     },
     {
         "id": 341,
@@ -3396,6 +3396,52 @@
         "club actual": "Liverpool",
         "posicion": ["Defensa Central"],
         "clubes totales": ["Groningen", "Celtic", "Southampton", "Liverpool"]
+    },
+    {
+        "id": 361,
+        "nombre": "Memphis Depay",
+        "nacionalidad": "Países Bajos",
+        "Fecha de nacimiento": "13/02/1994",
+        "club actual": "Atlético de Madrid",
+        "posicion": ["Extremo Izquierdo", "Extremo Derecho", "Delantero Centro"],
+        "clubes totales": ["PSV Eindhoven", "Manchester United", "Olympique Lyon", "Barcelona", "Atlético de Madrid"]
+    },
+    {
+        "id": 362,
+        "nombre": "Wout Weghorst",
+        "nacionalidad": "Países Bajos",
+        "Fecha de nacimiento": "07/08/1992",
+        "club actual": "Ajax",
+        "posicion": ["Delantero Centro"],
+        "clubes totales": ["Emmen", "Heracles Almelo", "AZ Alkmaar", "VFL Wolfsburgo", "Burnley", "Besiktas", "Manchester United", "Hoffenheim", "Ajax"]
+    },
+    {
+        "id": 363,
+        "nombre": "Patrice Evra",
+        "nacionalidad": "Francia",
+        "Fecha de nacimiento": "15/05/1981",
+        "club actual": "RETIRADO",
+        "posicion": ["Lateral Izquierdo", "Defensa Central"],
+        "clubes totales": ["Monaco", "Manchester United", "Juventus", "Olympique Marseille", "West Ham United", "Lille"]
+    },
+    {
+        "id": 364,
+        "nombre": "Raphaël Varane",
+        "nacionalidad": "Francia",
+        "Fecha de nacimiento": "25/04/1993",
+        "club actual": "RETIRADO",
+        "posicion": ["Defensa Central"],
+        "clubes totales": ["Lens", "Real Madrid", "Manchester United", "Como 1907"]
+    },
+    {
+        "id": 365,
+        "nombre": "Dani Alves da Silva",
+        "apodo": "Dani Alves",
+        "nacionalidad": "Brasil",
+        "Fecha de nacimiento": "06/05/1983",
+        "club actual": "RETIRADO",
+        "posicion": ["Lateral Derecho", "Lateral Izquierdo", "Mediocampista Derecho"],
+        "clubes totales": ["Bahia", "Sevilla", "Barcelona", "Juventus", "Paris Saint-Germain", "São Paulo", "FC Barcelona", "Pumas"]
     }
 ]
 }
