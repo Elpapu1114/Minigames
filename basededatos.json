@@ -3442,6 +3442,412 @@
         "club actual": "RETIRADO",
         "posicion": ["Lateral Derecho", "Lateral Izquierdo", "Mediocampista Derecho"],
         "clubes totales": ["Bahia", "Sevilla", "Barcelona", "Juventus", "Paris Saint-Germain", "São Paulo", "FC Barcelona", "Pumas"]
+    },
+    {
+        "id": 366,
+        "nombre": "Diego Forlán",
+        "nacionalidad": "Uruguay",
+        "Fecha de nacimiento": "19/05/1979",
+        "club actual": "RETIRADO",
+        "posicion": ["Delantero Centro"],
+        "clubes totales": ["Independiente", "Manchester United", "Villarreal", "Atlético de Madrid", "Inter de Milán", "Internacional", "Cerezo Osaka", "Peñarol", "Mumbai City"]
+    },
+    {
+        "id": 367,
+        "nombre": "Ibrahima Konaté",
+        "nacionalidad": "Francia",
+        "Fecha de nacimiento": "25/05/1999",
+        "club actual": "Liverpool",
+        "posicion": ["Defensa Central"],
+        "clubes totales": ["RB Leipzig", "Liverpool"]
+    },
+    {
+        "id": 368,
+        "nombre": "Hugo Ekitiké",
+        "nacionalidad": "Francia",
+        "Fecha de nacimiento": "20/06/2002",
+        "club actual": "Liverpool",
+        "posicion": ["Delantero Centro", "Extremo Derecho", "Extremo Izquierdo"],
+        "clubes totales": ["Reims", "Paris Saint-Germain", "Eintracht Frankfurt", "Liverpool"]
+    },
+    {
+        "id": 369,
+        "nombre": "Joe Gomez",
+        "nacionalidad": "Inglaterra",
+        "Fecha de nacimiento": "23/05/1997",
+        "club actual": "Liverpool",
+        "posicion": ["Defensa Central", "Lateral Derecho"],
+        "clubes totales": ["Charlton Athletic", "Liverpool"]
+    },
+    {
+        "id": 370,
+        "nombre": "Xherdan Shaqiri",
+        "nacionalidad": "Suiza",
+        "Fecha de nacimiento": "10/10/1991",
+        "club actual": "Basel",
+        "posicion": ["Extremo Derecho", "Extremo Izquierdo", "Mediocampista Ofensivo"],
+        "clubes totales": ["Basel", "Bayern de Múnich", "Inter de Milán", "Stoke City", "Liverpool", "Olympique Lyon", "Chicago Fire"]
+    },
+    {
+        "id": 371,
+        "nombre": "Florian Wirtz",
+        "nacionalidad": "Alemania",
+        "Fecha de nacimiento": "03/05/2003",
+        "club actual": "Bayer Leverkusen",
+        "posicion": ["Mediocampista Ofensivo", "Mediocampista Central", "Extremo Derecho", "Extremo Izquierdo"],
+        "clubes totales": ["Bayer Leverkusen", "Liverpool"]
+    },
+    {
+        "id": 372,
+        "nombre": "Jeremie Frimpong",
+        "nacionalidad": "Países Bajos",
+        "Fecha de nacimiento": "05/06/2000",
+        "club actual": "Liverpool",
+        "posicion": ["Lateral Derecho", "Mediocampista Derecho"],
+        "clubes totales": ["Celtic", "Bayer Leverkusen", "Liverpool"]
+    },
+    {
+        "id": 373,
+        "nombre": "Dominik Szoboszlai",
+        "nacionalidad": "Hungría",
+        "Fecha de nacimiento": "25/10/2000",
+        "club actual": "Liverpool",
+        "posicion": ["Mediocampista Ofensivo", "Mediocampista Central", "Mediocampista Derecho", "Mediocampista Izquierdo"],
+        "clubes totales": ["Liefering", "RB Salzburgo", "RB Leipzig", "Liverpool"]
+    },
+    {
+        "id": 374,
+        "nombre": "Alphonso Davies",
+        "nacionalidad": "Canadá",
+        "Fecha de nacimiento": "02/11/2000",
+        "club actual": "Bayern de Múnich",
+        "posicion": ["Lateral Izquierdo", "Mediocampista Izquierdo", "Defensa Central"],
+        "clubes totales": ["Vancouver Whitecaps", "Bayern de Múnich"]
+    },
+    {
+        "id": 375,
+        "nombre": "Jamal Musiala",
+        "nacionalidad": "Alemania",
+        "Fecha de nacimiento": "26/02/2003",
+        "club actual": "Bayern de Múnich",
+        "posicion": ["Mediocampista Ofensivo", "Mediocampista Central", "Extremo Derecho", "Extremo Izquierdo"],
+        "clubes totales": ["Bayern de Múnich"]
+    },
+    {
+        "id": 376,
+        "nombre": "Alexander Isak",
+        "nacionalidad": "Suecia",
+        "Fecha de nacimiento": "21/09/1999",
+        "club actual": "Liverpool",
+        "posicion": ["Delantero Centro", "Extremo Derecho", "Extremo Izquierdo"],
+        "clubes totales": ["AIK Solna", "Borussia Dortmund", "Willem II", "Real Sociedad", "Newcastle United", "Liverpool"]
+    },
+    {
+        "id": 377,
+        "nombre": "Darwin Núñez",
+        "nacionalidad": "Uruguay",
+        "Fecha de nacimiento": "24/06/1999",
+        "club actual": "Al-Hilal",
+        "posicion": ["Delantero Centro", "Extremo Derecho", "Extremo Izquierdo"],
+        "clubes totales": ["Peñarol", "Almería", "Benfica", "Liverpool", "Al-Hilal"]
+    },
+    {
+        "id": 378,
+        "nombre": "Federico Chiesa",
+        "nacionalidad": "Italia",
+        "Fecha de nacimiento": "25/10/1997",
+        "club actual": "Liverpool",
+        "posicion": ["Extremo Derecho", "Extremo Izquierdo", "Mediocampista Ofensivo"],
+        "clubes totales": ["Fiorentina", "Juventus", "Liverpool"]
+    },
+    {
+        "id": 379,
+        "nombre": "Nicolo Barella",
+        "nacionalidad": "Italia",
+        "Fecha de nacimiento": "07/02/1997",
+        "club actual": "Inter de Milán",
+        "posicion": ["Mediocampista Central", "Mediocampista Defensivo", "Mediocampista Ofensivo"],
+        "clubes totales": ["Cagliari", "Como 1907", "Inter de Milán"]  
+    },
+    {
+        "id": 380,
+        "nombre": "Lorenzo Insigne",
+        "nacionalidad": "Italia",
+        "Fecha de nacimiento": "04/06/1991",
+        "club actual": "Toronto FC",
+        "posicion": ["Extremo Izquierdo", "Extremo Derecho", "Mediocampista Ofensivo"],
+        "clubes totales": ["Napoli", "Cavese", "Foggia", "Pescara", "Toronto FC"]
+    },
+    {
+        "id": 381,
+        "nombre": "Ryan Gravenberch",
+        "nacionalidad": "Países Bajos",
+        "Fecha de nacimiento": "16/05/2002",
+        "club actual": "Liverpool",
+        "posicion": ["Mediocampista Central", "Mediocampista Defensivo", "Mediocampista Ofensivo"],
+        "clubes totales": ["Ajax", "Bayern de Múnich", "Liverpool"]
+    },
+    {
+        "id": 382,
+        "nombre": "Matteo Politano",
+        "nacionalidad": "Italia",
+        "Fecha de nacimiento": "03/08/1993",
+        "club actual": "Napoli",
+        "posicion": ["Extremo Derecho", "Extremo Izquierdo", "Mediocampista Ofensivo"],
+        "clubes totales": ["Pescara", "Perugia", "Sassuolo", "Inter de Milán", "Napoli"]
+    },
+    {
+        "id": 383,
+        "nombre": "Cody Gakpo",
+        "nacionalidad": "Países Bajos",
+        "Fecha de nacimiento": "07/05/1999",
+        "club actual": "Liverpool",
+        "posicion": ["Extremo Izquierdo", "Extremo Derecho", "Delantero Centro"],
+        "clubes totales": ["PSV Eindhoven", "Liverpool"]
+    },
+    {
+        "id": 384,
+        "nombre": "Giorgi Mamardashvili",
+        "nacionalidad": "Georgia",
+        "Fecha de nacimiento": "27/02/2000",
+        "club actual": "Valencia",
+        "posicion": ["Portero"],
+        "clubes totales": ["Dinamo Tiflis", "Valencia", "Liverpool"]
+    },
+    {
+        "id": 385,
+        "nombre": "Curtis Jones",
+        "nacionalidad": "Inglaterra",
+        "Fecha de nacimiento": "30/01/2001",
+        "club actual": "Liverpool",
+        "posicion": ["Mediocampista Central", "Mediocampista Ofensivo"],
+        "clubes totales": ["Liverpool"]
+    },
+    {
+        "id": 386,
+        "nombre": "Wataru Endo",
+        "nacionalidad": "Japón",
+        "Fecha de nacimiento": "09/02/1993",
+        "club actual": "Liverpool",
+        "posicion": ["Mediocampista Defensivo", "Mediocampista Central", "Defensa Central"],
+        "clubes totales": ["Shonan Bellmare", "Urawa Red Diamonds", "Sint-Truidense", "VFB Stuttgart", "Liverpool"]
+    },
+    {
+        "id": 387,
+        "nombre": "Takumi Minamino",
+        "nacionalidad": "Japón",
+        "Fecha de nacimiento": "16/01/1995",
+        "club actual": "Monaco",
+        "posicion": ["Extremo Derecho", "Extremo Izquierdo", "Mediocampista Ofensivo"],
+        "clubes totales": ["Cerezo Osaka", "Red Bull Salzburgo", "Liverpool", "Southampton", "Monaco"]
+    },
+    {
+        "id": 388,
+        "nombre": "Andre Onana",
+        "nacionalidad": "Camerún",
+        "Fecha de nacimiento": "02/04/1996",
+        "club actual": "Trabzonspor",
+        "posicion": ["Portero"],
+        "clubes totales": ["Ajax", "Inter de Milán", "Manchester United", "Trabzonspor"]
+    },
+    {
+        "id": 389,
+        "nombre": "Divock Origi",
+        "nacionalidad": "Bélgica",
+        "Fecha de nacimiento": "18/04/1995",
+        "club actual": "AC Milan",
+        "posicion": ["Delantero Centro", "Extremo Derecho", "Extremo Izquierdo"],
+        "clubes totales": ["LOSC Lille", "Liverpool", "Wolfsburgo", "AC Milan", "Nottingham Forest"]
+    },
+    {
+        "id": 390,
+        "nombre": "Harvey Elliott",
+        "nacionalidad": "Inglaterra",
+        "Fecha de nacimiento": "04/04/2003",
+        "club actual": "Aston Villa",
+        "posicion": ["Mediocampista Ofensivo", "Mediocampista Central", "Extremo Derecho", "Extremo Izquierdo"],
+        "clubes totales": ["Fulham", "Liverpool", "Blackburn Rovers", "Aston Villa"]
+    },
+    {
+        "id": 391,
+        "nombre": "Lisandro Martínez",
+        "nacionalidad": "Argentina",
+        "Fecha de nacimiento": "18/01/1998",
+        "club actual": "Manchester United",
+        "posicion": ["Defensa Central", "Mediocampista Defensivo"],
+        "clubes totales": ["Newell's", "Defensa y Justicia", "Ajax", "Manchester United"]
+    },
+    {
+        "id": 392,
+        "nombre": "Leny Yoro",
+        "nacionalidad": "Francia",
+        "Fecha de nacimiento": "13/11/2005",
+        "club actual": "Manchester United",
+        "posicion": ["Defensa Central", "Lateral Derecho"],
+        "clubes totales": ["Lille", "Manchester United"]
+    },
+    {
+        "id": 393,
+        "nombre": "Rasmus Hojlund",
+        "nacionalidad": "Dinamarca",
+        "Fecha de nacimiento": "04/02/2003",
+        "club actual": "Manchester United",
+        "posicion": ["Delantero Centro"],
+        "clubes totales": ["Copenhagen", "Atalanta", "Manchester United", "Napoli"]
+    },
+    {
+        "id": 394,
+        "nombre": "Diogo Dalot",
+        "nacionalidad": "Portugal",
+        "Fecha de nacimiento": "18/03/1999",
+        "club actual": "Manchester United",
+        "posicion": ["Lateral Derecho", "Lateral Izquierdo", "Mediocampista Derecho"],
+        "clubes totales": ["Porto", "Manchester United", "AC Milan"]
+    },
+    {
+        "id": 395,
+        "nombre": "Facundo Pellistri",
+        "nacionalidad": "Uruguay",
+        "Fecha de nacimiento": "20/12/2001",
+        "club actual": "Panathinaikos",
+        "posicion": ["Extremo Derecho", "Extremo Izquierdo", "Mediocampista Ofensivo"],
+        "clubes totales": ["Peñarol", "Manchester United", "Alavés", "Granada", "Panathinaikos"]
+    },
+    {
+        "id": 396,
+        "nombre": "Anthony Elanga",
+        "nacionalidad": "Suecia",
+        "Fecha de nacimiento": "27/04/2002",
+        "club actual": "Newcastle United",
+        "posicion": ["Extremo Izquierdo", "Extremo Derecho", "Delantero Centro"],
+        "clubes totales": ["Manchester United", "Nottingham Forest", "Newcastle United"]
+    },
+    {
+        "id": 397,
+        "nombre": "Bruno Fernandes",
+        "nacionalidad": "Portugal",
+        "Fecha de nacimiento": "08/09/1994",
+        "club actual": "Manchester United",
+        "posicion": ["Mediocampista Ofensivo", "Mediocampista Central"],
+        "clubes totales": ["Novara", "Udinese", "Sampdoria", "Sporting de Lisboa", "Manchester United"]
+    },
+    {
+        "id": 398,
+        "nombre": "Altay Bayindir",
+        "nacionalidad": "Turquía",
+        "Fecha de nacimiento": "14/04/1998",
+        "club actual": "Manchester United",
+        "posicion": ["Portero"],
+        "clubes totales": ["Fenerbahçe", "Manchester United"]
+    },
+    {
+        "id": 399,
+        "nombre": "Luke Shaw",
+        "nacionalidad": "Inglaterra",
+        "Fecha de nacimiento": "12/07/1995",
+        "club actual": "Manchester United",
+        "posicion": ["Lateral Izquierdo", "Mediocampista Izquierdo"],
+        "clubes totales": ["Southampton", "Manchester United"]
+    },
+    {
+        "id": 400,
+        "nombre": "Raphaël Guerreiro",
+        "nacionalidad": "Portugal",
+        "Fecha de nacimiento": "22/12/1993",
+        "club actual": "Bayern de Múnich",
+        "posicion": ["Lateral Izquierdo", "Mediocampista Izquierdo", "Defensa Central"],
+        "clubes totales": ["Caen", "Lorient", "Borussia Dortmund", "Bayern de Múnich"]
+    },
+    {
+        "id": 401,
+        "nombre": "Noussair Mazraoui",
+        "nacionalidad": "Marruecos",
+        "Fecha de nacimiento": "14/11/1997",
+        "club actual": "Manchester United",
+        "posicion": ["Lateral Derecho", "Mediocampista Derecho"],
+        "clubes totales": ["Ajax", "Bayern de Múnich", "Manchester United"]
+    },
+    {
+        "id": 402,
+        "nombre": "Tyrell Malacia",
+        "nacionalidad": "Países Bajos",
+        "Fecha de nacimiento": "17/08/1999",
+        "club actual": "PSV Eindhoven",
+        "posicion": ["Lateral Izquierdo"],
+        "clubes totales": ["Feyenoord", "Manchester United", "PSV Eindhoven"]
+    },
+    {
+        "id": 403,
+        "nombre": "Patrick Dorgu",
+        "nacionalidad": "Dinamarca",
+        "Fecha de nacimiento": "26/10/2004",
+        "club actual": "Manchester United",
+        "posicion": ["Defensa Central", "Lateral Izquierdo", "Mediocampista Izquierdo"],
+        "clubes totales": ["Lecce", "Manchester United"]
+    },
+    {
+        "id": 404,
+        "nombre": "Manuel Ugarte",
+        "nacionalidad": "Uruguay",
+        "Fecha de nacimiento": "11/02/2001",
+        "club actual": "Manchester United",
+        "posicion": ["Mediocampista Defensivo", "Mediocampista Central"],
+        "clubes totales": ["Fénix", "Famalicao", "Sporting de Lisboa", "Paris Saint-Germain", "Manchester United"]
+    },
+    {
+        "id": 405,
+        "nombre": "Amad Diallo",
+        "nacionalidad": "Costa de Marfil",
+        "Fecha de nacimiento": "11/07/2002",
+        "club actual": "Manchester United",
+        "posicion": ["Extremo Derecho", "Extremo Izquierdo", "Mediocampista Ofensivo"],
+        "clubes totales": ["Atalanta", "Manchester United", "Sunderland", "Rangers"]
+    },
+    {
+        "id": 406,
+        "nombre": "Matheus Cunha",
+        "nacionalidad": "Brasil",
+        "Fecha de nacimiento": "27/05/1999",
+        "club actual": "Manchester United",
+        "posicion": ["Delantero Centro", "Extremo Derecho", "Extremo Izquierdo"],
+        "clubes totales": ["RB Leipzig", "Hertha BSC", "Atlético de Madrid", "Wolverhampton Wanderers", "Manchester United"]
+    },
+    {
+        "id": 407,
+        "nombre": "Joshua Zirkzee",
+        "nacionalidad": "Países Bajos",
+        "Fecha de nacimiento": "22/05/2001",
+        "club actual": "Manchester United",
+        "posicion": ["Delantero Centro"],
+        "clubes totales": ["Bayern de Múnich", "Parma", "Anderlecht", "Bologna", "Manchester United"]
+    },
+    {
+        "id": 408,
+        "nombre": "Alejandro Garnacho",
+        "nacionalidad": "Argentina",
+        "Fecha de nacimiento": "01/07/2004",
+        "club actual": "Chelsea",
+        "posicion": ["Extremo Izquierdo", "Extremo Derecho", "Delantero Centro"],
+        "clubes totales": ["Manchester United", "Chelsea"]
+    },
+    {
+        "id": 409,
+        "nombre": "Bryan Mbeumo",
+        "nacionalidad": "Camerún",
+        "Fecha de nacimiento": "07/08/1999",
+        "club actual": "Manchester United",
+        "posicion": ["Extremo Derecho", "Extremo Izquierdo", "Delantero Centro"],
+        "clubes totales": ["Troyes", "Brentford", "Manchester United"]
+    },
+    {
+        "id": 410,
+        "nombre": "Benjamin Sesko",
+        "nacionalidad": "Eslovenia",
+        "Fecha de nacimiento": "31/05/2003",
+        "club actual": "Manchester United",
+        "posicion": ["Delantero Centro"],
+        "clubes totales": ["Domžale", "RB Salzburgo", "RB Leipzig", "Manchester United"]
     }
+
 ]
 }
