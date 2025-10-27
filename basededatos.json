@@ -3847,6 +3847,116 @@
         "club actual": "Manchester United",
         "posicion": ["Delantero Centro"],
         "clubes totales": ["Domžale", "RB Salzburgo", "RB Leipzig", "Manchester United"]
+    },
+    {
+        "id": 411,
+        "nombre": "Rico Lewis",
+        "nacionalidad": "Inglaterra",
+        "Fecha de nacimiento": "21/11/2004",
+        "club actual": "Manchester City",
+        "posicion": ["Lateral Derecho", "Mediocampista Derecho"],
+        "clubes totales": ["Manchester City"]
+    },
+    {
+        "id": 412,
+        "nombre": "Ederson Santana de Moraes",
+        "apodo": "Ederson",
+        "nacionalidad": "Brasil",
+        "Fecha de nacimiento": "17/08/1993",
+        "club actual": "Fenerbahçe",
+        "posicion": ["Portero"],
+        "clubes totales": ["Ribeirao", "Benfica", "Rio Ave", "Manchester City", "Fenerbahçe"]
+    },
+    {
+        "id": 413,
+        "nombre": "Stefan Ortega",
+        "nacionalidad": "Alemania",
+        "Fecha de nacimiento": "06/11/1992",
+        "club actual": "Manchester City",
+        "posicion": ["Portero"],
+        "clubes totales": ["Arminia Bielefeld", "1860 Munich", "Manchester City"]
+    },
+    {
+        "id": 414,
+        "nombre": "Ruben Dias",
+        "nacionalidad": "Portugal",
+        "Fecha de nacimiento": "14/05/1997",
+        "club actual": "Manchester City",
+        "posicion": ["Defensa Central"],
+        "clubes totales": ["Benfica", "Manchester City"]
+    },
+    {
+        "id": 415,
+        "nombre": "John Stones",
+        "nacionalidad": "Inglaterra",
+        "Fecha de nacimiento": "28/05/1994",
+        "club actual": "Manchester City",
+        "posicion": ["Defensa Central", "Lateral Derecho"],
+        "clubes totales": ["Barnsley", "Everton", "Manchester City"]
+    },
+    {
+        "id": 416,
+        "nombre": "Josko Gvardiol",
+        "nacionalidad": "Croacia",
+        "Fecha de nacimiento": "23/01/2002",
+        "club actual": "Manchester City",
+        "posicion": ["Defensa Central", "Lateral Izquierdo"],
+        "clubes totales": ["Dinamo Zagreb", "RB Leipzig", "Manchester City"]
+    },
+    {
+        "id": 417,
+        "nombre": "Rayan Ait-Nouri",
+        "nacionalidad": "Argelia",
+        "Fecha de nacimiento": "06/06/2001",
+        "club actual": "Manchester City",
+        "posicion": ["Lateral Izquierdo", "Defensa Central"],
+        "clubes totales": ["Angers", "Wolverhampton Wanderers", "Manchester City"]
+    },
+    {
+        "id": 418,
+        "nombre": "Tijjani Reijnders",
+        "nacionalidad": "Países Bajos",
+        "Fecha de nacimiento": "27/04/1998",
+        "club actual": "Manchester City",
+        "posicion": ["Mediocampista Central", "Mediocampista Defensivo", "Mediocampista Ofensivo"],
+        "clubes totales": ["FC Zwolle", "AZ Alkmaar", "Waalwijk", "AC Milan", "Manchester City"]
+    },
+    {
+        "id": 419,
+        "nombre": "Rayan Cherki",
+        "nacionalidad": "Francia",
+        "Fecha de nacimiento": "17/08/2003",
+        "club actual": "Manchester City",
+        "posicion": ["Mediocampista Ofensivo", "Extremo Derecho", "Extremo Izquierdo"],
+        "clubes totales": ["Olympique Lyon", "Manchester City"]
+    },
+    {
+        "id": 420,
+        "nombre": "Jeremy Doku",
+        "nacionalidad": "Bélgica",
+        "Fecha de nacimiento": "27/05/2002",
+        "club actual": "Manchester City",
+        "posicion": ["Extremo Izquierdo", "Extremo Derecho", "Delantero Centro"],
+        "clubes totales": ["Anderlecht", "Rennes", "Manchester City"]
+    },
+    {
+        "id": 421,
+        "nombre": "Matheus Nunes",
+        "nacionalidad": "Portugal",
+        "Fecha de nacimiento": "27/08/1998",
+        "club actual": "Manchester City",
+        "posicion": ["Mediocampista Central", "Mediocampista Defensivo", "Mediocampista Ofensivo"],
+        "clubes totales": ["Sporting de Lisboa", "Wolverhampton Wanderers", "Manchester City"]
+    },
+    {
+        "id": 422,
+        "nombre": "Savio Moreira de Oliveira",
+        "apodo": "Savinho",
+        "nacionalidad": "Brasil",
+        "Fecha de nacimiento": "10/05/2004",
+        "club actual": "Manchester City",
+        "posicion": ["Extremo Derecho", "Extremo Izquierdo", "Mediocampista Ofensivo"],
+        "clubes totales": ["Atlético Mineiro", "Troyes", "PSV Eindhoven", "Girona", "Manchester City"]
     }
 
 ]
