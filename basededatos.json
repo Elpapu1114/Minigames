@@ -269,7 +269,7 @@
         "nombre": "Diego Maradona",
         "nacionalidad": "Argentina",    
         "Fecha de nacimiento": "30/10/1960",
-        "club actual": "FALLECIDO",
+        "club actual": "RETIRADO",
         "posicion": ["Mediocampista Ofensivo", "Delantero Centro", "Extremo Derecho", "Extremo Izquierdo"],
         "clubes totales": ["Argentinos Juniors", "Boca Juniors", "Barcelona", "Napoli", "Sevilla", "Newells"]
     },
@@ -460,7 +460,7 @@
         "apodo": "Pelé",
         "nacionalidad": "Brasil",    
         "Fecha de nacimiento": "23/10/1940",
-        "club actual": "FALLECIDO",
+        "club actual": "RETIRADO",
         "posicion": ["Delantero Centro", "Extremo Derecho", "Extremo Izquierdo"],
         "clubes totales": ["Santos", "New York Cosmos"]
     },
@@ -479,7 +479,7 @@
         "nombre": "Johan Cruyff",
         "nacionalidad": "Países Bajos",    
         "Fecha de nacimiento": "25/04/1947",
-        "club actual": "FALLECIDO",
+        "club actual": "RETIRADO",
         "posicion": ["Mediocampista Ofensivo", "Delantero Centro", "Extremo Derecho", "Extremo Izquierdo"],
         "clubes totales": ["Ajax", "Barcelona", "Los Angeles Aztecs", "Washington Diplomats", "Levante", "Feyenoord"]
     },
@@ -698,7 +698,7 @@
         "nombre": "Franz Anton Beckenbauer",
         "nacionalidad": "Alemania",    
         "Fecha de nacimiento": "11/09/1945",
-        "club actual": "FALLECIDO",
+        "club actual": "RETIRADO",
         "posicion": ["Defensa Central", "Mediocampista Defensivo", "Lateral Derecho", "Lateral Izquierdo"],
         "clubes totales": ["Bayern de Múnich", "New York Cosmos", "Hamburger SV"]
     },
@@ -831,7 +831,7 @@
         "apodo": "Diogo Jota",
         "nacionalidad": "Portugal",    
         "Fecha de nacimiento": "04/12/1996",
-        "club actual": "FALLECIDO",
+        "club actual": "RETIRADO",
         "posicion": ["Extremo Derecho", "Extremo Izquierdo", "Delantero Centro"],
         "clubes totales": ["Paços de Ferreira", "Atlético de Madrid", "Porto", "Wolverhampton Wanderers", "Liverpool"]
     },
@@ -1662,7 +1662,7 @@
 
     {
         "id": 174,
-        "nombre": "Wojciech Szczęsny",
+        "nombre": "Wojciech Szczesny",
         "nacionalidad": "Polonia",    
         "Fecha de nacimiento": "18/04/1990",
         "club actual": "Barcelona",
@@ -2339,7 +2339,7 @@
         "Fecha de nacimiento": "27/05/1994",
         "club actual": "Manchester City",
         "posicion": ["Defensa Central", "Lateral Izquierdo"],
-        "clubes totales": ["Athletic Club", "Manchester City", "Al Nassr"]
+        "clubes totales": ["Athletic de Bilbao", "Manchester City", "Al Nassr"]
     },
     {
         "id": 245,
@@ -4567,5 +4567,8 @@
         "posicion": ["Defensa Central"],
         "clubes totales": ["Real Madrid"]
     },
+    {
+        
+    }
 ]
 }

@@ -6,28 +6,23 @@ import json
 pygame.init()
 
 
-SCREEN_WIDTH = 1200
-SCREEN_HEIGHT = 650
+SCREEN_WIDTH = 800
+SCREEN_HEIGHT = 600
 FPS = 60
 
 # Variables globales
 game_paused = False
 menu_state = "main"
 game_running = False
-waiting_for_key = False
-key_to_change = None
-key_index = None
 
 # Configuraciones por defecto
 default_settings = {
-    "resolution": "1200x650",
+    "resolution": "800x600",
     "fullscreen": False,
     "vsync": True,
     "master_volume": 70,
     "sfx_volume": 80,
     "music_volume": 60,
-    "move_keys": ["W", "A", "S", "D"],
-    "jump_key": "SPACE",
     "pause_key": "ESCAPE"
 }
 
@@ -69,7 +64,7 @@ SUCCESS_COL = (100, 255, 100)
 
 def crear_ruta_img(nombre_imagen):
     """Crea la ruta completa para una imagen"""
-    return os.path.join(os.path.dirname(__file__), 'img', nombre_imagen)
+    return os.path.join(os.path.dirname(__file__), 'image', nombre_imagen)
 
 def load_image(filename, default_size=(100, 50)):
     """Carga una imagen con manejo de errores mejorado"""
@@ -94,19 +89,19 @@ options_img = load_image("options.png", (150, 60))
 exit_img = load_image("exit.png", (150, 60))
 video_img = load_image("video.png", (120, 50))
 audio_img = load_image("audio.png", (120, 50))
-keys_img = load_image("keys.png", (120, 50))
+credit_img = load_image("credistos.png", (120, 50))
 back_img = load_image("back.png", (120, 50))
 huergo_img = load_image("huergo.png", (300, 300))
 
 # Crear botones principales
-play_button = Button(180, 125, play_img, 10)
-options_button = Button(720, 125, options_img, 10)
-exit_button = Button(455, 375, exit_img, 10)
+play_button = Button(130, 125, play_img, 7)
+options_button = Button(450, 125, options_img, 7)
+exit_button = Button(300, 375, exit_img, 7)
 
 # Botones del menú de opciones
 video_button = Button(200, 150, video_img, 10)
 audio_button = Button(650, 150, audio_img, 10)
-keys_button = Button(200, 250, keys_img, 10)
+credit_button = Button(200, 250, credit_img, 10)
 back_button = Button(650, 250, back_img, 10)
 
 # Variables para prevenir clics múltiples
@@ -222,9 +217,11 @@ def handle_main_menu():
         game_paused = False
         game_running = True
         show_message("¡Juego iniciado!", SUCCESS_COL)
+        return True
     
     if options_button.draw(screen) and can_click():
         menu_state = "options"
+        return True
     
     if exit_button.draw(screen) and can_click():
         return False
@@ -243,8 +240,8 @@ def handle_options_menu():
     if audio_button.draw(screen) and can_click():
         menu_state = "audio"
     
-    if keys_button.draw(screen) and can_click():
-        menu_state = "keys"
+    if credit_button.draw(screen) and can_click():
+        menu_state = "credits"
     
     if back_button.draw(screen) and can_click():
         menu_state = "main"
@@ -260,24 +257,37 @@ def handle_credits():
     draw_centered_text("Producido por:", medium_font, TEXT_COL, y_pos)
     draw_centered_text("PAPU GAMES INC.", font, (255, 200, 0), y_pos + 50)
     
+    # Desarrolladores
+    y_pos += 120
+    draw_centered_text("Desarrolladores:", medium_font, TEXT_COL, y_pos)
+    developers = [
+        "Valentin Martinez",
+        "Manuel Mañe Mazzieri",
+        "Juanjo Alfonso Slamovich"
+    ]
+    
+    for i, dev in enumerate(developers):
+        draw_centered_text(dev, small_font, (200, 200, 255), y_pos + 40 + (i * 30))
+    
     # Logo del instituto
+    y_pos += 160
     logo_x = (SCREEN_WIDTH - huergo_img.get_width()) // 2
-    logo_y = y_pos + 130
-    screen.blit(huergo_img, (logo_x, logo_y))
+    screen.blit(huergo_img, (logo_x, y_pos))
     
     # Nombre del instituto
-    draw_centered_text("Ins. Ind. Luis A. Huergo", medium_font, TEXT_COL, logo_y + huergo_img.get_height() + 20)
+    draw_centered_text("Ins. Ind. Luis A. Huergo", medium_font, TEXT_COL, y_pos + huergo_img.get_height() + 20)
     
     # Año
     draw_centered_text("2025", small_font, TEXT_COL, SCREEN_HEIGHT - 80)
     
-    # Botón volver
-    mouse_pos = pygame.mouse.get_pos()
-    back_rect = pygame.Rect((SCREEN_WIDTH - 120) // 2, SCREEN_HEIGHT - 120, 120, 40)
-    pygame.draw.rect(screen, (100, 150, 100), back_rect, border_radius=5)
-    draw_text("VOLVER", small_font, TEXT_COL, back_rect.x + 20, back_rect.y + 8)
+    # Botón volver - crear uno nuevo cada vez para evitar conflictos
+    back_x = SCREEN_WIDTH // 2 - back_img.get_width() // 2
+    back_y = SCREEN_HEIGHT - 70
+    back_button_credits = Button(back_x, back_y, back_img, 1)
     
-    if back_rect.collidepoint(mouse_pos) and pygame.mouse.get_pressed()[0] and can_click():
+    if back_button_credits.draw(screen) and can_click():
+        if game_running:
+            game_paused = True
         menu_state = "main"
 
 def handle_video_settings():
@@ -344,7 +354,11 @@ def handle_video_settings():
         status = "activado" if game_settings["vsync"] else "desactivado"
         show_message(f"V-Sync {status}", SUCCESS_COL)
     
-    if back_button.draw(screen) and can_click():
+    # Botón back independiente
+    back_x = 650
+    back_y = 250
+    back_button_video = Button(back_x, back_y, back_img, 1)
+    if back_button_video.draw(screen) and can_click():
         menu_state = "options"
 
 def handle_audio_settings():
@@ -388,7 +402,6 @@ def handle_audio_settings():
             new_volume = int((relative_x / bar_width) * 100)
             if new_volume != current_volume:
                 game_settings[key] = new_volume
-                show_message(f"{label}: {new_volume}%", SUCCESS_COL)
     
     draw_volume_slider("Volumen Maestro", "master_volume", y_start)
     draw_volume_slider("Efectos de Sonido", "sfx_volume", y_start + spacing)
@@ -412,119 +425,12 @@ def handle_audio_settings():
     if test_music_rect.collidepoint(mouse_pos) and mouse_pressed and can_click():
         show_message("Reproduciendo música", SUCCESS_COL)
     
-    if back_button.draw(screen) and can_click():
+    # Botón back independiente
+    back_x = 650
+    back_y = 250
+    back_button_audio = Button(back_x, back_y, back_img, 1)
+    if back_button_audio.draw(screen) and can_click():
         menu_state = "options"
-
-def handle_keys_settings():
-    """Maneja las configuraciones de teclas"""
-    global menu_state, game_settings, waiting_for_key, key_to_change, key_index
-    
-    draw_centered_text("CONFIGURACIÓN DE TECLAS", font, TEXT_COL, 50)
-    
-    mouse_pos = pygame.mouse.get_pos()
-    mouse_clicked = pygame.mouse.get_pressed()[0]
-    
-    y_start = 130
-    spacing = 50
-    
-    if waiting_for_key:
-        draw_centered_text("Presiona la nueva tecla...", medium_font, SELECTED_COL, 100)
-        draw_centered_text("ESC para cancelar", small_font, TEXT_COL, 130)
-    
-    key_configs = [
-        ("Mover Arriba:", "move_keys", 0),
-        ("Mover Izquierda:", "move_keys", 1),
-        ("Mover Abajo:", "move_keys", 2),
-        ("Mover Derecha:", "move_keys", 3),
-        ("Saltar:", "jump_key", None),
-        ("Pausar:", "pause_key", None)
-    ]
-    
-    for i, (label, key_type, index) in enumerate(key_configs):
-        y_pos = y_start + (i * spacing)
-        
-        draw_text(label, medium_font, TEXT_COL, 100, y_pos)
-        
-        if key_type == "move_keys":
-            current_key = game_settings[key_type][index]
-        else:
-            current_key = game_settings[key_type]
-        
-        is_changing = waiting_for_key and key_to_change == key_type and key_index == index
-        key_color = SELECTED_COL if is_changing else TEXT_COL
-        
-        key_rect = pygame.Rect(400, y_pos - 5, 100, 35)
-        
-        if key_rect.collidepoint(mouse_pos) and not waiting_for_key:
-            pygame.draw.rect(screen, (80, 80, 80), key_rect, border_radius=8)
-        
-        pygame.draw.rect(screen, (60, 60, 60), key_rect, border_radius=8)
-        pygame.draw.rect(screen, key_color, key_rect, 2, border_radius=8)
-        
-        key_text = f"[{current_key}]"
-        text_rect = small_font.get_rect(key_text)
-        text_x = key_rect.centerx - text_rect[2] // 2
-        text_y = key_rect.centery - text_rect[3] // 2
-        draw_text(key_text, small_font, key_color, text_x, text_y)
-        
-        if key_rect.collidepoint(mouse_pos) and mouse_clicked and can_click() and not waiting_for_key:
-            waiting_for_key = True
-            key_to_change = key_type
-            key_index = index
-            show_message(f"Cambiando: {label}", SELECTED_COL)
-    
-    reset_rect = pygame.Rect(100, y_start + len(key_configs) * spacing + 20, 200, 35)
-    pygame.draw.rect(screen, (150, 100, 100), reset_rect, border_radius=5)
-    draw_text("Restablecer", small_font, TEXT_COL, 130, reset_rect.y + 8)
-    
-    if reset_rect.collidepoint(mouse_pos) and mouse_clicked and can_click():
-        game_settings["move_keys"] = default_settings["move_keys"].copy()
-        game_settings["jump_key"] = default_settings["jump_key"]
-        game_settings["pause_key"] = default_settings["pause_key"]
-        show_message("Teclas restablecidas", SUCCESS_COL)
-    
-    if back_button.draw(screen) and can_click() and not waiting_for_key:
-        menu_state = "options"
-
-def handle_key_input(event):
-    """Maneja la entrada de nuevas teclas"""
-    global waiting_for_key, key_to_change, key_index
-    
-    if not waiting_for_key:
-        return
-    
-    if event.key == pygame.K_ESCAPE:
-        waiting_for_key = False
-        key_to_change = None
-        key_index = None
-        show_message("Cambio cancelado", ERROR_COL)
-        return
-    
-    new_key = get_key_name(event.key)
-    
-    in_use = False
-    for existing_key in game_settings["move_keys"]:
-        if existing_key == new_key:
-            in_use = True
-            break
-    
-    if game_settings["jump_key"] == new_key or game_settings["pause_key"] == new_key:
-        in_use = True
-    
-    if in_use:
-        show_message(f"La tecla {new_key} ya está en uso", ERROR_COL)
-        return
-    
-    if key_to_change == "move_keys":
-        game_settings["move_keys"][key_index] = new_key
-    else:
-        game_settings[key_to_change] = new_key
-    
-    show_message(f"Tecla cambiada a: {new_key}", SUCCESS_COL)
-    
-    waiting_for_key = False
-    key_to_change = None
-    key_index = None
 
 def draw_game_screen():
     """Dibuja la pantalla del juego"""
@@ -534,8 +440,6 @@ def draw_game_screen():
     draw_centered_text("CONTROLES ACTUALES:", medium_font, TEXT_COL, y_pos)
     
     controls_info = [
-        f"Mover: {'/'.join(game_settings['move_keys'])}",
-        f"Saltar: {game_settings['jump_key']}",
         f"Pausar: {game_settings['pause_key']}",
         "C: Ver créditos",
         "Q: Volver al menú"
@@ -555,23 +459,21 @@ def draw_game_screen():
 
 def handle_events():
     """Maneja todos los eventos de pygame"""
-    global game_paused, game_running, waiting_for_key, menu_state
+    global game_paused, game_running, menu_state
     
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             return False
         
         if event.type == pygame.KEYDOWN:
-            if waiting_for_key:
-                handle_key_input(event)
-                continue
-            
             pause_key = game_settings.get("pause_key", "ESCAPE")
             if ((pause_key == "ESCAPE" and event.key == pygame.K_ESCAPE) or 
                 (pause_key != "ESCAPE" and get_key_name(event.key) == pause_key)):
                 if game_running:
-                    game_paused = True
-                elif not game_running:
+                    game_paused = not game_paused
+                    if game_paused:
+                        menu_state = "main"
+                elif not game_running and menu_state != "credits":
                     return False
             
             elif event.key == pygame.K_c:
@@ -588,6 +490,8 @@ def handle_events():
         if event.type == pygame.VIDEORESIZE:
             if not game_settings["fullscreen"]:
                 screen = pygame.display.set_mode((event.w, event.h), pygame.RESIZABLE)
+                SCREEN_WIDTH = event.w
+                SCREEN_HEIGHT = event.h
                 game_settings["resolution"] = f"{event.w}x{event.h}"
     
     return True
@@ -611,13 +515,7 @@ def load_settings():
         
         for key, value in loaded_settings.items():
             if key in default_settings:
-                if key == "move_keys":
-                    if isinstance(value, list) and len(value) == 4 and all(isinstance(k, str) for k in value):
-                        game_settings[key] = value
-                    else:
-                        game_settings[key] = default_settings[key].copy()
-                
-                elif key in ["jump_key", "pause_key"]:
+                if key == "pause_key":
                     if isinstance(value, str) and len(value) > 0:
                         game_settings[key] = value
                     else:
@@ -644,4 +542,113 @@ def load_settings():
                     if isinstance(value, (int, float)) and 0 <= value <= 100:
                         game_settings[key] = int(value)
                     else:
-                        game_settings
+                        game_settings[key] = default_settings.get(key, 60)
+                
+                elif key in ["fullscreen", "vsync"]:
+                    if isinstance(value, bool):
+                        game_settings[key] = value
+                    else:
+                        game_settings[key] = default_settings[key]
+                
+                else:
+                    if type(value) == type(default_settings[key]):
+                        game_settings[key] = value
+                    else:
+                        game_settings[key] = default_settings[key]
+        
+        for key in default_settings:
+            if key not in game_settings:
+                game_settings[key] = default_settings[key]
+        
+        print("✓ Configuraciones cargadas exitosamente")
+        
+    except FileNotFoundError:
+        print("⚠ No se encontró archivo de configuraciones, usando valores por defecto")
+        game_settings = default_settings.copy()
+        save_settings()
+    except json.JSONDecodeError as e:
+        print(f"✗ Error al leer configuraciones (JSON inválido): {e}")
+        game_settings = default_settings.copy()
+        save_settings()
+    except Exception as e:
+        print(f"✗ Error inesperado al cargar configuraciones: {e}")
+        game_settings = default_settings.copy()
+        save_settings()
+
+
+def main():
+    """Función principal del juego"""
+    global game_paused, menu_state, game_running, screen
+    
+    load_settings()
+    
+    try:
+        apply_resolution()
+    except:
+        print("⚠️ Error aplicando resolución inicial, usando por defecto")
+    
+    run = True
+    
+    print("=" * 50)
+    print("🎮 MENÚ DE JUEGO - PAPU GAMES INC.")
+    print("=" * 50)
+    print("📋 CONTROLES:")
+    print("   • ESC: Pausar juego / Salir")
+    print("   • Q: Volver al menú (desde el juego)")
+    print("   • C: Ver créditos")
+    print("   • Click: Interactuar con elementos")
+    print("=" * 50)
+    
+    while run:
+        clock.tick(FPS)
+        
+        screen.fill(BACKGROUND_COL)
+        
+        run = handle_events()
+        if not run:
+            break
+        
+        if game_running and not game_paused:
+            draw_game_screen()
+        
+        elif game_paused or not game_running:
+            if not game_running:
+                pass
+            else:
+                draw_game_screen()
+                draw_pause_overlay()
+            
+            if menu_state == "main":
+                title = "MENÚ PRINCIPAL" if not game_running else "JUEGO PAUSADO"
+                draw_centered_text(title, font, TEXT_COL, 20)
+                run = handle_main_menu()
+            
+            elif menu_state == "options":
+                handle_options_menu()
+            
+            elif menu_state == "video":
+                handle_video_settings()
+            
+            elif menu_state == "audio":
+                handle_audio_settings()
+            
+            elif menu_state == "credits":
+                handle_credits()
+        
+        draw_message()
+        
+        pygame.display.flip()
+    
+    save_settings()
+    
+    print("=" * 50)
+    print("👋 CERRANDO APLICACIÓN")
+    print("💾 Configuraciones guardadas")
+    print("🎮 Gracias por jugar - PAPU GAMES INC.")
+    print("=" * 50)
+    
+    pygame.quit()
+    sys.exit()
+
+if __name__ == "__main__":
+    main()
