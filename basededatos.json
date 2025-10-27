@@ -4557,6 +4557,15 @@
         "club actual": "Tottenham Hotspur",
         "posicion": ["Extremo Derecho", "Extremo Izquierdo"],
         "clubes totales": ["Nottingham Forest", "Tottenham Hotspur"]
-    }
+    },
+    {
+        "id": 489,
+        "nombre": "Raúl Asencio",
+        "nacionalidad": "España",
+        "Fecha de nacimiento": "13/02/2003",
+        "club actual": "Real Madrid",
+        "posicion": ["Defensa Central"],
+        "clubes totales": ["Real Madrid"]
+    },
 ]
 }
