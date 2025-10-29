@@ -224,7 +224,7 @@ def victory_screen(screen, winner_name):
                 pygame.quit(); sys.exit()
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
-                    return "menu"
+                    return
                 if event.key == pygame.K_ESCAPE:
                     pygame.quit(); sys.exit()
 
@@ -326,9 +326,8 @@ def run_game(screen, modo, dificultad_cpu=("Media", {})):
         if score_right>=WIN_SCORE:
             winner = "CPU" if modo==1 else "Jugador 2"
         if winner:
-            resultado = victory_screen(screen, winner)
-            if resultado == "menu":
-                return
+            victory_screen(screen, winner)
+            return
 
         screen.fill(BLACK)
         draw_center_line(screen, center_offset)
@@ -376,22 +375,6 @@ def main():
         if modo==1:
             dificultad = menu_dificultad(screen)
         run_game(screen, modo, dificultad)
-
-        font = pygame.font.SysFont(None, 36)
-        waiting = True
-        while waiting:
-            screen.fill(BLACK)
-            msg = font.render("Partida finalizada. ENTER=volver menú, ESC=salir", True, WHITE)
-            screen.blit(msg, (W//2 - msg.get_width()//2, H//2 - 20))
-            pygame.display.flip()
-            for event in pygame.event.get():
-                if event.type == pygame.QUIT:
-                    pygame.quit(); sys.exit()
-                if event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_RETURN:
-                        waiting = False
-                    elif event.key == pygame.K_ESCAPE:
-                        pygame.quit(); sys.exit()
 
 if __name__ == "__main__":
     try:

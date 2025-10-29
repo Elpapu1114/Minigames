@@ -21,7 +21,7 @@ GRADIENT_END = (15, 15, 25)
 
 
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-pygame.display.set_caption(" Game Launcher - Selecciona tu Juego")
+pygame.display.set_caption(" Minigames - Selecciona tu Juego")
 clock = pygame.time.Clock()
 
 
@@ -231,7 +231,7 @@ def launch_game(game_file):
 def draw_header():
     """Dibuja el encabezado de la aplicación"""
 
-    draw_text(" GAME LAUNCHER", title_font, ACCENT_COLOR, SCREEN_WIDTH//2, 50, center=True)
+    draw_text(" Minigames  ", title_font, ACCENT_COLOR, SCREEN_WIDTH//2, 50, center=True)
     
 
     draw_text("Selecciona tu aventura", description_font, (180, 180, 180), 
