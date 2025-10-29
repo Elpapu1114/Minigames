@@ -119,9 +119,6 @@ def cargar_imagenes():
         imagenes["Inglaterra"] = pygame.image.load(os.path.join("image", "image_fut", "Inglaterra.png"))
         imagenes["Inglaterra"] = pygame.transform.scale(imagenes["Inglaterra"], (50,50))
 
-        imagenes["Países Bajos"] = pygame.image.load(os.path.join("image", "image_fut", "Países Bajos.png"))
-        imagenes["Países Bajos"] = pygame.transform.scale(imagenes["Países Bajos"], (50,50))
-
         print("Imágenes cargadas correctamente")
     except Exception as e:
         print(f"Error al cargar imágenes: {e}")
@@ -202,10 +199,12 @@ class FutbolGrid:
         self.sugerencias = []
         self.jugador_seleccionado = None
         self.mostrando_menu_celdas = False
-        self.celdas_validas = [] 
-        self.jugadores_usados = set()
+        self.celdas_validas = []
         self.input_activo = True
         self.juego_terminado = False
+        
+        # Variables para el sistema de mensajes
+        self.jugadores_usados = set()
         self.mensaje_error = ""
         self.tiempo_mensaje = 0
         
@@ -216,24 +215,6 @@ class FutbolGrid:
                     return False
         return True
     
-    def mostrar_mensaje(self, mensaje, duracion=3000):
-        self.mensaje_error = mensaje
-        self.tiempo_mensaje = pygame.time.get_ticks() + duracion
-    
-    def dibujar_mensaje_error(self):
-        if self.mensaje_error and pygame.time.get_ticks() < self.tiempo_mensaje:
-            ancho_msg = 700
-            alto_msg = 60
-            x = (ANCHO - ancho_msg) // 2
-            y = 500
-            pygame.draw.rect(self.pantalla, ROJO, (x, y, ancho_msg, alto_msg))
-            pygame.draw.rect(self.pantalla, NEGRO, (x, y, ancho_msg, alto_msg), 3)
-            texto = self.fuente.render(self.mensaje_error, True, BLANCO)
-            rect_texto = texto.get_rect(center=(ANCHO // 2, y + 30))
-            self.pantalla.blit(texto, rect_texto)
-        elif pygame.time.get_ticks() >= self.tiempo_mensaje:
-            self.mensaje_error = ""
-
     def buscar_jugador(self, nombre):
         nombre_lower = nombre.lower().strip()
         for jugador in self.jugadores:
@@ -273,6 +254,31 @@ class FutbolGrid:
                     if jugador_cumple(jugador, self.categorias_filas[i], self.categorias_cols[j]):
                         celdas.append((i, j))
         return celdas
+    
+    def mostrar_mensaje(self, mensaje, duracion=3000):
+        """Muestra un mensaje temporal en pantalla (duracion en milisegundos)"""
+        self.mensaje_error = mensaje
+        self.tiempo_mensaje = pygame.time.get_ticks() + duracion
+    
+    def dibujar_mensaje_error(self):
+        """Dibuja el mensaje de error si hay uno activo"""
+        if self.mensaje_error and pygame.time.get_ticks() < self.tiempo_mensaje:
+            # Fondo del mensaje
+            ancho_msg = 700
+            alto_msg = 60
+            x = (ANCHO - ancho_msg) // 2
+            y = 500
+            
+            pygame.draw.rect(self.pantalla, ROJO, (x, y, ancho_msg, alto_msg))
+            pygame.draw.rect(self.pantalla, NEGRO, (x, y, ancho_msg, alto_msg), 3)
+            
+            # Texto del mensaje
+            texto = self.fuente.render(self.mensaje_error, True, BLANCO)
+            rect_texto = texto.get_rect(center=(ANCHO // 2, y + 30))
+            self.pantalla.blit(texto, rect_texto)
+        elif pygame.time.get_ticks() >= self.tiempo_mensaje:
+            # Limpiar el mensaje cuando expire
+            self.mensaje_error = ""
     
     def dibujar_grid(self):
         inicio_x = 200
@@ -408,7 +414,7 @@ class FutbolGrid:
             rect = pygame.Rect(x + 20, y_celda + idx * 50, 360, 45)
             if rect.collidepoint(pos):
                 self.grid[i][j] = self.jugador_seleccionado
-                self.jugadores_usados.add(self.jugador_seleccionado["nombre"])  # Agregar esta línea
+                self.jugadores_usados.add(self.jugador_seleccionado["nombre"])
                 self.mostrando_menu_celdas = False
                 self.jugador_seleccionado = None
                 self.celdas_validas = []
@@ -418,13 +424,13 @@ class FutbolGrid:
                 if self.verificar_juego_terminado():
                     self.juego_terminado = True
                 return
-            
+    
     def procesar_jugador(self, nombre_jugador):
         jugador = self.buscar_jugador(nombre_jugador)
         if jugador:
             # Verificar si el jugador ya fue usado
             if jugador["nombre"] in self.jugadores_usados:
-                self.mostrar_mensaje(f"{jugador['nombre']} ya fue seleccionado")
+                self.mostrar_mensaje(f"¡{jugador['nombre']} ya fue seleccionado!")
                 self.input_texto = ""
                 self.sugerencias = []
                 return
@@ -452,7 +458,7 @@ class FutbolGrid:
             self.mostrar_mensaje(f"No se encontró el jugador: {nombre_jugador}")
             self.input_texto = ""
             self.sugerencias = []
-
+    
     def ejecutar(self):
         ejecutando = True
         

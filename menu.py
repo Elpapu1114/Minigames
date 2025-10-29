@@ -263,7 +263,7 @@ def handle_credits():
     developers = [
         "Valentin Martinez",
         "Manuel Mañe Mazzieri",
-        "Juanjo Alfonso Slamovich"
+        "Juanjo Shlamovitz Alfonso",
     ]
     
     for i, dev in enumerate(developers):
