@@ -99,10 +99,10 @@ options_button = Button(450, 125, options_img, 7)
 exit_button = Button(300, 375, exit_img, 7)
 
 # Botones del menú de opciones
-video_button = Button(200, 150, video_img, 10)
-audio_button = Button(650, 150, audio_img, 10)
-credit_button = Button(200, 250, credit_img, 10)
-back_button = Button(650, 250, back_img, 10)
+video_button = Button(300, 120, video_img, 7)
+audio_button = Button(500, 120, audio_img, 7)
+credit_button = Button(300, 250, credit_img,7)
+back_button = Button(500, 250, back_img, 7)
 
 # Variables para prevenir clics múltiples
 last_click_time = 0
