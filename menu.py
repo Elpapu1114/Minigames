@@ -94,35 +94,20 @@ credit_img = load_image("credistos.png", (120, 50))
 back_img = load_image("back.png", (120, 50))
 huergo_img = load_image("huergo.png", (300, 300))
 
-# Crear botones principales
-play_button = Button(130, 125, play_img, 7)
-options_button = Button(450, 125, options_img, 7)
-exit_button = Button(300, 375, exit_img, 7)
-
-# Botones del menú de opciones
-video_button = Button(100 , 120, video_img, 7)
-audio_button = Button(400, 120, audio_img, 7)
-credit_button = Button(100, 300, credit_img,7)
-back_button = Button(400, 300, back_img, 7)
-
 # Sistema mejorado de control de clics
-button_last_click = {}
-CLICK_DELAY = 500  # milisegundos entre clics (0.5 segundos)
+last_click_time = 0
+CLICK_DELAY = 200  # milisegundos entre clics (0.2 segundos)
+last_button_clicked = None
 
-def can_button_click(button_id):
-    """Verifica si un botón específico puede ser clickeado"""
+def can_click():
+    """Verifica si se puede hacer clic (cooldown global)"""
+    global last_click_time
     current_time = pygame.time.get_ticks()
-    last_time = button_last_click.get(button_id, 0)
     
-    if current_time - last_time > CLICK_DELAY:
-        button_last_click[button_id] = current_time
+    if current_time - last_click_time > CLICK_DELAY:
+        last_click_time = current_time
         return True
     return False
-
-def reset_button_timers():
-    """Resetea todos los temporizadores de botones al cambiar de menú"""
-    global button_last_click
-    button_last_click.clear()
 
 # Variables para mensajes
 message_timer = 0
@@ -220,34 +205,47 @@ def get_key_name(key_code):
 
 def handle_main_menu():
     """Maneja la lógica del menú principal"""
-    global game_paused, menu_state, game_running
+    global game_paused, menu_state, game_running, last_button_clicked
     
-    if play_button.draw(screen) and can_button_click("play"):
-        # Cerrar el menú y abrir pantalla_de_inicio.py
-        try:
-            save_settings()  # Guardar antes de salir
-            pygame.quit()
-            # Ejecutar el archivo pantalla_de_inicio.py y esperar a que termine
-            subprocess.call([sys.executable, "pantalla_de_inicio.py"])
-            # Cuando vuelva, reiniciar pygame
-            pygame.init()
-            reset_button_timers()
-            show_message("¡Bienvenido de vuelta!", SUCCESS_COL)
-        except FileNotFoundError:
-            show_message("Error: No se encontró pantalla_de_inicio.py", ERROR_COL)
-            print("Error: Asegúrate de que pantalla_de_inicio.py existe en el mismo directorio")
-        except Exception as e:
-            show_message(f"Error al abrir el juego: {str(e)}", ERROR_COL)
-            print(f"Error: {e}")
-        return True
+    # Crear botones cada vez para evitar problemas de estado
+    play_button = Button(130, 125, play_img, 7)
+    options_button = Button(450, 125, options_img, 7)
+    exit_button = Button(300, 375, exit_img, 7)
     
-    if options_button.draw(screen) and can_button_click("options"):
-        menu_state = "options"
-        reset_button_timers()
-        return True
+    # Verificar si el botón está siendo presionado
+    play_pressed = play_button.draw(screen)
+    options_pressed = options_button.draw(screen)
+    exit_pressed = exit_button.draw(screen)
     
-    if exit_button.draw(screen) and can_button_click("exit"):
-        return False
+    # Solo procesar clicks cuando se puede hacer click
+    if can_click():
+        if play_pressed:
+            last_button_clicked = "play"
+            # Cerrar el menú y abrir pantalla_de_inicio.py
+            try:
+                save_settings()  # Guardar antes de salir
+                pygame.quit()
+                # Ejecutar el archivo pantalla_de_inicio.py y esperar a que termine
+                subprocess.call([sys.executable, "pantalla_de_inicio.py"])
+                # Cuando vuelva, reiniciar pygame
+                pygame.init()
+                show_message("¡Bienvenido de vuelta!", SUCCESS_COL)
+            except FileNotFoundError:
+                show_message("Error: No se encontró pantalla_de_inicio.py", ERROR_COL)
+                print("Error: Asegúrate de que pantalla_de_inicio.py existe en el mismo directorio")
+            except Exception as e:
+                show_message(f"Error al abrir el juego: {str(e)}", ERROR_COL)
+                print(f"Error: {e}")
+            return True
+        
+        if options_pressed:
+            last_button_clicked = "options"
+            menu_state = "options"
+            return True
+        
+        if exit_pressed:
+            last_button_clicked = "exit"
+            return False
     
     return True
 
@@ -257,21 +255,26 @@ def handle_options_menu():
     
     draw_centered_text("OPCIONES", font, TEXT_COL, 20)
     
-    if video_button.draw(screen) and can_button_click("video"):
-        menu_state = "video"
-        reset_button_timers()
+    # Crear botones cada vez para evitar problemas de estado
+    video_button = Button(100, 120, video_img, 7)
+    audio_button = Button(400, 120, audio_img, 7)
+    credit_button = Button(100, 300, credit_img, 7)
+    back_button = Button(400, 300, back_img, 7)
     
-    if audio_button.draw(screen) and can_button_click("audio"):
-        menu_state = "audio"
-        reset_button_timers()
+    video_pressed = video_button.draw(screen)
+    audio_pressed = audio_button.draw(screen)
+    credit_pressed = credit_button.draw(screen)
+    back_pressed = back_button.draw(screen)
     
-    if credit_button.draw(screen) and can_button_click("credit"):
-        menu_state = "credits"
-        reset_button_timers()
-    
-    if back_button.draw(screen) and can_button_click("back_options"):
-        menu_state = "main"
-        reset_button_timers()
+    if can_click():
+        if video_pressed:
+            menu_state = "video"
+        elif audio_pressed:
+            menu_state = "audio"
+        elif credit_pressed:
+            menu_state = "credits"
+        elif back_pressed:
+            menu_state = "main"
 
 def handle_credits():
     """Maneja la pantalla de créditos"""
@@ -312,11 +315,10 @@ def handle_credits():
     back_y = SCREEN_HEIGHT - 70
     back_button_credits = Button(back_x, back_y, back_img, 1)
     
-    if back_button_credits.draw(screen) and can_button_click("back_credits"):
+    if back_button_credits.draw(screen) and can_click():
         if game_running:
             game_paused = True
         menu_state = "main"
-        reset_button_timers()
 
 def handle_video_settings():
     """Maneja las configuraciones de video"""
@@ -334,24 +336,34 @@ def handle_video_settings():
     draw_text("Resolución:", medium_font, TEXT_COL, 100, y_start)
     current_res = game_settings["resolution"]
     
-    for i, (res_str, width, height) in enumerate(RESOLUTIONS):
-        x = 300 + (i % 3) * 180
-        y = y_start + (i // 3) * 40
-        selected = (res_str == current_res)
-        hover = pygame.Rect(x, y, 150, 30).collidepoint(mouse_pos)
-        
-        rect = draw_clickable_option(res_str, small_font, TEXT_COL, x, y, selected, hover)
-        
-        if rect.collidepoint(mouse_pos) and mouse_clicked and can_button_click(f"res_{i}"):
-            game_settings["resolution"] = res_str
-            show_message(f"Resolución: {res_str}", SUCCESS_COL)
+    if mouse_clicked and can_click():
+        for i, (res_str, width, height) in enumerate(RESOLUTIONS):
+            x = 300 + (i % 3) * 180
+            y = y_start + (i // 3) * 40
+            selected = (res_str == current_res)
+            hover = pygame.Rect(x, y, 150, 30).collidepoint(mouse_pos)
+            
+            rect = draw_clickable_option(res_str, small_font, TEXT_COL, x, y, selected, hover)
+            
+            if rect.collidepoint(mouse_pos):
+                game_settings["resolution"] = res_str
+                show_message(f"Resolución: {res_str}", SUCCESS_COL)
+                break
+    else:
+        for i, (res_str, width, height) in enumerate(RESOLUTIONS):
+            x = 300 + (i % 3) * 180
+            y = y_start + (i // 3) * 40
+            selected = (res_str == current_res)
+            hover = pygame.Rect(x, y, 150, 30).collidepoint(mouse_pos)
+            
+            draw_clickable_option(res_str, small_font, TEXT_COL, x, y, selected, hover)
     
     # Botón aplicar resolución
     apply_rect = pygame.Rect(100, y_start + 100, 120, 35)
     pygame.draw.rect(screen, (100, 150, 100), apply_rect, border_radius=5)
     draw_text("Aplicar", medium_font, TEXT_COL, 110, y_start + 105)
     
-    if apply_rect.collidepoint(mouse_pos) and mouse_clicked and can_button_click("apply_res"):
+    if apply_rect.collidepoint(mouse_pos) and mouse_clicked and can_click():
         apply_resolution()
     
     # Pantalla completa
@@ -363,7 +375,7 @@ def handle_video_settings():
     rect = draw_clickable_option(fullscreen_text, small_font, TEXT_COL, 350, y_pos, 
                                 game_settings["fullscreen"], hover)
     
-    if rect.collidepoint(mouse_pos) and mouse_clicked and can_button_click("fullscreen"):
+    if rect.collidepoint(mouse_pos) and mouse_clicked and can_click():
         game_settings["fullscreen"] = not game_settings["fullscreen"]
         status = "activada" if game_settings["fullscreen"] else "desactivada"
         show_message(f"Pantalla completa {status}", SUCCESS_COL)
@@ -377,7 +389,7 @@ def handle_video_settings():
     rect = draw_clickable_option(vsync_text, small_font, TEXT_COL, 250, y_pos, 
                                 game_settings["vsync"], hover)
     
-    if rect.collidepoint(mouse_pos) and mouse_clicked and can_button_click("vsync"):
+    if rect.collidepoint(mouse_pos) and mouse_clicked and can_click():
         game_settings["vsync"] = not game_settings["vsync"]
         status = "activado" if game_settings["vsync"] else "desactivado"
         show_message(f"V-Sync {status}", SUCCESS_COL)
@@ -386,9 +398,8 @@ def handle_video_settings():
     back_x = 650
     back_y = 250
     back_button_video = Button(back_x, back_y, back_img, 1)
-    if back_button_video.draw(screen) and can_button_click("back_video"):
+    if back_button_video.draw(screen) and can_click():
         menu_state = "options"
-        reset_button_timers()
 
 def handle_audio_settings():
     """Maneja las configuraciones de audio"""
@@ -448,19 +459,18 @@ def handle_audio_settings():
     draw_text("SFX", small_font, TEXT_COL, 320, test_y + 5)
     draw_text("Música", small_font, TEXT_COL, 430, test_y + 5)
     
-    if test_sfx_rect.collidepoint(mouse_pos) and mouse_pressed and can_button_click("test_sfx"):
-        show_message("Reproduciendo efecto de sonido", SUCCESS_COL)
-    
-    if test_music_rect.collidepoint(mouse_pos) and mouse_pressed and can_button_click("test_music"):
-        show_message("Reproduciendo música", SUCCESS_COL)
+    if mouse_pressed and can_click():
+        if test_sfx_rect.collidepoint(mouse_pos):
+            show_message("Reproduciendo efecto de sonido", SUCCESS_COL)
+        elif test_music_rect.collidepoint(mouse_pos):
+            show_message("Reproduciendo música", SUCCESS_COL)
     
     # Botón back independiente
     back_x = 650
     back_y = 250
     back_button_audio = Button(back_x, back_y, back_img, 1)
-    if back_button_audio.draw(screen) and can_button_click("back_audio"):
+    if back_button_audio.draw(screen) and can_click():
         menu_state = "options"
-        reset_button_timers()
 
 def draw_game_screen():
     """Dibuja la pantalla del juego"""
@@ -666,19 +676,12 @@ def main():
                 handle_credits()
         
         draw_message()
-        
-        pygame.display.flip()
+        pygame.display.update()
     
     save_settings()
-    
-    print("=" * 50)
-    print("👋 CERRANDO APLICACIÓN")
-    print("💾 Configuraciones guardadas")
-    print("🎮 Gracias por jugar - PAPU GAMES INC.")
-    print("=" * 50)
-    
     pygame.quit()
     sys.exit()
+
 
 if __name__ == "__main__":
     main()
