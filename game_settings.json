@@ -1,9 +1,9 @@
 {
     "resolution": "800x600",
-    "fullscreen": false,
+    "fullscreen": true,
     "vsync": true,
     "master_volume": 60,
-    "sfx_volume": 60,
+    "sfx_volume": 80,
     "music_volume": 96,
     "pause_key": "ESCAPE"
 }
