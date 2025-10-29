@@ -182,37 +182,47 @@ def menu_principal(screen):
                     pygame.quit(); sys.exit()
 
 def menu_modo(screen):
-    font_title = pygame.font.Font(None, 48)
-    font_options = pygame.font.Font(None, 36)
+    try:
+        menu_eleccion_image = pygame.image.load("image/menu_eleccion_memotest.png")
+        use_image = True
+    except:
+        use_image = False
     
     while True:
-        for y in range(H):
-            color = (0, min(100, y // 6), 0)
-            pygame.draw.line(screen, color, (0, y), (W, y))
-        
-        title = font_title.render("SELECCIONAR MODO", True, LIME)
-        title_rect = title.get_rect(center=(W//2, 100))
-        
-        shadow = font_title.render("SELECCIONAR MODO", True, DARK_GRAY)
-        shadow_rect = shadow.get_rect(center=(title_rect.centerx + 2, title_rect.centery + 2))
-        screen.blit(shadow, shadow_rect)
-        screen.blit(title, title_rect)
-        
-        options = [
-            "Elige modo de juego:",
-            "",
-            "1) Un Jugador (vs CPU)",
-            "2) Dos Jugadores",
-            "",
-            "Presiona 1 o 2"
-        ]
-        
-        for i, option in enumerate(options):
-            if option:
-                color = CYAN if option.startswith(("1)", "2)")) else WHITE
-                text = font_options.render(option, True, color)
-                text_rect = text.get_rect(center=(W//2, 180 + i*40))
-                screen.blit(text, text_rect)
+        if use_image:
+            scaled_image = pygame.transform.scale(menu_eleccion_image, (W, H))
+            screen.blit(scaled_image, (0, 0))
+        else:
+            for y in range(H):
+                color = (0, min(100, y // 6), 0)
+                pygame.draw.line(screen, color, (0, y), (W, y))
+            
+            font_title = pygame.font.Font(None, 48)
+            font_options = pygame.font.Font(None, 36)
+            
+            title = font_title.render("SELECCIONAR MODO", True, LIME)
+            title_rect = title.get_rect(center=(W//2, 100))
+            
+            shadow = font_title.render("SELECCIONAR MODO", True, DARK_GRAY)
+            shadow_rect = shadow.get_rect(center=(title_rect.centerx + 2, title_rect.centery + 2))
+            screen.blit(shadow, shadow_rect)
+            screen.blit(title, title_rect)
+            
+            options = [
+                "Elige modo de juego:",
+                "",
+                "1) Un Jugador (vs CPU)",
+                "2) Dos Jugadores",
+                "",
+                "Presiona 1 o 2"
+            ]
+            
+            for i, option in enumerate(options):
+                if option:
+                    color = CYAN if option.startswith(("1)", "2)")) else WHITE
+                    text = font_options.render(option, True, color)
+                    text_rect = text.get_rect(center=(W//2, 180 + i*40))
+                    screen.blit(text, text_rect)
         
         pygame.display.flip()
         

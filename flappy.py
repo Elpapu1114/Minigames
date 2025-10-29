@@ -74,6 +74,39 @@ def draw_score(screen, score):
     txt = font.render(f"Puntaje: {score}", True, WHITE)
     screen.blit(txt, (10,10))
 
+def countdown_screen(screen, W, H, bird_x, bird_y):
+    """Muestra un contador de 3 segundos antes de iniciar el juego"""
+    clock = pygame.time.Clock()
+    font = pygame.font.SysFont(None, 120)
+    
+    for count in range(3, 0, -1):
+        start_time = pygame.time.get_ticks()
+        
+        while pygame.time.get_ticks() - start_time < 1000:
+            clock.tick(FPS)
+            
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit(); sys.exit()
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_ESCAPE:
+                        return False
+            
+            draw_background(screen, W, H)
+            draw_bird(screen, bird_x, bird_y)
+            
+            txt = font.render(str(count), True, WHITE)
+            txt_rect = txt.get_rect(center=(W//2, H//2))
+            
+            shadow = font.render(str(count), True, BLACK)
+            shadow_rect = shadow.get_rect(center=(W//2 + 3, H//2 + 3))
+            screen.blit(shadow, shadow_rect)
+            screen.blit(txt, txt_rect)
+            
+            pygame.display.flip()
+    
+    return True
+
 def wait_for_start(screen, W, H):
     clock = pygame.time.Clock()
     
@@ -104,6 +137,10 @@ def run_game(screen, W, H):
     pipes = []
     pipe_timer = 0
     score = 0
+    
+    # Mostrar contador de 3 segundos
+    if not countdown_screen(screen, W, H, bird_x, bird_y):
+        return score
 
     while True:
         clock.tick(FPS)
@@ -115,7 +152,7 @@ def run_game(screen, W, H):
                 if event.key == pygame.K_SPACE:
                     bird_vy = JUMP_STRENGTH
                 if event.key == pygame.K_ESCAPE:
-                    return
+                    return score
 
         bird_vy += GRAVITY
         bird_y += bird_vy
@@ -130,7 +167,7 @@ def run_game(screen, W, H):
         pipes = [p for p in pipes if p["top"].right > 0]
 
         if check_collision(bird_rect, pipes, H):
-            return
+            return score
 
         score = update_score(pipes, bird_x, score)
 
@@ -141,17 +178,22 @@ def run_game(screen, W, H):
 
         pygame.display.flip()
 
-def game_over_screen(screen, W, H):
+def game_over_screen(screen, W, H, final_score):
+    clock = pygame.time.Clock()
+    
     while True:
+        clock.tick(FPS)
+        
         game_over_escalado = pygame.transform.scale(game_over_img, (W, H))
         screen.blit(game_over_escalado, (0, 0))
+        
         pygame.display.flip()
         
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit(); sys.exit()
             if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_RETURN:
+                if event.key == pygame.K_SPACE:
                     return
                 elif event.key == pygame.K_ESCAPE:
                     pygame.quit(); sys.exit()
@@ -161,8 +203,8 @@ def main():
     screen = pygame.display.set_mode((W,H))
 
     while True:
-        run_game(screen, W, H)
-        game_over_screen(screen, W, H)
+        final_score = run_game(screen, W, H)
+        game_over_screen(screen, W, H, final_score)
 
 if __name__ == "__main__":
     try:
