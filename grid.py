@@ -174,12 +174,12 @@ def jugador_cumple(jugador, cat_fila, cat_col):
     if tipo_fila == "equipo":
         cumple_fila = valor_fila in jugador["clubes totales"]
     else:
-        cumple_fila = jugador["nacionalidad"] == valor_fila
+        cumple_fila = valor_fila in jugador["nacionalidad"]
     
     if tipo_col == "equipo":
         cumple_col = valor_col in jugador["clubes totales"]
     else:
-        cumple_col = jugador["nacionalidad"] == valor_col
+        cumple_col = valor_col in jugador["nacionalidad"]
     
     return cumple_fila and cumple_col
 

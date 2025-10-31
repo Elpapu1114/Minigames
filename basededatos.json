@@ -5263,6 +5263,15 @@
         "club actual": "AC Milan",
         "posicion": ["Defensa Central", "Lateral Derecho"],
         "clubes totales": ["AC Milan", "Lucchese", "Villarreal"]
+    },
+    {
+        "id": 999999999,
+        "nombre": "Juanjo Shlamovitz",
+        "nacionalidad": ["Argentina", "Italia", "España", "Francia", "Brasil", "Inglaterra", "Alemania", "Países Bajos", "Portugal", "Bélgica", "Suiza", "Dinamarca", "Suecia", "Noruega", "Finlandia", "Polonia", "Ucrania", "Rusia", "Turquía", "Grecia", "Croacia", "Serbia", "Hungría", "República Checa", "Eslovaquia", "Eslovenia", "Rumania", "Bulgaria", "Austria", "Irlanda", "Escocia", "Gales"],
+        "Fecha de nacimiento": "28/01/2010",
+        "club actual": "San Lorenzo",
+        "posicion": ["Lateral Derecho", "Defensa Central"],
+        "clubes totales": ["Liverpool", "Manchester City", "Manchester United", "Chelsea", "Arsenal", "Tottenham Hotspur", "Real Madrid", "Barcelona", "Atlético de Madrid", "Inter de Milán", "AC Milan", "Juventus", "Bayern de Múnich", "Borussia Dortmund", "Paris Saint-Germain", "Napoli", "Roma", "Lazio", "Sevilla", "Villarreal", "Real Sociedad", "Real Betis", "Valencia", "Athletic Club", "Celta de Vigo", "Espanyol", "Rayo Vallecano", "Getafe", "Alavés", "Osasuna", "Mallorca", "Granada", "Levante", "Cádiz", "Elche", "Real Valladolid", "Huesca", "Eibar", "Leganés", "Almería", "Racing Club", "River Plate", "Boca Juniors", "Independiente", "San Lorenzo", "Vélez Sarsfield", "Newell's"] 
     }
 
 ]
