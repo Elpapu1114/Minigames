@@ -5275,7 +5275,7 @@
         "clubes totales": ["Partizán de Belgrado", "Monaco", "Cercle Brugge", "Basel", "RB Salzburgo", "AC Milan"]
     },
     {
-        "id": 568,
+        "id": 567,
         "nombre": "Maximiliano Rodríguez",
         "apodo": "Maxi Rodríguez",
         "nacionalidad": "Argentina",
@@ -5283,6 +5283,69 @@
         "club actual": "RETIRADO",
         "posicion": ["Extremo Derecho", "Mediocampista Derecho", "Mediocampista Ofensivo"],
         "clubes totales": ["Newell's", "Espanyol", "Atlético de Madrid", "Liverpool", "Peñarol"]
+    },
+    {
+        "id": 568,
+        "nombre": "Samuele Ricci",
+        "nacionalidad": "Italia",
+        "Fecha de nacimiento": "21/08/2001",
+        "club actual": "AC Milan",
+        "posicion": ["Mediocampista Defensivo", "Mediocampista Central"],
+        "clubes totales": ["Empoli", "Torino", "AC Milan"]
+    },
+    {
+        "id": 569,
+        "nombre": "Charles De Ketelaere",
+        "nacionalidad": "Bélgica",
+        "Fecha de nacimiento": "10/03/2001",
+        "club actual": "Atalanta",
+        "posicion": ["Mediocampista Ofensivo", "Mediocampista Central", "Extremo Derecho"],
+        "clubes totales": ["Club Brujas", "AC Milan", "Atalanta"]
+    },
+    {
+        "id": 570,
+        "nombre": "Ruben Loftus-Cheek",
+        "nacionalidad": "Inglaterra",
+        "Fecha de nacimiento": "23/01/1996",
+        "club actual": "AC Milan",
+        "posicion": ["Mediocampista Central", "Mediocampista Ofensivo"],
+        "clubes totales": ["Chelsea", "Crystal Palace", "Fulham", "AC Milan"]
+    },
+    {
+        "id": 571,
+        "nombre": "Youssouf Fofana",
+        "nacionalidad": "Francia",
+        "Fecha de nacimiento": "10/03/1999",
+        "club actual": "AC Milan",
+        "posicion": ["Mediocampista Defensivo", "Mediocampista Central"],
+        "clubes totales": ["Strasbourg", "Monaco", "AC Milan"]
+    },
+    {
+        "id": 572,
+        "nombre": "Alexis Saelemaekers",
+        "nacionalidad": "Bélgica",
+        "Fecha de nacimiento": "27/06/1999",
+        "club actual": "AC Milan",
+        "posicion": ["Lateral Derecho", "Mediocampista Derecho", "Extremo Derecho"],
+        "clubes totales": ["Anderlecht", "AC Milan", "Bologna", "Roma"]
+    },
+    {
+        "id": 573,
+        "nombre": "Santiago Giménez",
+        "nacionalidad": "México",
+        "Fecha de nacimiento": "18/04/2001",
+        "club actual": "AC Milan",
+        "posicion": ["Delantero Centro", "Extremo Derecho"],
+        "clubes totales": ["Cruz Azul", "Feyenoord", "AC Milan"]
+    },
+    {
+        "id": 574,
+        "nombre": "Christopher Nkunku",
+        "nacionalidad": "Francia",
+        "Fecha de nacimiento": "14/11/1997",
+        "club actual": "AC Milan",
+        "posicion": ["Mediocampista Ofensivo", "Extremo Derecho", "Delantero Centro"],
+        "clubes totales": ["Paris Saint-Germain", "RB Leipzig", "Chelsea", "AC Milan"]
     },
     {
         "id": 999999999,
