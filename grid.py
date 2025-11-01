@@ -270,7 +270,7 @@ class FutbolGrid:
             ancho_msg = 700
             alto_msg = 60
             x = (ANCHO - ancho_msg) // 2
-            y = 500
+            y = 700
             
             pygame.draw.rect(self.pantalla, ROJO, (x, y, ancho_msg, alto_msg))
             pygame.draw.rect(self.pantalla, NEGRO, (x, y, ancho_msg, alto_msg), 3)
@@ -299,12 +299,12 @@ class FutbolGrid:
 
             if tipo == "equipo" and valor in self.imagenes:
                 imagen = self.imagenes[valor]
-                rect_img = imagen.get_rect(center=(x + TAMANO_CELDA // 2, y - 20))
+                rect_img = imagen.get_rect(center=(x + TAMANO_CELDA // 2, y - 25))
                 self.pantalla.blit(imagen, rect_img)
 
             if tipo == "seleccion" and valor in self.imagenes:
                 imagen = self.imagenes[valor]
-                rect_img = imagen.get_rect(center=(x + TAMANO_CELDA // 2, y - 20))
+                rect_img = imagen.get_rect(center=(x + TAMANO_CELDA // 2, y - 25))
                 self.pantalla.blit(imagen, rect_img)
 
             texto = self.fuente_pequena.render(valor, True, color)
@@ -323,12 +323,12 @@ class FutbolGrid:
 
             if tipo == "equipo" and valor in self.imagenes:
                 imagen = self.imagenes[valor]
-                rect_img = imagen.get_rect(center=(x + 75, y - 20))
+                rect_img = imagen.get_rect(center=(x + 75, y + 30))
                 self.pantalla.blit(imagen, rect_img)
             
             if tipo == "seleccion" and valor in self.imagenes:
                 imagen = self.imagenes[valor]
-                rect_img = imagen.get_rect(center=(x + 75, y - 20))
+                rect_img = imagen.get_rect(center=(x + 75, y + 30))
                 self.pantalla.blit(imagen, rect_img)
 
             texto = self.fuente_pequena.render(valor, True, color)
@@ -361,10 +361,10 @@ class FutbolGrid:
                     self.pantalla.blit(texto, rect_texto)
 
     def dibujar_input(self):
-        y = 600
+        y = 625
         color_fondo = AMARILLO if self.input_activo else BLANCO
-        pygame.draw.rect(self.pantalla, color_fondo, (50, y, 900, 40))
-        pygame.draw.rect(self.pantalla, NEGRO, (50, y, 900, 40), 3)
+        pygame.draw.rect(self.pantalla, color_fondo, (50, 625, 900, 40))
+        pygame.draw.rect(self.pantalla, NEGRO, (50, 625, 900, 40), 3)
         
         texto = self.fuente.render(self.input_texto, True, NEGRO)
         self.pantalla.blit(texto, (60, y + 8))
@@ -453,6 +453,7 @@ class FutbolGrid:
                     self.jugador_seleccionado = jugador
                     self.celdas_validas = celdas
                     self.mostrando_menu_celdas = True
+
             else:
                 self.mostrar_mensaje(f"{jugador['nombre']} no encaja en ninguna celda disponible")
                 self.input_texto = ""
@@ -461,7 +462,7 @@ class FutbolGrid:
             self.mostrar_mensaje(f"No se encontró el jugador: {nombre_jugador}")
             self.input_texto = ""
             self.sugerencias = []
-    
+        
     def ejecutar(self):
         ejecutando = True
         
@@ -492,8 +493,11 @@ class FutbolGrid:
                     if self.mostrando_menu_celdas:
                         self.manejar_clic_menu(evento.pos)
                     elif not self.juego_terminado:
+                        rect_input = pygame.Rect(50, 625, 900, 40)
+                        if rect_input.collidepoint(evento.pos):
+                            self.input_activo = True
                         if self.sugerencias:
-                            y_sug = 645
+                            y_sug = 670
                             for i, sugerencia in enumerate(self.sugerencias):
                                 rect = pygame.Rect(50, y_sug + i * 35, 900, 33)
                                 if rect.collidepoint(evento.pos):
@@ -502,7 +506,7 @@ class FutbolGrid:
                                     self.procesar_jugador(sugerencia)
                                     break
                         
-                        rect_input = pygame.Rect(50, 600, 900, 40)
+                        rect_input = pygame.Rect(50, 625, 900, 40)
                         if rect_input.collidepoint(evento.pos):
                             self.input_activo = True
             
@@ -514,7 +518,7 @@ class FutbolGrid:
             
             # Título solo cuando NO ha terminado
             titulo = self.fuente_grande.render("FÚTBOL GRID", True, NEGRO)
-            self.pantalla.blit(titulo, (ANCHO // 2 - 100, 30))
+            self.pantalla.blit(titulo, (ANCHO // 2 - 100, 10))
             
             self.dibujar_grid()
             
@@ -531,7 +535,7 @@ class FutbolGrid:
             elif not self.mostrando_menu_celdas:
                 self.dibujar_input()
                 inst = self.fuente_pequena.render("Escribe el nombre de un jugador (presiona ESC para salir)", True, GRIS_OSCURO)
-                self.pantalla.blit(inst, (50, 570))
+                self.pantalla.blit(inst, (50, 600))
             else:
                 self.dibujar_menu_celdas()
             
