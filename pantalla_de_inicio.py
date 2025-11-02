@@ -123,6 +123,14 @@ games = [
         "color": (100, 200, 200),
         "status": "Disponible"
     },
+    {
+        "title": "F11 Clubes",
+        "description": "Crea tu propia formación con jugadores de distintos clubes",
+        "file": "f11clubes.py",
+        "category": "conocimiento",
+        "color": (100, 200, 200),
+        "status": "Disponible"
+    }
 ]
 
 
