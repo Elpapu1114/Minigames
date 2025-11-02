@@ -169,7 +169,8 @@ class Juego:
     def seleccionar_jugador(self, jugador):
         """Primer paso: verificar si el jugador puede ser colocado"""
         nombre_completo = jugador.get('nombre', 'Jugador')
-        nombre_mostrar = jugador.get('apodo', nombre_completo)
+        if "apodo" in jugador:
+            nombre_mostrar = jugador.get('apodo', nombre_completo)
         club_actual = jugador.get('club actual', '')
         
         # Verificar si el jugador es del equipo correcto
@@ -239,12 +240,16 @@ class Juego:
             if not any(jc['jugador']['id'] == j['id'] for jc in self.jugadores_colocados):
                 # Buscar por nombre completo (que puede incluir apellido)
                 nombre_completo = j.get('nombre', '').lower()
+                apodo = j.get('apodo', '').lower()
                 
                 # Dividir el nombre en palabras para buscar por cualquier parte
                 palabras_nombre = nombre_completo.split()
+                palabras_apodo = apodo.split()
                 
                 # Coincide si alguna palabra empieza con la búsqueda
                 if any(palabra.startswith(busqueda_lower) for palabra in palabras_nombre):
+                    disponibles.append(j)
+                elif any(palabra.startswith(busqueda_lower) for palabra in palabras_apodo):
                     disponibles.append(j)
         
         # Ordenar alfabéticamente por nombre completo
