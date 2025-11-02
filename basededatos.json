@@ -5717,6 +5717,16 @@
         "clubes totales": ["Benfica", "Paris Saint-Germain"]
     },
     {
+        "id": 616,
+        "nombre": "Giovanni Van Bronckhorst",
+        "apodo": "van Bronckhorst",
+        "nacionalidad": "Países Bajos",
+        "Fecha de nacimiento": "05/02/1975",
+        "club actual": "RETIRADO",
+        "posicion": ["Lateral Izquierdo", "Defensa Central", "Mediocampista Izquierdo"],
+        "clubes totales": ["Feyenoord", "Rangers", "Arsenal", "Barcelona", "Waalwijk"]
+    },
+    {
         "id": 999999999,
         "nombre": "Juanjo Shlamovitz",
         "nacionalidad": ["Argentina", "Italia", "España", "Francia", "Brasil", "Inglaterra", "Alemania", "Países Bajos", "Portugal", "Bélgica", "Suiza", "Dinamarca", "Suecia", "Noruega", "Finlandia", "Polonia", "Ucrania", "Rusia", "Turquía", "Grecia", "Croacia", "Serbia", "Hungría", "República Checa", "Eslovaquia", "Eslovenia", "Rumania", "Bulgaria", "Austria", "Irlanda", "Escocia", "Gales"],
