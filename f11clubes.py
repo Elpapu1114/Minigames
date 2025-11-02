@@ -175,7 +175,7 @@ class Juego:
         
         # Verificar si el jugador es del equipo correcto
         if club_actual != self.equipo_actual:
-            self.mensaje = f"❌ {nombre_mostrar} no juega en {self.equipo_actual}"
+            self.mensaje = f"❌ {nombre_completo} no juega en {self.equipo_actual}"
             self.tiempo_mensaje_error = time.time()
             return
         
@@ -184,7 +184,7 @@ class Juego:
         posiciones_disponibles = [p for p in posiciones_validas if p not in self.posiciones_ocupadas]
         
         if not posiciones_disponibles:
-            self.mensaje = f"❌ No hay lugar para {nombre_mostrar} en la formación"
+            self.mensaje = f"❌ No hay lugar para {nombre_completo} en la formación"
             self.tiempo_mensaje_error = time.time()
             return
         
