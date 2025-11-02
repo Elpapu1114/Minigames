@@ -1530,14 +1530,13 @@
 
     {
         "id": 161,
-        "nombre": "William Saliba",
-        "nacionalidad": "Francia",    
-        "Fecha de nacimiento": "24/03/2001",
-        "club actual": "Arsenal",
-        "posicion": ["Defensa Central", "Lateral Derecho", "Lateral Izquierdo"],
-        "clubes totales": ["Saint-Étienne", "Arsenal", "Nice", "Olympique Marseille"]
+        "nombre": "Alfredo Di Stéfano",
+        "nacionalidad": "España",
+        "Fecha de nacimiento": "04/07/1926",
+        "club actual": "RETIRADO",
+        "posicion": ["Delantero Centro", "Mediocampista Ofensivo"],
+        "clubes totales": ["River Plate", "Huracán", "Millonarios", "Real Madrid", "Espanyol"]
     },
-
     {
         "id": 162,
         "nombre": "Gleison Bremer",
@@ -1611,12 +1610,12 @@
 
     {
         "id": 169,
-        "nombre": "Declan Rice",
-        "nacionalidad": "Inglaterra",    
-        "Fecha de nacimiento": "14/01/1999",
-        "club actual": "Arsenal",
-        "posicion": ["Mediocampista Defensivo", "Mediocampista Central", "Mediocampista Ofensivo"],
-        "clubes totales": ["West Ham United", "Arsenal"]
+        "nombre": "Iván Córdoba",
+        "nacionalidad": "Colombia",
+        "Fecha de nacimiento": "11/08/1976",
+        "club actual": "RETIRADO",
+        "posicion": ["Defensa Central", "Lateral Derecho"],
+        "clubes totales": ["Deportivo Rionegro", "Atlético Nacional", "San Lorenzo", "Inter de Milán"]
     },
 
     {
@@ -5429,12 +5428,12 @@
     },
     {
         "id": 584,
-        "nombre": "Sadio Mané",
-        "nacionalidad": "Senegal",
-        "Fecha de nacimiento": "10/04/1992",
-        "club actual": "Bayern de Múnich",
-        "posicion": ["Extremo Izquierdo", "Delantero Centro", "Extremo Derecho"],
-        "clubes totales": ["Metz", "Red Bull Salzburgo", "Southampton", "Liverpool", "Bayern de Múnich"]
+        "nombre": "Ferenc Puskás",
+        "nacionalidad": "Hungría",
+        "Fecha de nacimiento": "01/04/1927",
+        "club actual": "RETIRADO",
+        "posicion": ["Delantero Centro", "Extremo Izquierdo"],
+        "clubes totales": ["Kispest AC", "Budapest Honvéd", "Real Madrid", "Panathinaikos"]
     },
     {
         "id": 585,
