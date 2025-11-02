@@ -8,7 +8,7 @@
         "Fecha de nacimiento": "24/02/2000",
         "club actual": "Real Betis",
         "posicion": ["Extremo Derecho", "Extremo Izquierdo", "Mediocampista Ofensivo"],
-        "clubes totales": ["São Paulo", "Ajax", "Manchester United", "Real Betis"]
+        "clubes totales": ["Sao Paulo", "Ajax", "Manchester United", "Real Betis"]
         },
 
         {
@@ -517,7 +517,7 @@
         "Fecha de nacimiento": "04/10/1980",
         "club actual": "RETIRADO",
         "posicion": ["Mediocampista Ofensivo", "Mediocampista Central"],
-        "clubes totales": ["Sparta Praga", "Borussia Dortmund", "Arsenal", "VfB Stuttgart"]
+        "clubes totales": ["Sparta Praga", "Borussia Dortmund", "Arsenal", "VFB Stuttgart"]
     },
     {
         "id": 56,
@@ -597,7 +597,7 @@
         "nacionalidad": "Alemania",    
         "Fecha de nacimiento": "14/07/1995",
         "club actual": "Bayern de Múnich",
-        "posicion": ["Extremo Derecho", "Extremo Izquierdo", "Delantero Centro", "Mediocampista Derecho"],
+        "posicion": ["Extremo Derecho", "Mediocampista Izquierdo", "Delantero Centro", "Mediocampista Derecho"],
         "clubes totales": ["Arsenal", "West Bromwich Albion", "Werder Bremen", "Hoffenheim", "Bayern de Múnich"]
     },
     {
@@ -672,7 +672,7 @@
         "Fecha de nacimiento": "22/04/1982",
         "club actual": "RETIRADO",
         "posicion": ["Mediocampista Ofensivo", "Extremo Derecho", "Extremo Izquierdo", "Mediocampista Izquierdo"],
-        "clubes totales": ["São Paulo", "AC Milan", "Real Madrid", "Orlando City"]
+        "clubes totales": ["Sao Paulo", "AC Milan", "Real Madrid", "Orlando City"]
     },
     {
         "id": 73,
@@ -1095,7 +1095,7 @@
         "Fecha de nacimiento": "09/06/1984",
         "club actual": "RETIRADO",
         "posicion": ["Mediocampista Ofensivo", "Mediocampista Central", "Mediocampista Defensivo"],
-        "clubes totales": ["Ajax", "Real Madrid", "Inter de Milán", "Galatasaray", "OGC Nice", "Al-Gharafa"]
+        "clubes totales": ["Ajax", "Real Madrid", "Inter de Milán", "Galatasaray", "Nice", "Al-Gharafa"]
     },
 
     {
@@ -1226,7 +1226,7 @@
         "Fecha de nacimiento": "12/08/1990",
         "club actual": "Genoa",
         "posicion": ["Delantero Centro"],
-        "clubes totales": ["Inter de Milán", "Manchester City", "AC Milan", "Liverpool", "OGC Nice", "Olympique Marseille", "Brescia", "Monza", "Adana Demirspor", "Sion", "Genoa"]
+        "clubes totales": ["Inter de Milán", "Manchester City", "AC Milan", "Liverpool", "Nice", "Olympique Marseille", "Brescia", "Monza", "Adana Demirspor", "Sion", "Genoa"]
     },
 
     {
@@ -1369,7 +1369,7 @@
         "Fecha de nacimiento": "07/06/1970",
         "club actual": "RETIRADO",
         "posicion": ["Lateral Derecho", "Lateral Izquierdo", "Defensa Central", "Mediocampista Derecho"],
-        "clubes totales": ["São Paulo", "Real Zaragoza", "Palmeiras", "AC Milan", "AS Roma"]
+        "clubes totales": ["Sao Paulo", "Real Zaragoza", "Palmeiras", "AC Milan", "AS Roma"]
     },
 
     {
@@ -1411,7 +1411,7 @@
         "Fecha de nacimiento": "08/05/1978",
         "club actual": "RETIRADO",
         "posicion": ["Defensa Central", "Lateral Izquierdo"],
-        "clubes totales": ["Internacional", "Bayer Leverkusen", "Bayern de Múnich", "Inter de Milán", "Juventus", "São Paulo", "Palmeiras", "Brasiliense"]
+        "clubes totales": ["Internacional", "Bayer Leverkusen", "Bayern de Múnich", "Inter de Milán", "Juventus", "Sao Paulo", "Palmeiras", "Brasiliense"]
     },
 
     {
@@ -1503,7 +1503,7 @@
         "nacionalidad": "Portugal",    
         "Fecha de nacimiento": "19/06/2002",
         "club actual": "Paris Saint-Germain",
-        "posicion": ["Lateral Izquierdo", "Lateral Derecho", "Defensa Central", "Mediocampista Izquierdo"],
+        "posicion": ["Lateral Izquierdo", "Defensa Central", "Mediocampista Izquierdo"],
         "clubes totales": ["Sporting de Lisboa", "Paris Saint-Germain"]
     },
 
@@ -1575,7 +1575,7 @@
         "Fecha de nacimiento": "10/11/1969",
         "club actual": "RETIRADO",
         "posicion": ["Portero"],
-        "clubes totales": ["Schalke 04", "AC Milan", "Borussia Dortmund", "Arsenal", "VfB Stuttgart"]
+        "clubes totales": ["Schalke 04", "AC Milan", "Borussia Dortmund", "Arsenal", "VFB Stuttgart"]
     },
 
     {
@@ -2111,7 +2111,7 @@
         "Fecha de nacimiento": "08/05/1981",
         "club actual": "RETIRADO",
         "posicion": ["Defensa Central", "Lateral Derecho"],
-        "clubes totales": ["Pistoiese", "Ascoli", "Chievo Verona", "Palermo", "VfL Wolfsburgo", "Juventus"]
+        "clubes totales": ["Pistoiese", "Ascoli", "Chievo Verona", "Palermo", "VFL Wolfsburgo", "Juventus"]
     },
     {
         "id": 220,
@@ -2581,9 +2581,9 @@
         "nombre": "Lucas Moura",
         "nacionalidad": "Brasil",
         "Fecha de nacimiento": "13/08/1992",
-        "club actual": "São Paulo",
+        "club actual": "Sao Paulo",
         "posicion": ["Extremo Derecho", "Extremo Izquierdo", "Mediocampista Ofensivo"],
-        "clubes totales": ["São Paulo", "Paris Saint-Germain", "Tottenham Hotspur"]
+        "clubes totales": ["Sao Paulo", "Paris Saint-Germain", "Tottenham Hotspur"]
     },
     {
         "id": 272,
@@ -2610,7 +2610,7 @@
         "Fecha de nacimiento": "06/03/1996",
         "club actual": "RB Leipzig",
         "posicion": ["Delantero Centro", "Extremo Derecho", "Extremo Izquierdo"],
-        "clubes totales": ["VfB Stuttgart", "RB Leipzig", "Chelsea", "Tottenham Hotspur"]
+        "clubes totales": ["VFB Stuttgart", "RB Leipzig", "Chelsea", "Tottenham Hotspur"]
     },
     {
         "id": 275,
@@ -2746,7 +2746,7 @@
         "Fecha de nacimiento": "23/02/1992",
         "club actual": "Manchester United",
         "posicion": ["Mediocampista Defensivo", "Mediocampista Central"],
-        "clubes totales": ["São Paulo", "Real Madrid", "Porto", "Manchester United"]
+        "clubes totales": ["Sao Paulo", "Real Madrid", "Porto", "Manchester United"]
     },
     {
         "id": 290,
@@ -2755,7 +2755,7 @@
         "Fecha de nacimiento": "18/01/1998",
         "club actual": "Real Madrid",
         "posicion": ["Defensa Central", "Lateral Derecho"],
-        "clubes totales": ["São Paulo", "Porto", "Real Madrid"]
+        "clubes totales": ["Sao Paulo", "Porto", "Real Madrid"]
     },
     {
         "id": 291,
@@ -2801,7 +2801,7 @@
         "Fecha de nacimiento": "14/02/1992",
         "club actual": "VFL Wolfsburgo",
         "posicion": ["Mediocampista Ofensivo", "Mediocampista Central"],
-        "clubes totales": ["Ajax", "Tottenham Hotspur", "Inter de Milán", "Brentford", "Manchester United", "VfL Wolfsburgo"]
+        "clubes totales": ["Ajax", "Tottenham Hotspur", "Inter de Milán", "Brentford", "Manchester United", "VFL Wolfsburgo"]
     },
     {
         "id": 296,
@@ -2846,7 +2846,7 @@
         "Fecha de nacimiento": "17/03/1986",
         "club actual": "Fenerbahçe",
         "posicion": ["Delantero Centro"],
-        "clubes totales": ["Željezničar", "Teplice", "VfL Wolfsburgo", "Manchester City", "AS Roma", "Inter de Milán", "Fenerbahçe"]
+        "clubes totales": ["Željezničar", "Teplice", "VFL Wolfsburgo", "Manchester City", "AS Roma", "Inter de Milán", "Fenerbahçe"]
     },
     {
         "id": 301,
@@ -3274,7 +3274,7 @@
         "Fecha de nacimiento": "30/07/1964",
         "club actual": "RETIRADO",
         "posicion": ["Delantero Centro"],
-        "clubes totales": ["Stuttgarter Kickers", "VfB Stuttgart", "Inter de Milán", "Monaco", "Tottenham Hotspur", "Bayern de Múnich", "Orange County Blue Star"]
+        "clubes totales": ["Stuttgarter Kickers", "VFB Stuttgart", "Inter de Milán", "Monaco", "Tottenham Hotspur", "Bayern de Múnich", "Orange County Blue Star"]
     },
     {
         "id": 348,
@@ -3368,7 +3368,7 @@
         "Fecha de nacimiento": "22/04/1977",
         "club actual": "RETIRADO",
         "posicion": ["Mediocampista Defensivo", "Mediocampista Central"],
-        "clubes totales": ["MVV Maastricht", "PSV Eindhoven", "Barcelona", "Bayern de Múnich", "AC Milan", "VfL Wolfsburgo"]
+        "clubes totales": ["MVV Maastricht", "PSV Eindhoven", "Barcelona", "Bayern de Múnich", "AC Milan", "VFL Wolfsburgo"]
     },
     {
         "id": 358,
@@ -3441,7 +3441,7 @@
         "Fecha de nacimiento": "06/05/1983",
         "club actual": "RETIRADO",
         "posicion": ["Lateral Derecho", "Lateral Izquierdo", "Mediocampista Derecho"],
-        "clubes totales": ["Bahia", "Sevilla", "Barcelona", "Juventus", "Paris Saint-Germain", "São Paulo", "FC Barcelona", "Pumas"]
+        "clubes totales": ["Bahia", "Sevilla", "Barcelona", "Juventus", "Paris Saint-Germain", "Sao Paulo", "FC Barcelona", "Pumas"]
     },
     {
         "id": 366,
@@ -3657,7 +3657,7 @@
         "Fecha de nacimiento": "18/04/1995",
         "club actual": "AC Milan",
         "posicion": ["Delantero Centro", "Extremo Derecho", "Extremo Izquierdo"],
-        "clubes totales": ["LOSC Lille", "Liverpool", "Wolfsburgo", "AC Milan", "Nottingham Forest"]
+        "clubes totales": ["LOSC Lille", "Liverpool", "VFL Wolfsburgo", "AC Milan", "Nottingham Forest"]
     },
     {
         "id": 390,
@@ -3965,7 +3965,7 @@
         "Fecha de nacimiento": "07/09/1999",
         "club actual": "Manchester City",
         "posicion": ["Extremo Derecho", "Extremo Izquierdo", "Delantero Centro"],
-        "clubes totales": ["Wadi Degla", "VfL Wolfsburgo", "St. Pauli", "VfB Stuttgart", "Eintracht Frankfurt", "Manchester City"]
+        "clubes totales": ["Wadi Degla", "VFL Wolfsburgo", "St. Pauli", "VFB Stuttgart", "Eintracht Frankfurt", "Manchester City"]
     },
     {
         "id": 424,
@@ -4108,7 +4108,7 @@
         "nombre": "Carney Chukwuemeka",
         "nacionalidad": "Inglaterra",
         "Fecha de nacimiento": "20/10/2003",
-        "club actual": "Aston Villa",
+        "club actual": "Borussia Dortmund",
         "posicion": ["Mediocampista Central", "Mediocampista Ofensivo"],
         "clubes totales": ["Aston Villa", "Chelsea", "Borussia Dortmund"]
     },
@@ -4422,7 +4422,7 @@
         "Fecha de nacimiento": "19/04/2001",
         "club actual": "Tottenham Hotspur",
         "posicion": ["Defensa Central", "Mediocampista Defensivo"],
-        "clubes totales": ["FC Volendam", "Wolfsburgo", "Tottenham Hotspur"]
+        "clubes totales": ["FC Volendam", "VFL Wolfsburgo", "Tottenham Hotspur"]
     },
     {
         "id": 474,
@@ -5024,7 +5024,7 @@
         "nombre": "Adrien Rabiot",
         "nacionalidad": "Francia",
         "Fecha de nacimiento": "03/04/1995",
-        "club actual": "Juventus",
+        "club actual": "AC Milan",
         "posicion": ["Mediocampista Central", "Mediocampista Defensivo"],
         "clubes totales": ["Paris Saint-Germain", "Toulouse", "Juventus", "Olympique Marseille", "AC Milan"]
     },
@@ -5044,7 +5044,7 @@
         "Fecha de nacimiento": "01/11/1992",
         "club actual": "Juventus",
         "posicion": ["Extremo Izquierdo", "Mediocampista Izquierdo"],
-        "clubes totales": ["Radnicki Kragujevac", "Groningen", "Stuttgart", "Hamburger SV", "Eintracht Frankfurt", "Juventus"]
+        "clubes totales": ["Radnicki Kragujevac", "Groningen", "VFB Stuttgart", "Hamburger SV", "Eintracht Frankfurt", "Juventus"]
     },
     {
         "id": 542,
@@ -5254,7 +5254,7 @@
         "Fecha de nacimiento": "26/03/1989",
         "club actual": "RETIRADO",
         "posicion": ["Defensa Central"],
-        "clubes totales": ["FC Midtjylland", "Palermo", "Wolfsburgo", "Roma", "LOSC Lille", "Fenerbahçe", "Sevilla", "Atalanta", "AC Milan"]
+        "clubes totales": ["FC Midtjylland", "Palermo", "VFL Wolfsburgo", "AS Roma", "LOSC Lille", "Fenerbahçe", "Sevilla", "Atalanta", "AC Milan"]
     },
     {
         "id": 565,
@@ -5327,7 +5327,7 @@
         "Fecha de nacimiento": "27/06/1999",
         "club actual": "AC Milan",
         "posicion": ["Lateral Derecho", "Mediocampista Derecho", "Extremo Derecho"],
-        "clubes totales": ["Anderlecht", "AC Milan", "Bologna", "Roma"]
+        "clubes totales": ["Anderlecht", "AC Milan", "Bologna", "AS Roma"]
     },
     {
         "id": 573,
@@ -5348,13 +5348,382 @@
         "clubes totales": ["Paris Saint-Germain", "RB Leipzig", "Chelsea", "AC Milan"]
     },
     {
+        "id": 575,
+        "nombre": "Min-Jae Kim",
+        "nacionalidad": "Corea del Sur",
+        "Fecha de nacimiento": "15/11/1996",
+        "club actual": "Bayern de Múnich",
+        "posicion": ["Defensa Central"],
+        "clubes totales": ["Jeonbuk Hyundai Motors", "Beijing Guoan", "Fenerbahçe", "Napoli", "Bayern de Múnich"]
+    },
+    {
+        "id": 576,
+        "nombre": "Jonathan Tah",
+        "nacionalidad": "Alemania",
+        "Fecha de nacimiento": "11/02/1996",
+        "club actual": "Bayern de Múnich",
+        "posicion": ["Defensa Central"],
+        "clubes totales": ["Hamburger SV", "Fortuna Dusseldorf", "Bayer Leverkusen", "Bayern de Múnich"]
+    },
+    {
+        "id": 577,
+        "nombre": "Hiroki Ito",
+        "nacionalidad": "Japón",
+        "Fecha de nacimiento": "12/05/1999",
+        "club actual": "Bayern de Múnich",
+        "posicion": ["Defensa Central", "Lateral Derecho"],
+        "clubes totales": ["Jubilo Iwata", "VFB Stuttgart", "Bayern de Múnich"]
+    },
+    {
+        "id": 578,
+        "nombre": "Sacha Boey",
+        "nacionalidad": "Francia",
+        "Fecha de nacimiento": "13/09/2000",
+        "club actual": "Bayern de Múnich",
+        "posicion": ["Lateral Derecho", "Mediocampista Derecho"],
+        "clubes totales": ["Rennes", "Dijon", "Galatasaray", "Bayern de Múnich"]
+    },
+    {
+        "id": 579,
+        "nombre": "Konrad Laimer",
+        "nacionalidad": "Austria",
+        "Fecha de nacimiento": "27/05/1997",
+        "club actual": "Bayern de Múnich",
+        "posicion": ["Mediocampista Defensivo", "Lateral Derecho"],
+        "clubes totales": ["Liefering", "RB Salzburgo", "Leipzig", "Bayern de Múnich"]
+    },
+    {
+        "id": 580,
+        "nombre": "Josip Stanisic",
+        "nacionalidad": "Croacia",
+        "Fecha de nacimiento": "02/04/2000",
+        "club actual": "Bayern de Múnich",
+        "posicion": ["Lateral Derecho", "Defensa Central"],
+        "clubes totales": ["Bayern de Múnich", "Bayer Leverkusen"]
+    },
+    {
+        "id": 581,
+        "nombre": "Leon Goretzka",
+        "nacionalidad": "Alemania",
+        "Fecha de nacimiento": "06/02/1995",
+        "club actual": "Bayern de Múnich",
+        "posicion": ["Mediocampista Central", "Mediocampista Defensivo"],
+        "clubes totales": ["Bochum", "Schalke 04", "Bayern de Múnich"]
+    },
+    {
+        "id": 582,
+        "nombre": "Lennart Karl",
+        "nacionalidad": "Alemania",
+        "Fecha de nacimiento": "22/02/2008",
+        "club actual": "Bayern de Múnich",
+        "posicion": ["Mediocampista Central", "Mediocampista Defensivo"]
+    },
+    {
+        "id": 583,
+        "nombre": "Luis Díaz",
+        "nacionalidad": "Colombia",
+        "Fecha de nacimiento": "13/01/1997",
+        "club actual": "Bayern de Múnich",
+        "posicion": ["Extremo Izquierdo", "Extremo Derecho", "Mediocampista Ofensivo", "Delantero Centro"],
+        "clubes totales": ["Junior de Barranquilla", "Porto", "Liverpool", "Bayern de Múnich"]
+    },
+    {
+        "id": 584,
+        "nombre": "Sadio Mané",
+        "nacionalidad": "Senegal",
+        "Fecha de nacimiento": "10/04/1992",
+        "club actual": "Bayern de Múnich",
+        "posicion": ["Extremo Izquierdo", "Delantero Centro", "Extremo Derecho"],
+        "clubes totales": ["Metz", "Red Bull Salzburgo", "Southampton", "Liverpool", "Bayern de Múnich"]
+    },
+    {
+        "id": 585,
+        "nombre": "Gregor Kobel",
+        "nacionalidad": "Suiza",
+        "Fecha de nacimiento": "06/12/1997",
+        "club actual": "Borussia Dortmund",
+        "posicion": ["Portero"],
+        "clubes totales": ["Hoffenheim", "FC Augsburg", "VFB Stuttgart", "Borussia Dortmund"]
+    },
+    {
+        "id": 586,
+        "nombre": "Roman Burki",
+        "nacionalidad": "Suiza",
+        "Fecha de nacimiento": "14/11/1990",
+        "club actual": "St. Louis City",
+        "posicion": ["Portero"],
+        "clubes totales": ["Young Boys", "Grasshopper Club Zürich", "FC Thun", "SC Freiburg", "Borussia Dortmund", "St. Louis City"]
+    },
+    {
+        "id": 587,
+        "nombre": "Nico Schlotterbeck",
+        "nacionalidad": "Alemania",
+        "Fecha de nacimiento": "01/12/1999",
+        "club actual": "Borussia Dortmund",
+        "posicion": ["Defensa Central"],
+        "clubes totales": ["SC Freiburg", "Union Berlin", "Borussia Dortmund"]
+    },
+    {
+        "id": 588,
+        "nombre": "Waldemar Anton",
+        "nacionalidad": "Alemania",
+        "Fecha de nacimiento": "20/07/1996",
+        "club actual": "Borussia Dortmund",
+        "posicion": ["Defensa Central", "Lateral Derecho"],
+        "clubes totales": ["Hannover 96", "VFB Stuttgart", "Borussia Dortmund"]
+    },
+    {
+        "id": 589,
+        "nombre": "Ramy Bensebaini",
+        "nacionalidad": "Argelia",
+        "Fecha de nacimiento": "16/04/1995",
+        "club actual": "Borussia Dortmund",
+        "posicion": ["Lateral Izquierdo", "Defensa Central"],
+        "clubes totales": ["Montpellier", "Rennes", "Borussia Mönchengladbach", "Borussia Dortmund"]
+    },
+    {
+        "id": 590,
+        "nombre": "Niklas Sule",
+        "nacionalidad": "Alemania",
+        "Fecha de nacimiento": "03/09/1995",
+        "club actual": "Borussia Dortmund",
+        "posicion": ["Defensa Central"],
+        "clubes totales": ["1860 Munich", "Hoffenheim", "Bayern de Múnich", "Borussia Dortmund"]
+    },
+    {
+        "id": 591,
+        "nombre": "Julian Ryerson",
+        "nacionalidad": "Noruega",
+        "Fecha de nacimiento": "17/11/1997",
+        "club actual": "Borussia Dortmund",
+        "posicion": ["Lateral Derecho", "Mediocampista Derecho"],
+        "clubes totales": ["Viking FK", "Union Berlin", "Borussia Dortmund"]
+    },
+    {
+        "id": 592,
+        "nombre": "Aarón Anselmino",
+        "nacionalidad": "Argentina",
+        "Fecha de nacimiento": "29/04/2005",
+        "club actual": "Borussia Dortmund",
+        "posicion": ["Defensa Central"],
+        "clubes totales": ["Boca Juniors", "Chelsea", "Borussia Dortmund"]
+    },
+    {
+        "id": 593,
+        "nombre": "Jobe Bellingham",
+        "nacionalidad": "Inglaterra",
+        "Fecha de nacimiento": "23/09/2004",
+        "club actual": "Borussia Dortmund",
+        "posicion": ["Mediocampista Central", "Mediocampista Ofensivo"],
+        "clubes totales": ["Birmingham City", "Sunderland", "Borussia Dortmund"]
+    },
+    {
+        "id": 594,
+        "nombre": "Salih Ozcan",
+        "nacionalidad": "Turquía",
+        "Fecha de nacimiento": "11/01/1998",
+        "club actual": "Borussia Dortmund",
+        "posicion": ["Mediocampista Defensivo", "Mediocampista Central"],
+        "clubes totales": ["1. FC Köln", "Holstein Kiel", "Borussia Dortmund"]
+    },
+    {
+        "id": 595,
+        "nombre": "Felix Nmecha",
+        "nacionalidad": "Alemania",
+        "Fecha de nacimiento": "10/10/2000",
+        "club actual": "Borussia Dortmund",
+        "posicion": ["Mediocampista Ofensivo", "Mediocampista Central", "Extremo Derecho"],
+        "clubes totales": ["VFL Wolfsburgo", "Borussia Dortmund"]
+    },
+    {
+        "id": 596,
+        "nombre": "Pascal Gross",
+        "nacionalidad": "Alemania",
+        "Fecha de nacimiento": "15/06/1991",
+        "club actual": "Borussia Dortmund",
+        "posicion": ["Mediocampista Ofensivo", "Mediocampista Central", "Extremo Izquierdo"],
+        "clubes totales": ["FC Ingolstadt", "Hoffenheim", "Karlsruher SC", "Brighton & Hove Albion", "Borussia Dortmund"]
+    },
+    {
+        "id": 597,
+        "nombre": "Marcel Sabitzer",
+        "nacionalidad": "Austria",
+        "Fecha de nacimiento": "17/03/1994",
+        "club actual": "Borussia Dortmund",
+        "posicion": ["Mediocampista Central", "Mediocampista Ofensivo", "Extremo Derecho"],
+        "clubes totales": ["Admira Wacker", "Rapid Viena", "RB Salzburgo", "RB Leipzig", "Bayern de Múnich", "Manchester United", "Borussia Dortmund"]
+    },
+    {
+        "id": 598,
+        "nombre": "Daniel Svensson",
+        "nacionalidad": "Suecia",
+        "Fecha de nacimiento": "12/02/2002",
+        "club actual": "Borussia Dortmund",
+        "posicion": ["Extremo Derecho", "Mediocampista Ofensivo", "Mediocampista Central"],
+        "clubes totales": ["Nordsjælland", "Borussia Dortmund"]
+    },
+    {
+        "id": 599,
+        "nombre": "Maximilian Beier",
+        "nacionalidad": "Alemania",
+        "Fecha de nacimiento": "17/10/2002",
+        "club actual": "Borussia Dortmund",
+        "posicion": ["Extremo Izquierdo", "Mediocampista Izquierdo"],
+        "clubes totales": ["TSG Hoffenheim", "Hannover 96", "Borussia Dortmund"]
+    },
+    {
+        "id": 600,
+        "nombre": "Serhou Guirassy",
+        "nacionalidad": "Guinea",
+        "Fecha de nacimiento": "12/03/1996",
+        "club actual": "Borussia Dortmund",
+        "posicion": ["Delantero Centro"],
+        "clubes totales": ["LOSC Lille", "Auxerre", "1. FC Köln", "Amiens SC", "Rennes", "VFB Stuttgart", "Borussia Dortmund"]
+    },
+    {
+        "id": 601,
+        "nombre": "Youssoufa Moukoko",
+        "nacionalidad": "Alemania",
+        "Fecha de nacimiento": "20/11/2004",
+        "club actual": "Copenhagen",
+        "posicion": ["Delantero Centro", "Extremo Derecho"],
+        "clubes totales": ["Borussia Dortmund", "Nice", "Copenhagen"]
+    },
+    {
+        "id": 602,
+        "nombre": "Julien Duranville",
+        "nacionalidad": "Bélgica",
+        "Fecha de nacimiento": "05/03/2006",
+        "club actual": "Borussia Dortmund",
+        "posicion": ["Extremo Derecho"],
+        "clubes totales": ["Anderlecht", "Borussia Dortmund"]
+    },
+    {
+        "id": 603,
+        "nombre": "Karim Adeyemi",
+        "nacionalidad": "Alemania",
+        "Fecha de nacimiento": "18/01/2002",
+        "club actual": "Borussia Dortmund",
+        "posicion": ["Delantero Centro", "Extremo Izquierdo"],
+        "clubes totales": ["Liefering", "RB Salzburgo", "Borussia Dortmund"]
+    },
+    {
+        "id": 604,
+        "nombre": "Lucas Chevalier",
+        "nacionalidad": "Francia",
+        "Fecha de nacimiento": "06/11/2001",
+        "club actual": "Paris Saint-Germain",
+        "posicion": ["Portero"],
+        "clubes totales": ["LOSC Lille", "Valenciennes", "Paris Saint-Germain"]
+    },
+    {
+        "id": 605,
+        "nombre": "Marcos Aoás Corrêa",
+        "apodo": "Marquinhos",
+        "nacionalidad": "Brasil",
+        "Fecha de nacimiento": "14/05/1994",
+        "club actual": "Paris Saint-Germain",
+        "posicion": ["Defensa Central", "Lateral Derecho"],
+        "clubes totales": ["Corinthians", "AS Roma", "Paris Saint-Germain"]
+    },
+    {
+        "id": 606,
+        "nombre": "Lucas Beraldo",
+        "nacionalidad": "Brasil",
+        "Fecha de nacimiento": "24/03/2003",
+        "club actual": "Paris Saint-Germain",
+        "posicion": ["Defensa Central"],
+        "clubes totales": ["Sao Paulo", "Paris Saint-Germain"]
+    },
+    {
+        "id": 607,
+        "nombre": "Illya Zabarnyi",
+        "nacionalidad": "Ucrania",
+        "Fecha de nacimiento": "01/09/2002",
+        "club actual": "Paris Saint-Germain",
+        "posicion": ["Defensa Central", "Lateral Derecho"],
+        "clubes totales": ["Dynamo Kyiv", "AFC Bournemouth", "Paris Saint-Germain"]
+    },
+    {
+        "id": 608,
+        "nombre": "Lucas Hernández",
+        "nacionalidad": "Francia",
+        "Fecha de nacimiento": "14/02/1996",
+        "club actual": "Paris Saint-Germain",
+        "posicion": ["Lateral Izquierdo", "Defensa Central"],
+        "clubes totales": ["Atlético de Madrid", "Bayern de Múnich", "Paris Saint-Germain"]
+    },
+    {
+        "id": 609,
+        "nombre": "Willian Pacho",
+        "nacionalidad": "Ecuador",
+        "Fecha de nacimiento": "16/10/2001",
+        "club actual": "Paris Saint-Germain",
+        "posicion": ["Defensa Central"],
+        "clubes totales": ["Independiente del Valle", "Royal Antwerp", "Eintracht Frankfurt", "Paris Saint-Germain"]
+    },
+    {
+        "id": 610,
+        "nombre": "Joao Neves",
+        "nacionalidad": "Portugal",
+        "Fecha de nacimiento": "27/09/2004",
+        "club actual": "Paris Saint-Germain",
+        "posicion": ["Mediocampista Defensivo", "Mediocampista Central"],
+        "clubes totales": ["Benfica", "Paris Saint-Germain"]
+    },
+    {
+        "id": 611,
+        "nombre": "Kang-in Lee",
+        "nacionalidad": "Corea del Sur",
+        "Fecha de nacimiento": "19/02/2001",
+        "club actual": "Paris Saint-Germain",
+        "posicion": ["Mediocampista Ofensivo", "Mediocampista Central", "Extremo Izquierdo"],
+        "clubes totales": ["Valencia", "Mallorca", "Paris Saint-Germain"]
+    },
+    {
+        "id": 612,
+        "nombre": "Senny Mayulu",
+        "nacionalidad": "Francia",
+        "Fecha de nacimiento": "17/05/2006",
+        "club actual": "Paris Saint-Germain",
+        "posicion": ["Mediocampista Defensivo", "Mediocampista Central"],
+        "clubes totales": ["Paris Saint-Germain"]
+    },
+    {
+        "id": 613,
+        "nombre": "Warren Zaire-Emery",
+        "nacionalidad": "Francia",
+        "Fecha de nacimiento": "08/03/2006",
+        "club actual": "Paris Saint-Germain",
+        "posicion": ["Mediocampista Ofensivo", "Mediocampista Defensivo", "Mediocampista Central"],
+        "clubes totales": ["Paris Saint-Germain"]
+    },
+    {
+        "id": 614,
+        "nombre": "Désiré Doué",
+        "nacionalidad": "Francia",
+        "Fecha de nacimiento": "03/06/2005",
+        "club actual": "Paris Saint-Germain",
+        "posicion": ["Mediocampista Ofensivo", "Mediocampista Central", "Extremo Derecho"],
+        "clubes totales": ["Rennes", "Paris Saint-Germain"]
+    },
+    {
+        "id": 615,
+        "nombre": "Goncalo Ramos",
+        "nacionalidad": "Portugal",
+        "Fecha de nacimiento": "20/06/2001",
+        "club actual": "Paris Saint-Germain",
+        "posicion": ["Delantero Centro", "Extremo Derecho"],
+        "clubes totales": ["Benfica", "Paris Saint-Germain"]
+    },
+    {
         "id": 999999999,
         "nombre": "Juanjo Shlamovitz",
         "nacionalidad": ["Argentina", "Italia", "España", "Francia", "Brasil", "Inglaterra", "Alemania", "Países Bajos", "Portugal", "Bélgica", "Suiza", "Dinamarca", "Suecia", "Noruega", "Finlandia", "Polonia", "Ucrania", "Rusia", "Turquía", "Grecia", "Croacia", "Serbia", "Hungría", "República Checa", "Eslovaquia", "Eslovenia", "Rumania", "Bulgaria", "Austria", "Irlanda", "Escocia", "Gales"],
         "Fecha de nacimiento": "28/01/2010",
         "club actual": "San Lorenzo",
         "posicion": ["Portero", "Lateral Derecho", "Defensa Central", "Lateral Izquierdo", "Mediocampista Defensivo", "Mediocampista Central", "Mediocampista Ofensivo", "Mediocampista Izquierdo", "Mediocampista Derecho", "Extremo Derecho", "Extremo Izquierdo", "Delantero Centro"],
-        "clubes totales": ["Liverpool", "Manchester City", "Manchester United", "Chelsea", "Arsenal", "Tottenham Hotspur", "Real Madrid", "Barcelona", "Atlético de Madrid", "Inter de Milán", "AC Milan", "Juventus", "Bayern de Múnich", "Borussia Dortmund", "Paris Saint-Germain", "Napoli", "Roma", "Lazio", "Sevilla", "Villarreal", "Real Sociedad", "Real Betis", "Valencia", "Athletic Club", "Celta de Vigo", "Espanyol", "Rayo Vallecano", "Getafe", "Alavés", "Osasuna", "Mallorca", "Granada", "Levante", "Cádiz", "Elche", "Real Valladolid", "Huesca", "Eibar", "Leganés", "Almería", "Racing Club", "River Plate", "Boca Juniors", "Independiente", "San Lorenzo", "Vélez Sarsfield", "Newell's", "Rosario Central", "Estudiantes", "Lanús", "Argentinos Juniors", "Tigre", "Defensa y Justicia", "Colón", "Gimnasia y Esgrima La Plata", "Huracán", "Atlético Tucumán", "Banfield", "Unión de Santa Fe", "Patronato", "Arsenal de Sarandí", "Central Córdoba", "Sarmiento", "Godoy Cruz", "Aldosivi", "Platense", "San Martín de San Juan", "Temperley", "Quilmes", "All Boys", "Chacarita Juniors", "Instituto", "Talleres de Córdoba", "Belgrano", "Gimnasia y Esgrima de Jujuy", "Defensores de Belgrano", "Ferro Carril Oeste", "Nueva Chicago", "Atlanta", "Argentino de Quilmes", "Comunicaciones", "Deportivo Morón", "Almagro", "Brown de Adrogué", "San Martín de Tucumán", "Mitre de Santiago del Estero", "Independiente Rivadavia", "Villa Dálmine", "Los Andes", "Tristán Suárez", "Acassuso", "Defensores Unidos", "Flandria", "Deportivo Riestra", "Sacachispas", "UAI Urquiza", "Argentino de Merlo", "Cañuelas", "Excursionistas", "JJ Urquiza", "San Telmo", "Deportivo Español", "Sportivo Italiano", "Deportivo Laferrere", "Luján", "Ituzaingó", "Berazategui", "Argentino de Quilmes"] 
+        "clubes totales": ["Liverpool", "Manchester City", "Manchester United", "Chelsea", "Arsenal", "Tottenham Hotspur", "Real Madrid", "Barcelona", "Atlético de Madrid", "Inter de Milán", "AC Milan", "Juventus", "Bayern de Múnich", "Borussia Dortmund", "Paris Saint-Germain", "Napoli", "AS Roma", "Lazio", "Sevilla", "Villarreal", "Real Sociedad", "Real Betis", "Valencia", "Athletic Club", "Celta de Vigo", "Espanyol", "Rayo Vallecano", "Getafe", "Alavés", "Osasuna", "Mallorca", "Granada", "Levante", "Cádiz", "Elche", "Real Valladolid", "Huesca", "Eibar", "Leganés", "Almería", "Racing Club", "River Plate", "Boca Juniors", "Independiente", "San Lorenzo", "Vélez Sarsfield", "Newell's", "Rosario Central", "Estudiantes", "Lanús", "Argentinos Juniors", "Tigre", "Defensa y Justicia", "Colón", "Gimnasia y Esgrima La Plata", "Huracán", "Atlético Tucumán", "Banfield", "Unión de Santa Fe", "Patronato", "Arsenal de Sarandí", "Central Córdoba", "Sarmiento", "Godoy Cruz", "Aldosivi", "Platense", "San Martín de San Juan", "Temperley", "Quilmes", "All Boys", "Chacarita Juniors", "Instituto", "Talleres de Córdoba", "Belgrano", "Gimnasia y Esgrima de Jujuy", "Defensores de Belgrano", "Ferro Carril Oeste", "Nueva Chicago", "Atlanta", "Argentino de Quilmes", "Comunicaciones", "Deportivo Morón", "Almagro", "Brown de Adrogué", "San Martín de Tucumán", "Mitre de Santiago del Estero", "Independiente Rivadavia", "Villa Dálmine", "Los Andes", "Tristán Suárez", "Acassuso", "Defensores Unidos", "Flandria", "Deportivo Riestra", "Sacachispas", "UAI Urquiza", "Argentino de Merlo", "Cañuelas", "Excursionistas", "JJ Urquiza", "San Telmo", "Deportivo Español", "Sportivo Italiano", "Deportivo Laferrere", "Luján", "Ituzaingó", "Berazategui", "Argentino de Quilmes"] 
     }
 
 ]
