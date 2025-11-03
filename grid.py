@@ -24,6 +24,7 @@ ROJO = (200, 0, 0)
 AZUL = (0, 100, 200)
 AZUL_CLARO = (100, 150, 255)
 AMARILLO = (255, 255, 200)
+NARANJA = (255, 165, 0)
 
 # Cargar base de datos
 def cargar_datos():
@@ -183,8 +184,70 @@ def jugador_cumple(jugador, cat_fila, cat_col):
     
     return cumple_fila and cumple_col
 
+class MenuPrincipal:
+    def __init__(self, pantalla):
+        self.pantalla = pantalla
+        self.fuente_titulo = pygame.font.Font(None, 80)
+        self.fuente_opcion = pygame.font.Font(None, 40)
+        self.fuente_pequena = pygame.font.Font(None, 30)
+        
+        # Definir botones del menú
+        self.botones = [
+            {"texto": "SIN TIEMPO", "tiempo": None, "rect": pygame.Rect(300, 250, 400, 70)},
+            {"texto": "90 SEGUNDOS", "tiempo": 90, "rect": pygame.Rect(300, 340, 400, 70)},
+            {"texto": "60 SEGUNDOS", "tiempo": 60, "rect": pygame.Rect(300, 430, 400, 70)},
+            {"texto": "40 SEGUNDOS", "tiempo": 40, "rect": pygame.Rect(300, 520, 400, 70)},
+            {"texto": "SALIR", "tiempo": "salir", "rect": pygame.Rect(300, 610, 400, 70)}
+        ]
+        
+        self.boton_hover = None
+    
+    def dibujar(self):
+        self.pantalla.fill(AZUL)
+        
+        # Título
+        titulo = self.fuente_titulo.render("FÚTBOL GRID", True, AMARILLO)
+        rect_titulo = titulo.get_rect(center=(ANCHO // 2, 120))
+        self.pantalla.blit(titulo, rect_titulo)
+        
+        # Subtítulo
+        subtitulo = self.fuente_pequena.render("Selecciona el modo de juego:", True, BLANCO)
+        rect_subtitulo = subtitulo.get_rect(center=(ANCHO // 2, 190))
+        self.pantalla.blit(subtitulo, rect_subtitulo)
+        
+        # Dibujar botones
+        mouse_pos = pygame.mouse.get_pos()
+        
+        for i, boton in enumerate(self.botones):
+            # Color según hover
+            if boton["rect"].collidepoint(mouse_pos):
+                color = AMARILLO
+                color_texto = AZUL
+                self.boton_hover = i
+            else:
+                if boton["tiempo"] == "salir":
+                    color = ROJO
+                else:
+                    color = BLANCO
+                color_texto = AZUL
+            
+            # Dibujar botón
+            pygame.draw.rect(self.pantalla, color, boton["rect"])
+            pygame.draw.rect(self.pantalla, NEGRO, boton["rect"], 3)
+            
+            # Texto del botón
+            texto = self.fuente_opcion.render(boton["texto"], True, color_texto)
+            rect_texto = texto.get_rect(center=boton["rect"].center)
+            self.pantalla.blit(texto, rect_texto)
+    
+    def manejar_clic(self, pos):
+        for boton in self.botones:
+            if boton["rect"].collidepoint(pos):
+                return boton["tiempo"]
+        return False
+
 class FutbolGrid:
-    def __init__(self):
+    def __init__(self, tiempo_limite=None):
         self.pantalla = pygame.display.set_mode((ANCHO, ALTO))
         pygame.display.set_caption("Fútbol Grid")
         self.reloj = pygame.time.Clock()
@@ -192,6 +255,7 @@ class FutbolGrid:
         self.fuente_pequena = pygame.font.Font(None, 20)
         self.fuente_grande = pygame.font.Font(None, 36)
         self.fuente_titulo = pygame.font.Font(None, 64)
+        self.fuente_tiempo = pygame.font.Font(None, 48)
         
         self.jugadores, self.config = cargar_datos()
         self.categorias_filas, self.categorias_cols = generar_grid(self.config)
@@ -206,11 +270,27 @@ class FutbolGrid:
         self.input_activo = True
         self.juego_terminado = False
         
+        # Sistema de tiempo
+        self.tiempo_limite = tiempo_limite
+        self.tiempo_restante = tiempo_limite if tiempo_limite else None
+        self.tiempo_inicio = pygame.time.get_ticks() if tiempo_limite else None
+        self.tiempo_perdido = False
+        
         # Variables para el sistema de mensajes
         self.jugadores_usados = set()
         self.mensaje_error = ""
         self.tiempo_mensaje = 0
         
+    def actualizar_tiempo(self):
+        if self.tiempo_limite and not self.juego_terminado and not self.tiempo_perdido:
+            tiempo_actual = pygame.time.get_ticks()
+            tiempo_transcurrido = (tiempo_actual - self.tiempo_inicio) / 1000
+            self.tiempo_restante = max(0, self.tiempo_limite - tiempo_transcurrido)
+            
+            if self.tiempo_restante <= 0:
+                self.tiempo_perdido = True
+                self.juego_terminado = True
+    
     def verificar_juego_terminado(self):
         for i in range(3):
             for j in range(3):
@@ -262,6 +342,29 @@ class FutbolGrid:
         """Muestra un mensaje temporal en pantalla (duracion en milisegundos)"""
         self.mensaje_error = mensaje
         self.tiempo_mensaje = pygame.time.get_ticks() + duracion
+    
+    def dibujar_tiempo(self):
+        """Dibuja el temporizador en la parte superior"""
+        if self.tiempo_limite:
+            if self.tiempo_restante <= 10:
+                color = ROJO
+            elif self.tiempo_restante <= 20:
+                color = NARANJA
+            else:
+                color = VERDE
+            
+            minutos = int(self.tiempo_restante // 60)
+            segundos = int(self.tiempo_restante % 60)
+            texto_tiempo = f"{minutos:02d}:{segundos:02d}"
+            
+            texto = self.fuente_tiempo.render(texto_tiempo, True, color)
+            rect_texto = texto.get_rect(center=(ANCHO // 2, 60))
+            
+            # Fondo para el tiempo
+            pygame.draw.rect(self.pantalla, BLANCO, (rect_texto.x - 10, rect_texto.y - 5, rect_texto.width + 20, rect_texto.height + 10))
+            pygame.draw.rect(self.pantalla, NEGRO, (rect_texto.x - 10, rect_texto.y - 5, rect_texto.width + 20, rect_texto.height + 10), 3)
+            
+            self.pantalla.blit(texto, rect_texto)
     
     def dibujar_mensaje_error(self):
         """Dibuja el mensaje de error si hay uno activo"""
@@ -469,13 +572,16 @@ class FutbolGrid:
         while ejecutando:
             self.reloj.tick(FPS)
             
+            # Actualizar tiempo si hay límite
+            self.actualizar_tiempo()
+            
             for evento in pygame.event.get():
                 if evento.type == pygame.QUIT:
                     ejecutando = False
                 
                 elif evento.type == pygame.KEYDOWN:
                     if evento.key == pygame.K_ESCAPE:
-                        ejecutando = False
+                        return "menu"
                     
                     if not self.juego_terminado and not self.mostrando_menu_celdas:
                         if evento.key == pygame.K_BACKSPACE:
@@ -510,31 +616,42 @@ class FutbolGrid:
                         if rect_input.collidepoint(evento.pos):
                             self.input_activo = True
             
-            # Fondo verde cuando el juego termina, blanco cuando está jugando
+            # Determinar color de fondo según el estado
             if self.juego_terminado:
-                self.pantalla.fill(VERDE)
+                if self.tiempo_perdido:
+                    self.pantalla.fill(ROJO)
+                else:
+                    self.pantalla.fill(VERDE)
             else:
                 self.pantalla.fill(BLANCO)
             
-            # Título solo cuando NO ha terminado
-            titulo = self.fuente_grande.render("FÚTBOL GRID", True, NEGRO)
-            self.pantalla.blit(titulo, (ANCHO // 2 - 100, 10))
+            # Título y tiempo
+            if not self.juego_terminado:
+                titulo = self.fuente_grande.render("FÚTBOL GRID", True, NEGRO)
+                self.pantalla.blit(titulo, (ANCHO // 2 - 100, 10))
+                self.dibujar_tiempo()
             
             self.dibujar_grid()
             
             if self.juego_terminado:
-                # Texto "JUEGO TERMINADO" grande en el centro superior
-                texto_terminado = self.fuente_titulo.render("JUEGO TERMINADO", True, BLANCO)
-                rect_terminado = texto_terminado.get_rect(center=(ANCHO // 2, 650))
-                self.pantalla.blit(texto_terminado, rect_terminado)
+                if self.tiempo_perdido:
+                    # Perdiste por tiempo
+                    texto_terminado = self.fuente_titulo.render("TIEMPO AGOTADO", True, BLANCO)
+                    rect_terminado = texto_terminado.get_rect(center=(ANCHO // 2, 650))
+                    self.pantalla.blit(texto_terminado, rect_terminado)
+                else:
+                    # Ganaste completando el grid
+                    texto_terminado = self.fuente_titulo.render("¡COMPLETADO!", True, BLANCO)
+                    rect_terminado = texto_terminado.get_rect(center=(ANCHO // 2, 650))
+                    self.pantalla.blit(texto_terminado, rect_terminado)
                 
-                # Texto "Presiona ESC para salir" debajo
-                texto_esc = self.fuente_grande.render("Presiona ESC para salir", True, BLANCO)
+                # Texto "Presiona ESC para volver al menú" debajo
+                texto_esc = self.fuente_grande.render("Presiona ESC para volver al menú", True, BLANCO)
                 rect_esc = texto_esc.get_rect(center=(ANCHO // 2, 720))
                 self.pantalla.blit(texto_esc, rect_esc)
             elif not self.mostrando_menu_celdas:
                 self.dibujar_input()
-                inst = self.fuente_pequena.render("Escribe el nombre de un jugador (presiona ESC para salir)", True, GRIS_OSCURO)
+                inst = self.fuente_pequena.render("Escribe el nombre de un jugador (presiona ESC para volver al menú)", True, GRIS_OSCURO)
                 self.pantalla.blit(inst, (50, 600))
             else:
                 self.dibujar_menu_celdas()
@@ -544,9 +661,54 @@ class FutbolGrid:
             
             pygame.display.flip()
         
-        pygame.quit()
-        sys.exit()
+        return "salir"
+
+def main():
+    pantalla = pygame.display.set_mode((ANCHO, ALTO))
+    pygame.display.set_caption("Fútbol Grid")
+    reloj = pygame.time.Clock()
+    
+    estado = "menu"
+    
+    while True:
+        if estado == "menu":
+            menu = MenuPrincipal(pantalla)
+            
+            while estado == "menu":
+                reloj.tick(FPS)
+                
+                for evento in pygame.event.get():
+                    if evento.type == pygame.QUIT:
+                        pygame.quit()
+                        sys.exit()
+                    
+                    elif evento.type == pygame.KEYDOWN:
+                        if evento.key == pygame.K_ESCAPE:
+                            pygame.quit()
+                            sys.exit()
+                    
+                    elif evento.type == pygame.MOUSEBUTTONDOWN:
+                        opcion = menu.manejar_clic(evento.pos)
+                        if opcion == "salir":
+                            pygame.quit()
+                            sys.exit()
+                        elif opcion is not False:
+                            estado = "juego"
+                            tiempo_seleccionado = opcion
+                            break
+                
+                menu.dibujar()
+                pygame.display.flip()
+        
+        elif estado == "juego":
+            juego = FutbolGrid(tiempo_limite=tiempo_seleccionado)
+            resultado = juego.ejecutar()
+            
+            if resultado == "menu":
+                estado = "menu"
+            else:
+                pygame.quit()
+                sys.exit()
 
 if __name__ == "__main__":
-    juego = FutbolGrid()
-    juego.ejecutar()
+    main()

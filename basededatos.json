@@ -302,7 +302,7 @@
     },
     {
         "id": 32,
-        "nombre": "Diego Alberto Milito",
+        "nombre": "Diego Milito",
         "nacionalidad": "Argentina",    
         "Fecha de nacimiento": "12/06/1979",
         "club actual": "RETIRADO",
@@ -557,7 +557,7 @@
     },
     {
         "id": 60,
-        "nombre": "Eiður Guðjohnsen",
+        "nombre": "Eiður Gudjohnsen",
         "nacionalidad": "Islandia",    
         "Fecha de nacimiento": "15/09/1978",
         "club actual": "RETIRADO",
@@ -657,7 +657,7 @@
     },
     {
         "id": 71,
-        "nombre": "Gonzalo Gerardo Higuaín",
+        "nombre": "Gonzalo Higuaín",
         "nacionalidad": "Argentina",    
         "Fecha de nacimiento": "10/12/1987",
         "club actual": "RETIRADO",
@@ -695,7 +695,7 @@
     },
     {
         "id": 75,
-        "nombre": "Franz Anton Beckenbauer",
+        "nombre": "Franz Beckenbauer",
         "nacionalidad": "Alemania",    
         "Fecha de nacimiento": "11/09/1945",
         "club actual": "FALLECIDO",
@@ -770,7 +770,7 @@
     },
     {
         "id": 83,
-        "nombre": "Lautaro Javier Martínez",
+        "nombre": "Lautaro Martínez",
         "nacionalidad": "Argentina",    
         "Fecha de nacimiento": "22/08/1997",
         "club actual": "Inter de Milán",
@@ -855,7 +855,7 @@
     },
     {
         "id": 92,
-        "nombre": "Jules Olivier Koundé",
+        "nombre": "Jules Koundé",
         "nacionalidad": "Francia",    
         "Fecha de nacimiento": "12/11/1998",
         "club actual": "Barcelona",
@@ -873,7 +873,7 @@
     },
     {
         "id": 94,
-        "nombre": "Jamie Richard Vardy",
+        "nombre": "Jamie Vardy",
         "nacionalidad": "Inglaterra",    
         "Fecha de nacimiento": "11/01/1987",
         "club actual": "Cremonese",
@@ -891,7 +891,7 @@
     },
     {
         "id": 96,
-        "nombre": "Olivier Jonathan Giroud",
+        "nombre": "Olivier Giroud",
         "nacionalidad": "Francia",    
         "Fecha de nacimiento": "30/09/1986",
         "club actual": "LOSC Lille",
@@ -927,7 +927,7 @@
     },
     {
         "id": 100,
-        "nombre": "Clarence Clyde Seedorf",
+        "nombre": "Clarence Seedorf",
         "nacionalidad": "Países Bajos",    
         "Fecha de nacimiento": "01/04/1976",
         "club actual": "RETIRADO",
@@ -936,7 +936,7 @@
     },
     {
         "id": 101,
-        "nombre": "Gabriel Omar Batistuta",
+        "nombre": "Gabriel Batistuta",
         "nacionalidad": "Argentina",    
         "Fecha de nacimiento": "01/02/1969",
         "club actual": "RETIRADO",
@@ -945,7 +945,7 @@
     },
     {
         "id": 102,
-        "nombre": "Roberto Fabián Ayala",
+        "nombre": "Roberto Ayala",
         "nacionalidad": "Argentina",    
         "Fecha de nacimiento": "14/04/1973",
         "club actual": "RETIRADO",
@@ -1008,7 +1008,7 @@
     },
     {
         "id": 109,
-        "nombre": "Javier Pedro Saviola",
+        "nombre": "Javier Saviola",
         "nacionalidad": "Argentina",    
         "Fecha de nacimiento": "11/12/1981",
         "club actual": "RETIRADO",
@@ -1027,7 +1027,7 @@
     },
     {
         "id": 111,
-        "nombre": "Robert Emmanuel Pires",
+        "nombre": "Robert Pires",
         "nacionalidad": "Francia",    
         "Fecha de nacimiento": "29/10/1973",
         "club actual": "RETIRADO",
@@ -1036,7 +1036,7 @@
     },
     {
         "id": 112,
-        "nombre": "Raheem Shaquille Sterling",
+        "nombre": "Raheem Sterling",
         "nacionalidad": "Inglaterra",    
         "Fecha de nacimiento": "08/12/1994",
         "club actual": "Chelsea",
@@ -1054,7 +1054,7 @@
     },
     {
         "id": 114,
-        "nombre": "Kingsley Junior Coman",
+        "nombre": "Kingsley Coman",
         "nacionalidad": "Francia",    
         "Fecha de nacimiento": "13/06/1996",
         "club actual": "Bayern de Múnich",
@@ -1072,7 +1072,7 @@
     },
     {
         "id": 116,
-        "nombre": "Georginio Gregion Emile Wijnaldum",
+        "nombre": "Georginio Wijnaldum",
         "nacionalidad": "Países Bajos",    
         "Fecha de nacimiento": "11/11/1990",
         "club actual": "Al-Ettifaq",
@@ -1081,7 +1081,7 @@
     },
     {
         "id": 117,
-        "nombre": "Andrew Henry Robertson",
+        "nombre": "Andrew Robertson",
         "nacionalidad": "Escocia",    
         "Fecha de nacimiento": "11/03/1994",
         "club actual": "Liverpool",
@@ -1303,7 +1303,7 @@
 
     {
         "id": 139,
-        "nombre": "Kyle Andrew Walker",
+        "nombre": "Kyle Walker",
         "nacionalidad": "Inglaterra",
         "Fecha de nacimiento": "28/05/1990",
         "club actual": "Manchester City",
@@ -1324,7 +1324,7 @@
 
     {
         "id": 141,
-        "nombre": "Frank James Lampard",
+        "nombre": "Frank Lampard",
         "nacionalidad": "Inglaterra",    
         "Fecha de nacimiento": "20/06/1978",
         "club actual": "RETIRADO",
@@ -1334,7 +1334,7 @@
 
     {
         "id": 142,
-        "nombre": "John George Terry",
+        "nombre": "John Terry",
         "nacionalidad": "Inglaterra",    
         "Fecha de nacimiento": "07/12/1980",
         "club actual": "RETIRADO",
@@ -1344,7 +1344,7 @@
 
     {
         "id": 143,
-        "nombre": "David Robert Joseph Beckham",
+        "nombre": "David Beckham",
         "nacionalidad": "Inglaterra",    
         "Fecha de nacimiento": "02/05/1975",
         "club actual": "RETIRADO",
@@ -1384,7 +1384,7 @@
 
     {
         "id": 147,
-        "nombre": "David Olatukunbo Alaba",
+        "nombre": "David Alaba",
         "nacionalidad": "Austria",    
         "Fecha de nacimiento": "24/06/1992",
         "club actual": "Real Madrid",
@@ -1469,7 +1469,7 @@
 
     {
         "id": 155,
-        "nombre": "Javier Matías Pastore",
+        "nombre": "Javier Pastore",
         "nacionalidad": "Argentina",    
         "Fecha de nacimiento": "20/06/1989",
         "club actual": "RETIRADO",
@@ -1692,7 +1692,7 @@
 
     {
         "id": 177,
-        "nombre": "Keylor Antonio Navas",
+        "nombre": "Keylor Navas",
         "nacionalidad": "Costa Rica",    
         "Fecha de nacimiento": "15/12/1986",
         "club actual": "Al-Nassr",
@@ -1794,7 +1794,7 @@
 
     {
         "id": 187,
-        "nombre": "Juan Guillermo Cuadrado",
+        "nombre": "Juan Cuadrado",
         "nacionalidad": "Colombia",    
         "Fecha de nacimiento": "26/05/1988",
         "club actual": "Pisa",
@@ -1855,7 +1855,7 @@
 
     {
         "id": 193,
-        "nombre": "Federico Santiago Valverde",
+        "nombre": "Federico Valverde",
         "nacionalidad": "Uruguay",    
         "Fecha de nacimiento": "22/07/1998",
         "club actual": "Real Madrid",
@@ -1916,7 +1916,7 @@
 
     {
         "id": 199,
-        "nombre": "Ian Edward Wright",
+        "nombre": "Ian Wright",
         "nacionalidad": "Inglaterra",
         "Fecha de nacimiento": "03/11/1963",
         "club actual": "RETIRADO",
@@ -2488,6 +2488,7 @@
     {
         "id": 261,
         "nombre": "Rodrigo De Paul",
+        "apodo": "de Paul",
         "nacionalidad": "Argentina",
         "Fecha de nacimiento": "24/05/1994",
         "club actual": "Inter Miami",
@@ -3390,6 +3391,7 @@
     {
         "id": 360,
         "nombre": "Virgil van Dijk",
+        "apodo": "van Dijk",
         "nacionalidad": "Países Bajos",
         "Fecha de nacimiento": "08/07/1991",
         "club actual": "Liverpool",
@@ -4543,6 +4545,7 @@
     {
         "id": 487,
         "nombre": "Randal Kolo Muani",
+        "apodo": "Kolo Muani",
         "nacionalidad": "Francia",
         "Fecha de nacimiento": "05/12/1998",
         "club actual": "Tottenham Hotspur",
@@ -4754,12 +4757,12 @@
     },
     {
         "id": 510,
-        "nombre": "Gavi",
-        "nacionalidad": "España",
-        "Fecha de nacimiento": "05/08/2004",
-        "club actual": "Barcelona",
-        "posicion": ["Mediocampista Central"],
-        "clubes totales": ["Barcelona"]
+        "nombre": "Juan Román Riquelme",
+        "nacionalidad": "Argentina",
+        "Fecha de nacimiento": "24/06/1978",
+        "club actual": "RETIRADO",
+        "posicion": ["Mediocampista Ofensivo"],
+        "clubes totales": ["Boca Juniors", "Barcelona", "Villarreal", "Argentinos Juniors"]
     },
     {
         "id": 511,
@@ -5295,6 +5298,7 @@
     {
         "id": 569,
         "nombre": "Charles De Ketelaere",
+        "apodo": "de Ketelaere",
         "nacionalidad": "Bélgica",
         "Fecha de nacimiento": "10/03/2001",
         "club actual": "Atalanta",
