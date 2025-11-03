@@ -107,6 +107,31 @@ FORMACIONES = {
         {'id': 'MD', 'nombre': 'Mediocampista Derecho', 'x': 550, 'y': 275},
         {'id': 'DC1', 'nombre': 'Delantero Centro', 'x': 275, 'y': 150},
         {'id': 'DC2', 'nombre': 'Delantero Centro', 'x': 425, 'y': 150}
+    ],
+    '3-4-3 (1)': [
+        {'id': 'PO', 'nombre': 'Portero', 'x': 350, 'y': 610},
+        {'id': 'DFC1', 'nombre': 'Defensa Central', 'x': 230, 'y': 510},
+        {'id': 'DFC2', 'nombre': 'Defensa Central', 'x': 350, 'y': 510},
+        {'id': 'DFC3', 'nombre': 'Defensa Central', 'x': 470, 'y': 510},
+        {'id': 'MI', 'nombre': 'Mediocampista Izquierdo', 'x': 150, 'y': 275},
+        {'id': 'MCD1', 'nombre': 'Mediocampista Central', 'x': 275, 'y': 370},
+        {'id': 'MCD2', 'nombre': 'Mediocampista Central', 'x': 425, 'y': 370},
+        {'id': 'MD', 'nombre': 'Mediocampista Derecho', 'x': 550, 'y': 275},
+        {'id': 'DC', 'nombre': 'Delantero Centro', 'x': 350, 'y': 140},
+        {'id': 'EI', 'nombre': 'Extremo Izquierdo', 'x': 200, 'y': 170},
+        {'id': 'ED', 'nombre': 'Extremo Derecho', 'x': 500, 'y': 170}
+    ],'3-4-3 (2)': [
+        {'id': 'PO', 'nombre': 'Portero', 'x': 350, 'y': 610},
+        {'id': 'DFC1', 'nombre': 'Defensa Central', 'x': 230, 'y': 510},
+        {'id': 'DFC2', 'nombre': 'Defensa Central', 'x': 350, 'y': 510},
+        {'id': 'DFC3', 'nombre': 'Defensa Central', 'x': 470, 'y': 510},
+        {'id': 'MI', 'nombre': 'Mediocampista Izquierdo', 'x': 150, 'y': 275},
+        {'id': 'MC1', 'nombre': 'Mediocampista Central', 'x': 275, 'y': 330},
+        {'id': 'MC2', 'nombre': 'Mediocampista Central', 'x': 425, 'y': 330},
+        {'id': 'MD', 'nombre': 'Mediocampista Derecho', 'x': 550, 'y': 275},
+        {'id': 'DC', 'nombre': 'Delantero Centro', 'x': 350, 'y': 140},
+        {'id': 'EI', 'nombre': 'Extremo Izquierdo', 'x': 200, 'y': 170},
+        {'id': 'ED', 'nombre': 'Extremo Derecho', 'x': 500, 'y': 170}
     ]
 }
 
@@ -117,10 +142,10 @@ MAPEO_POSICIONES = {
     'Extremo Derecho': ['ED'],
     'Mediocampista Ofensivo': ['MCO', 'MC1', 'MC2', 'MC3'],
     'Mediocampista Central': ['MC', 'MC1', 'MC2', 'MC3', 'MCD', 'MCO'],
-    'Mediocampista Defensivo': ['MCD', 'MC1', 'MC2', 'MC3'],
+    'Mediocampista Defensivo': ['MCD', 'MCD1', 'MCD2', 'MCD3'],
     'Mediocampista Izquierdo': ['MI'],
     'Mediocampista Derecho': ['MD'],
-    'Defensa Central': ['DFC', 'DFC1', 'DFC2'],
+    'Defensa Central': ['DFC', 'DFC1', 'DFC2', 'DFC3'],
     'Lateral Izquierdo': ['DFI'],
     'Lateral Derecho': ['DFD'],
     'Portero': ['PO']

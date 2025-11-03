@@ -260,7 +260,7 @@ def draw_footer():
     pygame.draw.line(screen, ACCENT_COLOR, (100, footer_y - 20), (SCREEN_WIDTH - 100, footer_y - 20), 1)
     
 
-    controls_text = " Click para jugar • ESC para salir • ↑↓ Scroll para navegar"
+    controls_text = " Click para jugar • ESC para salir • ↑↓ Scroll para navegar • Q para pausar"
     draw_text(controls_text, small_font, (150, 150, 150), SCREEN_WIDTH//2, footer_y, center=True)
 
 def handle_scroll(event):
@@ -296,7 +296,10 @@ def main():
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE:
                     running = False
-            
+                elif event.key == pygame.K_q:
+                    print("Volviendo al menú principal...")
+                    pygame.quit()  # Cierra la ventana actual
+                    subprocess.Popen([sys.executable, "menu.py"])  # Ejecuta menu.py
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 if event.button == 1:  
 
