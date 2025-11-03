@@ -7,7 +7,7 @@
         "nacionalidad": "Brasil",
         "Fecha de nacimiento": "24/02/2000",
         "club actual": "Real Betis",
-        "posicion": ["Extremo Derecho", "Extremo Izquierdo", "Mediocampista Ofensivo"],
+        "posicion": ["Extremo Derecho", "Mediocampista Ofensivo"],
         "clubes totales": ["Sao Paulo", "Ajax", "Manchester United", "Real Betis"]
         },
 
@@ -17,7 +17,7 @@
         "nacionalidad": "Argentina",    
         "Fecha de nacimiento": "24/06/1987",
         "club actual": "Inter Miami",
-        "posicion": ["Delantero Centro", "Extremo Derecho", "Mediocampista Ofensivo", "Mediocampista Derecho"],
+        "posicion": ["Delantero Centro", "Extremo Derecho", "Mediocampista Ofensivo"],
         "clubes totales": ["Barcelona", "Paris Saint-Germain", "Inter Miami"]
         },
 
@@ -38,7 +38,7 @@
         "nacionalidad": "Brasil",
         "Fecha de nacimiento": "05/02/1992",
         "club actual": "Santos",
-        "posicion": ["Delantero Centro", "Extremo Izquierdo", "Mediocampista Ofensivo"],
+        "posicion": ["Extremo Izquierdo", "Mediocampista Ofensivo"],
         "clubes totales": ["Santos", "Barcelona", "Paris Saint-Germain", "Al-Hilal"]
     },
     {
@@ -47,7 +47,7 @@
         "nacionalidad": "Uruguay",    
         "Fecha de nacimiento": "24/01/1987",
         "club actual": "Inter Miami",
-        "posicion": ["Delantero Centro", "Extremo Derecho", "Mediocampista Ofensivo"],
+        "posicion": ["Delantero Centro"],
         "clubes totales": ["Nacional", "Groningen", "Ajax", "Liverpool", "Barcelona", "Atlético de Madrid", "Gremio", "Inter Miami"]
     },
     {
@@ -56,7 +56,7 @@
         "nacionalidad": "Francia",    
         "Fecha de nacimiento": "19/12/1987",
         "club actual": "Al-Ittihad",
-        "posicion": ["Delantero Centro", "Mediocampista Ofensivo"],
+        "posicion": ["Delantero Centro"],
         "clubes totales": ["Olympique Lyon", "Real Madrid", "Al-Ittihad"]
     },
     {
@@ -75,7 +75,7 @@
         "nacionalidad": "Gales",    
         "Fecha de nacimiento": "16/07/1989",
         "club actual": "RETIRADO",
-        "posicion": ["Extremo Izquierdo", "Extremo Derecho", "Delantero Centro", "Mediocampista Derecho"],
+        "posicion": ["Extremo Izquierdo", "Extremo Derecho", "Lateral Izquierdo"],
         "clubes totales": ["Southampton", "Tottenham Hotspur", "Real Madrid", "Los Angeles FC"]
     },
     {
@@ -93,7 +93,7 @@
         "nacionalidad": "Alemania",    
         "Fecha de nacimiento": "04/01/1990",
         "club actual": "RETIRADO",
-        "posicion": ["Mediocampista Central", "Mediocampista Ofensivo", "Mediocampista Defensivo"],
+        "posicion": ["Mediocampista Central", "Mediocampista Defensivo"],
         "clubes totales": ["Bayer Leverkusen", "Bayern de Múnich", "Real Madrid"]
     },
     {
@@ -102,7 +102,7 @@
         "nacionalidad": "España",    
         "Fecha de nacimiento": "11/05/1984",
         "club actual": "RETIRADO",
-        "posicion": ["Mediocampista Central", "Mediocampista Ofensivo", "Mediocampista Defensivo"],
+        "posicion": ["Mediocampista Central", "Mediocampista Defensivo"],
         "clubes totales": ["Barcelona", "Vissel Kobe", "Emirates Club"]
     },
     {
@@ -112,7 +112,7 @@
         "nacionalidad": "España",    
         "Fecha de nacimiento": "25/01/1980",
         "club actual": "RETIRADO",
-        "posicion": ["Mediocampista Central", "Mediocampista Ofensivo", "Mediocampista Defensivo"],
+        "posicion": ["Mediocampista Central", "Mediocampista Defensivo"],
         "clubes totales": ["Barcelona", "Al-Sadd"]
     },
     {
@@ -140,7 +140,7 @@
         "nacionalidad": "Francia",    
         "Fecha de nacimiento": "20/12/1998",
         "club actual": "Real Madrid",
-        "posicion": ["Delantero Centro", "Extremo Derecho", "Extremo Izquierdo"],
+        "posicion": ["Delantero Centro", "Extremo Izquierdo"],
         "clubes totales": ["Monaco", "Paris Saint-Germain", "Real Madrid"]
     },
     {
@@ -158,7 +158,7 @@
         "nacionalidad": "España",    
         "Fecha de nacimiento": "02/02/1987",
         "club actual": "RETIRADO",
-        "posicion": ["Defensa Central", "Lateral Derecho", "Lateral Izquierdo"],
+        "posicion": ["Defensa Central"],
         "clubes totales": ["Manchester United","Real Zaragoza", "Barcelona"]
     },
     {
@@ -168,7 +168,7 @@
         "nacionalidad": "Argentina",    
         "Fecha de nacimiento": "15/02/1988",
         "club actual": "Calcio Padova",
-        "posicion": ["Mediocampista Ofensivo", "Extremo Derecho", "Extremo Izquierdo"],
+        "posicion": ["Mediocampista Ofensivo", "Extremo Izquierdo"],
         "clubes totales": ["Arsenal de Sarandí", "San Lorenzo", "Catania", "Metalist Járkov", "Atalanta", "Sevilla", "Monza", "Calcio Padova"]
     },
     {
@@ -178,7 +178,7 @@
         "nacionalidad": "Argentina",    
         "Fecha de nacimiento": "02/06/1988",
         "club actual": "RETIRADO",
-        "posicion": ["Delantero Centro", "Extremo Derecho", "Extremo Izquierdo"],
+        "posicion": ["Delantero Centro"],
         "clubes totales":["Independiente", "Atlético de Madrid", "Manchester City", "Barcelona"]
     },
     {
@@ -206,7 +206,7 @@
         "nacionalidad": "Brasil",    
         "Fecha de nacimiento": "21/03/1980",
         "club actual": "RETIRADO",
-        "posicion": ["Mediocampista Ofensivo", "Delantero Centro", "Extremo Derecho", "Extremo Izquierdo", "Mediocampista Izquierdo"],
+        "posicion": ["Mediocampista Ofensivo", "Extremo Izquierdo", "Mediocampista Izquierdo"],
         "clubes totales": ["Gremio", "Paris Saint-Germain", "Barcelona", "AC Milan", "Flamengo", "Atlético Mineiro", "Querétaro", "Fluminense"]
     },
     {
@@ -224,7 +224,7 @@
         "nacionalidad": "Francia",    
         "Fecha de nacimiento": "07/04/1983",
         "club actual": "RETIRADO",
-        "posicion": ["Extremo Izquierdo", "Extremo Derecho", "Mediocampista Ofensivo", "Mediocampista Izquierdo"],
+        "posicion": ["Extremo Izquierdo", "Mediocampista Ofensivo", "Mediocampista Izquierdo"],
         "clubes totales": ["Boulogne", "Alès", "Brest", "Metz", "Galatasaray", "Olympique Marseille", "Bayern de Múnich", "Fiorentina", "Salernitana"]
     },
     {
@@ -233,7 +233,7 @@
         "nacionalidad": "Países Bajos",    
         "Fecha de nacimiento": "23/01/1984",
         "club actual": "RETIRADO",
-        "posicion": ["Extremo Derecho", "Extremo Izquierdo", "Delantero Centro", "Mediocampista Ofensivo", "Mediocampista Derecho"],
+        "posicion": ["Extremo Derecho", "Mediocampista Ofensivo"],
         "clubes totales": ["Groningen", "PSV Eindhoven", "Chelsea", "Real Madrid", "Bayern de Múnich"]
     },
     {
@@ -251,7 +251,7 @@
         "nacionalidad": "Egipto",    
         "Fecha de nacimiento": "15/06/1992",
         "club actual": "Liverpool",
-        "posicion": ["Extremo Derecho", "Extremo Izquierdo", "Delantero Centro"],
+        "posicion": ["Extremo Derecho", "Delantero Centro"],
         "clubes totales": ["El Mokawloon", "Basel", "Chelsea", "Fiorentina", "AS Roma", "Liverpool"]
     },
     {
@@ -261,7 +261,7 @@
         "nacionalidad": "Brasil",    
         "Fecha de nacimiento": "22/09/1976",
         "club actual": "RETIRADO",
-        "posicion": ["Delantero Centro", "Extremo Derecho", "Extremo Izquierdo"],
+        "posicion": ["Delantero Centro", "Extremo Izquierdo"],
         "clubes totales": ["Cruzeiro", "PSV Eindhoven", "Barcelona", "Inter de Milán", "Real Madrid", "AC Milan", "Corinthians"]
     },
     {
@@ -270,7 +270,7 @@
         "nacionalidad": "Argentina",    
         "Fecha de nacimiento": "30/10/1960",
         "club actual": "FALLECIDO",
-        "posicion": ["Mediocampista Ofensivo", "Delantero Centro", "Extremo Derecho", "Extremo Izquierdo"],
+        "posicion": ["Mediocampista Ofensivo", "Extremo Derecho"],
         "clubes totales": ["Argentinos Juniors", "Boca Juniors", "Barcelona", "Napoli", "Sevilla", "Newells"]
     },
     {
@@ -279,7 +279,7 @@
         "nacionalidad": "Argentina",    
         "Fecha de nacimiento": "05/02/1984",
         "club actual": "RETIRADO",
-        "posicion": ["Delantero Centro", "Extremo Derecho", "Extremo Izquierdo"],
+        "posicion": ["Delantero Centro", "Extremo Derecho"],
         "clubes totales": ["Boca Juniors", "Corinthians", "West Ham United", "Manchester United", "Manchester City", "Juventus", "Shanghai Shenhua" ]
     },
     {
@@ -288,7 +288,7 @@
         "nacionalidad": "Argentina",    
         "Fecha de nacimiento": "03/05/1985",
         "club actual": "RETIRADO",
-        "posicion": ["Extremo Derecho", "Extremo Izquierdo", "Delantero Centro"],
+        "posicion": ["Extremo Derecho", "Mediocampista Ofensivo"],
         "clubes totales": ["Estudiantes de Caseros", "San Lorenzo", "Napoli", "Paris Saint-Germain", "Hebei China Fortune"]
     },
     {
@@ -315,7 +315,7 @@
         "nacionalidad": "Argentina",    
         "Fecha de nacimiento": "10/08/1973",
         "club actual": "RETIRADO",
-        "posicion": ["Lateral Derecho", "Lateral Izquierdo", "Mediocampista Defensivo", "Defensa Central", "Mediocampista Derecho", "Mediocampista Central"],
+        "posicion": ["Lateral Derecho", "Mediocampista Derecho"],
         "clubes totales": ["Talleres de Remedios de Escalada", "Banfield", "Inter de Milán"]
     },
     {
@@ -342,7 +342,7 @@
         "nacionalidad": "Inglaterra",    
         "Fecha de nacimiento": "30/05/1980",
         "club actual": "RETIRADO",
-        "posicion": ["Mediocampista Central", "Mediocampista Ofensivo", "Mediocampista Defensivo"],
+        "posicion": ["Mediocampista Central", "Mediocampista Ofensivo"],
         "clubes totales": ["Liverpool", "LA Galaxy"]
     },
     {
@@ -351,7 +351,7 @@
         "nacionalidad": "Inglaterra",    
         "Fecha de nacimiento": "24/10/1985",
         "club actual": "RETIRADO",
-        "posicion": ["Delantero Centro", "Mediocampista Ofensivo", "Extremo Derecho", "Extremo Izquierdo"],
+        "posicion": ["Delantero Centro"],
         "clubes totales": ["Everton", "Manchester United", "D.C. United", "Derby County"]
     },
     {
@@ -378,7 +378,7 @@
         "nacionalidad": "Inglaterra",    
         "Fecha de nacimiento": "20/12/1980",
         "club actual": "RETIRADO",
-        "posicion": ["Lateral Izquierdo", "Lateral Derecho", "Defensa Central"],
+        "posicion": ["Lateral Izquierdo"],
         "clubes totales": ["Arsenal", "Chelsea", "AS Roma", "LA Galaxy", "Derby County"]
     },
     {
@@ -387,7 +387,7 @@
         "nacionalidad": "Costa de Marfil",    
         "Fecha de nacimiento": "13/05/1983",
         "club actual": "RETIRADO",
-        "posicion": ["Mediocampista Defensivo", "Mediocampista Central", "Mediocampista Ofensivo"],
+        "posicion": ["Mediocampista Defensivo", "Mediocampista Central"],
         "clubes totales": ["Beveren", "Metalurh Donetsk", "Olympiacos", "Monaco", "Barcelona", "Manchester City", "Qingdao Huanghai"]
     },
     {
@@ -396,7 +396,7 @@
         "nacionalidad": "Costa de Marfil",    
         "Fecha de nacimiento": "19/03/1981",
         "club actual": "RETIRADO",
-        "posicion": ["Defensa Central", "Lateral Derecho", "Lateral Izquierdo"],
+        "posicion": ["Defensa Central"],
         "clubes totales": ["ASEC Mimosas", "Arsenal", "Manchester City", "Liverpool", "Celtic"]
     },
     {
@@ -405,7 +405,7 @@
         "nacionalidad": "Croacia",    
         "Fecha de nacimiento": "10/03/1988",
         "club actual": "RETIRADO",
-        "posicion": ["Mediocampista Central", "Mediocampista Ofensivo", "Mediocampista Defensivo"],
+        "posicion": ["Mediocampista Central", "Mediocampista Defensivo"],
         "clubes totales": ["Basel", "Schalke 04", "Sevilla", "Barcelona"]
     },
     {
@@ -414,7 +414,7 @@
         "nacionalidad": "España",    
         "Fecha de nacimiento": "13/04/1978",
         "club actual": "RETIRADO",
-        "posicion": ["Defensa Central", "Mediocampista Defensivo", "Lateral Derecho", "Lateral Izquierdo"],
+        "posicion": ["Defensa Central", "Lateral Derecho"],
         "clubes totales": ["Barcelona"]
     },
     {
@@ -424,7 +424,7 @@
         "nacionalidad": "España",    
         "Fecha de nacimiento": "04/05/1987",
         "club actual": "RETIRADO",
-        "posicion": ["Mediocampista Ofensivo", "Mediocampista Central", "Mediocampista Defensivo"],
+        "posicion": ["Mediocampista Central", "Mediocampista Defensivo"],
         "clubes totales": ["Arsenal", "Barcelona", "Chelsea", "Monaco", "Como 1907"]
     },
     {
@@ -471,7 +471,7 @@
         "nacionalidad": "Brasil",    
         "Fecha de nacimiento": "12/05/1988",
         "club actual": "RETIRADO",
-        "posicion": ["Lateral Izquierdo", "Lateral Derecho", "Defensa Central"],
+        "posicion": ["Lateral Izquierdo"],
         "clubes totales":["Flamengo", "Real Madrid", "Olympiacos", "Fluminense"]
     },
     {
@@ -480,7 +480,7 @@
         "nacionalidad": "Países Bajos",    
         "Fecha de nacimiento": "25/04/1947",
         "club actual": "FALLECIDO",
-        "posicion": ["Mediocampista Ofensivo", "Delantero Centro", "Extremo Derecho", "Extremo Izquierdo"],
+        "posicion": ["Mediocampista Ofensivo"],
         "clubes totales": ["Ajax", "Barcelona", "Los Angeles Aztecs", "Washington Diplomats", "Levante", "Feyenoord"]
     },
     {
@@ -489,7 +489,7 @@
         "nacionalidad": "República Checa",    
         "Fecha de nacimiento": "30/08/1972",
         "club actual": "RETIRADO",
-        "posicion": ["Mediocampista Central", "Mediocampista Ofensivo", "Mediocampista Defensivo", "Mediocampista Derecho", "Mediocampista Izquierdo"],
+        "posicion": ["Mediocampista Ofensivo", "Mediocampista Izquierdo"],
         "clubes totales": ["Dukla Praga", "Sparta Praga", "Lazio", "Juventus"]
     },
     {
@@ -498,7 +498,7 @@
         "nacionalidad": "República Checa",    
         "Fecha de nacimiento": "22/09/1977",
         "club actual": "RETIRADO",
-        "posicion": ["Lateral Izquierdo", "Lateral Derecho", "Mediocampista Defensivo"],
+        "posicion": ["Lateral Izquierdo"],
         "clubes totales": ["Baník Ostrava", "Napoli", "Udinese", "AC Milan"]
     },
     {
@@ -531,7 +531,7 @@
     {
         "id": 57,
         "nombre": "Tomáš Újfalusi",
-        "nacionalidad": "Hungría",    
+        "nacionalidad": "República Checa",    
         "Fecha de nacimiento": "16/02/1974",
         "club actual": "RETIRADO",
         "posicion": ["Lateral Derecho", "Lateral Izquierdo", "Defensa Central"],
@@ -561,7 +561,7 @@
         "nacionalidad": "Islandia",    
         "Fecha de nacimiento": "15/09/1978",
         "club actual": "RETIRADO",
-        "posicion": ["Delantero Centro", "Mediocampista Ofensivo", "Extremo Derecho", "Extremo Izquierdo"],
+        "posicion": ["Delantero Centro", "Mediocampista Ofensivo"],
         "clubes totales": ["Valur", "PSV Eindhoven", "Bolton Wanderers", "Barcelona", "Chelsea", "Monaco", "Tottenham Hotspur", "Stoke City", "Fulham", "AEK Atenas", "Cercle Brugge", "Club Brugge", "Molde FK"]
     },
     {
@@ -570,7 +570,7 @@
         "nacionalidad": "Francia",    
         "Fecha de nacimiento": "14/03/1979",
         "club actual": "RETIRADO",
-        "posicion": ["Delantero Centro", "Extremo Derecho", "Extremo Izquierdo"],
+        "posicion": ["Delantero Centro"],
         "clubes totales": ["Paris Saint-Germain", "Arsenal", "Real Madrid", "Liverpool", "Manchester City", "Fenerbahçe", "Bolton Wanderers", "Chelsea", "Shanghai Shenhua", "Juventus", "West Bromwich Albion", "Mumbai City"]
     },
     {
@@ -597,7 +597,7 @@
         "nacionalidad": "Alemania",    
         "Fecha de nacimiento": "14/07/1995",
         "club actual": "Bayern de Múnich",
-        "posicion": ["Extremo Derecho", "Mediocampista Izquierdo", "Delantero Centro", "Mediocampista Derecho"],
+        "posicion": ["Extremo Derecho", "Mediocampista Derecho"],
         "clubes totales": ["Arsenal", "West Bromwich Albion", "Werder Bremen", "Hoffenheim", "Bayern de Múnich"]
     },
     {
@@ -606,7 +606,7 @@
         "nacionalidad": "Senegal",    
         "Fecha de nacimiento": "10/04/1992",
         "club actual": "Al Nassr",
-        "posicion": ["Extremo Izquierdo", "Extremo Derecho", "Delantero Centro"],
+        "posicion": ["Extremo Izquierdo"],
         "clubes totales": ["Metz", "Red Bull Salzburgo", "Southampton", "Liverpool", "Bayern de Múnich", "Al Nassr"]
     },
     {
@@ -615,7 +615,7 @@
         "nacionalidad": "Brasil",    
         "Fecha de nacimiento": "02/10/1991",
         "club actual": "Al-Sadd",
-        "posicion": ["Delantero Centro", "Mediocampista Ofensivo", "Extremo Derecho", "Extremo Izquierdo"],
+        "posicion": ["Delantero Centro", "Mediocampista Ofensivo"],
         "clubes totales": ["Figueirense", "Hoffenheim", "Liverpool", "Al-Ahli", "Al-Sadd"]
     },
     {
@@ -634,7 +634,7 @@
         "nacionalidad": "Portugal",    
         "Fecha de nacimiento": "13/02/2000",
         "club actual": "Paris Saint-Germain",
-        "posicion": ["Mediocampista Central", "Mediocampista Ofensivo", "Mediocampista Defensivo"],
+        "posicion": ["Mediocampista Central", "Mediocampista Defensivo"],
         "clubes totales": ["Porto", "Paris Saint-Germain"]
     },
     {
@@ -643,7 +643,7 @@
         "nacionalidad": "España",    
         "Fecha de nacimiento": "13/07/2007",
         "club actual": "Barcelona",
-        "posicion": ["Extremo Derecho", "Extremo Izquierdo", "Delantero Centro", "Mediocampista Derecho"],
+        "posicion": ["Extremo Derecho"],
         "clubes totales": ["Barcelona"]
     },
     {
@@ -652,7 +652,7 @@
         "nacionalidad": "Argentina",    
         "Fecha de nacimiento": "17/01/2001",
         "club actual": "Chelsea",
-        "posicion": ["Mediocampista Central", "Mediocampista Defensivo", "Mediocampista Ofensivo"],
+        "posicion": ["Mediocampista Central","Mediocampista Ofensivo"],
         "clubes totales": ["River Plate", "Defensa y Justicia", "Benfica", "Chelsea"]
     },
     {
@@ -671,7 +671,7 @@
         "nacionalidad": "Brasil",    
         "Fecha de nacimiento": "22/04/1982",
         "club actual": "RETIRADO",
-        "posicion": ["Mediocampista Ofensivo", "Extremo Derecho", "Extremo Izquierdo", "Mediocampista Izquierdo"],
+        "posicion": ["Mediocampista Ofensivo"],
         "clubes totales": ["Sao Paulo", "AC Milan", "Real Madrid", "Orlando City"]
     },
     {
@@ -681,7 +681,7 @@
         "nacionalidad": "Brasil",    
         "Fecha de nacimiento": "19/04/1972",
         "club actual": "RETIRADO",
-        "posicion": ["Mediocampista Ofensivo", "Delantero Centro", "Extremo Derecho", "Extremo Izquierdo", "Mediocampista Derecho"],
+        "posicion": ["Mediocampista Ofensivo", "Extremo Izquierdo"],
         "clubes totales": ["Santa Cruz", "Mogi Mirim", "Corinthians", "Palmeiras", "Deportivo La Coruña", "Barcelona", "AC Milan", "Cruzeiro", "Olympiacos", "AEK Atenas", "Bunyodkor", "Kabuscorp", "São Caetano"]
     },
     {
@@ -1798,7 +1798,7 @@
         "nacionalidad": "Colombia",    
         "Fecha de nacimiento": "26/05/1988",
         "club actual": "Pisa",
-        "posicion": ["Extremo Derecho", "Extremo Izquierdo", "Lateral Derecho", "Mediocampista Ofensivo"],
+        "posicion": ["Extremo Derecho", "Lateral Derecho", "Mediocampista Derecho"],
         "clubes totales": ["Independiente Medellín", "Udinese", "Lecce", "Fiorentina", "Chelsea", "Juventus", "Inter de Milán", "Atalanta", "Pisa"]
     },
 
@@ -4119,7 +4119,7 @@
         "nacionalidad": "Ucrania",
         "Fecha de nacimiento": "05/01/2001",
         "club actual": "Chelsea",
-        "posicion": ["Extremo Izquierdo", "Extremo Derecho", "Mediocampista Ofensivo","Mediocampista Izquierdo"],
+        "posicion": ["Extremo Izquierdo", "Extremo Derecho", "Mediocampista Ofensivo"],
         "clubes totales": ["Shakhtar Donetsk", "Arsenal Kiev", "Chelsea"]
     },
     {
@@ -5607,7 +5607,7 @@
         "nacionalidad": "Alemania",
         "Fecha de nacimiento": "18/01/2002",
         "club actual": "Borussia Dortmund",
-        "posicion": ["Delantero Centro", "Extremo Izquierdo", "Mediocampista Izquierdo"],
+        "posicion": ["Delantero Centro", "Extremo Izquierdo"],
         "clubes totales": ["Liefering", "RB Salzburgo", "Borussia Dortmund"]
     },
     {
@@ -5729,7 +5729,6 @@
         "posicion": ["Lateral Izquierdo", "Defensa Central", "Mediocampista Izquierdo"],
         "clubes totales": ["Feyenoord", "Rangers", "Arsenal", "Barcelona", "Waalwijk"]
     },
-    
     {
         "id": 999999999,
         "nombre": "Juanjo Shlamovitz",
@@ -6534,3 +6533,4 @@
 
 ]
 }
+
