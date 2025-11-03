@@ -1493,7 +1493,7 @@
         "nacionalidad": "Argentina",    
         "Fecha de nacimiento": "06/04/1998",
         "club actual": "Atlético de Madrid",
-        "posicion": ["Lateral Derecho", "Defensa Central", "Mediocampista Derecho"],
+        "posicion": ["Lateral Derecho", "Mediocampista Derecho"],
         "clubes totales": ["Rosario Central", "Defensa y Justicia", "Udinese", "Boca Juniors", "Atlético de Madrid"]
     },
 
@@ -1503,7 +1503,7 @@
         "nacionalidad": "Portugal",    
         "Fecha de nacimiento": "19/06/2002",
         "club actual": "Paris Saint-Germain",
-        "posicion": ["Lateral Izquierdo", "Defensa Central", "Mediocampista Izquierdo"],
+        "posicion": ["Lateral Izquierdo", "Mediocampista Izquierdo"],
         "clubes totales": ["Sporting de Lisboa", "Paris Saint-Germain"]
     },
 
@@ -1513,7 +1513,7 @@
         "nacionalidad": "Italia",    
         "Fecha de nacimiento": "10/11/1997",
         "club actual": "Inter de Milán",
-        "posicion": ["Lateral Izquierdo", "Lateral Derecho", "Defensa Central", "Mediocampista Izquierdo"],
+        "posicion": ["Lateral Izquierdo", "Mediocampista Izquierdo"],
         "clubes totales": ["Inter de Milán", "Empoli", "Spezia", "Hellas Verona"]
     },
 
@@ -1930,7 +1930,7 @@
         "nacionalidad": "Alemania",
         "Fecha de nacimiento": "08/02/1995",
         "club actual": "Bayern de Múnich",
-        "posicion": ["Mediocampista Defensivo", "Mediocampista Central", "Lateral Derecho", "Lateral Izquierdo"],
+        "posicion": ["Mediocampista Defensivo", "Mediocampista Central", "Lateral Derecho"],
         "clubes totales": ["RB Leipzig", "Bayern de Múnich"]
     },
 
@@ -2355,7 +2355,7 @@
         "nacionalidad": "Portugal",
         "Fecha de nacimiento": "10/08/1994",
         "club actual": "Manchester City",
-        "posicion": ["Mediocampista Ofensivo", "Mediocampista Central", "Extremo Derecho", "Extremo Izquierdo"],
+        "posicion": ["Mediocampista Ofensivo", "Mediocampista Central", "Extremo Derecho"],
         "clubes totales": ["Benfica", "Monaco", "Manchester City"]
     },
     {
@@ -2364,7 +2364,7 @@
         "nacionalidad": "Inglaterra",
         "Fecha de nacimiento": "10/09/1995",
         "club actual": "Everton",
-        "posicion": ["Mediocampista Ofensivo", "Mediocampista Central", "Extremo Derecho", "Extremo Izquierdo"],
+        "posicion": ["Mediocampista Ofensivo", "Extremo Izquierdo"],
         "clubes totales": ["Aston Villa", "Notts County", "Manchester City", "Everton"]
     },
     {
@@ -4859,7 +4859,7 @@
         "nacionalidad": "España",
         "Fecha de nacimiento": "30/01/1995",
         "club actual": "Atlético de Madrid",
-        "posicion": ["Mediocampista Central", "Mediocampista Defensivo", "Mediocampista Defensivo"],
+        "posicion": ["Mediocampista Central", "Mediocampista Defensivo", "Lateral Derecho"],
         "clubes totales": ["Real Madrid", "Alavés", "Atlético de Madrid"]
     },
     {
@@ -4924,7 +4924,7 @@
         "nacionalidad": "Argentina",
         "Fecha de nacimiento": "26/04/2001",
         "club actual": "Atlético de Madrid",
-        "posicion": ["Mediocampista Ofensivo", "Extremo Derecho", "Mediocampista Central"],
+        "posicion": ["Mediocampista Ofensivo", "Extremo Derecho"],
         "clubes totales": ["Vélez Sarsfield", "Atlanta United", "Botafogo", "Olympique Lyon", "Atlético de Madrid"]
     },
     {
@@ -4942,7 +4942,7 @@
         "nacionalidad": "Argentina",
         "Fecha de nacimiento": "18/07/2002",
         "club actual": "Atlético de Madrid",
-        "posicion": ["Delantero Centro", "Extremo Derecho"],
+        "posicion": ["Delantero Centro", "Extremo Derecho", "Mediocampista Derecho"],
         "clubes totales": ["Atlético de Madrid", "Real Zaragoza", "Alavés"]
     },
     {

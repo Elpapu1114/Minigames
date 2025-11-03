@@ -369,7 +369,7 @@ def dibujar_panel_jugadores(juego):
                     pygame.draw.rect(pantalla, AMARILLO, (840, y, 320, 45), 2)
     else:
         # Juego completo
-        texto = fuente_grande.render("🏆", True, AMARILLO)
+        texto = fuente_grande.render("", True, AMARILLO)
         pantalla.blit(texto, (950, 300))
         
         texto2 = fuente_mediana.render("¡Equipo completo!", True, BLANCO)
