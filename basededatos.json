@@ -5736,25 +5736,112 @@
         "Fecha de nacimiento": "28/01/2010",
         "club actual": "San Lorenzo",
         "posicion": ["Portero", "Lateral Derecho", "Defensa Central", "Lateral Izquierdo", "Mediocampista Defensivo", "Mediocampista Central", "Mediocampista Ofensivo", "Mediocampista Izquierdo", "Mediocampista Derecho", "Extremo Derecho", "Extremo Izquierdo", "Delantero Centro"],
-        "clubes totales": ["Liverpool", "Manchester City", "Manchester United", "Chelsea", "Arsenal", "Tottenham Hotspur", "Real Madrid", "Barcelona", "Atlético de Madrid", "Inter de Milán", "AC Milan", "Juventus", "Bayern de Múnich", "Borussia Dortmund", "Paris Saint-Germain", "Napoli", "AS Roma", "Lazio", "Sevilla", "Villarreal", "Real Sociedad", "Real Betis", "Valencia", "Athletic Club", "Celta de Vigo", "Espanyol", "Rayo Vallecano", "Getafe", "Alavés", "Osasuna", "Mallorca", "Granada", "Levante", "Cádiz", "Elche", "Real Valladolid", "Huesca", "Eibar", "Leganés", "Almería", "Racing Club", "River Plate", "Boca Juniors", "Independiente", "San Lorenzo", "Vélez Sarsfield", "Newell's", "Rosario Central", "Estudiantes", "Lanús", "Argentinos Juniors", "Tigre", "Defensa y Justicia", "Colón", "Gimnasia y Esgrima La Plata", "Huracán", "Atlético Tucumán", "Banfield", "Unión de Santa Fe", "Patronato", "Arsenal de Sarandí", "Central Córdoba", "Sarmiento", "Godoy Cruz", "Aldosivi", "Platense", "San Martín de San Juan", "Temperley", "Quilmes", "All Boys", "Chacarita Juniors", "Instituto", "Talleres de Córdoba", "Belgrano", "Gimnasia y Esgrima de Jujuy", "Defensores de Belgrano", "Ferro Carril Oeste", "Nueva Chicago", "Atlanta", "Argentino de Quilmes", "Comunicaciones", "Deportivo Morón", "Almagro", "Brown de Adrogué", "San Martín de Tucumán", "Mitre de Santiago del Estero", "Independiente Rivadavia", "Villa Dálmine", "Los Andes", "Tristán Suárez", "Acassuso", "Defensores Unidos", "Flandria", "Deportivo Riestra", "Sacachispas", "UAI Urquiza", "Argentino de Merlo", "Cañuelas", "Excursionistas", "JJ Urquiza", "San Telmo", "Deportivo Español", "Sportivo Italiano", "Deportivo Laferrere", "Luján", "Ituzaingó", "Berazategui", "Argentino de Quilmes"] 
+        "clubes totales": ["Liverpool", "Manchester City", "Manchester United", "Chelsea", "Arsenal", "Tottenham Hotspur", "Real Madrid", "Barcelona", "Atlético de Madrid", "Inter de Milán", "AC Milan", "Juventus", "Bayern de Múnich", "Borussia Dortmund", "Paris Saint-Germain", "Napoli", "AS Roma", "Lazio", "Sevilla", "Villarreal", "Real Sociedad", "Real Betis", "Valencia", "Athletic Club", "Celta de Vigo", "Espanyol", "Rayo Vallecano", "Getafe", "Alavés", "Osasuna", "Mallorca", "Granada", "Levante", "Cádiz", "Elche", "Real Valladolid", "Huesca", "Eibar", "Leganés", "Almería", "Racing Club", "River Plate", "Boca Juniors", "Independiente", "San Lorenzo", "Vélez Sarsfield", "Newell's", "Rosario Central", "Estudiantes", "Lanús", "Argentinos Juniors", "Tigre", "Defensa y Justicia", "Colón", "Gimnasia y Esgrima La Plata", "Huracán", "Atlético Tucumán", "Banfield", "Unión de Santa Fe", "Patronato", "Arsenal de Sarandí", "Central Córdoba", "Sarmiento", "Godoy Cruz", "Aldosivi", "Platense", "San Martín de San Juan", "Temperley", "Quilmes", "All Boys", "Chacarita Juniors", "Instituto", "Talleres de Córdoba", "Belgrano", "Gimnasia y Esgrima de Jujuy", "Defensores de Belgrano", "Ferro", "Nueva Chicago", "Atlanta", "Argentino de Quilmes", "Comunicaciones", "Deportivo Morón", "Almagro", "Brown de Adrogué", "San Martín de Tucumán", "Mitre de Santiago del Estero", "Independiente Rivadavia", "Villa Dálmine", "Los Andes", "Tristán Suárez", "Acassuso", "Defensores Unidos", "Flandria", "Deportivo Riestra", "Sacachispas", "UAI Urquiza", "Argentino de Merlo", "Cañuelas", "Excursionistas", "JJ Urquiza", "San Telmo", "Deportivo Español", "Sportivo Italiano", "Deportivo Laferrere", "Luján", "Ituzaingó", "Berazategui", "Argentino de Quilmes"] 
+    },
+    {
+        "id": 617,
+        "nombre": "Orlando Gill",
+        "nacionalidad": "Paraguay",
+        "club actual": "San Lorenzo",
+        "posicion": ["Portero"],
+        "clubes totales": ["San Lorenzo"]
+    },
+    {
+        "id": 618,
+        "nombre": "Elías Báez",
+        "nacionalidad": "Argentina",
+        "club actual": "San Lorenzo",
+        "posicion": ["Lateral Izquierdo"],
+        "clubes totales": ["San Lorenzo"]
+    },
+    {
+        "id": 619,
+        "nombre": "Gastón Hernández",
+        "nacionalidad": "Argentina",
+        "club actual": "San Lorenzo",
+        "posicion": ["Defensa Central"],
+        "clubes totales": ["San Lorenzo", "San Martín de San Juan"]
+    },
+    {
+        "id": 620,
+        "nombre": "Jhohan Romaña",
+        "nacionalidad": "Colombia",
+        "club actual": "San Lorenzo",
+        "posicion": ["Defensa Central"],
+        "clubes totales": ["Independiente Medellín", "Guaraní", "Olimpia", "Austin FC", "San Lorenzo"]
+    },
+    {
+        "id": 621,
+        "nombre": "Ezequiel Herrera",
+        "nacionalidad": "Argentina",
+        "club actual": "San Lorenzo",
+        "posicion": ["Lateral Derecho"],
+        "clubes totales": ["San Lorenzo", "Colón"]
     },
     {
         "id": 622,
-        "nombre": "Edinson Cavani",
-        "nacionalidad": "Uruguay",
-        "Fecha de nacimiento": "14/02/1987",
-        "club actual": "Boca Juniors",
+        "nombre": "Nicolás Tripichio",
+        "nacionalidad": "Argentina",
+        "club actual": "San Lorenzo",
+        "posicion": ["Mediocampista Central", "Mediocampista Defensivo"],
+        "clubes totales": ["Vélez Sarsfield", "Guaraní", "Defensa y Justicia", "San Lorenzo"]
+    },
+    {
+        "id": 623,
+        "nombre": "Ignacio Perruzzi",
+        "nacionalidad": "Argentina",
+        "club actual": "San Lorenzo",
+        "posicion": ["Mediocampista Central"],
+        "clubes totales": ["San Lorenzo"]
+    },
+    {
+        "id": 624,
+        "nombre": "Francisco Perruzzi",
+        "nacionalidad": "Argentina",
+        "club actual": "San Lorenzo",
+        "posicion": ["Mediocampista Central", "Mediocampista Defensivo"],
+        "clubes totales": ["San Lorenzo", "Panserraikos"]
+    },
+    {
+        "id": 625,
+        "nombre": "Emanuel Cecchini",
+        "nacionalidad": "Argentina",
+        "club actual": "San Lorenzo",
+        "posicion": ["Mediocampista Defensivo"],
+        "clubes totales": ["Banfield", "Málaga", "León", "Unión de Santa Fe", "Seattle Sounders", "Gimnasia y Esgrima La Plata", "Unión Española", "Audax Italiano", "San Lorenzo"]
+    },
+    {
+        "id": 626,
+        "nombre": "Manuel Insaurralde",
+        "nacionalidad": "Argentina",
+        "club actual": "San Lorenzo",
+        "posicion": ["Mediocampista Central"],
+        "clubes totales": ["San Lorenzo", "Gimnasia y Esgrima La Plata"]
+    },
+    {
+        "id": 627,
+        "nombre": "Alexis Cuello",
+        "nacionalidad": "Argentina",
+        "club actual": "San Lorenzo",
         "posicion": ["Delantero Centro"],
-        "clubes totales": ["Danubio", "Palermo", "Napoli", "Paris Saint-Germain", "Manchester United", "Valencia", "Boca Juniors"]
+        "clubes totales": ["Racing Club", "Almagro", "San Lorenzo"]
     },
     {
         "id": 628,
+        "nombre": "Ezequiel Cerutti",
+        "nacionalidad": "Argentina",
+        "club actual": "San Lorenzo",
+        "posicion": ["Extremo Derecho", "Mediocampista Derecho"],
+        "clubes totales": ["Estudiantes de La Plata", "San Lorenzo", "Al-Hilal", "Independiente"]
+    },
+    {
+        "id": 629,
         "nombre": "Franco Armani",
         "nacionalidad": "Argentina",
         "Fecha de nacimiento": "16/10/1986",
         "club actual": "River Plate",
         "posicion": ["Portero"],
-        "clubes totales": ["Atletico Nacional", "River Plate"]
+        "clubes totales": ["Atletico Nacional", "River Plate", "Estudiantes de La Plata", "Deportivo Merlo", "Ferro"]
     },
     {
         "id": 630,
@@ -5799,7 +5886,7 @@
         "Fecha de nacimiento": "--",
         "club actual": "River Plate",
         "posicion": ["Defensa Central"],
-        "clubes totales": ["River Plate"]
+        "clubes totales": ["River Plate", "San Lorenzo", "Sevilla", "Anderlecht"]
     },
     {
         "id": 635,
