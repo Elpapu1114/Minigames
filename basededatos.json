@@ -271,7 +271,7 @@
         "Fecha de nacimiento": "30/10/1960",
         "club actual": "FALLECIDO",
         "posicion": ["Mediocampista Ofensivo", "Extremo Derecho"],
-        "clubes totales": ["Argentinos Juniors", "Boca Juniors", "Barcelona", "Napoli", "Sevilla", "Newells"]
+        "clubes totales": ["Argentinos Juniors", "Boca Juniors", "Barcelona", "Napoli", "Sevilla", "Newell's"]
     },
     {
         "id": 29,
@@ -941,7 +941,7 @@
         "Fecha de nacimiento": "01/02/1969",
         "club actual": "RETIRADO",
         "posicion": ["Delantero Centro"],
-        "clubes totales": ["Newells", "River Plate", "Boca Juniors", "Fiorentina", "AS Roma", "Inter de Milán", "Al-Arabi"]
+        "clubes totales": ["Newell's", "River Plate", "Boca Juniors", "Fiorentina", "AS Roma", "Inter de Milán", "Al-Arabi"]
     },
     {
         "id": 102,
@@ -1177,7 +1177,7 @@
         "Fecha de nacimiento": "23/03/1978",
         "club actual": "RETIRADO",
         "posicion": ["Defensa Central", "Mediocampista Defensivo"],
-        "clubes totales": ["Newells", "Boca Juniors", "AS Roma", "Real Madrid", "Inter de Milán", "Basel"]
+        "clubes totales": ["Newell's", "Boca Juniors", "AS Roma", "Real Madrid", "Inter de Milán", "Basel"]
     },
     {
         "id": 127,
@@ -1256,7 +1256,7 @@
         "Fecha de nacimiento": "15/10/1977",
         "club actual": "RETIRADO",
         "posicion": ["Delantero Centro"],
-        "clubes totales": ["Platense", "River Plate", "Monaco", "Juventus", "Hércules", "Newells", "Baniyas", "FC Pune City"]
+        "clubes totales": ["Platense", "River Plate", "Monaco", "Juventus", "Hércules", "Newell's", "Baniyas", "FC Pune City"]
     },
 
     {
@@ -1697,7 +1697,7 @@
         "Fecha de nacimiento": "15/12/1986",
         "club actual": "Al-Nassr",
         "posicion": ["Portero"],
-        "clubes totales": ["Deportivo Saprissa", "Albacete", "Levante", "Real Madrid", "Paris Saint-Germain", "Nottingham Forest", "Newells", "Pumas"]
+        "clubes totales": ["Deportivo Saprissa", "Albacete", "Levante", "Real Madrid", "Paris Saint-Germain", "Nottingham Forest", "Newell's", "Pumas"]
     },
 
     {
@@ -6616,8 +6616,46 @@
         "club actual": "Boca Juniors",
         "posicion": ["Delantero Centro"],
         "clubes totales": ["Boca Juniors"]
+    },
+    {
+        "id": 716,
+        "nombre": "Andrés Vombergar",
+        "nacionalidad": "Eslovenia",
+        "club actual": "San Lorenzo",
+        "posicion": ["Delantero Centro"],
+        "clubes totales": ["Ituzaingó", "Fénix", "Los Andes", "San Lorenzo"]
+    },
+    {
+        "id": 717,
+        "nombre": "Matías Reali",
+        "nacionalidad": "Argentina",
+        "club actual": "San Lorenzo",
+        "posicion": ["Extremo Izquierdo", "Mediocampista Izquierdo"],
+        "clubes totales": ["San Lorenzo", "Independiente Rivadavia"]
+    },
+    {
+        "id": 718,
+        "nombre": "Nicolás Blandi",
+        "nacionalidad": "Argentina",
+        "club actual": "Barracas Central",
+        "posicion": ["Delantero Centro"],
+        "clubes totales": ["San Lorenzo", "Boca Juniors", "Colo-Colo", "Unión de Santa Fe", "Defensa y Justicia", "Barracas Central"]
+    },
+    {
+        "id": 719,
+        "nombre": "Facundo Gulli",
+        "nacionalidad": "Argentina",
+        "club actual": "San Lorenzo",
+        "posicion": ["Mediocampista Ofensivo"],
+        "clubes totales": ["San Lorenzo"]
+    },
+    {
+        "id": 720,
+        "nombre": "Rodrigo Rey",
+        "nacionalidad": "Argentina",
+        "club actual": "Independiente",
+        "posicion": ["Portero"],
+        "clubes totales": ["Newell's", "Gimnasia y Esgrima La Plata", "Rayo Vallecano", "Godoy Cruz", "Pachuca", "Independiente"]
     }
-
 ]
 }
-
