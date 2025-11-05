@@ -94,6 +94,10 @@ credit_img = load_image("credistos.png", (120, 50))
 back_img = load_image("back.png", (120, 50))
 huergo_img = load_image("huergo.png", (300, 300))
 
+# Cargar fondos
+fondo_menu = load_image("fondo_menu.png", (SCREEN_WIDTH, SCREEN_HEIGHT))
+fondo_menu_option = load_image("fondo_menu_option.png", (SCREEN_WIDTH, SCREEN_HEIGHT))
+
 # Sistema mejorado de control de clics
 last_click_time = 0
 CLICK_DELAY = 200
@@ -164,7 +168,7 @@ def draw_message():
 
 def apply_resolution():
     """Aplica la resolución seleccionada"""
-    global screen, SCREEN_WIDTH, SCREEN_HEIGHT
+    global screen, SCREEN_WIDTH, SCREEN_HEIGHT, fondo_menu, fondo_menu_option
     
     try:
         res_str = game_settings["resolution"]
@@ -176,6 +180,15 @@ def apply_resolution():
             screen = pygame.display.set_mode((width, height))
         
         SCREEN_WIDTH, SCREEN_HEIGHT = width, height
+        
+        # Recargar fondos con nueva resolución
+        fondo_menu = load_image("fondo_menu.png", (SCREEN_WIDTH, SCREEN_HEIGHT))
+        fondo_menu_option = load_image("fondo_menu_option.png", (SCREEN_WIDTH, SCREEN_HEIGHT))
+        
+        # Escalar fondos si es necesario
+        fondo_menu = pygame.transform.scale(fondo_menu, (SCREEN_WIDTH, SCREEN_HEIGHT))
+        fondo_menu_option = pygame.transform.scale(fondo_menu_option, (SCREEN_WIDTH, SCREEN_HEIGHT))
+        
         show_message(f"Resolución aplicada: {res_str}", SUCCESS_COL)
         
     except Exception as e:
@@ -185,6 +198,9 @@ def apply_resolution():
 def handle_main_menu():
     """Maneja la lógica del menú principal"""
     global game_paused, menu_state, game_running, last_button_clicked
+    
+    # Dibujar fondo del menú principal (Minigames)
+    screen.blit(pygame.transform.scale(fondo_menu, (SCREEN_WIDTH, SCREEN_HEIGHT)), (0, 0))
     
     play_button = Button(130, 125, play_img, 7)
     options_button = Button(450, 125, options_img, 7)
@@ -235,7 +251,8 @@ def handle_options_menu():
     """Maneja el menú de opciones"""
     global menu_state
     
-    draw_centered_text("OPCIONES", font, TEXT_COL, 20)
+    # Dibujar fondo del menú de opciones (OPTIONS)
+    screen.blit(pygame.transform.scale(fondo_menu_option, (SCREEN_WIDTH, SCREEN_HEIGHT)), (0, 0))
     
     video_button = Button(100, 120, video_img, 7)
     audio_button = Button(400, 120, audio_img, 7)
@@ -260,6 +277,8 @@ def handle_options_menu():
 def handle_credits():
     """Maneja la pantalla de créditos"""
     global menu_state
+    
+    screen.fill(BACKGROUND_COL)
     
     draw_centered_text("CRÉDITOS", font, TEXT_COL, 30)
     
@@ -296,6 +315,7 @@ def handle_video_settings():
     """Maneja las configuraciones de video"""
     global menu_state, game_settings
     
+    screen.fill(BACKGROUND_COL)
     draw_centered_text("CONFIGURACIÓN DE VIDEO", font, TEXT_COL, 50)
     
     mouse_pos = pygame.mouse.get_pos()
@@ -308,31 +328,25 @@ def handle_video_settings():
     draw_text("Resolución:", medium_font, TEXT_COL, 100, y_start)
     current_res = game_settings["resolution"]
     
-    if mouse_clicked and can_click():
-        for i, (res_str, width, height) in enumerate(RESOLUTIONS):
-            x = 300 + (i % 3) * 180
-            y = y_start + (i // 3) * 40
-            selected = (res_str == current_res)
-            hover = pygame.Rect(x, y, 150, 30).collidepoint(mouse_pos)
-            
-            rect = draw_clickable_option(res_str, small_font, TEXT_COL, x, y, selected, hover)
-            
-            if rect.collidepoint(mouse_pos):
-                game_settings["resolution"] = res_str
-                show_message(f"Resolución: {res_str}", SUCCESS_COL)
-                break
-    else:
-        for i, (res_str, width, height) in enumerate(RESOLUTIONS):
-            x = 300 + (i % 3) * 180
-            y = y_start + (i // 3) * 40
-            selected = (res_str == current_res)
-            hover = pygame.Rect(x, y, 150, 30).collidepoint(mouse_pos)
-            
-            draw_clickable_option(res_str, small_font, TEXT_COL, x, y, selected, hover)
+    # Dibujar todas las opciones de resolución
+    for i, (res_str, width, height) in enumerate(RESOLUTIONS):
+        x = 300 + (i % 3) * 180
+        y = y_start + (i // 3) * 40
+        selected = (res_str == current_res)
+        hover = pygame.Rect(x, y, 150, 30).collidepoint(mouse_pos)
+        
+        rect = draw_clickable_option(res_str, small_font, TEXT_COL, x, y, selected, hover)
+        
+        # Detectar clic en la resolución
+        if rect.collidepoint(mouse_pos) and mouse_clicked and can_click():
+            game_settings["resolution"] = res_str
+            show_message(f"Resolución seleccionada: {res_str}", SUCCESS_COL)
     
     # Botón aplicar resolución
     apply_rect = pygame.Rect(100, y_start + 100, 120, 35)
-    pygame.draw.rect(screen, (100, 150, 100), apply_rect, border_radius=5)
+    apply_hover = apply_rect.collidepoint(mouse_pos)
+    apply_color = (150, 200, 150) if apply_hover else (100, 150, 100)
+    pygame.draw.rect(screen, apply_color, apply_rect, border_radius=5)
     draw_text("Aplicar", medium_font, TEXT_COL, 110, y_start + 105)
     
     if apply_rect.collidepoint(mouse_pos) and mouse_clicked and can_click():
@@ -342,7 +356,7 @@ def handle_video_settings():
     y_pos = y_start + spacing * 2
     draw_text("Pantalla completa:", medium_font, TEXT_COL, 100, y_pos)
     fullscreen_text = "ACTIVADA" if game_settings["fullscreen"] else "DESACTIVADA"
-    hover = pygame.Rect(350, y_pos, 150, 30).collidepoint(mouse_pos)
+    hover = pygame.Rect(350, y_pos, 200, 30).collidepoint(mouse_pos)
     
     rect = draw_clickable_option(fullscreen_text, small_font, TEXT_COL, 350, y_pos, 
                                 game_settings["fullscreen"], hover)
@@ -356,7 +370,7 @@ def handle_video_settings():
     y_pos = y_start + spacing * 3
     draw_text("V-Sync:", medium_font, TEXT_COL, 100, y_pos)
     vsync_text = "ACTIVADO" if game_settings["vsync"] else "DESACTIVADO"
-    hover = pygame.Rect(250, y_pos, 150, 30).collidepoint(mouse_pos)
+    hover = pygame.Rect(250, y_pos, 200, 30).collidepoint(mouse_pos)
     
     rect = draw_clickable_option(vsync_text, small_font, TEXT_COL, 250, y_pos, 
                                 game_settings["vsync"], hover)
@@ -366,10 +380,11 @@ def handle_video_settings():
         status = "activado" if game_settings["vsync"] else "desactivado"
         show_message(f"V-Sync {status}", SUCCESS_COL)
     
-    # Botón back - POSICIÓN CORREGIDA
+    # Botón back - Corregido
     back_x = SCREEN_WIDTH // 2 - back_img.get_width() // 2
-    back_y = 510
-    back_button_video = Button(back_x, back_y, back_img, 1)
+    back_y = SCREEN_HEIGHT - 80
+    back_button_video = Button(back_x, back_y, back_img, 5)
+    
     if back_button_video.draw(screen) and can_click():
         menu_state = "options"
 
@@ -377,6 +392,7 @@ def handle_audio_settings():
     """Maneja las configuraciones de audio"""
     global menu_state, game_settings
     
+    screen.fill(BACKGROUND_COL)
     draw_centered_text("CONFIGURACIÓN DE AUDIO", font, TEXT_COL, 50)
     
     mouse_pos = pygame.mouse.get_pos()
@@ -437,10 +453,11 @@ def handle_audio_settings():
         elif test_music_rect.collidepoint(mouse_pos):
             show_message("Reproduciendo música", SUCCESS_COL)
     
-    # Botón back - POSICIÓN CORREGIDA
+    # Botón back - Corregido
     back_x = SCREEN_WIDTH // 2 - back_img.get_width() // 2
-    back_y = 510
-    back_button_audio = Button(back_x, back_y, back_img, 1)
+    back_y = SCREEN_HEIGHT - 80
+    back_button_audio = Button(back_x, back_y, back_img, 5)
+    
     if back_button_audio.draw(screen) and can_click():
         menu_state = "options"
 
@@ -497,7 +514,7 @@ def load_settings():
 
 def main():
     """Función principal del juego"""
-    global menu_state, screen
+    global menu_state, screen, fondo_menu, fondo_menu_option
     
     load_settings()
     
@@ -507,9 +524,11 @@ def main():
         save_settings()
     
     try:
-        apply_resolution()
+        # Escalar fondos a la resolución actual
+        fondo_menu = pygame.transform.scale(fondo_menu, (SCREEN_WIDTH, SCREEN_HEIGHT))
+        fondo_menu_option = pygame.transform.scale(fondo_menu_option, (SCREEN_WIDTH, SCREEN_HEIGHT))
     except:
-        print("⚠️ Error aplicando resolución inicial, usando por defecto")
+        print("⚠️ Error escalando fondos")
     
     run = True
     
@@ -524,14 +543,12 @@ def main():
     
     while run:
         clock.tick(FPS)
-        screen.fill(BACKGROUND_COL)
         
         run = handle_events()
         if not run:
             break
         
         if menu_state == "main":
-            draw_centered_text("MENÚ PRINCIPAL", font, TEXT_COL, 20)
             run = handle_main_menu()
         
         elif menu_state == "options":
