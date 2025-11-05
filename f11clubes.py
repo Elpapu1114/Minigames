@@ -120,7 +120,8 @@ FORMACIONES = {
         {'id': 'DC', 'nombre': 'Delantero Centro', 'x': 350, 'y': 140},
         {'id': 'EI', 'nombre': 'Extremo Izquierdo', 'x': 200, 'y': 170},
         {'id': 'ED', 'nombre': 'Extremo Derecho', 'x': 500, 'y': 170}
-    ],'3-4-3 (2)': [
+    ],
+    '3-4-3 (2)': [
         {'id': 'PO', 'nombre': 'Portero', 'x': 350, 'y': 610},
         {'id': 'DFC1', 'nombre': 'Defensa Central', 'x': 230, 'y': 510},
         {'id': 'DFC2', 'nombre': 'Defensa Central', 'x': 350, 'y': 510},
@@ -168,6 +169,7 @@ class Juego:
         self.jugador_pendiente = None
         self.posiciones_disponibles_jugador = []
         self.mostrando_selector_posicion = False
+        self.mostrando_menu_pausa = False
     
     def obtener_posiciones_formacion(self):
         """Obtener todos los IDs de posiciones en la formación actual"""
@@ -481,6 +483,52 @@ def dibujar_selector_posicion(juego):
     texto_rect = texto_cancelar.get_rect(center=boton_cancelar.center)
     pantalla.blit(texto_cancelar, texto_rect)
 
+def dibujar_menu_pausa():
+    """Dibujar el menú de pausa"""
+    # Overlay oscuro
+    overlay = pygame.Surface((ANCHO, ALTO))
+    overlay.set_alpha(200)
+    overlay.fill(NEGRO)
+    pantalla.blit(overlay, (0, 0))
+    
+    # Panel del menú
+    panel_w = 400
+    panel_h = 350
+    panel_x = (ANCHO - panel_w) // 2
+    panel_y = (ALTO - panel_h) // 2
+    
+    pygame.draw.rect(pantalla, (40, 40, 40), (panel_x, panel_y, panel_w, panel_h))
+    pygame.draw.rect(pantalla, AMARILLO, (panel_x, panel_y, panel_w, panel_h), 3)
+    
+    # Título
+    titulo = fuente_grande.render("MENÚ", True, AMARILLO)
+    titulo_rect = titulo.get_rect(center=(ANCHO // 2, panel_y + 50))
+    pantalla.blit(titulo, titulo_rect)
+    
+    # Botones
+    botones = [
+        {"texto": "Continuar", "y": panel_y + 120, "color": VERDE},
+        {"texto": "Reiniciar", "y": panel_y + 190, "color": AZUL},
+        {"texto": "Salir", "y": panel_y + 260, "color": ROJO}
+    ]
+    
+    mouse_pos = pygame.mouse.get_pos()
+    
+    for boton in botones:
+        boton_rect = pygame.Rect(panel_x + 50, boton["y"], panel_w - 100, 50)
+        pygame.draw.rect(pantalla, boton["color"], boton_rect)
+        pygame.draw.rect(pantalla, BLANCO, boton_rect, 2)
+        
+        # Hover effect
+        if boton_rect.collidepoint(mouse_pos):
+            pygame.draw.rect(pantalla, AMARILLO, boton_rect, 4)
+        
+        texto = fuente_mediana.render(boton["texto"], True, BLANCO)
+        texto_rect = texto.get_rect(center=boton_rect.center)
+        pantalla.blit(texto, texto_rect)
+    
+    return botones, panel_x, panel_w
+
 def main():
     reloj = pygame.time.Clock()
     juego = Juego()
@@ -500,16 +548,22 @@ def main():
                         juego.mostrando_selector_posicion = False
                         juego.jugador_pendiente = None
                         juego.posiciones_disponibles_jugador = []
+                elif juego.mostrando_menu_pausa:
+                    if evento.key == pygame.K_ESCAPE:
+                        juego.mostrando_menu_pausa = False
                 elif not juego.juego_completo:
-                    if evento.key == pygame.K_BACKSPACE:
+                    if evento.key == pygame.K_ESCAPE:
+                        juego.mostrando_menu_pausa = True
+                    elif evento.key == pygame.K_BACKSPACE:
                         juego.busqueda = juego.busqueda[:-1]
-                        juego.scroll_y = 0
-                    elif evento.key == pygame.K_ESCAPE:
-                        juego.busqueda = ""
                         juego.scroll_y = 0
                     elif evento.unicode.isprintable():
                         juego.busqueda += evento.unicode
                         juego.scroll_y = 0
+                else:
+                    # En juego completo, ESC también abre el menú
+                    if evento.key == pygame.K_ESCAPE:
+                        juego.mostrando_menu_pausa = True
                 
                 if evento.key == pygame.K_F5:
                     juego.reiniciar()
@@ -517,8 +571,30 @@ def main():
             elif evento.type == pygame.MOUSEBUTTONDOWN:
                 x, y = pygame.mouse.get_pos()
                 
+                # Click en menú de pausa
+                if juego.mostrando_menu_pausa:
+                    panel_w = 400
+                    panel_h = 350
+                    panel_x = (ANCHO - panel_w) // 2
+                    panel_y = (ALTO - panel_h) // 2
+                    
+                    # Botón Continuar
+                    boton_continuar = pygame.Rect(panel_x + 50, panel_y + 120, panel_w - 100, 50)
+                    if boton_continuar.collidepoint(x, y):
+                        juego.mostrando_menu_pausa = False
+                    
+                    # Botón Reiniciar
+                    boton_reiniciar = pygame.Rect(panel_x + 50, panel_y + 190, panel_w - 100, 50)
+                    if boton_reiniciar.collidepoint(x, y):
+                        juego.reiniciar()
+                    
+                    # Botón Salir
+                    boton_salir = pygame.Rect(panel_x + 50, panel_y + 260, panel_w - 100, 50)
+                    if boton_salir.collidepoint(x, y):
+                        ejecutando = False
+                
                 # Click en selector de posición
-                if juego.mostrando_selector_posicion:
+                elif juego.mostrando_selector_posicion:
                     panel_w = 500
                     panel_x = (ANCHO - panel_w) // 2
                     num_posiciones = len(juego.posiciones_disponibles_jugador)
@@ -603,6 +679,10 @@ def main():
         
         # Selector de posición (se dibuja al final para estar encima)
         dibujar_selector_posicion(juego)
+        
+        # Menú de pausa (se dibuja al final de todo)
+        if juego.mostrando_menu_pausa:
+            dibujar_menu_pausa()
         
         pygame.display.flip()
         reloj.tick(60)
