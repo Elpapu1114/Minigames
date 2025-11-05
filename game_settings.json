@@ -1,18 +1,9 @@
 {
-<<<<<<< Updated upstream
     "resolution": "800x600",
     "fullscreen": false,
     "vsync": true,
     "master_volume": 60,
     "sfx_volume": 90,
     "music_volume": 96,
-=======
-    "resolution": "1024x768",
-    "fullscreen": false,
-    "vsync": true,
-    "master_volume": 60,
-    "sfx_volume": 68,
-    "music_volume": 21,
->>>>>>> Stashed changes
     "pause_key": "ESCAPE"
 }
