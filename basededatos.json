@@ -4845,7 +4845,7 @@
         "Fecha de nacimiento": "08/04/1998",
         "club actual": "Al-Hilal",
         "posicion": ["Lateral Izquierdo", "Mediocampista Izquierdo"],
-        "clubes totales": ["Athletico Paranaense", "Atlético de Madrid", "Nottingham Forest", "Olympique Marseille", "Al-Hilal"]
+        "clubes totales": ["Atlético Paranaense", "Atlético de Madrid", "Nottingham Forest", "Olympique Marseille", "Al-Hilal"]
     },
     {
         "id": 520,
@@ -6656,6 +6656,40 @@
         "club actual": "Independiente",
         "posicion": ["Portero"],
         "clubes totales": ["Newell's", "Gimnasia y Esgrima La Plata", "Rayo Vallecano", "Godoy Cruz", "Pachuca", "Independiente"]
+    },
+    {
+        "id": 721,
+        "nombre": "Maicon Douglas Sisenando",
+        "apodo": "Maicon",
+        "nacionalidad": "Brasil",
+        "club actual": "RETIRADO",
+        "posicion": ["Lateral Derecho"],
+        "clubes totales": ["Cruzeiro", "Monaco", "Inter de Milán", "Roma", "Manchester City", "Avaí", "Criciúma", "Tre Penne"]
+    },
+    {
+        "id": 722,
+        "nombre": "Adriano Leite Ribeiro",
+        "apodo": "Adriano",
+        "nacionalidad": "Brasil",
+        "club actual": "RETIRADO",
+        "posicion": ["Delantero Centro"],
+        "clubes totales": ["Flamengo", "Inter de Milán", "Fiorentina", "Parma", "Roma", "Sao Paulo", "Corinthians", "Atlético Paranaense"]
+    },
+    {
+        "id": 723,
+        "nombre": "Thomas Partey",
+        "nacionalidad": "Ghana",
+        "club actual": "Villarreal",
+        "posicion": ["Mediocampista Defensivo"],
+        "clubes totales": ["Atlético Madrid", "Arsenal", "Mallorca", "Almería", "Villarreal"]
+    },
+    {
+        "id": 724,
+        "nombre": "Ronald Koeman",
+        "nacionalidad": "Países Bajos",
+        "club actual": "RETIRADO",
+        "posicion": ["Defensa Central"],
+        "clubes totales": ["Groningen", "Ajax", "PSV Eindhoven", "Barcelona", "Feyenoord"]
     }
 ]
 }

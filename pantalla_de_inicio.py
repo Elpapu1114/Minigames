@@ -102,13 +102,6 @@ games = [
         "color": (100, 200, 200),
         "status": "Disponible"
     },{
-        "title": "Simon dice",
-        "description": "Sigue la secuencia de colores",
-        "file": "simondice.py",
-        "category": "arcade",
-        "color": (100, 200, 200),
-        "status": "Disponible"
-    },{
         "title": "Sky hopper",
         "description": "Salta de plataforma en plataforma sin caer",
         "file": "sky_hopper.py",
