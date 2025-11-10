@@ -1157,7 +1157,7 @@
         "Fecha de nacimiento": "08/06/1984",
         "club actual": "RETIRADO",
         "posicion": ["Defensa Central", "Mediocampista Defensivo"],
-        "clubes totales": ["River Plate", "Corinthians", "West Ham United", "Liverpool", "Barcelona", "Hebei China Fortune", "Estudiantes"]
+        "clubes totales": ["River Plate", "Corinthians", "West Ham United", "Liverpool", "Barcelona", "Hebei China Fortune", "Estudiantes de La Plata"]
     },
 
     {
@@ -3302,7 +3302,7 @@
         "Fecha de nacimiento": "26/02/1985",
         "club actual": "RETIRADO",
         "posicion": ["Delantero Centro"],
-        "clubes totales": ["Athletic de Bilbao", "Juventus", "Napoli", "Tottenham Hotspur", "Swansea City", "Eibar", "Udinese", "Sassuolo"]
+        "clubes totales": ["Athletic Club", "Juventus", "Napoli", "Tottenham Hotspur", "Swansea City", "Eibar", "Udinese", "Sassuolo"]
     },
     {
         "id": 351,
@@ -4213,7 +4213,7 @@
         "Fecha de nacimiento": "03/10/1994",
         "club actual": "Arsenal",
         "posicion": ["Portero"],
-        "clubes totales": ["Athletic de Bilbao", "Chelsea", "Real Madrid", "AFC Bournemouth", "Arsenal"]
+        "clubes totales": ["Athletic Club", "Chelsea", "Real Madrid", "AFC Bournemouth", "Arsenal"]
     },
     {
         "id": 451,
@@ -5736,7 +5736,7 @@
         "Fecha de nacimiento": "28/01/2010",
         "club actual": "San Lorenzo",
         "posicion": ["Portero", "Lateral Derecho", "Defensa Central", "Lateral Izquierdo", "Mediocampista Defensivo", "Mediocampista Central", "Mediocampista Ofensivo", "Mediocampista Izquierdo", "Mediocampista Derecho", "Extremo Derecho", "Extremo Izquierdo", "Delantero Centro"],
-        "clubes totales": ["Liverpool", "Manchester City", "Manchester United", "Chelsea", "Arsenal", "Tottenham Hotspur", "Real Madrid", "Barcelona", "Atlético de Madrid", "Inter de Milán", "AC Milan", "Juventus", "Bayern de Múnich", "Borussia Dortmund", "Paris Saint-Germain", "Napoli", "AS Roma", "Lazio", "Sevilla", "Villarreal", "Real Sociedad", "Real Betis", "Valencia", "Athletic Club", "Celta de Vigo", "Espanyol", "Rayo Vallecano", "Getafe", "Alavés", "Osasuna", "Mallorca", "Granada", "Levante", "Cádiz", "Elche", "Real Valladolid", "Huesca", "Eibar", "Leganés", "Almería", "Racing Club", "River Plate", "Boca Juniors", "Independiente", "San Lorenzo", "Vélez Sarsfield", "Newell's", "Rosario Central", "Estudiantes", "Lanús", "Argentinos Juniors", "Tigre", "Defensa y Justicia", "Colón", "Gimnasia y Esgrima La Plata", "Huracán", "Atlético Tucumán", "Banfield", "Unión de Santa Fe", "Patronato", "Arsenal de Sarandí", "Central Córdoba", "Sarmiento", "Godoy Cruz", "Aldosivi", "Platense", "San Martín de San Juan", "Temperley", "Quilmes", "All Boys", "Chacarita Juniors", "Instituto", "Talleres de Córdoba", "Belgrano", "Gimnasia y Esgrima de Jujuy", "Defensores de Belgrano", "Ferro", "Nueva Chicago", "Atlanta", "Argentino de Quilmes", "Comunicaciones", "Deportivo Morón", "Almagro", "Brown de Adrogué", "San Martín de Tucumán", "Mitre de Santiago del Estero", "Independiente Rivadavia", "Villa Dálmine", "Los Andes", "Tristán Suárez", "Acassuso", "Defensores Unidos", "Flandria", "Deportivo Riestra", "Sacachispas", "UAI Urquiza", "Argentino de Merlo", "Cañuelas", "Excursionistas", "JJ Urquiza", "San Telmo", "Deportivo Español", "Sportivo Italiano", "Deportivo Laferrere", "Luján", "Ituzaingó", "Berazategui", "Argentino de Quilmes"] 
+        "clubes totales": ["Liverpool", "Manchester City", "Manchester United", "Chelsea", "Arsenal", "Tottenham Hotspur", "Real Madrid", "Barcelona", "Atlético de Madrid", "Inter de Milán", "AC Milan", "Juventus", "Bayern de Múnich", "Borussia Dortmund", "Paris Saint-Germain", "Napoli", "AS Roma", "Lazio", "Sevilla", "Villarreal", "Real Sociedad", "Real Betis", "Valencia", "Athletic Club", "Celta de Vigo", "Espanyol", "Rayo Vallecano", "Getafe", "Alavés", "Osasuna", "Mallorca", "Granada", "Levante", "Cádiz", "Elche", "Real Valladolid", "Huesca", "Eibar", "Leganés", "Almería", "Racing Club", "River Plate", "Boca Juniors", "Independiente", "San Lorenzo", "Vélez Sarsfield", "Newell's", "Rosario Central", "Estudiantes de La Plata", "Lanús", "Argentinos Juniors", "Tigre", "Defensa y Justicia", "Colón", "Gimnasia y Esgrima La Plata", "Huracán", "Atlético Tucumán", "Banfield", "Unión de Santa Fe", "Patronato", "Arsenal de Sarandí", "Central Córdoba", "Sarmiento", "Godoy Cruz", "Aldosivi", "Platense", "San Martín de San Juan", "Temperley", "Quilmes", "All Boys", "Chacarita Juniors", "Instituto", "Talleres de Córdoba", "Belgrano", "Gimnasia y Esgrima de Jujuy", "Defensores de Belgrano", "Ferro", "Nueva Chicago", "Atlanta", "Argentino de Quilmes", "Comunicaciones", "Deportivo Morón", "Almagro", "Brown de Adrogué", "San Martín de Tucumán", "Mitre de Santiago del Estero", "Independiente Rivadavia", "Villa Dálmine", "Los Andes", "Tristán Suárez", "Acassuso", "Defensores Unidos", "Flandria", "Deportivo Riestra", "Sacachispas", "UAI Urquiza", "Argentino de Merlo", "Cañuelas", "Excursionistas", "JJ Urquiza", "San Telmo", "Deportivo Español", "Sportivo Italiano", "Deportivo Laferrere", "Luján", "Ituzaingó", "Berazategui", "Argentino de Quilmes"] 
     },
     {
         "id": 617,
@@ -5841,7 +5841,7 @@
         "Fecha de nacimiento": "16/10/1986",
         "club actual": "River Plate",
         "posicion": ["Portero"],
-        "clubes totales": ["Atletico Nacional", "River Plate", "Estudiantes de La Plata", "Deportivo Merlo", "Ferro"]
+        "clubes totales": ["Atlético Nacional", "River Plate", "Estudiantes de La Plata", "Deportivo Merlo", "Ferro"]
     },
     {
         "id": 630,
@@ -5894,8 +5894,8 @@
         "nacionalidad": "Argentina",
         "Fecha de nacimiento": "--",
         "club actual": "River Plate",
-        "posicion": ["Defensa Central"],
-        "clubes totales": ["River Plate"]
+        "posicion": ["Defensa Central", "Lateral Derecho", "Mediocampista Derecho"],
+        "clubes totales": ["River Plate", "Sevilla"]
     },
     {
         "id": 636,
@@ -5913,7 +5913,7 @@
         "Fecha de nacimiento": "--",
         "club actual": "River Plate",
         "posicion": ["Defensa Central"],
-        "clubes totales": ["River Plate"]
+        "clubes totales": ["River Plate", "Fiorentina", "Real Betis"]
     },
     {
         "id": 638,
@@ -5931,7 +5931,7 @@
         "Fecha de nacimiento": "--",
         "club actual": "River Plate",
         "posicion": ["Defensa Central"],
-        "clubes totales": ["River Plate"]
+        "clubes totales": ["River Plate", "Estudiantes de La Plata"]
     },
     {
         "id": 640,
@@ -5949,7 +5949,7 @@
         "Fecha de nacimiento": "--",
         "club actual": "River Plate",
         "posicion": ["Defensa Central"],
-        "clubes totales": ["River Plate"]
+        "clubes totales": ["River Plate", "San Lorenzo", "Al-Ahli", "Palestino", "Colo-Colo"]
     },
     {
         "id": 642,
@@ -5957,8 +5957,8 @@
         "nacionalidad": "Argentina",
         "Fecha de nacimiento": "--",
         "club actual": "River Plate",
-        "posicion": ["Defensa Central"],
-        "clubes totales": ["River Plate"]
+        "posicion": ["Defensa Central", "Lateral Izquierdo"],
+        "clubes totales": ["River Plate", "Gimnasia y Esgrima La Plata", "Newell's"]
     },
     {
         "id": 643,
@@ -5966,17 +5966,18 @@
         "nacionalidad": "Argentina",
         "Fecha de nacimiento": "--",
         "club actual": "River Plate",
-        "posicion": ["Defensa Central"],
-        "clubes totales": ["River Plate"]
+        "posicion": ["Defensa Central", "Lateral Izquierdo", "Mediocampista Izquierdo"],
+        "clubes totales": ["River Plate", "Sevilla", "Sporting de Lisboa", "Racing Club", "Ferro"]
     },
     {
         "id": 644,
         "nombre": "Lucas Martínez Quarta",
+        "apodo": "Martínez Quarta",
         "nacionalidad": "Argentina",
         "Fecha de nacimiento": "--",
         "club actual": "River Plate",
         "posicion": ["Defensa Central"],
-        "clubes totales": ["River Plate"]
+        "clubes totales": ["River Plate", "Fiorentina"]
     },
     {
         "id": 645,
@@ -6021,7 +6022,7 @@
         "Fecha de nacimiento": "--",
         "club actual": "River Plate",
         "posicion": ["Mediocampista Central"],
-        "clubes totales": ["River Plate"]
+        "clubes totales": ["River Plate", "Monterrey", "Independiente", "Gimnasia y Esgrima La Plata"]
     },
     {
         "id": 650,
@@ -6029,8 +6030,8 @@
         "nacionalidad": "Colombia",
         "Fecha de nacimiento": "--",
         "club actual": "River Plate",
-        "posicion": ["Mediocampista Central"],
-        "clubes totales": ["River Plate"]
+        "posicion": ["Mediocampista Central", "Mediocampista Ofensivo"],
+        "clubes totales": ["River Plate", "Racing Club", "Independiente Medellín", "Porto", "Stade Rennais", "Atlético Nacional"]
     },
     {
         "id": 651,
@@ -6065,8 +6066,8 @@
         "nacionalidad": "Argentina",
         "Fecha de nacimiento": "--",
         "club actual": "River Plate",
-        "posicion": ["Mediocampista Central"],
-        "clubes totales": ["River Plate"]
+        "posicion": ["Mediocampista Central", "Mediocampista Defensivo"],
+        "clubes totales": ["River Plate", "Estudiantes de La Plata", "Godoy Cruz", "Valencia", "Benfica"]
     },
     {
         "id": 655,
@@ -6074,7 +6075,7 @@
         "nacionalidad": "Argentina",
         "Fecha de nacimiento": "--",
         "club actual": "River Plate",
-        "posicion": ["Mediocampista Central"],
+        "posicion": ["Mediocampista Central", "Mediocampista Ofensivo"],
         "clubes totales": ["River Plate"]
     },
     {
@@ -6146,8 +6147,8 @@
         "nacionalidad": "Argentina",
         "Fecha de nacimiento": "--",
         "club actual": "River Plate",
-        "posicion": ["Delantero Centro"],
-        "clubes totales": ["River Plate"]
+        "posicion": ["Delantero Centro", "Extremo Izquierdo"],
+        "clubes totales": ["River Plate", "Racing Club"]
     },
     {
         "id": 664,
@@ -6164,7 +6165,7 @@
         "nacionalidad": "Argentina",
         "Fecha de nacimiento": "--",
         "club actual": "River Plate",
-        "posicion": ["Delantero Centro"],
+        "posicion": ["Delantero Centro", "Extremo Derecho"],
         "clubes totales": ["River Plate"]
     },
     {
@@ -6174,7 +6175,7 @@
         "Fecha de nacimiento": "--",
         "club actual": "River Plate",
         "posicion": ["Delantero Centro"],
-        "clubes totales": ["River Plate"]
+        "clubes totales": ["River Plate", "Zenit"]
     },
     {
         "id": 667,
@@ -6272,7 +6273,7 @@
         "nacionalidad": "Perú",
         "Fecha de nacimiento": "--",
         "club actual": "Boca Juniors",
-        "posicion": ["Defensa Central"],
+        "posicion": ["Defensa Central", "Lateral Derecho"],
         "clubes totales": ["Boca Juniors"]
     },
     {
@@ -6281,7 +6282,7 @@
         "nacionalidad": "Colombia",
         "Fecha de nacimiento": "--",
         "club actual": "Boca Juniors",
-        "posicion": ["Defensa Central"],
+        "posicion": ["Defensa Central", "Lateral Izquierdo"],
         "clubes totales": ["Boca Juniors"]
     },
     {
@@ -6290,7 +6291,7 @@
         "nacionalidad": "Argentina",
         "Fecha de nacimiento": "--",
         "club actual": "Boca Juniors",
-        "posicion": ["Defensa Central"],
+        "posicion": ["Defensa Central", "Lateral Izquierdo"],
         "clubes totales": ["Boca Juniors"]
     },
     {
@@ -6299,8 +6300,8 @@
         "nacionalidad": "Argentina",
         "Fecha de nacimiento": "--",
         "club actual": "Boca Juniors",
-        "posicion": ["Defensa Central"],
-        "clubes totales": ["Boca Juniors"]
+        "posicion": ["Defensa Central", "Lateral Izquierdo"],
+        "clubes totales": ["Boca Juniors", "Belgrano"]
     },
     {
         "id": 681,
@@ -6326,7 +6327,7 @@
         "nacionalidad": "Argentina",
         "Fecha de nacimiento": "--",
         "club actual": "Boca Juniors",
-        "posicion": ["Defensa Central"],
+        "posicion": ["Delantero Centro", "Extremo Derecho"],
         "clubes totales": ["Boca Juniors"]
     },
     {
@@ -6353,7 +6354,7 @@
         "nacionalidad": "Suiza",
         "Fecha de nacimiento": "--",
         "club actual": "Boca Juniors",
-        "posicion": ["Defensa Central"],
+        "posicion": ["Defensa Central", "Lateral Derecho"],
         "clubes totales": ["Boca Juniors"]
     },
     {
@@ -6398,8 +6399,8 @@
         "nacionalidad": "Argentina",
         "Fecha de nacimiento": "--",
         "club actual": "Boca Juniors",
-        "posicion": ["Mediocampista Central"],
-        "clubes totales": ["Boca Juniors"]
+        "posicion": ["Mediocampista Central", "Mediocampista Defensivo"],
+        "clubes totales": ["Boca Juniors", "Roma", "Zenit"]
     },
     {
         "id": 692,
@@ -6407,8 +6408,8 @@
         "nacionalidad": "Argentina",
         "Fecha de nacimiento": "--",
         "club actual": "Boca Juniors",
-        "posicion": ["Mediocampista Central"],
-        "clubes totales": ["Boca Juniors"]
+        "posicion": ["Mediocampista Defensivo", "Defensa Central"],
+        "clubes totales": ["Boca Juniors", "Atlético Mineiro", "Huracán", "Sporting de Lisboa"]
     },
     {
         "id": 693,
@@ -6417,16 +6418,16 @@
         "Fecha de nacimiento": "--",
         "club actual": "Boca Juniors",
         "posicion": ["Mediocampista Central"],
-        "clubes totales": ["Boca Juniors"]
+        "clubes totales": ["Boca Juniors", "LOSC Lille", "Gimnasia y Esgrima La Plata"]
     },
     {
         "id": 694,
-        "nombre": "William Alarcón",
+        "nombre": "Williams Alarcón",
         "nacionalidad": "Chile",
         "Fecha de nacimiento": "--",
         "club actual": "Boca Juniors",
         "posicion": ["Mediocampista Central"],
-        "clubes totales": ["Boca Juniors"]
+        "clubes totales": ["Boca Juniors", "Huracán"]
     },
     {
         "id": 695,
@@ -6434,8 +6435,8 @@
         "nacionalidad": "Argentina",
         "Fecha de nacimiento": "--",
         "club actual": "Boca Juniors",
-        "posicion": ["Mediocampista Central"],
-        "clubes totales": ["Boca Juniors"]
+        "posicion": ["Mediocampista Central", "Mediocampista Ofensivo"],
+        "clubes totales": ["Boca Juniors", "San Lorenzo", "Salernitana"]
     },
     {
         "id": 696,
@@ -6444,7 +6445,7 @@
         "Fecha de nacimiento": "--",
         "club actual": "Boca Juniors",
         "posicion": ["Mediocampista Central"],
-        "clubes totales": ["Boca Juniors"]
+        "clubes totales": ["Boca Juniors", "Dallas FC", "Independiente"]
     },
     {
         "id": 697,
@@ -6452,8 +6453,8 @@
         "nacionalidad": "España",
         "Fecha de nacimiento": "--",
         "club actual": "Boca Juniors",
-        "posicion": ["Mediocampista Central"],
-        "clubes totales": ["Boca Juniors"]
+        "posicion": ["Mediocampista Central", "Mediocampista Defensivo"],
+        "clubes totales": ["Boca Juniors", "Manchester United", "Paris Saint-Germain", "Athletic Club"]
     },
     {
         "id": 698,
@@ -6462,7 +6463,7 @@
         "Fecha de nacimiento": "--",
         "club actual": "Boca Juniors",
         "posicion": ["Mediocampista Central"],
-        "clubes totales": ["Boca Juniors"]
+        "clubes totales": ["Boca Juniors", "Unión de Santa Fe"]
     },
     {
         "id": 699,
@@ -6470,8 +6471,8 @@
         "nacionalidad": "Argentina",
         "Fecha de nacimiento": "--",
         "club actual": "Boca Juniors",
-        "posicion": ["Mediocampista Central"],
-        "clubes totales": ["Boca Juniors"]
+        "posicion": ["Mediocampista Central", "Mediocampista Izquierdo", "Lateral Izquierdo"],
+        "clubes totales": ["Boca Juniors", "Instituto", "San Lorenzo", "Aldosivi"]
     },
     {
         "id": 700,
@@ -6533,7 +6534,7 @@
         "nacionalidad": "Argentina",
         "Fecha de nacimiento": "--",
         "club actual": "Boca Juniors",
-        "posicion": ["Delantero Centro"],
+        "posicion": ["Delantero Centro", "Mediocampista Izquierdo", "Extremo Izquierdo"],
         "clubes totales": ["Boca Juniors"]
     },
     {
@@ -6542,8 +6543,8 @@
         "nacionalidad": "Chile",
         "Fecha de nacimiento": "--",
         "club actual": "Boca Juniors",
-        "posicion": ["Delantero Centro"],
-        "clubes totales": ["Boca Juniors"]
+        "posicion": ["Extremo Derecho", "Mediocampista Derecho", "Mediocampista Ofensivo"],
+        "clubes totales": ["Boca Juniors", "Colo-Colo"]
     },
     {
         "id": 708,
@@ -6552,7 +6553,7 @@
         "Fecha de nacimiento": "--",
         "club actual": "Boca Juniors",
         "posicion": ["Delantero Centro"],
-        "clubes totales": ["Boca Juniors"]
+        "clubes totales": ["Boca Juniors", "Banfield", "Central Córdoba", "Atlanta"]
     },
     {
         "id": 709,
@@ -6561,7 +6562,7 @@
         "Fecha de nacimiento": "--",
         "club actual": "Boca Juniors",
         "posicion": ["Delantero Centro"],
-        "clubes totales": ["Boca Juniors"]
+        "clubes totales": ["Boca Juniors", "Tigre", "Vélez Sarsfield", "Toronto FC"]
     },
     {
         "id": 710,
@@ -6570,7 +6571,7 @@
         "Fecha de nacimiento": "--",
         "club actual": "Boca Juniors",
         "posicion": ["Delantero Centro"],
-        "clubes totales": ["Boca Juniors"]
+        "clubes totales": ["Boca Juniors", "Palmeiras", "Peñarol", "Godoy Cruz", "Defensa y Justicia"]
     },
     {
         "id": 711,
@@ -6690,6 +6691,328 @@
         "club actual": "RETIRADO",
         "posicion": ["Defensa Central"],
         "clubes totales": ["Groningen", "Ajax", "PSV Eindhoven", "Barcelona", "Feyenoord"]
+    },
+    {
+        "id": 725,
+        "nombre": "Álvaro Angulo",
+        "nacionalidad": "Colombia",
+        "club actual": "Pumas",
+        "posicion": ["Defensa Central", "Lateral Izquierdo"],
+        "clubes totales": ["Pumas", "Águilas Doradas", "Atlético Nacional", "Independiente"]
+    },
+    {
+        "id": 726,
+        "nombre": "Facundo Zabala",
+        "nacionalidad": "Argentina",
+        "club actual": "Independiente",
+        "posicion": ["Lateral Izquierdo"],
+        "clubes totales": ["Independiente", "Rosario Central", "Olimpia"]
+    },
+    {
+        "id": 727,
+        "nombre": "Kevin Lomónaco",
+        "nacionalidad": "Argentina",
+        "club actual": "Independiente",
+        "posicion": ["Defensa Central"],
+        "clubes totales": ["Independiente", "Lanús", "Platense", "Tigre", "Red Bull Bragantino"]
+    },
+    {
+        "id": 728,
+        "nombre": "Nicolás Freire",
+        "nacionalidad": "Argentina",
+        "club actual": "Independiente",
+        "posicion": ["Defensa Central"],
+        "clubes totales": ["Independiente", "Pumas", "Inter Miami", "Argentinos Juniors", "Palmeiras", "Liga de Quito"]
+    },
+    {
+        "id": 729,
+        "nombre": "Federico Vera",
+        "nacionalidad": "Argentina",
+        "club actual": "Independiente",
+        "posicion": ["Lateral Derecho"],
+        "clubes totales": ["Independiente", "Unión de Santa Fe"]
+    },
+    {
+        "id": 730,
+        "nombre": "Gastón Togni",
+        "nacionalidad": "Argentina",
+        "club actual": "Pachuca",
+        "posicion": ["Extremo Derecho", "Mediocampista Derecho"],
+        "clubes totales": ["Independiente", "Defensa y Justicia", "Pachuca"]
+    },
+    {
+        "id": 731,
+        "nombre": "Felipe Loyola",
+        "nacionalidad": "Chile",
+        "club actual": "Independiente",
+        "posicion": ["Mediocampista Central", "Mediocampista Defensivo"],
+        "clubes totales": ["Independiente", "Colo-Colo", "Huachipato"]
+    },
+    {
+        "id": 732,
+        "nombre": "Iván Marcone",
+        "nacionalidad": "Argentina",
+        "club actual": "Independiente",
+        "posicion": ["Mediocampista Defensivo"],
+        "clubes totales": ["Independiente", "Elche", "Boca Juniors", "Lanús", "Arsenal de Sarandí"]
+    },
+    {
+        "id": 733,
+        "nombre": "Rodrigo Fernández",
+        "nacionalidad": "Uruguay",
+        "club actual": "Independiente",
+        "posicion": ["Mediocampista Central", "Mediocampista Defensivo"],
+        "clubes totales": ["Independiente", "Danubio", "Guaraní", "Santos", "Newell's"]
+    },
+    {
+        "id": 734,
+        "nombre": "Matías Abaldo",
+        "nacionalidad": "Uruguay",
+        "club actual": "Independiente",
+        "posicion": ["Mediocampista Izquierdo", "Extremo Izquierdo"],
+        "clubes totales": ["Independiente", "Defensor Sporting", "Gimnasia y Esgrima La Plata"]
+    },
+    {
+        "id": 735,
+        "nombre": "Luciano Cabral",
+        "nacionalidad": "Argentina",
+        "club actual": "Independiente",
+        "posicion": ["Mediocampista Ofensivo"],
+        "clubes totales": ["Independiente", "Argentinos Juniors", "Atlético Paranaense"]
+    },
+    {
+        "id": 736,
+        "nombre": "Lautaro Millán",
+        "nacionalidad": "Chile",
+        "club actual": "Independiente",
+        "posicion": ["Mediocampista Ofensivo"],
+        "clubes totales": ["Independiente"]
+    },
+    {
+        "id": 737,
+        "nombre": "Santiago Montiel",
+        "nacionalidad": "Argentina",
+        "club actual": "Independiente",
+        "posicion": ["Mediocampista Derecho", "Extremo Derecho"],
+        "clubes totales": ["Independiente", "Argentinos Juniors"]
+    },
+    {
+        "id": 738,
+        "nombre": "Gabriel Ávalos",
+        "nacionalidad": "Paraguay",
+        "club actual": "Independiente",
+        "posicion": ["Delantero Centro"],
+        "clubes totales": ["Independiente", "Argentinos Juniors", "Patronato", "Godoy Cruz", "Nueva Chicago", "Peñarol", "Gimnasia y Esgrima La Plata", "Tigre", "Libertad"]
+    },
+    {
+        "id": 739,
+        "nombre": "Leandro Fernández",
+        "nacionalidad": "Argentina",
+        "club actual": "Independiente",
+        "posicion": ["Delantero Centro"],
+        "clubes totales": ["Independiente", "Cruz Azul", "Unión de Santa Fe", "Newell's", "River Plate"]
+    },
+    {
+        "id": 740,
+        "nombre": "Walter Mazzanti",
+        "nacionalidad": "Argentina",
+        "club actual": "Independiente",
+        "posicion": ["Delantero Centro"],
+        "clubes totales": ["Independiente", "Atlanta", "Huracán", "Tigre"]
+    },
+    {
+        "id": 741,
+        "nombre": "Ignacio Pussetto",
+        "nacionalidad": "Argentina",
+        "club actual": "Independiente",
+        "posicion": ["Extremo Derecho", "Delantero Centro"],
+        "clubes totales": ["Independiente", "Pumas", "Udinese", "Watford", "Sampdoria", "Huracán"]
+    },
+    {
+        "id": 742,
+        "nombre": "Diego Tarzia",
+        "nacionalidad": "Argentina",
+        "club actual": "Independiente",
+        "posicion": ["Mediocampista Izquierdo", "Extremo Izquierdo"],
+        "clubes totales": ["Independiente"]
+    },
+    {
+        "id": 743,
+        "nombre": "Gabriel Arias",
+        "nacionalidad": "Chile",
+        "club actual": "Racing Club",
+        "posicion": ["Portero"],
+        "clubes totales": ["Racing Club", "Olimpo", "Defensa y Justicia", "Unión La Calera"]
+    },
+    {
+        "id": 744,
+        "nombre": "Facundo Cambeses",
+        "nacionalidad": "Argentina",
+        "club actual": "Racing Club",
+        "posicion": ["Portero"],
+        "clubes totales": ["Racing Club", "Banfield", "Huracán"]
+    },
+    {
+        "id": 745,
+        "nombre": "Agustín García Basso",
+        "apodo": "García Basso",
+        "nacionalidad": "Argentina",
+        "club actual": "Racing Club",
+        "posicion": ["Defensa Central", "Lateral Izquierdo"],
+        "clubes totales": ["Racing Club", "Boca Juniors", "Estudiantes de Caseros", "Quilmes", "Independiente del Valle"]
+    },
+    {
+        "id": 746,
+        "nombre": "Nazareno Colombo",
+        "nacionalidad": "Argentina",
+        "club actual": "Racing Club",
+        "posicion": ["Defensa Central"],
+        "clubes totales": ["Racing Club", "Estudiantes de La Plata", "Defensa y Justicia"]
+    },
+    {
+        "id": 747,
+        "nombre": "Marcos Rojo",
+        "nacionalidad": "Argentina",
+        "club actual": "Racing Club",
+        "posicion": ["Defensa Central", "Lateral Izquierdo"],
+        "clubes totales": ["Racing Club", "Boca Juniors", "Sporting de Lisboa", "Manchester United", "Estudiantes de La Plata", "Spartak de Moscú"]
+    },
+    {
+        "id": 748,
+        "nombre": "Facundo Mura",
+        "nacionalidad": "Argentina",
+        "club actual": "Racing Club",
+        "posicion": ["Lateral Derecho", "Mediocampista Derecho"],
+        "clubes totales": ["Racing Club", "Estudiantes de La Plata", "Colón"]
+    },
+    {
+        "id": 749,
+        "nombre": "Marco Di Cesare",
+        "apodo": "Di Cesare",
+        "nacionalidad": "Argentina",
+        "club actual": "Racing Club",
+        "posicion": ["Defensa Central"],
+        "clubes totales": ["Racing Club", "Argentinos Juniors"]
+    },
+    {
+        "id": 750,
+        "nombre": "Gabriel Rojas",
+        "nacionalidad": "Argentina",
+        "club actual": "Racing Club",
+        "posicion": ["Lateral Izquierdo", "Mediocampista Izquierdo"],
+        "clubes totales": ["Racing Club", "San Lorenzo", "Peñarol", "Querétaro"]
+    },
+    {
+        "id": 751,
+        "nombre": "Gastón Martirena",
+        "nacionalidad": "Uruguay",
+        "club actual": "Racing Club",
+        "posicion": ["Lateral Derecho", "Mediocampista Central"],
+        "clubes totales": ["Racing Club", "Liverpool Montevideo"]
+    },
+    {
+        "id": 752,
+        "nombre": "Juan Nardoni",
+        "nacionalidad": "Argentina",
+        "club actual": "Racing Club",
+        "posicion": ["Mediocampista Central"],
+        "clubes totales": ["Racing Club", "Unión de Santa Fe"]
+    },
+    {
+        "id": 753,
+        "nombre": "Matías Zaracho",
+        "nacionalidad": "Argentina",
+        "club actual": "Racing Club",
+        "posicion": ["Mediocampista Central", "Mediocampista Ofensivo"],
+        "clubes totales": ["Racing Club", "Atlético Mineiro"]
+    },
+    {
+        "id": 754,
+        "nombre": "Bruno Zuculini",
+        "nacionalidad": "Argentina",
+        "club actual": "Racing Club",
+        "posicion": ["Mediocampista Central", "Mediocampista Defensivo"],
+        "clubes totales": ["Racing Club", "Valencia", "River Plate", "Hellas Verona", "Middlesbrough", "Manchester City"]
+    },
+    {
+        "id": 755,
+        "nombre": "Agustín Almendra",
+        "nacionalidad": "Argentina",
+        "club actual": "Racing Club",
+        "posicion": ["Mediocampista Central", "Mediocampista Ofensivo"],
+        "clubes totales": ["Racing Club", "Boca Juniors"]
+    },
+    {
+        "id": 756,
+        "nombre": "Enzo Copetti",
+        "nacionalidad": "Argentina",
+        "club actual": "Rosario Central",
+        "posicion": ["Delantero Centro"],
+        "clubes totales": ["Racing Club", "Atlético Rafaela", "Rosario Central"]
+    },
+    {
+        "id": 757,
+        "nombre": "Santiago Sosa",
+        "nacionalidad": "Argentina",
+        "club actual": "Racing Club",
+        "posicion": ["Defensa Central", "Mediocampista Defensivo"],
+        "clubes totales": ["Racing Club", "Atlanta United", "River Plate"]
+    },
+    {
+        "id": 758,
+        "nombre": "Lisandro López",
+        "nacionalidad": "Argentina",
+        "club actual": "Sarmiento",
+        "posicion": ["Delantero Centro"],
+        "clubes totales": ["Racing Club", "Internacional", "Olympique Lyon", "Porto", "Sarmiento"]
+    },
+    {
+        "id": 759,
+        "nombre": "Adrián Martínez",
+        "nacionalidad": "Argentina",
+        "club actual": "Racing Club",
+        "posicion": ["Delantero Centro"],
+        "clubes totales": ["Racing Club", "Atlanta", "Libertad", "Cerro Porteño", "Coritiba", "Instituto"]
+    },
+    {
+        "id": 760,
+        "nombre": "Santiago Germán Solari",
+        "nacionalidad": "Argentina",
+        "club actual": "Racing Club",
+        "posicion": ["Delantero Centro", "Extremo Izquierdo"],
+        "clubes totales": ["Racing Club", "Atlanta", "Defensa y Justicia"]
+    },
+    {
+        "id": 761,
+        "nombre": "Tomás Conechny",
+        "nacionalidad": "Argentina",
+        "club actual": "Racing Club",
+        "posicion": ["Extremo Derecho", "Mediocampista Derecho"],
+        "clubes totales": ["Racing Club", "Portland Timbers", "San Lorenzo", "Godoy Cruz", "Alavés"]
+    },
+    {
+        "id": 762,
+        "nombre": "Luciano Vietto",
+        "nacionalidad": "Argentina",
+        "club actual": "Racing Club",
+        "posicion": ["Delantero Centro", "Extremo Derecho"],
+        "clubes totales": ["Racing Club", "Al-Hilal", "Villarreal", "Atlético de Madrid", "Sevilla", "Fulham", "Sporting de Lisboa", "Valencia"]
+    },
+    {
+        "id": 763,
+        "nombre": "Adrián Balboa",
+        "nacionalidad": "Uruguay",
+        "club actual": "Racing Club",
+        "posicion": ["Delantero Centro"],
+        "clubes totales": ["Racing Club", "Unión de Santa Fe", "Alianza Lima", "Panathinaikos", "Defensor Sporting", "Danubio", "Liverpool Montevideo"]
+    },
+    {
+        "id": 764,
+        "nombre": "Duván Vergara",
+        "nacionalidad": "Colombia",
+        "club actual": "Racing Club",
+        "posicion": ["Extremo Izquierdo", "Mediocampista Izquierdo"],
+        "clubes totales": ["Racing Club", "Monterrey", "América de Cali", "Rosario Central", "Santos Laguna"]
     }
 ]
 }
