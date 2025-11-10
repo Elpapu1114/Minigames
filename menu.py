@@ -306,9 +306,13 @@ def handle_credits():
     
     back_x = SCREEN_WIDTH // 2 - back_img.get_width() // 2
     back_y = SCREEN_HEIGHT - 70
-    back_button_credits = Button(back_x, back_y, back_img, 1)
+    back_button = Button(back_x, back_y, back_img, 1)
     
-    if back_button_credits.draw(screen) and can_click():
+    # Dibujar el botón SIEMPRE primero
+    back_button.draw(screen)
+    
+    # Luego verificar si fue clickeado
+    if back_button.clicked and can_click():
         menu_state = "options"
 
 def handle_video_settings():
@@ -380,12 +384,16 @@ def handle_video_settings():
         status = "activado" if game_settings["vsync"] else "desactivado"
         show_message(f"V-Sync {status}", SUCCESS_COL)
     
-    # Botón back - Corregido
+    # Botón back usando Button
     back_x = SCREEN_WIDTH // 2 - back_img.get_width() // 2
     back_y = SCREEN_HEIGHT - 80
-    back_button_video = Button(back_x, back_y, back_img, 5)
+    back_button = Button(back_x, back_y, back_img, 1)
     
-    if back_button_video.draw(screen) and can_click():
+    # Dibujar el botón SIEMPRE primero
+    back_button.draw(screen)
+    
+    # Luego verificar si fue clickeado
+    if back_button.clicked and can_click():
         menu_state = "options"
 
 def handle_audio_settings():
@@ -453,12 +461,16 @@ def handle_audio_settings():
         elif test_music_rect.collidepoint(mouse_pos):
             show_message("Reproduciendo música", SUCCESS_COL)
     
-    # Botón back - Corregido
+    # Botón back usando Button
     back_x = SCREEN_WIDTH // 2 - back_img.get_width() // 2
     back_y = SCREEN_HEIGHT - 80
-    back_button_audio = Button(back_x, back_y, back_img, 5)
+    back_button = Button(back_x, back_y, back_img, 1)
     
-    if back_button_audio.draw(screen) and can_click():
+    # Dibujar el botón SIEMPRE primero
+    back_button.draw(screen)
+    
+    # Luego verificar si fue clickeado
+    if back_button.clicked and can_click():
         menu_state = "options"
 
 def handle_events():
@@ -471,9 +483,12 @@ def handle_events():
         
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
-                if menu_state != "main":
+                # Navegación jerárquica con ESC
+                if menu_state in ["video", "audio", "credits"]:
+                    menu_state = "options"
+                elif menu_state == "options":
                     menu_state = "main"
-                else:
+                else:  # menu_state == "main"
                     return False
             
             elif event.key == pygame.K_c:
