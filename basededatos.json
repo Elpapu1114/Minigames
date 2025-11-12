@@ -7202,7 +7202,245 @@
         "clubes totales": ["Rosario Central", "Deportes Antofagasta", "Colón", "Ludogorets", "Gimnasia y Esgrima La Plata"]
     },
     {
-        
-    }   
+        "id": 788,
+        "nombre": "Gonzalo Sández",
+        "nacionalidad": "Argentina",
+        "club actual": "Rosario Central",
+        "posicion": ["Lateral Izquierdo"],
+        "clubes totales": ["Boca Juniors", "Rosario Central"]
+    },
+    {
+        "id": 789,
+        "nombre": "Facundo Mallo",
+        "nacionalidad": "Uruguay",
+        "club actual": "Rosario Central",
+        "posicion": ["Defensa Central"],
+        "clubes totales": ["Rosario Central", "Liverpool Montevideo", "Dinamo Bucarest", "Defensor Sporting"]
+    },
+    {
+        "id": 790,
+        "nombre": "Juan Cruz Komar",
+        "nacionalidad": "Argentina",
+        "club actual": "Rosario Central",
+        "posicion": ["Defensa Central"],
+        "clubes totales": ["Boca Juniors", "Talleres de Córdoba", "Rosario Central"]
+    },
+    {
+        "id": 791,
+        "nombre": "Emanuel Coronel",
+        "nacionalidad": "Argentina",
+        "club actual": "Rosario Central",
+        "posicion": ["Lateral Derecho"],
+        "clubes totales": ["Rosario Central", "Banfield", "Brown de Adrogué"]
+    },
+    {
+        "id": 792,
+        "nombre": "Franco Ibarra",
+        "nacionalidad": "Argentina",
+        "club actual": "Rosario Central",
+        "posicion": ["Mediocampista Defensivo", "Mediocampista Central"],
+        "clubes totales": ["Argentinos Juniors", "Atlanta United", "Toronto FC", "Rosario Central"]
+    },
+    {
+        "id": 793,
+        "nombre": "Ignacio Malcorra",
+        "nacionalidad": "Argentina",
+        "club actual": "Rosario Central",
+        "posicion": ["Mediocampista Defensivo", "Mediocampista Central", "Mediocampista Ofensivo"],
+        "clubes totales": ["CAI", "Aldosivi", "Unión de Santa Fe", "Tijuana", "Pumas", "Atlas", "Lanús", "Rosario Central"]
+    },
+    {
+        "id": 794,
+        "nombre": "Federico Navarro",
+        "nacionalidad": "Argentina",
+        "club actual": "Rosario Central",
+        "posicion": ["Mediocampista Central", "Mediocampista Defensivo"],
+        "clubes totales": ["Rosario Central", "Chicago Fire", "Talleres de Córdoba"]
+    },
+    {
+        "id": 795,
+        "nombre": "Jaminton Campaz",
+        "nacionalidad": "Colombia",
+        "club actual": "Rosario Central",
+        "posicion": ["Mediocampista Izquierdo", "Extremo Izquierdo"],
+        "clubes totales": ["Rosario Central", "Gremio", "Deportes Tolima"]
+    },
+    {
+        "id": 796,
+        "nombre": "Gaspar Duarte",
+        "nacionalidad": "Argentina",
+        "club actual": "Rosario Central",
+        "posicion": ["Extremo Derecho", "Mediocampista Derecho"],
+        "clubes totales": ["Rosario Central"]
+    },
+    {
+        "id": 797,
+        "nombre": "Alejo Véliz",
+        "nacionalidad": "Argentina",
+        "club actual": "Rosario Central",
+        "posicion": ["Delantero Centro"],
+        "clubes totales": ["Rosario Central", "Tottenham Hotspur", "Sevilla", "Espanyol"]
+    },
+    {
+        "id": 798,
+        "nombre": "Maximiliano Lovera",
+        "nacionalidad": "Argentina",
+        "club actual": "Rosario Central",
+        "posicion": ["Extremo Izquierdo", "Mediocampista Izquierdo"],
+        "clubes totales": ["Rosario Central", "Olympiacos", "Almería"]
+    },
+    {
+        "id": 799,
+        "nombre": "Enzo Copetti",
+        "nacionalidad": "Argentina",
+        "club actual": "Rosario Central",
+        "posicion": ["Delantero Centro"],
+        "clubes totales": ["Racing Club", "Atlético Rafaela", "Charlotte FC", "Rosario Central"]
+    },{
+        "id": 800,
+        "nombre": "Hernan Galindez",
+        "nacionalidad": "Ecuador",
+        "club actual": "Huracán",
+        "posicion": ["Portero"],
+        "clubes totales": ["Rosario Central","Quilmes","Universidad Católica","Universidad de Chile","Huracan"]
+    },
+    {
+        "id": 801,
+        "nombre": "Tomás Ezequiel Guidara",
+        "nacionalidad": "Argentina",
+        "club actual": "Huracán",
+        "posicion": ["Lateral Derecho", "Defensa Central"],
+        "clubes totales": ["Belgrano", "Vélez Sarsfield", "Huracán"]
+    },
+    {
+        "id": 802,
+        "nombre": "Fabio Jesús Pereyra",
+        "nacionalidad": "Argentina",
+        "club actual": "Huracán",
+        "posicion": ["Defensa Central"],
+        "clubes totales": ["CAI", "Tiro Federal", "Independiente (Chivilcoy)", "San Jorge de Tucumán", "Arsenal de Sarandí", "FBC Melgar", "Central Córdoba", "Huracán"]
+    },
+    {
+        "id": 803,
+        "nombre": "Nehuén Mario Paz",
+        "nacionalidad": "Argentina",
+        "club actual": "Huracán",
+        "posicion": ["Defensa Central"],
+        "clubes totales": ["All Boys", "Newell's Old Boys", "Bologna", "Lanús", "Lecce", "Kayserispor", "Crotone", "Universidad Católica", "Estudiantes", "Huracán"]
+    },
+    {
+        "id": 804,
+        "nombre": "Leandro Lescano",
+        "nacionalidad": "Argentina",
+        "club actual": "Huracán",
+        "posicion": ["Defensa Central", "Lateral Izquierdo"],
+        "clubes totales": ["Huracán"]
+    },
+    {
+        "id": 805,
+        "nombre": "Pedro Emmanuel Ojeda",
+        "nacionalidad": "Argentina",
+        "club actual": "Huracán",
+        "posicion": ["Mediocampista Central"],
+        "clubes totales": ["Rosario Central", "Universidad de Chile", "Huracán"]
+    },
+    {
+        "id": 806,
+        "nombre": "Leonel Ulises Pérez",
+        "nacionalidad": "Argentina",
+        "club actual": "Huracán",
+        "posicion": ["Mediocampista Defensivo"],
+        "clubes totales": ["Huracán"]
+    },
+    {
+        "id": 807,
+        "nombre": "Facundo Waller",
+        "nacionalidad": "Uruguay",
+        "club actual": "Huracán",
+        "posicion": ["Mediocampista Central", "Mediocampista Izquierdo"],
+        "clubes totales": ["Plaza Colonia", "Nacional", "Pumas", "Atlético San Luis", "Puebla", "Huracán"]
+    },
+    {
+        "id": 808,
+        "nombre": "Matko Mijael Miljevic",
+        "nacionalidad": "Estados Unidos",
+        "club actual": "Huracán",
+        "posicion": ["Mediocampista Ofensivo"],
+        "clubes totales": ["Argentinos Juniors", "CF Montréal", "Newell's Old Boys", "Huracán"]
+    },
+    {
+        "id": 809,
+        "nombre": "Leonardo Exequiel Sequeira",
+        "nacionalidad": "Argentina",
+        "club actual": "Huracán",
+        "posicion": ["Delantero Centro", "Extremo Derecho"],
+        "clubes totales": ["Central Córdoba", "Belgrano", "Querétaro", "Real Oviedo", "Everton (Chile)", "Peñarol", "Huracán"]
+    },
+    {
+        "id": 810,
+        "nombre": "Luciano Giménez Alanda",
+        "nacionalidad": "Argentina",
+        "club actual": "Huracán",
+        "posicion": ["Delantero Centro"],
+        "clubes totales": ["Central Norte", "Boca Juniors", "Chaco For Ever", "Chacarita Juniors", "Cuiabá", "Estudiantes", "Huracán"]
+    },
+    {
+        "id": 811,
+        "nombre": "Leonardo Gil",
+        "nacionalidad": "Argentina",
+        "club actual": "Huracán",
+        "posicion": ["Mediocampista Central", "Mediocampista Defensivo", "Mediocampista Ofensivo"],
+        "clubes totales": ["CAI", "Olimpo", "Estudiantes", "Talleres", "Rosario Central", "Al-Ittihad", "Vasco da Gama", "Colo-Colo", "Huracán"]
+    },
+    {
+        "id": 812,
+        "nombre": "Ramón Darío Ábila",
+        "apodo": "Wanchope Ábila",
+        "nacionalidad": "Argentina",
+        "club actual": "Huracán",
+        "posicion": ["Delantero Centro"],
+        "clubes totales": ["Instituto", "Sarmiento", "Deportivo Morón", "Huracán", "Cruzeiro", "Boca Juniors", "Minnesota United", "D.C. United", "Colón"]
+    },
+    {
+        "id": 813,
+        "nombre": "Juan Francisco Bisanz",
+        "nacionalidad": "Argentina",
+        "club actual": "Huracán",
+        "posicion": ["Extremo Derecho", "Mediocampista Derecho"],
+        "clubes totales": ["Atlanta", "Banfield", "Huracán"]
+    },
+    {
+        "id": 814,
+        "nombre": "Eric Ramírez",
+        "nacionalidad": "Argentina",
+        "club actual": "Huracán",
+        "posicion": ["Delantero Centro"],
+        "clubes totales": ["Gimnasia y Esgrima La Plata", "Quilmes", "Huracán"]
+    },
+    {
+        "id": 815,
+        "nombre": "Thaiel Peralta",
+        "nacionalidad": "Argentina",
+        "club actual": "Huracán",
+        "posicion": ["Mediocampista Ofensivo", "Extremo Derecho"],
+        "clubes totales": ["Huracán"]
+    },
+    {
+        "id": 816,
+        "nombre": "Lucas Carrizo",
+        "nacionalidad": "Argentina",
+        "club actual": "Huracán",
+        "posicion": ["Defensa Central"],
+        "clubes totales": ["Quilmes", "San Telmo", "Gimnasia y Esgrima (Mendoza)", "Huracán"]
+    },
+    {
+        "id": 817,
+        "nombre": "Agustín José Urzi",
+        "nacionalidad": "Argentina",
+        "club actual": "Huracán",
+        "posicion": ["Extremo Izquierdo"],
+        "clubes totales": ["Banfield", "Juárez", "Racing Club", "Huracán"]
+    }
 ]
 }
+
