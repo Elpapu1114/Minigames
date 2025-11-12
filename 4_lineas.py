@@ -8,11 +8,36 @@ pygame.init()
 from display_config import init_display
 
 ROWS, COLS = 6, 7
-SQUARE_SIZE = 100
-RADIUS = SQUARE_SIZE // 2 - 5
 
 # Inicializar pantalla con resolucion desde game_settings.json
 SCREEN, WIDTH, HEIGHT = init_display(default_w=700, default_h=700, title="4 en Línea Animado")
+
+# Constantes base y helpers de escalado
+BASE_ANCHO = 700
+BASE_ALTO = 700
+SCALE_X = WIDTH / BASE_ANCHO
+SCALE_Y = HEIGHT / BASE_ALTO
+
+def sx(v):
+    return int(v * SCALE_X)
+
+def sy(v):
+    return int(v * SCALE_Y)
+
+# Tablero escalado dinámicamente según espacio disponible
+# Calcular tamaño para que quepa en la pantalla (dejando margen para menús/texto)
+_available_width = WIDTH - sx(50)  # Margen izquierdo/derecho
+_available_height = HEIGHT - sy(150)  # Margen superior/inferior
+SQUARE_SIZE = min(int(_available_width / COLS), int(_available_height / ROWS))
+# Asegurar que no sea demasiado pequeño
+SQUARE_SIZE = max(40, SQUARE_SIZE)
+RADIUS = SQUARE_SIZE // 2 - 5
+
+# Calcular offset para centrar el tablero
+BOARD_WIDTH = SQUARE_SIZE * COLS
+BOARD_HEIGHT = SQUARE_SIZE * ROWS
+BOARD_OFFSET_X = (WIDTH - BOARD_WIDTH) // 2
+BOARD_OFFSET_Y = (HEIGHT - BOARD_HEIGHT) // 2 - sy(20)
 
 BLUE = (0, 0, 255)
 BLACK = (0, 0, 0)
@@ -48,13 +73,15 @@ def create_board():
 def draw_board(board):
     for c in range(COLS):
         for r in range(ROWS):
-            pygame.draw.rect(SCREEN, BLUE, (c*SQUARE_SIZE, (r+1)*SQUARE_SIZE, SQUARE_SIZE, SQUARE_SIZE))
+            x = BOARD_OFFSET_X + c*SQUARE_SIZE
+            y = BOARD_OFFSET_Y + (r+1)*SQUARE_SIZE
+            pygame.draw.rect(SCREEN, BLUE, (x, y, SQUARE_SIZE, SQUARE_SIZE))
             color = BLACK
             if board[r][c] == 1:
                 color = RED
             elif board[r][c] == 2:
                 color = YELLOW
-            pygame.draw.circle(SCREEN, color, (c*SQUARE_SIZE + SQUARE_SIZE//2, (r+1)*SQUARE_SIZE + SQUARE_SIZE//2), RADIUS)
+            pygame.draw.circle(SCREEN, color, (x + SQUARE_SIZE//2, y + SQUARE_SIZE//2), RADIUS)
     pygame.display.update()
 
 def is_valid_location(board, col):
@@ -69,15 +96,15 @@ def get_next_open_row(board, col):
 def drop_piece_animated(board, col, piece):
     """Hace que la ficha caiga animada hasta su posición final."""
     target_row = get_next_open_row(board, col)
-    x = col * SQUARE_SIZE + SQUARE_SIZE//2
-    y = SQUARE_SIZE//2
+    x = BOARD_OFFSET_X + col * SQUARE_SIZE + SQUARE_SIZE//2
+    y = BOARD_OFFSET_Y + SQUARE_SIZE//2
     color = RED if piece == 1 else YELLOW
-    while y < (target_row+1)*SQUARE_SIZE + SQUARE_SIZE//2:
+    while y < BOARD_OFFSET_Y + (target_row+1)*SQUARE_SIZE + SQUARE_SIZE//2:
         SCREEN.fill(BLACK)
         draw_board(board)
         pygame.draw.circle(SCREEN, color, (x, int(y)), RADIUS)
         pygame.display.update()
-        y += 20  
+        y += sy(20)  
         clock.tick(FPS)
     board[target_row][col] = piece
 
@@ -215,18 +242,21 @@ def run_game(screen, players=2, cpu_factor=0.5):
                 return  # Volver al menú principal
             if event.type == pygame.MOUSEBUTTONDOWN and not game_over:
                 x_pos = event.pos[0]
-                col = x_pos // SQUARE_SIZE
-                if (players == 2) or (players==1 and turn==0):
-                    if is_valid_location(board, col):
-                        piece = 1 if turn==0 else 2
-                        drop_piece_animated(board, col, piece)
-                        if winning_move(board, piece):
-                            game_over = True
-                            winner = "Jugador 1" if piece==1 else ("CPU" if players==1 else "Jugador 2")
-                        elif is_board_full(board):
-                            game_over = True
-                            winner = "Empate"
-                        turn = (turn+1)%2
+                # Restar el offset para obtener la columna correcta
+                col = (x_pos - BOARD_OFFSET_X) // SQUARE_SIZE
+                # Verificar que el clic esté dentro del tablero
+                if 0 <= col < COLS:
+                    if (players == 2) or (players==1 and turn==0):
+                        if is_valid_location(board, col):
+                            piece = 1 if turn==0 else 2
+                            drop_piece_animated(board, col, piece)
+                            if winning_move(board, piece):
+                                game_over = True
+                                winner = "Jugador 1" if piece==1 else ("CPU" if players==1 else "Jugador 2")
+                            elif is_board_full(board):
+                                game_over = True
+                                winner = "Empate"
+                            turn = (turn+1)%2
 
         # Turno de la CPU
         if players==1 and turn==1 and not game_over:
