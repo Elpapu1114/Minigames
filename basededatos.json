@@ -7440,7 +7440,145 @@
         "club actual": "Huracán",
         "posicion": ["Extremo Izquierdo"],
         "clubes totales": ["Banfield", "Juárez", "Racing Club", "Huracán"]
-    }
+    },
+    {
+    "id": 818,
+    "nombre": "Sergio Germán Romero",
+    "apodo":"Chiquito Romero",
+    "nacionalidad": "Argentina",
+    "club actual": "Argentinos Juniors",
+    "posicion": ["Portero"],
+    "clubes totales": ["Racing Club", "AZ Alkmaar", "Sampdoria", "Monaco", "Manchester United", "Venezia", "Boca Juniors", "Argentinos Juniors"]
+    },
+    {
+    "id": 819,
+    "nombre": "Gonzalo Siri ",
+    "nacionalidad": "Argentina",
+    "club actual": "Argentinos Juniors",
+    "posicion": ["Portero"],
+    "clubes totales": ["Argentinos Juniors"]
+    },
+    {
+    "id": 820,
+    "nombre": "Leandro Lozano",
+    "nacionalidad": "Uruguay",
+    "club actual": "Argentinos Juniors",
+    "posicion": ["Lateral Derecho","Lateral Izquierdo","Mediocampista Derecho"],
+    "clubes totales": ["Boston River", "Nacional", "Argentinos Juniors"]
+    },
+    {
+    "id": 821,
+    "nombre": "Francisco Álvarez",
+    "nacionalidad": "Argentina",
+    "club actual": "Argentinos Juniors",
+    "posicion": ["Defensa Central","Lateral Derecho","Mediocampista Defensivo",""],
+    "clubes totales": ["San Martín (SJ)", "Talleres (Córdoba)", "Patronato", "Barracas Central", "Argentinos Juniors"]
+    },
+    {
+    "id": 822,
+    "nombre": "Érik Godoy",
+    "nacionalidad": "Argentina",
+    "club actual": "Argentinos Juniors",
+    "posicion": ["Defensa Central","Lateral Derecho"],
+    "clubes totales": ["Tigre", "Belgrano", "Colón", "Vancouver Whitecaps FC", "Belgrano", "Argentinos Juniors"]
+    },
+    {
+    "id": 823,
+    "nombre": "Sebastián Prieto",
+    "nacionalidad": "Argentina",
+    "club actual": "Argentinos Juniors",
+    "posicion": ["Lateral Izquierdo"],
+    "clubes totales": ["Talleres (RdE)", "UAI Urquiza", "Temperley", "Tigre", "Argentinos Juniors"]
+    },
+    {
+    "id": 824,
+    "nombre": "Federico Fattori",
+    "nacionalidad": "Argentina",
+    "club actual": "Argentinos Juniors",
+    "posicion": ["Mediocampista central","Mediocampista Defensivo"],
+    "clubes totales": ["Nueva Chicago", "Newell’s ", "Nueva Chicago", "Nueva Chicago", "Temperley", "Ferro Carril Oeste", "Huracán", "Argentinos Juniors"]
+    },
+    {
+    "id": 825,
+    "nombre": "Alan Lescano",
+    "nacionalidad": "Argentina",
+    "club actual": "Argentinos Juniors",
+    "posicion": ["Mediocampista Izquierdo","Mediocampista Derecho","Mediocampista Ofensivo"],
+    "clubes totales": ["Gimnasia y Esgrima La Plata", "Argentinos Juniors"]
+    },
+    {
+    "id": 826,
+    "nombre": "Lautaro Giaccone",
+    "nacionalidad": "Argentina",
+    "club actual": "Argentinos Juniors",
+    "posicion": ["Mediocampista Ofensivo", "Extremo Derecho","Extremo Izquierdo"],
+    "clubes totales": ["Rosario Central", "Ferro Carril Oeste", "Argentinos Juniors"]
+    },
+    {
+    "id": 827,
+    "nombre": "Hernán López Muñoz",
+    "apodo": "López Muñoz",
+    "nacionalidad": "Argentina",
+    "club actual": "Argentinos Juniors",
+    "posicion": ["Mediocampista Ofensivo", "Extremo Derecho","Extremo Izquierdo"],
+    "clubes totales": ["River Plate", "Central Córdoba (SdE)", "Godoy Cruz", "San José Earthquakes", "Argentinos Juniors"]
+    },
+    {
+    "id": 828,
+    "nombre": "Tomás Molina",
+    "nacionalidad": "Argentina",
+    "club actual": "Argentinos Juniors",
+    "posicion": ["Delantero Centro","Extremo Derecho","Extremo Izquierdo"],
+    "clubes totales": ["Huracán", "Almirante Brown", "Brown de Adrogué", "Ferro Carril Oeste", "LDU Quito", "Juárez", "Talleres", "Central Córdoba (SdE)", "Argentinos Juniors"]
+    },
+    {
+    "id": 829,
+    "nombre": "Diego Porcel",
+    "nacionalidad": "Argentina",
+    "club actual": "Argentinos Juniors",
+    "posicion": ["Delantero Centro","Mediocampista Ofensivo"],
+    "clubes totales": ["Argentinos Juniors"]
+    },{
+    "id": 830,
+    "nombre": "Nicolás Oroz",
+    "nacionalidad": "Argentina",
+    "club actual": "Argentinos Juniors",
+    "posicion": ["Mediocampista Ofensivo","Extremo Derecho","Extremo Izquierdo"],
+    "clubes totales": ["Racing Club", "Chacarita Juniors", "O'Higgins", "Universidad de Chile", "Al-Wasl", "Volos", "Argentinos Juniors"]
+    },
+    {
+    "id": 831,
+    "nombre": "Alan Coronel",
+    "nacionalidad": "Argentina",
+    "club actual": "Argentinos Juniors",
+    "posicion": ["Lateral Derecho"],
+    "clubes totales": ["Argentinos Juniors"]
+    },
+    {
+    "id": 832,
+    "nombre": "Sebastián Riquelme",
+    "nacionalidad": "Argentina",
+    "club actual": "Argentinos Juniors",
+    "posicion": ["Mediocampista Defensivo","Defensa Central"],
+    "clubes totales": ["Argentinos Juniors", "Danubio", "Unión San Felipe", "Barracas Central", "El Ejido"]
+    },
+    {
+    "id": 833,
+    "nombre": "Emiliano Viveros",
+    "nacionalidad": "Argentina",
+    "club actual": "Argentinos Juniors",
+    "posicion": ["Mediocampista Ofensivo", "Extremo Izquierdo"],
+    "clubes totales": ["Arsenal de Sarandí", "Argentinos Juniors"]
+    },
+    {
+    "id": 834,
+    "nombre": "Cristian Ferreira",
+    "nacionalidad": "Argentina",
+    "club actual": "Argentinos Juniors",
+    "posicion": ["Mediocampista Ofensivo","Mediocampista Central"],
+    "clubes totales": ["River Plate", "Colón ", "Newell’s ", "San Lorenzo", "Argentinos Juniors"]
+}
+
 ]
 }
 
