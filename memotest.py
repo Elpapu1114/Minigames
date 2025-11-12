@@ -233,6 +233,8 @@ def menu_modo(screen):
             if event.type == pygame.QUIT:
                 pygame.quit(); sys.exit()
             if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_ESCAPE:
+                    pygame.quit(); sys.exit()
                 if event.unicode in ("1", "2"):
                     return int(event.unicode)
 
@@ -368,6 +370,8 @@ def run_game(screen, modo):
     for card in cards:
         card['flipped'] = True
     
+    paused = False
+    
     running = True
     while running:
         dt = clock.tick(FPS) / 1000.0
@@ -386,7 +390,16 @@ def run_game(screen, modo):
             if event.type == pygame.QUIT:
                 pygame.quit(); sys.exit()
             
-            if event.type == pygame.MOUSEBUTTONDOWN and not checking and preview_time == 0:
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_p:
+                    paused = not paused
+                if event.key == pygame.K_ESCAPE:
+                    if paused:
+                        return  # Volver al menú
+                    else:
+                        paused = True  # Pausar primero
+            
+            if event.type == pygame.MOUSEBUTTONDOWN and not checking and preview_time == 0 and not paused:
                 if modo == 1 and turn == 2:
                     continue
                 
@@ -407,6 +420,43 @@ def run_game(screen, modo):
                             check_time = current_time
                             moves += 1
                         break
+        
+        if paused:
+            # Dibujar pantalla de pausa
+            for y in range(H - 80):
+                intensity = int(20 + 15 * math.sin(time_elapsed * 0.5 + y * 0.01))
+                color = (intensity, intensity // 2, intensity // 3)
+                pygame.draw.line(screen, color, (0, y), (W, y))
+            
+            for card in cards:
+                draw_card(screen, card)
+            
+            draw_particles(screen, all_particles)
+            draw_hud(screen, modo, score1, score2, turn, moves, time_elapsed)
+            
+            # Overlay de pausa
+            overlay = pygame.Surface((W, H))
+            overlay.set_alpha(150)
+            overlay.fill(BLACK)
+            screen.blit(overlay, (0, 0))
+            
+            font_big = pygame.font.Font(None, 72)
+            font_small = pygame.font.Font(None, 36)
+            
+            pause_text = font_big.render("PAUSA", True, YELLOW)
+            pause_rect = pause_text.get_rect(center=(W//2, H//2 - 60))
+            screen.blit(pause_text, pause_rect)
+            
+            continue_text = font_small.render("P = Continuar", True, WHITE)
+            continue_rect = continue_text.get_rect(center=(W//2, H//2 + 10))
+            screen.blit(continue_text, continue_rect)
+            
+            menu_text = font_small.render("ESC = Volver al menú", True, WHITE)
+            menu_rect = menu_text.get_rect(center=(W//2, H//2 + 50))
+            screen.blit(menu_text, menu_rect)
+            
+            pygame.display.flip()
+            continue
         
         if modo == 1 and turn == 2 and not checking and preview_time == 0:
             if not cpu_thinking:

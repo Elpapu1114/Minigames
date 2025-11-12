@@ -98,6 +98,8 @@ def menu_modo(screen):
             if event.type == pygame.QUIT:
                 pygame.quit(); sys.exit()
             if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_ESCAPE:
+                    pygame.quit(); sys.exit()
                 if event.unicode in ("1","2"):
                     return int(event.unicode)
 
@@ -114,6 +116,8 @@ def menu_dificultad(screen):
             if event.type == pygame.QUIT:
                 pygame.quit(); sys.exit()
             if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_ESCAPE:
+                    pygame.quit(); sys.exit()
                 if event.unicode in DIFICULTADES:
                     return DIFICULTADES[event.unicode]
 
@@ -370,6 +374,8 @@ def main():
                 if event.type == pygame.QUIT:
                     pygame.quit(); sys.exit()
                 if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_ESCAPE:
+                        pygame.quit(); sys.exit()
                     if event.key == pygame.K_SPACE:
                         waiting = False
 
