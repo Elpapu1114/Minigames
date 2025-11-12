@@ -5572,7 +5572,7 @@
         "Fecha de nacimiento": "17/10/2002",
         "club actual": "Borussia Dortmund",
         "posicion": ["Extremo Izquierdo", "Mediocampista Izquierdo"],
-        "clubes totales": ["TSG Hoffenheim", "Hannover 96", "Borussia Dortmund"]
+        "clubes totales": ["Hoffenheim", "Hannover 96", "Borussia Dortmund"]
     },
     {
         "id": 600,
@@ -5895,7 +5895,7 @@
         "Fecha de nacimiento": "--",
         "club actual": "River Plate",
         "posicion": ["Defensa Central", "Lateral Derecho", "Mediocampista Derecho"],
-        "clubes totales": ["River Plate", "Sevilla"]
+        "clubes totales": ["River Plate", "Sevilla", "Nottingham Forest"]
     },
     {
         "id": 636,
@@ -5904,7 +5904,7 @@
         "Fecha de nacimiento": "--",
         "club actual": "River Plate",
         "posicion": ["Defensa Central"],
-        "clubes totales": ["River Plate"]
+        "clubes totales": ["Unión de Santa Fe", "Talleres de Córdoba", "River Plate"]
     },
     {
         "id": 637,
@@ -5940,7 +5940,7 @@
         "Fecha de nacimiento": "--",
         "club actual": "River Plate",
         "posicion": ["Defensa Central"],
-        "clubes totales": ["River Plate"]
+        "clubes totales": ["Independiente", "Internacional", "River Plate"]
     },
     {
         "id": 641,
@@ -6040,7 +6040,7 @@
         "Fecha de nacimiento": "--",
         "club actual": "River Plate",
         "posicion": ["Mediocampista Central"],
-        "clubes totales": ["River Plate"]
+        "clubes totales": ["Huracán", "River Plate", "Atlanta United", "Al Nassr"]
     },
     {
         "id": 652,
@@ -6049,7 +6049,7 @@
         "Fecha de nacimiento": "--",
         "club actual": "River Plate",
         "posicion": ["Mediocampista Central"],
-        "clubes totales": ["River Plate"]
+        "clubes totales": ["Águilas Doradas", "Cruz Azul", "Krasnodar",  "River Plate"]
     },
     {
         "id": 653,
@@ -6058,7 +6058,7 @@
         "Fecha de nacimiento": "--",
         "club actual": "River Plate",
         "posicion": ["Mediocampista Central"],
-        "clubes totales": ["River Plate"]
+        "clubes totales": ["Olimpia", "Vasco da Gama", "Coritiba", "Talleres de Córdoba", "River Plate"]
     },
     {
         "id": 654,
@@ -6076,7 +6076,7 @@
         "Fecha de nacimiento": "--",
         "club actual": "River Plate",
         "posicion": ["Mediocampista Central", "Mediocampista Ofensivo"],
-        "clubes totales": ["River Plate"]
+        "clubes totales": ["Gimnasia y Esgrima La Plata", "Temperley", "Atlético Mineiro", "River Plate"]
     },
     {
         "id": 656,
@@ -6103,7 +6103,7 @@
         "Fecha de nacimiento": "--",
         "club actual": "River Plate",
         "posicion": ["Mediocampista Central"],
-        "clubes totales": ["River Plate"]
+        "clubes totales": ["Banfield", "Sao Paulo", "River Plate"]
     },
     {
         "id": 659,
@@ -6157,7 +6157,7 @@
         "Fecha de nacimiento": "--",
         "club actual": "River Plate",
         "posicion": ["Delantero Centro"],
-        "clubes totales": ["River Plate"]
+        "clubes totales": ["Cúcuta", "Livorno", "Olimpo", "Independiente Santa Fe", "Atlético Nacional", "Palmeiras", "Junior de Barranquilla", "River Plate"]
     },
     {
         "id": 665,
@@ -6166,7 +6166,7 @@
         "Fecha de nacimiento": "--",
         "club actual": "River Plate",
         "posicion": ["Delantero Centro", "Extremo Derecho"],
-        "clubes totales": ["River Plate"]
+        "clubes totales": ["Sint-Truidense", "Tigre", "River Plate"]
     },
     {
         "id": 666,
@@ -6229,7 +6229,7 @@
         "Fecha de nacimiento": "--",
         "club actual": "Boca Juniors",
         "posicion": ["Portero"],
-        "clubes totales": ["Boca Juniors"]
+        "clubes totales": ["Lanús", "Santos Laguna", "América", "Porto", "Celta de Vigo", "Gremio", "Boca Juniors"]
     },
     {
         "id": 673,
@@ -6256,7 +6256,7 @@
         "Fecha de nacimiento": "--",
         "club actual": "Boca Juniors",
         "posicion": ["Defensa Central"],
-        "clubes totales": ["Boca Juniors"]
+        "clubes totales": ["Newell's", "Tigre", "Quilmes", "Belgrano", "Benfica", "Peñarol", "Lanús", "Boca Juniors"]
     },
     {
         "id": 676,
@@ -6265,7 +6265,7 @@
         "Fecha de nacimiento": "--",
         "club actual": "Boca Juniors",
         "posicion": ["Defensa Central"],
-        "clubes totales": ["Boca Juniors"]
+        "clubes totales": ["Independiente", "Olimpo", "Inter Miami", "Boca Juniors"]
     },
     {
         "id": 677,
@@ -6274,7 +6274,7 @@
         "Fecha de nacimiento": "--",
         "club actual": "Boca Juniors",
         "posicion": ["Defensa Central", "Lateral Derecho"],
-        "clubes totales": ["Boca Juniors"]
+        "clubes totales": ["Juan Aurich", "Sporting Cristal", "Hoffenheim", "Newell's", "Tigres UANL", "Rayo Vallecano", "Boca Juniors"]
     },
     {
         "id": 678,
@@ -6283,7 +6283,7 @@
         "Fecha de nacimiento": "--",
         "club actual": "Boca Juniors",
         "posicion": ["Defensa Central", "Lateral Izquierdo"],
-        "clubes totales": ["Boca Juniors"]
+        "clubes totales": ["Boca Juniors", "Envigado", "Deportivo Cali", "Independiente Medellín"]
     },
     {
         "id": 679,
@@ -6292,7 +6292,7 @@
         "Fecha de nacimiento": "--",
         "club actual": "Boca Juniors",
         "posicion": ["Defensa Central", "Lateral Izquierdo"],
-        "clubes totales": ["Boca Juniors"]
+        "clubes totales": ["Boca Juniors", "Elche", "Rosario Central"]
     },
     {
         "id": 680,
@@ -6319,7 +6319,7 @@
         "Fecha de nacimiento": "--",
         "club actual": "Boca Juniors",
         "posicion": ["Defensa Central"],
-        "clubes totales": ["Boca Juniors"]
+        "clubes totales": ["Boca Juniors", "Independiente", "Royal Antwerp", "Platense"]
     },
     {
         "id": 683,
@@ -6400,7 +6400,7 @@
         "Fecha de nacimiento": "--",
         "club actual": "Boca Juniors",
         "posicion": ["Mediocampista Central", "Mediocampista Defensivo"],
-        "clubes totales": ["Boca Juniors", "Roma", "Zenit"]
+        "clubes totales": ["Boca Juniors", "AS Roma", "Zenit"]
     },
     {
         "id": 692,
@@ -6665,7 +6665,7 @@
         "nacionalidad": "Brasil",
         "club actual": "RETIRADO",
         "posicion": ["Lateral Derecho"],
-        "clubes totales": ["Cruzeiro", "Monaco", "Inter de Milán", "Roma", "Manchester City", "Avaí", "Criciúma", "Tre Penne"]
+        "clubes totales": ["Cruzeiro", "Monaco", "Inter de Milán", "AS Roma", "Manchester City", "Avaí", "Criciúma", "Tre Penne"]
     },
     {
         "id": 722,
@@ -6674,7 +6674,7 @@
         "nacionalidad": "Brasil",
         "club actual": "RETIRADO",
         "posicion": ["Delantero Centro"],
-        "clubes totales": ["Flamengo", "Inter de Milán", "Fiorentina", "Parma", "Roma", "Sao Paulo", "Corinthians", "Atlético Paranaense"]
+        "clubes totales": ["Flamengo", "Inter de Milán", "Fiorentina", "Parma", "AS Roma", "Sao Paulo", "Corinthians", "Atlético Paranaense"]
     },
     {
         "id": 723,
@@ -7013,6 +7013,38 @@
         "club actual": "Racing Club",
         "posicion": ["Extremo Izquierdo", "Mediocampista Izquierdo"],
         "clubes totales": ["Racing Club", "Monterrey", "América de Cali", "Rosario Central", "Santos Laguna"]
+    },
+    {
+        "id": 765,
+        "nombre": "Joao Felix",
+        "nacionalidad": "Portugal",
+        "club actual": "Al Nassr",
+        "posicion": ["Delantero Centro", "Extremo Izquierdo"],
+        "clubes totales": ["Benfica", "Atlético de Madrid", "Chelsea", "Barcelona", "Al Nassr"]
+    },
+    {
+        "id": 766,
+        "nombre": "Donyell Malen",
+        "nacionalidad": "Países Bajos",
+        "club actual": "Aston Villa",
+        "posicion": ["Delantero Centro", "Extremo Derecho"],
+        "clubes totales": ["PSV Eindhoven", "Borussia Dortmund", "Aston Villa"]
+    },
+    {
+        "id": 767,
+        "nombre": "Ian Maatsen",
+        "nacionalidad": "Países Bajos",
+        "club actual": "Aston Villa",
+        "posicion": ["Lateral Izquierdo", "Mediocampista Izquierdo"],
+        "clubes totales": ["Chelsea", "Charlton Athletic", "Borussia Dortmund", "Coventry City", "Burnley", "Aston Villa"]
+    },
+    {
+        "id": 768,
+        "nombre": "Fernando Redondo",
+        "nacionalidad": "Argentina",
+        "club actual": "RETIRADO",
+        "posicion": ["Mediocampista Defensivo"],
+        "clubes totales": ["Argentinos Juniors", "Tenerife", "Real Madrid", "Milan"]
     }
 ]
 }
