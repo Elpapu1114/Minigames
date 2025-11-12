@@ -12,7 +12,7 @@ from display_config import init_display
 # Constantes
 ANCHO = 1000
 ALTO = 800
-TAMANO_CELDA = 150
+TAMANO_CELDA = 100
 MARGEN = 10
 FPS = 60
 

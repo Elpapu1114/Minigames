@@ -237,7 +237,7 @@ class Juego:
         self.posiciones_disponibles_jugador = []
         
         if len(self.jugadores_colocados) == 11:
-            self.mensaje = "🎉 ¡Felicitaciones! Completaste el equipo"
+            self.mensaje = "¡Felicitaciones! Completaste el equipo"
             self.mensaje_original = self.mensaje
             self.juego_completo = True
         else:
