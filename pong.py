@@ -352,7 +352,8 @@ def run_game(screen, modo, dificultad_cpu=("Media", {})):
 # Bucle principal
 # ---------------------------
 def main():
-    screen, W, H = _screen_tmp, W, H  # Reutilizar W, H ya inicializados desde init_display
+    global W, H
+    screen = _screen_tmp
     pygame.display.set_caption("Pong - Pygame")
 
     while True:

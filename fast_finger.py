@@ -9,7 +9,6 @@ from display_config import init_display
 ANCHO = 800
 ALTO = 600
 FPS = 60
-META = 650
 # Inicializar pantalla según game_settings.json
 pantalla, ANCHO, ALTO = init_display(default_w=ANCHO, default_h=ALTO, title="Carrera de Teclas")
 
@@ -22,19 +21,36 @@ AMARILLO = (255, 255, 100)
 GRIS = (128, 128, 128)
 GRIS_CLARO = (200, 200, 200)
 
-pantalla = pygame.display.set_mode((ANCHO, ALTO))
+# No sobreescribir la pantalla creada por init_display
 pygame.display.set_caption("Carrera de Teclas")
 reloj = pygame.time.Clock()
-fuente_grande = pygame.font.Font(None, 48)
-fuente_mediana = pygame.font.Font(None, 32)
-fuente_pequeña = pygame.font.Font(None, 24)
+
+# Factores de escala y helpers (base 800x600)
+BASE_W = 800
+BASE_H = 600
+SCALE_X = ANCHO / BASE_W
+SCALE_Y = ALTO / BASE_H
+def sx(v):
+    return int(v * SCALE_X)
+def sy(v):
+    return int(v * SCALE_Y)
+
+# Fuentes escaladas
+fuente_grande = pygame.font.Font(None, max(16, int(48 * SCALE_Y)))
+fuente_mediana = pygame.font.Font(None, max(12, int(32 * SCALE_Y)))
+fuente_pequeña = pygame.font.Font(None, max(10, int(24 * SCALE_Y)))
+
+# Coordenadas dependientes de resolución
+META = ANCHO - sx(100)
+TRACK_X = sx(50)
+TRACK_H = sy(80)
 
 try:
     auto_rojo = pygame.image.load(os.path.join("image", "carreraautorojo.png"))
     auto_azul = pygame.image.load(os.path.join("image", "carreraautoazul.png"))
-    auto_rojo = pygame.transform.scale(auto_rojo, (50, 50))
-    auto_azul = pygame.transform.scale(auto_azul, (50, 50))
-except:
+    auto_rojo = pygame.transform.scale(auto_rojo, (sx(50), sy(50)))
+    auto_azul = pygame.transform.scale(auto_azul, (sx(50), sy(50)))
+except Exception:
     auto_rojo = None
     auto_azul = None
     print("Advertencia: No se pudieron cargar las imágenes de los autos")
@@ -44,115 +60,137 @@ try:
     victoria_j1_image = pygame.image.load(os.path.join("image", "jugador_1_victoria_fast_fingers.png"))
     victoria_j2_image = pygame.image.load(os.path.join("image", "jugador_2_victoria_fast_fingers.png"))
     usar_imagenes = True
-except:
+except Exception:
     menu_image = None
     victoria_j1_image = None
     victoria_j2_image = None
     usar_imagenes = False
     print("Advertencia: No se pudieron cargar las imágenes del menú/victoria")
-
-estado_juego = "menu" 
-posicion_j1 = 50
-posicion_j2 = 50
+# Estado inicial del juego y variables compartidas
+estado_juego = "menu"  # menu | cuenta_regresiva | juego | ganador
+posicion_j1 = TRACK_X + sx(25)
+posicion_j2 = TRACK_X + sx(25)
 ganador = None
 tiempo_inicio_cuenta = 0
-
 def dibujar_menu():
     """Dibuja el menú principal"""
     if usar_imagenes and menu_image:
         scaled_image = pygame.transform.scale(menu_image, (ANCHO, ALTO))
         pantalla.blit(scaled_image, (0, 0))
-    else:
-        pantalla.fill(AZUL)
+        return
 
-        titulo = fuente_grande.render("CARRERA DE TECLAS", True, BLANCO)
-        rect_titulo = titulo.get_rect(center=(ANCHO//2, 150))
-        pantalla.blit(titulo, rect_titulo)
+    pantalla.fill(AZUL)
 
-        subtitulo = fuente_mediana.render("¡Presiona las teclas más rápido para ganar!", True, BLANCO)
-        rect_subtitulo = subtitulo.get_rect(center=(ANCHO//2, 200))
-        pantalla.blit(subtitulo, rect_subtitulo)
+    # Título
+    titulo = fuente_grande.render("CARRERA DE TECLAS", True, BLANCO)
+    rect_titulo = titulo.get_rect(center=(ANCHO // 2, sy(120)))
+    pantalla.blit(titulo, rect_titulo)
 
-        instrucciones = [
-            "Jugador 1: Tecla 'A'",
-            "Jugador 2: Tecla 'L'",
-            "",
-            "Presiona ESPACIO para comenzar"
-        ]
-        
-        y_inicio = 280
-        for i, linea in enumerate(instrucciones):
-            if linea:
-                if "Jugador 1" in linea:
-                    color = ROJO
-                elif "Jugador 2" in linea:
-                    color = AZUL
-                else:
-                    color = BLANCO
-                
-                texto = fuente_pequeña.render(linea, True, color)
-                rect_texto = texto.get_rect(center=(ANCHO//2, y_inicio + i*30))
-                pantalla.blit(texto, rect_texto)
+    # Subtítulo
+    subtitulo = fuente_mediana.render("¡Presiona las teclas más rápido para ganar!", True, BLANCO)
+    rect_subtitulo = subtitulo.get_rect(center=(ANCHO // 2, sy(170)))
+    pantalla.blit(subtitulo, rect_subtitulo)
 
-        pygame.draw.rect(pantalla, VERDE, (ANCHO//2 - 100, 450, 200, 50))
-        texto_boton = fuente_mediana.render("INICIAR", True, NEGRO)
-        rect_boton = texto_boton.get_rect(center=(ANCHO//2, 475))
-        pantalla.blit(texto_boton, rect_boton)
+    # Instrucciones
+    instrucciones = [
+        "Jugador 1: Tecla 'A'",
+        "Jugador 2: Tecla 'L'",
+        "",
+        "Presiona ESPACIO para comenzar"
+    ]
+
+    y_inicio = sy(230)
+    for i, linea in enumerate(instrucciones):
+        if not linea:
+            continue
+        if "Jugador 1" in linea:
+            color = ROJO
+        elif "Jugador 2" in linea:
+            color = AZUL
+        else:
+            color = BLANCO
+
+        texto = fuente_pequeña.render(linea, True, color)
+        rect_texto = texto.get_rect(center=(ANCHO // 2, y_inicio + i * sy(28)))
+        pantalla.blit(texto, rect_texto)
+
+    # Botón iniciar
+    boton_w, boton_h = sx(220), sy(56)
+    boton_x = ANCHO // 2 - boton_w // 2
+    boton_y = sy(420)
+    pygame.draw.rect(pantalla, VERDE, (boton_x, boton_y, boton_w, boton_h))
+    texto_boton = fuente_mediana.render("INICIAR", True, NEGRO)
+    rect_boton = texto_boton.get_rect(center=(ANCHO // 2, boton_y + boton_h // 2))
+    pantalla.blit(texto_boton, rect_boton)
 
 def dibujar_pista():
     """Dibuja la pista de carrera"""
     pantalla.fill(VERDE)
     
-    pygame.draw.rect(pantalla, GRIS_CLARO, (50, 150, META, 80))
-    pygame.draw.rect(pantalla, NEGRO, (50, 150, META, 80), 3)
+    # Pista superior
+    pista_w = META - TRACK_X
+    pygame.draw.rect(pantalla, GRIS_CLARO, (TRACK_X, sy(150), pista_w, TRACK_H))
+    pygame.draw.rect(pantalla, NEGRO, (TRACK_X, sy(150), pista_w, TRACK_H), max(1, sx(3)))
 
-    pygame.draw.rect(pantalla, GRIS_CLARO, (50, 350, META, 80))
-    pygame.draw.rect(pantalla, NEGRO, (50, 350, META, 80), 3)
+    # Pista inferior
+    pygame.draw.rect(pantalla, GRIS_CLARO, (TRACK_X, sy(350), pista_w, TRACK_H))
+    pygame.draw.rect(pantalla, NEGRO, (TRACK_X, sy(350), pista_w, TRACK_H), max(1, sx(3)))
 
-    pygame.draw.line(pantalla, AMARILLO, (META, 100), (META, 500), 5)
+    # Línea de meta
+    pygame.draw.line(pantalla, AMARILLO, (META, sy(100)), (META, sy(500)), max(2, sx(4)))
 
     texto_j1 = fuente_mediana.render("Jugador 1 - Tecla 'A'", True, ROJO)
-    pantalla.blit(texto_j1, (50, 120))
+    pantalla.blit(texto_j1, (TRACK_X, sy(120)))
     
     texto_j2 = fuente_mediana.render("Jugador 2 - Tecla 'L'", True, AZUL)
-    pantalla.blit(texto_j2, (50, 320))
+    pantalla.blit(texto_j2, (TRACK_X, sy(320)))
 
     texto_meta = fuente_pequeña.render("META", True, NEGRO)
-    pantalla.blit(texto_meta, (META + 10, 300))
+    pantalla.blit(texto_meta, (META + sx(10), sy(300)))
 
 def dibujar_corredores():
     """Dibuja los corredores en sus posiciones actuales"""
+    # Dibujar corredores (usar offsets escalados)
+    r = max(4, sx(25))
+    y1 = sy(165)
+    y2 = sy(365)
     if auto_rojo:
-        pantalla.blit(auto_rojo, (int(posicion_j1) - 25, 165))
+        pantalla.blit(auto_rojo, (int(posicion_j1) - sx(25), y1))
     else:
-        pygame.draw.circle(pantalla, ROJO, (int(posicion_j1), 190), 25)
-        pygame.draw.circle(pantalla, NEGRO, (int(posicion_j1), 190), 25, 3)
+        pygame.draw.circle(pantalla, ROJO, (int(posicion_j1), y1 + sy(25)), r)
+        pygame.draw.circle(pantalla, NEGRO, (int(posicion_j1), y1 + sy(25)), r, max(1, sx(2)))
 
     if auto_azul:
-        pantalla.blit(auto_azul, (int(posicion_j2) - 25, 365))
+        pantalla.blit(auto_azul, (int(posicion_j2) - sx(25), y2))
     else:
-        pygame.draw.circle(pantalla, AZUL, (int(posicion_j2), 390), 25)
-        pygame.draw.circle(pantalla, NEGRO, (int(posicion_j2), 390), 25, 3)
+        pygame.draw.circle(pantalla, AZUL, (int(posicion_j2), y2 + sy(25)), r)
+        pygame.draw.circle(pantalla, NEGRO, (int(posicion_j2), y2 + sy(25)), r, max(1, sx(2)))
 
 def dibujar_progreso():
     """Dibuja las barras de progreso"""
-    progreso_j1 = (posicion_j1 - 50) / (META - 50)
-    ancho_barra_j1 = int(200 * progreso_j1)
-    pygame.draw.rect(pantalla, GRIS, (50, 50, 200, 20))
-    pygame.draw.rect(pantalla, ROJO, (50, 50, ancho_barra_j1, 20))
-    pygame.draw.rect(pantalla, NEGRO, (50, 50, 200, 20), 2)
-    
-    progreso_j2 = (posicion_j2 - 50) / (META - 50)
-    ancho_barra_j2 = int(200 * progreso_j2)
-    pygame.draw.rect(pantalla, GRIS, (500, 50, 200, 20))
-    pygame.draw.rect(pantalla, AZUL, (500, 50, ancho_barra_j2, 20))
-    pygame.draw.rect(pantalla, NEGRO, (500, 50, 200, 20), 2)
+    # Barras de progreso (escaladas)
+    barra_x = sx(50)
+    barra_y = sy(50)
+    barra_w = sx(200)
+    barra_h = sy(20)
+    progreso_j1 = (posicion_j1 - TRACK_X) / max(1, (META - TRACK_X))
+    ancho_barra_j1 = int(barra_w * max(0, min(1, progreso_j1)))
+    pygame.draw.rect(pantalla, GRIS, (barra_x, barra_y, barra_w, barra_h))
+    pygame.draw.rect(pantalla, ROJO, (barra_x, barra_y, ancho_barra_j1, barra_h))
+    pygame.draw.rect(pantalla, NEGRO, (barra_x, barra_y, barra_w, barra_h), max(1, sx(2)))
+
+    barra2_x = ANCHO - sx(250)
+    progreso_j2 = (posicion_j2 - TRACK_X) / max(1, (META - TRACK_X))
+    ancho_barra_j2 = int(barra_w * max(0, min(1, progreso_j2)))
+    pygame.draw.rect(pantalla, GRIS, (barra2_x, barra_y, barra_w, barra_h))
+    pygame.draw.rect(pantalla, AZUL, (barra2_x, barra_y, ancho_barra_j2, barra_h))
+    pygame.draw.rect(pantalla, NEGRO, (barra2_x, barra_y, barra_w, barra_h), max(1, sx(2)))
 
     texto_prog1 = fuente_pequeña.render(f"J1: {int(progreso_j1*100)}%", True, NEGRO)
-    pantalla.blit(texto_prog1, (50, 25))
+    pantalla.blit(texto_prog1, (barra_x, barra_y - sy(25)))
     
     texto_prog2 = fuente_pequeña.render(f"J2: {int(progreso_j2*100)}%", True, NEGRO)
-    pantalla.blit(texto_prog2, (500, 25))
+    pantalla.blit(texto_prog2, (barra2_x, barra_y - sy(25)))
 
 def dibujar_juego():
     """Dibuja toda la pantalla del juego"""
@@ -161,7 +199,7 @@ def dibujar_juego():
     dibujar_progreso()
     
     texto_inst = fuente_pequeña.render("¡Presiona tu tecla repetidamente! ESC para volver al menú", True, NEGRO)
-    rect_inst = texto_inst.get_rect(center=(ANCHO//2, ALTO - 30))
+    rect_inst = texto_inst.get_rect(center=(ANCHO//2, ALTO - sy(30)))
     pantalla.blit(texto_inst, rect_inst)
 
 def dibujar_cuenta_regresiva():

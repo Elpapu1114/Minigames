@@ -69,7 +69,6 @@ camara_y = 0
 altura_maxima = 0
 puntuacion = 0
 game_over = False
-pantalla = None
 reloj = None
 fuente = None
 dificultad_actual = 'FACIL'
@@ -84,10 +83,16 @@ img_game_over = None
 def inicializar_pygame():
     """Inicializa pygame y crea la ventana"""
     global pantalla, reloj, fuente, img_menu, img_menu_eleccion, img_game_over
-    pantalla = pygame.display.set_mode((ANCHO, ALTO))
+    # `pantalla` ya viene de init_display; no sobreescribir
     pygame.display.set_caption("Sky Hopper - Estilo Pou")
     reloj = pygame.time.Clock()
-    fuente = pygame.font.Font(None, 36)
+    # Escalar fuente según resolución básica
+    try:
+        from math import floor
+        scale_y = ALTO / 600
+        fuente = pygame.font.Font(None, max(12, int(36 * scale_y)))
+    except:
+        fuente = pygame.font.Font(None, 36)
     
     # Cargar imágenes
     try:
@@ -505,9 +510,18 @@ def dibujar_game_over():
 def reiniciar_juego():
     """Reinicia el juego al estado inicial"""
     global jugador, plataformas, impulsores, camara_y, altura_maxima, puntuacion, game_over, velocidad_acumulada, tiempo_impulso
-    
-    jugador = crear_jugador(ANCHO // 2, 400)
+    # Generar plataformas primero, luego colocar jugador sobre la plataforma inicial
     generar_plataformas_iniciales()
+    # Colocar jugador centrado sobre la plataforma inicial
+    if plataformas:
+        p0 = plataformas[0]
+        spawn_x = p0['x'] + p0['ancho'] // 2
+        spawn_y = p0['y'] - 40  # ajustar según alto del jugador
+    else:
+        spawn_x = ANCHO // 2
+        spawn_y = ALTO // 2
+    jugador = crear_jugador(spawn_x, spawn_y)
+    jugador['en_suelo'] = True
     camara_y = 0
     altura_maxima = 0
     puntuacion = 0
