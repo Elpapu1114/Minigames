@@ -6,11 +6,12 @@ import time
 # Inicializar Pygame
 pygame.init()
 
+from display_config import init_display
+
 # Configuración de pantalla
 ANCHO = 1200
 ALTO = 800
-pantalla = pygame.display.set_mode((ANCHO, ALTO))
-pygame.display.set_caption("Fútbol 11 - Clubes")
+pantalla, ANCHO, ALTO = init_display(default_w=ANCHO, default_h=ALTO, title="Fútbol 11 - Clubes")
 
 # Colores
 VERDE_OSCURO = (34, 139, 34)
@@ -236,7 +237,7 @@ class Juego:
         self.posiciones_disponibles_jugador = []
         
         if len(self.jugadores_colocados) == 11:
-            self.mensaje = "🎉 ¡Felicitaciones! Completaste el equipo"
+            self.mensaje = "¡Felicitaciones! Completaste el equipo"
             self.mensaje_original = self.mensaje
             self.juego_completo = True
         else:

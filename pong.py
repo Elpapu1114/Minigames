@@ -9,6 +9,8 @@ from dataclasses import dataclass
 # ---------------------------
 pygame.init()
 
+from display_config import init_display
+
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 GRAY  = (180, 180, 180)
@@ -18,7 +20,8 @@ RED   = (255, 50, 50)
 BLUE  = (50, 150, 255)
 
 FPS = 120
-W, H = 800, 600
+# Inicializar ventana usando game_settings.json
+_screen_tmp, W, H = init_display(default_w=800, default_h=600, title="Pong")
 WIN_SCORE = 7
 
 # Dificultades CPU mejoradas (más realistas)
@@ -349,9 +352,8 @@ def run_game(screen, modo, dificultad_cpu=("Media", {})):
 # Bucle principal
 # ---------------------------
 def main():
-    pygame.display.set_mode((W, H))
+    screen, W, H = _screen_tmp, W, H  # Reutilizar W, H ya inicializados desde init_display
     pygame.display.set_caption("Pong - Pygame")
-    screen = pygame.display.get_surface()
 
     while True:
         img_menu = load_image("menu_pong.png")

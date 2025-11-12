@@ -1695,7 +1695,7 @@
         "nombre": "Keylor Navas",
         "nacionalidad": "Costa Rica",    
         "Fecha de nacimiento": "15/12/1986",
-        "club actual": "Al-Nassr",
+        "club actual": "Pumas",
         "posicion": ["Portero"],
         "clubes totales": ["Deportivo Saprissa", "Albacete", "Levante", "Real Madrid", "Paris Saint-Germain", "Nottingham Forest", "Newell's", "Pumas"]
     },
@@ -3000,7 +3000,7 @@
         "Fecha de nacimiento": "26/05/1977",
         "club actual": "RETIRADO",
         "posicion": ["Delantero Centro"],
-        "clubes totales": ["Modena", "Empoli", "Fiorentina", "Palermo", "Bayern de Múnich", "AS Roma", "Genoa", "Juventus", "Hellas Verona", "Al-Nassr"]
+        "clubes totales": ["Modena", "Empoli", "Fiorentina", "Palermo", "Bayern de Múnich", "AS Roma", "Genoa", "Juventus", "Hellas Verona", "Al Nassr"]
     },
     {
         "id": 318,
@@ -7048,6 +7048,161 @@
     },
     {
         "id": 769,
+        "nombre": "Fernando Muslera",
+        "nacionalidad": "Uruguay",
+        "club actual": "Estudiantes de La Plata",
+        "posicion": ["Portero"],
+        "clubes totales": ["Galatasaray", "Lazio", "Montevideo Wanderers", "Nacional", "Estudiantes de La Plata"]
+    },
+    {
+        "id": 770,
+        "nombre": "Santiago Arzamendia",
+        "nacionalidad": "Paraguay",
+        "club actual": "Estudiantes de La Plata",
+        "posicion": ["Lateral Izquierdo"],
+        "clubes totales": ["Estudiantes de La Plata", "Cádiz", "Cerro Porteño"]
+    },
+    {
+        "id": 771,
+        "nombre": "Facundo Rodríguez",
+        "nacionalidad": "Argentina",
+        "club actual": "Estudiantes de La Plata",
+        "posicion": ["Defensa Central"],
+        "clubes totales": ["Estudiantes de La Plata", "Temperley", "Godoy Cruz", "Liga de Quito"]
+    },
+    {
+        "id": 772,
+        "nombre": "Santiago Nuñez",
+        "nacionalidad": "Argentina",
+        "club actual": "Estudiantes de La Plata",
+        "posicion": ["Defensa Central"],
+        "clubes totales": ["Estudiantes de La Plata", "Santos Laguna"]
+    },
+    {
+        "id": 773,
+        "nombre": "Román Gomez",
+        "nacionalidad": "Argentina",
+        "club actual": "Estudiantes de La Plata",
+        "posicion": ["Lateral Derecho"],
+        "clubes totales": ["Estudiantes de La Plata"]
+    },
+    {
+        "id": 774,
+        "nombre": "Gastón Benedetti",
+        "nacionalidad": "Argentina",
+        "club actual": "Estudiantes de La Plata",
+        "posicion": ["Lateral Izquierdo"],
+        "clubes totales": ["Estudiantes de La Plata"]
+    },
+    {
+        "id": 775,
+        "nombre": "Leandro González Pírez",
+        "apodo": "González Pírez",
+        "nacionalidad": "Argentina",
+        "club actual": "Estudiantes de La Plata",
+        "posicion": ["Defensa Central"],
+        "clubes totales": ["Estudiantes de La Plata", "KAA Gent", "Atlanta United", "Tijuana", "Tigre", "Inter Miami", "River Plate", "Arsenal de Sarandí"]
+    },
+    {
+        "id": 776,
+        "nombre": "Ramiro Funes Mori",
+        "apodo": "Funes Mori",
+        "nacionalidad": "Argentina",
+        "club actual": "Estudiantes de La Plata",
+        "posicion": ["Defensa Central"],
+        "clubes totales": ["Estudiantes de La Plata", "Everton", "Al Nassr", "Villarreal", "River Plate"]
+    },
+    {
+        "id": 777,
+        "nombre": "Santiago Ascacíbar",
+        "nacionalidad": "Argentina",
+        "club actual": "Estudiantes de La Plata",
+        "posicion": ["Mediocampista Defensivo", "Mediocampista Central"],
+        "clubes totales": ["Estudiantes de La Plata", "Cremonese", "VFB Stuttgart", "Hertha BSC"]
+    },
+    {
+        "id": 778,
+        "nombre": "Mikel Amondarain",
+        "nacionalidad": "Argentina",
+        "club actual": "Estudiantes de La Plata",
+        "posicion": ["Mediocampista Central"],
+        "clubes totales": ["Estudiantes de La Plata"]
+    },
+    {
+        "id": 779,
+        "nombre": "Cristian Medina",
+        "nacionalidad": "Argentina",
+        "club actual": "Estudiantes de La Plata",
+        "posicion": ["Mediocampista Ofensivo", "Mediocampista Central", "Mediocampista Derecho"],
+        "clubes totales": ["Estudiantes de La Plata", "Boca Juniors"]
+    },
+    {
+        "id": 780,
+        "nombre": "José Sosa",
+        "nacionalidad": "Argentina",
+        "club actual": "Estudiantes de La Plata",
+        "posicion": ["Mediocampista Central", "Mediocampista Defensivo"],
+        "clubes totales": ["Estudiantes de La Plata", "Trabzonspor", "Besiktas", "Napoli", "Atlético Madrid", "Bayern de Múnich", "Metalist Járkov"]
+    },
+    {
+        "id": 781,
+        "nombre": "Ezequiel Piovi",
+        "nacionalidad": "Argentina",
+        "club actual": "Estudiantes de La Plata",
+        "posicion": ["Mediocampista Central"],
+        "clubes totales": ["Estudiantes de La Plata", "Almagro", "Liga de Quito", "Fénix", "Messina", "Arsenal de Sarandí"]
+    },
+    {
+        "id": 782,
+        "nombre": "Guido Carrillo",
+        "nacionalidad": "Argentina",
+        "club actual": "Estudiantes de La Plata",
+        "posicion": ["Delantero Centro"],
+        "clubes totales": ["Estudiantes de La Plata", "Leganés", "Monaco", "Southampton", "Elche", "Henan FC"]
+    },
+    {
+        "id": 783,
+        "nombre": "Edwuin Cetré",
+        "nacionalidad": "Colombia",
+        "club actual": "Estudiantes de La Plata",
+        "posicion": ["Extremo Izquierdo", "Mediocampista Izquierdo"],
+        "clubes totales": ["Estudiantes de La Plata", "Junior de Barranquilla", "Independiente Medellín", "Santos Laguna"]
+    },
+    {
+        "id": 784,
+        "nombre": "Tiago Palacios",
+        "nacionalidad": "Uruguay",
+        "club actual": "Estudiantes de La Plata",
+        "posicion": ["Mediocampista Ofensivo", "Mediocampista Central"],
+        "clubes totales": ["Estudiantes de La Plata", "Platense", "Montevideo City Torque"]
+    },
+    {
+        "id": 785,
+        "nombre": "Lucas Alario",
+        "nacionalidad": "Argentina",
+        "club actual": "Estudiantes de La Plata",
+        "posicion": ["Delantero Centro"],
+        "clubes totales": ["Colón", "River Plate", "Bayer Leverkusen", "Eintracht Frankfurt", "Internacional", "Estudiantes de La Plata"]
+    },
+    {
+        "id": 786,
+        "nombre": "Joaquín Tobio Burgos",
+        "apodo": "Tobio Burgos",
+        "nacionalidad": "Argentina",
+        "club actual": "Estudiantes de La Plata",
+        "posicion": ["Extremo Izquierdo"],
+        "clubes totales": ["Estudiantes de La Plata"]
+    },
+    {
+        "id": 787,
+        "nombre": "Jorge Broun",
+        "nacionalidad": "Argentina",
+        "club actual": "Rosario Central",
+        "posicion": ["Portero"],
+        "clubes totales": ["Rosario Central", "Deportes Antofagasta", "Colón", "Ludogorets", "Gimnasia y Esgrima La Plata"]
+    },
+    {
+        "id": 769,
         "nombre": "Hernan Galindez",
         "nacionalidad": "Ecuador",
         "club actual": "Huracán",
@@ -7055,20 +7210,20 @@
         "clubes totales": ["Rosario Central","Quilmes","Universidad Católica","Universidad de Chile","Huracan"]
     },
     {
-    "id": 770,
-    "nombre": "Tomás Ezequiel Guidara",
-    "nacionalidad": "Argentina",
-    "club actual": "Huracán",
-    "posicion": ["Lateral Derecho", "Defensa Central"],
-    "clubes totales": ["Belgrano", "Vélez Sarsfield", "Huracán"]
+        "id": 770,
+        "nombre": "Tomás Ezequiel Guidara",
+        "nacionalidad": "Argentina",
+        "club actual": "Huracán",
+        "posicion": ["Lateral Derecho", "Defensa Central"],
+        "clubes totales": ["Belgrano", "Vélez Sarsfield", "Huracán"]
     },
     {
-    "id": 771,
-    "nombre": "Fabio Jesús Pereyra",
-    "nacionalidad": "Argentina",
-    "club actual": "Huracán",
-    "posicion": ["Defensa Central"],
-    "clubes totales": ["CAI", "Tiro Federal", "Independiente (Chivilcoy)", "San Jorge de Tucumán", "Arsenal de Sarandí", "FBC Melgar", "Central Córdoba (SdE)", "Huracán"]
+        "id": 771,
+        "nombre": "Fabio Jesús Pereyra",
+        "nacionalidad": "Argentina",
+        "club actual": "Huracán",
+        "posicion": ["Defensa Central"],
+        "clubes totales": ["CAI", "Tiro Federal", "Independiente (Chivilcoy)", "San Jorge de Tucumán", "Arsenal de Sarandí", "FBC Melgar", "Central Córdoba", "Huracán"]
     },
     {
     "id": 772,
@@ -7192,5 +7347,6 @@
     "clubes totales": ["Banfield", "Juárez", "Racing Club", "Huracán"]
     }
 
+    
 ]
 }

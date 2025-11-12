@@ -4,6 +4,9 @@ import random
 import math
 
 pygame.init()
+
+from display_config import init_display
+
 pygame.display.set_caption("Fall Out")
 
 BLANCO = (255, 255, 255)
@@ -14,6 +17,9 @@ VERDE = (34, 139, 34)
 FPS = 60
 ANCHO = 1280
 ALTO = 720
+
+# Inicializar pantalla con resolucion desde game_settings.json
+pantalla, ANCHO, ALTO = init_display(default_w=ANCHO, default_h=ALTO, title="Fall Out")
 
 def cargar_imagenes():
     imagenes = {}

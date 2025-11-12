@@ -5,13 +5,14 @@ import os
 
 pygame.init()
 
+from display_config import init_display
+
 ROWS, COLS = 6, 7
 SQUARE_SIZE = 100
 RADIUS = SQUARE_SIZE // 2 - 5
 
-WIDTH, HEIGHT = COLS * SQUARE_SIZE, (ROWS+1) * SQUARE_SIZE
-SCREEN = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("4 en Línea Animado")
+# Inicializar pantalla con resolucion desde game_settings.json
+SCREEN, WIDTH, HEIGHT = init_display(default_w=700, default_h=700, title="4 en Línea Animado")
 
 BLUE = (0, 0, 255)
 BLACK = (0, 0, 0)

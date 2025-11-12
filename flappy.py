@@ -6,6 +6,8 @@ import random
 pygame.init()
 pygame.display.set_caption("Flappy Bird - Pygame")
 
+from display_config import init_display
+
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 FPS = 60
@@ -15,6 +17,9 @@ PIPE_SPEED = 3
 PIPE_GAP = 200
 BIRD_SIZE = 40
 
+# Inicializar pantalla con resolucion desde game_settings.json
+screen, W, H = init_display(default_w=800, default_h=600, title="Flappy Bird - Pygame")
+
 fondo_img = pygame.image.load("image/fondo.png")
 bird_img = pygame.image.load("image/pajaro.png")
 pipe_img = pygame.image.load("image/tuberiapro.png")
@@ -22,7 +27,7 @@ menu_img = pygame.image.load("image/menu_flappy.png")
 game_over_img = pygame.image.load("image/game_over_flappy.png")
 
 bird_img = pygame.transform.scale(bird_img, (BIRD_SIZE, BIRD_SIZE))
-PIPE_WIDTH = 60  
+PIPE_WIDTH = 60
 
 def draw_background(screen, W, H):
     fondo_escalado = pygame.transform.scale(fondo_img, (W, H))
@@ -199,8 +204,6 @@ def game_over_screen(screen, W, H, final_score):
                     pygame.quit(); sys.exit()
 
 def main():
-    W,H = 800,600
-    screen = pygame.display.set_mode((W,H))
 
     while True:
         final_score = run_game(screen, W, H)

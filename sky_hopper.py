@@ -5,10 +5,15 @@ import math
 # Inicializar Pygame
 pygame.init()
 
+from display_config import init_display
+
 # Configuraciones de la ventana
 ANCHO = 800
 ALTO = 600
 FPS = 60
+
+# Inicializar pantalla con resolucion desde game_settings.json
+pantalla, ANCHO, ALTO = init_display(default_w=ANCHO, default_h=ALTO, title="Sky Hopper")
 
 # Colores
 BLANCO = (255, 255, 255)

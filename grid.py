@@ -7,12 +7,17 @@ import sys
 # Inicializar Pygame
 pygame.init()
 
+from display_config import init_display
+
 # Constantes
 ANCHO = 1000
 ALTO = 800
-TAMANO_CELDA = 150
+TAMANO_CELDA = 100
 MARGEN = 10
 FPS = 60
+
+# Inicializar pantalla con resolucion desde game_settings.json
+pantalla, ANCHO, ALTO = init_display(default_w=ANCHO, default_h=ALTO, title="Grid Futbol")
 
 # Colores
 BLANCO = (255, 255, 255)

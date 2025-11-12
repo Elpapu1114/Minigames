@@ -5,9 +5,14 @@ import os
 
 pygame.init()
 
+from display_config import init_display
+
 ANCHO_PANTALLA = 800
 ALTO_PANTALLA = 600
 FPS = 60
+
+# Inicializar pantalla con resolucion desde game_settings.json
+pantalla, ANCHO_PANTALLA, ALTO_PANTALLA = init_display(default_w=ANCHO_PANTALLA, default_h=ALTO_PANTALLA, title="Crash Run")
 
 NEGRO = (0, 0, 0)
 BLANCO = (255, 255, 255)
