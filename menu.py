@@ -107,9 +107,13 @@ def can_click():
     """Verifica si se puede hacer clic (cooldown global)"""
     global last_click_time
     current_time = pygame.time.get_ticks()
-    
+    print(last_click_time)
+    print(current_time)
     if current_time - last_click_time > CLICK_DELAY:
         last_click_time = current_time
+        print("Click allowed")
+        print(last_click_time)
+        print(current_time)
         return True
     return False
 
@@ -304,15 +308,15 @@ def handle_credits():
     draw_centered_text("Ins. Ind. Luis A. Huergo", medium_font, TEXT_COL, y_pos + huergo_img.get_height() + 20)
     draw_centered_text("2025", small_font, TEXT_COL, SCREEN_HEIGHT - 80)
     
-    back_x = SCREEN_WIDTH // 2 - back_img.get_width() // 2
+    back_x = (SCREEN_WIDTH - back_img.get_width()) // 2
     back_y = SCREEN_HEIGHT - 70
     back_button = Button(back_x, back_y, back_img, 1)
     
-    # Dibujar el botón SIEMPRE primero
-    back_button.draw(screen)
+    # Dibujar el botón y capturar si fue clickeado
+    back_pressed = back_button.draw(screen)
     
     # Luego verificar si fue clickeado
-    if back_button.clicked and can_click():
+    if back_pressed and can_click():
         menu_state = "options"
 
 def handle_video_settings():
@@ -389,11 +393,13 @@ def handle_video_settings():
     back_y = SCREEN_HEIGHT - 80
     back_button = Button(back_x, back_y, back_img, 1)
     
-    # Dibujar el botón SIEMPRE primero
-    back_button.draw(screen)
+    # Dibujar el botón y capturar si fue clickeado
+    back_pressed = back_button.draw(screen)
     
     # Luego verificar si fue clickeado
-    if back_button.clicked and can_click():
+    print("back",back_pressed)
+    print("can_click",can_click())
+    if back_pressed and can_click():
         menu_state = "options"
 
 def handle_audio_settings():
@@ -464,13 +470,16 @@ def handle_audio_settings():
     # Botón back usando Button
     back_x = SCREEN_WIDTH // 2 - back_img.get_width() // 2
     back_y = SCREEN_HEIGHT - 80
-    back_button = Button(back_x, back_y, back_img, 1)
+    back_button_audio = Button(back_x, back_y, back_img, 1)
     
-    # Dibujar el botón SIEMPRE primero
-    back_button.draw(screen)
+    # Dibujar el botón y capturar si fue clickeado
+    back_pressed_audio = back_button_audio.draw(screen)
     
     # Luego verificar si fue clickeado
-    if back_button.clicked and can_click():
+    print("back",back_pressed_audio)
+    print("can_click",can_click())
+
+    if back_pressed_audio:
         menu_state = "options"
 
 def handle_events():
