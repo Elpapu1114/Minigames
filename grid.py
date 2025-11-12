@@ -325,23 +325,27 @@ class FutbolGrid:
             return []
         sugerencias = []
         texto_lower = texto.lower().strip()
+        
         for jugador in self.jugadores:
-            # Buscar por nombre si existe
+            # Primero verificar si coincide con el apodo
+            if "apodo" in jugador:
+                apodo = jugador["apodo"]
+                apodo_lower = apodo.lower()
+                if texto_lower in apodo_lower:
+                    sugerencias.append(apodo)
+                    if len(sugerencias) >= 5:
+                        break
+                    continue  # Si encontramos por apodo, pasar al siguiente jugador
+            
+            # Si no tiene apodo o no coincidió con el apodo, buscar por nombre
             if "nombre" in jugador:
                 nombre_completo = jugador["nombre"]
                 nombre_lower = nombre_completo.lower()
                 if texto_lower in nombre_lower:
                     sugerencias.append(nombre_completo)
-            
-            # Buscar por apodo si existe y aún no alcanzamos el límite
-            if len(sugerencias) < 5 and "apodo" in jugador:
-                apodo = jugador["apodo"]
-                apodo_lower = apodo.lower()
-                if texto_lower in apodo_lower and apodo not in sugerencias:
-                    sugerencias.append(apodo)
-            
-            if len(sugerencias) >= 5:
-                break
+                    if len(sugerencias) >= 5:
+                        break
+        
         return sugerencias
     
     def encontrar_celdas_validas(self, jugador):
@@ -491,14 +495,26 @@ class FutbolGrid:
                     rect_texto = texto.get_rect(center=(x + TAMANO_CELDA // 2, y + TAMANO_CELDA // 2))
                     self.pantalla.blit(texto, rect_texto)
 
-    def dibujar_input(self):
-        # Colocar el input debajo de la grilla para que no se superpongan
+    def calcular_posiciones_input(self):
+        """Calcula y guarda las coordenadas del área de input"""
         ancho_input = min(sx(900), ANCHO - sx(100))
         x_input = (ANCHO - ancho_input) // 2
-        # Si no hemos dibujado la grilla aún, usar un valor por defecto razonable
         base_y = getattr(self, 'grid_inicio_y', sy(150))
         total_h = getattr(self, 'grid_total_height', 3 * TAMANO_CELDA + 2 * MARGEN)
         y = base_y + total_h + sy(20)
+        
+        self.input_x = x_input
+        self.input_y = y
+        self.input_ancho = ancho_input
+        self.input_alto = sy(40)
+
+    def dibujar_input(self):
+        # Calcular posiciones primero
+        self.calcular_posiciones_input()
+        
+        x_input = self.input_x
+        y = self.input_y
+        ancho_input = self.input_ancho
 
         color_fondo = AMARILLO if self.input_activo else BLANCO
         pygame.draw.rect(self.pantalla, color_fondo, (x_input, y, ancho_input, sy(40)))
@@ -602,9 +618,14 @@ class FutbolGrid:
                     self.mostrando_menu_celdas = True
 
             else:
-                self.mostrar_mensaje(f"{jugador['nombre']} no encaja en ninguna celda disponible")
-                self.input_texto = ""
-                self.sugerencias = []
+                if "apodo" in jugador:
+                    self.mostrar_mensaje(f"{jugador['apodo']} no encaja en ninguna celda disponible")
+                    self.input_texto = ""
+                    self.sugerencias = []
+                else:
+                    self.mostrar_mensaje(f"{jugador['nombre']} no encaja en ninguna celda disponible")
+                    self.input_texto = ""
+                    self.sugerencias = []
         else:
             self.mostrar_mensaje(f"No se encontró el jugador: {nombre_jugador}")
             self.input_texto = ""
@@ -643,13 +664,16 @@ class FutbolGrid:
                     if self.mostrando_menu_celdas:
                         self.manejar_clic_menu(evento.pos)
                     elif not self.juego_terminado:
-                        rect_input = pygame.Rect(sx(50), sy(625), sx(900), sy(40))
+                        # Asegurarse de que las posiciones estén calculadas
+                        self.calcular_posiciones_input()
+                        
+                        rect_input = pygame.Rect(self.input_x, self.input_y, self.input_ancho, self.input_alto)
                         if rect_input.collidepoint(evento.pos):
                             self.input_activo = True
                         if self.sugerencias:
-                            y_sug = sy(670)
+                            y_sug = self.input_y + sy(45)  # Usar la misma fórmula que en dibujar_input()
                             for i, sugerencia in enumerate(self.sugerencias):
-                                rect = pygame.Rect(sx(50), y_sug + i * sy(35), sx(900), sy(33))
+                                rect = pygame.Rect(self.input_x, y_sug + i * sy(35), self.input_ancho, sy(33))
                                 if rect.collidepoint(evento.pos):
                                     self.input_texto = sugerencia
                                     self.sugerencias = []
