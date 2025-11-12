@@ -63,6 +63,22 @@ SELECTED_COL = (255, 255, 0)
 ERROR_COL = (255, 100, 100)
 SUCCESS_COL = (100, 255, 100)
 
+# Base de referencia para diseño (layout diseñado para 800x600)
+BASE_WIDTH = 800
+BASE_HEIGHT = 600
+
+def sx(value):
+    """Escala un valor horizontal desde la base 800 a la resolución actual"""
+    return int(value * SCREEN_WIDTH / BASE_WIDTH)
+
+def sy(value):
+    """Escala un valor vertical desde la base 600 a la resolución actual"""
+    return int(value * SCREEN_HEIGHT / BASE_HEIGHT)
+
+def spos(x, y):
+    """Devuelve una tupla (x,y) escalada desde la base 800x600"""
+    return (sx(x), sy(y))
+
 def crear_ruta_img(nombre_imagen):
     """Crea la ruta completa para una imagen"""
     return os.path.join(os.path.dirname(__file__), 'image', nombre_imagen)
@@ -107,13 +123,8 @@ def can_click():
     """Verifica si se puede hacer clic (cooldown global)"""
     global last_click_time
     current_time = pygame.time.get_ticks()
-    print(last_click_time)
-    print(current_time)
     if current_time - last_click_time > CLICK_DELAY:
         last_click_time = current_time
-        print("Click allowed")
-        print(last_click_time)
-        print(current_time)
         return True
     return False
 
@@ -206,9 +217,20 @@ def handle_main_menu():
     # Dibujar fondo del menú principal (Minigames)
     screen.blit(pygame.transform.scale(fondo_menu, (SCREEN_WIDTH, SCREEN_HEIGHT)), (0, 0))
     
-    play_button = Button(130, 125, play_img, 7)
-    options_button = Button(450, 125, options_img, 7)
-    exit_button = Button(300, 375, exit_img, 7)
+    # Usar posiciones originales si la resolución es 800x600 o si está en fullscreen
+    if game_settings.get("resolution") == "800x600" or game_settings.get("fullscreen", False):
+        play_x, play_y = 130, 125
+        options_x, options_y = 450, 125
+        exit_x, exit_y = 300, 375
+    else:
+        # Reorganización: dos botones arriba y uno centrado abajo (mejor balance)
+        play_x, play_y = spos(200, 160)
+        options_x, options_y = spos(460, 160)
+        exit_x, exit_y = spos(330, 380)
+
+    play_button = Button(play_x, play_y, play_img, 7)
+    options_button = Button(options_x, options_y, options_img, 7)
+    exit_button = Button(exit_x, exit_y, exit_img, 7)
     
     play_pressed = play_button.draw(screen)
     options_pressed = options_button.draw(screen)
@@ -258,11 +280,24 @@ def handle_options_menu():
     # Dibujar fondo del menú de opciones (OPTIONS)
     screen.blit(pygame.transform.scale(fondo_menu_option, (SCREEN_WIDTH, SCREEN_HEIGHT)), (0, 0))
     
-    video_button = Button(100, 120, video_img, 7)
-    audio_button = Button(400, 120, audio_img, 7)
-    credit_button = Button(100, 300, credit_img, 7)
-    back_button = Button(400, 300, back_img, 7)
-    
+    # Usar posiciones originales si la resolución es 800x600 o si está en fullscreen
+    if game_settings.get("resolution") == "800x600" or game_settings.get("fullscreen", False):
+        video_x, video_y = 100, 120
+        audio_x, audio_y = 400, 120
+        credit_x, credit_y = 100, 300
+        back_x_btn, back_y_btn = 400, 300
+    else:
+        # Ajuste visual: dos columnas más centradas y mayor separación vertical
+        video_x, video_y = spos(180, 140)
+        audio_x, audio_y = spos(460, 140)
+        credit_x, credit_y = spos(180, 340)
+        back_x_btn, back_y_btn = spos(460, 340)
+
+    video_button = Button(video_x, video_y, video_img, 7)
+    audio_button = Button(audio_x, audio_y, audio_img, 7)
+    credit_button = Button(credit_x, credit_y, credit_img, 7)
+    back_button = Button(back_x_btn, back_y_btn, back_img, 7)
+
     video_pressed = video_button.draw(screen)
     audio_pressed = audio_button.draw(screen)
     credit_pressed = credit_button.draw(screen)
@@ -331,6 +366,8 @@ def handle_video_settings():
     
     y_start = 150
     spacing = 80
+
+    use_original = (game_settings.get("resolution") == "800x600") or game_settings.get("fullscreen", False)
     
     # Resolución
     draw_text("Resolución:", medium_font, TEXT_COL, 100, y_start)
@@ -338,10 +375,20 @@ def handle_video_settings():
     
     # Dibujar todas las opciones de resolución
     for i, (res_str, width, height) in enumerate(RESOLUTIONS):
-        x = 300 + (i % 3) * 180
-        y = y_start + (i // 3) * 40
+        # Posiciones base tomadas de 800x600
+        base_x = 300 + (i % 3) * 180
+        base_y = y_start + (i // 3) * 40
+        if use_original:
+            x, y = base_x, base_y
+        else:
+            x, y = spos(base_x, base_y)
         selected = (res_str == current_res)
-        hover = pygame.Rect(x, y, 150, 30).collidepoint(mouse_pos)
+        # Rect para hover/clic debe usar tamaño escalado también
+        if use_original:
+            hover_rect = pygame.Rect(x, y, 150, 30)
+        else:
+            hover_rect = pygame.Rect(x, y, sx(150), sy(30))
+        hover = hover_rect.collidepoint(mouse_pos)
         
         rect = draw_clickable_option(res_str, small_font, TEXT_COL, x, y, selected, hover)
         
@@ -351,23 +398,36 @@ def handle_video_settings():
             show_message(f"Resolución seleccionada: {res_str}", SUCCESS_COL)
     
     # Botón aplicar resolución
-    apply_rect = pygame.Rect(100, y_start + 100, 120, 35)
+    # Botón aplicar (posición escalada o original)
+    apply_base_x = 100
+    apply_base_y = y_start + 100
+    if use_original:
+        apply_rect = pygame.Rect(apply_base_x, apply_base_y, 120, 35)
+        draw_text("Aplicar", medium_font, TEXT_COL, 110, y_start + 105)
+    else:
+        apply_rect = pygame.Rect(sx(apply_base_x), sy(apply_base_y), sx(120), sy(35))
+        draw_text("Aplicar", medium_font, TEXT_COL, sx(110), sy(y_start + 105))
     apply_hover = apply_rect.collidepoint(mouse_pos)
     apply_color = (150, 200, 150) if apply_hover else (100, 150, 100)
     pygame.draw.rect(screen, apply_color, apply_rect, border_radius=5)
-    draw_text("Aplicar", medium_font, TEXT_COL, 110, y_start + 105)
     
     if apply_rect.collidepoint(mouse_pos) and mouse_clicked and can_click():
         apply_resolution()
     
     # Pantalla completa
     y_pos = y_start + spacing * 2
-    draw_text("Pantalla completa:", medium_font, TEXT_COL, 100, y_pos)
+    draw_text("Pantalla completa:", medium_font, TEXT_COL, (100 if use_original else sx(100)), (y_pos if use_original else sy(y_pos)))
     fullscreen_text = "ACTIVADA" if game_settings["fullscreen"] else "DESACTIVADA"
-    hover = pygame.Rect(350, y_pos, 200, 30).collidepoint(mouse_pos)
-    
-    rect = draw_clickable_option(fullscreen_text, small_font, TEXT_COL, 350, y_pos, 
-                                game_settings["fullscreen"], hover)
+    if use_original:
+        hover_rect = pygame.Rect(350, y_pos, 200, 30)
+        hover = hover_rect.collidepoint(mouse_pos)
+        rect = draw_clickable_option(fullscreen_text, small_font, TEXT_COL, 350, y_pos, 
+                                    game_settings["fullscreen"], hover)
+    else:
+        hover_rect = pygame.Rect(sx(350), sy(y_pos), sx(200), sy(30))
+        hover = hover_rect.collidepoint(mouse_pos)
+        rect = draw_clickable_option(fullscreen_text, small_font, TEXT_COL, sx(350), sy(y_pos), 
+                                    game_settings["fullscreen"], hover)
     
     if rect.collidepoint(mouse_pos) and mouse_clicked and can_click():
         game_settings["fullscreen"] = not game_settings["fullscreen"]
@@ -376,29 +436,33 @@ def handle_video_settings():
     
     # V-Sync
     y_pos = y_start + spacing * 3
-    draw_text("V-Sync:", medium_font, TEXT_COL, 100, y_pos)
+    draw_text("V-Sync:", medium_font, TEXT_COL, (100 if use_original else sx(100)), (y_pos if use_original else sy(y_pos)))
     vsync_text = "ACTIVADO" if game_settings["vsync"] else "DESACTIVADO"
-    hover = pygame.Rect(250, y_pos, 200, 30).collidepoint(mouse_pos)
-    
-    rect = draw_clickable_option(vsync_text, small_font, TEXT_COL, 250, y_pos, 
-                                game_settings["vsync"], hover)
+    if use_original:
+        hover_rect = pygame.Rect(250, y_pos, 200, 30)
+        hover = hover_rect.collidepoint(mouse_pos)
+        rect = draw_clickable_option(vsync_text, small_font, TEXT_COL, 250, y_pos, 
+                                    game_settings["vsync"], hover)
+    else:
+        hover_rect = pygame.Rect(sx(250), sy(y_pos), sx(200), sy(30))
+        hover = hover_rect.collidepoint(mouse_pos)
+        rect = draw_clickable_option(vsync_text, small_font, TEXT_COL, sx(250), sy(y_pos), 
+                                    game_settings["vsync"], hover)
     
     if rect.collidepoint(mouse_pos) and mouse_clicked and can_click():
         game_settings["vsync"] = not game_settings["vsync"]
         status = "activado" if game_settings["vsync"] else "desactivado"
         show_message(f"V-Sync {status}", SUCCESS_COL)
     
-    # Botón back usando Button
+    # Botón back usando Button (posición centrada en la parte inferior)
     back_x = SCREEN_WIDTH // 2 - back_img.get_width() // 2
     back_y = SCREEN_HEIGHT - 80
     back_button = Button(back_x, back_y, back_img, 1)
-    
+
     # Dibujar el botón y capturar si fue clickeado
     back_pressed = back_button.draw(screen)
-    
+
     # Luego verificar si fue clickeado
-    print("back",back_pressed)
-    print("can_click",can_click())
     if back_pressed and can_click():
         menu_state = "options"
 
@@ -414,14 +478,25 @@ def handle_audio_settings():
     
     y_start = 150
     spacing = 100
+    use_original = (game_settings.get("resolution") == "800x600") or game_settings.get("fullscreen", False)
     
     def draw_volume_slider(label, key, y_pos):
         """Dibuja un slider de volumen"""
-        draw_text(f"{label}:", medium_font, TEXT_COL, 100, y_pos)
-        current_volume = game_settings[key]
-        
-        bar_x, bar_y = 350, y_pos + 15
-        bar_width, bar_height = 300, 25
+        # Posiciones base (originales si corresponde)
+        if use_original:
+            draw_text(f"{label}:", medium_font, TEXT_COL, 100, y_pos)
+            current_volume = game_settings[key]
+            bar_x = 350
+            bar_y = y_pos + 15
+            bar_width = 300
+            bar_height = 25
+        else:
+            draw_text(f"{label}:", medium_font, TEXT_COL, sx(100), sy(y_pos))
+            current_volume = game_settings[key]
+            bar_x = sx(350)
+            bar_y = sy(y_pos + 15)
+            bar_width = sx(300)
+            bar_height = sy(25)
         
         pygame.draw.rect(screen, (60, 60, 60), (bar_x, bar_y, bar_width, bar_height), border_radius=12)
         pygame.draw.rect(screen, (40, 40, 40), (bar_x, bar_y, bar_width, bar_height), 2, border_radius=12)
@@ -431,14 +506,14 @@ def handle_audio_settings():
             color = (100, 255, 100) if current_volume > 70 else (255, 255, 100) if current_volume > 30 else (255, 150, 150)
             pygame.draw.rect(screen, color, (bar_x, bar_y, fill_width, bar_height), border_radius=12)
         
-        handle_x = bar_x + fill_width - 10
-        handle_rect = pygame.Rect(handle_x, bar_y - 5, 20, bar_height + 10)
+        handle_x = bar_x + fill_width - (10 if use_original else sx(10))
+        handle_rect = pygame.Rect(handle_x, bar_y - (5 if use_original else sy(5)), (20 if use_original else sx(20)), bar_height + ( (10 if use_original else sy(10)) ))
         pygame.draw.rect(screen, (200, 200, 200), handle_rect, border_radius=10)
         pygame.draw.rect(screen, (100, 100, 100), handle_rect, 2, border_radius=10)
         
-        draw_text(f"{current_volume}%", small_font, TEXT_COL, bar_x + bar_width + 20, y_pos + 5)
+        draw_text(f"{current_volume}%", small_font, TEXT_COL, bar_x + bar_width + (20 if use_original else sx(20)), (y_pos + 5 if use_original else sy(y_pos + 5)))
         
-        slider_rect = pygame.Rect(bar_x - 10, bar_y - 10, bar_width + 20, bar_height + 20)
+        slider_rect = pygame.Rect(bar_x - (10 if use_original else sx(10)), bar_y - (10 if use_original else sy(10)), bar_width + (20 if use_original else sx(20)), bar_height + (10 if use_original else sy(20)))
         if slider_rect.collidepoint(mouse_pos) and mouse_pressed:
             relative_x = max(0, min(bar_width, mouse_pos[0] - bar_x))
             new_volume = int((relative_x / bar_width) * 100)
@@ -450,16 +525,20 @@ def handle_audio_settings():
     draw_volume_slider("Música", "music_volume", y_start + spacing * 2)
     
     test_y = y_start + spacing * 3
-    draw_text("Prueba de audio:", medium_font, TEXT_COL, 100, test_y)
+    draw_text("Prueba de audio:", medium_font, TEXT_COL, (100 if use_original else sx(100)), (test_y if use_original else sy(test_y)))
     
-    test_sfx_rect = pygame.Rect(300, test_y, 100, 30)
-    test_music_rect = pygame.Rect(420, test_y, 100, 30)
-    
+    if use_original:
+        test_sfx_rect = pygame.Rect(300, test_y, 100, 30)
+        test_music_rect = pygame.Rect(420, test_y, 100, 30)
+    else:
+        test_sfx_rect = pygame.Rect(sx(300), sy(test_y), sx(100), sy(30))
+        test_music_rect = pygame.Rect(sx(420), sy(test_y), sx(100), sy(30))
+
     pygame.draw.rect(screen, (100, 100, 150), test_sfx_rect, border_radius=5)
     pygame.draw.rect(screen, (150, 100, 100), test_music_rect, border_radius=5)
     
-    draw_text("SFX", small_font, TEXT_COL, 320, test_y + 5)
-    draw_text("Música", small_font, TEXT_COL, 430, test_y + 5)
+    draw_text("SFX", small_font, TEXT_COL, (320 if use_original else sx(320)), (test_y + 5 if use_original else sy(test_y + 5)))
+    draw_text("Música", small_font, TEXT_COL, (430 if use_original else sx(430)), (test_y + 5 if use_original else sy(test_y + 5)))
     
     if mouse_pressed and can_click():
         if test_sfx_rect.collidepoint(mouse_pos):
@@ -471,15 +550,12 @@ def handle_audio_settings():
     back_x = SCREEN_WIDTH // 2 - back_img.get_width() // 2
     back_y = SCREEN_HEIGHT - 80
     back_button_audio = Button(back_x, back_y, back_img, 1)
-    
+
     # Dibujar el botón y capturar si fue clickeado
     back_pressed_audio = back_button_audio.draw(screen)
-    
-    # Luego verificar si fue clickeado
-    print("back",back_pressed_audio)
-    print("can_click",can_click())
 
-    if back_pressed_audio:
+    # Luego verificar si fue clickeado
+    if back_pressed_audio and can_click():
         menu_state = "options"
 
 def handle_events():

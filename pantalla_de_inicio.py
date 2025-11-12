@@ -6,9 +6,9 @@ from datetime import datetime
 
 pygame.init()
 
-
-SCREEN_WIDTH = 1400
-SCREEN_HEIGHT = 800
+from display_config import init_display
+# Inicializar ventana según game_settings.json; si no existe se usan los valores por defecto de esta pantalla
+screen, SCREEN_WIDTH, SCREEN_HEIGHT = init_display(default_w=1400, default_h=800, title=" Minigames - Selecciona tu Juego")
 FPS = 60
 
 BACKGROUND_COLOR = (15, 15, 25)
@@ -20,8 +20,6 @@ GRADIENT_START = (25, 25, 45)
 GRADIENT_END = (15, 15, 25)
 
 
-screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-pygame.display.set_caption(" Minigames - Selecciona tu Juego")
 clock = pygame.time.Clock()
 
 
@@ -281,25 +279,32 @@ def main():
         clock.tick(FPS)
         mouse_pos = pygame.mouse.get_pos()
         
+        # Calcular tamaño de tarjetas dinámicamente según resolución
+        # Usar 1 columna para resoluciones <= 800px, 2 columnas para > 800px
+        if SCREEN_WIDTH <= 800:
+            cards_per_row = 1
+            card_width = int(SCREEN_WIDTH * 0.85)  # 85% del ancho
+            card_height = 150
+            margin = 30
+        else:
+            cards_per_row = 2
+            card_width = int((SCREEN_WIDTH - 100) // 2)  # Dividir en 2 con margen
+            card_height = 180
+            margin = 40
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
             
             elif event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_ESCAPE:
-                    running = False
-                elif event.key == pygame.K_q:
-                    print("Volviendo al menú principal...")
-                    pygame.quit()  # Cierra la ventana actual
-                    subprocess.Popen([sys.executable, "menu.py"])  # Ejecuta menu.py
+                    if event.key == pygame.K_ESCAPE or event.key == pygame.K_q:
+                        print("Volviendo al menú principal...")
+                        pygame.quit()  # Cierra la ventana actual
+                        subprocess.Popen([sys.executable, "menu.py"])  # Ejecuta menu.py
+                        running = False
             elif event.type == pygame.MOUSEBUTTONDOWN:
                 if event.button == 1:  
 
-                    cards_per_row = 2
-                    card_width = 500
-                    card_height = 200
-                    margin = 50
                     start_x = (SCREEN_WIDTH - (cards_per_row * card_width + (cards_per_row - 1) * margin)) // 2
                     start_y = 150
                     
@@ -338,10 +343,17 @@ def main():
         draw_header()
         
 
-        cards_per_row = 2
-        card_width = 500
-        card_height = 200
-        margin = 50
+        # Calcular tamaño de tarjetas dinámicamente según resolución (mismo que en eventos)
+        if SCREEN_WIDTH <= 800:
+            cards_per_row = 1
+            card_width = int(SCREEN_WIDTH * 0.85)
+            card_height = 150
+            margin = 30
+        else:
+            cards_per_row = 2
+            card_width = int((SCREEN_WIDTH - 100) // 2)
+            card_height = 180
+            margin = 40
         start_x = (SCREEN_WIDTH - (cards_per_row * card_width + (cards_per_row - 1) * margin)) // 2
         start_y = 150
         

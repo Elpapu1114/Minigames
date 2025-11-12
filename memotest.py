@@ -6,6 +6,8 @@ import math
 
 pygame.init()
 
+from display_config import init_display
+
 pygame.display.set_caption("Memotest Pro - Pygame")
 
 WHITE = (255, 255, 255)
@@ -25,7 +27,8 @@ LIME = (50, 205, 50)
 GOLD = (255, 215, 0)
 
 FPS = 60
-W, H = 800, 600
+# Inicializar pantalla con resolucion desde game_settings.json
+screen, W, H = init_display(default_w=800, default_h=600, title="Memotest Pro - Pygame")
 
 def create_particles(x, y, color):
     particles = []

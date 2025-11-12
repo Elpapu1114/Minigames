@@ -21,9 +21,12 @@ import os
 
 pygame.init()
 
+from display_config import init_display
+
 # Tamaño de celda y pantalla
 CELL_SIZE = 20
-WIDTH, HEIGHT = 800, 600
+# Inicializar pantalla usando game_settings.json
+screen, WIDTH, HEIGHT = init_display(default_w=800, default_h=600, title="Snake")
 
 # Colores
 BLACK = (0, 0, 0)
@@ -36,7 +39,6 @@ APPLE_GREEN = (34, 139, 34)
 DARK_RED = (139, 0, 0)
 
 # Pantalla y reloj
-screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Snake")
 clock = pygame.time.Clock()
 font = pygame.font.SysFont(None, 35)

@@ -5,10 +5,13 @@ import os
 
 pygame.init()
 
+from display_config import init_display
 ANCHO = 800
 ALTO = 600
 FPS = 60
 META = 650
+# Inicializar pantalla según game_settings.json
+pantalla, ANCHO, ALTO = init_display(default_w=ANCHO, default_h=ALTO, title="Carrera de Teclas")
 
 BLANCO = (255, 255, 255)
 NEGRO = (0, 0, 0)

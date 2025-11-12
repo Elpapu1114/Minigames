@@ -5,10 +5,15 @@ import math
 
 pygame.init()
 
+from display_config import init_display
+
 ANCHO = 1000
 ALTO = 700
 FPS = 60
 GRAVEDAD = 0.5
+
+# Inicializar pantalla con resolucion desde game_settings.json
+pantalla, ANCHO, ALTO = init_display(default_w=ANCHO, default_h=ALTO, title="Corta Frutas - Fruit Ninja Style")
 
 NEGRO = (0, 0, 0)
 BLANCO = (255, 255, 255)
@@ -22,7 +27,6 @@ MARRON = (139, 69, 19)
 GRIS = (128, 128, 128)
 GRIS_OSCURO = (64, 64, 64)
 
-pantalla = pygame.display.set_mode((ANCHO, ALTO))
 pygame.display.set_caption("Corta Frutas - Fruit Ninja Style")
 reloj = pygame.time.Clock()
 fuente_grande = pygame.font.Font(None, 48)
