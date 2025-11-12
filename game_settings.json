@@ -3,7 +3,7 @@
     "fullscreen": false,
     "vsync": true,
     "master_volume": 60,
-    "sfx_volume": 42,
+    "sfx_volume": 63,
     "music_volume": 96,
     "pause_key": "ESCAPE"
 }
