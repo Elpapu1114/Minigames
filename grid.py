@@ -323,7 +323,8 @@ class FutbolGrid:
             if texto_lower in nombre_lower:
                 sugerencias.append(nombre_completo)
             elif "apodo" in jugador and texto_lower in jugador["apodo"].lower():
-                sugerencias.append(nombre_completo)
+                apodo = jugador["apodo"]
+                sugerencias.append(apodo)
             
             if len(sugerencias) >= 5:
                 break
@@ -521,6 +522,9 @@ class FutbolGrid:
             if rect.collidepoint(pos):
                 self.grid[i][j] = self.jugador_seleccionado
                 self.jugadores_usados.add(self.jugador_seleccionado["nombre"])
+                if "Juanjo Shlamovitz" in self.jugador_seleccionado["nombre"]:
+                    self.mostrar_mensaje("Bro realmente tuvo que poner a Juanjo porque no sabe de futbol")
+
                 self.mostrando_menu_celdas = False
                 self.jugador_seleccionado = None
                 self.celdas_validas = []
@@ -540,6 +544,7 @@ class FutbolGrid:
                 self.input_texto = ""
                 self.sugerencias = []
                 return
+            
             
             celdas = self.encontrar_celdas_validas(jugador)
             if celdas:
