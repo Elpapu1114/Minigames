@@ -121,6 +121,14 @@ games = [
         "category": "conocimiento",
         "color": (100, 200, 200),
         "status": "Disponible"
+    },
+    {
+        "title": "F11 Argentina",
+        "description": "Crea tu propia formación con jugadores de la Liga Argentina",
+        "file": "f11ARGENTINA.py",
+        "category": "conocimiento",
+        "color": (100, 200, 200),
+        "status": "Disponible"
     }
 ]
 

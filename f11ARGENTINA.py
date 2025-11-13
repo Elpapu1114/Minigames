@@ -13,7 +13,7 @@ BASE_ANCHO = 1200
 BASE_ALTO = 800
 ANCHO = BASE_ANCHO
 ALTO = BASE_ALTO
-pantalla, ANCHO, ALTO = init_display(default_w=ANCHO, default_h=ALTO, title="Fútbol 11 - Clubes")
+pantalla, ANCHO, ALTO = init_display(default_w=ANCHO, default_h=ALTO, title="Fútbol 11 - AFA")
 
 # Helpers de escala
 SCALE_X = ANCHO / BASE_ANCHO
@@ -47,7 +47,7 @@ with open('basededatos.json', 'r', encoding='utf-8') as f:
 
 with open('config.json', 'r', encoding='utf-8') as f:
     config = json.load(f)
-    equipos = config['equipos']
+    equipos = config['equipos_argentinos']
 
 # Abreviaturas de posiciones
 ABREVIATURAS = {
@@ -337,7 +337,6 @@ def dibujar_posicion(pos, jugador=None):
         nombre = jugador.get('apodo', nombre_completo)
         
         # Limitar longitud del nombre
-
         texto = fuente_mini.render(nombre, True, BLANCO)
         rect = texto.get_rect(center=(x, y - sy(5)))
         pantalla.blit(texto, rect)
@@ -551,6 +550,17 @@ def dibujar_menu_pausa():
     
     return botones, panel_x, panel_w
 
+def dibujar_fondo_argentino():
+    """Fondo con rayas celestes y blancas representando la bandera argentina"""
+    celeste = (116, 172, 223)
+    blanco = (255, 255, 255)
+    num_stripes = 6  # cantidad de franjas (3 celestes, 3 blancas)
+    stripe_width = ANCHO // num_stripes
+
+    for i in range(num_stripes):
+        color = celeste if i % 2 == 0 else blanco
+        pygame.draw.rect(pantalla, color, (i * stripe_width, 0, stripe_width, ALTO))
+
 def main():
     reloj = pygame.time.Clock()
     juego = Juego()
@@ -671,14 +681,14 @@ def main():
                     juego.scroll_y = max(0, min(juego.scroll_y - evento.y, max(0, len(disponibles) - 10)))
         
         # Dibujar
-        pantalla.fill((20, 20, 20))
+        dibujar_fondo_argentino()
         
         # Header (escalado)
-        titulo = fuente_grande.render("Fútbol 11 - Clubes", True, AMARILLO)
+        titulo = fuente_grande.render("Fútbol 11 - ARGENTINA", True, AMARILLO)
         pantalla.blit(titulo, (sx(50), sy(20)))
 
         # Contador
-        contador = fuente_mediana.render(f"Jugadores: {len(juego.jugadores_colocados)}/11", True, BLANCO)
+        contador = fuente_mediana.render(f"Jugadores: {len(juego.jugadores_colocados)}/11", True, NEGRO)
         pantalla.blit(contador, (sx(450), sy(30)))
 
         # Botón reiniciar (escalado)
@@ -695,7 +705,7 @@ def main():
         pantalla.blit(texto_form_actual, (sx(50), ALTO - sy(40)))
 
         # Mensaje
-        texto_mensaje = fuente_pequena.render(juego.mensaje, True, BLANCO)
+        texto_mensaje = fuente_pequena.render(juego.mensaje, True, NEGRO)
         rect_mensaje = texto_mensaje.get_rect(center=(sx(425), sy(80)))
         pantalla.blit(texto_mensaje, rect_mensaje)
         

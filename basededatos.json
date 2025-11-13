@@ -586,7 +586,7 @@
         "Fecha de nacimiento": "15/10/1988",
         "club actual": "RETIRADO",
         "posicion": ["Mediocampista Ofensivo", "Mediocampista Central"],
-        "clubes totales": ["Schalke 04", "Werder Bremen", "Real Madrid", "Arsenal", "Fenerbahçe", "İstanbul Başakşehir"]
+        "clubes totales": ["Schalke 04", "Werder Bremen", "Real Madrid", "Arsenal", "Fenerbahçe", "Istanbul Başakşehir"]
     },
     {
         "id": 64,
@@ -2393,7 +2393,7 @@
     },
     {
         "id": 251,
-        "nombre": "Ilkay Gündoğan",
+        "nombre": "Ilkay Gundogan",
         "nacionalidad": "Alemania",
         "Fecha de nacimiento": "24/10/1990",
         "club actual": "Galatasaray",
@@ -6567,7 +6567,7 @@
         "nacionalidad": "Uruguay",
         "Fecha de nacimiento": "--",
         "club actual": "Boca Juniors",
-        "posicion": ["Delantero Centro"],
+        "posicion": ["Delantero Centro", "Extremo Derecho"],
         "clubes totales": ["Boca Juniors", "Palmeiras", "Peñarol", "Godoy Cruz", "Defensa y Justicia"]
     },
     {
@@ -7299,7 +7299,7 @@
         "nacionalidad": "Ecuador",
         "club actual": "Huracán",
         "posicion": ["Portero"],
-        "clubes totales": ["Rosario Central","Quilmes","Universidad Católica","Universidad de Chile","Huracan"]
+        "clubes totales": ["Rosario Central","Quilmes","Universidad Católica","Universidad de Chile","Huracán"]
     },
     {
         "id": 801,
@@ -7319,7 +7319,7 @@
     },
     {
         "id": 803,
-        "nombre": "Nehuén Mario Paz",
+        "nombre": "Nehuén Paz",
         "nacionalidad": "Argentina",
         "club actual": "Huracán",
         "posicion": ["Defensa Central"],
@@ -7359,7 +7359,7 @@
     },
     {
         "id": 808,
-        "nombre": "Matko Mijael Miljevic",
+        "nombre": "Matko Miljevic",
         "nacionalidad": "Estados Unidos",
         "club actual": "Huracán",
         "posicion": ["Mediocampista Ofensivo"],
@@ -7597,7 +7597,7 @@
         "nacionalidad": "Argentina",
         "club actual": "Argentinos Juniors",
         "posicion": ["Defensa Central","Lateral Derecho","Mediocampista Defensivo",""],
-        "clubes totales": ["San Martín (SJ)", "Talleres (Córdoba)", "Patronato", "Barracas Central", "Argentinos Juniors"]
+        "clubes totales": ["San Martín (SJ)", "Talleres de Córdoba", "Patronato", "Barracas Central", "Argentinos Juniors"]
     },
     {
         "id": 838,
@@ -7613,15 +7613,15 @@
         "nacionalidad": "Argentina",
         "club actual": "Argentinos Juniors",
         "posicion": ["Lateral Izquierdo"],
-        "clubes totales": ["Talleres (RdE)", "UAI Urquiza", "Temperley", "Tigre", "Argentinos Juniors"]
+        "clubes totales": ["Talleres de Remedios de Escalada", "UAI Urquiza", "Temperley", "Tigre", "Argentinos Juniors"]
     },
     {
         "id": 840,
         "nombre": "Federico Fattori",
         "nacionalidad": "Argentina",
         "club actual": "Argentinos Juniors",
-        "posicion": ["Mediocampista central","Mediocampista Defensivo"],
-        "clubes totales": ["Nueva Chicago", "Newell’s ", "Nueva Chicago", "Nueva Chicago", "Temperley", "Ferro Carril Oeste", "Huracán", "Argentinos Juniors"]
+        "posicion": ["Mediocampista Central", "Mediocampista Defensivo"],
+        "clubes totales": ["Nueva Chicago", "Newell's ", "Nueva Chicago", "Nueva Chicago", "Temperley", "Ferro Carril Oeste", "Huracán", "Argentinos Juniors"]
     },
     {
         "id": 841,
@@ -7702,7 +7702,273 @@
         "club actual": "Argentinos Juniors",
         "posicion": ["Mediocampista Ofensivo","Mediocampista Central"],
         "clubes totales": ["River Plate", "Colón", "Newell's", "San Lorenzo", "Argentinos Juniors"]
+    },
+    {
+        "id": 851,
+        "nombre": "Gael Clichy",
+        "nacionalidad": "Francia",
+        "club actual": "RETIRADO",
+        "posicion": ["Defensa Central", "Lateral Izquierdo"],
+        "clubes totales": ["Cannes", "Arsenal", "Manchester City", "Istanbul Başakşehir", "Servette FC"]
+    },
+    {
+        "id": 852,
+        "nombre": "Joe Hart",
+        "nacionalidad": "Inglaterra",
+        "club actual": "RETIRADO",
+        "posicion": ["Portero"],
+        "clubes totales": ["Shrewsbury Town", "Manchester City", "Tranmere Rovers", "Blackpool", "Birmingham City", "Torino", "West Ham United", "Burnley", "Tottenham Hotspur", "Celtic"]
+    },
+    {
+        "id": 853,
+        "nombre": "Nahuel Losada",
+        "nacionalidad": "Argentina",
+        "club actual": "Lanús",
+        "posicion": ["Portero"],
+        "clubes totales": ["Estudiantes de La Plata", "Unión de Mar del Plata", "Atlanta", "All Boys", "Deportivo Pasto", "Belgrano", "Lanús"]
+    },
+    {
+        "id": 854,
+        "nombre": "Gonzalo Pérez",
+        "nacionalidad": "Uruguay",
+        "club actual": "Lanús",
+        "posicion": ["Defensa Central", "Lateral Derecho"],
+        "clubes totales": ["Liverpool Montevideo", "Lanús"]
+    },
+    {
+        "id": 855,
+        "nombre": "Carlos Izquierdoz",
+        "nacionalidad": "Argentina",
+        "club actual": "Lanús",
+        "posicion": ["Defensa Central"],
+        "clubes totales": ["Lanús", "Atlanta", "Santos Laguna", "Boca Juniors", "Sporting Gijón", "Lanús"]
+    },
+    {
+        "id": 856,
+        "nombre": "José Canale",
+        "nacionalidad": "Paraguay",
+        "club actual": "Lanús",
+        "posicion": ["Defensa Central"],
+        "clubes totales": ["Libertad", "Nacional", "Sol de América", "Newell's", "Godoy Cruz", "Lanús"]
+    },
+    {
+        "id": 857,
+        "nombre": "Sasha Marcich",
+        "nacionalidad": "Argentina",
+        "club actual": "Lanús",
+        "posicion": ["Lateral Izquierdo"],
+        "clubes totales": ["Platense", "Talleres de Remedios de Escalada", "San Telmo", "Estudiantes de Río Cuarto", "Lanús"]
+    },
+    {
+        "id": 858,
+        "nombre": "Franco Watson",
+        "nacionalidad": "Argentina",
+        "club actual": "Lanús",
+        "posicion": ["Mediocampista Defensivo", "Mediocampista Central"],
+        "clubes totales": ["Instituto", "Lanús", "Huracán"]
+    },
+    {
+        "id": 859,
+        "nombre": "Agustín Cardozo",
+        "nacionalidad": "Argentina",
+        "club actual": "Lanús",
+        "posicion": ["Mediocampista Central", "Mediocampista Defensivo"],
+        "clubes totales": ["Tigre", "Santamarina", "Istra 1961", "Gimnasia y Esgrima La Plata", "Lanús"]
+    },
+    {
+        "id": 859,
+        "nombre": "Agustín Medina",
+        "nacionalidad": "Argentina",
+        "club actual": "Lanús",
+        "posicion": ["Mediocampista Central", "Mediocampista Defensivo"],
+        "clubes totales": ["Lanús"]
+    },
+    {
+        "id": 860,
+        "nombre": "Juan Ramírez",
+        "nacionalidad": "Argentina",
+        "club actual": "Lanús",
+        "posicion": ["Mediocampista Central", "Mediocampista Izquierdo"],
+        "clubes totales": ["Argentinos Juniors", "Colorado Rapids", "Almería", "Talleres", "San Lorenzo", "Boca Juniors", "Lanús"]
+    },
+    {
+        "id": 861,
+        "nombre": "Ramiro Carrera",
+        "nacionalidad": "Argentina",
+        "club actual": "Lanús",
+        "posicion": ["Extremo Izquierdo", "Mediocampista Izquierdo"],
+        "clubes totales": ["Arsenal de Sarandí", "Gimnasia y Esgrima La Plata", "Unión Española", "Atlético Tucumán", "Cruz Azul", "Lanús"]
+    },
+    {
+        "id": 862,
+        "nombre": "Marcelino Moreno",
+        "nacionalidad": "Argentina",
+        "club actual": "Lanús",
+        "posicion": ["Mediocampista Ofensivo"],
+        "clubes totales": ["Lanús", "Talleres", "Atlanta United", "Coritiba", "Lanús"]
+    },
+    {
+        "id": 863,
+        "nombre": "Dylan Aquino",
+        "nacionalidad": "Argentina",
+        "club actual": "Lanús",
+        "posicion": ["Mediocampista Derecho", "Extremo Derecho"],
+        "clubes totales": ["Lanús"]
+    },
+    {
+        "id": 864,
+        "nombre": "Eduardo Salvio",
+        "nacionalidad": "Argentina",
+        "club actual": "Lanús",
+        "posicion": ["Extremo Derecho", "Mediocampista Derecho"],
+        "clubes totales": ["Lanús", "Atlético de Madrid", "Benfica", "Boca Juniors", "Pumas"]
+    },
+    {
+        "id": 865,
+        "nombre": "Walter Bou",
+        "nacionalidad": "Argentina",
+        "club actual": "Lanús",
+        "posicion": ["Delantero Centro"],
+        "clubes totales": ["Gimnasia y Esgrima La Plata", "Boca Juniors", "Vitória", "Unión de Santa Fe", "Unión La Calera", "Defensa y Justicia", "Vélez Sarsfield", "Lanús"]
+    },
+    {
+        "id": 866,
+        "nombre": "Rodrigo Castillo",
+        "nacionalidad": "Argentina",
+        "club actual": "Lanús",
+        "posicion": ["Delantero Centro"],
+        "clubes totales": ["Deportivo Madryn", "Gimnasia y Esgrima La Plata", "Lanús"]
+    },
+    {
+        "id": 867,
+        "nombre": "Lautaro Acosta",
+        "nacionalidad": "Argentina",
+        "club actual": "Lanús",
+        "posicion": ["Extremo Izquierdo", "Extremo Derecho"],
+        "clubes totales": ["Lanús", "Sevilla", "Racing Santander", "Boca Juniors"]
+    },
+    {
+        "id": 868,
+        "nombre": "Juan Espínola",
+        "nacionalidad": "Paraguay",
+        "club actual": "Newell's",
+        "posicion": ["Portero"],
+        "clubes totales": ["Cerro Porteño PF", "Sarmiento", "Nacional", "Godoy Cruz", "Olimpia", "Belgrano", "Newell's"]
+    },
+    {
+        "id": 868,
+        "nombre": "Alejo Montero",
+        "nacionalidad": "Argentina",
+        "club actual": "Newell's",
+        "posicion": ["Lateral Derecho", "Mediocampista Derecho"],
+        "clubes totales": ["Vélez Sarsfield", "Agropecuario", "Newell's"]
+    },
+    {
+        "id": 869,
+        "nombre": "Víctor Cuesta",
+        "nacionalidad": "Argentina",
+        "club actual": "Newell's",
+        "posicion": ["Defensa Central"],
+        "clubes totales": ["Arsenal de Sarandí", "Defensa y Justicia", "Huracán", "Independiente", "Internacional", "Botafogo", "Bahía", "Newell's"]
+    },
+    {
+        "id": 871,
+        "nombre": "Luciano Lollo",
+        "nacionalidad": "Argentina",
+        "club actual": "Newell's",
+        "posicion": ["Defensa Central"],
+        "clubes totales": ["Belgrano", "Racing Club", "River Plate", "Banfield", "Estudiantes", "Newell's"]
+    },
+    {
+        "id": 870,
+        "nombre": "Saúl Salcedo",
+        "nacionalidad": "Paraguay",
+        "club actual": "Newell's",
+        "posicion": ["Defensa Central"],
+        "clubes totales": ["Olimpia", "Huracán", "Newell's"]
+    },
+    {
+        "id": 872,
+        "nombre": "Jherson Mosquera",
+        "nacionalidad": "Colombia",
+        "club actual": "Newell's",
+        "posicion": ["Lateral Derecho"],
+        "clubes totales": ["Deportivo Pereira", "Newell's", "Independiente Medellín"]
+    },
+    {
+        "id": 873,
+        "nombre": "Luca Sosa",
+        "nacionalidad": "Argentina",
+        "club actual": "Newell's",
+        "posicion": ["Lateral Izquierdo"],
+        "clubes totales": ["Huracán", "Talleres", "Patronato", "Deportivo Cuenca", "Guayaquil City", "Emelec", "Barcelona SC", "Newell's"]
+    },
+    {
+        "id": 874,
+        "nombre": "Éver Banega",
+        "nacionalidad": "Argentina",
+        "club actual": "Newell's",
+        "posicion": ["Mediocampista Central", "Mediocampista Defensivo"],
+        "clubes totales": ["Boca Juniors", "Valencia", "Atlético de Madrid", "Sevilla", "Inter de Milán", "Al Shabab", "Newell's"]
+    },
+    {
+        "id": 875,
+        "nombre": "Gonzalo Maroni",
+        "nacionalidad": "Argentina",
+        "club actual": "Newell's",
+        "posicion": ["Mediocampista Ofensivo"],
+        "clubes totales": ["Instituto", "Boca Juniors", "Talleres", "Sampdoria", "Atlas", "San Lorenzo", "Tigre", "Newell's"]
+    },
+    {
+        "id": 876,
+        "nombre": "Valentino Acuña",
+        "nacionalidad": "Argentina",
+        "club actual": "Newell's",
+        "posicion": ["Mediocampista Central"],
+        "clubes totales": ["Newell's"]
+    },
+    {
+        "id": 877,
+        "nombre": "Luca Regiardo",
+        "nacionalidad": "Argentina",
+        "club actual": "Newell's",
+        "posicion": ["Extremo Izquierdo", "Mediocampista Izquierdo"],
+        "clubes totales": ["Lanús"]
+    },
+    {
+        "id": 868,
+        "nombre": "Facundo Guch",
+        "nacionalidad": "Argentina",
+        "club actual": "Newell's",
+        "posicion": ["Extremo Derecho", "Mediocampista Derecho"],
+        "clubes totales": ["Newell's"]
+    },
+    {
+        "id": 878,
+        "nombre": "Luciano Herrera",
+        "nacionalidad": "Argentina",
+        "club actual": "Newell's",
+        "posicion": ["Delantero Centro", "Extremo Izquierdo"],
+        "clubes totales": ["Gimnasia y Tiro", "Central Norte", "Deportivo Maipú", "Defensa y Justicia", "Newell's"]
+    },
+    {
+         "id": 877,
+        "nombre": "Carlos Gabriel González",
+        "apodo": "Charli González",
+        "nacionalidad": "Paraguay",
+        "club actual": "Newell's",
+        "posicion": ["Delantero Centro"],
+        "clubes totales": ["Magallanes", "Santiago Wanderers", "San Marcos", "Huachipato", "Necaxa", "Pumas", "Tigres UANL", "Toluca", "Tijuana", "Newell's"]
+    },
+    {
+        "id": 879,
+        "nombre": "Fabián Noguera",
+        "nacionalidad": "Argentina",
+        "club actual": "Newell's",
+        "posicion": ["Delantero Centro"],
+        "clubes totales": ["Banfield", "Santos", "Estudiantes", "Gimnàstic de Tarragona", "Ponferradina", "Nacional", "Abha", "Newell's"]
     }
+
 ]
 }
 
