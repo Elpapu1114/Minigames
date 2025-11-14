@@ -273,22 +273,17 @@ class Juego:
         
         disponibles = []
         busqueda_lower = self.busqueda.lower()
-        
+
         for j in jugadores:
-            if not any(jc['jugador']['id'] == j['id'] for jc in self.jugadores_colocados):
-                # Buscar por nombre completo (que puede incluir apellido)
-                nombre_completo = j.get('nombre', '').lower()
-                apodo = j.get('apodo', '').lower()
-                
-                # Dividir el nombre en palabras para buscar por cualquier parte
-                palabras_nombre = nombre_completo.split()
-                palabras_apodo = apodo.split()
-                
-                # Coincide si alguna palabra empieza con la búsqueda
-                if any(palabra.startswith(busqueda_lower) for palabra in palabras_nombre):
-                    disponibles.append(j)
-                elif any(palabra.startswith(busqueda_lower) for palabra in palabras_apodo):
-                    disponibles.append(j)
+            nombre_completo = j['nombre'].lower()
+            apodo = j.get('apodo', "").lower()
+
+            # Aparece en sugerencias si coincide con nombre, apellido o apodo
+            if busqueda_lower in nombre_completo or busqueda_lower in apodo:
+                disponibles.append(j)
+
+        # Opcional: ordenar por nombre
+        disponibles.sort(key=lambda x: x['nombre'])
         
         # Ordenar alfabéticamente por nombre completo
         disponibles.sort(key=lambda x: x.get('nombre', '').lower())
@@ -401,7 +396,8 @@ def dibujar_panel_jugadores(juego):
                 pygame.draw.rect(pantalla, BLANCO, (panel_x + sx(20), y, sx(320), sy(45)), max(1, sx(1)))
                 
                 # Mostrar nombre completo
-                nombre = jugador.get('nombre', 'Jugador')
+                nombre_completo = jugador.get('nombre', 'Jugador')
+                nombre = jugador.get('apodo', nombre_completo)
                 if len(nombre) > 30:
                     nombre = nombre[:28] + "..."
                 texto_nombre = fuente_pequena.render(nombre, True, BLANCO)

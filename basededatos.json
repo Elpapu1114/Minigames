@@ -7288,14 +7288,14 @@
     },
     {
         "id": 799,
-        "nombre": "Enzo Copetti",
+        "nombre": "Máximo Perrone",
         "nacionalidad": "Argentina",
-        "club actual": "Rosario Central",
-        "posicion": ["Delantero Centro"],
-        "clubes totales": ["Racing Club", "Atlético Rafaela", "Charlotte FC", "Rosario Central"]
+        "club actual": "Como 1907",
+        "posicion": ["Mediocampista Central", "Mediocampista Ofensivo"],
+        "clubes totales": ["Vélez Sarsfield", "Manchester City", "Las Palmas", "Como 1907"]
     },{
         "id": 800,
-        "nombre": "Hernan Galindez",
+        "nombre": "Hernán Galíndez",
         "nacionalidad": "Ecuador",
         "club actual": "Huracán",
         "posicion": ["Portero"],
@@ -7597,7 +7597,7 @@
         "nacionalidad": "Argentina",
         "club actual": "Argentinos Juniors",
         "posicion": ["Defensa Central","Lateral Derecho","Mediocampista Defensivo",""],
-        "clubes totales": ["San Martín (SJ)", "Talleres de Córdoba", "Patronato", "Barracas Central", "Argentinos Juniors"]
+        "clubes totales": ["San Martín de San Juan", "Talleres de Córdoba", "Patronato", "Barracas Central", "Argentinos Juniors"]
     },
     {
         "id": 838,
@@ -7621,7 +7621,7 @@
         "nacionalidad": "Argentina",
         "club actual": "Argentinos Juniors",
         "posicion": ["Mediocampista Central", "Mediocampista Defensivo"],
-        "clubes totales": ["Nueva Chicago", "Newell's ", "Nueva Chicago", "Nueva Chicago", "Temperley", "Ferro Carril Oeste", "Huracán", "Argentinos Juniors"]
+        "clubes totales": ["Nueva Chicago", "Newell's ", "Nueva Chicago", "Nueva Chicago", "Temperley", "Ferro", "Huracán", "Argentinos Juniors"]
     },
     {
         "id": 841,
@@ -7637,7 +7637,7 @@
         "nacionalidad": "Argentina",
         "club actual": "Argentinos Juniors",
         "posicion": ["Mediocampista Ofensivo", "Extremo Derecho","Extremo Izquierdo"],
-        "clubes totales": ["Rosario Central", "Ferro Carril Oeste", "Argentinos Juniors"]
+        "clubes totales": ["Rosario Central", "Ferro", "Argentinos Juniors"]
     },
     {
         "id": 843,
@@ -7646,7 +7646,7 @@
         "nacionalidad": "Argentina",
         "club actual": "Argentinos Juniors",
         "posicion": ["Mediocampista Ofensivo", "Extremo Derecho","Extremo Izquierdo"],
-        "clubes totales": ["River Plate", "Central Córdoba (SdE)", "Godoy Cruz", "San José Earthquakes", "Argentinos Juniors"]
+        "clubes totales": ["River Plate", "Central Córdoba", "Godoy Cruz", "San José Earthquakes", "Argentinos Juniors"]
     },
     {
         "id": 844,
@@ -7654,7 +7654,7 @@
         "nacionalidad": "Argentina",
         "club actual": "Argentinos Juniors",
         "posicion": ["Delantero Centro","Extremo Derecho","Extremo Izquierdo"],
-        "clubes totales": ["Huracán", "Almirante Brown", "Brown de Adrogué", "Ferro Carril Oeste", "LDU Quito", "Juárez", "Talleres", "Central Córdoba (SdE)", "Argentinos Juniors"]
+        "clubes totales": ["Huracán", "Almirante Brown", "Brown de Adrogué", "Ferro", "LDU Quito", "Juárez", "Talleres", "Central Córdoba", "Argentinos Juniors"]
     },
     {
         "id": 845,
@@ -7844,7 +7844,7 @@
         "nombre": "Lautaro Acosta",
         "nacionalidad": "Argentina",
         "club actual": "Lanús",
-        "posicion": ["Extremo Izquierdo", "Extremo Derecho"],
+        "posicion": ["Extremo Izquierdo", "Extremo Derecho", "Mediocampista Izquierdo"],
         "clubes totales": ["Lanús", "Sevilla", "Racing Santander", "Boca Juniors"]
     },
     {
@@ -7936,7 +7936,7 @@
         "clubes totales": ["Lanús"]
     },
     {
-        "id": 868,
+        "id": 878,
         "nombre": "Facundo Guch",
         "nacionalidad": "Argentina",
         "club actual": "Newell's",
@@ -7944,7 +7944,7 @@
         "clubes totales": ["Newell's"]
     },
     {
-        "id": 878,
+        "id": 879,
         "nombre": "Luciano Herrera",
         "nacionalidad": "Argentina",
         "club actual": "Newell's",
@@ -7952,7 +7952,7 @@
         "clubes totales": ["Gimnasia y Tiro", "Central Norte", "Deportivo Maipú", "Defensa y Justicia", "Newell's"]
     },
     {
-         "id": 877,
+         "id": 880,
         "nombre": "Carlos Gabriel González",
         "apodo": "Charli González",
         "nacionalidad": "Paraguay",
@@ -7961,14 +7961,230 @@
         "clubes totales": ["Magallanes", "Santiago Wanderers", "San Marcos", "Huachipato", "Necaxa", "Pumas", "Tigres UANL", "Toluca", "Tijuana", "Newell's"]
     },
     {
-        "id": 879,
+        "id": 881,
         "nombre": "Fabián Noguera",
         "nacionalidad": "Argentina",
         "club actual": "Newell's",
-        "posicion": ["Delantero Centro"],
+        "posicion": ["Delantero Centro", "Mediocampista Izquierdo", "Extremo Izquierdo"],
         "clubes totales": ["Banfield", "Santos", "Estudiantes", "Gimnàstic de Tarragona", "Ponferradina", "Nacional", "Abha", "Newell's"]
+    },
+    {
+        "id": 895,
+        "nombre": "Gerónimo Benavides",
+        "apodo": "Momo",
+        "nacionalidad": "Argentina",
+        "club actual": "Platense",
+        "posicion": ["Delantero Centro"],
+        "clubes totales": ["Platense"]
+    },
+    {
+         "id": 882,
+        "nombre": "Andrés Desábato",
+        "nacionalidad": "Argentina",
+        "club actual": "Platense",
+        "posicion": ["Portero"],
+        "clubes totales": ["Vélez Sarsfield", "Guaraní Antonio Franco", "All Boys", "Barracas Central", "Bolívar", "Platense"]
+    },
+    {
+        "id": 883,
+        "nombre": "Tomás Silva",
+        "nacionalidad": "Argentina",
+        "club actual": "Platense",
+        "posicion": ["Lateral Izquierdo"],
+        "clubes totales": ["San Lorenzo", "Atlanta", "Platense"]
+    },
+    {
+        "id": 884,
+        "nombre": "Óscar Salomón",
+        "nacionalidad": "Argentina",
+        "club actual": "Platense",
+        "posicion": ["Defensa Central"],
+        "clubes totales": ["Boca Juniors", "Central Córdoba", "Tigre", "Montevideo City Torque", "Platense"]
+    },
+    {
+        "id": 885,
+        "nombre": "Ignacio Vázquez",
+        "nacionalidad": "Argentina",
+        "club actual": "Platense",
+        "posicion": ["Defensa Central"],
+        "clubes totales": ["All Boys", "Belgrano", "San Luis", "Cerro Largo", "Platense"]
+    },
+    {
+        "id": 886,
+        "nombre": "Juan Saborido",
+        "nacionalidad": "Argentina",
+        "club actual": "Platense",
+        "posicion": ["Lateral Derecho"],
+        "clubes totales": ["Villa San Carlos", "General Caballero (PAR)", "Platense"]
+    },
+    {
+        "id": 887,
+        "nombre": "Bautista Barros Schelotto",
+        "apodo": "Barros Schelotto",
+        "nacionalidad": "Argentina",
+        "club actual": "Platense",
+        "posicion": ["Lateral Derecho"],
+        "clubes totales": ["Gimnasia y Esgrima La Plata", "Fénix", "Platense"]
+    },
+    {
+        "id": 888,
+        "nombre": "Leonel Picco",
+        "nacionalidad": "Argentina",
+        "club actual": "Platense",
+        "posicion": ["Mediocampista Central"],
+        "clubes totales": ["Arsenal de Sarandí", "Colón", "Platense"]
+    },
+    {
+        "id": 889,
+        "nombre": "Rodrigo Herrera",
+        "nacionalidad": "Argentina",
+        "club actual": "Platense",
+        "posicion": ["Mediocampista Defensivo"],
+        "clubes totales": ["Defensa y Justicia", "San Martín de Tucumán", "Barracas Central", "Platense"]
+    },
+    {
+        "id": 890,
+        "nombre": "Rodrigo Márquez",
+        "nacionalidad": "Argentina",
+        "club actual": "Platense",
+        "posicion": ["Extremo Izquierdo", "Mediocampista Izquierdo"],
+        "clubes totales": ["Independiente", "Platense"]
+    },
+    {
+        "id": 891,
+        "nombre": "Guido Mainero",
+        "nacionalidad": "Argentina",
+        "club actual": "Platense",
+        "posicion": ["Extremo Derecho", "Mediocampista Derecho"],
+        "clubes totales": ["Instituto", "Vélez Sarsfield", "Defensa y Justicia", "Deportes Iquique", "Sarmiento", "Platense"]
+    },
+    {
+        "id": 892,
+        "nombre": "Ronaldo Martínez",
+        "nacionalidad": "Paraguay",
+        "club actual": "Platense",
+        "posicion": ["Delantero Centro", "Mediocampista Ofensivo"],
+        "clubes totales": ["Cerro Porteño", "Deportivo Capiatá", "Central Norte", "The Strongest", "Resistencia", "Platense"]
+    },
+    {
+        "id": 893,
+        "nombre": "Augusto Lotti",
+        "nacionalidad": "Argentina",
+        "club actual": "Platense",
+        "posicion": ["Delantero Centro"],
+        "clubes totales": ["Racing Club", "Wohlen", "Unión de Santa Fe", "Atlético Tucumán", "Cruz Azul", "Lanús", "Platense"]
+    },
+    {
+         "id": 894,
+        "nombre": "Franco Zapiola",
+        "nacionalidad": "Argentina",
+        "club actual": "Platense",
+        "posicion": ["Mediocampista Ofensivo"],
+        "clubes totales": ["Estudiantes de La Plata", "Platense"]
+    },
+    {
+        "id": 895,
+        "nombre": "Nicolás Orsini",
+        "nacionalidad": "Argentina",
+        "club actual": "Platense",
+        "posicion": ["Delantero Centro"],
+        "clubes totales": ["Tiro Federal", "Atlético Rafaela", "Tokushima Vortis", "FC Anyang", "SV Horn", "Fagiano Okayama", "Sportivo Luqueño", "Sarmiento", "Lanús", "Boca Juniors", "Unión Santa Fe", "Platense"]
+    },
+    {
+        "id": 896,
+        "nombre": "Fernando Gago",
+        "nacionalidad": "Argentina",
+        "club actual": "RETIRADO",
+        "posicion": ["Mediocampista Central", "Mediocampista Defensivo"],
+        "clubes totales": ["Boca Juniors", "Real Madrid", "AS Roma", "Valencia", "Vélez Sarsfield"]
+    },
+    {
+        "id": 897,
+        "nombre": "Luís Figo",
+        "nacionalidad": "Portugal",
+        "club actual": "RETIRADO",
+        "posicion": ["Mediocampista Ofensivo", "Extremo Derecho"],
+        "clubes totales": ["Sporting de Lisboa", "Barcelona", "Real Madrid", "Inter de Milán"]
+    },
+    {
+        "id": 898,
+        "nombre": "Ignacio Arce",
+        "nacionalidad": "Argentina",
+        "club actual": "Deportivo Riestra",
+        "posicion": ["Portero"],
+        "clubes totales": ["Unión de Santa Fe", "Deportivo Merlo", "Atlético Paraná", "Crucero del Norte", "San Martín de Tucumán", "Instituto", "Unión La Calera", "Platense", "Deportivo Riestra"]
+    },
+    {
+        "id": 899,
+        "nombre": "Cristian Paz",
+        "nacionalidad": "Argentina",
+        "club actual": "Deportivo Riestra",
+        "posicion": ["Defensa Central"],
+        "clubes totales": ["Temperley", "Karpaty Lviv", "San Miguel", "San Martín de San Juan", "Deportivo Morón", "Voluntari", "Deportivo Riestra"]
+    },
+    {
+        "id": 900,
+        "nombre": "Miguel Barbieri",
+        "nacionalidad": "Argentina",
+        "club actual": "Deportivo Riestra",
+        "posicion": ["Defensa Central"],
+        "clubes totales": ["Defensores de Belgrano", "Racing Club", "Rosario Central", "Tijuana", "Toluca", "Querétaro", "Deportivo Riestra"]
+    },
+    {
+        "id": 901,
+        "nombre": "Pablo Monje",
+        "nacionalidad": "Argentina",
+        "club actual": "Deportivo Riestra",
+        "posicion": ["Mediocampista Central", "Mediocampista Defensivo"],
+        "clubes totales": ["Deportivo Laferrere", "Deportivo Armenio", "Deportivo Riestra"] 
+    },
+    {
+        "id": 902,
+        "nombre": "Nicolás Sansotre",
+        "nacionalidad": "Argentina",
+        "club actual": "Deportivo Riestra",
+        "posicion": ["Mediocampista Derecho", "Lateral Derecho", "Extremo Derecho"],
+        "clubes totales": ["Almagro", "Villa Dálmine", "Tigre", "San Martín de Tucumán", "Deportivo Riestra"]
+    },
+    {
+        "id": 903,
+        "nombre": "Jonatan Goitía",
+        "nacionalidad": "Argentina",
+        "club actual": "Deportivo Riestra",
+        "posicion": ["Lateral Izquierdo", "Mediocampista Izquierdo"],
+        "clubes totales": ["Deportivo Riestra", "Atlas", "Sportivo Barracas", "San Martín de San Juan"]
+    },
+    {
+        "id": 904,
+        "nombre": "Milton Céliz",
+        "nacionalidad": "Argentina",
+        "club actual": "Deportivo Riestra",
+        "posicion": ["Mediocampista Central", "Mediocampista Ofensivo", "Extremo Izquierdo"],
+        "clubes totales": ["Arsenal de Sarandí", "Gimnasia y Esgrima de Jujuy", "Juan Aurich", "Independiente Rivadavia", "All Boys", "San Luis", "Tigre", "San Martín de Tucumán", "Almirante Brown", "Deportivo Riestra"]
+    },
+    {
+        "id": 905,
+        "nombre": "Antony Alonso",
+        "nacionalidad": "Uruguay",
+        "club actual": "Deportivo Riestra",
+        "posicion": ["Mediocampista Central", "Extremo Izquierdo"],
+        "clubes totales": ["Atlas", "JJ Urquiza", "Temperley", "Guaireña", "Deportivo Riestra"]
+    },
+    {
+        "id": 906,
+        "nombre": "Jonathan Herrera",
+        "nacionalidad": "Argentina",
+        "club actual": "Deportivo Riestra",
+        "posicion": ["Delantero Centro"],
+        "clubes totales": ["Centro Español", "Deportivo Riestra", "Atlético Venezuela", "Ferro", "Audax Italiano", "Central Córdoba", "San Lorenzo", "Johor Darul", "Independiente", "Patronato"]
+    },
+    {
+        "id": 907,
+        "nombre": "Alexander Díaz",
+        "nacionalidad": "Argentina",
+        "club actual": "Deportivo Riestra",
+        "posicion": ["Delantero Centro"],
+        "clubes totales": ["San Lorenzo", "Arsenal de Sarandí", "Ferro", "CR Brasil", "Deportivo Riestra"] 
     }
-
 ]
 }
-
