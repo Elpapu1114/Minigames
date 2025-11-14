@@ -395,6 +395,7 @@ def handle_video_settings():
         # Detectar clic en la resolución
         if rect.collidepoint(mouse_pos) and mouse_clicked and can_click():
             game_settings["resolution"] = res_str
+            save_settings()
             show_message(f"Resolución seleccionada: {res_str}", SUCCESS_COL)
     
     # Botón aplicar resolución
@@ -431,6 +432,7 @@ def handle_video_settings():
     
     if rect.collidepoint(mouse_pos) and mouse_clicked and can_click():
         game_settings["fullscreen"] = not game_settings["fullscreen"]
+        save_settings()
         status = "activada" if game_settings["fullscreen"] else "desactivada"
         show_message(f"Pantalla completa {status}", SUCCESS_COL)
     
@@ -451,6 +453,7 @@ def handle_video_settings():
     
     if rect.collidepoint(mouse_pos) and mouse_clicked and can_click():
         game_settings["vsync"] = not game_settings["vsync"]
+        save_settings()
         status = "activado" if game_settings["vsync"] else "desactivado"
         show_message(f"V-Sync {status}", SUCCESS_COL)
     
@@ -614,9 +617,21 @@ def load_settings():
 
 def main():
     """Función principal del juego"""
-    global menu_state, screen, fondo_menu, fondo_menu_option
+    global menu_state, screen, fondo_menu, fondo_menu_option, SCREEN_WIDTH, SCREEN_HEIGHT
     
     load_settings()
+    
+    # Aplicar la resolución guardada
+    res_str = game_settings.get("resolution", "800x600")
+    try:
+        width, height = map(int, res_str.split('x'))
+        SCREEN_WIDTH = width
+        SCREEN_HEIGHT = height
+        screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+    except:
+        SCREEN_WIDTH = 800
+        SCREEN_HEIGHT = 600
+        screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     
     # Asegurarse de que fullscreen esté en False al inicio
     if game_settings.get("fullscreen", False):

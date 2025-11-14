@@ -363,7 +363,7 @@ class FutbolGrid:
         self.tiempo_mensaje = pygame.time.get_ticks() + duracion
     
     def dibujar_tiempo(self):
-        """Dibuja el temporizador en la parte superior"""
+        """Dibuja el temporizador en la esquina superior derecha"""
         if self.tiempo_limite:
             if self.tiempo_restante <= 10:
                 color = ROJO
@@ -377,7 +377,8 @@ class FutbolGrid:
             texto_tiempo = f"{minutos:02d}:{segundos:02d}"
             
             texto = self.fuente_tiempo.render(texto_tiempo, True, color)
-            rect_texto = texto.get_rect(center=(ANCHO // 2, sy(60)))
+            # Posicionar en la esquina superior derecha
+            rect_texto = texto.get_rect(right=ANCHO - sx(20), top=sy(20))
             
             # Fondo para el tiempo (ligeramente escalado)
             pygame.draw.rect(self.pantalla, BLANCO, (rect_texto.x - sx(10), rect_texto.y - sy(5), rect_texto.width + sx(20), rect_texto.height + sy(10)))

@@ -8185,6 +8185,23 @@
         "club actual": "Deportivo Riestra",
         "posicion": ["Delantero Centro"],
         "clubes totales": ["San Lorenzo", "Arsenal de Sarandí", "Ferro", "CR Brasil", "Deportivo Riestra"] 
+    },
+    {
+        "id": 908,
+        "nombre": "Ignacio Schor",
+        "nacionalidad": "Argentina",
+        "club actual": "Platense",
+        "posicion": ["Extremo Derecho", "Mediocampista Izquierdo", "Mediocampista Ofensivo"],
+        "clubes totales": ["Platense", "Deportivo Riestra", "Atlético Venezuela", "Ferro", "Audax Italiano", "Central Córdoba", "San Lorenzo", "Johor Darul", "Independiente", "Patronato"]
+    },
+    {
+        "id": 909,
+        "nombre": "Iván Buhajeruk",
+        "apodo": "Spreen",
+        "nacionalidad": "Argentina",
+        "club actual": "Deportivo Riestra",
+        "posicion": ["Delantero Centro"],
+        "clubes totales": ["Deportivo Riestra"]
     }
 ]
 }
