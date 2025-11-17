@@ -5892,7 +5892,11 @@
         "Fecha de nacimiento": "--",
         "club actual": "River Plate",
         "posicion": ["Defensa Central", "Lateral Derecho", "Mediocampista Derecho"],
+<<<<<<< Updated upstream
         "clubes totales": ["River Plate", "Sevilla", "Nottingham Forest"]
+=======
+        "clubes totales": ["River Plate", "Sevilla"]
+>>>>>>> Stashed changes
     },
     {
         "id": 636,
@@ -6073,7 +6077,11 @@
         "Fecha de nacimiento": "--",
         "club actual": "River Plate",
         "posicion": ["Mediocampista Central", "Mediocampista Ofensivo"],
+<<<<<<< Updated upstream
         "clubes totales": ["Gimnasia y Esgrima La Plata", "Temperley", "Atlético Mineiro", "River Plate"]
+=======
+        "clubes totales": ["River Plate"]
+>>>>>>> Stashed changes
     },
     {
         "id": 656,
@@ -6163,7 +6171,11 @@
         "Fecha de nacimiento": "--",
         "club actual": "River Plate",
         "posicion": ["Delantero Centro", "Extremo Derecho"],
+<<<<<<< Updated upstream
         "clubes totales": ["Sint-Truidense", "Tigre", "River Plate"]
+=======
+        "clubes totales": ["River Plate"]
+>>>>>>> Stashed changes
     },
     {
         "id": 666,
@@ -6271,7 +6283,11 @@
         "Fecha de nacimiento": "--",
         "club actual": "Boca Juniors",
         "posicion": ["Defensa Central", "Lateral Derecho"],
+<<<<<<< Updated upstream
         "clubes totales": ["Juan Aurich", "Sporting Cristal", "Hoffenheim", "Newell's", "Tigres UANL", "Rayo Vallecano", "Boca Juniors"]
+=======
+        "clubes totales": ["Boca Juniors"]
+>>>>>>> Stashed changes
     },
     {
         "id": 678,
@@ -6280,7 +6296,11 @@
         "Fecha de nacimiento": "--",
         "club actual": "Boca Juniors",
         "posicion": ["Defensa Central", "Lateral Izquierdo"],
+<<<<<<< Updated upstream
         "clubes totales": ["Boca Juniors", "Envigado", "Deportivo Cali", "Independiente Medellín"]
+=======
+        "clubes totales": ["Boca Juniors"]
+>>>>>>> Stashed changes
     },
     {
         "id": 679,
@@ -6289,7 +6309,11 @@
         "Fecha de nacimiento": "--",
         "club actual": "Boca Juniors",
         "posicion": ["Defensa Central", "Lateral Izquierdo"],
+<<<<<<< Updated upstream
         "clubes totales": ["Boca Juniors", "Elche", "Rosario Central"]
+=======
+        "clubes totales": ["Boca Juniors"]
+>>>>>>> Stashed changes
     },
     {
         "id": 680,
@@ -6397,7 +6421,11 @@
         "Fecha de nacimiento": "--",
         "club actual": "Boca Juniors",
         "posicion": ["Mediocampista Central", "Mediocampista Defensivo"],
+<<<<<<< Updated upstream
         "clubes totales": ["Boca Juniors", "AS Roma", "Zenit"]
+=======
+        "clubes totales": ["Boca Juniors", "Roma", "Zenit"]
+>>>>>>> Stashed changes
     },
     {
         "id": 692,
@@ -6567,7 +6595,11 @@
         "nacionalidad": "Uruguay",
         "Fecha de nacimiento": "--",
         "club actual": "Boca Juniors",
+<<<<<<< Updated upstream
         "posicion": ["Delantero Centro", "Extremo Derecho"],
+=======
+        "posicion": ["Delantero Centro"],
+>>>>>>> Stashed changes
         "clubes totales": ["Boca Juniors", "Palmeiras", "Peñarol", "Godoy Cruz", "Defensa y Justicia"]
     },
     {
@@ -6912,7 +6944,11 @@
         "nombre": "Juan Nardoni",
         "nacionalidad": "Argentina",
         "club actual": "Racing Club",
+<<<<<<< Updated upstream
         "posicion": ["Mediocampista Central", "Mediocampista Defensivo"],
+=======
+        "posicion": ["Mediocampista Central"],
+>>>>>>> Stashed changes
         "clubes totales": ["Racing Club", "Unión de Santa Fe"]
     },
     {
@@ -7010,6 +7046,7 @@
         "club actual": "Racing Club",
         "posicion": ["Extremo Izquierdo", "Mediocampista Izquierdo"],
         "clubes totales": ["Racing Club", "Monterrey", "América de Cali", "Rosario Central", "Santos Laguna"]
+<<<<<<< Updated upstream
     },
     {
         "id": 765,
@@ -8235,6 +8272,8 @@
         "club actual": "RETIRADO",
         "posicion": ["Mediocampista Defensivo", "Mediocampista Central"],
         "clubes totales": ["Perugia", "Rangers", "Salernitana", "AC Milan", "Sion"]
+=======
+>>>>>>> Stashed changes
     }
 ]
 }
