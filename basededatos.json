@@ -6912,7 +6912,7 @@
         "nombre": "Juan Nardoni",
         "nacionalidad": "Argentina",
         "club actual": "Racing Club",
-        "posicion": ["Mediocampista Central"],
+        "posicion": ["Mediocampista Central", "Mediocampista Defensivo"],
         "clubes totales": ["Racing Club", "Unión de Santa Fe"]
     },
     {
@@ -8202,6 +8202,39 @@
         "club actual": "Deportivo Riestra",
         "posicion": ["Delantero Centro"],
         "clubes totales": ["Deportivo Riestra"]
+    },
+    {
+        "id": 910,
+        "nombre": "Felipe Peña Biafore",
+        "apodo": "Peña Biafore",
+        "nacionalidad": "Argentina",
+        "club actual": "Lanús",
+        "posicion": ["Mediocampista Central", "Mediocampista Defensivo"],
+        "clubes totales": ["River Plate", "Arsenal de Sarandí", "Lanús"]
+    },
+    {
+        "id": 911,
+        "nombre": "Didier Drogba",
+        "nacionalidad": "Costa de Marfil",
+        "club actual": "RETIRADO",
+        "posicion": ["Delantero Centro"],
+        "clubes totales": ["Levallois", "Le Mans", "Guingamp", "Olympique Marseille", "Chelsea", "Shanghai Shenhua", "Galatasaray", "Montreal Impact", "Phoenix Rising"]
+    },
+    {
+        "id": 912,
+        "nombre": "Pablo Aimar",
+        "nacionalidad": "Argentina",
+        "club actual": "RETIRADO",
+        "posicion": ["Mediocampista Ofensivo", "Extremo Izquierdo"],
+        "clubes totales": ["River Plate", "Valencia", "Zaragoza", "Benfica", "Johor Darul Takzim"]
+    },
+    {
+        "id": 913,
+        "nombre": "Gennaro Gattuso",
+        "nacionalidad": "Italia",
+        "club actual": "RETIRADO",
+        "posicion": ["Mediocampista Defensivo", "Mediocampista Central"],
+        "clubes totales": ["Perugia", "Rangers", "Salernitana", "AC Milan", "Sion"]
     }
 ]
 }
