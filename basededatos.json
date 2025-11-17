@@ -21,7 +21,8 @@
     },
     {
         "id": 2,
-        "nombre": "Cristiano Ronaldo",
+        "nombre": "Cristiano Ronaldo dos Santos Aveiro",
+        "apodo": "Cristiano Ronaldo",
         "nacionalidad": "Portugal",    
         "Fecha de nacimiento": "05/02/1985",
         "club actual": "Al Nassr",
@@ -6392,12 +6393,11 @@
     },
     {
         "id": 691,
-        "nombre": "Leandro Paredes",
+        "nombre": "Carlos Bianchi",
         "nacionalidad": "Argentina",
-        "Fecha de nacimiento": "--",
-        "club actual": "Boca Juniors",
-        "posicion": ["Mediocampista Central", "Mediocampista Defensivo"],
-        "clubes totales": ["Boca Juniors", "AS Roma", "Zenit"]
+        "club actual": "RETIRADO",
+        "posicion": ["Mediocampista Central"],
+        "clubes totales": ["Vélez Sarsfield", "Reims", "Paris Saint-Germain", "Strasbourg"]
     },
     {
         "id": 692,

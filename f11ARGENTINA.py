@@ -157,7 +157,33 @@ FORMACIONES = {
         {'id': 'MCO', 'nombre': 'Mediocampista Ofensivo', 'x': 350, 'y': 220},
         {'id': 'MD', 'nombre': 'Mediocampista Derecho', 'x': 500, 'y': 250},
         {'id': 'DC', 'nombre': 'Delantero Centro', 'x': 350, 'y': 120}
-    ]
+    ],
+    "4-2-1-3": [
+        {'id': 'PO', 'nombre': 'Portero', 'x': 350, 'y': 610},
+        {'id': 'DFI', 'nombre': 'Lateral Izquierdo', 'x': 150, 'y': 490},
+        {'id': 'DFC1', 'nombre': 'Defensa Central', 'x': 275, 'y': 510},
+        {'id': 'DFC2', 'nombre': 'Defensa Central', 'x': 425, 'y': 510},
+        {'id': 'DFD', 'nombre': 'Lateral Derecho', 'x': 550, 'y': 490},
+        {'id': 'MCD1', 'nombre': 'Mediocampista Defensivo', 'x': 275, 'y': 370},
+        {'id': 'MCD2', 'nombre': 'Mediocampista Defensivo', 'x': 425, 'y': 370},
+        {'id': 'MCO', 'nombre': 'Mediocampista Ofensivo', 'x': 350, 'y': 250},
+        {'id': 'EI', 'nombre': 'Extremo Izquierdo', 'x': 200, 'y': 150},
+        {'id': 'DC', 'nombre': 'Delantero Centro', 'x': 350, 'y': 120},
+        {'id': 'ED', 'nombre': 'Extremo Derecho', 'x': 500, 'y': 150}
+    ],
+    "3-5-2": [
+        {'id': 'PO', 'nombre': 'Portero', 'x': 350, 'y': 610},
+        {'id': 'DFC1', 'nombre': 'Defensa Central', 'x': 230, 'y': 510},
+        {'id': 'DFC2', 'nombre': 'Defensa Central', 'x': 350, 'y': 510},
+        {'id': 'DFC3', 'nombre': 'Defensa Central', 'x': 470, 'y': 510},
+        {'id': 'MI', 'nombre': 'Mediocampista Izquierdo', 'x': 150, 'y': 320},
+        {'id': 'MCD1', 'nombre': 'Mediocampista Defensivo', 'x': 275, 'y': 370},
+        {'id': 'MCO', 'nombre': 'Mediocampista Ofensivo', 'x': 350, 'y': 280},
+        {'id': 'MCD2', 'nombre': 'Mediocampista Defensivo', 'x': 425, 'y': 370},
+        {'id': 'MD', 'nombre': 'Mediocampista Derecho', 'x': 550, 'y': 320},
+        {'id': 'DC1', 'nombre': 'Delantero Centro', 'x': 275, 'y': 150},
+        {'id': 'DC2', 'nombre': 'Delantero Centro', 'x': 425, 'y': 150}
+    ],
 }
 
 # Mapeo de posiciones de jugador a posiciones en formación
