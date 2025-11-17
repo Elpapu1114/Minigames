@@ -3,11 +3,12 @@ import os
 import sys
 import subprocess
 from datetime import datetime
+import threading
+import time
 
 pygame.init()
 
 from display_config import init_display
-# Inicializar ventana según game_settings.json; si no existe se usan los valores por defecto de esta pantalla
 screen, SCREEN_WIDTH, SCREEN_HEIGHT = init_display(default_w=1400, default_h=800, title=" Minigames - Selecciona tu Juego")
 FPS = 60
 
@@ -19,16 +20,14 @@ ACCENT_COLOR = (100, 200, 255)
 GRADIENT_START = (25, 25, 45)
 GRADIENT_END = (15, 15, 25)
 
-
 clock = pygame.time.Clock()
-
 
 title_font = pygame.font.SysFont("Arial", 48, bold=True)
 game_title_font = pygame.font.SysFont("Arial", 24, bold=True)
 description_font = pygame.font.SysFont("Arial", 16)
 small_font = pygame.font.SysFont("Arial", 14)
 time_font = pygame.font.SysFont("Arial", 18)
-
+notification_font = pygame.font.SysFont("Arial", 20, bold=True)
 
 games = [
     {
@@ -132,11 +131,94 @@ games = [
     }
 ]
 
-
 selected_game = None
 mouse_pos = (0, 0)
 scroll_offset = 0
 max_scroll = 0
+
+# Sistema de notificaciones
+notification_message = ""
+notification_color = ACCENT_COLOR
+notification_alpha = 0
+notification_timer = 0
+notification_duration = 2.0  # Duración en segundos
+
+def show_notification(message, color=ACCENT_COLOR, duration=2.0):
+    """Muestra una notificación en pantalla"""
+    global notification_message, notification_color, notification_alpha, notification_timer, notification_duration
+    notification_message = message
+    notification_color = color
+    notification_alpha = 255
+    notification_timer = 0
+    notification_duration = duration
+
+def update_notification(dt):
+    """Actualiza el estado de la notificación"""
+    global notification_alpha, notification_timer
+    
+    if notification_alpha > 0:
+        notification_timer += dt
+        
+        # Fade out después de la duración
+        if notification_timer > notification_duration:
+            fade_speed = 300  # Velocidad de desvanecimiento
+            notification_alpha = max(0, notification_alpha - fade_speed * dt)
+
+def draw_notification():
+    """Dibuja la notificación en pantalla"""
+    if notification_alpha > 0:
+        # Crear superficie con transparencia
+        notif_surface = pygame.Surface((400, 80), pygame.SRCALPHA)
+        
+        # Fondo de la notificación con transparencia
+        bg_color = (*notification_color[:3], int(notification_alpha * 0.9))
+        pygame.draw.rect(notif_surface, bg_color, (0, 0, 400, 80), border_radius=15)
+        
+        # Borde
+        border_color = (*notification_color[:3], int(notification_alpha))
+        pygame.draw.rect(notif_surface, border_color, (0, 0, 400, 80), width=3, border_radius=15)
+        
+        # Texto
+        text_surface = notification_font.render(notification_message, True, TEXT_COLOR)
+        text_rect = text_surface.get_rect(center=(200, 40))
+        
+        # Aplicar alpha al texto
+        text_surface.set_alpha(int(notification_alpha))
+        notif_surface.blit(text_surface, text_rect)
+        
+        # Dibujar en el centro superior de la pantalla
+        notif_x = (SCREEN_WIDTH - 400) // 2
+        notif_y = 130
+        screen.blit(notif_surface, (notif_x, notif_y))
+
+def launch_game_async(game_file, game_title):
+    """Lanza un juego en un hilo separado"""
+    try:
+        if os.path.exists(game_file):
+            print(f" Lanzando: {game_file}")
+            subprocess.Popen([sys.executable, game_file])
+            time.sleep(0.5)  # Pequeña pausa para asegurar que el proceso inicie
+            show_notification(f"✓ {game_title} iniciado. Esperar a que cargue...", (100, 255, 100), 2.5)
+            return True
+        else:
+            print(f" Archivo no encontrado: {game_file}")
+            show_notification(f"✗ Archivo no encontrado", (255, 100, 100), 3.0)
+            return False
+    except Exception as e:
+        print(f" Error al lanzar {game_file}: {e}")
+        show_notification(f"✗ Error al iniciar", (255, 100, 100), 3.0)
+        return False
+
+def launch_game(game_file, game_title):
+    """Lanza un juego y muestra notificaciones"""
+    show_notification(f"⏳ Cargando {game_title}...", (255, 200, 100), 1.5)
+    
+    # Lanzar en un hilo separado para no bloquear la UI
+    thread = threading.Thread(target=launch_game_async, args=(game_file, game_title))
+    thread.daemon = True
+    thread.start()
+    
+    return True
 
 def draw_gradient_background():
     """Dibuja un fondo con gradiente"""
@@ -160,38 +242,29 @@ def draw_text(text, font, color, x, y, center=False):
 
 def draw_game_card(game, x, y, width, height, hovered=False):
     """Dibuja una tarjeta de juego"""
-
     card_color = CARD_HOVER_COLOR if hovered else CARD_COLOR
     
-
     shadow_offset = 5
     pygame.draw.rect(screen, (0, 0, 0, 50), 
                      (x + shadow_offset, y + shadow_offset, width, height), 
                      border_radius=15)
     
-
     pygame.draw.rect(screen, card_color, (x, y, width, height), border_radius=15)
-    
-
     pygame.draw.rect(screen, game["color"], (x, y, width, 8), border_top_left_radius=15, border_top_right_radius=15)
     
     border_color = game["color"] if hovered else (80, 80, 100)
     pygame.draw.rect(screen, border_color, (x, y, width, height), width=2, border_radius=15)
     
-
     title_y = y + 25
     draw_text(game["title"], game_title_font, TEXT_COLOR, x + 20, title_y)
     
-
     category_y = title_y + 35
     category_color = game["color"]
     draw_text(f" {game['category']}", description_font, category_color, x + 20, category_y)
     
-
     desc_y = category_y + 25
     draw_text(game["description"], description_font, (200, 200, 200), x + 20, desc_y)
     
-
     status_y = y + height - 35
     status_colors = {
         "Disponible": (100, 255, 100),
@@ -200,14 +273,12 @@ def draw_game_card(game, x, y, width, height, hovered=False):
     }
     status_color = status_colors.get(game["status"], TEXT_COLOR)
     
-
     if game["status"] == "Disponible":
         play_button_x = x + width - 100
         play_button_y = y + height - 50
         play_button_width = 80
         play_button_height = 30
         
-
         play_color = game["color"] if hovered else (60, 60, 80)
         pygame.draw.rect(screen, play_color, 
                         (play_button_x, play_button_y, play_button_width, play_button_height),
@@ -220,45 +291,22 @@ def draw_game_card(game, x, y, width, height, hovered=False):
     
     return None
 
-def launch_game(game_file):
-    """Lanza un juego específico"""
-    try:
-        if os.path.exists(game_file):
-            print(f" Lanzando: {game_file}")
-
-            subprocess.Popen([sys.executable, game_file])
-            return True
-        else:
-            print(f" Archivo no encontrado: {game_file}")
-            return False
-    except Exception as e:
-        print(f" Error al lanzar {game_file}: {e}")
-        return False
-
 def draw_header():
     """Dibuja el encabezado de la aplicación"""
-
     draw_text(" Minigames  ", title_font, ACCENT_COLOR, SCREEN_WIDTH//2, 50, center=True)
-    
-
     draw_text("Selecciona tu aventura", description_font, (180, 180, 180), 
               SCREEN_WIDTH//2, 90, center=True)
     
-
     current_time = datetime.now().strftime("%H:%M:%S")
     draw_text(f" {current_time}", time_font, (150, 150, 150), SCREEN_WIDTH - 150, 30)
     
-
     pygame.draw.line(screen, ACCENT_COLOR, (100, 120), (SCREEN_WIDTH - 100, 120), 2)
 
 def draw_footer():
     """Dibuja el pie de página"""
     footer_y = SCREEN_HEIGHT - 50
-    
-
     pygame.draw.line(screen, ACCENT_COLOR, (100, footer_y - 20), (SCREEN_WIDTH - 100, footer_y - 20), 1)
     
-
     controls_text = " Click para jugar • ESC para salir • ↑↓ Scroll para navegar • Q para pausar"
     draw_text(controls_text, small_font, (150, 150, 150), SCREEN_WIDTH//2, footer_y, center=True)
 
@@ -275,6 +323,7 @@ def main():
     global mouse_pos, selected_game, scroll_offset, max_scroll
     
     running = True
+    last_time = time.time()
     
     print("=== GAME LAUNCHER INICIADO ===")
     print(" Juegos disponibles:")
@@ -284,74 +333,17 @@ def main():
     print(" Asegúrate de que los archivos .py existan en la misma carpeta")
     
     while running:
+        # Calcular delta time
+        current_time = time.time()
+        dt = current_time - last_time
+        last_time = current_time
+        
         clock.tick(FPS)
         mouse_pos = pygame.mouse.get_pos()
         
-        # Calcular tamaño de tarjetas dinámicamente según resolución
-        # Usar 1 columna para resoluciones <= 800px, 2 columnas para > 800px
-        if SCREEN_WIDTH <= 800:
-            cards_per_row = 1
-            card_width = int(SCREEN_WIDTH * 0.85)  # 85% del ancho
-            card_height = 150
-            margin = 30
-        else:
-            cards_per_row = 2
-            card_width = int((SCREEN_WIDTH - 100) // 2)  # Dividir en 2 con margen
-            card_height = 180
-            margin = 40
-
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                running = False
-            
-            elif event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_ESCAPE or event.key == pygame.K_q:
-                        print("Volviendo al menú principal...")
-                        pygame.quit()  # Cierra la ventana actual
-                        subprocess.Popen([sys.executable, "menu.py"])  # Ejecuta menu.py
-                        running = False
-            elif event.type == pygame.MOUSEBUTTONDOWN:
-                if event.button == 1:  
-
-                    start_x = (SCREEN_WIDTH - (cards_per_row * card_width + (cards_per_row - 1) * margin)) // 2
-                    start_y = 150
-                    
-                    for i, game in enumerate(games):
-                        row = i // cards_per_row
-                        col = i % cards_per_row
-                        
-                        card_x = start_x + col * (card_width + margin)
-                        card_y = start_y + row * (card_height + margin) - scroll_offset
-                        
-
-                        if card_y + card_height >= 0 and card_y <= SCREEN_HEIGHT:
-                            card_rect = pygame.Rect(card_x, card_y, card_width, card_height)
-                            
-                            if card_rect.collidepoint(mouse_pos) and game["status"] == "Disponible":
-
-                                play_button_x = card_x + card_width - 100
-                                play_button_y = card_y + card_height - 50
-                                play_button_rect = pygame.Rect(play_button_x, play_button_y, 80, 30)
-                                
-                                if play_button_rect.collidepoint(mouse_pos):
-                                    print(f" Intentando lanzar: {game['title']}")
-                                    if launch_game(game["file"]):
-                                        print(f" {game['title']} lanzado exitosamente")
-                                    else:
-                                        print(f" No se pudo lanzar {game['title']}")
-                                        print(f"   Verifica que {game['file']} existe")
-            
-
-            handle_scroll(event)
+        # Actualizar notificación
+        update_notification(dt)
         
-
-        draw_gradient_background()
-        
-
-        draw_header()
-        
-
-        # Calcular tamaño de tarjetas dinámicamente según resolución (mismo que en eventos)
         if SCREEN_WIDTH <= 800:
             cards_per_row = 1
             card_width = int(SCREEN_WIDTH * 0.85)
@@ -362,16 +354,66 @@ def main():
             card_width = int((SCREEN_WIDTH - 100) // 2)
             card_height = 180
             margin = 40
+
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+            
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_ESCAPE or event.key == pygame.K_q:
+                    print("Volviendo al menú principal...")
+                    pygame.quit()
+                    subprocess.Popen([sys.executable, "menu.py"])
+                    running = False
+                    
+            elif event.type == pygame.MOUSEBUTTONDOWN:
+                if event.button == 1:
+                    start_x = (SCREEN_WIDTH - (cards_per_row * card_width + (cards_per_row - 1) * margin)) // 2
+                    start_y = 150
+                    
+                    for i, game in enumerate(games):
+                        row = i // cards_per_row
+                        col = i % cards_per_row
+                        
+                        card_x = start_x + col * (card_width + margin)
+                        card_y = start_y + row * (card_height + margin) - scroll_offset
+                        
+                        if card_y + card_height >= 0 and card_y <= SCREEN_HEIGHT:
+                            card_rect = pygame.Rect(card_x, card_y, card_width, card_height)
+                            
+                            if card_rect.collidepoint(mouse_pos) and game["status"] == "Disponible":
+                                play_button_x = card_x + card_width - 100
+                                play_button_y = card_y + card_height - 50
+                                play_button_rect = pygame.Rect(play_button_x, play_button_y, 80, 30)
+                                
+                                if play_button_rect.collidepoint(mouse_pos):
+                                    print(f" Intentando lanzar: {game['title']}")
+                                    launch_game(game["file"], game["title"])
+            
+            handle_scroll(event)
+        
+        draw_gradient_background()
+        draw_header()
+        
+        if SCREEN_WIDTH <= 800:
+            cards_per_row = 1
+            card_width = int(SCREEN_WIDTH * 0.85)
+            card_height = 150
+            margin = 30
+        else:
+            cards_per_row = 2
+            card_width = int((SCREEN_WIDTH - 100) // 2)
+            card_height = 180
+            margin = 40
+            
         start_x = (SCREEN_WIDTH - (cards_per_row * card_width + (cards_per_row - 1) * margin)) // 2
         start_y = 150
         
-
         total_rows = (len(games) + cards_per_row - 1) // cards_per_row
         total_height = total_rows * (card_height + margin)
         visible_height = SCREEN_HEIGHT - start_y - 100
         max_scroll = max(0, total_height - visible_height)
         
-
         for i, game in enumerate(games):
             row = i // cards_per_row
             col = i % cards_per_row
@@ -379,39 +421,34 @@ def main():
             card_x = start_x + col * (card_width + margin)
             card_y = start_y + row * (card_height + margin) - scroll_offset
             
-
             if card_y + card_height >= 0 and card_y <= SCREEN_HEIGHT:
-
                 card_rect = pygame.Rect(card_x, card_y, card_width, card_height)
                 hovered = card_rect.collidepoint(mouse_pos)
                 
                 if hovered:
                     selected_game = game
                 
-
                 play_button_rect = draw_game_card(game, card_x, card_y, card_width, card_height, hovered)
         
-
         draw_footer()
         
-
         if max_scroll > 0:
-
             scroll_bar_x = SCREEN_WIDTH - 20
             scroll_bar_y = 150
             scroll_bar_height = SCREEN_HEIGHT - 250
             scroll_bar_width = 8
             
-
             pygame.draw.rect(screen, (50, 50, 50), 
                            (scroll_bar_x, scroll_bar_y, scroll_bar_width, scroll_bar_height))
             
-            # Indicador de posición
             indicator_height = max(20, scroll_bar_height * (visible_height / total_height))
             indicator_y = scroll_bar_y + (scroll_offset / max_scroll) * (scroll_bar_height - indicator_height)
             
             pygame.draw.rect(screen, ACCENT_COLOR, 
                            (scroll_bar_x, indicator_y, scroll_bar_width, indicator_height))
+        
+        # Dibujar notificación (siempre al final para que esté encima)
+        draw_notification()
         
         pygame.display.flip()
     
