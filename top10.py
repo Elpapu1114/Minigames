@@ -46,15 +46,9 @@ def cargar_jugadores():
 
 # Cargar jugadores
 jugadores_db = cargar_jugadores()
-("Alemania", "Alemania.png"),
-("Brasil", "Brasil.png"),
-("Argentina", "Argentina.png"),
-("Francia", "Francia.png"),
-("Portugal", "Portugal.png"),
-("Italia", "Italia.png"),
-("España", "España.png"),
-("Inglaterra", "Inglaterra.png"),
-("Países Bajos", "Países Bajos.png"),
+for jugador in jugadores_db:
+    nacionalidad = jugador['nacionalidad']
+    (nacionalidad, "nacionalidad.png")
 banderas = {}
 
 def cargar_banderas():

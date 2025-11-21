@@ -128,6 +128,14 @@ games = [
         "category": "conocimiento",
         "color": (100, 200, 200),
         "status": "Disponible"
+    },
+    {
+        "title": "Top 10 Jugadores",
+        "description": "Adivina los distintos jugadores de fútbol en diferentes categorías",
+        "file": "top10.py",
+        "category": "conocimiento",
+        "color": (100, 200, 200),
+        "status": "Disponible"
     }
 ]
 
