@@ -7621,7 +7621,7 @@
         "nacionalidad": "Argentina",
         "club actual": "Argentinos Juniors",
         "posicion": ["Mediocampista Central", "Mediocampista Defensivo"],
-        "clubes totales": ["Nueva Chicago", "Newell's ", "Nueva Chicago", "Nueva Chicago", "Temperley", "Ferro", "Huracán", "Argentinos Juniors"]
+        "clubes totales": ["Nueva Chicago", "Newell's", "Nueva Chicago", "Nueva Chicago", "Temperley", "Ferro", "Huracán", "Argentinos Juniors"]
     },
     {
         "id": 841,
@@ -8192,7 +8192,7 @@
         "nacionalidad": "Argentina",
         "club actual": "Platense",
         "posicion": ["Extremo Derecho", "Mediocampista Izquierdo", "Mediocampista Ofensivo"],
-        "clubes totales": ["Platense", "Deportivo Riestra", "Atlético Venezuela", "Ferro", "Audax Italiano", "Central Córdoba", "San Lorenzo", "Johor Darul", "Independiente", "Patronato"]
+        "clubes totales": ["Platense", "Newell's"]
     },
     {
         "id": 909,
@@ -8235,6 +8235,22 @@
         "club actual": "RETIRADO",
         "posicion": ["Mediocampista Defensivo", "Mediocampista Central"],
         "clubes totales": ["Perugia", "Rangers", "Salernitana", "AC Milan", "Sion"]
+    },
+    {
+        "id": 914,
+        "nombre": "Karl-Heinz Rummenigge",
+        "nacionalidad": "Alemania",
+        "club actual": "RETIRADO",
+        "posicion": ["Delantero Centro", "Extremo Derecho"],
+        "clubes totales": ["Bayern de Múnich", "Inter de Milán", "Servette FC"]
+    },
+    {
+        "id": 915,
+        "nombre": "Kevin Keegan",
+        "nacionalidad": "Inglaterra",
+        "club actual": "RETIRADO",
+        "posicion": ["Delantero Centro", "Extremo Derecho"],
+        "clubes totales": ["Scunthorpe United", "Liverpool", "Hamburger SV", "Southampton", "Newcastle United"]
     }
 ]
 }
