@@ -49,6 +49,7 @@ jugadores_db = cargar_jugadores()
 for jugador in jugadores_db:
     nacionalidad = jugador['nacionalidad']
     (nacionalidad, "nacionalidad.png")
+    
 banderas = {}
 
 def cargar_banderas():
@@ -92,14 +93,24 @@ TOPS_DISPONIBLES = [
         "jugadores_ids": [1, 2, 51, 74, 204, 75, 915, 914, 46, 27]
     },
     {
-        "titulo": "Top 10 Máximos Goleadores Históricos",
-        "descripcion": "Los máximos anotadores del fútbol mundial",
-        "jugadores_ids": [2, 1, 49, 27, 121, 153, 20, 161, 22, 584]
+        "titulo": "Top 10 Máximos Goleadores en Champions League",
+        "descripcion": "Los máximos anotadores de la UEFA Champions League",
+        "jugadores_ids": [2, 1, 20, 5, 153, 14, 201, 110, 19, 22]
     },
     {
-        "titulo": "Top 10 Mejores Mediocampistas",
-        "descripcion": "Los mejores mediocampistas de la historia",
-        "jugadores_ids": [46, 10, 11, 72, 510, 8, 912, 74, 252, 25]
+        "titulo": "Top 10 Goleadores en Mundiales (2002 - ...)",
+        "descripcion": "Los máximos goleadores en Copas del Mundo desde 2002",
+        "jugadores_ids": [62, 1, 14, 27, 201, 225, 3, 67, 2, 4]
+    },
+    {
+        "titulo": "Top 10 Goleadores de la Premier League (2000 - ...)",
+        "descripcion": "Los máximos goleadores en la Premier League desde el año 2000",
+        "jugadores_ids": [67, 37, 26, 18, 22, 141, 190, 94, 330, 95]
+    },
+    {
+        "titulo": "Top 10 Goleadores en LaLiga (2000 - ...)",
+        "descripcion": "Los máximos goleadores en LaLiga desde el año 2000",
+        "jugadores_ids": [1, 2, 5, 135, 225, 4, 916, 188, 917, 153]
     }
 ]
 
@@ -247,12 +258,12 @@ class JuegoTop10:
         
         # Título del Top
         titulo_surf = fuente_titulo.render(self.top_actual["titulo"], True, NEGRO)
-        titulo_rect = titulo_surf.get_rect(center=(ANCHO // 2, 40))
+        titulo_rect = titulo_surf.get_rect(center=(ANCHO // 2.125, 40))
         pantalla.blit(titulo_surf, titulo_rect)
         
         # Descripción
         desc_surf = fuente_pequeña.render(self.top_actual["descripcion"], True, GRIS_OSCURO)
-        desc_rect = desc_surf.get_rect(center=(ANCHO // 2, 80))
+        desc_rect = desc_surf.get_rect(center=(ANCHO // 2.125, 80))
         pantalla.blit(desc_surf, desc_rect)
         
         # Botón de reiniciar (esquina superior derecha)

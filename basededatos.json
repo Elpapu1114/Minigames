@@ -8251,6 +8251,22 @@
         "club actual": "RETIRADO",
         "posicion": ["Delantero Centro", "Extremo Derecho"],
         "clubes totales": ["Scunthorpe United", "Liverpool", "Hamburger SV", "Southampton", "Newcastle United"]
+    },
+    {
+        "id": 916,
+        "nombre": "Iago Aspas",
+        "nacionalidad": "España",
+        "club actual": "Celta de Vigo",
+        "posicion": ["Delantero Centro", "Extremo Izquierdo"],
+        "clubes totales": ["Celta de Vigo", "Liverpool", "Sevilla"]
+    },
+    {
+        "id": 917,
+        "nombre": "Aritz Aduriz",
+        "nacionalidad": "España",
+        "club actual": "RETIRADO",
+        "posicion": ["Delantero Centro"],
+        "clubes totales": ["Athletic Club", "Mallorca", "Valencia", "Real Valladolid", "Burgos"]
     }
 ]
 }
