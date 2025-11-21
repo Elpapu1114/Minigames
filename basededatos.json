@@ -4990,7 +4990,7 @@
         "Fecha de nacimiento": "05/06/2000",
         "club actual": "Juventus",
         "posicion": ["Lateral Derecho", "Defensa Central"],
-        "clubes totales": ["Lyon", "AC Milan", "Juventus"]
+        "clubes totales": ["Olympique Lyon", "AC Milan", "Juventus"]
     },
     {
         "id": 536,
@@ -7041,7 +7041,7 @@
         "nacionalidad": "Argentina",
         "club actual": "RETIRADO",
         "posicion": ["Mediocampista Defensivo"],
-        "clubes totales": ["Argentinos Juniors", "Tenerife", "Real Madrid", "Milan"]
+        "clubes totales": ["Argentinos Juniors", "Tenerife", "Real Madrid", "AC Milan"]
     },
     {
         "id": 769,
@@ -8267,6 +8267,136 @@
         "club actual": "RETIRADO",
         "posicion": ["Delantero Centro"],
         "clubes totales": ["Athletic Club", "Mallorca", "Valencia", "Real Valladolid", "Burgos"]
+    },
+    {
+        "id": 918,
+        "nombre": "Christian Abbiati",
+        "nacionalidad": "Italia",
+        "club actual": "RETIRADO",
+        "posicion": ["Portero"],
+        "clubes totales": ["AC Milan", "Monza", "Juventus", "Torino", "Atlético de Madrid", "Borgosesa"]
+    },
+    {
+        "id": 919,
+        "nombre": "Kevin-Prince Boateng",
+        "nacionalidad": "Ghana",
+        "club actual": "RETIRADO",
+        "posicion": ["Mediocampista Ofensivo", "Extremo Derecho"],
+        "clubes totales": ["Hertha BSC", "Portsmouth", "Tottenham Hotspur", "Borussia Dortmund", "AC Milan", "Schalke 04", "Eintracht Frankfurt", "Las Palmas", "Barcelona", "Besiktas", "Sassuolo", "Fiorentina", "Monza"]
+    },
+    {
+        "id": 920,
+        "nombre": "Ignazio Abate",
+        "nacionalidad": "Italia",
+        "club actual": "RETIRADO",
+        "posicion": ["Lateral Derecho"],
+        "clubes totales": ["AC Milan", "Torino", "Modena", "Piacenza", "Napoli", "Empoli"]
+    },
+    {
+        "id": 921,
+        "nombre": "Alexandre Pato",
+        "nacionalidad": "Brasil",
+        "club actual": "RETIRADO",
+        "posicion": ["Delantero Centro", "Extremo Izquierdo"],
+        "clubes totales": ["Internacional", "AC Milan", "Corinthians", "São Paulo", "Tianjin Quanjian", "Chelsea", "Villarreal", "Orlando City"]
+    },
+    {
+        "id": 922,
+        "nombre": "Thiago Silva",
+        "nacionalidad": "Brasil",
+        "club actual": "Fluminense",
+        "posicion": ["Defensa Central"],
+        "clubes totales": ["Juventude", "Porto", "Dinamo Moscú", "Fluminense", "Milan", "Paris Saint-Germain", "Chelsea"]
+    },
+    {
+        "id": 923,
+        "nombre": "Nelson de Jesús e Silva",
+        "apodo": "Dida",
+        "nacionalidad": "Brasil",
+        "club actual": "RETIRADO",
+        "posicion": ["Portero"],
+        "clubes totales": ["Vitória", "Cruzeiro", "Lugano", "AC Milan", "Corinthians", "Portuguesa", "Gremio", "Internacional"]
+    },
+    {
+        "id": 924,
+        "nombre": "Alessandro Nesta",
+        "nacionalidad": "Italia",
+        "club actual": "RETIRADO",
+        "posicion": ["Defensa Central"],
+        "clubes totales": ["Lazio", "AC Milan", "Montreal Impact", "Chennaiyin FC"]
+    },
+    {
+        "id": 925,
+        "nombre": "Massimo Ambrosini",
+        "nacionalidad": "Italia",
+        "club actual": "RETIRADO",
+        "posicion": ["Mediocampista Defensivo", "Mediocampista Central"],
+        "clubes totales": ["Cesena", "AC Milan", "Fiorentina", "Vicenza"]
+    },
+    {
+        "id": 926,
+        "nombre": "Alessandro Costacurta",
+        "nacionalidad": "Italia",
+        "club actual": "RETIRADO",
+        "posicion": ["Defensa Central", "Lateral Derecho"],
+        "clubes totales": ["Monza", "AC Milan"]
+    },
+    {
+        "id": 927,
+        "nombre": "Andriy Shevchenko",
+        "nacionalidad": "Ucrania",
+        "club actual": "RETIRADO",
+        "posicion": ["Delantero Centro"],
+        "clubes totales": ["Dynamo Kyiv", "AC Milan", "Chelsea"]
+    },
+    {
+        "id": 928,
+        "nombre": "Eden Hazard",
+        "nacionalidad": "Bélgica",
+        "club actual": "RETIRADO",
+        "posicion": ["Extremo Izquierdo", "Mediocampista Ofensivo"],
+        "clubes totales": ["LOSC Lille", "Chelsea", "Real Madrid"]
+    },
+    {
+        "id": 929,
+        "nombre": "Ryan Giggs",
+        "nacionalidad": "Gales",
+        "club actual": "RETIRADO",
+        "posicion": ["Extremo Izquierdo", "Mediocampista Izquierdo"],
+        "clubes totales": ["Manchester United"]
+    },
+    {
+        "id": 930,
+        "nombre": "Gary Neville",
+        "nacionalidad": "Inglaterra",
+        "club actual": "RETIRADO",
+        "posicion": ["Lateral Derecho"],
+        "clubes totales": ["Manchester United"]
+    },
+    {
+        "id": 931,
+        "nombre": "Ole Gunnar Solskjaer",
+        "nacionalidad": "Noruega",
+        "club actual": "RETIRADO",
+        "posicion": ["Delantero Centro"],
+        "clubes totales": ["Clausenengen", "Molde", "Manchester United"]
+    },
+    {
+        "id": 932,
+        "nombre": "Roy Keane",
+        "nacionalidad": "Irlanda",
+        "club actual": "RETIRADO",
+        "posicion": ["Mediocampista Defensivo", "Mediocampista Central"],
+        "clubes totales": ["Rockmount", "Cobh Ramblers", "Nottingham Forest", "Manchester United", "Celtic"]
+    },
+    {
+        "id": 933,
+        "nombre": "John Oshea",
+        "apodo": "John O'Shea",
+        "nacionalidad": "Irlanda",
+        "club actual": "RETIRADO",
+        "posicion": ["Defensa Central", "Lateral Izquierdo"],
+        "clubes totales": ["Manchester United", "Sunderland", "Reading", "Royal Antwerp", "Bournemouth"]
     }
 ]
 }

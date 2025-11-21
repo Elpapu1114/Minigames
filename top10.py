@@ -88,29 +88,54 @@ cargar_banderas()
 # Definición de diferentes tops
 TOPS_DISPONIBLES = [
     {
-        "titulo": "Top 10 Jugadores con más Balones de Oro",
+        "titulo": "Jugadores con más Balones de Oro",
         "descripcion": "Los jugadores con más Balones de Oro en la historia",
         "jugadores_ids": [1, 2, 51, 74, 204, 75, 915, 914, 46, 27]
     },
     {
-        "titulo": "Top 10 Máximos Goleadores en Champions League",
+        "titulo": "Máximos Goleadores en Champions League",
         "descripcion": "Los máximos anotadores de la UEFA Champions League",
         "jugadores_ids": [2, 1, 20, 5, 153, 14, 201, 110, 19, 22]
     },
     {
-        "titulo": "Top 10 Goleadores en Mundiales (2002 - ...)",
+        "titulo": "Goleadores en Mundiales (2002 - ...)",
         "descripcion": "Los máximos goleadores en Copas del Mundo desde 2002",
         "jugadores_ids": [62, 1, 14, 27, 201, 225, 3, 67, 2, 4]
     },
     {
-        "titulo": "Top 10 Goleadores de la Premier League (2000 - ...)",
+        "titulo": "Goleadores de la Premier League (2000 - ...)",
         "descripcion": "Los máximos goleadores en la Premier League desde el año 2000",
         "jugadores_ids": [67, 37, 26, 18, 22, 141, 190, 94, 330, 95]
     },
     {
-        "titulo": "Top 10 Goleadores en LaLiga (2000 - ...)",
+        "titulo": "Goleadores en LaLiga (2000 - ...)",
         "descripcion": "Los máximos goleadores en LaLiga desde el año 2000",
         "jugadores_ids": [1, 2, 5, 135, 225, 4, 916, 188, 917, 153]
+    },
+    {
+        "titulo": "Jugadores con más partidos en AC Milan (Champions)",
+        "descripcion": "Los jugadores con más apariciones en AC Milan en la Champions League",
+        "jugadores_ids": [47, 100, 925, 913, 924, 25, 923, 926, 72, 927]
+    },
+    {
+        "titulo": "Ranking Balón de Oro 2006",
+        "descripcion": "Los 10 mejores jugadores según el Balón de Oro 2006",
+        "jugadores_ids": [270, 35, 22, 21, 46, 188, 62, 911, 25, 165]
+    },
+    {
+        "titulo": "Ranking Balón de Oro 2015",
+        "descripcion": "Los 10 mejores jugadores según el Balón de Oro 2015",
+        "jugadores_ids": [1, 2, 3, 20, 4, 201, 15, 928, 10, 305]
+    },
+    {
+        "titulo": "Jugadores con más partidos en Barcelona (Champions)",
+        "descripcion": "Los jugadores con más apariciones en Barcelona en la Champions League",
+        "jugadores_ids": [11, 1, 10, 12, 16, 44, 176, 175, 365, 343]
+    },
+    {
+        "titulo": "Jugadores con más partidos en Man Utd (Champions)",
+        "descripcion": "Los jugadores con más apariciones en Manchester United en la Champions League",
+        "jugadores_ids": [929, 39, 930, 226, 37, 143, 931, 932, 933, 171]
     }
 ]
 
@@ -258,12 +283,12 @@ class JuegoTop10:
         
         # Título del Top
         titulo_surf = fuente_titulo.render(self.top_actual["titulo"], True, NEGRO)
-        titulo_rect = titulo_surf.get_rect(center=(ANCHO // 2.125, 40))
+        titulo_rect = titulo_surf.get_rect(center=(ANCHO // 2.3, 40))
         pantalla.blit(titulo_surf, titulo_rect)
         
         # Descripción
         desc_surf = fuente_pequeña.render(self.top_actual["descripcion"], True, GRIS_OSCURO)
-        desc_rect = desc_surf.get_rect(center=(ANCHO // 2.125, 80))
+        desc_rect = desc_surf.get_rect(center=(ANCHO // 2.3, 80))
         pantalla.blit(desc_surf, desc_rect)
         
         # Botón de reiniciar (esquina superior derecha)
