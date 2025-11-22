@@ -8397,6 +8397,14 @@
         "club actual": "RETIRADO",
         "posicion": ["Defensa Central", "Lateral Izquierdo"],
         "clubes totales": ["Manchester United", "Sunderland", "Reading", "Royal Antwerp", "Bournemouth"]
+    },
+    {
+        "id": 934,
+        "nombre": "Bacary Sagna",
+        "nacionalidad": "Francia",
+        "club actual": "RETIRADO",
+        "posicion": ["Lateral Derecho"],
+        "clubes totales": ["Auxerre", "Arsenal", "Manchester City", "Benevento", "Montpellier"]
     }
 ]
 }

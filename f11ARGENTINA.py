@@ -220,6 +220,20 @@ class Juego:
         self.posiciones_disponibles_jugador = []
         self.mostrando_selector_posicion = False
         self.mostrando_menu_pausa = False
+
+    def normalizar_texto(self, texto):
+        """Normaliza texto para comparación (sin acentos, minúsculas)"""
+        texto = texto.lower().strip()
+        reemplazos = {
+            'á': 'a', 'é': 'e', 'í': 'i', 'ó': 'o', 'ú': 'u',
+            'ü': 'u', 'à': 'a', 'è': 'e', 'ì': 'i',
+            'ò': 'o', 'ù': 'u', 'ã': 'a', 'õ': 'o', 'â': 'a',
+            'ê': 'e', 'î': 'i', 'ô': 'o', 'û': 'u', 'ç': 'c',
+            'ä': 'a', 'ë': 'e', 'ï': 'i', 'ö': 'o'
+        }
+        for acento, sin_acento in reemplazos.items():
+            texto = texto.replace(acento, sin_acento)
+        return texto
     
     def obtener_posiciones_formacion(self):
         """Obtener todos los IDs de posiciones en la formación actual"""
@@ -246,13 +260,15 @@ class Juego:
     def seleccionar_jugador(self, jugador):
         """Primer paso: verificar si el jugador puede ser colocado"""
         nombre_completo = jugador.get('nombre', 'Jugador')
+        nombre_normalizado = self.normalizar_texto(nombre_completo)
         if "apodo" in jugador:
-            nombre_mostrar = jugador.get('apodo', nombre_completo)
+            nombre_completo = jugador.get('apodo', nombre_completo)
+            nombre_normalizado = self.normalizar_texto(nombre_completo)
         club_actual = jugador.get('club actual', '')
         
         # Verificar si el jugador es del equipo correcto
         if club_actual != self.equipo_actual:
-            self.mensaje = f"❌ {nombre_completo} no juega en {self.equipo_actual}"
+            self.mensaje = f"❌ {nombre_normalizado} no juega en {self.equipo_actual}"
             self.tiempo_mensaje_error = time.time()
             return
         
@@ -261,7 +277,7 @@ class Juego:
         posiciones_disponibles = [p for p in posiciones_validas if p not in self.posiciones_ocupadas]
         
         if not posiciones_disponibles:
-            self.mensaje = f"❌ No hay lugar para {nombre_completo} en la formación"
+            self.mensaje = f"❌ No hay lugar para {nombre_normalizado} en la formación"
             self.tiempo_mensaje_error = time.time()
             return
         
@@ -315,10 +331,12 @@ class Juego:
 
         for j in jugadores:
             nombre_completo = j['nombre'].lower()
+            nombre_normalizado = self.normalizar_texto(nombre_completo)
             apodo = j.get('apodo', "").lower()
+            apodo_normalizado = self.normalizar_texto(apodo)
 
             # Aparece en sugerencias si coincide con nombre, apellido o apodo
-            if busqueda_lower in nombre_completo or busqueda_lower in apodo:
+            if busqueda_lower in nombre_normalizado or busqueda_lower in apodo_normalizado:
                 disponibles.append(j)
 
         # Opcional: ordenar por nombre

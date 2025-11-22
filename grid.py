@@ -302,51 +302,66 @@ class FutbolGrid:
                 if self.grid[i][j] is None:
                     return False
         return True
-    
-    def buscar_jugador(self, nombre):
-        nombre_lower = nombre.lower().strip()
-        for jugador in self.jugadores:
-            # Buscar por nombre si existe
-            if "nombre" in jugador:
-                nombre_jugador = jugador["nombre"].lower().strip()
-                if nombre_jugador == nombre_lower:
-                    return jugador
-                if nombre_jugador.split()[-1] == nombre_lower:
-                    return jugador
-            # Buscar por apodo si existe
-            if "apodo" in jugador:
-                apodo_lower = jugador["apodo"].lower().strip()
-                if apodo_lower == nombre_lower:
-                    return jugador
-        return None
-    
+    def normalizar_texto(self, texto):
+        """Normaliza texto para comparación (sin acentos, minúsculas)"""
+        texto = texto.lower().strip()
+        reemplazos = {
+            'á': 'a', 'é': 'e', 'í': 'i', 'ó': 'o', 'ú': 'u',
+            'ü': 'u', 'à': 'a', 'è': 'e', 'ì': 'i',
+            'ò': 'o', 'ù': 'u', 'ã': 'a', 'õ': 'o', 'â': 'a',
+            'ê': 'e', 'î': 'i', 'ô': 'o', 'û': 'u', 'ç': 'c',
+            'ä': 'a', 'ë': 'e', 'ï': 'i', 'ö': 'o'
+        }
+        for acento, sin_acento in reemplazos.items():
+            texto_normalizado = texto.replace(acento, sin_acento)
+        return texto_normalizado
+
     def obtener_sugerencias(self, texto):
         if len(texto) < 1:
             return []
         sugerencias = []
-        texto_lower = texto.lower().strip()
+        texto_normalizado = self.normalizar_texto(texto)  # ✅ Normalizar
         
         for jugador in self.jugadores:
             # Primero verificar si coincide con el apodo
             if "apodo" in jugador:
                 apodo = jugador["apodo"]
-                apodo_lower = apodo.lower()
-                if texto_lower in apodo_lower:
+                apodo_normalizado = self.normalizar_texto(apodo)  # ✅ Normalizar
+                if texto_normalizado in apodo_normalizado:
                     sugerencias.append(apodo)
                     if len(sugerencias) >= 5:
                         break
-                    continue  # Si encontramos por apodo, pasar al siguiente jugador
+                    continue
             
-            # Si no tiene apodo o no coincidió con el apodo, buscar por nombre
+            # Si no tiene apodo o no coincidió, buscar por nombre
             if "nombre" in jugador:
                 nombre_completo = jugador["nombre"]
-                nombre_lower = nombre_completo.lower()
-                if texto_lower in nombre_lower:
+                nombre_normalizado = self.normalizar_texto(nombre_completo)  # ✅ Normalizar
+                if texto_normalizado in nombre_normalizado:
                     sugerencias.append(nombre_completo)
                     if len(sugerencias) >= 5:
                         break
         
         return sugerencias
+
+    def buscar_jugador(self, nombre):
+        nombre_normalizado = self.normalizar_texto(nombre)
+
+        for jugador in self.jugadores:
+            if "nombre" in jugador:
+                nombre_jugador_normalizado = self.normalizar_texto(jugador["nombre"])
+                if nombre_jugador_normalizado == nombre_normalizado:
+                    return jugador
+                apellido_normalizado = nombre_jugador_normalizado.split()[-1] if nombre_jugador_normalizado.split() else ""
+                if apellido_normalizado == nombre_normalizado:
+                    return jugador
+            
+            if "apodo" in jugador:
+                apodo_normalizado = self.normalizar_texto(jugador["apodo"])
+                if apodo_normalizado == nombre_normalizado:
+                    return jugador
+        
+        return None
     
     def encontrar_celdas_validas(self, jugador):
         celdas = []
@@ -693,7 +708,7 @@ class FutbolGrid:
             # Título y tiempo
             if not self.juego_terminado:
                 titulo = self.fuente_grande.render("FÚTBOL GRID", True, NEGRO)
-                rect_titulo = titulo.get_rect(center=(ANCHO // 2, sy(30)))
+                rect_titulo = titulo.get_rect(center=(ANCHO // 2, sy(10)))
                 self.pantalla.blit(titulo, rect_titulo)
                 self.dibujar_tiempo()
             
@@ -718,7 +733,7 @@ class FutbolGrid:
             elif not self.mostrando_menu_celdas:
                 self.dibujar_input()
                 inst = self.fuente_pequena.render("Escribe el nombre de un jugador (presiona ESC para volver al menú)", True, GRIS_OSCURO)
-                self.pantalla.blit(inst, (sx(50), sy(600)))
+                self.pantalla.blit(inst, (sx(50), sy(645)))
             else:
                 self.dibujar_menu_celdas()
             
