@@ -307,10 +307,11 @@ class FutbolGrid:
         texto = texto.lower().strip()
         reemplazos = {
             'á': 'a', 'é': 'e', 'í': 'i', 'ó': 'o', 'ú': 'u',
-            'ü': 'u', 'à': 'a', 'è': 'e', 'ì': 'i',
+            'ü': 'u', 'à': 'a', 'è': 'e', 'ì': 'i', "ć": 'c',
             'ò': 'o', 'ù': 'u', 'ã': 'a', 'õ': 'o', 'â': 'a',
             'ê': 'e', 'î': 'i', 'ô': 'o', 'û': 'u', 'ç': 'c',
-            'ä': 'a', 'ë': 'e', 'ï': 'i', 'ö': 'o'
+            'ä': 'a', 'ë': 'e', 'ï': 'i', 'ö': 'o', 'č': 'c',
+            "ž": 'z', "ě": 'e'
         }
         for acento, sin_acento in reemplazos.items():
             texto_normalizado = texto.replace(acento, sin_acento)

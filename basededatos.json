@@ -1016,7 +1016,7 @@
     {
         "id": 110,
         "nombre": "Ruud van Nistelrooy",
-        "apodo": "Van Nistelrooy",
+        "apodo": "van Nistelrooy",
         "nacionalidad": "Países Bajos",    
         "Fecha de nacimiento": "01/07/1976",
         "club actual": "RETIRADO",
@@ -1317,7 +1317,7 @@
         "Fecha de nacimiento": "26/02/1983",
         "club actual": "RETIRADO",
         "posicion": ["Defensa Central", "Lateral Derecho"],
-        "clubes totales": ["Marítimo", "Porto", "Real Madrid", "Beşiktaş"]
+        "clubes totales": ["Marítimo", "Porto", "Real Madrid", "Besiktas"]
     },
 
     {
@@ -3111,7 +3111,7 @@
     {
         "id": 330,
         "nombre": "Robin Van Persie",
-        "apodo": "Van Persie",
+        "apodo": "van Persie",
         "nacionalidad": "Países Bajos",
         "Fecha de nacimiento": "06/08/1983",
         "club actual": "RETIRADO",
@@ -5144,7 +5144,7 @@
         "Fecha de nacimiento": "17/12/1988",
         "club actual": "Inter de Milán",
         "posicion": ["Portero"],
-        "clubes totales": ["FC Basel", "Grasshopper Club Zürich", "Borussia Mönchengladbach", "Bayern de Múnich", "Inter de Milán"]
+        "clubes totales": ["FC Basel", "Grasshopper", "Borussia Mönchengladbach", "Bayern de Múnich", "Inter de Milán"]
     },
     {
         "id": 553,
@@ -5453,7 +5453,7 @@
         "Fecha de nacimiento": "14/11/1990",
         "club actual": "St. Louis City",
         "posicion": ["Portero"],
-        "clubes totales": ["Young Boys", "Grasshopper Club Zürich", "FC Thun", "SC Freiburg", "Borussia Dortmund", "St. Louis City"]
+        "clubes totales": ["Young Boys", "Grasshopper", "FC Thun", "SC Freiburg", "Borussia Dortmund", "St. Louis City"]
     },
     {
         "id": 587,
@@ -8405,6 +8405,88 @@
         "club actual": "RETIRADO",
         "posicion": ["Lateral Derecho"],
         "clubes totales": ["Auxerre", "Arsenal", "Manchester City", "Benevento", "Montpellier"]
+    },
+    {
+        "id": 935,
+        "nombre": "José María Gutiérrez Hernández",
+        "apodo": "Guti",
+        "nacionalidad": "España",
+        "club actual": "RETIRADO",
+        "posicion": ["Mediocampista Ofensivo", "Mediocampista Central"],
+        "clubes totales": ["Real Madrid", "Besiktas"]
+    },
+    {
+        "id": 936,
+        "nombre": "Mario Gómez",
+        "nacionalidad": "Alemania",
+        "club actual": "RETIRADO",
+        "posicion": ["Delantero Centro"],
+        "clubes totales": ["VFB Stuttgart", "Bayern de Múnich", "Fiorentina", "Besiktas", "VfL Wolfsburg"]
+    },
+    {
+        "id": 937,
+        "nombre": "Giovane Élber",
+        "nacionalidad": "Brasil",
+        "club actual": "RETIRADO",
+        "posicion": ["Delantero Centro"],
+        "clubes totales": ["Londrina", "AC Milan", "Grasshopper", "VFB Stuttgart", "Bayern de Múnich", "Olympique Lyon", "Borussia Mönchengladbach", "Cruzeiro"]
+    },
+    {
+        "id": 938,
+        "nombre": "Claudio Pizarro",
+        "nacionalidad": "Perú",
+        "club actual": "RETIRADO",
+        "posicion": ["Delantero Centro"],
+        "clubes totales": ["Deportivo Pesquero", "Alianza Lima", "Werder Bremen", "Bayern de Múnich", "Chelsea", "1. FC Köln"]
+    },
+    {
+        "id": 939,
+        "nombre": "Roy Makaay",
+        "nacionalidad": "Países Bajos",
+        "club actual": "RETIRADO",
+        "posicion": ["Delantero Centro"],
+        "clubes totales": ["Vitesse", "Tenerife", "Deportivo La Coruña", "Bayern de Múnich", "Feyenoord"]
+    },
+    {
+        "id": 940,
+        "nombre": "Theo Walcott",
+        "nacionalidad": "Inglaterra",
+        "club actual": "RETIRADO",
+        "posicion": ["Extremo Derecho", "Delantero Centro"],
+        "clubes totales": ["Southampton", "Arsenal", "Everton"]
+    },
+    {
+        "id": 941,
+        "nombre": "Fredrik Ljungberg",
+        "nacionalidad": "Suecia",
+        "club actual": "RETIRADO",
+        "posicion": ["Extremo Derecho", "Mediocampista Derecho"],
+        "clubes totales": ["Halmstad", "Arsenal", "West Ham United", "Seattle Sounders", "Chicago Fire", "Celtic"]
+    },
+    {
+        "id": 942,
+        "nombre": "Lukas Podolski",
+        "nacionalidad": "Alemania",
+        "club actual": "RETIRADO",
+        "posicion": ["Extremo Izquierdo", "Delantero Centro"],
+        "clubes totales": ["1. FC Köln", "Bayern de Múnich", "Arsenal", "Inter de Milán", "Galatasaray", "Vissel Kobe", "Antalyaspor", "Górnik Zabrze"]
+    },
+    {
+        "id": 943,
+        "nombre": "john Obi Mikel",
+        "apodo": "Obi Mikel",
+        "nacionalidad": "Nigeria",
+        "club actual": "RETIRADO",
+        "posicion": ["Mediocampista Defensivo", "Mediocampista Central"],
+        "clubes totales": ["Lyn", "Chelsea", "Tianjin TEDA", "Middlesbrough", "Trabzonspor", "Stoke City"]
+    },
+    {
+        "id": 944,
+        "nombre": "Joe Cole",
+        "nacionalidad": "Inglaterra",
+        "club actual": "RETIRADO",
+        "posicion": ["Mediocampista Ofensivo", "Extremo Derecho"],
+        "clubes totales": ["West Ham United", "Chelsea", "LOSC Lille", "Liverpool", "Coventry City", "Aston Villa"]
     }
 ]
 }

@@ -136,6 +136,46 @@ TOPS_DISPONIBLES = [
         "titulo": "Jugadores con más partidos en Man Utd (Champions)",
         "descripcion": "Los jugadores con más apariciones en Manchester United en la Champions League",
         "jugadores_ids": [929, 39, 930, 226, 37, 143, 931, 932, 933, 171]
+    },
+    {
+        "titulo": "Jugadores con más partidos en Real Madrid (Champions)",
+        "descripcion": "Los jugadores con más apariciones en Real Madrid en la Champions League",
+        "jugadores_ids": [76, 8, 5, 153, 265, 9, 78, 50, 2, 935]
+    },
+    {
+        "titulo": "Jugadores con más partidos en Liverpool (Champions)",
+        "descripcion": "Los jugadores con más apariciones en Liverpool en la Champions League",
+        "jugadores_ids": [182, 26, 36, 117, 115, 185, 66, 360, 65, 192]
+    },
+    {
+        "titulo": "Jugadores con más goles en Bayern (Champions)",
+        "descripcion": "Los jugadores con más goles en Bayern de Múnich en la Champions League",
+        "jugadores_ids": [20, 201, 24, 67, 936, 937, 938, 23, 939, 114]
+    },
+    {
+        "titulo": "Ranking Balón de Oro 2017",
+        "descripcion": "Los 10 mejores jugadores según el Balón de Oro 2017",
+        "jugadores_ids": [2, 1, 3, 35, 8, 265, 14, 93, 20, 67]
+    },
+    {
+        "titulo": "Transferencias más caras de la historia",
+        "descripcion": "Los 10 fichajes más caros en la historia del fútbol",
+        "jugadores_ids": [3, 14, 81, 376, 103, 765, 122, 371, 70, 928]
+    },
+    {
+        "titulo": "Jugadores con más goles en Arsenal (Champions)",
+        "descripcion": "Los jugadores con más goles en Arsenal en la Champions League",
+        "jugadores_ids": [22, 330, 940, 45, 941, 259, 96, 111, 305, 942]
+    },
+    {
+        "titulo": "Jugadores con más partidos en Chelsea (Champions)",
+        "descripcion": "Los jugadores con más apariciones en Chelsea en la Champions League",
+        "jugadores_ids": [142, 141, 56, 911, 263, 40, 943, 228, 944, 213]
+    },
+    {
+        "titulo": "Jugadores con más goles en Juventus (Champions)",
+        "descripcion": "Los jugadores con más goles en Juventus en la Champions League",
+        "jugadores_ids": [79, 134, 130, 210, 91, 2, 71, 52, 267, 544]
     }
 ]
 
@@ -176,16 +216,18 @@ class JuegoTop10:
         self.mensaje_timer = 0
         self.puntos = 0
         self.juego_terminado = False
+        self.juego_rendirse = False  
     
     def normalizar_texto(self, texto):
         """Normaliza texto para comparación (sin acentos, minúsculas)"""
         texto = texto.lower().strip()
         reemplazos = {
             'á': 'a', 'é': 'e', 'í': 'i', 'ó': 'o', 'ú': 'u',
-            'ü': 'u', 'à': 'a', 'è': 'e', 'ì': 'i',
+            'ü': 'u', 'à': 'a', 'è': 'e', 'ì': 'i', "ć": 'c',
             'ò': 'o', 'ù': 'u', 'ã': 'a', 'õ': 'o', 'â': 'a',
             'ê': 'e', 'î': 'i', 'ô': 'o', 'û': 'u', 'ç': 'c',
-            'ä': 'a', 'ë': 'e', 'ï': 'i', 'ö': 'o'
+            'ä': 'a', 'ë': 'e', 'ï': 'i', 'ö': 'o', 'č': 'c',
+            "ž": 'z', "ě": 'e'
         }
         for acento, sin_acento in reemplazos.items():
             texto = texto.replace(acento, sin_acento)
@@ -428,7 +470,7 @@ def main():
                 ejecutando = False
             
             elif evento.type == pygame.KEYDOWN:
-                if juego.juego_terminado:
+                if juego.juego_terminado or juego.juego_rendirse:
                     if evento.key == pygame.K_SPACE:
                         juego.reiniciar_con_nuevo_top()
                 else:
