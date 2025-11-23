@@ -9,7 +9,6 @@ from display_config import init_display
 
 ROWS, COLS = 6, 7
 
-# Inicializar pantalla con resolucion desde game_settings.json
 SCREEN, WIDTH, HEIGHT = init_display(default_w=700, default_h=700, title="4 en Línea Animado")
 
 # Constantes base y helpers de escalado
@@ -24,16 +23,12 @@ def sx(v):
 def sy(v):
     return int(v * SCALE_Y)
 
-# Tablero escalado dinámicamente según espacio disponible
-# Calcular tamaño para que quepa en la pantalla (dejando margen para menús/texto)
-_available_width = WIDTH - sx(50)  # Margen izquierdo/derecho
-_available_height = HEIGHT - sy(150)  # Margen superior/inferior
+_available_width = WIDTH - sx(50)  
+_available_height = HEIGHT - sy(150)  
 SQUARE_SIZE = min(int(_available_width / COLS), int(_available_height / ROWS))
-# Asegurar que no sea demasiado pequeño
 SQUARE_SIZE = max(40, SQUARE_SIZE)
 RADIUS = SQUARE_SIZE // 2 - 5
 
-# Calcular offset para centrar el tablero
 BOARD_WIDTH = SQUARE_SIZE * COLS
 BOARD_HEIGHT = SQUARE_SIZE * ROWS
 BOARD_OFFSET_X = (WIDTH - BOARD_WIDTH) // 2
@@ -109,22 +104,18 @@ def drop_piece_animated(board, col, piece):
     board[target_row][col] = piece
 
 def winning_move(board, piece):
-    # Horizontal
     for r in range(ROWS):
         for c in range(COLS-3):
             if all(board[r][c+i] == piece for i in range(4)):
                 return True
-    # Vertical
     for c in range(COLS):
         for r in range(ROWS-3):
             if all(board[r+i][c] == piece for i in range(4)):
                 return True
-    # Diagonal positiva
     for r in range(3, ROWS):
         for c in range(COLS-3):
             if all(board[r-i][c+i] == piece for i in range(4)):
                 return True
-    # Diagonal negativa
     for r in range(ROWS-3):
         for c in range(COLS-3):
             if all(board[r+i][c+i] == piece for i in range(4)):
@@ -161,9 +152,9 @@ def menu_jugadores(screen):
                 sys.exit()
             if event.type == pygame.KEYDOWN:
                 if event.unicode == "1":
-                    return 2  # 2 jugadores
+                    return 2
                 elif event.unicode == "2":
-                    return 1  # 1 jugador vs CPU
+                    return 1
                 if event.key == pygame.K_ESCAPE:
                     return None
 
