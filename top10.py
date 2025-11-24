@@ -176,6 +176,16 @@ TOPS_DISPONIBLES = [
         "titulo": "Jugadores con más goles en Juventus (Champions)",
         "descripcion": "Los jugadores con más goles en Juventus en la Champions League",
         "jugadores_ids": [79, 134, 130, 210, 91, 2, 71, 52, 267, 544]
+    },
+    {
+        "titulo": "Goleadores históricos de la Eurocopa",
+        "descripcion": "Los máximos goleadores en la historia de la Eurocopa",
+        "jugadores_ids": [2, 74, 135, 91, 945, 67, 22, 296, 37, 121]
+    },
+    {
+        "titulo": "Goleadores de la Copa América (1989 - ...)",
+        "descripcion": "Los máximos goleadores en la Copa América desde 1989",
+        "jugadores_ids": [1, 946, 947, 101, 27, 83, 18, 948, 4, 949]
     }
 ]
 

@@ -8487,6 +8487,46 @@
         "club actual": "RETIRADO",
         "posicion": ["Mediocampista Ofensivo", "Extremo Derecho"],
         "clubes totales": ["West Ham United", "Chelsea", "LOSC Lille", "Liverpool", "Coventry City", "Aston Villa"]
+    },
+    {
+        "id": 945,
+        "nombre": "Alan Shearer",
+        "nacionalidad": "Inglaterra",
+        "club actual": "RETIRADO",
+        "posicion": ["Delantero Centro"],
+        "clubes totales": ["Southampton", "Blackburn Rovers", "Newcastle United"]
+    },
+    {
+        "id": 946,
+        "nombre": "Paolo Guerrero",
+        "nacionalidad": "Perú",
+        "club actual": "Alianza Lima",
+        "posicion": ["Delantero Centro"],
+        "clubes totales": ["Bayern de Múnich", "Hamburger SV", "Corinthians", "Flamengo", "Internacional", "Avai", "Racing Club", "Liga de Quito", "César Vallejo", "Alianza Lima"]
+    },
+    {
+        "id": 947,
+        "nombre": "Eduardo Vargas",
+        "nacionalidad": "Chile",
+        "club actual": "Audax Italiano",
+        "posicion": ["Delantero Centro", "Extremo Derecho"],
+        "clubes totales": ["Cobreloa", "Universidad de Chile", "Napoli", "Gremio", "Valencia", "Queens Park Rangers", "Hoffenheim", "Tigres UANL", "Atlético Mineiro", "Nacional", "Audax Italiano"]
+    },
+    {
+        "id": 948,
+        "nombre": "Luis Hernández",
+        "nacionalidad": "México",
+        "club actual": "RETIRADO",
+        "posicion": ["Delantero Centro"],
+        "clubes totales": ["Cruz Azul", "Querétaro", "Monterrey", "Necaxa", "Boca Juniors", "Tigres UANL", "LA Galaxy", "América", "Veracruz", "Jaguares de Chiapas", "Lobos BUAP"]
+    },
+    {
+        "id": 949,
+        "nombre": "Iván Zamorano",
+        "nacionalidad": "Chile",
+        "club actual": "RETIRADO",
+        "posicion": ["Delantero Centro"],
+        "clubes totales": ["Cobresal", "Trasandino", "Bologna", "St. Gallen", "Sevilla", "Real Madrid", "Inter de Milán", "América", "Colo-Colo"]
     }
 ]
 }

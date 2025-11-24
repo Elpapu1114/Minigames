@@ -31,9 +31,8 @@ def parse_resolution(res_str, default_w, default_h):
 
 
 def init_display(default_w=800, default_h=600, title="Pygame"):
-    """Inicializa o reconfigura la ventana de pygame según game_settings.json.
+    """Inicializa o reconfigura la ventana de pygame según las configuraciones del archivo game_settings.json.
     Retorna (screen, width, height).
-
     Uso:
         screen, W, H = init_display(800, 600, "Snake")
     """
@@ -47,7 +46,7 @@ def init_display(default_w=800, default_h=600, title="Pygame"):
     if fullscreen:
         flags = pygame.FULLSCREEN
 
-    # Ensure pygame display is initialized
+    """Asegurar que la pantalla de pygame esté inicializada"""
     if not pygame.get_init():
         pygame.init()
 

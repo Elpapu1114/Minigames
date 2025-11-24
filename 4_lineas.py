@@ -192,17 +192,15 @@ def menu_dificultad(screen):
 
 def mostrar_pantalla_victoria(screen, winner, players):
     """Muestra la pantalla de victoria con la imagen correspondiente"""
-    # Seleccionar imagen según el ganador
     if winner == "Empate":
         imagen = IMG_EMPATE
     elif winner == "Jugador 1":
         imagen = IMG_VICTORIA_J1
     elif winner == "CPU":
         imagen = IMG_VICTORIA_CPU
-    else:  # Jugador 2
+    else:  
         imagen = IMG_VICTORIA_J2
     
-    # Mostrar imagen o texto de respaldo
     if imagen:
         screen.blit(imagen, (0, 0))
     else:
@@ -230,12 +228,10 @@ def run_game(screen, players=2, cpu_factor=0.5):
                 pygame.quit()
                 sys.exit()
             if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
-                return  # Volver al menú principal
+                return 
             if event.type == pygame.MOUSEBUTTONDOWN and not game_over:
                 x_pos = event.pos[0]
-                # Restar el offset para obtener la columna correcta
                 col = (x_pos - BOARD_OFFSET_X) // SQUARE_SIZE
-                # Verificar que el clic esté dentro del tablero
                 if 0 <= col < COLS:
                     if (players == 2) or (players==1 and turn==0):
                         if is_valid_location(board, col):
@@ -249,7 +245,6 @@ def run_game(screen, players=2, cpu_factor=0.5):
                                 winner = "Empate"
                             turn = (turn+1)%2
 
-        # Turno de la CPU
         if players==1 and turn==1 and not game_over:
             pygame.time.delay(1000)  
             valid_cols = [c for c in range(COLS) if is_valid_location(board,c)]
@@ -304,23 +299,19 @@ def menu_principal(screen):
 
 def main():
     while True:
-        # Mostrar menú principal
         if not menu_principal(SCREEN):
             break
         
-        # Seleccionar número de jugadores
         jugadores = menu_jugadores(SCREEN)
         if jugadores is None:
             continue
         
-        # Si es vs CPU, seleccionar dificultad
         cpu_dificultad = 0.5
         if jugadores == 1:
             cpu_dificultad = menu_dificultad(SCREEN)
             if cpu_dificultad is None:
                 continue
 
-        # Ejecutar el juego
         run_game(SCREEN, jugadores, cpu_dificultad)
     
     pygame.quit()

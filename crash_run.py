@@ -11,7 +11,6 @@ ANCHO_PANTALLA = 800
 ALTO_PANTALLA = 600
 FPS = 60
 
-# Inicializar pantalla con resolucion desde game_settings.json
 pantalla, ANCHO_PANTALLA, ALTO_PANTALLA = init_display(default_w=ANCHO_PANTALLA, default_h=ALTO_PANTALLA, title="Crash Run")
 
 NEGRO = (0, 0, 0)
@@ -52,7 +51,6 @@ def cargar_imagenes():
         imagenes['camion'] = pygame.image.load(os.path.join("image", "camionesquiva.png"))
         imagenes['camion'] = pygame.transform.scale(imagenes['camion'], (100, 150))
         
-        # Cargar imágenes de menú y game over
         imagenes['game_over'] = pygame.image.load(os.path.join("image", "game_over_crash_run.png"))
         imagenes['game_over'] = pygame.transform.scale(imagenes['game_over'], (ANCHO_PANTALLA, ALTO_PANTALLA))
         
@@ -73,7 +71,7 @@ def crear_pantalla():
     return pantalla
 
 def crear_coche():
-    """Crea el coche del jugador"""
+    """Crea el auto del jugador"""
     return {
         'x': ANCHO_PANTALLA // 2,
         'y': ALTO_PANTALLA - 120,
