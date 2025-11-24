@@ -8527,6 +8527,15 @@
         "club actual": "RETIRADO",
         "posicion": ["Delantero Centro"],
         "clubes totales": ["Cobresal", "Trasandino", "Bologna", "St. Gallen", "Sevilla", "Real Madrid", "Inter de Milán", "América", "Colo-Colo"]
+    },
+    {
+        "id": 950,
+        "nombre": "Arthur Melo",
+        "apodo": "Arthur",
+        "nacionalidad": "Brasil",
+        "club actual": "Gremio",
+        "posicion": ["Mediocampista Central", "Mediocampista Defensivo"],
+        "clubes totales": ["Gremio", "Barcelona", "Juventus", "Liverpool", "Fiorentina", "Girona"]
     }
 ]
 }
