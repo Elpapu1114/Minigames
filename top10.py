@@ -103,7 +103,7 @@ TOPS_DISPONIBLES = [
         "jugadores_ids": [62, 1, 14, 27, 201, 225, 3, 67, 2, 4]
     },
     {
-        "titulo": "Goleadores de la Premier League (2000 - ...)",
+        "titulo": "Goleadores en Premier League (2000 - ...)",
         "descripcion": "Los máximos goleadores en la Premier League desde el año 2000",
         "jugadores_ids": [67, 37, 26, 18, 22, 141, 190, 94, 330, 95]
     },
