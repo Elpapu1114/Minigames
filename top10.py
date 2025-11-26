@@ -3,15 +3,23 @@ import json
 import sys
 import random
 from typing import List, Dict
-
+from display_config import init_display
 # Inicializar Pygame
 pygame.init()
 
 # Configuración de pantalla
-ANCHO = 1200
-ALTO = 800
-pantalla = pygame.display.set_mode((ANCHO, ALTO))
-pygame.display.set_caption("Top 10 Fútbol")
+BASE_ANCHO = 1280
+BASE_ALTO = 800
+ANCHO = BASE_ANCHO
+ALTO = BASE_ALTO
+pantalla, ANCHO, ALTO = init_display(default_w=ANCHO, default_h=ALTO, title="Fútbol Top 10")
+
+SCALE_X = ANCHO / BASE_ANCHO
+SCALE_Y = ALTO / BASE_ALTO
+def sx(v):
+    return int(v * SCALE_X)
+def sy(v):
+    return int(v * SCALE_Y)
 
 # Colores
 BLANCO = (255, 255, 255)
@@ -25,18 +33,18 @@ VERDE_CLARO = (39, 174, 96)
 AMARILLO = (241, 196, 15)
 NARANJA = (230, 126, 34)
 
-# Fuentes
-fuente_titulo = pygame.font.Font(None, 52)
-fuente_subtitulo = pygame.font.Font(None, 38)
-fuente_texto = pygame.font.Font(None, 32)
-fuente_pequeña = pygame.font.Font(None, 26)
+# Fuentes escaladas por la altura
+fuente_titulo = pygame.font.Font(None, max(18, int(52 * SCALE_Y)))
+fuente_subtitulo = pygame.font.Font(None, max(14, int(38 * SCALE_Y)))
+fuente_texto = pygame.font.Font(None, max(12, int(32 * SCALE_Y)))
+fuente_pequeña = pygame.font.Font(None, max(10, int(26 * SCALE_Y)))
 
 # Cargar base de datos desde JSON
 def cargar_jugadores():
     try:
         with open('basededatos.json', 'r', encoding='utf-8') as file:
             data = json.load(file)
-            return data['jugadores']
+            return data.get('jugadores', [])
     except FileNotFoundError:
         print("Error: No se encontró el archivo basededatos.json")
         return []
@@ -46,10 +54,7 @@ def cargar_jugadores():
 
 # Cargar jugadores
 jugadores_db = cargar_jugadores()
-for jugador in jugadores_db:
-    nacionalidad = jugador['nacionalidad']
-    (nacionalidad, "nacionalidad.png")
-    
+
 banderas = {}
 
 def cargar_banderas():
@@ -59,7 +64,7 @@ def cargar_banderas():
     """
     nacionalidades_unicas = set()
     for jugador in jugadores_db:
-        nacionalidad = jugador['nacionalidad']
+        nacionalidad = jugador.get('nacionalidad', "")
         # Si la nacionalidad es una lista, tomar el primer elemento
         if isinstance(nacionalidad, list):
             if len(nacionalidad) > 0:
@@ -68,16 +73,19 @@ def cargar_banderas():
             nacionalidades_unicas.add(nacionalidad)
     
     for nacionalidad in nacionalidades_unicas:
+        if not nacionalidad:
+            continue
         try:
             # Intenta cargar la imagen de la bandera
             ruta = f"image/image_fut/{nacionalidad}.png"
-            imagen = pygame.image.load(ruta)
-            # Redimensionar a 50x30 píxeles
-            imagen = pygame.transform.scale(imagen, (50, 30))
+            imagen = pygame.image.load(ruta).convert_alpha()
+            # Redimensionar usando funciones de escala para mantener proporciones
+            w, h = max(1, sx(50)), max(1, sy(30))
+            imagen = pygame.transform.scale(imagen, (w, h))
             banderas[nacionalidad] = imagen
         except (pygame.error, FileNotFoundError):
             # Si no encuentra la imagen, crea un rectángulo de color como placeholder
-            superficie = pygame.Surface((50, 30))
+            superficie = pygame.Surface((max(1, sx(50)), max(1, sy(30))), pygame.SRCALPHA)
             superficie.fill(AZUL)
             banderas[nacionalidad] = superficie
             print(f"Advertencia: No se encontró la bandera para {nacionalidad}")
@@ -211,8 +219,8 @@ class JuegoTop10:
     def cargar_jugadores_top(self):
         """Carga los jugadores del top actual desde la base de datos"""
         jugadores = []
-        for player_id in self.top_actual["jugadores_ids"]:
-            jugador = next((j for j in jugadores_db if j["id"] == player_id), None)
+        for player_id in self.top_actual.get("jugadores_ids", []):
+            jugador = next((j for j in jugadores_db if j.get("id") == player_id), None)
             if jugador:
                 jugadores.append(jugador)
         return jugadores
@@ -258,16 +266,16 @@ class JuegoTop10:
             if i in self.respuestas_correctas:
                 continue
             
-            nombre_normalizado = self.normalizar_texto(jugador["nombre"])
+            nombre_normalizado = self.normalizar_texto(jugador.get("nombre", ""))
             if input_normalizado in nombre_normalizado or nombre_normalizado.startswith(input_normalizado):
                 return i
             
-            apellido = nombre_normalizado.split()[-1]
+            apellido = nombre_normalizado.split()[-1] if nombre_normalizado else ""
             if input_normalizado == apellido or apellido.startswith(input_normalizado):
                 return i
             
             if "apodo" in jugador:
-                apodo_normalizado = self.normalizar_texto(jugador["apodo"])
+                apodo_normalizado = self.normalizar_texto(jugador.get("apodo", ""))
                 if input_normalizado in apodo_normalizado or apodo_normalizado.startswith(input_normalizado):
                     return i
         
@@ -301,7 +309,7 @@ class JuegoTop10:
             self.respuestas_correctas.add(resultado)
             self.puntos += 10
             jugador = self.jugadores_top[resultado]
-            nombre_mostrar = jugador.get("apodo", jugador["nombre"])
+            nombre_mostrar = jugador.get("apodo", jugador.get("nombre", ""))
             self.mensaje = f"¡Correcto! {nombre_mostrar}"
             self.mensaje_tipo = "correcto"
             self.mensaje_timer = 120
@@ -333,20 +341,20 @@ class JuegoTop10:
         """Dibuja todos los elementos del juego"""
         pantalla.fill(BLANCO)
         
-        # Título del Top
-        titulo_surf = fuente_titulo.render(self.top_actual["titulo"], True, NEGRO)
-        titulo_rect = titulo_surf.get_rect(center=(ANCHO // 2.3, 40))
+        # Título del Top (centrado)
+        titulo_surf = fuente_titulo.render(self.top_actual.get("titulo", ""), True, NEGRO)
+        titulo_rect = titulo_surf.get_rect(center=(ANCHO // 2, sy(40)))
         pantalla.blit(titulo_surf, titulo_rect)
         
         # Descripción
-        desc_surf = fuente_pequeña.render(self.top_actual["descripcion"], True, GRIS_OSCURO)
-        desc_rect = desc_surf.get_rect(center=(ANCHO // 2.3, 80))
+        desc_surf = fuente_pequeña.render(self.top_actual.get("descripcion", ""), True, GRIS_OSCURO)
+        desc_rect = desc_surf.get_rect(center=(ANCHO // 2, sy(80)))
         pantalla.blit(desc_surf, desc_rect)
         
         # Botón de reiniciar (esquina superior derecha)
-        boton_reiniciar_rect = pygame.Rect(ANCHO - 180, 20, 160, 50)
-        pygame.draw.rect(pantalla, NARANJA, boton_reiniciar_rect, border_radius=8)
-        pygame.draw.rect(pantalla, GRIS_OSCURO, boton_reiniciar_rect, 3, border_radius=8)
+        boton_reiniciar_rect = pygame.Rect(ANCHO - sx(180), sy(20), sx(160), sy(50))
+        pygame.draw.rect(pantalla, NARANJA, boton_reiniciar_rect, border_radius=max(1, sx(8)))
+        pygame.draw.rect(pantalla, GRIS_OSCURO, boton_reiniciar_rect, max(1, sx(3)), border_radius=max(1, sx(8)))
         
         texto_reiniciar = fuente_texto.render("🔄 Nuevo Top", True, BLANCO)
         texto_rect = texto_reiniciar.get_rect(center=boton_reiniciar_rect.center)
@@ -354,9 +362,9 @@ class JuegoTop10:
         
         # Botón de rendirse (debajo del botón de reiniciar)
         if not self.juego_terminado:
-            boton_rendirse_rect = pygame.Rect(ANCHO - 180, 80, 160, 50)
-            pygame.draw.rect(pantalla, ROJO, boton_rendirse_rect, border_radius=8)
-            pygame.draw.rect(pantalla, GRIS_OSCURO, boton_rendirse_rect, 3, border_radius=8)
+            boton_rendirse_rect = pygame.Rect(ANCHO - sx(180), sy(80), sx(160), sy(50))
+            pygame.draw.rect(pantalla, ROJO, boton_rendirse_rect, border_radius=max(1, sx(8)))
+            pygame.draw.rect(pantalla, GRIS_OSCURO, boton_rendirse_rect, max(1, sx(3)), border_radius=max(1, sx(8)))
             
             texto_rendirse = fuente_texto.render("🏳️ Rendirse", True, BLANCO)
             texto_rendirse_rect = texto_rendirse.get_rect(center=boton_rendirse_rect.center)
@@ -364,54 +372,58 @@ class JuegoTop10:
         
         # Puntos
         puntos_surf = fuente_texto.render(f"Puntos: {self.puntos}/{len(self.jugadores_top) * 10}", True, VERDE)
-        pantalla.blit(puntos_surf, (20, 100))
+        pantalla.blit(puntos_surf, (sx(20), sy(100)))
         
         # Progreso
         progreso_surf = fuente_texto.render(f"Adivinados: {len(self.respuestas_correctas)}/{len(self.jugadores_top)}", True, AZUL)
-        pantalla.blit(progreso_surf, (ANCHO - 360, 100))
+        pantalla.blit(progreso_surf, (ANCHO - sx(360), sy(100)))
         
-        # Lista de jugadores
-        y_offset = 150
+        # Lista de jugadores (con escalado)
+        y_offset = sy(150)
+        row_height = sy(60)
+        rect_height = sy(55)
+        left_margin = sx(50)
+        content_width = ANCHO - sx(100)
         for i, jugador in enumerate(self.jugadores_top):
             color_fondo = GRIS if i % 2 == 0 else (220, 220, 220)
-            pygame.draw.rect(pantalla, color_fondo, (50, y_offset, ANCHO - 100, 55))
+            pygame.draw.rect(pantalla, color_fondo, (left_margin, y_offset, content_width, rect_height))
             
             pos_surf = fuente_texto.render(f"#{i+1}", True, NEGRO)
-            pantalla.blit(pos_surf, (70, y_offset + 15))
+            pantalla.blit(pos_surf, (sx(70), y_offset + sy(15)))
             
             # Bandera
-            nacionalidad_jugador = jugador['nacionalidad']
+            nacionalidad_jugador = jugador.get('nacionalidad', "")
             if isinstance(nacionalidad_jugador, list):
                 nacionalidad_jugador = nacionalidad_jugador[0] if len(nacionalidad_jugador) > 0 else ""
 
             if nacionalidad_jugador in banderas:
-                pantalla.blit(banderas[nacionalidad_jugador], (140, y_offset + 12))
+                pantalla.blit(banderas[nacionalidad_jugador], (sx(140), y_offset + sy(12)))
             
             if i in self.respuestas_correctas:
-                nombre_mostrar = jugador.get("apodo", jugador["nombre"])
+                nombre_mostrar = jugador.get("apodo", jugador.get("nombre", ""))
                 nombre_surf = fuente_texto.render(nombre_mostrar, True, VERDE_CLARO)
-                pantalla.blit(nombre_surf, (210, y_offset + 15))
+                pantalla.blit(nombre_surf, (sx(210), y_offset + sy(15)))
             else:
                 interrogacion = fuente_texto.render("???", True, GRIS_OSCURO)
-                pantalla.blit(interrogacion, (210, y_offset + 15))
+                pantalla.blit(interrogacion, (sx(210), y_offset + sy(15)))
             
-            y_offset += 60
+            y_offset += row_height
         
         # Campo de entrada
-        input_y = ALTO - 60
-        pygame.draw.rect(pantalla, GRIS_OSCURO, (50, input_y, ANCHO - 100, 50), border_radius=10)
-        pygame.draw.rect(pantalla, BLANCO, (55, input_y + 5, ANCHO - 110, 40), border_radius=8)
+        input_y = ALTO - sy(60)
+        pygame.draw.rect(pantalla, GRIS_OSCURO, (sx(50), input_y, ANCHO - sx(100), sy(50)), border_radius=max(1, sx(10)))
+        pygame.draw.rect(pantalla, BLANCO, (sx(55), input_y + sy(5), ANCHO - sx(110), sy(40)), border_radius=max(1, sx(8)))
         
         input_surf = fuente_texto.render(self.input_texto, True, NEGRO)
-        pantalla.blit(input_surf, (65, input_y + 13))
+        pantalla.blit(input_surf, (sx(65), input_y + sy(13)))
         
         if self.cursor_visible and not self.juego_terminado:
-            cursor_x = 65 + input_surf.get_width() + 2
-            pygame.draw.line(pantalla, NEGRO, (cursor_x, input_y + 10), (cursor_x, input_y + 40), 2)
+            cursor_x = sx(65) + input_surf.get_width() + sx(2)
+            pygame.draw.line(pantalla, NEGRO, (cursor_x, input_y + sy(10)), (cursor_x, input_y + sy(40)), max(1, sx(2)))
         
         if not self.input_texto:
             placeholder = fuente_pequeña.render("Escribe el nombre del jugador y presiona ENTER...", True, GRIS)
-            pantalla.blit(placeholder, (65, input_y + 15))
+            pantalla.blit(placeholder, (sx(65), input_y + sy(15)))
         
         # Mensaje de feedback
         if self.mensaje:
@@ -423,7 +435,7 @@ class JuegoTop10:
                 color_mensaje = AZUL
             
             mensaje_surf = fuente_texto.render(self.mensaje, True, color_mensaje)
-            mensaje_rect = mensaje_surf.get_rect(center=(ANCHO // 2, ALTO - 60))
+            mensaje_rect = mensaje_surf.get_rect(center=(ANCHO // 2, ALTO - sy(60)))
             pantalla.blit(mensaje_surf, mensaje_rect)
         
         # Mensaje de juego completado
@@ -434,15 +446,15 @@ class JuegoTop10:
             pantalla.blit(overlay, (0, 0))
             
             victoria_surf = fuente_titulo.render("¡COMPLETADO!", True, VERDE)
-            victoria_rect = victoria_surf.get_rect(center=(ANCHO // 2, ALTO // 2 - 50))
+            victoria_rect = victoria_surf.get_rect(center=(ANCHO // 2, ALTO // 2 - sy(50)))
             pantalla.blit(victoria_surf, victoria_rect)
             
             puntos_final = fuente_subtitulo.render(f"Puntos totales: {self.puntos}", True, NEGRO)
-            puntos_rect = puntos_final.get_rect(center=(ANCHO // 2, ALTO // 2 + 10))
+            puntos_rect = puntos_final.get_rect(center=(ANCHO // 2, ALTO // 2 + sy(10)))
             pantalla.blit(puntos_final, puntos_rect)
             
             reinicio = fuente_texto.render("Presiona ESPACIO o click en 'Nuevo Top' para continuar", True, GRIS_OSCURO)
-            reinicio_rect = reinicio.get_rect(center=(ANCHO // 2, ALTO // 2 + 60))
+            reinicio_rect = reinicio.get_rect(center=(ANCHO // 2, ALTO // 2 + sy(60)))
             pantalla.blit(reinicio, reinicio_rect)
 
         if self.juego_rendirse:
@@ -452,15 +464,15 @@ class JuegoTop10:
             pantalla.blit(overlay, (0, 0))
             
             victoria_surf = fuente_titulo.render("¡RENDIDO!", True, ROJO)
-            victoria_rect = victoria_surf.get_rect(center=(ANCHO // 2, ALTO // 2 - 50))
+            victoria_rect = victoria_surf.get_rect(center=(ANCHO // 2, ALTO // 2 - sy(50)))
             pantalla.blit(victoria_surf, victoria_rect)
             
             puntos_final = fuente_subtitulo.render(f"Puntos totales: {self.puntos}", True, NEGRO)
-            puntos_rect = puntos_final.get_rect(center=(ANCHO // 2, ALTO // 2 + 10))
+            puntos_rect = puntos_final.get_rect(center=(ANCHO // 2, ALTO // 2 + sy(10)))
             pantalla.blit(puntos_final, puntos_rect)
             
             reinicio = fuente_texto.render("Presiona ESPACIO o click en 'Nuevo Top' para continuar", True, GRIS_OSCURO)
-            reinicio_rect = reinicio.get_rect(center=(ANCHO // 2, ALTO // 2 + 60))
+            reinicio_rect = reinicio.get_rect(center=(ANCHO // 2, ALTO // 2 + sy(60)))
             pantalla.blit(reinicio, reinicio_rect)
         
         pygame.display.flip()
@@ -473,6 +485,14 @@ def main():
     reloj = pygame.time.Clock()
     juego = JuegoTop10()
     ejecutando = True
+    
+    # límites escalados para botones
+    reiniciar_left = ANCHO - sx(180)
+    reiniciar_right = ANCHO - sx(20)
+    reiniciar_top = sy(20)
+    reiniciar_bottom = sy(20) + sy(50)
+    rendirse_top = sy(80)
+    rendirse_bottom = sy(80) + sy(50)
     
     while ejecutando:
         for evento in pygame.event.get():
@@ -490,17 +510,19 @@ def main():
                         juego.input_texto = juego.input_texto[:-1]
                     elif evento.key == pygame.K_ESCAPE:
                         ejecutando = False
-                    elif evento.unicode.isprintable():
-                        if len(juego.input_texto) < 30:
-                            juego.input_texto += evento.unicode
+                    else:
+                        # agregar caracteres imprimibles
+                        if hasattr(evento, "unicode") and evento.unicode and evento.unicode.isprintable():
+                            if len(juego.input_texto) < 80:
+                                juego.input_texto += evento.unicode
             
             elif evento.type == pygame.MOUSEBUTTONDOWN:
                 x, y = evento.pos
                 # Botón de reiniciar
-                if ANCHO - 180 <= x <= ANCHO - 20 and 20 <= y <= 70:
+                if reiniciar_left <= x <= reiniciar_right and reiniciar_top <= y <= reiniciar_bottom:
                     juego.reiniciar_con_nuevo_top()
                 # Botón de rendirse
-                elif ANCHO - 180 <= x <= ANCHO - 20 and 80 <= y <= 130:
+                elif reiniciar_left <= x <= reiniciar_right and rendirse_top <= y <= rendirse_bottom:
                     if not juego.juego_terminado:
                         juego.rendirse()
         
