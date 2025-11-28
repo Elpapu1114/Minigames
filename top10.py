@@ -343,12 +343,12 @@ class JuegoTop10:
         
         # Título del Top (centrado)
         titulo_surf = fuente_titulo.render(self.top_actual.get("titulo", ""), True, NEGRO)
-        titulo_rect = titulo_surf.get_rect(center=(ANCHO // 2, sy(40)))
+        titulo_rect = titulo_surf.get_rect(center=(ANCHO // 2.25, sy(40)))
         pantalla.blit(titulo_surf, titulo_rect)
         
         # Descripción
         desc_surf = fuente_pequeña.render(self.top_actual.get("descripcion", ""), True, GRIS_OSCURO)
-        desc_rect = desc_surf.get_rect(center=(ANCHO // 2, sy(80)))
+        desc_rect = desc_surf.get_rect(center=(ANCHO // 2.25, sy(80)))
         pantalla.blit(desc_surf, desc_rect)
         
         # Botón de reiniciar (esquina superior derecha)
@@ -376,7 +376,7 @@ class JuegoTop10:
         
         # Progreso
         progreso_surf = fuente_texto.render(f"Adivinados: {len(self.respuestas_correctas)}/{len(self.jugadores_top)}", True, AZUL)
-        pantalla.blit(progreso_surf, (ANCHO - sx(360), sy(100)))
+        pantalla.blit(progreso_surf, (ANCHO - sx(400), sy(100)))
         
         # Lista de jugadores (con escalado)
         y_offset = sy(150)

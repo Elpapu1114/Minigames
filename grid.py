@@ -314,8 +314,8 @@ class FutbolGrid:
             "ž": 'z', "ě": 'e'
         }
         for acento, sin_acento in reemplazos.items():
-            texto_normalizado = texto.replace(acento, sin_acento)
-        return texto_normalizado
+            texto = texto.replace(acento, sin_acento)
+        return texto
 
     def obtener_sugerencias(self, texto):
         if len(texto) < 1:
