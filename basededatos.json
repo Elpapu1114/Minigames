@@ -772,7 +772,7 @@
         "nacionalidad": "Argentina",    
         "Fecha de nacimiento": "22/08/1997",
         "club actual": "Inter de Milán",
-        "posicion": ["Delantero Centro", "Extremo Derecho", "Extremo Izquierdo"],
+        "posicion": ["Delantero Centro"],
         "clubes totales": ["Racing Club", "Inter de Milán"]
     },
     {
@@ -2915,7 +2915,7 @@
         "nacionalidad": "Argentina",
         "Fecha de nacimiento": "31/01/2000",
         "club actual": "Atlético de Madrid",
-        "posicion": ["Delantero Centro", "Extremo Derecho", "Extremo Izquierdo"],
+        "posicion": ["Delantero Centro", "Extremo Derecho"],
         "clubes totales": ["River Plate", "Manchester City", "Atlético de Madrid"]
     },
     {
